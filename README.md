@@ -9,6 +9,11 @@ the list stays the canonical, human-curated inventory; this KB is the depth
 and machine layer on top of it. Pilot review date: **2026-11-28** (see
 "Pilot terms" below).
 
+**Browse the rendered site:** [hexsecs.github.io/awesome-kb-automotive-security](https://hexsecs.github.io/awesome-kb-automotive-security/)
+— the searchable reading view of this KB, rebuilt from `main` on every push.
+This KB is also imported into the composed network site at
+[hexsecs.github.io/awesome-kb](https://hexsecs.github.io/awesome-kb/).
+
 ## Format: OpenShelf
 
 This KB conforms to the [OpenShelf](https://github.com/hexsecs/openkb)
