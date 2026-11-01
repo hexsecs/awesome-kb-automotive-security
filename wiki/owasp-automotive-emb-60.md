@@ -17,7 +17,7 @@ sources:
     retrieved: 2026-10-31
   - url: "https://owasp.org/www-project-automotive-emb-60/"
     retrieved: 2026-11-01
-  - url: "https://github.com/PhilippSchmitt/emb60"
+  - url: "https://github.com/OWASP/www-project-automotive-emb-60"
     retrieved: 2026-11-01
 ---
 
@@ -25,26 +25,26 @@ OWASP incubator project with open hardware and software for a single-board compu
 
 ## What it is
 
-An OWASP **incubator-stage** project that specifies a small, cheap automotive pentest appliance: a single-board computer (the project documentation names an Allwinner F1C100s board, pictured as a Lichee Pi Nano-class board) paired with a custom STM32-based CAN board, so the combination presents a CAN interface to its Linux host stack through SocketCAN for penetration testing of vehicles and components.
+An OWASP **incubator-stage** project documenting an automotive security test board. The documented design is a **custom board built around a Microchip ATSAME70N21B** with **two MCP2562FD CAN FD transceivers** — a 2-channel CAN FD interface with a single D-Sub 9 connector, a 40-pin Raspberry-Pi-like expansion header, and the SAME70's security peripherals in play (MPU, TRNG, hardware AES and SHA). That is the design the project's own documentation specifies; earlier guesses built on contributor repositories (an Allwinner F1C100s / Lichee Pi SBC plus a separate STM32 CAN board) do not match it, and this page does not repeat them.
 
 ## How it works
 
-The architecture is two boards: the SBC runs the Linux environment and tooling, and the CAN board (STM32-based — project issue history discusses F042/F072-class parts; the checked READMEs do not pin an exact part number, so this page does not either) bridges the vehicle bus to the SBC. The project page and the founding repository (Philipp Schmitt's emb60, from which the OWASP project grew; a second contributor repository covers CAN-board hardware revision work) describe the goal as a reproducible, documented, low-cost platform rather than a product — parts lists and setup documentation over finished firmware.
+The documentation goes beyond the interface itself: it specifies a **secure bootloader** for the board — firmware updates delivered over ISO-TP/UDS, update distribution protected with AES-128-GCM, secure boot verified with HMAC-SHA256, and key material protected by the MPU. The caveat is availability: **no firmware or hardware source repository could be found** for this project. The only GitHub repository is the OWASP website repository (`OWASP/www-project-automotive-emb-60`, no licence recorded), and its code-repository link is a placeholder. So the design — board and bootloader alike — is documented but unverified: there is nothing public to build from or audit.
 
 ## Where it fits
 
-EMB 60 is the standards-body attempt at what [RAMN](ramn.md) later did with manufacturer backing: a reference platform a pentester or student can build to learn vehicle-network testing without improvising hardware. Against a plain [CANtact](cantact.md) it adds the standalone-computer appliance idea (the SBC *is* the test host). Its lasting value in this KB is as the documented baseline of that idea — and as a caution about incubator-stage momentum (see Status).
+EMB 60 is the standards-body attempt at what [RAMN](ramn.md) later did with manufacturer backing: a reference platform a pentester or student can use to learn vehicle-network testing. Against a plain [CANtact](cantact.md) it aimed higher — CAN FD channels and a secure-boot story of its own. Its lasting value in this KB is as the documented baseline of that idea, and as a caution about the distance between a documented design and a obtainable one (see Status).
 
 ## Limits and safety notes
 
-Incubator stage means exactly what it says: no graduated-project assurance, no releases, and documentation over deliverables. The hardware definition is less pinned than the list summary implies — SBC identity rests on a README image caption and contributor repos rather than a normative spec, and the CAN board's exact MCU is not fixed in the primary sources checked. Anyone building one today is doing archaeology as much as assembly; RAMN or a candleLight-class adapter will reach a working bus faster.
+Incubator stage means exactly what it says, and here it also means *documentation only*: no source repository, no releases, no board to buy or build from the project's own artefacts. The secure-bootloader design is a specification, not reviewed code — none of its properties (key storage, update authentication) can be checked against an implementation, because none is public. Anyone wanting a working platform today should start from RAMN or a candleLight-class adapter; EMB 60 is a reference to read, not a device to deploy.
 
 ## Status and sources
 
-Checked 2026-11-01. **Unknown**: the OWASP project page's own metadata shows it last updated 2022-03-12 at incubator stage, and the founding repository's last push is 2022-08 with no releases and no commits since. Nothing in the primary sources marks the project archived or formally ended, so "unknown" — not archived — is the honest call: dormant since 2022, status unconfirmed by its owners. Documentation claims above come from the following primary sources; no hardware was built for this page.
+Checked 2026-11-01. **Unknown**: the project is still listed as an OWASP Incubator project, but every substantive content commit in its website repository dates from March 2021, and no implementation repository has surfaced since. The honest verdict is a **dormant incubator**: documented, never visibly shipped, and not formally ended by its owners. Documentation claims above come from the following primary sources; no hardware was built for this page.
 
 - [OWASP project page](https://owasp.org/www-project-automotive-emb-60/)
-- [Founding repository](https://github.com/PhilippSchmitt/emb60)
+- [OWASP website repository](https://github.com/OWASP/www-project-automotive-emb-60)
 
 ## Related
 

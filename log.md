@@ -180,3 +180,46 @@ board MCU are not pinned in its primary sources (the page says so
 rather than repeating the summary's certainty); CAN-DAQ is classic CAN
 only (ESP32-S3 TWAI) with no documented frame transmission. No hardware
 was built, flashed, or run.
+
+## [2026-11-01] correct | Slice 5/6 correction pass (15 pages)
+
+The full primary-source research notes for the Firmware/ECU RE slice
+(issue #5) and the Hardware Interfaces slice (issue #6) arrived after
+PRs #17 and #19 had merged; the pages had been written from partial
+notes. This pass rewrites the 15 affected pages from the full notes.
+Slice #4 (RF and Key Fob) full notes match what landed — no changes.
+
+Status changes: medc17-checksum-tool unknown -> active (repo created
+2025-11-20, commits through 2026-08-27, MIT); TC1791_CAN_BSL unknown
+-> maintenance (intermittently active, pushed 2026-08-02 after a
+2022-2026 gap); candleLight_fw maintenance -> active (pushed
+2026-10-02, commits through Sep 2026); CANtact maintenance -> unknown
+(neither repo is archived — the earlier "archived 2025-04-06" claim was
+wrong; original app/fw dormant since 2016/2017 HEAD commits, living
+continuation in linklayer/cantact + candleLight_fw + CANtact Book);
+SuperCAN maintenance -> active (commit 2026-10-27, release v1.0.28).
+
+Major factual corrections: ghidra-tc1797 is a pspec + ldefs add-on to
+Ghidra's built-in TriCore support (not a SLEIGH spec, no licence,
+created 2024-04-20); ghidra_v850 is MIT, source-only distribution, no
+releases ever, language defs v0.1; medc17 README does carry the
+"Bleichenbacher signatures" bullet (mechanism undocumented) and the
+tool also corrects CVN; pya2l's PyPI package is pya2ldb at 1.0.355,
+licence record conflicts (GPL-2.0 metadata vs LGPL v3+ badge); pyxcp is
+LGPL-3.0 at v0.28.0 and its README does document programming building
+blocks; Simos18_SBOOT's CRC flaw pays off in boot-password recovery
+(not a direct flash-read primitive), last commit 2022-03-18, and the
+TC1767 naming wrinkle was wrong; CAN-DAQ is CC-BY-4.0, USB-UART wired
+(no WiFi), transmits, MCP2561, HardwareX e00743 (2026); candleLight
+licences are MIT/BSD/SLA0044, only release v2.0, F103 impossible,
+G0B1/G431 unsupported; CFUC hardware+firmware share one repo under
+LGPL-3.0 with two exclusive firmware flavours (CDC + cfuc plugin, or
+the gs_usb budgetcan port); EMB 60's documented board is an
+ATSAME70N21B design with 2x MCP2562FD and a documented secure
+bootloader, but no source repository exists; panda's safety policies
+live in opendbc, default mode is silent, no releases ever (the 0.0.10
+header claim dropped as uncorroborated); RAMN ECUs are STM32L5 with
+A=gateway/B=chassis/C=powertrain/D=body roles, releases v1.0.x (no
+"Marlow"), terminated bus must not connect to a real car; SuperCAN's
+Linux SocketCAN is a separate DKMS driver, its python-can plugin is
+Windows-only. No hardware was built, flashed, or run.
