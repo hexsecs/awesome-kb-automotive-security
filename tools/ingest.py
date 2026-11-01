@@ -16,11 +16,21 @@ Existing pages with `depth: full` keep their body; only provenance
 frontmatter is refreshed. Unmanaged frontmatter blocks on an existing page
 (`related`, `tags`, a richer `sources`, …) are preserved verbatim, so
 hand-written depth survives a sync. Concept pages under `wiki/concepts/`
-are listed in the L1 index. Pages whose URL leaves the list are
-tombstoned (`status: archived`, body note appended once), never deleted.
+are listed in the L1 index.
 
-Deterministic and idempotent: dates come from the source commit, never the
-wall clock; same source commit in, byte-identical tree out.
+Entry identity is the normalised URL, with a slug fallback: if an entry's
+URL moves but its name still slugifies to an existing page's stem, the page
+is updated in place (a move is not a delisting). Pages whose entry leaves
+the list entirely are tombstoned (`status: archived`, body note appended
+once), never deleted, and stay listed in their sub-index so every page
+remains reachable from the index.
+
+A page is rewritten only when its own entry data changes (title, URL,
+section, or list description). `last_checked` is a human/agent verification
+stamp and is never moved by an ingest; `updated` and `source_commit`
+advance only on pages actually rewritten. Deterministic and idempotent:
+dates come from the source commit, never the wall clock; same source
+commit in, byte-identical tree out.
 
 Usage: python3 tools/ingest.py [--source ../awesome-automotive-security]
 """
@@ -121,7 +131,9 @@ def extra_blocks(text: str) -> list[list[str]]:
 
 
 def frontmatter(e: dict, status: str, depth: str, date: str, commit: str,
-                extras: list[list[str]] | None = None) -> str:
+                extras: list[list[str]] | None = None,
+                last_checked: str | None = None,
+                updated: str | None = None) -> str:
     lines = ["---",
              f"title: {q(e['title'])}",
              f"summary: {q(short_summary(e['summary']))}",
@@ -129,8 +141,8 @@ def frontmatter(e: dict, status: str, depth: str, date: str, commit: str,
              f"category: {q(e['section'])}",
              f"url: {q(e['url'])}",
              f"status: {status}",
-             f"last_checked: {date}",
-             f"updated: {date}",
+             f"last_checked: {last_checked or date}",
+             f"updated: {updated or date}",
              f"depth: {depth}",
              f"source_list: {SOURCE_ID}",
              f"source_commit: {commit}",
@@ -190,19 +202,29 @@ def main() -> int:
     WIKI.mkdir(exist_ok=True)
 
     existing: dict[str, Path] = {}
+    by_stem: dict[str, Path] = {}
     for page in sorted(WIKI.rglob("*.md")):
         fields, _ = split_page(page.read_text(encoding="utf-8"))
         if "url" in fields:
             existing[normalise(str(fields["url"]))] = page
+            by_stem[page.stem] = page
 
     taken = {p.stem for p in WIKI.glob("*.md")}
-    seen: set[str] = set()
+    entry_urls = {normalise(e["url"]) for e in entries}
+    matched: set[Path] = set()
     by_section: dict[str, list[dict]] = {}
     created = updated = 0
     for e in entries:
         key = normalise(e["url"])
-        seen.add(key)
         page = existing.get(key)
+        if page is None:
+            # URL moved? An entry under a new URL keeps its page when the
+            # name's slug matches a page whose URL is no longer listed.
+            candidate = by_stem.get(slugify(e["title"], set()))
+            if candidate is not None and candidate not in matched:
+                cfields, _ = split_page(candidate.read_text(encoding="utf-8"))
+                if normalise(str(cfields.get("url", ""))) not in entry_urls:
+                    page = candidate
         if page is None:
             slug = slugify(e["title"], taken)
             page = WIKI / f"{slug}.md"
@@ -212,31 +234,49 @@ def main() -> int:
         else:
             old_text = page.read_text(encoding="utf-8")
             fields, body = split_page(old_text)
-            depth = str(fields.get("depth", "stub"))
-            status = str(fields.get("status", "unknown"))
-            new_text = frontmatter(e, status, depth, date, commit,
-                                   extra_blocks(old_text)) + (
-                body if depth == "full" else stub_body(e))
-            if page.read_text(encoding="utf-8") != new_text:
+            changed = (
+                str(fields.get("title", "")) != e["title"]
+                or normalise(str(fields.get("url", ""))) != key
+                or str(fields.get("category", "")) != e["section"]
+                or str(fields.get("list_summary", "")) != e["summary"])
+            if changed:
+                depth = str(fields.get("depth", "stub"))
+                status = str(fields.get("status", "unknown"))
+                new_text = frontmatter(
+                    e, status, depth, date, commit, extra_blocks(old_text),
+                    last_checked=str(fields.get("last_checked", "")) or None,
+                    updated=date) + (
+                    body if depth == "full" else stub_body(e))
                 page.write_text(new_text, encoding="utf-8")
                 updated += 1
+        matched.add(page)
         by_section.setdefault(e["section"], []).append(
             {"slug": page.stem, "title": e["title"],
              "summary": short_summary(e["summary"])})
 
     tombstoned = 0
-    for key, page in existing.items():
-        if key in seen or page.stem.startswith("index-"):
+    for page in sorted(set(existing.values()) - matched):
+        if page.stem.startswith("index-"):
             continue
         text = page.read_text(encoding="utf-8")
         fields, _ = split_page(text)
         if fields.get("status") != "archived":
-            text = text.replace("status: unknown", "status: archived", 1)
+            text = re.sub(r"^status: .*$", "status: archived", text,
+                          count=1, flags=re.M)
             if "Delisted from the source list" not in text:
                 text += (f"\n> Delisted from the source list as of {commit}."
                          f" Tombstoned, not deleted (see AGENTS.md).\n")
             page.write_text(text, encoding="utf-8")
             tombstoned += 1
+        # Tombstoned pages stay listed in their sub-index (marked), so
+        # every page in wiki/ remains reachable from the index.
+        category = str(fields.get("category", ""))
+        if category:
+            by_section.setdefault(category, []).append(
+                {"slug": page.stem,
+                 "title": f"{fields.get('title', page.stem)} (delisted)",
+                 "summary": short_summary(
+                     str(fields.get("list_summary", "")))})
 
     # Sub-indexes (no frontmatter — OpenShelf detects them as sub-indexes).
     by_section_order = list(by_section.keys())
