@@ -11,6 +11,7 @@ depth: stub
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Kuppusamy et al., escar Europe 2016. Extends TUF with a director role, supplier-delegated image signing, and ECU-signed vehicle version manifests, so that a partial compromise of the update system does not by itself let an attacker push malicious firmware to every ECU."
+related: [secure-firmware-updates]
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

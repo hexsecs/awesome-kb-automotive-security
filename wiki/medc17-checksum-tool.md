@@ -11,7 +11,7 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Analyses and corrects CRC32, ADD32, and ADD16 checksums in Bosch MED17 and EDC17 firmware, resolving CRC values algebraically rather than by brute force and regenerating RSA signatures after modification."
-related: [ghidra-tc1797, pya2l]
+related: [ghidra-tc1797, pya2l, secure-firmware-updates]
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -52,3 +52,4 @@ Checked 2026-11-01. **Active**: the repository (created 2025-11-20) is not archi
 
 - [ghidra-tc1797](ghidra-tc1797.md)
 - [pyA2L](pya2l.md)
+- [Secure firmware updates](concepts/secure-firmware-updates.md)
