@@ -36,6 +36,9 @@ what gets listed.
 - `status` is the *resource's* status (active / maintenance / archived /
   unknown), verified when `last_checked` is stamped. Ingest sets `unknown`;
   a delisted entry's page is tombstoned to `archived`, never deleted.
+- The ingester preserves unmanaged frontmatter blocks (`related`,
+  `license`, a richer `sources`, …) and `full` bodies verbatim across
+  syncs, and lists `wiki/concepts/` pages in the generated L1 index.
 
 ## Operations
 
