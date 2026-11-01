@@ -56,3 +56,32 @@ moves, rewrites only pages whose own entry data changed, never moves
 last_checked, and keeps tombstoned pages listed in their sub-index so
 they stay reachable. This sync: 2 created (the VehicleSec papers),
 1 updated (everest URL, in place), 0 tombstoned; re-run is 0/0/0.
+## [2026-11-01] deepen | EV Charging Security depth slice (issue #3)
+
+Deepened all 11 EV Charging Security pages from stub to full, with
+what-it-is / how-it-works / where-it-fits / limits sections and primary
+sources checked 2026-11-01. Documentation links are pinned to the checked
+upstream commits. Added reciprocal sibling links, links back to the OCPP
+charging-attacks concept, and reciprocal related metadata on the existing
+OCPPStorm paper stub (its research depth remains for issue #12).
+
+Status calls: 10 active (unarchived with observed 2026 default-branch
+updates); OpenV2G maintenance (unarchived, latest checked commit is the
+2025-11-12 import of 0.9.6, whose README records incremental fixes).
+Maintenance is an editorial classification, not an upstream retirement
+claim. No checked repository is archived. Each page records its evidence.
+
+Limits retained explicitly: AcCCS's conflicting DIN-only versus newer
+ISO/TLS/Plug & Charge instructions; dsV2Gshark's preliminary -20 support
+and test-secret requirement; EmuOCPP's missing 1.6 transactions and stale
+setup paths; OpenV2G's version-specific decoder fixes; WWCP's opt-in trust
+roots, absent revocation checks and parent-checkout dependency; EVerest's
+EvseV2G deprecation and configuration-dependent TLS/protocol behaviour.
+No physical charging or security tools were executed.
+
+Validation: full-tree ingest against the canon snapshot 61ba124 is
+idempotent (0 created / 0 updated / 0 tombstoned); OpenShelf lint --strict
+is clean; related links and pinned source endpoints were checked. The
+shell proxy was unavailable, so repository and primary-source reads used
+the GitHub connection; lint used the unmodified OpenShelf implementation
+retrieved from hexsecs/openkb. One PR for this depth slice, per AGENTS.md.

@@ -11,6 +11,7 @@ depth: stub
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Coppoletta et al., VehicleSec 2024. Black-box fuzzer for the OCPP charging-station protocol that tests implementations regardless of platform or language, and found five confirmed CVEs in two open-source OCPP systems."
+related: [checkocpp, emuocpp, ocpp-charging-attacks]
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
