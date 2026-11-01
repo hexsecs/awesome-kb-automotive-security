@@ -30,7 +30,7 @@ ENTRY_RE = re.compile(r"^\* \[(?P<name>[^\]]+)\]\((?P<url>[^)]+)\) - (?P<desc>.+
 HEADING_RE = re.compile(r"^## (?P<title>.+)$")
 SKIP_SECTIONS = {"Contents"}
 SOURCE_ID = "awesome-automotive-security"
-KB_URL = "https://github.com/hexsecs/awesome-kb-automotive-security-"
+KB_URL = "https://github.com/hexsecs/awesome-kb-automotive-security"
 
 
 def normalise(url: str) -> str:

@@ -4,8 +4,8 @@
 
 ## Machine layer
 
-- [Index (JSON)](https://github.com/hexsecs/awesome-kb-automotive-security-/blob/main/index.json): every entry — slug, title, URL, source section, status, page path.
-- [Spec](https://github.com/hexsecs/awesome-kb-automotive-security-/blob/main/SPEC.md): the format this KB follows.
+- [Index (JSON)](https://github.com/hexsecs/awesome-kb-automotive-security/blob/main/index.json): every entry — slug, title, URL, source section, status, page path.
+- [Spec](https://github.com/hexsecs/awesome-kb-automotive-security/blob/main/SPEC.md): the format this KB follows.
 
 ## Sections (from the source list)
 
