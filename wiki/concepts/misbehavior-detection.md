@@ -3,7 +3,7 @@ title: "Misbehavior detection in V2X"
 summary: "Why V2X needs a layer beyond signatures: detecting false content from validly credentialed stations, reporting it, and the authority that decides."
 type: concept
 updated: 2026-11-01
-related: [f2md, vanetza, v2verifier, artery, veins, van3twin]
+related: [f2md, vanetza, v2verifier, artery, veins, van3twin, v2x-credential-management]
 sources:
   - url: "https://github.com/josephkamel/F2MD"
     retrieved: 2026-11-01
@@ -49,7 +49,7 @@ Of this KB's V2X entries, only [F2MD](../f2md.md) implements detection at all. [
 
 **Pseudonymity starves naive detection.** Every layer of F2MD's chain keys on the pseudonym — check history, behavioural trust, report counts — and its own experiment shows the consequence: with a periodical pseudonym-change policy, "the MA does not receive enough reports with the same reported ID, certainly affecting the detection quality". The paper's conclusion is that evidence-bearing reports make count-based global detection obsolete; the authority that replaces it is the field's open problem.
 
-This page synthesizes the KB's V2X entity pages and the primary sources in its frontmatter, including a firsthand read of the F2MD code and its anchoring paper's full text; no deployment of a misbehavior authority is claimed in it.
+This page synthesizes the KB's V2X entity pages and the primary sources in its frontmatter, including a firsthand read of the F2MD code and its anchoring paper's full text.
 
 ## Related
 
@@ -59,3 +59,4 @@ This page synthesizes the KB's V2X entity pages and the primary sources in its f
 - [Artery](../artery.md)
 - [Veins](../veins.md)
 - [VaN3Twin](../van3twin.md)
+- [V2X credential management](v2x-credential-management.md)
