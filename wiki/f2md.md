@@ -11,7 +11,7 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Simulation framework recreating the whole misbehavior detection chain for ITS-G5 and C-V2X, with plausibility checks, machine learning detectors, and both local and global attack implementations."
-related: [artery, veins, v2verifier, misbehavior-detection]
+related: [artery, veins, v2verifier, misbehavior-detection, v2x-credential-management]
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
