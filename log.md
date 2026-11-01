@@ -313,3 +313,34 @@ that. The slice's concept-page assessment: SOME/IP is warranted as a
 concept page (touched by 5 of 6 section entries plus AutoFuze, with
 shared SD/method/event vocabulary no page defines) — filed as its own
 issue per the slice instructions rather than built here.
+
+## [2026-11-01] deepen | Infotainment and IVI depth slice (issue #9)
+
+All 6 Infotainment and IVI pages to full: byd-dolphin-hacking,
+Chimaera, gen5fw, ic1101, MMI3G-Toolkit, Q50 Reverse Engineering.
+Written from full primary-source research notes gathered before any
+page was drafted, with every status call re-verified firsthand
+against the GitHub API at write time (Chimaera is a journal paper;
+its bibliographic facts were verified against Springer + Crossref).
+
+Status calls (checked 2026-11-01): MMI3G-Toolkit active (360 commits
+since 2026-04-14, latest 2026-09-24, three releases); byd-dolphin-
+hacking active (174 commits since 2026-05-07, latest 2026-10-07);
+Q50 Reverse Engineering active (created 2026-09-15, latest commit
+2026-10-24); ic1101 maintenance (2023 burst, near-quiet stretch, then
+a 22-commit burst Jan-Jun 2026, latest 2026-06-13); gen5fw
+maintenance (latest 2025-01-08, maintainer merging community PRs);
+Chimaera unknown (finished peer-reviewed publication, May 2024, no
+public code repository).
+
+Precision points kept in-page: Chimaera's tools are described in its
+paper, not downloadable, and the page says so; gen5fw's fleet-wide
+hardcoded AES key/IV and CRC32-only manifest are stated as the
+finding; ic1101's trusted key is the public AOSP test key; the MMI
+FSC bypass is a 2-byte patch to the user's own unit binary, not key
+recovery; Q50's EPK signature/verification boundary is explicitly
+unmapped in its source and stays unmapped on the page; BYD's
+CVE-2025-24132 identification is attributed to the repo. Concept
+assessment from this slice: all six entries defeat or probe an IVI
+update/package trust anchor by a different mechanism — filed as its
+own concept-page issue rather than built here.
