@@ -11,7 +11,7 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Open standard for securing automotive over-the-air updates that extends TUF to limit the damage when a repository or signing key is compromised, governed under the Joint Development Foundation."
-related: [secure-firmware-updates]
+related: [secure-firmware-updates, uptane-securing-software-updates-for-automobiles]
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -59,3 +59,4 @@ Checked 2026-11-01. **Maintenance**: the Standard is current and governed (v2.1.
 ## Related
 
 - [Secure firmware updates](concepts/secure-firmware-updates.md)
+- [Uptane: Securing Software Updates for Automobiles](uptane-securing-software-updates-for-automobiles.md)

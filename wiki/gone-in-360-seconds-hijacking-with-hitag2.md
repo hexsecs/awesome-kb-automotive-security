@@ -19,6 +19,7 @@ sources:
 related:
   - dismantling-megamos-crypto-wirelessly-lockpicking-a-vehicle-immobilizer
   - key-fob-relay-attacks
+  - lock-it-and-still-lose-it-on-the-in-security-of-automotive-remote-keyless-entry-systems
 ---
 
 Verdult, Garcia, and Balasch, USENIX Security 2012. Breaks the Hitag2 immobilizer transponder, then fitted to over 200 car models, recovering the key by radio in minutes.
@@ -51,3 +52,4 @@ Status: **unknown** — a finished 2012 publication; no living artefact (the Pro
 
 - [Dismantling Megamos Crypto: Wirelessly Lockpicking a Vehicle Immobilizer](dismantling-megamos-crypto-wirelessly-lockpicking-a-vehicle-immobilizer.md)
 - [Key-fob relay attacks](concepts/key-fob-relay-attacks.md)
+- [Lock It and Still Lose It: On the (In)Security of Automotive Remote Keyless Entry Systems](lock-it-and-still-lose-it-on-the-in-security-of-automotive-remote-keyless-entry-systems.md)
