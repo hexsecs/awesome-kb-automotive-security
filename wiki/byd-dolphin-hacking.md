@@ -11,7 +11,7 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Reverse engineering of the BYD Dolphin DiLink 3 head unit (Android 10 on a Qualcomm QCM6125), documenting its MCU and CAN interfaces, OTA update paths, and NFC digital key, along with permission-bypass and root-level service findings."
-related: [can-injection, secure-firmware-updates, ic1101]
+related: [can-injection, secure-firmware-updates, ic1101, ivi-update-trust]
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -53,3 +53,4 @@ Checked 2026-11-01. **Active**: not archived; created in May 2026, it accumulate
 - [CAN injection](concepts/can-injection.md)
 - [Secure firmware updates](concepts/secure-firmware-updates.md)
 - [ic1101](ic1101.md)
+- [IVI update-path trust](concepts/ivi-update-trust.md)

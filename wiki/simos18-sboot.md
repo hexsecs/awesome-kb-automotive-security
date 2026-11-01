@@ -11,7 +11,7 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Documented exploit chain against the VW Simos18 supplier bootloader, chaining PWM entry, a weak Mersenne Twister seed/key, and a CRC bounds-check flaw into arbitrary flash read."
-related: [tc1791-can-bsl, uds-seed-key, secure-firmware-updates]
+related: [tc1791-can-bsl, uds-seed-key, secure-firmware-updates, ivi-update-trust]
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -51,3 +51,4 @@ Checked 2026-11-01. **Unknown**: the repository is not archived; its commits end
 - [TC1791_CAN_BSL](tc1791-can-bsl.md)
 - [Secure firmware updates](concepts/secure-firmware-updates.md)
 - [UDS seed/key](concepts/uds-seed-key.md)
+- [IVI update-path trust](concepts/ivi-update-trust.md)

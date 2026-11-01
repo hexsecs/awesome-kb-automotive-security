@@ -11,7 +11,7 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Flashing tools for VW AG control units over UDS supporting Simos18.1/6/10 and DQ250-MQB."
-related: [odxtools, pq-flasher, udsoncan, uds-seed-key]
+related: [odxtools, pq-flasher, udsoncan, uds-seed-key, ivi-update-trust]
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -66,3 +66,4 @@ The repository carries a LICENSE file but GitHub reports its terms as
 - [pq-flasher](pq-flasher.md) — PQ35 EPS flashing, the older platform.
 - [udsoncan](udsoncan.md) — the UDS session layer it builds on.
 - [UDS seed/key](concepts/uds-seed-key.md) — the SA2 algorithm's attack class.
+- [IVI update-path trust](concepts/ivi-update-trust.md)

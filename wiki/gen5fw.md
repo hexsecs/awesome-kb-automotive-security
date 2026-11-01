@@ -11,7 +11,7 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Python tools for decrypting, patching, and redeploying firmware on Mobis Gen5 navigation head units in Hyundai, Kia, and Genesis vehicles, including enabling ADB."
-related: [chimaera, secure-firmware-updates, uds-seed-key]
+related: [chimaera, secure-firmware-updates, uds-seed-key, ivi-update-trust]
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -54,3 +54,4 @@ Checked 2026-11-01. **Maintenance**: not archived; the last activity (January 20
 - [Chimaera](chimaera.md)
 - [Secure firmware updates](concepts/secure-firmware-updates.md)
 - [UDS seed/key](concepts/uds-seed-key.md)
+- [IVI update-path trust](concepts/ivi-update-trust.md)
