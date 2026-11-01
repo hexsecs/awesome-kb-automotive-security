@@ -11,7 +11,7 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Intelligent protocol fuzzer for SOME/IP, DoIP, UDS, and Ethernet AVB satisfying ISO/SAE 21434 testing requirements."
-related: [someip-protocol-fuzzer, autofuze, eth-ws-someip, ics-cap]
+related: [someip-protocol-fuzzer, autofuze, eth-ws-someip, ics-cap, someip]
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -55,3 +55,4 @@ Checked 2026-11-01. **Active**: CyTAL's site is live, was substantively updated 
 - [AutoFuze](autofuze.md)
 - [eth-ws-someip](eth-ws-someip.md)
 - [ICS CAP](ics-cap.md)
+- [SOME/IP and SOME/IP-SD](concepts/someip.md)
