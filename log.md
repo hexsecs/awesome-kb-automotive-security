@@ -278,3 +278,38 @@ and USAGE.md document two different CLIs and its deeper claims rest on
 a three-file codebase; DongleScope's fuzzing-test danger warning is
 quoted from its README; the SecOC extractor's confirmed vehicle scope
 is only the two models its README lists.
+
+## [2026-11-01] deepen | Automotive Ethernet depth slice (issue #8)
+
+All 6 Automotive Ethernet pages to full: eth-ws-someip, ICS CAP,
+ProtoCrawler, Scapy, someip-protocol-fuzzer, vsomeip. Written from
+full primary-source research notes gathered before any page was
+drafted, with every status call re-verified firsthand at write time
+(GitHub API for the four repositories; the vendor download index
+re-read for ICS CAP; CyTAL site liveness re-checked for ProtoCrawler).
+
+Status calls (checked 2026-11-01): Scapy active (release v2.8.0,
+2026-10-02; head commit on the check date); vsomeip active (five
+releases in six months, latest 3.7.6 on 2026-09-17); ICS CAP active
+(vendor download index, latest 26.2.1 dated 2026-05-08); ProtoCrawler
+active (vendor site live, posts dated May 2026); eth-ws-someip
+maintenance (releases ended 2019, but a dissector fix landed on master
+2025-06-22 after a ~5.5-year gap); someip-protocol-fuzzer unknown (no
+commit, release or tag since 2022-04-20; finished proof-of-concept).
+
+Precision points kept in-page: Scapy's list-claimed FlexRay support is
+not corroborated as a dedicated automotive layer (only an IEEE 1722
+AVTP encapsulation header), so the page states the narrower fact;
+ProtoCrawler's SOME/IP/DoIP/UDS/AVB coverage rests on the vendor's
+vertical blog post and is absent from its formal supported-protocols
+library page, and the page says so; icscap standalone is capture +
+Lua only, with SOME/IP analysis and fuzzing credited to the
+icscap + Vehicle Spy pairing as the vendor's own split draws it;
+eth-ws-someip's AUTOSAR generation wording differs between the repo
+description (4.2) and README (CP & AP, Foundation 1.5.0) and both are
+preserved; vsomeip's "reference implementation" and production-ECU
+framings are the list's wording, not upstream's, and the page flags
+that. The slice's concept-page assessment: SOME/IP is warranted as a
+concept page (touched by 5 of 6 section entries plus AutoFuze, with
+shared SD/method/event vocabulary no page defines) — filed as its own
+issue per the slice instructions rather than built here.
