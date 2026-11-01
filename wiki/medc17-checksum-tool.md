@@ -4,7 +4,7 @@ summary: "Analyses and corrects CRC32, ADD32, and ADD16 checksums in Bosch MED17
 type: entity
 category: "Firmware and ECU Reverse Engineering"
 url: "https://github.com/ConnorHowell/medc17-checksum-tool"
-status: unknown
+status: active
 last_checked: 2026-11-01
 updated: 2026-11-01
 depth: full
@@ -25,13 +25,13 @@ Analyses and corrects CRC32, ADD32, and ADD16 checksums in Bosch MED17 and EDC17
 
 ## What it is
 
-A single-file Python script for post-edit survival on Bosch MED17/EDC17 engine ECUs: those firmwares carry internal checksum blocks, and the ECU refuses or faults an image whose checksums no longer match its contents. After any modification — the tuning and research workflows this section supports — the checksums must be corrected, and that is all this tool does: analyse an image, report its checksum blocks, and rewrite them to match.
+A Python tool (MIT licence — a LICENSE file is present in the repository) for post-edit survival on Bosch MED17/EDC17 engine ECUs: those firmwares carry internal checksum blocks, and the ECU refuses or faults an image whose checksums no longer match its contents. After any modification — the tuning and research workflows this section supports — the checksums must be corrected, and that is what this tool does: analyse an image, report its checksum blocks, and rewrite them to match. It also corrects **CVN** (Calibration Verification Number) values, the calibration-identity numbers diagnostic testers read out.
 
 ## How it works
 
-The README names seven supported MED17/EDC17 variants and three checksum algorithms — CRC32, ADD32, and ADD16 — used in different block layouts across those variants. Its distinctive claim is method: instead of flipping bytes and re-testing, the tool solves the CRC correction algebraically (GF(2) polynomial arithmetic — computing the exact patch value that forces the target checksum), which is instant and exact where brute force would be neither. It works from the command line on a firmware file and prints an analysis of the blocks it finds before correcting them.
+The README names the supported MED17/EDC17 variants — support has grown across versions to multiple variants — and the checksum algorithms used in different block layouts across them: CRC32, ADD32, and ADD16. Its distinctive claim is method: instead of flipping bytes and re-testing, the tool solves the CRC correction algebraically (GF(2) polynomial arithmetic — computing the exact patch value that forces the target checksum), which is instant and exact where brute force would be neither. It works from the command line on a firmware file, prints an analysis of the blocks it finds before correcting them, and offers a JSON output mode for scripted use.
 
-One part of the list summary does **not** survive contact with the primary source: the summary says the tool regenerates "RSA signatures after modification", but the README states the opposite boundary — the RSA private keys are not public, so signatures cannot be regenerated with this tool. The checksum correction is real; signature forgery is explicitly out of scope upstream. This page follows the README.
+On signatures, precision matters in both directions. The README's feature list **does** include the bullet "Generates valid Bleichenbacher signatures" — so the list summary's signature claim has a primary-source basis — but the README gives no method detail for it: no key handling, no explanation of how the signature is produced. This page therefore records the bullet as an upstream claim with an undocumented mechanism, neither endorsed nor denied here.
 
 ## Where it fits
 
@@ -39,11 +39,11 @@ The companion step to understanding the firmware: [ghidra-tc1797](ghidra-tc1797.
 
 ## Limits and safety notes
 
-Variant scope is the hard limit: seven named MED17/EDC17 variants, three checksum algorithms; a variant with a different block layout is out of scope and a forced correction would produce a confidently wrong image. There is no test suite, example firmware, or input-format documentation in the repository, so first use on a new variant needs independent verification before anything is flashed. The repository carries **no licence file** — default copyright applies, which matters for redistribution. A checksum-corrected image is still an unsigned-modified image wherever the ECU verifies signatures; see the RSA note above.
+Variant scope is the hard limit: the named MED17/EDC17 variants and their checksum algorithms; a variant with a different block layout is out of scope and a forced correction would produce a confidently wrong image. The Bleichenbacher-signature bullet is undocumented beyond its one line (see above), so no workflow should be planned around it without independent verification. A checksum-corrected image is still a modified image wherever the ECU verifies signatures through other means.
 
 ## Status and sources
 
-Checked 2026-11-01. **Unknown**: the repository is not archived, but at this check it consists of a single commit (2025-08-12) adding the script and README, with no releases and no subsequent activity — a published snapshot with no track record to classify. That records the observable state, not a judgement on the code. Documentation claims above come from the following primary sources; no firmware was processed for this page.
+Checked 2026-11-01. **Active**: the repository (created 2025-11-20) is not archived and receives continuing development — commits through 2026-08-27 adding multi-variant support, CVN reporting, and a JSON mode. That records observed project activity, not a promise of support. Documentation claims above come from the following primary sources; no firmware was processed for this page.
 
 - [Upstream repository](https://github.com/ConnorHowell/medc17-checksum-tool)
 - [Upstream README](https://github.com/ConnorHowell/medc17-checksum-tool/blob/main/README.md)

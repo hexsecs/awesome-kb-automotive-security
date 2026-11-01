@@ -19,19 +19,17 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/esaulenka/ghidra_v850/blob/master/README.md"
     retrieved: 2026-11-01
-  - url: "https://github.com/esaulenka/ghidra_v850/releases/tag/v0.0.9"
-    retrieved: 2026-11-01
 ---
 
 Ghidra processor module for Renesas V850E2 and V850E3/RH850 microcontrollers, the core families behind many ECUs, for disassembling and decompiling their firmware.
 
 ## What it is
 
-A Ghidra processor module (Apache-2.0) that teaches Ghidra the Renesas V850E2, V850E3, and RH850 instruction sets — the 32-bit core families that sit inside a very large share of automotive ECUs (body, chassis, powertrain, and gateway controllers across Japanese and European makes). Without a processor module, Ghidra cannot disassemble these firmware images at all; with it, both disassembly and decompilation to C-like pseudocode become available.
+A Ghidra processor module (MIT licence) that teaches Ghidra the Renesas V850E2, V850E3, and RH850 instruction sets — the 32-bit core families that sit inside a very large share of automotive ECUs (body, chassis, powertrain, and gateway controllers across Japanese and European makes). Without a processor module, Ghidra cannot disassemble these firmware images at all; with it, both disassembly and decompilation to C-like pseudocode become available. The language definitions themselves are version 0.1 — early, and the README says so in its own TODO list.
 
 ## How it works
 
-The module ships as a built Ghidra extension: download the release ZIP matched to your Ghidra version, install it via Ghidra's extension manager, restart, and import firmware selecting the V850E2, V850E3, or RH850 language variant. Support is uneven by design and the README says so per family: V850E3/RH850 is the most complete (the README claims full floating-point instruction and register support there), V850E2 has full base-integer support with fewer floating-point instructions, and RH850 SIMD instructions are explicitly unimplemented. Decompiler output depends on the SLEIGH semantics being right, and the commit history shows the maintenance pattern — individual P-code fixes for specific instructions (multiply-accumulate, saturating arithmetic, conversion helpers) as users hit them.
+There are **no releases or tags** — distribution is source-only: copy the module into `$(GHIDRA_HOME)\Ghidra\Extensions\` and restart Ghidra, then import firmware selecting the V850E2, V850E3, or RH850 language variant. The README's TODO list is candid about maturity — literally "fix a lot of bugs" and "complete RH850 support" — so coverage claims should be read as work in progress, not a finished matrix; this page does not repeat per-variant floating-point coverage figures, because the README does not support them. Decompiler output depends on the SLEIGH semantics being right, and the commit history shows the maintenance pattern — individual P-code fixes for specific instructions as users hit them (most recently a `rotl` fix).
 
 ## Where it fits
 
@@ -39,15 +37,14 @@ The Renesas counterpart to [ghidra-tc1797](ghidra-tc1797.md)'s TriCore work: bet
 
 ## Limits and safety notes
 
-Per-variant gaps are real: floating-point coverage differs between E2 and E3, RH850 SIMD is absent, and a wrong variant choice produces plausible-looking but wrong disassembly. Release ZIPs are built per Ghidra version (the release line runs 9.2 through 10.3), so a current Ghidra may need a from-source build; the README's installation path assumes a matching prebuilt extension. Coprocessor and peripheral behaviour are outside a processor module's scope entirely.
+Version 0.1 language definitions with an upstream TODO that includes fixing "a lot of bugs": expect wrong P-code on edge instructions, and a wrong variant choice produces plausible-looking but wrong disassembly. There is no packaged build to install — a source copy into the Ghidra tree is the only path, so the module's behaviour can vary with the Ghidra version it is dropped into. Coprocessor and peripheral behaviour are outside a processor module's scope entirely.
 
 ## Status and sources
 
-Checked 2026-11-01. **Maintenance**: the repository is not archived and still receives occasional fixes (most recent commit 2025-04-27, a P-code correction), but packaged releases stopped at v0.0.9 (2023-02-12) and commit cadence is sparse — a mature, slowly tended module rather than an actively developed one. That records observed activity, not a promise of support. Documentation claims above come from the following primary sources; no firmware was disassembled for this page.
+Checked 2026-11-01. **Maintenance**: the repository is not archived and still receives occasional fixes (most recent commit 2025-08-14, a `rotl` P-code correction), but there have never been releases or tags and commit cadence is sparse — a mature, slowly tended module rather than an actively developed one. That records observed activity, not a promise of support. Documentation claims above come from the following primary sources; no firmware was disassembled for this page.
 
 - [Upstream repository](https://github.com/esaulenka/ghidra_v850)
 - [Upstream README](https://github.com/esaulenka/ghidra_v850/blob/master/README.md)
-- [Release v0.0.9](https://github.com/esaulenka/ghidra_v850/releases/tag/v0.0.9)
 
 ## Related
 
