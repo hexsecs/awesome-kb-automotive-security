@@ -223,3 +223,29 @@ A=gateway/B=chassis/C=powertrain/D=body roles, releases v1.0.x (no
 "Marlow"), terminated bus must not connect to a real car; SuperCAN's
 Linux SocketCAN is a separate DKMS driver, its python-can plugin is
 Windows-only. No hardware was built, flashed, or run.
+
+## [2026-11-01] deepen | Secure firmware updates concept page (issue #18)
+
+New concept page wiki/concepts/secure-firmware-updates.md synthesising
+how automobiles are supposed to receive software securely, built around
+Uptane: the Standard's threat model (either-repository compromise,
+rollback, freeze, mix-and-match, partial bundle installation), the
+Director/Image two-repository design with TUF roles, per-ECU signed
+vehicle version manifests, full vs partial verification with the
+no-verification-no-OTA floor, and the paper's compromise ladder
+(reported as the design team's own analysis).
+
+Corrections to the framing the issue inherited: IEEE-ISTO 6100.1.0.0
+is the 2019 v1.0.0 edition only; the current Standard is v2.1.0
+(2023) under the Linux Foundation's Joint Development Foundation.
+Deployment record stated thin, as the project's own Adoptions page
+leaves it: AGL/aktualizr, HERE OTA Connect, Airbiquity OTAmatic,
+Foundries.io (partial), Torizon — no automaker, model, or production
+deployment named, and none claimed here. The UNECE R156 relationship
+is recorded as an engineering fit for the delivery-protection layer
+only; no source states Uptane is required or endorsed under R156.
+
+Reciprocal related links: uptane and the Uptane paper page
+(frontmatter), Simos18_SBOOT, TC1791_CAN_BSL, and
+medc17-checksum-tool (frontmatter + Related sections). Primary
+sources only, retrieved 2026-11-01.
