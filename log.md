@@ -44,3 +44,15 @@ says so, and uds-firmware-extraction has two commits from its creation
 day. Gallia's research-only damage warning, Atlas's brick warning, and
 pq-flasher's steering warnings are quoted on their pages. Landed by PR
 per the depth rule in AGENTS.md.
+
+## [2026-11-01] ingest | Sync to list 61ba124 + ingester identity fix
+
+The list's 2026-10-31 merges (EVerest URL move, two VehicleSec 2026
+papers) exposed two ingester flaws: identity was URL-only, so the EVerest
+move tombstoned the page and created a duplicate, and every page was
+rewritten whenever the source commit changed (last_checked re-stamped
+without any verification). The ingester now matches by slug when a URL
+moves, rewrites only pages whose own entry data changed, never moves
+last_checked, and keeps tombstoned pages listed in their sub-index so
+they stay reachable. This sync: 2 created (the VehicleSec papers),
+1 updated (everest URL, in place), 0 tombstoned; re-run is 0/0/0.

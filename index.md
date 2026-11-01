@@ -17,7 +17,7 @@ Generated from page frontmatter by tools/ingest.py; do not edit by hand.
 - [Security Analysis](wiki/index-security-analysis.md) — 6 entries
 - [Penetration Testing](wiki/index-penetration-testing.md) — 11 entries
 - [Datasets](wiki/index-datasets.md) — 12 entries
-- [Research Papers](wiki/index-research-papers.md) — 63 entries
+- [Research Papers](wiki/index-research-papers.md) — 65 entries
 - [Conference Presentations](wiki/index-conference-presentations.md) — 14 entries
 - [Books](wiki/index-books.md) — 12 entries
 - [Learning Resources](wiki/index-learning-resources.md) — 7 entries
