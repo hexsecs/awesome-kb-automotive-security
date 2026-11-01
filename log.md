@@ -249,3 +249,32 @@ Reciprocal related links: uptane and the Uptane paper page
 (frontmatter), Simos18_SBOOT, TC1791_CAN_BSL, and
 medc17-checksum-tool (frontmatter + Related sections). Primary
 sources only, retrieved 2026-11-01.
+
+## [2026-11-01] deepen | Penetration Testing depth slice (issue #7)
+
+All 11 Penetration Testing pages to full: AutoFuze,
+automotive-security-research, CANHack, Car Toolkit, DongleScope,
+NullSec CarFuzz, PiCCANTE, pwnobd, SecOC Key Extractor, tesla-opener,
+TruckDevil. Written from full primary-source research notes gathered
+before any page was drafted, with every status call re-verified
+firsthand against the GitHub API at write time.
+
+Status calls (checked 2026-11-01): PiCCANTE active (latest commit
+2026-01-26, releases incl. v0.0.1 and rolling dev-latest); TruckDevil
+active (latest commit 2026-09-05); AutoFuze maintenance (2024-01-18);
+CANHack maintenance (2024-04-01); NullSec CarFuzz maintenance (created
+2026-01-25, six commits, latest 2026-04-04); pwnobd maintenance
+(latest commit 2025-09-23, release 0.1.0 of 2024-08-28); SecOC Key
+Extractor maintenance (latest commit 2025-03-04); automotive-security-
+research unknown (commits end 2019-05-26); Car Toolkit unknown (all
+25 commits in a two-day burst ending 2023-10-30); DongleScope unknown
+(NOT archived — archived flag verified false despite the 2020-07-27
+last commit; finished USENIX Security 2020 artefact); tesla-opener
+unknown (latest commit 2023-03-14).
+
+Precision points kept in-page rather than smoothed over: AutoFuze's
+SPI support is aspirational in its own README matrix; CarFuzz's README
+and USAGE.md document two different CLIs and its deeper claims rest on
+a three-file codebase; DongleScope's fuzzing-test danger warning is
+quoted from its README; the SecOC extractor's confirmed vehicle scope
+is only the two models its README lists.
