@@ -344,3 +344,29 @@ CVE-2025-24132 identification is attributed to the repo. Concept
 assessment from this slice: all six entries defeat or probe an IVI
 update/package trust anchor by a different mechanism — filed as its
 own concept-page issue rather than built here.
+
+## [2026-11-01] deepen | V2X Security depth slice (issue #10)
+
+All 6 V2X Security pages to full: Artery, F2MD, V2Verifier, VaN3Twin,
+Vanetza, Veins. Written from full primary-source research notes
+gathered before any page was drafted, with every status call
+re-verified firsthand against the GitHub API at write time.
+
+Status calls (checked 2026-11-01): Vanetza active (head commit dated
+the check day itself; v26.09 2026-09-08); Veins active (veins-5.4
+2026-10-29); VaN3Twin active (head 2026-10-06); Artery active (latest
+2026-07-30, no releases ever); F2MD maintenance (substantive code
+ends Sept 2022, README-only after); V2Verifier maintenance (v3.0.1
+2023-08-15, commits end 2024-11-04).
+
+Precision points kept in-page: F2MD and Artery have no code
+dependency in either direction; V2Verifier's C-V2X support is removed
+in the current line and its master is mid-redesign per its own
+README, so the list description is historical there; VaN3Twin's
+security is signing-only with encryption unimplemented and no
+TS 103 097 conformance claim; Vanetza's 1609.2 ASN.1 presence is not
+a 1609.2 implementation, and its self-declared gaps (no CRL checks,
+no enrolment) are stated; Veins core verifiably has no 1609.2/103 097
+security implementation. Concept assessment: misbehavior detection
+and the V2X PKI/trust model both recur undefined — filed as their own
+concept-page issues rather than built here.
