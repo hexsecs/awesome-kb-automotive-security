@@ -113,3 +113,39 @@ the word immobilizer, and document no relay function. Flipper Zero
 official firmware decodes dynamic (rolling-code) protocols but disables
 saving them. URH's linked user guide (v1.1, for v2.0) predates its
 final release. No RF hardware was executed.
+
+## [2026-11-01] deepen | Firmware and ECU Reverse Engineering depth slice (issue #5)
+
+Deepened all 7 Firmware and ECU Reverse Engineering pages from stub to
+full, with what-it-is / how-it-works / where-it-fits / limits sections
+and primary sources checked 2026-11-01. Added reciprocal sibling links,
+plus links to the UDS seed/key concept from pyXCP and Simos18_SBOOT.
+
+Status calls: pyA2L active (release v0.15.2, 2026-10-21) and pyXCP
+active (release v0.26.3, 2026-10-23), both by the same author;
+ghidra_v850 maintenance (packaged releases ended at v0.0.9 in 2023,
+occasional P-code fixes since, latest commit 2025-04-27); ghidra-tc1797
+unknown (two commits, 2020 snapshot); medc17-checksum-tool unknown
+(single commit, 2025-08-12, no licence file); Simos18_SBOOT unknown
+(finished research artefact, content-complete 2021-07-16);
+TC1791_CAN_BSL unknown (single commit, 2020-12-06).
+
+Corrections and limits retained explicitly: the medc17 list summary
+claims RSA signature regeneration; the README states the opposite (the
+private keys are not public) and the page follows the README. The
+TC1791_CAN_BSL list summary's "arbitrary flash and RAM read/write"
+end-state is the SBOOT workflow's outcome, not a claim in that
+repository's README; the SBOOT README also names its companion
+"TC1767_CAN_BSL" where the listed repository is TC1791_CAN_BSL — both
+flagged in-page as unverified from primary sources. pyXCP documents no
+dedicated flash-programming routine (flashing rests on generic memory
+programming), and pyA2L upstream describes A2L import into a database
+rather than parsing per se.
+
+Uptane assessment (per issue #5): a concept page on secure firmware
+updates IS warranted — Uptane has an entity page and a paper page in
+different sections, and this slice adds the failure side of the same
+problem (signed-boot chain failure in Simos18_SBOOT, the signature
+boundary in medc17-checksum-tool). Filed as its own issue rather than
+growing this one, per the issue's instruction. No ECU was connected and
+no firmware was processed.
