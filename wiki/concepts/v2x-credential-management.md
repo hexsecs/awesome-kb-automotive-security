@@ -3,7 +3,7 @@ title: "V2X credential management"
 summary: "How vehicles get pseudonymous credentials: split-knowledge issuance in the ETSI CCMS and US SCMS, so linking a ticket to an identity takes a quorum."
 type: concept
 updated: 2026-11-01
-related: [vanetza, v2verifier, van3twin, f2md, misbehavior-detection]
+related: [vanetza, v2verifier, van3twin, f2md, misbehavior-detection, securing-vehicular-ad-hoc-networks, secure-vehicular-communication-systems-design-and-architecture]
 sources:
   - url: "https://www.etsi.org/deliver/etsi_TS/102900_102999/102941/02.01.01_60/ts_102941v020101p.pdf"
     retrieved: 2026-11-01
