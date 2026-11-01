@@ -370,3 +370,36 @@ no enrolment) are stated; Veins core verifiably has no 1609.2/103 097
 security implementation. Concept assessment: misbehavior detection
 and the V2X PKI/trust model both recur undefined — filed as their own
 concept-page issues rather than built here.
+
+## [2026-11-01] deepen | Security Analysis depth slice (issue #11)
+
+All 6 Security Analysis pages to full: Automotive Threat Matrix,
+Automotive Threat Modeling Template, AutoTARA, AVCDL, Security
+AutoDesigner, Uptane (entity). Written from full primary-source
+research notes gathered before any page was drafted, with every
+status call re-verified firsthand at write time.
+
+Status calls (checked 2026-11-01): Automotive Threat Matrix active
+(live site, Feb 2025 white paper, Vultara maintenance); AutoTARA
+active (commits 2026-10-24, alpha release Aug 2026) — both halves
+stated: it is a self-described research prototype; Security
+AutoDesigner active (commercial, vendor site current into 2026);
+AVCDL maintenance (4.18.6, 2024-05-07, core declared complete);
+Uptane maintenance (Standard v2.1.0 current, no release since
+Jun 2023, implementation upkeep continues); NCC threat-modeling
+template unknown (finished artefact, unchanged since v1.2,
+Sept 2017).
+
+Precision points kept in-page: AVCDL's TUV SUD assessments cover
+ISO/SAE 21434 and UN R155 only — 24089/R156 were still in progress
+at last repo state and are not upgraded; ATM's technique count is
+not stated by Auto-ISAC and the third-party ~80 figure is not
+imported; AutoTARA's two-TARAs distinction (MITRE TARA vs ISO 21434
+TARA) is kept explicit; Security AutoDesigner's thin public
+documentation is stated as the finding, with all quantitative claims
+attributed to the vendor; the Uptane entity page carries the
+artefact record (governance, versions, implementations — including
+the archived pre-1.0 reference implementation named as a trap, and
+the Scala services' automated-update pushes characterised as such)
+and points to the secure-firmware-updates concept page for the
+design rather than duplicating it.
