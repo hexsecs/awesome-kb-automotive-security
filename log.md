@@ -30,3 +30,17 @@ paper pages. Ingester updated to preserve unmanaged frontmatter and full
 bodies across syncs and to list concept pages in the L1 index; verified
 idempotent (0 created / 0 updated / 0 tombstoned) and `openshelf lint
 --strict` clean. Landed by PR per the depth rule in AGENTS.md.
+
+## [2026-10-31] deepen | Diagnostic Tools depth slice (issue #2)
+
+Deepened all 19 Diagnostic Tools entity pages from stub to full (what
+it is / how it works / where it fits / limits, `related` links, primary
+sources checked 2026-10-31). Status calls from that check: most tools
+are active; ford-ecu-bruteforcer, pq-flasher, uds-server, and udsim are
+`maintenance` (dated or sparse recent activity); conescan and
+uds-firmware-extraction stay `unknown` — conescan's README is empty and
+its docs unreachable, so its page records source-tree evidence only and
+says so, and uds-firmware-extraction has two commits from its creation
+day. Gallia's research-only damage warning, Atlas's brick warning, and
+pq-flasher's steering warnings are quoted on their pages. Landed by PR
+per the depth rule in AGENTS.md.
