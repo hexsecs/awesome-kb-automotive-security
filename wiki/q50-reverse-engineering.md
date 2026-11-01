@@ -11,7 +11,7 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Independent reverse-engineering research into the Infiniti Q50 infotainment platform's Linux/Android environment, documenting its EPK firmware package format, code-signing process, and USB app-installation flow."
-related: [ic1101, mmi3g-toolkit, secure-firmware-updates]
+related: [ic1101, mmi3g-toolkit, secure-firmware-updates, ivi-update-trust]
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -51,3 +51,4 @@ Checked 2026-11-01. **Active**: created 2026-09-15, it has 25 commits with the l
 - [ic1101](ic1101.md)
 - [MMI3G-Toolkit](mmi3g-toolkit.md)
 - [Secure firmware updates](concepts/secure-firmware-updates.md)
+- [IVI update-path trust](concepts/ivi-update-trust.md)

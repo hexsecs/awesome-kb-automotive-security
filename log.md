@@ -428,3 +428,28 @@ Version traps recorded on the page: TP_RESPONSE/TP_ERROR are
 rule); ACK message types appear in no PRS table checked and are
 flagged as implementation extensions; 30490 is SD's port, not
 SOME/IP's. Related links reciprocated on all seven entity pages.
+
+## [2026-11-01] concept | IVI update-path trust concept page (issue #25)
+
+New concept page wiki/concepts/ivi-update-trust.md at full depth,
+written from two research lanes over the KB's own verified pages:
+(A) the six IVI platforms' trust anchors, (B) the wider KB evidence
+and the defensive contrast. The taxonomy has seven classes — no
+check at the gate; the trusted key is public; one key for the whole
+fleet; integrity without authenticity; the check is patchable in
+the trusted binary; the trusted binary leaks its own key; and the
+open case, verification boundary unmapped (Q50). Precision kept:
+BYD's package signature check is not claimed bypassed (its failure
+is caller authorisation + a disengaged bootloader); MMI's two
+anchors (FSC RSA patch, format CRC32) are kept distinct; gen5fw's
+build.prop-derived zip password is recorded as adjacent, not a
+class; Chimaera's CVEs are listed unitemised, as the paper leaves
+them. The ECU-side evidence (Simos18 SBOOT/ASW, VW_Flash) is folded
+in as reinforcement with the layering axis (present-and-holding /
+present-but-patchable / absent-or-public), and the delivery split
+is stated as the survey found it: removable media on the IVI side,
+the diagnostic bus on the ECU side. Uptane is a pointer paragraph
+only — the design detail stays on secure-firmware-updates — with
+the deployment-reality caveat attached. Related links reciprocated
+on the six IVI pages plus simos18-sboot and vw-flash; the page body
+sits inside the OpenShelf L2 budget.
