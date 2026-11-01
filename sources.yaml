@@ -1,0 +1,6 @@
+# Lists this knowledge base ingests. See SPEC.md §2.
+# Pilot scope: exactly one source.
+sources:
+  - id: awesome-automotive-security
+    repo: hexsecs/awesome-automotive-security
+    file: README.md
