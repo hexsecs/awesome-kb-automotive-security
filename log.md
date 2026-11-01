@@ -85,3 +85,31 @@ is clean; related links and pinned source endpoints were checked. The
 shell proxy was unavailable, so repository and primary-source reads used
 the GitHub connection; lint used the unmodified OpenShelf implementation
 retrieved from hexsecs/openkb. One PR for this depth slice, per AGENTS.md.
+
+## [2026-11-01] deepen | RF and Key Fob Analysis depth slice (issue #4)
+
+Deepened all 6 RF and Key Fob Analysis pages from stub to full, with
+what-it-is / how-it-works / where-it-fits / limits sections and primary
+sources checked 2026-11-01. Added reciprocal sibling links and links to
+the key-fob relay concept page from every page, keeping relay distinct
+from cloning and from replay throughout, as the concept page does.
+
+Status calls: Flipper Zero active (firmware 1.5.1, 2026-10-15; push
+2026-10-30); Flipper-ARF active (dev builds only, latest push
+2026-10-30); Proxmark3 active (Iceman fork canonical — the old
+repository's README declares itself unmaintained; release v4.23346,
+push 2026-10-30); rtl_433 active (release 25.12; commit 2026-10-27);
+KAT maintenance (eight releases to v1.3.0 on 2026-06-24, no commits
+since); URH archived (repository archived by its owner 2026-03-29;
+final release v2.10.0). Each page records its evidence.
+
+Corrections and limits retained explicitly: KAT's list summary
+overstates its hardware support — Flipper Zero is an import/export file
+format for KAT, not capture/transmit hardware, and its demodulator is
+AM/OOK only (no FM/2FSK); KAT's licence is BSD-3-Clause with a
+no-military/no-government rider. Proxmark3's primary sources document
+Hitag and EM4x70 (ID48/Megamos) chip support but do not themselves use
+the word immobilizer, and document no relay function. Flipper Zero
+official firmware decodes dynamic (rolling-code) protocols but disables
+saving them. URH's linked user guide (v1.1, for v2.0) predates its
+final release. No RF hardware was executed.
