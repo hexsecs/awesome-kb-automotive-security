@@ -46,7 +46,10 @@ what gets listed.
   stubs, refreshes provenance, tombstones delistings. Deterministic:
   dates come from the source commit. Commit machine syncs directly.
 - **deepen** — pick stub(s), write depth, set `depth: full`, add `related`.
-  Lands by PR; a maintainer merges.
+  Lands by PR. Agents maintain this KB (owner's delegation, 2026-10-31):
+  the maintaining agent merges the PR when it meets the issue's
+  definition of done with gates green; the owner merges personally only
+  when he chooses to review a specific PR.
 - **query** — read `index.md`, then pages, then sources. File useful
   answers back as pages so explorations compound.
 - **lint** — `openshelf lint .` must report no errors before a PR merges.
