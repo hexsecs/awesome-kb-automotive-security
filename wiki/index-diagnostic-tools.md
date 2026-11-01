@@ -1,0 +1,21 @@
+# Diagnostic Tools
+
+- [Atlas](atlas.md) — Open-source ECU calibration application for reverse engineering and recalibrating Subaru, Toyota, and Honda ECUs, with an integrated Ghidra bundle for…
+- [AutoPi](autopi.md) — Open-source core software for the AutoPi dongle, a Raspberry Pi-based OBD-II device for vehicle diagnostics, CAN bus data collection, and automotive IoT…
+- [conescan](conescan.md) — Automotive ECU hacking supertool for firmware dumping and manipulation via J2534 OBD interfaces.
+- [doip-sim-ecu-dsl](doip-sim-ecu-dsl.md) — Kotlin DSL for scripting simulated DoIP ECUs, reachable over Ethernet, CAN with ISO-TP, or both at once, for exercising diagnostic clients against UDS error…
+- [EcuBus-Pro](ecubus-pro.md) — Cross-platform open-source ECU tool with UDS, CAN-TP, DoIP, LIN, and SOME/IP support, DBC and LDF databases, TypeScript scripting in the style of CAPL, and…
+- [Ford-ECU-Bruteforcer](ford-ecu-bruteforcer.md) — Security access brute-force tool for pre-2011 Ford ECUs with 3-byte seed and 5-byte key.
+- [gallia](gallia.md) — Extendable automotive pentesting framework from Fraunhofer AISEC focused on UDS, with DoIP and ISO-TP transports and structured logging for reproducible scans.
+- [iso14229](iso14229.md) — Dependency-free C implementation of a UDS (ISO 14229) server and client with built-in ISO-TP, for building embedded ECU targets and test tools.
+- [odxtools](odxtools.md) — Python toolkit for parsing ODX/PDX (ISO 22901) diagnostic databases and encoding, decoding, and snooping ECU diagnostic sessions.
+- [OpenSOVD Classic Diagnostic Adapter](opensovd-classic-diagnostic-adapter.md) — Eclipse OpenSOVD bridge in Rust that translates SOVD (ISO 17978) requests into UDS over DoIP for legacy ECUs, with a security plugin architecture.
+- [pq-flasher](pq-flasher.md) — Python tools for reflashing VW PQ35 EPS using TP 2.0 transport layer and KWP2000 diagnostics.
+- [python-doipclient](python-doipclient.md) — Pure Python DoIP (ISO 13400) client that plugs into udsoncan as a transport layer for diagnostics over automotive Ethernet.
+- [uds](uds.md) — Python package for ISO 14229 UDS in both client and server roles over CAN, Ethernet, LIN, FlexRay, and K-Line, usable for simulation, testing, and decoding…
+- [uds-firmware-extraction](uds-firmware-extraction.md) — Tool for extracting ECU firmware from UDS flash traffic following ISO-14229 standard.
+- [uds-server](uds-server.md) — UDS ECU simulator and fuzzer for use alongside ICSim, for practising diagnostic command discovery and fuzzing scan tools.
+- [UDSim](udsim.md) — UDS (Unified Diagnostic Services) ECU simulator and fuzzer for discovering and testing UDS services.
+- [udsoncan](udsoncan.md) — Python implementation of the ISO 14229 UDS protocol covering session control, security access, data identifiers, and routine control.
+- [UnlockECU](unlockecu.md) — Free seed-key unlocking tool for Bosch, Continental, Delphi, Daimler, and Marquardt ECUs without proprietary DLLs.
+- [VW_Flash](vw-flash.md) — Flashing tools for VW AG control units over UDS supporting Simos18.1/6/10 and DQ250-MQB.
