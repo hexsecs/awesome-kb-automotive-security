@@ -11,7 +11,7 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Python packet manipulation library with support for DoIP, SOME/IP, AUTOSAR PDUs, SecOC, CAN-FD, and FlexRay protocols."
-related: [vsomeip, someip-protocol-fuzzer, eth-ws-someip, autofuze, python-doipclient]
+related: [vsomeip, someip-protocol-fuzzer, eth-ws-someip, autofuze, python-doipclient, someip]
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -62,3 +62,4 @@ Checked 2026-11-01. **Active**: the repository is not archived; the latest relea
 - [eth-ws-someip](eth-ws-someip.md)
 - [AutoFuze](autofuze.md)
 - [python-doipclient](python-doipclient.md)
+- [SOME/IP and SOME/IP-SD](concepts/someip.md)

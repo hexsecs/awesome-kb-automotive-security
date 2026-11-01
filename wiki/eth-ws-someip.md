@@ -11,7 +11,7 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Wireshark LUA dissectors for Automotive Ethernet SOME/IP and SOME/IP-SD protocols (Autosar 4.2)."
-related: [vsomeip, scapy, ics-cap, someip-protocol-fuzzer]
+related: [vsomeip, scapy, ics-cap, someip-protocol-fuzzer, someip]
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -52,3 +52,4 @@ Checked 2026-11-01. **Maintenance**: the repository is not archived; development
 - [Scapy](scapy.md)
 - [ICS CAP](ics-cap.md)
 - [someip-protocol-fuzzer](someip-protocol-fuzzer.md)
+- [SOME/IP and SOME/IP-SD](concepts/someip.md)

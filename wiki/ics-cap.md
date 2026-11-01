@@ -11,7 +11,7 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Free Wireshark plugin for monitoring Automotive Ethernet, CAN, CAN FD, LIN, and FlexRay networks."
-related: [eth-ws-someip, scapy, vsomeip]
+related: [eth-ws-someip, scapy, vsomeip, someip]
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -56,3 +56,4 @@ Checked 2026-11-01. **Active**: the vendor's own download index shows eight vers
 - [eth-ws-someip](eth-ws-someip.md)
 - [Scapy](scapy.md)
 - [vsomeip](vsomeip.md)
+- [SOME/IP and SOME/IP-SD](concepts/someip.md)

@@ -29,4 +29,5 @@ Generated from page frontmatter by tools/ingest.py; do not edit by hand.
 - [Key-fob relay attacks](wiki/concepts/key-fob-relay-attacks.md) — Two attackers relay a genuine key's radio exchange, so the car sees a valid key 'nearby' — encryption doesn't help, because nothing was forged, only forwarded.
 - [OCPP and charging attacks](wiki/concepts/ocpp-charging-attacks.md) — OCPP links chargers to cloud backends; weak transport security, shared identities and duplicate connections enable hijack, fraud and outage attacks.
 - [Secure firmware updates (Uptane)](wiki/concepts/secure-firmware-updates.md) — How Uptane secures vehicle software updates: two repositories, per-vehicle signed instructions, and compromise resilience when servers or keys fall.
+- [SOME/IP and SOME/IP-SD](wiki/concepts/someip.md) — AUTOSAR's service-oriented middleware over IP: how services are offered, found and invoked — and why discovery is the trust root of every SOME/IP conversation.
 - [UDS seed/key (SecurityAccess)](wiki/concepts/uds-seed-key.md) — UDS SecurityAccess (0x27) gates privileged diagnostics behind a seed/key exchange; weak seeds, reused secrets and simple algorithms defeat it.

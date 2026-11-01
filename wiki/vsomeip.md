@@ -11,7 +11,7 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "COVESA reference implementation of SOME/IP and SOME/IP-SD, used both as the target in automotive Ethernet fuzzing research and as a client for crafting service calls against production ECUs."
-related: [someip-protocol-fuzzer, scapy, eth-ws-someip, autofuze]
+related: [someip-protocol-fuzzer, scapy, eth-ws-someip, autofuze, someip]
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -52,3 +52,4 @@ Checked 2026-11-01. **Active**: the repository is not archived, with five releas
 - [Scapy](scapy.md)
 - [eth-ws-someip](eth-ws-someip.md)
 - [AutoFuze](autofuze.md)
+- [SOME/IP and SOME/IP-SD](concepts/someip.md)

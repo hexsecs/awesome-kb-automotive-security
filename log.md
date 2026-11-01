@@ -403,3 +403,28 @@ the archived pre-1.0 reference implementation named as a trap, and
 the Scala services' automated-update pushes characterised as such)
 and points to the secure-firmware-updates concept page for the
 design rather than duplicating it.
+
+## [2026-11-01] concept | SOME/IP and SOME/IP-SD concept page (issue #23)
+
+New concept page wiki/concepts/someip.md at full depth, written from
+two primary-source research lanes: protocol mechanics from the
+AUTOSAR PRS texts (FO 1.5.0 bundled in eth-ws-someip, cross-checked
+against R20-11 and R23-11 editions; E2E cited to R20-11) and
+service discovery + security surface from the SD PRS, vsomeip's
+configuration documentation and the SecOC SWS (R24-11).
+
+Centrepieces kept precise: the SD specification's single security
+requirement (PRS_SOMEIPSD_00656, a subnet-topology check on
+advertised addresses) is quoted in full; the attack consequences
+(rogue Offer with specified overwriting of preconfigured endpoints,
+forged Stop Offer deleting subscriptions on both sides, Nack reasons
+containing no authorisation decision) are each read off specified
+mechanics; E2E is fenced as a safety CRC mechanism with no
+authentication; the SecOC boundary is stated exactly (whole
+SomeIpTp message as a PDU, nothing SOME/IP-native, nothing for SD);
+vsomeip's opt-in security is local-IPC only and off by default.
+Version traps recorded on the page: TP_RESPONSE/TP_ERROR are
+0xA0/0xA1 (the FO 1.5.0 table's 0x23/0x24 contradicts its own flag
+rule); ACK message types appear in no PRS table checked and are
+flagged as implementation extensions; 30490 is SD's port, not
+SOME/IP's. Related links reciprocated on all seven entity pages.

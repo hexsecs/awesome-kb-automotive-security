@@ -11,7 +11,7 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Python toolkit for fuzzing and penetration testing ECUs over UDS, XCP, SOME/IP, and OBD, across CAN, DoIP, USB, and SPI transports."
-related: [pyxcp, python-doipclient, someip-protocol-fuzzer, caringcaribou, nullsec-carfuzz]
+related: [pyxcp, python-doipclient, someip-protocol-fuzzer, caringcaribou, nullsec-carfuzz, someip]
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -53,3 +53,4 @@ Checked 2026-11-01. **Maintenance**: the repository is not archived and received
 - [someip-protocol-fuzzer](someip-protocol-fuzzer.md)
 - [CaringCaribou](caringcaribou.md)
 - [NullSec CarFuzz](nullsec-carfuzz.md)
+- [SOME/IP and SOME/IP-SD](concepts/someip.md)

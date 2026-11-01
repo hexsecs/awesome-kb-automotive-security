@@ -11,7 +11,7 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Black-box SOME/IP fuzzer that mutates user-defined protocol fields with radamsa and uses a ping heartbeat to detect when the target service stops responding."
-related: [protocrawler, autofuze, scapy, vsomeip, eth-ws-someip]
+related: [protocrawler, autofuze, scapy, vsomeip, eth-ws-someip, someip]
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -50,3 +50,4 @@ Checked 2026-11-01. **Unknown**: the repository is not archived, but it has had 
 - [Scapy](scapy.md)
 - [vsomeip](vsomeip.md)
 - [eth-ws-someip](eth-ws-someip.md)
+- [SOME/IP and SOME/IP-SD](concepts/someip.md)
