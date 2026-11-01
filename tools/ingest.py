@@ -13,8 +13,11 @@ under `##` sections — and maintains this KB's OpenShelf awesome profile:
 - `index.md` — the L1 index linking the sub-indexes; reads as the list.
 
 Existing pages with `depth: full` keep their body; only provenance
-frontmatter is refreshed. Pages whose URL leaves the list are tombstoned
-(`status: archived`, body note appended once), never deleted.
+frontmatter is refreshed. Unmanaged frontmatter blocks on an existing page
+(`related`, `tags`, a richer `sources`, …) are preserved verbatim, so
+hand-written depth survives a sync. Concept pages under `wiki/concepts/`
+are listed in the L1 index. Pages whose URL leaves the list are
+tombstoned (`status: archived`, body note appended once), never deleted.
 
 Deterministic and idempotent: dates come from the source commit, never the
 wall clock; same source commit in, byte-identical tree out.
@@ -89,7 +92,36 @@ def parse_list(readme: Path) -> list[dict]:
     return entries
 
 
-def frontmatter(e: dict, status: str, depth: str, date: str, commit: str) -> str:
+MANAGED_KEYS = {"title", "summary", "type", "category", "url", "status",
+                "last_checked", "updated", "depth", "source_list",
+                "source_commit", "list_summary"}
+
+
+def frontmatter_blocks(text: str) -> list[tuple[str, list[str]]]:
+    """Split a page's frontmatter into (key, raw lines) top-level blocks."""
+    if not text.startswith("---\n"):
+        return []
+    end = text.find("\n---\n", 4)
+    if end == -1:
+        return []
+    blocks: list[tuple[str, list[str]]] = []
+    for line in text[4:end].splitlines():
+        if line and not line.startswith((" ", "-", "\t")) and ": " in line or \
+                line.endswith(":") and line[:-1].isidentifier():
+            blocks.append((line.split(":", 1)[0].strip(), [line]))
+        elif blocks:
+            blocks[-1][1].append(line)
+    return blocks
+
+
+def extra_blocks(text: str) -> list[list[str]]:
+    """Frontmatter blocks the ingester does not manage, kept verbatim."""
+    return [lines for key, lines in frontmatter_blocks(text)
+            if key not in MANAGED_KEYS]
+
+
+def frontmatter(e: dict, status: str, depth: str, date: str, commit: str,
+                extras: list[list[str]] | None = None) -> str:
     lines = ["---",
              f"title: {q(e['title'])}",
              f"summary: {q(short_summary(e['summary']))}",
@@ -102,11 +134,15 @@ def frontmatter(e: dict, status: str, depth: str, date: str, commit: str) -> str
              f"depth: {depth}",
              f"source_list: {SOURCE_ID}",
              f"source_commit: {commit}",
-             f"list_summary: {q(e['summary'])}",
-             "sources:",
-             f"  - url: {q(SOURCE_URL)}",
-             f"    retrieved: {date}",
-             "---"]
+             f"list_summary: {q(e['summary'])}"]
+    extras = extras or []
+    for block in extras:
+        lines.extend(block)
+    if not any(block and block[0].startswith("sources:") for block in extras):
+        lines += ["sources:",
+                  f"  - url: {q(SOURCE_URL)}",
+                  f"    retrieved: {date}"]
+    lines.append("---")
     return "\n".join(lines) + "\n"
 
 
@@ -174,10 +210,12 @@ def main() -> int:
                             + stub_body(e), encoding="utf-8")
             created += 1
         else:
-            fields, body = split_page(page.read_text(encoding="utf-8"))
+            old_text = page.read_text(encoding="utf-8")
+            fields, body = split_page(old_text)
             depth = str(fields.get("depth", "stub"))
             status = str(fields.get("status", "unknown"))
-            new_text = frontmatter(e, status, depth, date, commit) + (
+            new_text = frontmatter(e, status, depth, date, commit,
+                                   extra_blocks(old_text)) + (
                 body if depth == "full" else stub_body(e))
             if page.read_text(encoding="utf-8") != new_text:
                 page.write_text(new_text, encoding="utf-8")
@@ -220,6 +258,20 @@ def main() -> int:
         n = len(by_section[section])
         lines.append(f"- [{section}](wiki/index-{catslug[section]}.md)"
                      f" — {n} entr{'y' if n == 1 else 'ies'}")
+
+    # Concept pages (hand-written synthesis) are listed directly in the L1.
+    concepts_dir = WIKI / "concepts"
+    concepts = []
+    if concepts_dir.is_dir():
+        for page in sorted(concepts_dir.glob("*.md")):
+            fields, _ = split_page(page.read_text(encoding="utf-8"))
+            if "title" in fields and "summary" in fields:
+                concepts.append((str(fields["title"]), page.stem,
+                                 str(fields["summary"])))
+    if concepts:
+        lines += ["", "## Concepts", ""]
+        for title, slug, summary in concepts:
+            lines.append(f"- [{title}](wiki/concepts/{slug}.md) — {summary}")
     lines.append("")
     (ROOT / "index.md").write_text("\n".join(lines), encoding="utf-8")
 
