@@ -11,7 +11,7 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Open-source V2X security testbed with first open-source IEEE 1609.2 implementation for DSRC and C-V2X."
-related: [f2md, vanetza, artery]
+related: [f2md, vanetza, artery, misbehavior-detection]
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
