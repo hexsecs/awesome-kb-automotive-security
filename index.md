@@ -22,3 +22,10 @@ Generated from page frontmatter by tools/ingest.py; do not edit by hand.
 - [Books](wiki/index-books.md) — 12 entries
 - [Learning Resources](wiki/index-learning-resources.md) — 7 entries
 - [Related Awesome Lists](wiki/index-related-awesome-lists.md) — 6 entries
+
+## Concepts
+
+- [CAN injection](wiki/concepts/can-injection.md) — Attacker taps exposed CAN wiring and impersonates a trusted ECU: classic CAN frames carry no sender authentication, so fake 'key valid' messages are believed.
+- [Key-fob relay attacks](wiki/concepts/key-fob-relay-attacks.md) — Two attackers relay a genuine key's radio exchange, so the car sees a valid key 'nearby' — encryption doesn't help, because nothing was forged, only forwarded.
+- [OCPP and charging attacks](wiki/concepts/ocpp-charging-attacks.md) — OCPP links chargers to cloud backends; weak transport security, shared identities and duplicate connections enable hijack, fraud and outage attacks.
+- [UDS seed/key (SecurityAccess)](wiki/concepts/uds-seed-key.md) — UDS SecurityAccess (0x27) gates privileged diagnostics behind a seed/key exchange; weak seeds, reused secrets and simple algorithms defeat it.
