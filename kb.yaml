@@ -1,0 +1,22 @@
+openshelf: "0.1"
+id: awesome-kb-automotive-security
+title: "Automotive Security (Awesome KB)"
+description: >
+  Knowledge base for automotive security, ingested from the curated awesome
+  list hexsecs/awesome-automotive-security: CAN, diagnostics, ECU firmware,
+  RF, EV charging, research and learning resources.
+profile: awesome
+version: "2026.10.31"
+license: CC0-1.0
+maintainers: [hexsecs]
+tags: [automotive, security, awesome]
+layout:
+  pages: wiki
+  index: index.md
+  sources: raw
+  schema: AGENTS.md
+  log: log.md
+x-ingest:
+  source: "github:hexsecs/awesome-automotive-security"
+  file: README.md
+  tool: tools/ingest.py

@@ -1,17 +1,23 @@
 #!/usr/bin/env python3
-"""Ingest an awesome list into this knowledge base (SPEC.md §6).
+"""Ingest the source awesome list into this KB, in OpenShelf format.
 
-Parses the source README with the same entry grammar the list's own
-validator enforces — `* [name](url) - desc` under `##` sections — and:
+The list is canon (see AGENTS.md). This ingester parses its README with the
+same entry grammar the list's own validator enforces — `* [name](url) - desc`
+under `##` sections — and maintains this KB's OpenShelf awesome profile:
 
-- creates a stub page for every entry with no page,
-- refreshes provenance frontmatter (section / summary / source commit) on
-  existing pages without touching a `full` page's added depth,
-- tombstones pages whose URL has left the list (`status: delisted`),
-- regenerates `index.json` and `llms.txt`.
+- `wiki/<slug>.md` — one entity page per list entry (frontmatter per the
+  OpenShelf page schema; `summary` is capped at 160 chars, the list's
+  verbatim description is kept in the body and in `list_summary`),
+- `wiki/index-<category>.md` — one sub-index per list section, no
+  frontmatter, generated from page frontmatter,
+- `index.md` — the L1 index linking the sub-indexes; reads as the list.
 
-Deterministic and idempotent: same source commit in, byte-identical tree
-out. No wall-clock timestamps are written anywhere.
+Existing pages with `depth: full` keep their body; only provenance
+frontmatter is refreshed. Pages whose URL leaves the list are tombstoned
+(`status: archived`, body note appended once), never deleted.
+
+Deterministic and idempotent: dates come from the source commit, never the
+wall clock; same source commit in, byte-identical tree out.
 
 Usage: python3 tools/ingest.py [--source ../awesome-automotive-security]
 """
@@ -26,15 +32,19 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+WIKI = ROOT / "wiki"
 ENTRY_RE = re.compile(r"^\* \[(?P<name>[^\]]+)\]\((?P<url>[^)]+)\) - (?P<desc>.+)$")
 HEADING_RE = re.compile(r"^## (?P<title>.+)$")
 SKIP_SECTIONS = {"Contents"}
 SOURCE_ID = "awesome-automotive-security"
-KB_URL = "https://github.com/hexsecs/awesome-kb-automotive-security"
+SOURCE_URL = "https://github.com/hexsecs/awesome-automotive-security"
+KB_TITLE = "Automotive Security (Awesome KB)"
+KB_DESC = ("Knowledge base for automotive security, ingested from the curated "
+           "awesome list hexsecs/awesome-automotive-security.")
 
 
 def normalise(url: str) -> str:
-    """The list validator's identity rule (SPEC.md §3)."""
+    """The list validator's identity rule: case, trailing slash, https ignored."""
     u = url.rstrip("/").lower()
     return u[len("https://"):] if u.startswith("https://") else u
 
@@ -54,6 +64,15 @@ def q(value: str) -> str:
     return json.dumps(value, ensure_ascii=False)
 
 
+def short_summary(desc: str) -> str:
+    """OpenShelf summary: <=160 chars, cut at a word boundary."""
+    desc = desc.strip()
+    if len(desc) <= 160:
+        return desc
+    cut = desc[:157].rsplit(" ", 1)[0].rstrip(",;:")
+    return cut + "…"
+
+
 def parse_list(readme: Path) -> list[dict]:
     entries, section = [], None
     for line in readme.read_text(encoding="utf-8").splitlines():
@@ -63,37 +82,44 @@ def parse_list(readme: Path) -> list[dict]:
             continue
         match = ENTRY_RE.match(line)
         if match and section and section not in SKIP_SECTIONS:
-            entries.append({
-                "title": match.group("name"),
-                "url": match.group("url"),
-                "section": section,
-                "summary": match.group("desc"),
-            })
+            entries.append({"title": match.group("name"),
+                            "url": match.group("url"),
+                            "section": section,
+                            "summary": match.group("desc")})
     return entries
 
 
-def frontmatter(fields: dict) -> str:
-    lines = ["---"]
-    for key in ("title", "url", "source", "source_section", "source_commit",
-                "status", "summary"):
-        lines.append(f"{key}: {q(str(fields[key]))}")
-    lines.append("---")
+def frontmatter(e: dict, status: str, depth: str, date: str, commit: str) -> str:
+    lines = ["---",
+             f"title: {q(e['title'])}",
+             f"summary: {q(short_summary(e['summary']))}",
+             "type: entity",
+             f"category: {q(e['section'])}",
+             f"url: {q(e['url'])}",
+             f"status: {status}",
+             f"last_checked: {date}",
+             f"updated: {date}",
+             f"depth: {depth}",
+             f"source_list: {SOURCE_ID}",
+             f"source_commit: {commit}",
+             f"list_summary: {q(e['summary'])}",
+             "sources:",
+             f"  - url: {q(SOURCE_URL)}",
+             f"    retrieved: {date}",
+             "---"]
     return "\n".join(lines) + "\n"
 
 
 def stub_body(e: dict) -> str:
-    return (
-        f"\n# {e['title']}\n\n{e['summary']}\n\n"
-        f"- **Resource:** {e['url']}\n"
-        f"- **List section:** {e['section']}\n"
-        f"- **Source:** [{SOURCE_ID}](https://github.com/hexsecs/awesome-automotive-security)"
-        f" — the list is canon; this page is a generated stub. Depth is added"
-        f" by PR (see the KB README's landing rules).\n"
-    )
+    return (f"\n{e['summary']}\n\n"
+            f"- **Resource:** {e['url']}\n"
+            f"- **List section:** {e['section']}\n"
+            f"- **Source:** [{SOURCE_ID}]({SOURCE_URL}) — the list is canon;"
+            f" this page is a generated stub (`depth: stub`). Depth is added"
+            f" by PR (see AGENTS.md).\n")
 
 
 def split_page(text: str) -> tuple[dict, str]:
-    """Split an existing page into frontmatter fields and body."""
     if not text.startswith("---\n"):
         return {}, text
     end = text.find("\n---\n", 4)
@@ -101,7 +127,7 @@ def split_page(text: str) -> tuple[dict, str]:
         return {}, text
     fields = {}
     for line in text[4:end].splitlines():
-        if ": " in line:
+        if ": " in line and not line.startswith(" "):
             key, raw = line.split(": ", 1)
             try:
                 fields[key.strip()] = json.loads(raw)
@@ -119,101 +145,85 @@ def main() -> int:
     readme = source / "README.md"
     if not readme.exists():
         sys.exit(f"source README not found: {readme}")
-    source_commit = subprocess.run(
-        ["git", "-C", str(source), "rev-parse", "--short", "HEAD"],
-        capture_output=True, text=True, check=True).stdout.strip()
+    commit = subprocess.run(["git", "-C", str(source), "rev-parse", "--short", "HEAD"],
+                            capture_output=True, text=True, check=True).stdout.strip()
+    date = subprocess.run(["git", "-C", str(source), "log", "-1", "--format=%cs", commit],
+                          capture_output=True, text=True, check=True).stdout.strip()
 
     entries = parse_list(readme)
-    entries_dir = ROOT / "entries"
-    entries_dir.mkdir(exist_ok=True)
+    WIKI.mkdir(exist_ok=True)
 
-    # Index existing pages by normalised URL.
     existing: dict[str, Path] = {}
-    for page in sorted(entries_dir.glob("*.md")):
+    for page in sorted(WIKI.rglob("*.md")):
         fields, _ = split_page(page.read_text(encoding="utf-8"))
         if "url" in fields:
-            existing[normalise(fields["url"])] = page
+            existing[normalise(str(fields["url"]))] = page
 
-    taken = {p.stem for p in entries_dir.glob("*.md")}
+    taken = {p.stem for p in WIKI.glob("*.md")}
     seen: set[str] = set()
-    index_entries = []
+    by_section: dict[str, list[dict]] = {}
     created = updated = 0
     for e in entries:
         key = normalise(e["url"])
         seen.add(key)
         page = existing.get(key)
-        fields = {
-            "title": e["title"], "url": e["url"], "source": SOURCE_ID,
-            "source_section": e["section"], "source_commit": source_commit,
-            "summary": e["summary"],
-        }
         if page is None:
             slug = slugify(e["title"], taken)
-            page = entries_dir / f"{slug}.md"
-            page.write_text(frontmatter({**fields, "status": "stub"})
+            page = WIKI / f"{slug}.md"
+            page.write_text(frontmatter(e, "unknown", "stub", date, commit)
                             + stub_body(e), encoding="utf-8")
             created += 1
-            status = "stub"
         else:
-            slug = page.stem
-            old_fields, body = split_page(page.read_text(encoding="utf-8"))
-            status = old_fields.get("status", "stub")
-            if status == "delisted":
-                status = "stub"  # re-listed: revive as a stub
-            new_text = frontmatter({**fields, "status": status}) + (
-                body if status == "full" else stub_body(e))
+            fields, body = split_page(page.read_text(encoding="utf-8"))
+            depth = str(fields.get("depth", "stub"))
+            status = str(fields.get("status", "unknown"))
+            new_text = frontmatter(e, status, depth, date, commit) + (
+                body if depth == "full" else stub_body(e))
             if page.read_text(encoding="utf-8") != new_text:
                 page.write_text(new_text, encoding="utf-8")
                 updated += 1
-        index_entries.append({
-            "slug": slug, "title": e["title"], "url": e["url"],
-            "section": e["section"], "status": status,
-            "file": f"entries/{slug}.md",
-        })
+        by_section.setdefault(e["section"], []).append(
+            {"slug": page.stem, "title": e["title"],
+             "summary": short_summary(e["summary"])})
 
     tombstoned = 0
     for key, page in existing.items():
-        if key not in seen:
-            fields, body = split_page(page.read_text(encoding="utf-8"))
-            if fields.get("status") != "delisted":
-                fields["status"] = "delisted"
-                fields["source_commit"] = source_commit
-                page.write_text(frontmatter(fields) + body, encoding="utf-8")
-                tombstoned += 1
+        if key in seen or page.stem.startswith("index-"):
+            continue
+        text = page.read_text(encoding="utf-8")
+        fields, _ = split_page(text)
+        if fields.get("status") != "archived":
+            text = text.replace("status: unknown", "status: archived", 1)
+            if "Delisted from the source list" not in text:
+                text += (f"\n> Delisted from the source list as of {commit}."
+                         f" Tombstoned, not deleted (see AGENTS.md).\n")
+            page.write_text(text, encoding="utf-8")
+            tombstoned += 1
 
-    index = {"source": SOURCE_ID, "source_commit": source_commit,
-             "count": len(index_entries), "entries": index_entries}
-    (ROOT / "index.json").write_text(
-        json.dumps(index, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    # Sub-indexes (no frontmatter — OpenShelf detects them as sub-indexes).
+    by_section_order = list(by_section.keys())
+    catslug = {}
+    for section in by_section_order:
+        cs = slugify(section, set())
+        catslug[section] = cs
+        lines = [f"# {section}", ""]
+        for item in by_section[section]:
+            lines.append(f"- [{item['title']}]({item['slug']}.md) — {item['summary']}")
+        lines.append("")
+        (WIKI / f"index-{cs}.md").write_text("\n".join(lines), encoding="utf-8")
 
-    sections: list[str] = []
-    for e in index_entries:
-        if e["section"] not in sections:
-            sections.append(e["section"])
-    llms = [f"# Awesome KB — Automotive Security",
-            "",
-            "> A knowledge base ingesting the curated awesome list"
-            " hexsecs/awesome-automotive-security (the list is canon; this KB"
-            " is the derived layer). One page per resource, concept pages for"
-            " synthesis, and a JSON index for machines.",
-            "",
-            "## Machine layer",
-            "",
-            f"- [Index (JSON)]({KB_URL}/blob/main/index.json): every entry —"
-            " slug, title, URL, source section, status, page path.",
-            f"- [Spec]({KB_URL}/blob/main/SPEC.md): the format this KB follows.",
-            "",
-            "## Sections (from the source list)",
-            ""]
-    llms += [f"- {s}" for s in sections]
-    llms += ["", "## Entry pages", "",
-             "Entry pages live in `entries/<slug>.md`; resolve a slug through"
-             " index.json. Pages with status `full` carry verified depth;"
-             " `stub` pages carry the list's own description and provenance.",
-             ""]
-    (ROOT / "llms.txt").write_text("\n".join(llms), encoding="utf-8")
+    # L1 index.
+    lines = [f"# {KB_TITLE}", "", KB_DESC,
+             "Generated from page frontmatter by tools/ingest.py;"
+             " do not edit by hand.", "", "## Categories", ""]
+    for section in by_section_order:
+        n = len(by_section[section])
+        lines.append(f"- [{section}](wiki/index-{catslug[section]}.md)"
+                     f" — {n} entr{'y' if n == 1 else 'ies'}")
+    lines.append("")
+    (ROOT / "index.md").write_text("\n".join(lines), encoding="utf-8")
 
-    print(f"ingest: {len(entries)} entries from {SOURCE_ID}@{source_commit} "
+    print(f"ingest: {len(entries)} entries from {SOURCE_ID}@{commit} "
           f"— {created} created, {updated} updated, {tombstoned} tombstoned")
     return 0
 
