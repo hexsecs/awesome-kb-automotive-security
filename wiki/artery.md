@@ -11,7 +11,7 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "OMNeT++ simulation framework pairing the Vanetza ITS-G5 stack with SUMO traffic, providing the environment that most misbehavior-detection and V2X attack studies are built on."
-related: [vanetza, veins, f2md, van3twin]
+related: [vanetza, veins, f2md, van3twin, misbehavior-detection]
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
