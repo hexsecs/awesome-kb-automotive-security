@@ -149,3 +149,34 @@ problem (signed-boot chain failure in Simos18_SBOOT, the signature
 boundary in medc17-checksum-tool). Filed as its own issue rather than
 growing this one, per the issue's instruction. No ECU was connected and
 no firmware was processed.
+
+## [2026-11-01] deepen | Hardware Interfaces depth slice (issue #6)
+
+Deepened all 8 Hardware Interfaces pages from stub to full, with
+what-it-is / how-it-works / where-it-fits / limits sections and primary
+sources checked 2026-11-01. Added reciprocal sibling links across the
+section.
+
+Status calls: panda active (commits to 2026-10-30) and RAMN active
+(release v2.3, 2026-07-31); candleLight_fw maintenance (latest release
+2021, occasional fixes since); SuperCAN maintenance (release v1.2.3,
+last push 2025-01-14); CFUC maintenance (irregular commits to
+2026-05-17, no releases or licence file in the firmware repo); CANtact
+maintenance on a split record — the listed cantact-app repository was
+archived by its owner 2025-04-06 with development moved to a successor
+Rust application, and cantact-fw is unarchived but quiet since
+2024-05-24; CAN-DAQ unknown (repository created 2025-05, latest commit
+2025-05-25, no releases; design fixed by a HardwareX paper); OWASP
+Automotive EMB 60 unknown (incubator stage, project page last updated
+2022-03-12, founding repository quiet since 2022-08, never marked
+archived).
+
+Corrections and limits retained explicitly: CFUC's SocketCAN story is
+gs_usb kernel driver on Linux plus a socketcand-style bridge daemon for
+its Python path, not a native SocketCAN driver of its own; SuperCAN's
+firmware does not support CANtact/candleLight-class hardware despite an
+older same-name Windows driver for that hardware; EMB 60's SBC and CAN
+board MCU are not pinned in its primary sources (the page says so
+rather than repeating the summary's certainty); CAN-DAQ is classic CAN
+only (ESP32-S3 TWAI) with no documented frame transmission. No hardware
+was built, flashed, or run.
