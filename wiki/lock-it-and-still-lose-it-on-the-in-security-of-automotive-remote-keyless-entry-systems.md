@@ -22,6 +22,7 @@ related:
   - dismantling-megamos-crypto-wirelessly-lockpicking-a-vehicle-immobilizer
   - fast-furious-and-insecure-passive-keyless-entry-and-start-systems-in-modern-supercars
   - rolling-code-failure-classes
+  - shared-and-default-secrets
 ---
 
 Garcia, Oswald, Kasper, and Pavlides, USENIX Security 2016. Recovers shared global keys covering most Volkswagen Group vehicles sold over two decades, and breaks the Hitag2 rolling-code scheme.
