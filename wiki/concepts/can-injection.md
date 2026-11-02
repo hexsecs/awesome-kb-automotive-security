@@ -4,7 +4,7 @@ summary: "Attacker taps exposed CAN wiring and impersonates a trusted ECU: class
 type: concept
 created: 2026-10-31
 updated: 2026-11-01
-related: [canflict, canter, carpunk, canalyzat0r, can-utils, security-in-automotive-bus-systems, experimental-security-analysis-of-a-modern-automobile, comprehensive-experimental-analyses-of-automotive-attack-surfaces, adventures-in-automotive-networks-and-control-units, remote-exploitation-of-an-unaltered-passenger-vehicle, error-handling-of-in-vehicle-networks-makes-them-vulnerable, leia-a-lightweight-authentication-protocol-for-can, vulcan-efficient-component-authentication-and-software-isolation-for-automotive-control-networks, fast-and-vulnerable-a-story-of-telematic-failures]
+related: [canflict, canter, carpunk, canalyzat0r, can-utils, security-in-automotive-bus-systems, experimental-security-analysis-of-a-modern-automobile, comprehensive-experimental-analyses-of-automotive-attack-surfaces, adventures-in-automotive-networks-and-control-units, remote-exploitation-of-an-unaltered-passenger-vehicle, error-handling-of-in-vehicle-networks-makes-them-vulnerable, leia-a-lightweight-authentication-protocol-for-can, vulcan-efficient-component-authentication-and-software-isolation-for-automotive-control-networks, fast-and-vulnerable-a-story-of-telematic-failures, canvas-fast-and-inexpensive-automotive-network-mapping]
 sources:
   - url: "https://plaxidityx.com/blog/blog-post/what-oems-can-do-to-prevent-can-injection-car-theft/"
     retrieved: 2026-10-31
