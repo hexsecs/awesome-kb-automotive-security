@@ -2,9 +2,9 @@
 
 This repo began (2026-10-31) with a home-grown pilot spec. The same night it
 was superseded: the format is the **OpenShelf** standard, maintained in
-[hexsecs/openkb](https://github.com/hexsecs/openkb) (SPEC.md + JSON schemas +
+[OpenNorms/openshelf](https://github.com/OpenNorms/openshelf) (SPEC.md + JSON schemas +
 the `openshelf` CLI/lint/MCP tooling), and this KB conforms to it
-(`openshelf: "0.1"`, `profile: awesome` — see `kb.yaml`).
+(`openshelf: "1.4"`, `profile: awesome` — see `kb.yaml`).
 
 What was local to the pilot — the canon rule, the ingest contract, the
 `depth` field, landing rules — moved to [AGENTS.md](AGENTS.md), the

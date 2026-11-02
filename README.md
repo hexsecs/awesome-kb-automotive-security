@@ -16,7 +16,7 @@ This KB is also imported into the composed network site at
 
 ## Format: OpenShelf
 
-This KB conforms to the [OpenShelf](https://github.com/hexsecs/openshelf)
+This KB conforms to the [OpenShelf](https://github.com/OpenNorms/openshelf)
 standard (`openshelf: "1.4"`, `profile: awesome`): a `kb.yaml` manifest,
 pages with `title` + one-line `summary` frontmatter, progressive context
 (L0 description → L1 `index.md` → L2 pages → L3 sources), and an index that
