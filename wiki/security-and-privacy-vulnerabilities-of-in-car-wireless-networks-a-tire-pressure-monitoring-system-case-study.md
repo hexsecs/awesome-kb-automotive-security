@@ -21,6 +21,7 @@ related:
   - comprehensive-experimental-analyses-of-automotive-attack-surfaces
   - experimental-security-analysis-of-a-modern-automobile
   - relay-attacks-on-passive-keyless-entry-and-start-systems-in-modern-cars
+  - external-attack-surface
 ---
 
 Rouf et al., USENIX Security 2010. Shows TPMS sensors are unauthenticated and trackable at roughly 40m, the first published wireless in-car network attack.
