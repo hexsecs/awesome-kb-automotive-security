@@ -38,7 +38,10 @@ what gets listed.
 - `depth: stub | brief | full | deep` (OpenShelf SPEC §4.5): stubs are
   generated; a page becomes `full` when a human/LLM adds real depth — what
   it is, how it works, outbound links checked, and `related` links to
-  sibling pages. `brief` is the shortest authored tier (pointer entries);
+  sibling pages. `brief` is the shortest authored tier (pointer entries):
+  a short orientation — who it is for, what you actually get, caveats —
+  with the outbound link checked and status verified, but no
+  how-it-works section; keeping `full` meaningful is the point.
   `deep` is the rare research-grade tier, loaded on demand only.
 - `created` is the date the page first entered the KB (OpenShelf SPEC
   §4.2): the ingester stamps it from the source commit date at stub
