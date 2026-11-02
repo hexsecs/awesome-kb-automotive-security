@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afd6-73cf-9520-f6a639940eff
 title: "SECV: Securing Connected Vehicles with Hardware Trust Anchors"
 summary: "Kayondo et al., NDSS 2026. Mediates external-network control messages inside a TEE backed by an EVITA-compliant HSM, so the gateway can verify them even…"
 type: entity

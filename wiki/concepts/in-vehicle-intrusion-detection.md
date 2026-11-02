@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af64-71fa-9009-d1927143c3c0
 title: "In-vehicle intrusion detection and ECU fingerprinting"
 summary: "The bus's defence literature, organised by observable signal: timing, clock skew, voltage, learned models — and split by detecting an anomaly vs attributing it."
 type: concept

@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af66-7d07-be99-e8c9dd43aedf
 title: "IVI runtime privilege and service exposure"
 summary: "The head unit's failures that are not on the update path: declared-but-unenforced permissions, unchecked service callers, and designed-in debug surfaces."
 type: concept

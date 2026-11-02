@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afb5-7f99-8306-9eeb9b93fe8c
 title: "On the Realism of LiDAR Spoofing Attacks against Autonomous Driving Vehicle at High Speed and Long Distance"
 summary: "Sato et al., NDSS 2025. Moving-vehicle spoofing rig and an adaptive high-frequency removal attack that succeed at 60 km/h and 110 m against production…"
 type: entity

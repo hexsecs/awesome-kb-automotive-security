@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af81-7c14-942c-7eb8e62caff0
 title: "dsV2Gshark"
 summary: "Wireshark plugin that dissects ISO 15118 and DIN 70121 traffic, decoding EXI-encoded V2G payloads and SLAC handshakes into readable fields."
 type: entity

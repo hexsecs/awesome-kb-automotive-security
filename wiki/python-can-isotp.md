@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afc6-7e42-9e30-adc7d5647e70
 title: "python-can-isotp"
 summary: "ISO-TP (ISO 15765) transport for Python on top of python-can or Linux SocketCAN, the segmentation layer that UDS and OBD-II diagnostics run over."
 type: entity

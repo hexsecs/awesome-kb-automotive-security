@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af2c-79a8-9851-9d626346986c
 title: "Automating Function-Level TARA for Automotive Full-Lifecycle Security"
 summary: "Yang et al., NDSS 2026. DefenseWeaver, a multi-agent LLM system that automates function-level ISO/SAE 21434 threat analysis and risk assessment, reported as…"
 type: entity

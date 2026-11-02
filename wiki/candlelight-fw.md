@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af44-70f0-b727-b558f169e672
 title: "candleLight_fw"
 summary: "Open firmware for low-cost STM32 USB to CAN adapters such as CANable, cantact, and candleLight that implements the mainline Linux gs_usb interface, turning…"
 type: entity

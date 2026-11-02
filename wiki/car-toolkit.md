@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af51-7562-ac10-f129fb267ace
 title: "Car Toolkit"
 summary: "Python-based toolkit for automotive penetration testing with CAN suite, CARAL, and virtual test bench setup."
 type: entity

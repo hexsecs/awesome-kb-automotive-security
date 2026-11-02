@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af96-7b26-8a8c-801129f07391
 title: "ghidra-tc1797"
 summary: "Ghidra processor specification and language definitions for the Infineon TriCore TC1797, used to label memory regions when disassembling MED17 and similar…"
 type: entity

@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afd8-7b42-97b5-34bbc9279a2a
 title: "SoK: How Sensor Attacks Disrupt Autonomous Vehicles: An End-to-end Analysis, Challenges, and Missed Threats"
 summary: "Zhang et al., arXiv 2025. Traces how sensor-induced errors propagate through perception, localization, planning, and control to physical impact, and…"
 type: entity

@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af6b-7b16-a341-3805a690a069
 title: "Rolling-code failure classes"
 summary: "Rolling codes move trust from the code's secrecy to the receiver's counter state; the failure classes attack that state: windows, resync, harvesting, blocking."
 type: concept

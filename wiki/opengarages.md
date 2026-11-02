@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afb7-7ea4-a229-c149b9e9942c
 title: "OpenGarages"
 summary: "Open vehicle research collective behind the Car Hacker's Handbook, publishing the free edition of the book, ICSim, and workshop material for hands-on…"
 type: entity

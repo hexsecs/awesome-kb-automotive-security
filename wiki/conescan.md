@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af75-78d6-8e95-26da78baef80
 title: "conescan"
 summary: "Automotive ECU hacking supertool for firmware dumping and manipulation via J2534 OBD interfaces."
 type: entity

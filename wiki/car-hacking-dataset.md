@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af50-7c6f-8d58-906ea9d6e173
 title: "Car Hacking Dataset"
 summary: "HCRL captures from a Kia Soul with labelled DoS, fuzzing, and RPM and gear spoofing injections, the most widely cited baseline in CAN intrusion detection…"
 type: entity

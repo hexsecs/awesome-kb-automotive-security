@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afb7-7233-8c77-8050e933dcda
 title: "opendbc"
 summary: "Python API for your car, bundling community-maintained DBC files with CAN parsing and car interface libraries for reading vehicle state and actuating controls."
 type: entity

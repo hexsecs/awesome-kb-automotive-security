@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af41-7093-9e2b-aae8dc4840e7
 title: "can-train-and-test"
 summary: "Labelled CAN captures from four vehicles across two manufacturers with nine attack types, split into known and unknown vehicle and attack test subsets for…"
 type: entity

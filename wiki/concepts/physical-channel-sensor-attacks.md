@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af6a-7527-8a41-b139008692d9
 title: "Physical-channel sensor attacks"
 summary: "Attacks that manufacture the measurement itself — in acoustics, optics, RF, and heat — where no digital interface is touched and the output is faithfully wrong."
 type: concept

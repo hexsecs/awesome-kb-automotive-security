@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af3a-78c6-b858-7ca42bec67f9
 title: "Beneath the Bonnet: A Breakdown of Diagnostic Security"
 summary: "Van den Herrewegen and Garcia, ESORICS 2018. Reverse engineers the seed-key ciphers of four manufacturers from ECU firmware and achieves remote code…"
 type: entity

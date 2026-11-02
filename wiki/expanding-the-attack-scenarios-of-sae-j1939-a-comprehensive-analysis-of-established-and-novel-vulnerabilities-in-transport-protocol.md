@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af88-78f7-bff4-12cd07cf4311
 title: "Expanding the Attack Scenarios of SAE J1939: A Comprehensive Analysis of Established and Novel Vulnerabilities in Transport Protocol"
 summary: "Lee, Lee, Jun, and Kim, escar USA 2024. Presents 14 attack scenarios against the J1939 protocol used in commercial vehicles, seven of them new."
 type: entity

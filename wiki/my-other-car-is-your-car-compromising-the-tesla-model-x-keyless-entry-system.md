@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afb0-7b17-8e93-5d8243b01d09
 title: "My Other Car is Your Car: Compromising the Tesla Model X Keyless Entry System"
 summary: "Wouters, Gierlichs, and Preneel, CHES 2021. Chains a BLE firmware downgrade and a key fob update flaw into unlocking and driving away a Tesla Model X."
 type: entity

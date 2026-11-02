@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-aff2-7032-aceb-3779a0d78afa
 title: "V2Verifier"
 summary: "Open-source V2X security testbed with first open-source IEEE 1609.2 implementation for DSRC and C-V2X."
 type: entity

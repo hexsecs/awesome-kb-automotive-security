@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afc7-7506-a1c5-08c2ba14e1f4
 title: "python-can"
 summary: "Python library providing a common interface over many CAN hardware backends with CAN FD support and logging to ASC, BLF, MF4, TRC, CSV, and SQLite."
 type: entity

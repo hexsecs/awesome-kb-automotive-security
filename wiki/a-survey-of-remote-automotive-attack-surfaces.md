@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af24-7525-b0a5-1169c283f246
 title: "A Survey of Remote Automotive Attack Surfaces"
 summary: "Miller and Valasek, Black Hat USA 2014. Compares the remote attack surfaces, network architectures, and cyber-physical features of a large set of production…"
 type: entity

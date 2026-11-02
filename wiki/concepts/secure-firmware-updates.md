@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af6e-774f-b325-e47f370acef2
 title: "Secure firmware updates (Uptane)"
 summary: "How Uptane secures vehicle software updates: two repositories, per-vehicle signed instructions, and compromise resilience when servers or keys fall."
 type: concept

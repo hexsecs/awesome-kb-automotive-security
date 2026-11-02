@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-aff2-7764-aca0-1385952fa0db
 title: "VaN3Twin"
 summary: "ETSI-compliant multi-stack V2X framework for ns-3 covering ITS-G5, C-V2X, and LTE with SUMO and CARLA co-simulation; the continuation of ms-van3t."
 type: entity

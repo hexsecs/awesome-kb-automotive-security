@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af4e-7a10-9dfc-8e166692edaf
 title: "canTot"
 summary: "Metasploit-style CAN bus exploitation framework built on sploitkit, packaging published vehicle-specific CAN attacks as selectable modules."
 type: entity

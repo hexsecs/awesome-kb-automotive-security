@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af8d-77b7-a8c1-6da3d253a0c1
 title: "Fast, Furious and Insecure: Passive Keyless Entry and Start Systems in Modern Supercars"
 summary: "Wouters et al., CHES 2019. Breaks the DST40-based PKES used by Tesla and others, cloning a key fob from a few seconds of proximity."
 type: entity

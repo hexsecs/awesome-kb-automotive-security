@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af34-7ccb-9a7d-e55ee9a34975
 title: "AutoTARA"
 summary: "Web-based TARA (Threat Analysis and Risk Assessment) framework for ISO/SAE 21434 that models systems as attack graphs and applies MITRE's CTSA/CRRA…"
 type: entity

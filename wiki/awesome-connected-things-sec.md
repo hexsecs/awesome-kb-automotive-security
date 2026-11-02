@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af37-78ef-8d2c-98958435f60c
 title: "Awesome Connected Things Sec"
 summary: "Security resources across IoT, embedded, industrial, and automotive systems with a dedicated automotive section."
 type: entity

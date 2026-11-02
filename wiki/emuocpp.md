@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af82-7864-a3a6-f2160f96727b
 title: "EmuOCPP"
 summary: "Mininet-based emulator for OCPP charging networks covering versions 1.6, 2.0, and 2.0.1 across all three security profiles, with attack demos for the MitM…"
 type: entity

@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af3c-7ff6-9b8b-1c3db08e8aae
 title: "BUSMASTER"
 summary: "Open-source CAN simulation, analysis, and test tool from Bosch Engineering and ETAS, with a node simulator, DBC-driven signal interpretation, and scriptable…"
 type: entity

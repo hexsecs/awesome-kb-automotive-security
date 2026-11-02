@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af4a-74d3-92aa-ad799536dc77
 title: "CanLab"
 summary: "PyQt6 desktop application for offline CAN capture reverse engineering, combining automated counter and checksum detection with entropy-based signal boundary…"
 type: entity

@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-aff6-7f76-80a2-4d34737ea6b2
 title: "VeReMi Extension"
 summary: "Simulated V2X misbehavior detection dataset generated with F2MD over the Luxembourg SUMO scenario, labelling position, speed, timing, replay, DoS, and Sybil…"
 type: entity

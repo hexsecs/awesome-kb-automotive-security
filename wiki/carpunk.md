@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af53-7bdc-b7d1-1451e34be504
 title: "Carpunk"
 summary: "CAN injection toolkit and successor to CANghost, automating interface setup, sniffing, replay, and injection attacks."
 type: entity

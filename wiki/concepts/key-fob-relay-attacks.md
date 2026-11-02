@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af67-773a-a448-f728cdbc1b33
 title: "Key-fob relay attacks"
 summary: "Two attackers relay a genuine key's radio exchange, so the car sees a valid key 'nearby' — encryption doesn't help, because nothing was forged, only forwarded."
 type: concept

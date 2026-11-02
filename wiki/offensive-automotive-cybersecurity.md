@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afb4-7bdc-9b6e-6c9e71a9eb70
 title: "Offensive Automotive Cybersecurity"
 summary: "Ahmad MK Nasser and Dennis Kengo Oka, Packt 2026. The two handbook authors together on the offensive side, covering exploitation of modern automotive platforms."
 type: entity

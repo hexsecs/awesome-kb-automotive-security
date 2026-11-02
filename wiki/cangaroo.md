@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af48-762b-8865-0cb932783113
 title: "CANgaroo"
 summary: "Open-source CAN bus analyzer for Linux and Windows with DBC and LDF decoding, CAN FD, Python scripting, SocketCAN, PEAK, Kvaser, Vector, and candlelight…"
 type: entity

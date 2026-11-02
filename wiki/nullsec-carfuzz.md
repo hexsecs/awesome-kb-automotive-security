@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afb1-7b16-afa4-092487924790
 title: "NullSec CarFuzz"
 summary: "Rust fuzzer for CAN, UDS, OBD-II, and DoIP with grammar-aware test generation and coverage tracking."
 type: entity

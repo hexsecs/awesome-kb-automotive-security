@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af34-7c4e-a339-d0b0e969bb9b
 title: "AutoPi"
 summary: "Open-source core software for the AutoPi dongle, a Raspberry Pi-based OBD-II device for vehicle diagnostics, CAN bus data collection, and automotive IoT…"
 type: entity

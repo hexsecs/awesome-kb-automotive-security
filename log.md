@@ -603,3 +603,12 @@ New standalone concept page (the evaluation's fold-into-can-injection alternativ
 ## [2026-11-01] concept | #61: shared, default, and global secrets — the break-once pattern
 
 New concept page, the concept queue's last build. Four failure shapes collected across the full paper pages: the global master key (VW Group RKE — sound AUT64/XTEA behind one worldwide key, ~100M vehicles from one extraction), the per-type shared secret (Beneath the Bonnet's diagnostic ciphers, with the level collapse compounding it), the unchanged default (Hitag2's datasheet password in at least half the tested cars; Megamos's known default PIN; Foster's fleet-wide shared root SSH key), and the constant/predictable challenge (the PAM's constant 11 22 33 seed; Koscher's part-number-wide telematics challenge/response). The fleet arithmetic stated: the attacker pays extraction once per scope and amortises over every unit in it — which is why these failures outrank cipher breaks in real-world consequence. Counter-designs are the corpus's own: per-vehicle/per-ECU diversification, V2X's per-device credential architecture, Uptane's per-vehicle metadata binding. The diagnostic instance stays on uds-seed-key, cross-linked not duplicated. Related reciprocated on six pages. With this landing, the 16-item concept queue from the pilot evaluation and the corpus-wide mining pass is fully built: 25 concept pages.
+
+## [2026-11-02] adopt | OpenShelf spec 1.4 adoption: uid backfill + restamp
+
+Minted the KB `uid` and a `uid` for all 257 pages with `openshelf uid`
+(the spec 1.4 adoption path, SPEC §4.1), restamped kb.yaml
+`openshelf: "0.1"` → `"1.4"`, and taught tools/ingest.py the uid
+lifecycle: mint on stub creation, preserve verbatim on rewrites.
+Gates: ingest ×2 idempotent (0/0/0), `openshelf lint --strict` clean;
+wiki diff is exactly one added `uid:` line per page.

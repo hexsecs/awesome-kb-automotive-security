@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af9d-7eba-b03d-25166aaf88c7
 title: "How API Flaws Led to Admin Access to Over 1k USA Dealers and Control Over Your Car"
 summary: "Eaton Zveare, DEF CON 33 Car Hacking Village 2025. Slides showing how flaws in an automaker's central dealer platform yielded a national admin account…"
 type: entity

@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afd0-752e-8eb1-9918da76005b
 title: "SavvyCAN"
 summary: "Cross-platform Qt-based CAN bus reverse engineering and capture tool with DBC file loading, UDS scanning, and fuzzing support."
 type: entity

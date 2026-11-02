@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afb3-7611-b994-2c3a90ad7c8d
 title: "OCPPStorm: A Comprehensive Fuzzing Tool for OCPP Implementations"
 summary: "Coppoletta et al., VehicleSec 2024. Black-box fuzzer for the OCPP charging-station protocol that tests implementations regardless of platform or language…"
 type: entity

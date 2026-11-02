@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af66-77c1-b415-16df9b0b7742
 title: "IVI update-path trust"
 summary: "How head-unit update trust anchors fail across six IVI platforms: absent checks, a public test key, a fleet-wide key, CRC-only integrity, patchable verifiers."
 type: concept

@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af4c-7ce0-9420-9fe597997417
 title: "cannelloni"
 summary: "Tunnels SocketCAN interfaces over UDP, TCP, or SCTP, bridging a vehicle bus to a remote analysis machine and letting bench setups share one physical CAN…"
 type: entity

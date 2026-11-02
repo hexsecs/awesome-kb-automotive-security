@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af39-73cb-9cb9-3c983826e2c0
 title: "Back in the Driver's Seat: Recovering Critical Data from Tesla Autopilot Using Voltage Glitching"
 summary: "Kuhnapfel, Werling, and Jacob, 37C3 2023. Voltage-glitching attack that gives root on Tesla Autopilot hardware and recovers protected data."
 type: entity

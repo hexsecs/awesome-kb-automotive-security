@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af49-713f-aeb0-ed03cf80147a
 title: "CANHack"
 summary: "Ken Tindell's proof-of-concept toolkit of low-level CAN protocol attacks such as Janus frames, bit-banged from a Raspberry Pi Pico on the CANPico board…"
 type: entity

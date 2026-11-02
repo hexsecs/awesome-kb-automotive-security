@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af7c-78de-bd8a-b3f48ceb7862
 title: "Does Physical Adversarial Example Really Matter to Autonomous Driving? Towards System-Level Effect of Adversarial Object Evasion Attack"
 summary: "Wang et al., ICCV 2023. Measures published physical adversarial attacks against a full driving pipeline rather than the perception model alone, and finds…"
 type: entity

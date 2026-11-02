@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af92-7821-a93f-75c3cea440a2
 title: "Ford-ECU-Bruteforcer"
 summary: "Security access brute-force tool for pre-2011 Ford ECUs with 3-byte seed and 5-byte key."
 type: entity

@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af76-7bee-a208-078ed428eb58
 title: "Cross-Vehicle Generalisation Benchmark"
 summary: "Leave-one-vehicle-out benchmark unifying ROAD, CIDv2, and can-train-and-test into 217 captures across eight vehicles for evaluating whether CAN IDS models…"
 type: entity

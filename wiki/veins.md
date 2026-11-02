@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-aff5-777f-a462-fd805b2f76e6
 title: "Veins"
 summary: "Open-source vehicular network simulation framework coupling OMNeT++ and SUMO, used as the testbed for VANET and V2X security and attack studies."
 type: entity

@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af2f-71aa-81b1-0b090e242355
 title: "Automotive Cybersecurity Engineering Handbook"
 summary: "Ahmad MK Nasser, Packt 2023. Practitioner's guide to building cyber-resilient vehicles, covering threat analysis, hardware security, and ISO/SAE 21434…"
 type: entity

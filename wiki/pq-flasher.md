@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afbd-7065-9a78-29962753261f
 title: "pq-flasher"
 summary: "Python tools for reflashing VW PQ35 EPS using TP 2.0 transport layer and KWP2000 diagnostics."
 type: entity

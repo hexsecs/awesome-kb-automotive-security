@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afe8-72bb-bed3-18872cf490e0
 title: "Too Good to Be Safe: Tricking Lane Detection in Autonomous Driving with Crafted Perturbations"
 summary: "Jing et al., USENIX Security 2021. First lane-detection attack validated on a real production vehicle, exploiting the module's over-sensitivity with small…"
 type: entity

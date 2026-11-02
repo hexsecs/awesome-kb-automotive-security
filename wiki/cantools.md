@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af4d-7148-8900-80dc28d1a18d
 title: "cantools"
 summary: "Python library for CAN bus diagnostics, DBC parsing, and message decoding/encoding."
 type: entity

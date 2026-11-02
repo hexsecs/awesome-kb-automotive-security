@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-aff5-73c9-b99a-e7b70f791641
 title: "Vehicle Immobilization Revisited"
 summary: "Bokslag, 36C3 2019. Studies three vehicles and shows the immobilizer transponder talks to the body control module rather than the ECM, so weak…"
 type: entity

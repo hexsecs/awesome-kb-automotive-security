@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af87-7692-bc36-a11e2f0a2917
 title: "EVerest"
 summary: "Linux Foundation Energy full-stack open-source EV charging firmware implementing OCPP 1.6/2.0.1/2.1, ISO 15118-2/-3/-20, IEC 61851, and DIN SPEC 70121…"
 type: entity

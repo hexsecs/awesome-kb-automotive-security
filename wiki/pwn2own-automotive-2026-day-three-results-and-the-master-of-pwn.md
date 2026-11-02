@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afc2-7459-8a46-c6339db38390
 title: "Pwn2Own Automotive 2026: Day Three Results and the Master of Pwn"
 summary: "Zero Day Initiative, Tokyo 2026. Final results of the contest, where $1,047,000 was awarded for 76 unique zero-days in infotainment systems and EV chargers."
 type: entity

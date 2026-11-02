@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afcc-7e6d-877a-d08b6ed78068
 title: "Reversing a Brake ECU Firmware Update"
 summary: "Gardiner, USENIX VehicleSec 2026. Reverse engineers the Bendix EC80 brake ECU's J2497 power-line updater, diffs the firmware to show a safety recall also…"
 type: entity

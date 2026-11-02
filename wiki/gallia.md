@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af92-72d3-a43f-50759978a861
 title: "gallia"
 summary: "Extendable automotive pentesting framework from Fraunhofer AISEC focused on UDS, with DoIP and ISO-TP transports and structured logging for reproducible scans."
 type: entity

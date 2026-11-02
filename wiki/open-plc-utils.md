@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afb7-7771-9175-2f802a1097a7
 title: "open-plc-utils"
 summary: "Qualcomm Atheros powerline toolkit for HomePlug AV and Green PHY devices, the standard means of inspecting and manipulating the PLC layer that CCS charging…"
 type: entity

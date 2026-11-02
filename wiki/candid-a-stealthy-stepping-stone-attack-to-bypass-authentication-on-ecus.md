@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af43-72ae-97c1-79df9d111a7e
 title: "CANdid: A Stealthy Stepping-Stone Attack to Bypass Authentication on ECUs"
 summary: "Kulandaivel, Jain, Guajardo, and Sekar, escar USA 2022. Shows a compromised ECU can authenticate against a safety-critical ECU's SecurityAccess without the…"
 type: entity

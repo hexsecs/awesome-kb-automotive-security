@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afae-7b94-aa93-a828c9ec6084
 title: "MMI3G-Toolkit"
 summary: "SD-card-based toolkit for Audi/VW MMI3G head units covering boot-image extraction, reverse-engineered GEMMI protocol details, and an FSC signature-bypass…"
 type: entity

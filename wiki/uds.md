@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afed-7742-a4c2-a139fa58540c
 title: "uds"
 summary: "Python package for ISO 14229 UDS in both client and server roles over CAN, Ethernet, LIN, FlexRay, and K-Line, usable for simulation, testing, and decoding…"
 type: entity

@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af7a-74bb-a816-ffb52809d721
 title: "Dismantling Megamos Crypto: Wirelessly Lockpicking a Vehicle Immobilizer"
 summary: "Verdult, Garcia, and Ege, USENIX Security 2015. Reverse engineers the Megamos immobilizer used by Audi, Fiat, Honda, Volkswagen, and Volvo; famously…"
 type: entity

@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afa6-70c3-b0a9-ef2f482a8dc1
 title: "Kayak"
 summary: "Java-based CAN bus analysis tool with bus monitoring and DBC/KCD file loading support."
 type: entity

@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af60-75e8-872d-1adf279d3fb0
 title: "Protocol-aware diagnostic fuzzing"
 summary: "Fuzzing reaches the deep diagnostic states only when generation is grammar- and state-aware: sessions and SecurityAccess are the fuzzer's real problem."
 type: concept

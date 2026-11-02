@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af40-7db3-bfd8-5bec8e291721
 title: "CAN-MIRGU"
 summary: "CAN bus attack dataset from a modern vehicle driven on real roads over six days, with physically verified masquerade, suspension, and real attacks."
 type: entity

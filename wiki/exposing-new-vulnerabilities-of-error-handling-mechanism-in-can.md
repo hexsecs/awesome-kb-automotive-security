@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af8a-76c5-a965-4f8b37d1da1d
 title: "Exposing New Vulnerabilities of Error Handling Mechanism in CAN"
 summary: "Serag et al., USENIX Security 2021. Systematically tests CAN node behaviour under error conditions with CANOX and finds three further vulnerabilities in the…"
 type: entity

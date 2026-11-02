@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af3c-7e18-9eab-d58cd2ace98d
 title: "byd-dolphin-hacking"
 summary: "Reverse engineering of the BYD Dolphin DiLink 3 head unit (Android 10 on a Qualcomm QCM6125), documenting its MCU and CAN interfaces, OTA update paths, and…"
 type: entity

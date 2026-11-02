@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afe6-74f6-8b84-3860f4bba829
 title: "tesla-opener"
 summary: "Open-source tool to open Tesla charging port using HackRF and WebUSB with ASK/OOK RF transmission."
 type: entity

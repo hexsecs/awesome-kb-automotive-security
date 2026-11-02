@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af88-7679-9d8e-ab115b07c896
 title: "Experimental Security Analysis of a Modern Automobile"
 summary: "Koscher et al., IEEE S&P 2010. The paper that opened the field, demonstrating that an attacker with access to any single ECU can disable the brakes and stop…"
 type: entity

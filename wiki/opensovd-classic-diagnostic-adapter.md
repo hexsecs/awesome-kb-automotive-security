@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afb8-7a00-afc0-7cba92a740fd
 title: "OpenSOVD Classic Diagnostic Adapter"
 summary: "Eclipse OpenSOVD bridge in Rust that translates SOVD (ISO 17978) requests into UDS over DoIP for legacy ECUs, with a security plugin architecture."
 type: entity

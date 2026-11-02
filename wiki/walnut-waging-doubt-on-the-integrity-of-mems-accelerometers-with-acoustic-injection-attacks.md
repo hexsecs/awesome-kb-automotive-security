@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-aff8-754d-a51a-989832b7fafc
 title: "WALNUT: Waging Doubt on the Integrity of MEMS Accelerometers with Acoustic Injection Attacks"
 summary: "Trippel, Weisse, Xu, Honeyman, and Fu, IEEE EuroS&P 2017. Acoustic resonance attacks that forge accelerometer output, establishing analogue sensor integrity…"
 type: entity

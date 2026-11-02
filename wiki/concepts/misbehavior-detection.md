@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af68-73b2-97e1-ff778704f7d5
 title: "Misbehavior detection in V2X"
 summary: "Why V2X needs a layer beyond signatures: detecting false content from validly credentialed stations, reporting it, and the authority that decides."
 type: concept

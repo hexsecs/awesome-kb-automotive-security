@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af38-775f-bd93-ca1be573d0d6
 title: "Awesome Embedded Security"
 summary: "Tools and knowledge for embedded security research."
 type: entity

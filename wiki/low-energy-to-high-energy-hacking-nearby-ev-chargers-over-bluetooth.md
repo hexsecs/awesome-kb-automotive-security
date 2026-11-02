@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afac-7abf-8bce-67c99028ba65
 title: "Low Energy to High Energy: Hacking Nearby EV-Chargers Over Bluetooth"
 summary: "Alkemade and Nassar, Black Hat USA 2024. Bluetooth attacks on three EV chargers, built from exploits demonstrated at Pwn2Own Automotive 2024."
 type: entity

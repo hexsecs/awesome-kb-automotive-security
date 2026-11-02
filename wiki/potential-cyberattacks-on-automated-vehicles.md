@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afbc-7601-8961-06f96519fbf6
 title: "Potential Cyberattacks on Automated Vehicles"
 summary: "Petit and Shladover, IEEE T-ITS 2015. The standard reference taxonomy of attack vectors against autonomous and cooperative automated vehicles."
 type: entity

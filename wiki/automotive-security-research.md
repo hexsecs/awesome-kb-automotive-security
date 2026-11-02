@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af31-7d6c-a051-abf86751bf49
 title: "automotive-security-research"
 summary: "Published reverse engineering results for two production vehicles including CAN matrices, extracted ECU security access keys, and UDS scanning…"
 type: entity

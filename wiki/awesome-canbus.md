@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af37-79c6-a5d9-fff7935346d0
 title: "Awesome CANbus"
 summary: "Comprehensive CAN bus security resources."
 type: entity

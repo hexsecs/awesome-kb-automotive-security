@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afd1-7c37-ab6d-f89d861d86c8
 title: "SecOC Key Extractor"
 summary: "Scripts to extract SecOC (Secure On-Board Communication) keys from Toyota vehicles using comma.ai panda hardware."
 type: entity

@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af38-7c5c-a109-cda7f34478ab
 title: "Awesome EV Charging"
 summary: "Curated specifications, tools, and resources for EV charging protocols including OCPP, ISO 15118, OCPI, and Eichrecht."
 type: entity

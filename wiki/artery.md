@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af29-7bbd-917d-64ddc046193b
 title: "Artery"
 summary: "OMNeT++ simulation framework pairing the Vanetza ITS-G5 stack with SUMO traffic, providing the environment that most misbehavior-detection and V2X attack…"
 type: entity

@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af5b-7ec9-9746-a6b70fbce553
 title: "CAN availability and denial of service"
 summary: "Availability attacks remove or suppress the bus's genuine traffic, below the layer message authentication defends: flooding, bus-off, dominance, silencing."
 type: concept

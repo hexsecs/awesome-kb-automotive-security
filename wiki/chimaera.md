@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af57-74a4-9a6c-54c6eb3faec9
 title: "Chimaera"
 summary: "Research framework for IVI (In-Vehicle Infotainment) firmware reverse engineering and exploitation targeting Hyundai/Kia Gen5W_L systems."
 type: entity

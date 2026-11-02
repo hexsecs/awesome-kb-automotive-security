@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af54-7432-96f9-d25cafddd797
 title: "CFUC"
 summary: "Open hardware and firmware ISO CAN FD to USB dongle built on the STM32G431, presenting as a native SocketCAN or gs_usb interface with a bundled python-can…"
 type: entity

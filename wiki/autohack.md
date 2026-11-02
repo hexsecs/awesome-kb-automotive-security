@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af2b-7f8a-bac6-a17df9763765
 title: "AutoHack"
 summary: "Multi-bus CAN dataset from a real vehicle covering C-CAN, P-CAN, and B-CAN, with physically verified fuzzing, spoofing, replay, DoS, and UDS-based attacks."
 type: entity

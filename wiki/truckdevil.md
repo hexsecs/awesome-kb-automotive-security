@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afea-78e8-83c9-e4e475a6a367
 title: "TruckDevil"
 summary: "Framework for assessing heavy-vehicle ECUs that communicate over J1939, with ECU discovery, message reading and sending, and a J1939 fuzzer, running on a…"
 type: entity

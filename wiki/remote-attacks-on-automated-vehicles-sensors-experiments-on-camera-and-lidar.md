@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afcb-75d1-839f-76787b1e0f5b
 title: "Remote Attacks on Automated Vehicles Sensors: Experiments on Camera and LiDAR"
 summary: "Petit, Stottelaar, Feiri, and Kargl, Black Hat Europe 2015. First practical spoofing and blinding of automotive camera and LiDAR using commodity hardware."
 type: entity

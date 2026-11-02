@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af41-7af7-a61e-acead20a6867
 title: "CANalyse"
 summary: "Vehicle network analysis tool with SQL-like queries on CAN data, smart signal scanning, and Telegram bot integration."
 type: entity

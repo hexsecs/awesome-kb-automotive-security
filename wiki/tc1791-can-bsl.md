@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afe3-7abe-a0f6-9945fd9d898d
 title: "TC1791_CAN_BSL"
 summary: "CAN bootstrap loader for Infineon TriCore AudoMAX parts such as the TC1791, giving arbitrary flash and RAM read/write on Simos18 and related ECUs without…"
 type: entity

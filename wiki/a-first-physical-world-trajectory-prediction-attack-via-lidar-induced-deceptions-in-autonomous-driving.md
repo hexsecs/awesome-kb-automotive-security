@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af22-7479-a85f-776ad63e6ace
 title: "A First Physical-World Trajectory Prediction Attack via LiDAR-induced Deceptions in Autonomous Driving"
 summary: "Lou et al., USENIX Security 2024. Attacks trajectory prediction indirectly, by placing physical objects that deceive LiDAR perception, instead of…"
 type: entity

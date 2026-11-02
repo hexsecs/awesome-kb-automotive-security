@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-aff9-74e3-8d83-29a86556d0e8
 title: "WWCP_ISO15118"
 summary: "ISO 15118 implementation covering SLAC, SDP, V2GTP, -2 and -20, explicitly shipping attack vectors and penetration-testing workflows for the individual…"
 type: entity

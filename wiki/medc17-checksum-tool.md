@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afad-7866-9c70-3659c4929c30
 title: "medc17-checksum-tool"
 summary: "Analyses and corrects CRC32, ADD32, and ADD16 checksums in Bosch MED17 and EDC17 firmware, resolving CRC values algebraically rather than by brute force and…"
 type: entity

@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afc6-764b-b997-6193273855a5
 title: "pyPLC"
 summary: "Python toolkit for CCS charging research that can pose as vehicle or charger, sniff HomePlug Green PHY traffic, and walk the SLAC, DIN 70121, and ISO 15118…"
 type: entity

@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af4f-7515-9bdd-b4d7fda75037
 title: "CANvas: Fast and Inexpensive Automotive Network Mapping"
 summary: "Kulandaivel, Goyal, Agrawal, and Sekar, USENIX Security 2019. Builds an nmap for the vehicle, recovering the sender and receiver map of a CAN network in…"
 type: entity

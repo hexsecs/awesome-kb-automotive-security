@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af97-7e07-a6a2-36c8fb0d6928
 title: "ghidra_v850"
 summary: "Ghidra processor module for Renesas V850E2 and V850E3/RH850 microcontrollers, the core families behind many ECUs, for disassembling and decompiling their…"
 type: entity

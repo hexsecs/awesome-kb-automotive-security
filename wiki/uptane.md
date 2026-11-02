@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-aff0-7444-a6c3-26741ad468eb
 title: "Uptane"
 summary: "Open standard for securing automotive over-the-air updates that extends TUF to limit the damage when a repository or signing key is compromised, governed…"
 type: entity

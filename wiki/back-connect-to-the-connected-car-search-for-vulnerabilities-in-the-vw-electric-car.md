@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af39-753a-bb13-a696ab2ca256
 title: "Back-connect to the Connected Car. Search for Vulnerabilities in the VW Electric Car."
 summary: "Serdyuk, Kondikov, Razmakhnin, and Sakr, Black Hat Europe 2022. Maps the attack surface of the VW ID.3 across Wi-Fi, Bluetooth, V2X, cellular, CAN, and…"
 type: entity

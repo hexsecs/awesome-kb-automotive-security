@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afef-7642-869b-fe68a513c21c
 title: "Uptane: Securing Software Updates for Automobiles"
 summary: "Kuppusamy et al., escar Europe 2016. Extends TUF with a director role, supplier-delegated image signing, and ECU-signed vehicle version manifests, so that a…"
 type: entity

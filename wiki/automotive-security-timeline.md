@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af32-7811-817f-05a3e5d27298
 title: "Automotive Security Timeline"
 summary: "Continuously updated knowledge base of automotive cybersecurity events including vulnerability disclosures, attack demonstrations, Pwn2Own Automotive…"
 type: entity

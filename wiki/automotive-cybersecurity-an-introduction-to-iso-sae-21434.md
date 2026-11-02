@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af2f-7d6b-a3a4-d6bff0b45ab4
 title: "Automotive Cybersecurity: An Introduction to ISO/SAE 21434"
 summary: "David Ward and Paul Wooderson, SAE International 2021. Short introduction to ISO/SAE 21434 covering cybersecurity basics, setting up a company process, and…"
 type: entity

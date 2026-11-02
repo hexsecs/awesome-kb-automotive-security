@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afce-76cf-91ab-f2f85c6d81da
 title: "Robust Physical-World Attacks on Deep Learning Visual Classification"
 summary: "Eykholt et al., CVPR 2018. The stop-sign sticker attack, the canonical physical adversarial example against road sign recognition."
 type: entity

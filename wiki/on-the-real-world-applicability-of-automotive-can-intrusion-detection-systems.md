@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afb5-7e94-8beb-e703f655f31f
 title: "On the Real-World Applicability of Automotive CAN Intrusion Detection Systems"
 summary: "Lazeski et al., USENIX VehicleSec 2026. Work in progress showing that ML-based CAN intrusion detectors often learn dataset shortcuts because common datasets…"
 type: entity

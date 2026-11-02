@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afab-74cd-a4e7-64d61789a6bc
 title: "Losing the Car Keys: Wireless PHY-Layer Insecurity in EV Charging"
 summary: "Baker and Martinovic, USENIX Security 2019. Recovers ISO 15118 charging messages from the unintentional wireless emissions of CCS power-line communication…"
 type: entity

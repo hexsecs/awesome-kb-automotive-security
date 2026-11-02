@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afe1-7d67-a69b-f6627ec713e3
 title: "Survey on Security Threats and Protection Mechanisms in Embedded Automotive Networks"
 summary: "Studnia et al., DSN Workshops 2013. Widely cited survey mapping in-vehicle protocols, the threats against them, and candidate countermeasures."
 type: entity

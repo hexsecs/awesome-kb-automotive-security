@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afa9-70ba-9a9a-b8297439c42d
 title: "Lock It and Still Lose It: On the (In)Security of Automotive Remote Keyless Entry Systems"
 summary: "Garcia, Oswald, Kasper, and Pavlides, USENIX Security 2016. Recovers shared global keys covering most Volkswagen Group vehicles sold over two decades, and…"
 type: entity

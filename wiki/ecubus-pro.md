@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af82-708f-b3be-4177fe48fdd1
 title: "EcuBus-Pro"
 summary: "Cross-platform open-source ECU tool with UDS, CAN-TP, DoIP, LIN, and SOME/IP support, DBC and LDF databases, TypeScript scripting in the style of CAPL, and…"
 type: entity

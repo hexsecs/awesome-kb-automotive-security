@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afe2-7fcd-9894-194d2eb5a0bf
 title: "Survival Analysis Dataset"
 summary: "HCRL CAN captures from a Hyundai YF Sonata, Kia Soul, and Chevrolet Spark with labelled flooding, fuzzy, and malfunction attacks."
 type: entity

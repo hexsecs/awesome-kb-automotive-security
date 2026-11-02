@@ -1,5 +1,6 @@
-openshelf: "0.1"
+openshelf: "1.4"
 id: awesome-kb-automotive-security
+uid: 01a19d3c-a651-7a1e-8f1d-8ddf81de845f
 title: "Automotive Security (Awesome KB)"
 description: >
   Knowledge base for automotive security, ingested from the curated awesome

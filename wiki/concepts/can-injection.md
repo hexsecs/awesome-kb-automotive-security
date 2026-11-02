@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af5d-766f-b83e-f77cc3223141
 title: "CAN injection"
 summary: "Attacker taps exposed CAN wiring and impersonates a trusted ECU: classic CAN frames carry no sender authentication, so fake 'key valid' messages are believed."
 type: concept

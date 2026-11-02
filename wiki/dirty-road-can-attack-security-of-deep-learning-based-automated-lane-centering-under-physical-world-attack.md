@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af79-7795-b62c-6f14dec44977
 title: "Dirty Road Can Attack: Security of Deep Learning based Automated Lane Centering under Physical-World Attack"
 summary: "Sato et al., USENIX Security 2021. Physical dirty-road patches that steer a production lane-centering system out of its lane."
 type: entity

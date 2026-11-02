@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af58-7b15-9f64-da9c8501fabf
 title: "Comprehensive Experimental Analyses of Automotive Attack Surfaces"
 summary: "Checkoway et al., USENIX Security 2011. Follow-up establishing the remote attack surface, compromising a vehicle over Bluetooth, cellular, and the CD player."
 type: entity

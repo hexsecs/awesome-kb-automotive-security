@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af26-70dc-bb56-2f7b78b8fa6c
 title: "Adventures in Automotive Networks and Control Units"
 summary: "Miller and Valasek, 2013. The wired precursor to the Jeep work, documenting CAN injection against the Toyota Prius and Ford Escape and the methodology that…"
 type: entity

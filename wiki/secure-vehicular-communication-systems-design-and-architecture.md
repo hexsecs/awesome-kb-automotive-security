@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afd2-7a8a-ba87-559b3cbe7d0a
 title: "Secure Vehicular Communication Systems: Design and Architecture"
 summary: "Papadimitratos et al., IEEE Communications Magazine 2008. The SeVeCom architecture, which defined the certificate and pseudonym model underlying today's V2X…"
 type: entity

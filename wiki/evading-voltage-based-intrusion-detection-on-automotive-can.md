@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af86-73d7-ae20-b3c9bfe965a8
 title: "Evading Voltage-Based Intrusion Detection on Automotive CAN"
 summary: "Bhatia et al., NDSS 2021. The DUET masquerade attack, in which two compromised ECUs corrupt the bus voltage and defeat every published voltage-based IDS…"
 type: entity

@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afe3-72c1-afd7-b11131ce54fd
 title: "SynCAN"
 summary: "ETAS synthetic CAN benchmark with continuous, plateau, playback, suspension, and flooding attacks in the signal space, for comparing IDS that work on…"
 type: entity

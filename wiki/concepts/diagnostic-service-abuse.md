@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af61-7448-a302-5183d6ca18e2
 title: "Diagnostic-service abuse"
 summary: "The diagnostic service set is the highest-privilege surface on the vehicle network: what it actuates, how its gates fail, and the one case where they held."
 type: concept

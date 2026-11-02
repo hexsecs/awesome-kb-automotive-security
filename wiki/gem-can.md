@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af92-751b-9e93-9b0dd9204e5b
 title: "GEM-CAN"
 summary: "Labelled capture of about 143,000 CAN frames from an autonomous GEM e6 platform, with normal operation, DoS floods, and brake and steering-lock…"
 type: entity
