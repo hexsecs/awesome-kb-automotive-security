@@ -26,6 +26,8 @@ related:
   - does-physical-adversarial-example-really-matter-to-autonomous-driving-towards-system-level-effect-of-adversarial-object-evasion-attack
   - a-first-physical-world-trajectory-prediction-attack-via-lidar-induced-deceptions-in-autonomous-driving
   - on-the-realism-of-lidar-spoofing-attacks-against-autonomous-driving-vehicle-at-high-speed-and-long-distance
+  - drift-with-devil-security-of-multi-sensor-fusion-based-localization-in-high-level-autonomous-driving-under-gps-spoofing
+  - all-your-gps-are-belong-to-us-towards-stealthy-manipulation-of-road-navigation-systems
 ---
 
 Zhang et al., arXiv 2025. Traces how sensor-induced errors propagate through perception, localization, planning, and control to physical impact, and identifies 12 previously overlooked attack vectors.
