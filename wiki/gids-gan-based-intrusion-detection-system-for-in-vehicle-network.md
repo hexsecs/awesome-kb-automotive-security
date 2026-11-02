@@ -24,6 +24,7 @@ related:
   - viden-attacker-identification-on-in-vehicle-networks
   - evading-voltage-based-intrusion-detection-on-automotive-can
   - on-the-real-world-applicability-of-automotive-can-intrusion-detection-systems
+  - a-comprehensive-guide-to-can-ids-data-and-introduction-of-the-road-dataset
 ---
 
 Seo, Song, and Kim, PST 2018. Trains a GAN on normal CAN traffic only, and is a common deep-learning IDS baseline alongside the authors' Car-Hacking dataset.

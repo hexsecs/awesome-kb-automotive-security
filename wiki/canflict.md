@@ -12,7 +12,7 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "C library that manipulates the CAN bus at the data link layer from an unmodified microcontroller, abusing pin conflicts between peripherals to craft polyglot frames; the implementation behind the CCS 2022 paper."
-related: [canter, canalyzat0r, caringcaribou]
+related: [canter, canalyzat0r, caringcaribou, canflict-exploiting-peripheral-conflicts-for-data-link-layer-attacks-on-automotive-networks]
 license: GPL-3.0
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
