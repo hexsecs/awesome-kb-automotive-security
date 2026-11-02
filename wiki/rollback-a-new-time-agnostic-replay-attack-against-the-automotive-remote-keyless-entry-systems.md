@@ -24,6 +24,7 @@ related:
   - lock-it-and-still-lose-it-on-the-in-security-of-automotive-remote-keyless-entry-systems
   - gone-in-360-seconds-hijacking-with-hitag2
   - key-fob-relay-attacks
+  - rolling-code-failure-classes
 ---
 
 Csikor et al., Black Hat USA 2022. Replaying already-invalid rolling codes in sequence triggers a resynchronisation rollback, unlocking a vehicle indefinitely and defeating the countermeasure that stopped RollJam.

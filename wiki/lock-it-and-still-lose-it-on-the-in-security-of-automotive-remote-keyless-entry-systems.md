@@ -21,6 +21,7 @@ related:
   - gone-in-360-seconds-hijacking-with-hitag2
   - dismantling-megamos-crypto-wirelessly-lockpicking-a-vehicle-immobilizer
   - fast-furious-and-insecure-passive-keyless-entry-and-start-systems-in-modern-supercars
+  - rolling-code-failure-classes
 ---
 
 Garcia, Oswald, Kasper, and Pavlides, USENIX Security 2016. Recovers shared global keys covering most Volkswagen Group vehicles sold over two decades, and breaks the Hitag2 rolling-code scheme.
