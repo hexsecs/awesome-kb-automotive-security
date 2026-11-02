@@ -12,7 +12,7 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "CAN bootstrap loader for Infineon TriCore AudoMAX parts such as the TC1791, giving arbitrary flash and RAM read/write on Simos18 and related ECUs without desoldering."
-related: [simos18-sboot, ghidra-tc1797, secure-firmware-updates]
+related: [simos18-sboot, ghidra-tc1797, secure-firmware-updates, firmware-acquisition]
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
