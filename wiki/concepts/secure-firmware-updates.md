@@ -4,7 +4,7 @@ summary: "How Uptane secures vehicle software updates: two repositories, per-veh
 type: concept
 created: 2026-11-01
 updated: 2026-11-01
-related: [uptane, uptane-securing-software-updates-for-automobiles, simos18-sboot, tc1791-can-bsl, medc17-checksum-tool, uds-seed-key, firmware-acquisition]
+related: [uptane, uptane-securing-software-updates-for-automobiles, simos18-sboot, tc1791-can-bsl, medc17-checksum-tool, uds-seed-key, firmware-acquisition, pq-flasher, vw-flash, ivi-update-trust]
 sources:
   - url: "https://uptane.org/docs/latest/standard/uptane-standard"
     retrieved: 2026-11-01
@@ -151,6 +151,28 @@ Authenticity needs a secret the attacker does not hold — signatures
 over hashes, with keys distributed, thresholded, and revocable under
 a framework. That is the gap Uptane's metadata roles exist to fill.
 
+### The flashing layer: checksum repair as routine
+
+The tuning and flashing toolchain treats that algebra as a standard
+pipeline step, which is what makes the point concrete rather than
+theoretical. [pq-flasher](../pq-flasher.md)'s workflow patches a
+calibration and then *fixes the checksums* so the ECU accepts the
+modified image — recompute-and-continue, no key involved.
+[VW_Flash](../vw-flash.md) does the same across a monitoring layer:
+it handles the ECM2-to-ECM3 monitoring checksums, the second ECU
+watching the first's consistency, as a routine part of flashing —
+a watcher checking checksums detects only flashers who skip the
+step. And the check value regulators read, the Calibration
+Verification Number, is itself correctable:
+[medc17-checksum-tool](../medc17-checksum-tool.md) resolves and
+rewrites CVN values algebraically, so even the identifier a
+type-approval regime inspects can be made consistent with modified
+software. None of this is a flaw in any one tool; it is what
+checksums *are* — public functions of the data. The same failure
+class appears for IVI packages on the
+[IVI update trust](ivi-update-trust.md) page (integrity without
+authenticity); this is its flashing-layer instance.
+
 ## Pages in this KB
 
 - [Uptane](../uptane.md) — the framework's entity page (Security Analysis).
@@ -158,4 +180,5 @@ a framework. That is the gap Uptane's metadata roles exist to fill.
 - [Simos18_SBOOT](../simos18-sboot.md) — the failure case: a production signed boot chain failing link by link.
 - [TC1791_CAN_BSL](../tc1791-can-bsl.md) — the loader that turns the Simos18 chain's access into flash read/write.
 - [medc17-checksum-tool](../medc17-checksum-tool.md) — the checksum-versus-signature boundary, concretely.
+- [pq-flasher](../pq-flasher.md) and [VW_Flash](../vw-flash.md) — checksum repair (including cross-ECU monitoring checksums) as a routine flashing step.
 - [UDS seed/key](uds-seed-key.md) — the challenge-response weakness class inside the Simos18 chain.

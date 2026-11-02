@@ -12,7 +12,7 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Python tools for reflashing VW PQ35 EPS using TP 2.0 transport layer and KWP2000 diagnostics."
-related: [vw-flash, python-can, cancat, firmware-acquisition]
+related: [vw-flash, python-can, cancat, firmware-acquisition, secure-firmware-updates]
 license: "MIT"
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
