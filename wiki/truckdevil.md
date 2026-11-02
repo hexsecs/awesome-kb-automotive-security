@@ -12,7 +12,7 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Framework for assessing heavy-vehicle ECUs that communicate over J1939, with ECU discovery, message reading and sending, and a J1939 fuzzer, running on a Macchina M2 or any python-can interface."
-related: [nullsec-carfuzz, canarchy, expanding-the-attack-scenarios-of-sae-j1939-a-comprehensive-analysis-of-established-and-novel-vulnerabilities-in-transport-protocol]
+related: [nullsec-carfuzz, canarchy, expanding-the-attack-scenarios-of-sae-j1939-a-comprehensive-analysis-of-established-and-novel-vulnerabilities-in-transport-protocol, diagnostic-fuzzing]
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
