@@ -22,6 +22,7 @@ sources:
 related:
   - fingerprinting-electronic-control-units-for-vehicle-intrusion-detection
   - error-handling-of-in-vehicle-networks-makes-them-vulnerable
+  - vulcan-efficient-component-authentication-and-software-isolation-for-automotive-control-networks
 ---
 
 Nurnberger and Rossow, CHES 2016. Retrofit authentication for CAN using MACs and a global nonce, a reference point for later SecOC-style designs.
@@ -60,3 +61,4 @@ Status: **unknown** — a finished 2016 publication; the Arduino library was rel
 
 - [Fingerprinting Electronic Control Units for Vehicle Intrusion Detection](fingerprinting-electronic-control-units-for-vehicle-intrusion-detection.md)
 - [Error Handling of In-Vehicle Networks Makes Them Vulnerable](error-handling-of-in-vehicle-networks-makes-them-vulnerable.md)
+- [VulCAN](vulcan-efficient-component-authentication-and-software-isolation-for-automotive-control-networks.md) — implements vatiCAN under a compromised-ECU adversary model, and finds a practical replay attack on its nonce renewal
