@@ -12,7 +12,7 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "UDS (Unified Diagnostic Services) ECU simulator and fuzzer for discovering and testing UDS services."
-related: [uds-server, icsim, can-utils]
+related: [uds-server, icsim, can-utils, simulation-and-test-doubles]
 license: "GPL-3.0"
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"

@@ -12,7 +12,7 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Instrument Cluster Simulator for safe CAN bus security testing with virtual dashboard controls."
-related: [can-utils, carpunk, cantoolz, caringcaribou]
+related: [can-utils, carpunk, cantoolz, caringcaribou, simulation-and-test-doubles]
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

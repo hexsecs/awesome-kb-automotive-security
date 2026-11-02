@@ -12,7 +12,7 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "UDS ECU simulator and fuzzer for use alongside ICSim, for practising diagnostic command discovery and fuzzing scan tools."
-related: [udsim, icsim, caringcaribou]
+related: [udsim, icsim, caringcaribou, simulation-and-test-doubles]
 license: "GPL-2.0"
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
