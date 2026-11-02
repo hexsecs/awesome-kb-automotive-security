@@ -12,7 +12,7 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "NCC Group stencil set for the Microsoft Threat Modeling Tool, supplying vehicle-specific element types, trust boundaries, and threat rules for ECU and in-vehicle network diagrams."
-related: [automotive-threat-matrix, autotara, avcdl]
+related: [automotive-threat-matrix, autotara, avcdl, tara-methodology]
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

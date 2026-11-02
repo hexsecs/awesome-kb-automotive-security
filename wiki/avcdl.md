@@ -12,7 +12,7 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Motional's open-sourced Versatile Cybersecurity Development Lifecycle with process definitions and templates mapped to ISO/SAE 21434, ISO 24089, and UN R155/R156, assessed by TUV SUD."
-related: [autotara, security-autodesigner, automotive-threat-modeling-template, automating-function-level-tara-for-automotive-full-lifecycle-security]
+related: [autotara, security-autodesigner, automotive-threat-modeling-template, automating-function-level-tara-for-automotive-full-lifecycle-security, tara-methodology]
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
