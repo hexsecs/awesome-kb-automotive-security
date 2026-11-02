@@ -12,7 +12,7 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Automotive ECU hacking supertool for firmware dumping and manipulation via J2534 OBD interfaces."
-related: [atlas, udsoncan, uds-firmware-extraction]
+related: [atlas, udsoncan, uds-firmware-extraction, firmware-acquisition]
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

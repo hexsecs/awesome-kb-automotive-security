@@ -12,7 +12,7 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Tool for extracting ECU firmware from UDS flash traffic following ISO-14229 standard."
-related: [can-utils, udsoncan, conescan]
+related: [can-utils, udsoncan, conescan, firmware-acquisition]
 license: "GPL-2.0"
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"

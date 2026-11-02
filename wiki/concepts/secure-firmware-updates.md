@@ -4,7 +4,7 @@ summary: "How Uptane secures vehicle software updates: two repositories, per-veh
 type: concept
 created: 2026-11-01
 updated: 2026-11-01
-related: [uptane, uptane-securing-software-updates-for-automobiles, simos18-sboot, tc1791-can-bsl, medc17-checksum-tool, uds-seed-key]
+related: [uptane, uptane-securing-software-updates-for-automobiles, simos18-sboot, tc1791-can-bsl, medc17-checksum-tool, uds-seed-key, firmware-acquisition]
 sources:
   - url: "https://uptane.org/docs/latest/standard/uptane-standard"
     retrieved: 2026-11-01
