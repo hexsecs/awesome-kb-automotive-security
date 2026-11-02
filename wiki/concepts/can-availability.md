@@ -4,7 +4,7 @@ summary: "Availability attacks remove or suppress the bus's genuine traffic, bel
 type: concept
 created: 2026-11-01
 updated: 2026-11-01
-related: [can-injection, sok-kicking-can-down-the-road-systematizing-can-security-knowledge, experimental-security-analysis-of-a-modern-automobile, adventures-in-automotive-networks-and-control-units, error-handling-of-in-vehicle-networks-makes-them-vulnerable, exposing-new-vulnerabilities-of-error-handling-mechanism-in-can, canflict-exploiting-peripheral-conflicts-for-data-link-layer-attacks-on-automotive-networks, silently-disabling-ecus-and-enabling-blind-attacks-on-the-can-bus, diagnostic-service-abuse, canter]
+related: [can-injection, sok-kicking-can-down-the-road-systematizing-can-security-knowledge, experimental-security-analysis-of-a-modern-automobile, adventures-in-automotive-networks-and-control-units, error-handling-of-in-vehicle-networks-makes-them-vulnerable, exposing-new-vulnerabilities-of-error-handling-mechanism-in-can, canflict-exploiting-peripheral-conflicts-for-data-link-layer-attacks-on-automotive-networks, silently-disabling-ecus-and-enabling-blind-attacks-on-the-can-bus, diagnostic-service-abuse, canter, in-vehicle-intrusion-detection]
 sources:
   - url: "https://www.usenix.org/legacy/events/sec10/tech/full_papers/Koscher.pdf"
     retrieved: 2026-11-01

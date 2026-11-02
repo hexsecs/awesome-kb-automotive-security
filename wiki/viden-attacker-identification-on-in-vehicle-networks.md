@@ -23,6 +23,7 @@ related:
   - fingerprinting-electronic-control-units-for-vehicle-intrusion-detection
   - evading-voltage-based-intrusion-detection-on-automotive-can
   - gids-gan-based-intrusion-detection-system-for-in-vehicle-network
+  - in-vehicle-intrusion-detection
 ---
 
 Cho and Shin, ACM CCS 2017. Fingerprints transmitting ECUs by their analogue voltage signature, moving CAN defence from detecting an attack to naming the ECU responsible.

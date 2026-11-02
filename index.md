@@ -25,9 +25,10 @@ Generated from page frontmatter by tools/ingest.py; do not edit by hand.
 
 ## Concepts
 
-- [CAN availability and denial of service](wiki/concepts/can-availability.md) — Availability attacks remove or suppress the bus's genuine traffic — by arbitration, by fault confinement, by dominance, by silencing — below the layer authentication defends.
+- [CAN availability and denial of service](wiki/concepts/can-availability.md) — Availability attacks remove or suppress the bus's genuine traffic, below the layer message authentication defends: flooding, bus-off, dominance, silencing.
 - [CAN injection](wiki/concepts/can-injection.md) — Attacker taps exposed CAN wiring and impersonates a trusted ECU: classic CAN frames carry no sender authentication, so fake 'key valid' messages are believed.
 - [Diagnostic-service abuse](wiki/concepts/diagnostic-service-abuse.md) — The diagnostic service set is the highest-privilege surface on the vehicle network: what it actuates, how its gates fail, and the one case where they held.
+- [In-vehicle intrusion detection and ECU fingerprinting](wiki/concepts/in-vehicle-intrusion-detection.md) — The bus's defence literature, organised by observable signal: timing, clock skew, voltage, learned models — and split by detecting an anomaly vs attributing it.
 - [IVI update-path trust](wiki/concepts/ivi-update-trust.md) — How head-unit update trust anchors fail across six IVI platforms: absent checks, a public test key, a fleet-wide key, CRC-only integrity, patchable verifiers.
 - [Key-fob relay attacks](wiki/concepts/key-fob-relay-attacks.md) — Two attackers relay a genuine key's radio exchange, so the car sees a valid key 'nearby' — encryption doesn't help, because nothing was forged, only forwarded.
 - [Misbehavior detection in V2X](wiki/concepts/misbehavior-detection.md) — Why V2X needs a layer beyond signatures: detecting false content from validly credentialed stations, reporting it, and the authority that decides.

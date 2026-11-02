@@ -4,7 +4,7 @@ summary: "Attacker taps exposed CAN wiring and impersonates a trusted ECU: class
 type: concept
 created: 2026-10-31
 updated: 2026-11-01
-related: [canflict, canter, carpunk, canalyzat0r, can-utils, security-in-automotive-bus-systems, experimental-security-analysis-of-a-modern-automobile, comprehensive-experimental-analyses-of-automotive-attack-surfaces, adventures-in-automotive-networks-and-control-units, remote-exploitation-of-an-unaltered-passenger-vehicle, error-handling-of-in-vehicle-networks-makes-them-vulnerable, leia-a-lightweight-authentication-protocol-for-can, vulcan-efficient-component-authentication-and-software-isolation-for-automotive-control-networks, fast-and-vulnerable-a-story-of-telematic-failures, canvas-fast-and-inexpensive-automotive-network-mapping, plug-n-pwned-comprehensive-vulnerability-analysis-of-obd-ii-dongles, can-availability]
+related: [canflict, canter, carpunk, canalyzat0r, can-utils, security-in-automotive-bus-systems, experimental-security-analysis-of-a-modern-automobile, comprehensive-experimental-analyses-of-automotive-attack-surfaces, adventures-in-automotive-networks-and-control-units, remote-exploitation-of-an-unaltered-passenger-vehicle, error-handling-of-in-vehicle-networks-makes-them-vulnerable, leia-a-lightweight-authentication-protocol-for-can, vulcan-efficient-component-authentication-and-software-isolation-for-automotive-control-networks, fast-and-vulnerable-a-story-of-telematic-failures, canvas-fast-and-inexpensive-automotive-network-mapping, plug-n-pwned-comprehensive-vulnerability-analysis-of-obd-ii-dongles, can-availability, in-vehicle-intrusion-detection]
 sources:
   - url: "https://plaxidityx.com/blog/blog-post/what-oems-can-do-to-prevent-can-injection-car-theft/"
     retrieved: 2026-10-31
@@ -88,10 +88,10 @@ microcontroller.
 - **Plausibility interlocks:** Tindell's suggested short-term fix —
   inhibit smart-key unlock/start when recent CAN error or DTC anomalies
   indicate bus disturbance.
-- **Intrusion detection:** per-ID timing and frequency anomaly detection
-  and ECU fingerprinting; [CANter](../canter.md) targets the
-  drop-and-spoof variant specifically. Telematics alerts on DTC bursts
-  catch the noisy injector variants.
+- **Intrusion detection:** per-ID timing/frequency anomaly detection
+  and ECU fingerprinting — see
+  [in-vehicle intrusion detection](in-vehicle-intrusion-detection.md)
+  for the field organised by signal and by the detect/attribute line.
 - **Physical:** harness routing and protection, tamper evidence on
   exterior connectors.
 

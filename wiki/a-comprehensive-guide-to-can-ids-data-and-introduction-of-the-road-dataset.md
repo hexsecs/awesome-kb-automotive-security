@@ -25,6 +25,7 @@ related:
   - evading-voltage-based-intrusion-detection-on-automotive-can
   - car-hacking-dataset
   - can-train-and-test
+  - in-vehicle-intrusion-detection
 ---
 
 Verma et al., 2020. Systematises the CAN IDS dataset landscape, documents the flaws in earlier datasets, and introduces ROAD.
