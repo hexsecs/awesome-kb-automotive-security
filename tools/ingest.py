@@ -12,8 +12,9 @@ under `##` sections — and maintains this KB's OpenShelf awesome profile:
   frontmatter, generated from page frontmatter,
 - `index.md` — the L1 index linking the sub-indexes; reads as the list.
 
-Existing pages with `depth: full` keep their body; only provenance
-frontmatter is refreshed. Unmanaged frontmatter blocks on an existing page
+Existing pages with an authored depth (`brief`, `full`, or `deep`)
+keep their body; only provenance frontmatter is refreshed. Stub pages
+are regenerated from the entry. Unmanaged frontmatter blocks on an existing page
 (`related`, `tags`, a richer `sources`, …) are preserved verbatim, so
 hand-written depth survives a sync. Concept pages under `wiki/concepts/`
 are listed in the L1 index.
@@ -252,7 +253,7 @@ def main() -> int:
                     last_checked=str(fields.get("last_checked", "")) or None,
                     created=str(fields.get("created", "")) or None,
                     updated=date) + (
-                    body if depth == "full" else stub_body(e))
+                    body if depth != "stub" else stub_body(e))
                 page.write_text(new_text, encoding="utf-8")
                 updated += 1
         matched.add(page)
