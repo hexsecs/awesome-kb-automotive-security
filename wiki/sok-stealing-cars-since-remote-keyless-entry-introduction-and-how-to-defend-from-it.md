@@ -24,6 +24,7 @@ related:
   - fast-furious-and-insecure-passive-keyless-entry-and-start-systems-in-modern-supercars
   - rollback-a-new-time-agnostic-replay-attack-against-the-automotive-remote-keyless-entry-systems
   - key-fob-relay-attacks
+  - my-other-car-is-your-car-compromising-the-tesla-model-x-keyless-entry-system
 ---
 
 Bianchi et al., USENIX VehicleSec 2025. Systematization of RKE and passive keyless entry and start systems, covering their history, the attacks against them, and the defences.
