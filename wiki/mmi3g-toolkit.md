@@ -12,7 +12,7 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "SD-card-based toolkit for Audi/VW MMI3G head units covering boot-image extraction, reverse-engineered GEMMI protocol details, and an FSC signature-bypass technique alongside CAN diagnostic and variant-dumping tools."
-related: [ic1101, q50-reverse-engineering, secure-firmware-updates, uds-seed-key, ivi-update-trust]
+related: [ic1101, q50-reverse-engineering, secure-firmware-updates, uds-seed-key, ivi-update-trust, ivi-runtime-privilege]
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
