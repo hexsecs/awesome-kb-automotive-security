@@ -3,7 +3,7 @@ title: "CAN injection"
 summary: "Attacker taps exposed CAN wiring and impersonates a trusted ECU: classic CAN frames carry no sender authentication, so fake 'key valid' messages are believed."
 type: concept
 created: 2026-10-31
-updated: 2026-10-31
+updated: 2026-11-01
 related: [canflict, canter, carpunk, canalyzat0r, can-utils, security-in-automotive-bus-systems, experimental-security-analysis-of-a-modern-automobile, comprehensive-experimental-analyses-of-automotive-attack-surfaces, adventures-in-automotive-networks-and-control-units, remote-exploitation-of-an-unaltered-passenger-vehicle, error-handling-of-in-vehicle-networks-makes-them-vulnerable, leia-a-lightweight-authentication-protocol-for-can, vulcan-efficient-component-authentication-and-software-isolation-for-automotive-control-networks]
 sources:
   - url: "https://plaxidityx.com/blog/blog-post/what-oems-can-do-to-prevent-can-injection-car-theft/"
@@ -29,6 +29,39 @@ is involved — the attack forges a *status claim*, not a credential. Some
 injector devices also electrically dominate or flood the bus to suppress
 legitimate ECUs, which is why the RAV4 logged a storm of diagnostic
 trouble codes during the theft.
+
+## Access paths
+
+The theft above is this concept's core case, not its whole extent.
+The substrate claim — frames carry no sender identity, so any
+transmitter is believed — is one concept, but *how the transmitter
+gets on the bus* varies, and the mitigations below do not bind every
+path equally. The KB's pages use at least four entries:
+
+1. **External tap** (the theft model): a concealed device on exposed
+   exterior wiring. Segmentation of externally reachable segments and
+   gateway forwarding policy bind this path directly.
+2. **Diagnostic-port attachment:** the assumed-access research model —
+   [Koscher 2010](../experimental-security-analysis-of-a-modern-automobile.md)'s
+   laptop on the OBD-II port, and Miller & Valasek 2013's ECOM cable
+   likewise. No concealed device and no key-validation forgery; what
+   binds here is physical access control and diagnostic-session
+   gating, not harness segmentation.
+3. **Compromised or bridged ECU:** an ECU already inside the network
+   becomes the injector — Checkoway 2011's exploited media player
+   sending arbitrary CAN packets; the Jeep's reflashed V850 bridge
+   chip in Miller & Valasek 2015; Koscher's telematics unit
+   reprogrammed from the low-speed bus to relay onto the high-speed
+   bus. Segmentation of *external* segments does nothing against a
+   dual-homed unit already inside both subnets; only message
+   authentication binds this path fully.
+4. **Data-link-layer crafting from an unmodified MCU:**
+   [CANflict](../canflict.md) forges frames below the controller's
+   own checks, from inside a legitimate node.
+
+Only message authentication with freshness binds all four; every
+other mitigation is path-specific, and a defence argued from the
+theft model alone silently leaves paths 2–4 open.
 
 ## Why the design is vulnerable
 

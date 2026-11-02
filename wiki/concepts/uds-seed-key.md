@@ -3,13 +3,15 @@ title: "UDS seed/key (SecurityAccess)"
 summary: "UDS SecurityAccess (0x27) gates privileged diagnostics behind a seed/key exchange; weak seeds, reused secrets and simple algorithms defeat it."
 type: concept
 created: 2026-10-31
-updated: 2026-10-31
-related: [python-can-isotp, savvycan, cancat, udsoncan, unlockecu, experimental-security-analysis-of-a-modern-automobile, beneath-the-bonnet-a-breakdown-of-diagnostic-security]
+updated: 2026-11-01
+related: [python-can-isotp, savvycan, cancat, udsoncan, unlockecu, experimental-security-analysis-of-a-modern-automobile, beneath-the-bonnet-a-breakdown-of-diagnostic-security, ford-ecu-bruteforcer]
 sources:
   - url: "https://doi.org/10.29354/diag/192162"
     retrieved: 2026-10-31
   - url: "https://pure-oai.bham.ac.uk/ws/portalfiles/portal/50643148/Beneath_the_Bonnet.pdf"
     retrieved: 2026-10-31
+  - url: "https://www.autosec.org/pubs/cars-oakland2010.pdf"
+    retrieved: 2026-11-01
 ---
 
 UDS SecurityAccess — service 0x27 of the Unified Diagnostic Services
@@ -39,6 +41,29 @@ synthesised from observed seed/key pairs. The ESORICS 2018 paper
 reverse engineered the seed-key ciphers of four manufacturers from ECU
 firmware and reached remote code execution over CAN through diagnostics
 alone.
+
+## The measured baseline
+
+The weakness is not hypothetical, and its arithmetic is on record.
+[Koscher et al. 2010](../experimental-security-analysis-of-a-modern-automobile.md)
+— this concept's experimental root — measured the production gate of
+its era: **16-bit seeds and 16-bit keys**, one key attempt allowed
+every 10 seconds, which prices an online brute-force of one ECU at a
+little over **7½ days**, or **~3½ days** with power-cycling on the
+bench — and the team recovered the brake module's key exhaustively in
+**about 1½ days**. Attempt limiting (below) is prescribed against
+exactly this baseline. The same paper found the limiting case of
+secret management: a telematics unit whose challenge/response was
+**hardcoded and common to all units of the part number** — against
+the standard's explicit rule that units sharing a part number shall
+not share a security seed — compounded by the unit never checking
+the exchange's result at all. A second named constant-seed case is
+Miller & Valasek 2013's PAM, whose seed is **always the constant
+11 22 33** (the firmware randomises, then overwrites it — leftover
+debugging code, per the authors). And the small shared key space is
+exploited in the field, not only in papers:
+[ford-ecu-bruteforcer](../ford-ecu-bruteforcer.md) unlocks pre-2011
+Ford modules purely from a bag of known keys.
 
 ## Why the design is vulnerable
 
