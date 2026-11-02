@@ -12,7 +12,7 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Automated TARA platform for creating ISO 21434 and UNR 155 compliant threat analysis reports."
-related: [autotara, avcdl, automotive-threat-matrix]
+related: [autotara, avcdl, automotive-threat-matrix, tara-methodology]
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
