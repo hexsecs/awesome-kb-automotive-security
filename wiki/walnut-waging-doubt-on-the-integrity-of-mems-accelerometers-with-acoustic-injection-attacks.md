@@ -6,6 +6,7 @@ category: "Research Papers"
 url: "https://spqrlab1.github.io/papers/trippel-IEEE-oaklawn-walnut-2017.pdf"
 status: unknown
 last_checked: 2026-10-31
+created: 2026-10-31
 updated: 2026-10-31
 depth: stub
 source_list: awesome-automotive-security

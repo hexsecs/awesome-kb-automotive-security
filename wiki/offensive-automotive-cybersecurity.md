@@ -6,6 +6,7 @@ category: "Books"
 url: "https://books.google.com/books/about/Offensive_Automotive_Cybersecurity.html?id=tQbfEQAAQBAJ"
 status: unknown
 last_checked: 2026-10-31
+created: 2026-10-31
 updated: 2026-10-31
 depth: stub
 source_list: awesome-automotive-security

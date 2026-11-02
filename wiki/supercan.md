@@ -6,6 +6,7 @@ category: "Hardware Interfaces"
 url: "https://github.com/jgressmann/supercan"
 status: active
 last_checked: 2026-11-01
+created: 2026-10-31
 updated: 2026-11-01
 depth: full
 source_list: awesome-automotive-security

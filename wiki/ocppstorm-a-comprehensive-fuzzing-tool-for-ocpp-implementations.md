@@ -6,6 +6,7 @@ category: "Research Papers"
 url: "https://www.ndss-symposium.org/ndss-paper/auto-draft-457/"
 status: unknown
 last_checked: 2026-10-31
+created: 2026-10-31
 updated: 2026-10-31
 depth: stub
 source_list: awesome-automotive-security

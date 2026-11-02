@@ -6,6 +6,7 @@ category: "Research Papers"
 url: "https://pure-oai.bham.ac.uk/ws/portalfiles/portal/29342174/leia.pdf"
 status: unknown
 last_checked: 2026-11-01
+created: 2026-10-31
 updated: 2026-11-01
 depth: full
 source_list: awesome-automotive-security

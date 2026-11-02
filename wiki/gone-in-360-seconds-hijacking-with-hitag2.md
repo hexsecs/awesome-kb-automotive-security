@@ -6,6 +6,7 @@ category: "Research Papers"
 url: "https://www.usenix.org/conference/usenixsecurity12/technical-sessions/presentation/verdult"
 status: unknown
 last_checked: 2026-11-01
+created: 2026-10-31
 updated: 2026-11-01
 depth: full
 source_list: awesome-automotive-security

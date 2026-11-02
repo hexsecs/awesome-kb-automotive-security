@@ -6,6 +6,7 @@ category: "Conference Presentations"
 url: "https://www.zerodayinitiative.com/blog/2026/1/23/pwn2own-automotive-2026-day-three-results-and-the-master-of-pwn"
 status: unknown
 last_checked: 2026-10-31
+created: 2026-10-31
 updated: 2026-10-31
 depth: stub
 source_list: awesome-automotive-security

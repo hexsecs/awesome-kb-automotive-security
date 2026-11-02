@@ -6,6 +6,7 @@ category: "Firmware and ECU Reverse Engineering"
 url: "https://github.com/ConnorHowell/medc17-checksum-tool"
 status: active
 last_checked: 2026-11-01
+created: 2026-10-31
 updated: 2026-11-01
 depth: full
 source_list: awesome-automotive-security

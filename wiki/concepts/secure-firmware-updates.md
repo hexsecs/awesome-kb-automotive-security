@@ -2,6 +2,7 @@
 title: "Secure firmware updates (Uptane)"
 summary: "How Uptane secures vehicle software updates: two repositories, per-vehicle signed instructions, and compromise resilience when servers or keys fall."
 type: concept
+created: 2026-11-01
 updated: 2026-11-01
 related: [uptane, uptane-securing-software-updates-for-automobiles, simos18-sboot, tc1791-can-bsl, medc17-checksum-tool, uds-seed-key]
 sources:
