@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af55-79af-bc80-4a67f52b88d1
 title: "Charge It to My Neighbor: A Relay Attack on ISO 15118 Plug and Charge Payment"
 summary: "Löw et al., USENIX VehicleSec 2026. Relays Plug and Charge authentication so the attacker charges their own car while the victim is billed, exploiting…"
 type: entity

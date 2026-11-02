@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af98-736d-a844-879609198af2
 title: "GIDS: GAN based Intrusion Detection System for In-Vehicle Network"
 summary: "Seo, Song, and Kim, PST 2018. Trains a GAN on normal CAN traffic only, and is a common deep-learning IDS baseline alongside the authors' Car-Hacking dataset."
 type: entity

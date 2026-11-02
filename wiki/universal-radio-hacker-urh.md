@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afee-7f0d-937d-9ed67c0570d9
 title: "Universal Radio Hacker (URH)"
 summary: "Open-source suite for wireless protocol investigation with native SDR support and easy signal demodulation."
 type: entity

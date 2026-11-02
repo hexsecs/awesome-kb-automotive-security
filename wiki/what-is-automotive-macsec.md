@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-aff9-79c7-af18-5876b460d17e
 title: "What is Automotive MACsec?"
 summary: "Video training on Automotive MACsec concepts by Technica Engineering."
 type: entity

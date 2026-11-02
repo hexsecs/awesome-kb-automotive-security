@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afd9-7948-9bd9-0cd43b4102f6
 title: "SoK: Kicking CAN Down the Road. Systematizing CAN Security Knowledge"
 summary: "Serag et al., 2025. Systematization of two decades of CAN security, with a unified taxonomy and assessment model for attackers, attacks, and defences."
 type: entity

@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af78-7f9e-ae8e-00515bf956bb
 title: "Cybersecurity for Commercial Vehicles"
 summary: "Gloria D'Anna, SAE International 2018. Covers heavy vehicle and fleet security, how it differs from passenger cars, SAE J3061, platooning, and breach forensics."
 type: entity

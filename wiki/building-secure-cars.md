@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af3c-7f86-9f82-d46b6aa93ade
 title: "Building Secure Cars"
 summary: "Dennis Kengo Oka, Wiley 2021. Focuses on assuring the automotive software development lifecycle, from secure coding and static analysis through fuzzing and…"
 type: entity

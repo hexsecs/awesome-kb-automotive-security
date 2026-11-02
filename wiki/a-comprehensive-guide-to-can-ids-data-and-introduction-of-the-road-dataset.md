@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af21-79cb-9ba0-fa4eb7f7c07b
 title: "A Comprehensive Guide to CAN IDS Data and Introduction of the ROAD Dataset"
 summary: "Verma et al., 2020. Systematises the CAN IDS dataset landscape, documents the flaws in earlier datasets, and introduces ROAD."
 type: entity

@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af5a-7e5d-bdf3-698d5606511e
 title: "The calibration plane (XCP/A2L)"
 summary: "Beside diagnostics sits a second access plane into production ECUs: XCP's direct memory access and the A2L maps that name everything it can touch."
 type: concept

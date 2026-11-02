@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af70-7f14-b747-84f22c57e2df
 title: "Simulation and test doubles for vehicle networks"
 summary: "The corpus's simulation layer, rung by rung — virtual bus, replay, declarative doubles, physical miniatures — and what each rung cannot tell you."
 type: concept

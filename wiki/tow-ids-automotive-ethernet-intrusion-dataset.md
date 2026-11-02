@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afe9-7979-9886-6d4b05e6997f
 title: "TOW-IDS Automotive Ethernet Intrusion Dataset"
 summary: "HCRL captures of AVTP, gPTP, and CAN-over-UDP traffic on an automotive Ethernet network, split into normal driving and five labelled attack scenarios."
 type: entity

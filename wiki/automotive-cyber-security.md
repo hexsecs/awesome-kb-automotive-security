@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af2e-7c1c-aed3-422bb39c11dc
 title: "Automotive Cyber Security"
 summary: "Shiho Kim and Rakesh Shrestha, Springer 2020. Academic introduction to connected and autonomous vehicle security, threats, and the standardisation landscape."
 type: entity

@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af5f-7345-a8e2-1d04ca6c743d
 title: "The EV–EVSE charging trust chain (ISO 15118 / DIN 70121)"
 summary: "The vehicle–charger link's trust is a chain — association, transport, contract authorisation — whose links fail independently and are measured failing."
 type: concept

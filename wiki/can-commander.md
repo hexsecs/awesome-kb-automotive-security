@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af3f-785c-8f5a-0c7bd57532c1
 title: "CAN Commander"
 summary: "Flipper Zero application and companion ESP32 CAN board for reverse engineering vehicle networks, with sniffing, DBC decoding, replay, and injection profiles…"
 type: entity

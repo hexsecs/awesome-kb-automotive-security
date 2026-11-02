@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af6f-7dff-a1c9-8cf0e3927076
 title: "Shared, default, and global secrets: the break-once pattern"
 summary: "The decisive failure is rarely cipher strength — it is one secret shared by a fleet or a type, or a default nobody changed. Break one, break all."
 type: concept

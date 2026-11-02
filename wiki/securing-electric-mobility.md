@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afd2-76ee-88a5-fad7e1609b89
 title: "Securing Electric Mobility"
 summary: "Aparna Kumari (ed.), Elsevier 2026. Edited volume on the security of electric vehicles and charging infrastructure."
 type: entity

@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af91-7450-9dd1-1e1a0a73d832
 title: "Flipper Zero"
 summary: "Handheld multi-tool with Sub-GHz capabilities for reading, saving, and transmitting key fob signals with automotive database."
 type: entity

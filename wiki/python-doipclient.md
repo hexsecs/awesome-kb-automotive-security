@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afc7-7e1d-a9f7-5a36949840ea
 title: "python-doipclient"
 summary: "Pure Python DoIP (ISO 13400) client that plugs into udsoncan as a transport layer for diagnostics over automotive Ethernet."
 type: entity

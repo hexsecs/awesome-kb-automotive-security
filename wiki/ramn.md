@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afca-7d42-8911-7c5bbd1fc75c
 title: "RAMN"
 summary: "Resistant Automotive Miniature Network, a four-ECU CAN/CAN FD testbed on a single board with KiCad sources, CARLA closed-loop simulation, and use as the Car…"
 type: entity

@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af76-75a6-9dc0-1746c8bc18cc
 title: "Current Affairs: A Security Measurement Study of CCS EV Charging Deployments"
 summary: "Szakaly et al., USENIX Security 2025. First measurement of publicly deployed CCS DC chargers, finding that only 12 percent of 325 units across four European…"
 type: entity

@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af42-7a8f-b5af-4aacbbcb758e
 title: "CANalyzat0r"
 summary: "Security analysis toolkit for proprietary car protocols with graphical sniffing, fuzzing, packet comparison, background-noise filtering, and UDS fuzzing."
 type: entity

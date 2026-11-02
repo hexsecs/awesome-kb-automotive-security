@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-aff1-7a5b-b259-d2f333b4007c
 title: "V2Gdecoder"
 summary: "Encodes and decodes EXI-compressed V2G messages on the fly, turning captured ISO 15118 exchanges into editable XML for replay and fuzzing."
 type: entity

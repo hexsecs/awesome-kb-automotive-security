@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afdb-7797-92cd-cfec994740cd
 title: "SoK: The Next Frontier in AV Security: Systematizing Perception Attacks and the Emerging Threat of Multi-Sensor Fusion"
 summary: "Khan, Islam, and Hasan, arXiv 2026. Systematizes 48 studies of perception-layer attacks into a taxonomy of 20 attack vectors and shows how…"
 type: entity

@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af27-7fb5-92e3-31ec35edf907
 title: "Adversarial Sensor Attack on LiDAR-based Perception in Autonomous Driving"
 summary: "Cao et al., ACM CCS 2019. Spoofs LiDAR returns to inject a fake obstacle into the perception pipeline of a production autonomous driving stack."
 type: entity

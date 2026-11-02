@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af2a-7729-994a-568e39ac3125
 title: "AutoFuze"
 summary: "Python toolkit for fuzzing and penetration testing ECUs over UDS, XCP, SOME/IP, and OBD, across CAN, DoIP, USB, and SPI transports."
 type: entity

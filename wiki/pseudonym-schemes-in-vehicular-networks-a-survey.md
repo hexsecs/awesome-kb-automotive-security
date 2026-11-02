@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afc0-7892-92c3-285d32826893
 title: "Pseudonym Schemes in Vehicular Networks: A Survey"
 summary: "Petit, Schaub, Feiri, and Kargl, IEEE Communications Surveys and Tutorials 2015. Defines the pseudonym lifecycle and categorises the schemes that reconcile…"
 type: entity

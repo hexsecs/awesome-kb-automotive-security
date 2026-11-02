@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af9b-7524-9a21-83745e2c0918
 title: "Hacking Connected Cars"
 summary: "Alissa Knight, Wiley 2020. Tactics, techniques, and procedures for penetration testing, threat modelling, and risk assessment of telematics control units…"
 type: entity

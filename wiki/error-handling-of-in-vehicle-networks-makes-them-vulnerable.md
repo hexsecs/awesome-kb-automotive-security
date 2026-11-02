@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af83-74cd-9d71-17582c586f4f
 title: "Error Handling of In-vehicle Networks Makes Them Vulnerable"
 summary: "Cho and Shin, ACM CCS 2016. The bus-off attack, which abuses CAN error handling to force an uncompromised ECU off the bus without any vehicle-specific…"
 type: entity

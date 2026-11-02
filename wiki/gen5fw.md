@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af93-75b4-bfb6-99f1d68ed410
 title: "gen5fw"
 summary: "Python tools for decrypting, patching, and redeploying firmware on Mobis Gen5 navigation head units in Hyundai, Kia, and Genesis vehicles, including…"
 type: entity

@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afed-7e65-a6ba-25715c40f317
 title: "UDSim"
 summary: "UDS (Unified Diagnostic Services) ECU simulator and fuzzer for discovering and testing UDS services."
 type: entity

@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afce-7761-b78f-15ccafd87f03
 title: "RollBack: A New Time-Agnostic Replay Attack Against the Automotive Remote Keyless Entry Systems"
 summary: "Csikor et al., Black Hat USA 2022. Replaying already-invalid rolling codes in sequence triggers a resynchronisation rollback, unlocking a vehicle…"
 type: entity

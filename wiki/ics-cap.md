@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af9f-7cee-bda4-5fce542a9fc5
 title: "ICS CAP"
 summary: "Free Wireshark plugin for monitoring Automotive Ethernet, CAN, CAN FD, LIN, and FlexRay networks."
 type: entity

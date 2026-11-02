@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afcd-7453-9cd8-09c4a286f844
 title: "ROAD"
 summary: "Real ORNL Automotive Dynamometer CAN intrusion dataset with verified fuzzing, targeted ID, masquerade, and accelerator attacks captured on a dynamometer."
 type: entity

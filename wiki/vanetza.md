@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-aff3-75dd-bee6-647d6f1b8953
 title: "Vanetza"
 summary: "Open-source ETSI C-ITS protocol stack covering GeoNetworking, BTP, DCC, and the security layer, widely used as the reference implementation for V2X…"
 type: entity

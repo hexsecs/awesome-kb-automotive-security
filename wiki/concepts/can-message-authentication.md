@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af5e-7711-a7da-b8fc246900a9
 title: "CAN message authentication: the retrofit design space"
 summary: "Two complete academic designs and the standardised answer, compared on freshness, key scope, frame cost, and evidence — plus the two limits they all share."
 type: concept

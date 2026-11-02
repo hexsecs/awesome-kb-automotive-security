@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af56-76b3-b6fb-9ebae93928ad
 title: "ChargeSploit"
 summary: "Security testing framework for ISO 15118-2 and DIN SPEC 70121 that emulates either the charger or the vehicle, with TLS support and extensible handlers for…"
 type: entity

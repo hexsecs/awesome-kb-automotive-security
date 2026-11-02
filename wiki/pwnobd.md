@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afc2-704e-be4b-92bf73f1f321
 title: "pwnobd"
 summary: "Offensive cybersecurity toolkit for vulnerability analysis of OBD-II devices presented at Black Hat Europe 2024."
 type: entity

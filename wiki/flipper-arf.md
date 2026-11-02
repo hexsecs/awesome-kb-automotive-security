@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af90-7583-a351-c1e70b393d6e
 title: "Flipper-ARF"
 summary: "Automotive-focused firmware fork for Flipper Zero supporting Keeloq, rolling codes, and VAG protocol analysis."
 type: entity

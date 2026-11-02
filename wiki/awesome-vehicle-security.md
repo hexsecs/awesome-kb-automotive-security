@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af39-7d10-af6e-1c06591af5f8
 title: "Awesome Vehicle Security"
 summary: "Long-running curated list of vehicle security resources, hardware, software, researchers, and manufacturer disclosure programs."
 type: entity

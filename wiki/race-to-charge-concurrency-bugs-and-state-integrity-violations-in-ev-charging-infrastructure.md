@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afc9-7120-a025-d550f6c16c32
 title: "Race to Charge: Concurrency Bugs and State Integrity Violations in EV Charging Infrastructure"
 summary: "Lee and Lee, USENIX VehicleSec 2026. Audits the open-source EVerest charging stack and finds 11 CVE-assigned flaws, from data races confirmed with…"
 type: entity

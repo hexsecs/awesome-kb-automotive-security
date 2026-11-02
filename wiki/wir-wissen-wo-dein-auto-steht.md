@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-aff9-77dd-979d-fa96e11bcc3a
 title: "Wir wissen, wo dein Auto steht"
 summary: "Kreil and Flupke, 38C3 2024. German-language talk on movement data of 800,000 Volkswagen group electric cars that was exposed unprotected online."
 type: entity

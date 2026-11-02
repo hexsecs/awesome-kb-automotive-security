@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af30-7fa9-8e49-ac763d0be49a
 title: "Automotive Cybersecurity Roadmap"
 summary: "Structured learning path from CAN and UDS fundamentals through TARA, firmware reverse engineering, and hardware hacking into specialized career tracks."
 type: entity

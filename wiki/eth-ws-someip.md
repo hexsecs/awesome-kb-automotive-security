@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af85-727f-9518-ed3053cb3c8b
 title: "eth-ws-someip"
 summary: "Wireshark LUA dissectors for Automotive Ethernet SOME/IP and SOME/IP-SD protocols (Autosar 4.2)."
 type: entity

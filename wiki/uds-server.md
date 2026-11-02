@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afec-7e30-9564-ca1bc27151af
 title: "uds-server"
 summary: "UDS ECU simulator and fuzzer for use alongside ICSim, for practising diagnostic command discovery and fuzzing scan tools."
 type: entity

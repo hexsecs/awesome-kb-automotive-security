@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af8c-71aa-a3e9-301d9409291a
 title: "Fast and Vulnerable: A Story of Telematic Failures"
 summary: "Foster, Prudhomme, Koscher, and Savage, USENIX WOOT 2015. Shows an aftermarket OBD-II telematics dongle exposing SMS-reachable remote control of vehicle CAN…"
 type: entity

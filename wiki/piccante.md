@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afbb-7327-a2b9-6715c631d4c9
 title: "PiCCANTE"
 summary: "Dirt-cheap CAN bus exploration tool built on Raspberry Pi Pico as an open-source hardware/software solution."
 type: entity

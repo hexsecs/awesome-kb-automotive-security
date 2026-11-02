@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afd3-7b35-8c2e-4e5e894e501b
 title: "Security and Privacy Vulnerabilities of In-Car Wireless Networks: A Tire Pressure Monitoring System Case Study"
 summary: "Rouf et al., USENIX Security 2010. Shows TPMS sensors are unauthenticated and trackable at roughly 40m, the first published wireless in-car network attack."
 type: entity

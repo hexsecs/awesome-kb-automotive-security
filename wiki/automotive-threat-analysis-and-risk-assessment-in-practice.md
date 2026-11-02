@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af32-71c2-b1ae-e8f974b220f2
 title: "Automotive Threat Analysis and Risk Assessment in Practice"
 summary: "Rodrigo do Carmo and Alexander Schlensog, Springer 2024. Practitioner's guide to threat analysis and risk assessment (TARA) following ISO/SAE 21434, with…"
 type: entity

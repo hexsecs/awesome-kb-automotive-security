@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afc8-716e-89a6-4b8d852c7bdc
 title: "pyXCP"
 summary: "Python implementation of the ASAM MCD-1 XCP protocol over CAN, Ethernet, and USB, with seed-and-key access handling, for measuring, calibrating, and…"
 type: entity

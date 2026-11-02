@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afd5-78d5-9515-b17e8d49e566
 title: "Security in Automotive Bus Systems"
 summary: "Wolf, Weimerskirch, and Paar, Workshop on Embedded Security in Cars 2004. The first systematic treatment of CAN, LIN, MOST, and FlexRay as security…"
 type: entity

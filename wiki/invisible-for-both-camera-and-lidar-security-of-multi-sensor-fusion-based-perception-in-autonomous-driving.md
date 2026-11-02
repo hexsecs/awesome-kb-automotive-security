@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afa2-75c0-9237-95f198f1e946
 title: "Invisible for both Camera and LiDAR: Security of Multi-Sensor Fusion based Perception in Autonomous Driving"
 summary: "Cao et al., IEEE S&P 2021. Defeats the multi-sensor fusion designs that production stacks actually use, with a single adversarial object invisible to camera…"
 type: entity

@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afd9-7a4d-869c-6dc9fa43859a
 title: "SoK: Stealing Cars Since Remote Keyless Entry Introduction and How to Defend From It"
 summary: "Bianchi et al., USENIX VehicleSec 2025. Systematization of RKE and passive keyless entry and start systems, covering their history, the attacks against…"
 type: entity

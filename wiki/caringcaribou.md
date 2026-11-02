@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af53-7029-b987-a1c27f43708f
 title: "CaringCaribou"
 summary: "Python automotive security exploration tool designed as the nmap of CAN bus with fuzzing, ECU discovery, and attack modules."
 type: entity

@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afc3-788d-82b8-419f09773e36
 title: "pyA2L"
 summary: "Python parser for ASAM MCD-2 MC (A2L) description files, exposing the characteristic, measurement, and memory-layout metadata needed to make sense of ECU…"
 type: entity

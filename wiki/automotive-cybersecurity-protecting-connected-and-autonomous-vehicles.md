@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af30-78c0-926b-d306dfd927e7
 title: "Automotive Cybersecurity: Protecting Connected and Autonomous Vehicles"
 summary: "Alfred Basta and Sam Hana, Kendall Hunt 2026. Textbook covering threats from ECU networks and sensor spoofing to OTA patching, EV charging breaches, and…"
 type: entity

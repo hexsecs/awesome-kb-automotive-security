@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af4b-71ea-90c4-fc2989d1390e
 title: "canmatrix"
 summary: "Python package to read and write CAN database formats, converting between DBC, ARXML, KCD, SYM, LDF, ODX, and more."
 type: entity

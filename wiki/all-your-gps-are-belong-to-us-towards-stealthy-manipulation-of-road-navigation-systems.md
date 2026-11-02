@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af28-7fe7-b04d-d64bef87740a
 title: "All Your GPS Are Belong To Us: Towards Stealthy Manipulation of Road Navigation Systems"
 summary: "Zeng et al., USENIX Security 2018. Spoofs GPS to reroute a driver to an attacker-chosen destination while keeping the displayed route plausible."
 type: entity

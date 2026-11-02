@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af73-782e-8337-e83eddc02286
 title: "UDS seed/key (SecurityAccess)"
 summary: "UDS SecurityAccess (0x27) gates privileged diagnostics behind a seed/key exchange; weak seeds, reused secrets and simple algorithms defeat it."
 type: concept

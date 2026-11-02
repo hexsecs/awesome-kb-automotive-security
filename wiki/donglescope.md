@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af7f-7177-80ed-0d63f66d6bf0
 title: "DongleScope"
 summary: "Automated tool for detecting vulnerabilities in wireless OBD-II dongles based on USENIX Security 2020 research."
 type: entity

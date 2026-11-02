@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af52-73dc-a85e-4c91d07fb4c9
 title: "CarDS"
 summary: "ACSAC 2025 dataset of over nine hours of traffic from a 2020 electric vehicle with 10 CAN buses and 6 automotive Ethernet buses, covering benign driving and…"
 type: entity

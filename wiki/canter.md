@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af4d-7c6a-9ed9-01f6ad837cfd
 title: "CANter"
 summary: "Intrusion detection system for CAN and CAN-FD that detects drop-and-spoof attacks using frequency analysis of frame intervals."
 type: entity

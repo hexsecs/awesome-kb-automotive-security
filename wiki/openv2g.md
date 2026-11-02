@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afb8-75ad-915e-486270ff382d
 title: "OpenV2G"
 summary: "C implementation of the ISO 15118 and DIN 70121 vehicle-to-grid interface with an EXI codec, widely reused as the encoding engine behind other V2G analysis…"
 type: entity

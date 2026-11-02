@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afd3-704c-9280-42a2930a9033
 title: "Securing Vehicular Ad Hoc Networks"
 summary: "Raya and Hubaux, Journal of Computer Security 2007. Threat analysis and security architecture for VANETs that set the direction for most later V2X security…"
 type: entity

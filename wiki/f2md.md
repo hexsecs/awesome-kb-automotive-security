@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af8b-71ed-87a0-6a161d5c885c
 title: "F2MD"
 summary: "Simulation framework recreating the whole misbehavior detection chain for ITS-G5 and C-V2X, with plausibility checks, machine learning detectors, and both…"
 type: entity

@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af20-7f78-b272-35b2293d3ba5
 title: "A Comprehensible Guide to Controller Area Network"
 summary: "Wilfried Voss, Copperhill 2005. The standard plain-language reference on CAN itself, covering frame formats, arbitration, error handling, and timing that…"
 type: entity

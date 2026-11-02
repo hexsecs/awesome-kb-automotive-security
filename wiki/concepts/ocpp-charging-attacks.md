@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af69-79fa-af04-e389daec6a4b
 title: "OCPP and charging attacks"
 summary: "OCPP links chargers to cloud backends; weak transport security, shared identities and duplicate connections enable hijack, fraud and outage attacks."
 type: concept

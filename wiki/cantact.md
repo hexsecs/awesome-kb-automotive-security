@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af4c-7011-a2fb-21d5b0b4994e
 title: "CANtact"
 summary: "Open-source hardware CAN interface and desktop app supporting live tracing, frame transmission, ISO-TP, JavaScript scripting, and candump-format traces."
 type: entity

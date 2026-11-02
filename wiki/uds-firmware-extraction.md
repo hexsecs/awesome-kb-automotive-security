@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afec-7326-b48c-5c047800ff77
 title: "uds-firmware-extraction"
 summary: "Tool for extracting ECU firmware from UDS flash traffic following ISO-14229 standard."
 type: entity

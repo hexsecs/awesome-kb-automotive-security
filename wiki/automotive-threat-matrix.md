@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af32-7c86-bf0b-fcc2669e4d6e
 title: "Automotive Threat Matrix"
 summary: "Auto-ISAC's MITRE ATT&CK-style matrix of automotive adversary tactics and techniques, drawn from validated attacks and reproducible research, for threat…"
 type: entity

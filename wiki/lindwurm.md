@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afa9-7fdc-906d-4a08d3d16ce9
 title: "Lindwurm"
 summary: "Open-source CAN bus tracing and fuzzing tool designed for penetration testing with Burp Suite-inspired workflow."
 type: entity

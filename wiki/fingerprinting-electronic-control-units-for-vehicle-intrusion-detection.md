@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af8e-722c-bbca-b8415ee283e1
 title: "Fingerprinting Electronic Control Units for Vehicle Intrusion Detection"
 summary: "Cho and Shin, USENIX Security 2016. Clock-based IDS that fingerprints ECUs from clock skew in periodic messages, the most-replicated CAN IDS baseline."
 type: entity

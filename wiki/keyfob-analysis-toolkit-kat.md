@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afa7-73da-bb54-e9a00b2b651b
 title: "KeyFob Analysis Toolkit (KAT)"
 summary: "Toolkit for analyzing, decoding, and retransmitting key fob signals with support for HackRF, RTL-SDR, and Flipper Zero."
 type: entity

@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af24-7c5a-a39a-cdc4da65c7cd
 title: "A Formal Security Analysis of CAN XL"
 summary: "Tang et al., USENIX Security 2026. First formal security analysis of the CAN XL standard, showing it retains all known classic CAN MAC sub-layer flaws and…"
 type: entity

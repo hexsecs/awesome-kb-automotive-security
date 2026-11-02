@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afef-7678-81ec-849eab10d2c1
 title: "UnlockECU"
 summary: "Free seed-key unlocking tool for Bosch, Continental, Delphi, Daimler, and Marquardt ECUs without proprietary DLLs."
 type: entity

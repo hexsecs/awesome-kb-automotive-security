@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af33-794c-9a33-87d589b0bb63
 title: "Automotive Threat Modeling Template"
 summary: "NCC Group stencil set for the Microsoft Threat Modeling Tool, supplying vehicle-specific element types, trust boundaries, and threat rules for ECU and…"
 type: entity

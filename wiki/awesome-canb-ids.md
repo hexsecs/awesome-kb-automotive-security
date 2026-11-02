@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af37-76e0-a748-fac1b2c7c96d
 title: "Awesome CANb IDs"
 summary: "CAN bus ID reference and documentation."
 type: entity

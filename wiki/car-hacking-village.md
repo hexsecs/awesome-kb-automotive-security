@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af51-7e2e-895c-d78aedf33013
 title: "Car Hacking Village"
 summary: "Non-profit running hands-on car hacking workshops and CTFs at DEF CON, Black Hat, HITCON, CODE BLUE, and other conferences."
 type: entity

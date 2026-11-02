@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af3b-789f-9db9-7a4f437a0c7d
 title: "Brokenwire: Wireless Disruption of CCS Electric Vehicle Charging"
 summary: "Kohler, Baker, Strohmeier, and Martinovic, NDSS 2023. Aborts CCS rapid-charging sessions wirelessly from tens of metres with off-the-shelf radio hardware…"
 type: entity

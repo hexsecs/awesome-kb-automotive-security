@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afb2-7b37-9897-673b12cbb4ef
 title: "OBDium"
 summary: "Rust-based OBD-II diagnostic tool with modern Tauri GUI supporting live data, DTC analysis, and offline VIN decoding."
 type: entity

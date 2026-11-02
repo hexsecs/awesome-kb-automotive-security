@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af61-7d85-920a-5dfa0c1a4d39
 title: "The vehicle's external attack surface: remote entry and the telematics pivot"
 summary: "Compromise repeatedly begins at a boundary interface and pivots through the unit crossing it: connectivity units are most exposed and most privileged."
 type: concept

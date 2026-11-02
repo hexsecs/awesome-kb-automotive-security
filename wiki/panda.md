@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afba-7ac4-9a03-d15dfda6a78d
 title: "panda"
 summary: "Open-source CAN and CAN FD interface firmware from comma.ai running on an STM32H725, with Python bindings for full read/write access to vehicle buses."
 type: entity

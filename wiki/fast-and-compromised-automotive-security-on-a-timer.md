@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af8c-7963-9b82-1e302fbfe6f0
 title: "Fast and Compromised: Automotive Security on a Timer"
 summary: "Ziv and Alfasi, escar USA 2025. Penetration test taking a production electric vehicle from an insecure Wi-Fi network to full compromise in eight working…"
 type: entity

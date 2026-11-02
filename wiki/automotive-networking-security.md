@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af30-75b5-b1d2-435293451e0d
 title: "Automotive-Networking-Security"
 summary: "Automotive networking security standards and solutions overview."
 type: entity

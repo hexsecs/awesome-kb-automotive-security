@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af7e-7310-be66-aa0123b5ef5f
 title: "doip-sim-ecu-dsl"
 summary: "Kotlin DSL for scripting simulated DoIP ECUs, reachable over Ethernet, CAN with ISO-TP, or both at once, for exercising diagnostic clients against UDS error…"
 type: entity

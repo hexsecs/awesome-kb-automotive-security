@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-aff4-789b-a24a-0356c1d8aeb7
 title: "vatiCAN: Vetted, Authenticated CAN Bus"
 summary: "Nurnberger and Rossow, CHES 2016. Retrofit authentication for CAN using MACs and a global nonce, a reference point for later SecOC-style designs."
 type: entity

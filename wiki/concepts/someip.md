@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af71-74b5-a15a-e988e764c108
 title: "SOME/IP and SOME/IP-SD"
 summary: "AUTOSAR's service-oriented middleware over IP: how services are offered, found and invoked — and why discovery is the trust root of every SOME/IP conversation."
 type: concept

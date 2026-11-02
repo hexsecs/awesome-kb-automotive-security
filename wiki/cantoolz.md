@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af4e-7cad-ad2c-003196045198
 title: "CANToolz"
 summary: "Black-box CAN network analysis framework also known as YACHT with modular architecture for fuzzing and ECU discovery."
 type: entity

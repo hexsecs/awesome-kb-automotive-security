@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af72-743d-bc20-aeb33a3b57e2
 title: "TARA methodology: the ISO/SAE 21434 artefact chain"
 summary: "How an automotive TARA is actually assembled: the ISO/SAE 21434 artefact chain, the layers the KB's tools occupy, and where automation helps and lies."
 type: concept

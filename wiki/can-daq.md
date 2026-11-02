@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af3f-751e-897a-a5f027402dfe
 title: "CAN-DAQ"
 summary: "Open hardware ESP32-S3 CAN data-capture device with DBC-driven real-time plotting and SQLite logging, published in HardwareX as a sub-$25 alternative to…"
 type: entity

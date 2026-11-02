@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af46-7e49-8067-8109cc593c95
 title: "CANflict"
 summary: "C library that manipulates the CAN bus at the data link layer from an unmodified microcontroller, abusing pin conflicts between peripherals to craft…"
 type: entity

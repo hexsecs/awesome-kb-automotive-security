@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-aff7-7029-a8ec-de8c8276ce30
 title: "vsomeip"
 summary: "COVESA reference implementation of SOME/IP and SOME/IP-SD, used both as the target in automotive Ethernet fuzzing research and as a client for crafting…"
 type: entity

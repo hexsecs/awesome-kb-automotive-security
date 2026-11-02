@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afe0-7132-bb4b-c5e471f5b9a7
 title: "SuperCAN"
 summary: "Open-source USB to CAN FD adapter firmware for the ATSAME51 and several other supported boards, giving a low-cost interface for capturing and injecting CAN…"
 type: entity

@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af80-7659-b72f-2e3eb1dfee10
 title: "Drift with Devil: Security of Multi-Sensor Fusion based Localization in High-Level Autonomous Driving under GPS Spoofing"
 summary: "Shen et al., USENIX Security 2020. Shows sensor fusion does not neutralise GPS spoofing, taking an autonomous vehicle off its lane with gradual position drift."
 type: entity

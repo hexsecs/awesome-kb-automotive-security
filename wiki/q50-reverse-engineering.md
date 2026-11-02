@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afc8-7fef-860c-294576701997
 title: "Q50 Reverse Engineering"
 summary: "Independent reverse-engineering research into the Infiniti Q50 infotainment platform's Linux/Android environment, documenting its EPK firmware package…"
 type: entity

@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afba-7c15-92de-ea86fefa378b
 title: "OWASP Automotive Security Cheat Sheet"
 summary: "OWASP cheat sheet covering threat modeling, message authentication, secure boot, and update verification for vehicle ECUs and connected services."
 type: entity

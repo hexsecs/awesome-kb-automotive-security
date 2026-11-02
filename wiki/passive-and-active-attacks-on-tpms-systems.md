@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afba-7375-aff0-09ee1e6bf8c0
 title: "Passive and Active Attacks on TPMS Systems"
 summary: "Yago Lizarribar, DEF CON 33 Car Hacking Village 2025. Slides on long-term passive tracking of tire pressure sensors and active spoofing, both with commodity…"
 type: entity

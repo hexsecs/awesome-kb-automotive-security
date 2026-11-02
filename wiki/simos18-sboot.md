@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afd7-74e5-aef7-00f6a9e6ce07
 title: "Simos18_SBOOT"
 summary: "Documented exploit chain against the VW Simos18 supplier bootloader, chaining PWM entry, a weak Mersenne Twister seed/key, and a CRC bounds-check flaw into…"
 type: entity

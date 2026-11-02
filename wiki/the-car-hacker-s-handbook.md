@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afe7-7c5d-82fb-1cf8c38ee57a
 title: "The Car Hacker's Handbook"
 summary: "Craig Smith, No Starch Press 2016. The foundational practical guide to vehicle security, covering threat modelling, CAN reverse engineering, and ECU…"
 type: entity

@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afaf-7121-b5bc-e7c687a9fcf3
 title: "Modern Odometer Manipulation"
 summary: "collin and oblivion, DEF CON 33 Car Hacking Village 2025. Slides reverse engineering a device that alters a message before it reaches the instrument…"
 type: entity

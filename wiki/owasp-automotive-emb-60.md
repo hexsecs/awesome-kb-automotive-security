@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afb9-729e-88bf-4037f057d1f5
 title: "OWASP Automotive EMB 60"
 summary: "OWASP incubator project with open hardware and software for a single-board computer that acts as a CAN-to-USB interface through SocketCAN for penetration…"
 type: entity

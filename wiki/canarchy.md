@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af42-746e-a703-76c70cb65e7b
 title: "CANarchy"
 summary: "Stream-first CAN and J1939 toolkit that emits structured JSONL for automation, with live capture, DBC/ARXML/KCD decoding, J1939 PGN/SPN and DM1 fault…"
 type: entity

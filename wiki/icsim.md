@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afa0-7cae-af68-9dc5b2f6ee55
 title: "ICSim"
 summary: "Instrument Cluster Simulator for safe CAN bus security testing with virtual dashboard controls."
 type: entity

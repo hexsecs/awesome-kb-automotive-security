@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-aff6-7cd2-8634-2e044c8cc553
 title: "Viden: Attacker Identification on In-Vehicle Networks"
 summary: "Cho and Shin, ACM CCS 2017. Fingerprints transmitting ECUs by their analogue voltage signature, moving CAN defence from detecting an attack to naming the…"
 type: entity

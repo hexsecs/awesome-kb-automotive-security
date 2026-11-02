@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af74-70c5-a2da-850e091ff598
 title: "V2X credential management"
 summary: "How vehicles get pseudonymous credentials: split-knowledge issuance in the ETSI CCMS and US SCMS, so linking a ticket to an identity takes a quorum."
 type: concept

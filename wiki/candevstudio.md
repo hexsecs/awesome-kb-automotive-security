@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af43-7bdf-9c56-e1c7889424db
 title: "CANdevStudio"
 summary: "Flow-based graphical CAN simulation environment that wires senders, receivers, DBC decoders, and signal viewers together to stand in for missing ECUs on a…"
 type: entity

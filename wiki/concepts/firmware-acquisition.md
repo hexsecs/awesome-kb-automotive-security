@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af63-725c-ac41-aad5e4cee8d8
 title: "Firmware acquisition: the read-side channels"
 summary: "Before analysis comes acquisition: the channels the corpus documents for getting an ECU's image out — by bus, by bootstrap, by bench, by log, by package."
 type: concept

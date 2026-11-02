@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afa8-73f3-bd8d-3dec61783186
 title: "LeiA: A Lightweight Authentication Protocol for CAN"
 summary: "Radu and Garcia, ESORICS 2016. Backwards-compatible per-ID authentication that fits CAN's timing and bandwidth limits, compartmentalising ECUs so a…"
 type: entity

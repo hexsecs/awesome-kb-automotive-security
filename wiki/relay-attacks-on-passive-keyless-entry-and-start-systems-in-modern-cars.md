@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afca-7a29-a235-14aff13220bd
 title: "Relay Attacks on Passive Keyless Entry and Start Systems in Modern Cars"
 summary: "Francillon, Danev, and Capkun, NDSS 2011. Demonstrates the relay attack that still underpins most keyless vehicle theft today, against ten PKES systems from…"
 type: entity

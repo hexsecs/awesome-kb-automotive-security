@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afbe-7432-b30e-61c0d4178954
 title: "pretty_j1939"
 summary: "NMFTA's Python library and CLI that decodes J1939 traffic from candump logs using the SAE J1939 Digital Annex, with transport protocol reassembly…"
 type: entity

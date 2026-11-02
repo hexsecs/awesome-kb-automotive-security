@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afd0-7485-803e-9fce1cf712e7
 title: "Scapy"
 summary: "Python packet manipulation library with support for DoIP, SOME/IP, AUTOSAR PDUs, SecOC, CAN-FD, and FlexRay protocols."
 type: entity

@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af2b-70c1-a16d-7beeaedcaaff
 title: "Automated Cross-Platform Reverse Engineering of CAN Bus Commands From Mobile Apps"
 summary: "Wen, Zhao, Chen, and Lin, NDSS 2020. Recovers CAN command syntax and semantics for 360 car models from companion mobile apps alone, without touching a vehicle."
 type: entity

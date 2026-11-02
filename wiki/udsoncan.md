@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afee-722e-b934-29114777f65c
 title: "udsoncan"
 summary: "Python implementation of the ISO 14229 UDS protocol covering session control, security access, data identifiers, and routine control."
 type: entity

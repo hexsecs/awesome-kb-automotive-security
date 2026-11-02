@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afc0-7f87-948c-44203eefe95e
 title: "Proxmark3"
 summary: "Industry-standard RFID/NFC research tool for reading, cloning, and emulating immobilizer transponders at 125kHz and 13.56MHz."
 type: entity

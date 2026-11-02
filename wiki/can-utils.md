@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af41-7b3d-89a5-17daea154405
 title: "can-utils"
 summary: "Linux-CAN SocketCAN userspace utilities including cansniffer, candump, cansend, canplayer, and cangen for CAN bus analysis."
 type: entity

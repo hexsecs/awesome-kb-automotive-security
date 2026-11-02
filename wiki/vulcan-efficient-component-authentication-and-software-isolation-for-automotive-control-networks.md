@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-aff7-78d6-a62a-52cafd8dde00
 title: "VulCAN: Efficient Component Authentication and Software Isolation for Automotive Control Networks"
 summary: "Van Bulck, Muhlberg, and Piessens, ACSAC 2017. Combines message authentication with trusted-computing isolation, defending against an adversary running…"
 type: entity

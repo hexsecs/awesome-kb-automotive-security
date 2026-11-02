@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af7d-7e42-b216-c58c99234b50
 title: "Doggie"
 summary: "Modular DIY CAN-to-serial adapter from Faraday Security that speaks slcan over USB, BLE or UART for SocketCAN and python-can, with an EvilDoggie variant…"
 type: entity

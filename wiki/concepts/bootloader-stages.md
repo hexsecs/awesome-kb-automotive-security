@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af59-7cfe-80f9-3e41adbc3bc1
 title: "Bootloader stages and bootstrap entry"
 summary: "ECUs boot through layers owned by different parties; the corpus's breaks concentrate at the stage transitions and the weakest stage, not the application."
 type: concept

@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afd6-76c5-8a71-45bd9bd6a8ab
 title: "Silently Disabling ECUs and Enabling Blind Attacks on the CAN Bus"
 summary: "Rogers and Rasmussen, arXiv 2022. Disables an ECU with a single frame and without generating bus errors, evading the error-counting that earlier bus-off…"
 type: entity

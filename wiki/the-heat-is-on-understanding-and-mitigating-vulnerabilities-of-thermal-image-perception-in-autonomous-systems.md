@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afe7-7bb0-a887-37e1c1224537
 title: "The Heat is On: Understanding and Mitigating Vulnerabilities of Thermal Image Perception in Autonomous Systems"
 summary: "Bhupathiraju et al., NDSS 2026. Shows heat sources degrade thermal-camera pedestrian detection and sensor fusion, including in real driving, and proposes…"
 type: entity

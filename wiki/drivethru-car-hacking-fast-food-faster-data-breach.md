@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af81-7864-b52a-d2cf158f8495
 title: "DriveThru Car Hacking: Fast Food, Faster Data Breach"
 summary: "Chen et al., Black Hat Asia 2025. Attack chain against more than 24 dashcam models, delivered through a drive-through ordering flow, with an accompanying tool."
 type: entity

@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af99-7eaf-bc03-cd442ec21a00
 title: "Gone in 360 Seconds: Hijacking with Hitag2"
 summary: "Verdult, Garcia, and Balasch, USENIX Security 2012. Breaks the Hitag2 immobilizer transponder, then fitted to over 200 car models, recovering the key by…"
 type: entity

@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afd4-748e-acb2-61988f58a975
 title: "Security AutoDesigner"
 summary: "Automated TARA platform for creating ISO 21434 and UNR 155 compliant threat analysis reports."
 type: entity

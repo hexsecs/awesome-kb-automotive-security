@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afe0-79aa-8833-578935a65707
 title: "someip-protocol-fuzzer"
 summary: "Black-box SOME/IP fuzzer that mutates user-defined protocol fields with radamsa and uses a ping heartbeat to detect when the target service stops responding."
 type: entity

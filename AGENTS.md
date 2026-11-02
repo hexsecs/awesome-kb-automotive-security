@@ -1,8 +1,8 @@
 # Maintainer schema — Automotive Security (Awesome KB)
 
-This KB conforms to the **OpenShelf** standard (`openshelf: "0.1"`,
+This KB conforms to the **OpenShelf** standard (`openshelf: "1.4"`,
 `profile: awesome`) — spec and schemas live in
-[hexsecs/openkb](https://github.com/hexsecs/openkb); this file carries only
+[hexsecs/openshelf](https://github.com/hexsecs/openshelf); this file carries only
 what is local to this KB. Read `kb.yaml` for the declared layout.
 The maintenance **method** (deepening pipeline, evidence discipline,
 concept mining, gates, traps) lives in the awesome-kb skill —
@@ -51,6 +51,11 @@ what gets listed.
   each file's first commit in this repo (232 pages 2026-10-31, 7 pages
   2026-11-01). It is distinct from `updated` (last substantive change)
   and `last_checked` (last verification of the listed thing itself).
+- `uid` is a page's durable identity (OpenShelf SPEC §4.1): minted once
+  by tooling — never written by hand — when the page first enters the KB,
+  and preserved verbatim across renames, moves and ingests. The ingester
+  mints it for new stubs; existing pages and the KB itself were minted
+  2026-11-02 with `openshelf uid` at the spec 1.4 adoption.
 - `status` is the *resource's* status (active / maintenance / archived /
   published / unknown), verified when `last_checked` is stamped. Ingest
   sets `unknown` — except the Research Papers category, whose entries are

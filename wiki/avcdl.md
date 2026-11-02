@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af35-7681-bd0f-66557d89c645
 title: "AVCDL"
 summary: "Motional's open-sourced Versatile Cybersecurity Development Lifecycle with process definitions and templates mapped to ISO/SAE 21434, ISO 24089, and UN…"
 type: entity

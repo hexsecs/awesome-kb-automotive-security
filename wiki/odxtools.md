@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-afb4-713b-982d-956315c8dff2
 title: "odxtools"
 summary: "Python toolkit for parsing ODX/PDX (ISO 22901) diagnostic databases and encoding, decoding, and snooping ECU diagnostic sessions."
 type: entity

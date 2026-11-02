@@ -1,4 +1,5 @@
 ---
+uid: 01a19d3c-af25-74f7-a2fd-69719c058eb0
 title: "AcCCS"
 summary: "Idaho National Laboratory test platform on a Raspberry Pi that emulates either the vehicle or the charger in a CCS session, driving the J1772 control pilot…"
 type: entity
