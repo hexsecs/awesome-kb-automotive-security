@@ -25,7 +25,7 @@ Generated from page frontmatter by tools/ingest.py; do not edit by hand.
 
 ## Concepts
 
-- [Bootloader stages and bootstrap entry](wiki/concepts/bootloader-stages.md) — Production ECUs boot through layers owned by different parties; the corpus's breaks concentrate at the stage transitions and the weakest stage, not the application.
+- [Bootloader stages and bootstrap entry](wiki/concepts/bootloader-stages.md) — ECUs boot through layers owned by different parties; the corpus's breaks concentrate at the stage transitions and the weakest stage, not the application.
 - [CAN availability and denial of service](wiki/concepts/can-availability.md) — Availability attacks remove or suppress the bus's genuine traffic, below the layer message authentication defends: flooding, bus-off, dominance, silencing.
 - [CAN injection](wiki/concepts/can-injection.md) — Attacker taps exposed CAN wiring and impersonates a trusted ECU: classic CAN frames carry no sender authentication, so fake 'key valid' messages are believed.
 - [CAN message authentication: the retrofit design space](wiki/concepts/can-message-authentication.md) — Two complete academic designs and the standardised answer, compared on freshness, key scope, frame cost, and evidence — plus the two limits they all share.
@@ -37,6 +37,7 @@ Generated from page frontmatter by tools/ingest.py; do not edit by hand.
 - [Misbehavior detection in V2X](wiki/concepts/misbehavior-detection.md) — Why V2X needs a layer beyond signatures: detecting false content from validly credentialed stations, reporting it, and the authority that decides.
 - [OCPP and charging attacks](wiki/concepts/ocpp-charging-attacks.md) — OCPP links chargers to cloud backends; weak transport security, shared identities and duplicate connections enable hijack, fraud and outage attacks.
 - [Secure firmware updates (Uptane)](wiki/concepts/secure-firmware-updates.md) — How Uptane secures vehicle software updates: two repositories, per-vehicle signed instructions, and compromise resilience when servers or keys fall.
+- [Simulation and test doubles for vehicle networks](wiki/concepts/simulation-and-test-doubles.md) — The corpus's simulation layer, rung by rung: virtual buses, replayed behaviour, declarative ECU doubles, physical miniatures — and what each rung cannot tell you.
 - [SOME/IP and SOME/IP-SD](wiki/concepts/someip.md) — AUTOSAR's service-oriented middleware over IP: how services are offered, found and invoked — and why discovery is the trust root of every SOME/IP conversation.
 - [UDS seed/key (SecurityAccess)](wiki/concepts/uds-seed-key.md) — UDS SecurityAccess (0x27) gates privileged diagnostics behind a seed/key exchange; weak seeds, reused secrets and simple algorithms defeat it.
 - [V2X credential management](wiki/concepts/v2x-credential-management.md) — How vehicles get pseudonymous credentials: split-knowledge issuance in the ETSI CCMS and US SCMS, so linking a ticket to an identity takes a quorum.
