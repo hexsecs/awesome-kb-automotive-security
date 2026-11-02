@@ -22,6 +22,7 @@ sources:
 related:
   - can-injection
   - lock-it-and-still-lose-it-on-the-in-security-of-automotive-remote-keyless-entry-systems
+  - vulcan-efficient-component-authentication-and-software-isolation-for-automotive-control-networks
 ---
 
 Radu and Garcia, ESORICS 2016. Backwards-compatible per-ID authentication that fits CAN's timing and bandwidth limits, compartmentalising ECUs so a compromised head unit cannot actuate the powertrain.
@@ -56,3 +57,4 @@ Status: **unknown** — a finished 2016 publication; a protocol design, not a ma
 
 - [CAN injection](concepts/can-injection.md)
 - [Lock It and Still Lose It: On the (In)Security of Automotive Remote Keyless Entry Systems](lock-it-and-still-lose-it-on-the-in-security-of-automotive-remote-keyless-entry-systems.md)
+- [VulCAN](vulcan-efficient-component-authentication-and-software-isolation-for-automotive-control-networks.md) — LeiA's first implementation, on Sancus protected modules

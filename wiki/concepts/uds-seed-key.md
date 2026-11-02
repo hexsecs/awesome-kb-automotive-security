@@ -4,7 +4,7 @@ summary: "UDS SecurityAccess (0x27) gates privileged diagnostics behind a seed/k
 type: concept
 created: 2026-10-31
 updated: 2026-10-31
-related: [python-can-isotp, savvycan, cancat, udsoncan, unlockecu, experimental-security-analysis-of-a-modern-automobile]
+related: [python-can-isotp, savvycan, cancat, udsoncan, unlockecu, experimental-security-analysis-of-a-modern-automobile, beneath-the-bonnet-a-breakdown-of-diagnostic-security]
 sources:
   - url: "https://doi.org/10.29354/diag/192162"
     retrieved: 2026-10-31

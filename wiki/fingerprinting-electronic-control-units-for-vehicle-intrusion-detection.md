@@ -20,6 +20,8 @@ sources:
 related:
   - error-handling-of-in-vehicle-networks-makes-them-vulnerable
   - vatican-vetted-authenticated-can-bus
+  - viden-attacker-identification-on-in-vehicle-networks
+  - gids-gan-based-intrusion-detection-system-for-in-vehicle-network
 ---
 
 Cho and Shin, USENIX Security 2016. Clock-based IDS that fingerprints ECUs from clock skew in periodic messages, the most-replicated CAN IDS baseline.
@@ -54,3 +56,5 @@ Status: **unknown** — a finished 2016 publication; no living artefact (CIDS wa
 
 - [Error Handling of In-Vehicle Networks Makes Them Vulnerable](error-handling-of-in-vehicle-networks-makes-them-vulnerable.md)
 - [vatiCAN: Vetted, Authenticated CAN Bus](vatican-vetted-authenticated-can-bus.md)
+- [Viden: Attacker Identification on In-Vehicle Networks](viden-attacker-identification-on-in-vehicle-networks.md) — the same authors' voltage-fingerprint follow-on; identification that survives aperiodic injection
+- [GIDS: GAN based Intrusion Detection System for In-Vehicle Network](gids-gan-based-intrusion-detection-system-for-in-vehicle-network.md)
