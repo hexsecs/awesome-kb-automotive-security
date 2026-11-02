@@ -23,6 +23,7 @@ related:
   - relay-attacks-on-passive-keyless-entry-and-start-systems-in-modern-cars
   - can-injection
   - a-survey-of-remote-automotive-attack-surfaces
+  - diagnostic-service-abuse
 ---
 
 Checkoway et al., USENIX Security 2011. Follow-up establishing the remote attack surface, compromising a vehicle over Bluetooth, cellular, and the CD player.

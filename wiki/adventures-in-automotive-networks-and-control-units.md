@@ -22,6 +22,7 @@ related:
   - can-injection
   - experimental-security-analysis-of-a-modern-automobile
   - comprehensive-experimental-analyses-of-automotive-attack-surfaces
+  - diagnostic-service-abuse
 ---
 
 Miller and Valasek, 2013. The wired precursor to the Jeep work, documenting CAN injection against the Toyota Prius and Ford Escape and the methodology that followed.
