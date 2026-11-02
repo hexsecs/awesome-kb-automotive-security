@@ -12,7 +12,7 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Toolkit for analyzing, decoding, and retransmitting key fob signals with support for HackRF, RTL-SDR, and Flipper Zero."
-related: [universal-radio-hacker-urh, rtl-433, flipper-zero, flipper-arf]
+related: [universal-radio-hacker-urh, rtl-433, flipper-zero, flipper-arf, rolling-code-failure-classes]
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
