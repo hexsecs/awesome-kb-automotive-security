@@ -22,6 +22,7 @@ related:
   - a-comprehensive-guide-to-can-ids-data-and-introduction-of-the-road-dataset
   - car-hacking-dataset
   - can-train-and-test
+  - in-vehicle-intrusion-detection
 ---
 
 Lazeski et al., USENIX VehicleSec 2026. Work in progress showing that ML-based CAN intrusion detectors often learn dataset shortcuts because common datasets contain only simple attacks, so high scores do not imply robustness against a practical attacker.

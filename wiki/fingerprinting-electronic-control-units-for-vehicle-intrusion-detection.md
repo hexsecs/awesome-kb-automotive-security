@@ -24,6 +24,7 @@ related:
   - gids-gan-based-intrusion-detection-system-for-in-vehicle-network
   - exposing-new-vulnerabilities-of-error-handling-mechanism-in-can
   - evading-voltage-based-intrusion-detection-on-automotive-can
+  - in-vehicle-intrusion-detection
 ---
 
 Cho and Shin, USENIX Security 2016. Clock-based IDS that fingerprints ECUs from clock skew in periodic messages, the most-replicated CAN IDS baseline.
