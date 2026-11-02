@@ -12,7 +12,7 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Web-based TARA (Threat Analysis and Risk Assessment) framework for ISO/SAE 21434 that models systems as attack graphs and applies MITRE's CTSA/CRRA prioritization methodology with a Meta Attack Language simulation backend."
-related: [automotive-threat-matrix, automotive-threat-modeling-template, security-autodesigner]
+related: [automotive-threat-matrix, automotive-threat-modeling-template, security-autodesigner, automating-function-level-tara-for-automotive-full-lifecycle-security]
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
