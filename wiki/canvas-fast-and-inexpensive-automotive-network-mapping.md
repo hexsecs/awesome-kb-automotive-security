@@ -24,6 +24,7 @@ related:
   - canalyzat0r
   - can-utils
   - can-injection
+  - sok-kicking-can-down-the-road-systematizing-can-security-knowledge
 ---
 
 Kulandaivel, Goyal, Agrawal, and Sekar, USENIX Security 2019. Builds an nmap for the vehicle, recovering the sender and receiver map of a CAN network in under an hour using clock offsets and forced ECU isolation.

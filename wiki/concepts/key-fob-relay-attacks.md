@@ -4,7 +4,7 @@ summary: "Two attackers relay a genuine key's radio exchange, so the car sees a 
 type: concept
 created: 2026-10-31
 updated: 2026-10-31
-related: [relay-attacks-on-passive-keyless-entry-and-start-systems-in-modern-cars, fast-furious-and-insecure-passive-keyless-entry-and-start-systems-in-modern-supercars, dismantling-megamos-crypto-wirelessly-lockpicking-a-vehicle-immobilizer]
+related: [relay-attacks-on-passive-keyless-entry-and-start-systems-in-modern-cars, fast-furious-and-insecure-passive-keyless-entry-and-start-systems-in-modern-supercars, dismantling-megamos-crypto-wirelessly-lockpicking-a-vehicle-immobilizer, sok-stealing-cars-since-remote-keyless-entry-introduction-and-how-to-defend-from-it]
 sources:
   - url: "https://www.ndss-symposium.org/ndss2011/relay-attacks-on-passive-keyless-entry-and-start-systems-in-modern-cars/"
     retrieved: 2026-10-31
