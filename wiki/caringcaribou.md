@@ -12,7 +12,7 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Python automotive security exploration tool designed as the nmap of CAN bus with fuzzing, ECU discovery, and attack modules."
-related: [python-can, python-can-isotp, cantoolz, canalyzat0r, diagnostic-fuzzing]
+related: [python-can, python-can-isotp, cantoolz, canalyzat0r, diagnostic-fuzzing, calibration-plane]
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

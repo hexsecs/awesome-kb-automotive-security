@@ -12,7 +12,7 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Python implementation of the ASAM MCD-1 XCP protocol over CAN, Ethernet, and USB, with seed-and-key access handling, for measuring, calibrating, and flashing ECUs."
-related: [pya2l, uds-seed-key]
+related: [pya2l, uds-seed-key, calibration-plane]
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
