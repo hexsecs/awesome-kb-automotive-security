@@ -23,6 +23,7 @@ related:
   - vatican-vetted-authenticated-can-bus
   - leia-a-lightweight-authentication-protocol-for-can
   - can-injection
+  - can-message-authentication
 ---
 
 Van Bulck, Muhlberg, and Piessens, ACSAC 2017. Combines message authentication with trusted-computing isolation, defending against an adversary running arbitrary code on a participating ECU.

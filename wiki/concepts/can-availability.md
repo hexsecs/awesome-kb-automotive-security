@@ -4,7 +4,7 @@ summary: "Availability attacks remove or suppress the bus's genuine traffic, bel
 type: concept
 created: 2026-11-01
 updated: 2026-11-01
-related: [can-injection, sok-kicking-can-down-the-road-systematizing-can-security-knowledge, experimental-security-analysis-of-a-modern-automobile, adventures-in-automotive-networks-and-control-units, error-handling-of-in-vehicle-networks-makes-them-vulnerable, exposing-new-vulnerabilities-of-error-handling-mechanism-in-can, canflict-exploiting-peripheral-conflicts-for-data-link-layer-attacks-on-automotive-networks, silently-disabling-ecus-and-enabling-blind-attacks-on-the-can-bus, diagnostic-service-abuse, canter, in-vehicle-intrusion-detection]
+related: [can-injection, sok-kicking-can-down-the-road-systematizing-can-security-knowledge, experimental-security-analysis-of-a-modern-automobile, adventures-in-automotive-networks-and-control-units, error-handling-of-in-vehicle-networks-makes-them-vulnerable, exposing-new-vulnerabilities-of-error-handling-mechanism-in-can, canflict-exploiting-peripheral-conflicts-for-data-link-layer-attacks-on-automotive-networks, silently-disabling-ecus-and-enabling-blind-attacks-on-the-can-bus, diagnostic-service-abuse, canter, in-vehicle-intrusion-detection, can-message-authentication]
 sources:
   - url: "https://www.usenix.org/legacy/events/sec10/tech/full_papers/Koscher.pdf"
     retrieved: 2026-11-01
@@ -32,7 +32,7 @@ The fourth mechanism removes one chosen voice rather than the whole bus. Diagnos
 
 ## Why authentication cannot answer these
 
-The KB's authentication line — [vatiCAN](../vatican-vetted-authenticated-can-bus.md), LeiA, SecOC, and the CAN message-authentication line (a filed companion concept) — verifies that a received frame is genuine. Every mechanism above defeats the *channel*, not the message: a flooded bus delivers no frames to authenticate; a bus-off victim sends none; a dominated wire carries none; a silenced ECU's absence is not a forgery. Authentication and availability are orthogonal defences, and a deployment that buys only the first has not priced the second. The Kicking CAN SoK's transferability analysis sharpens this: CAN FD inherits the availability exposure wholesale, and even its hypothetical ideal bus leaves availability attacks standing, because they exploit access and arbitration rather than any fixable coding flaw.
+The KB's authentication line — [vatiCAN](../vatican-vetted-authenticated-can-bus.md), LeiA, SecOC, and the [CAN message authentication](can-message-authentication.md) line — verifies that a received frame is genuine. Every mechanism above defeats the *channel*, not the message: a flooded bus delivers no frames to authenticate; a bus-off victim sends none; a dominated wire carries none; a silenced ECU's absence is not a forgery. Authentication and availability are orthogonal defences, and a deployment that buys only the first has not priced the second. The Kicking CAN SoK's transferability analysis sharpens this: CAN FD inherits the availability exposure wholesale, and even its hypothetical ideal bus leaves availability attacks standing, because they exploit access and arbitration rather than any fixable coding flaw.
 
 ## What answers exist in the corpus
 
