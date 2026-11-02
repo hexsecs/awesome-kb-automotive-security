@@ -23,6 +23,10 @@ related:
   - fingerprinting-electronic-control-units-for-vehicle-intrusion-detection
   - vatican-vetted-authenticated-can-bus
   - can-injection
+  - exposing-new-vulnerabilities-of-error-handling-mechanism-in-can
+  - silently-disabling-ecus-and-enabling-blind-attacks-on-the-can-bus
+  - canflict-exploiting-peripheral-conflicts-for-data-link-layer-attacks-on-automotive-networks
+  - canvas-fast-and-inexpensive-automotive-network-mapping
 ---
 
 Cho and Shin, ACM CCS 2016. The bus-off attack, which abuses CAN error handling to force an uncompromised ECU off the bus without any vehicle-specific reverse engineering.
