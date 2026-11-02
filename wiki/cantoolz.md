@@ -12,7 +12,7 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Black-box CAN network analysis framework also known as YACHT with modular architecture for fuzzing and ECU discovery."
-related: [caringcaribou, canalyzat0r, icsim, savvycan]
+related: [caringcaribou, canalyzat0r, icsim, savvycan, diagnostic-fuzzing]
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

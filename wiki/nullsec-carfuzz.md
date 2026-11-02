@@ -12,7 +12,7 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Rust fuzzer for CAN, UDS, OBD-II, and DoIP with grammar-aware test generation and coverage tracking."
-related: [autofuze, truckdevil, uds-seed-key, caringcaribou]
+related: [autofuze, truckdevil, uds-seed-key, caringcaribou, diagnostic-fuzzing]
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
