@@ -24,6 +24,7 @@ related:
   - brokenwire-wireless-disruption-of-ccs-electric-vehicle-charging
   - charge-it-to-my-neighbor-a-relay-attack-on-iso-15118-plug-and-charge-payment
   - ocpp-charging-attacks
+  - charging-trust-chain
 ---
 
 Szakaly et al., USENIX Security 2025. First measurement of publicly deployed CCS DC chargers, finding that only 12 percent of 325 units across four European countries negotiated TLS and that most ran decade-old HomePlug modem firmware.

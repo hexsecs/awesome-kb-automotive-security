@@ -12,7 +12,7 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Python toolkit for CCS charging research that can pose as vehicle or charger, sniff HomePlug Green PHY traffic, and walk the SLAC, DIN 70121, and ISO 15118 state machines."
-related: [open-plc-utils, openv2g, acccs, chargesploit, dsv2gshark, everest, v2gdecoder]
+related: [open-plc-utils, openv2g, acccs, chargesploit, dsv2gshark, everest, v2gdecoder, charging-trust-chain]
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
