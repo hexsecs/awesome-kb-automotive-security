@@ -22,6 +22,7 @@ related:
   - exposing-new-vulnerabilities-of-error-handling-mechanism-in-can
   - canvas-fast-and-inexpensive-automotive-network-mapping
   - canflict-exploiting-peripheral-conflicts-for-data-link-layer-attacks-on-automotive-networks
+  - can-availability
 ---
 
 Rogers and Rasmussen, arXiv 2022. Disables an ECU with a single frame and without generating bus errors, evading the error-counting that earlier bus-off detection relies on, and adds a synchronisation method letting an attacker who cannot read the bus strike reliably.

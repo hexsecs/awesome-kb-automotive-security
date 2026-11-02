@@ -25,6 +25,7 @@ Generated from page frontmatter by tools/ingest.py; do not edit by hand.
 
 ## Concepts
 
+- [CAN availability and denial of service](wiki/concepts/can-availability.md) — Availability attacks remove or suppress the bus's genuine traffic — by arbitration, by fault confinement, by dominance, by silencing — below the layer authentication defends.
 - [CAN injection](wiki/concepts/can-injection.md) — Attacker taps exposed CAN wiring and impersonates a trusted ECU: classic CAN frames carry no sender authentication, so fake 'key valid' messages are believed.
 - [Diagnostic-service abuse](wiki/concepts/diagnostic-service-abuse.md) — The diagnostic service set is the highest-privilege surface on the vehicle network: what it actuates, how its gates fail, and the one case where they held.
 - [IVI update-path trust](wiki/concepts/ivi-update-trust.md) — How head-unit update trust anchors fail across six IVI platforms: absent checks, a public test key, a fleet-wide key, CRC-only integrity, patchable verifiers.

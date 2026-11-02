@@ -23,6 +23,7 @@ related:
   - fingerprinting-electronic-control-units-for-vehicle-intrusion-detection
   - evading-voltage-based-intrusion-detection-on-automotive-can
   - can-injection
+  - can-availability
 ---
 
 Serag et al., 2025. Systematization of two decades of CAN security, with a unified taxonomy and assessment model for attackers, attacks, and defences.
