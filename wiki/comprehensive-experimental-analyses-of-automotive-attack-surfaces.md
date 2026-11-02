@@ -22,6 +22,7 @@ related:
   - security-and-privacy-vulnerabilities-of-in-car-wireless-networks-a-tire-pressure-monitoring-system-case-study
   - relay-attacks-on-passive-keyless-entry-and-start-systems-in-modern-cars
   - can-injection
+  - a-survey-of-remote-automotive-attack-surfaces
 ---
 
 Checkoway et al., USENIX Security 2011. Follow-up establishing the remote attack surface, compromising a vehicle over Bluetooth, cellular, and the CD player.

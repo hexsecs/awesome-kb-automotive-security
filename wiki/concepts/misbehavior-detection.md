@@ -4,7 +4,7 @@ summary: "Why V2X needs a layer beyond signatures: detecting false content from 
 type: concept
 created: 2026-11-01
 updated: 2026-11-01
-related: [f2md, vanetza, v2verifier, artery, veins, van3twin, v2x-credential-management, securing-vehicular-ad-hoc-networks, secure-vehicular-communication-systems-design-and-architecture]
+related: [f2md, vanetza, v2verifier, artery, veins, van3twin, v2x-credential-management, securing-vehicular-ad-hoc-networks, secure-vehicular-communication-systems-design-and-architecture, pseudonym-schemes-in-vehicular-networks-a-survey]
 sources:
   - url: "https://github.com/josephkamel/F2MD"
     retrieved: 2026-11-01
