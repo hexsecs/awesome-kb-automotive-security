@@ -4,7 +4,7 @@ summary: "The diagnostic service set is the highest-privilege surface on the veh
 type: concept
 created: 2026-11-01
 updated: 2026-11-01
-related: [uds-seed-key, experimental-security-analysis-of-a-modern-automobile, adventures-in-automotive-networks-and-control-units, remote-exploitation-of-an-unaltered-passenger-vehicle, comprehensive-experimental-analyses-of-automotive-attack-surfaces, beneath-the-bonnet-a-breakdown-of-diagnostic-security, simos18-sboot]
+related: [uds-seed-key, experimental-security-analysis-of-a-modern-automobile, adventures-in-automotive-networks-and-control-units, remote-exploitation-of-an-unaltered-passenger-vehicle, comprehensive-experimental-analyses-of-automotive-attack-surfaces, beneath-the-bonnet-a-breakdown-of-diagnostic-security, simos18-sboot, can-availability]
 sources:
   - url: "https://www.usenix.org/legacy/events/sec10/tech/full_papers/Koscher.pdf"
     retrieved: 2026-11-01

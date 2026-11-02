@@ -28,6 +28,7 @@ related:
   - canflict-exploiting-peripheral-conflicts-for-data-link-layer-attacks-on-automotive-networks
   - canvas-fast-and-inexpensive-automotive-network-mapping
   - sok-kicking-can-down-the-road-systematizing-can-security-knowledge
+  - can-availability
 ---
 
 Cho and Shin, ACM CCS 2016. The bus-off attack, which abuses CAN error handling to force an uncompromised ECU off the bus without any vehicle-specific reverse engineering.
