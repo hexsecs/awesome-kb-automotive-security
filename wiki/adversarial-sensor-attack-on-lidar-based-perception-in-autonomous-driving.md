@@ -22,6 +22,9 @@ related:
   - illusion-and-dazzle-adversarial-optical-channel-exploits-against-lidars-for-automotive-applications
   - walnut-waging-doubt-on-the-integrity-of-mems-accelerometers-with-acoustic-injection-attacks
   - on-the-realism-of-lidar-spoofing-attacks-against-autonomous-driving-vehicle-at-high-speed-and-long-distance
+  - invisible-for-both-camera-and-lidar-security-of-multi-sensor-fusion-based-perception-in-autonomous-driving
+  - does-physical-adversarial-example-really-matter-to-autonomous-driving-towards-system-level-effect-of-adversarial-object-evasion-attack
+  - a-first-physical-world-trajectory-prediction-attack-via-lidar-induced-deceptions-in-autonomous-driving
 ---
 
 Cao et al., ACM CCS 2019. Spoofs LiDAR returns to inject a fake obstacle into the perception pipeline of a production autonomous driving stack.
