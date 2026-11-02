@@ -24,6 +24,7 @@ related:
   - adversarial-sensor-attack-on-lidar-based-perception-in-autonomous-driving
   - remote-attacks-on-automated-vehicles-sensors-experiments-on-camera-and-lidar
   - dirty-road-can-attack-security-of-deep-learning-based-automated-lane-centering-under-physical-world-attack
+  - physical-channel-sensor-attacks
 ---
 
 Sato et al., NDSS 2025. Moving-vehicle spoofing rig and an adaptive high-frequency removal attack that succeed at 60 km/h and 110 m against production driving stacks, closing the gap between bench demonstrations and moving-vehicle conditions.

@@ -12,7 +12,7 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Petit, Stottelaar, Feiri, and Kargl, Black Hat Europe 2015. First practical spoofing and blinding of automotive camera and LiDAR using commodity hardware."
-related: [potential-cyberattacks-on-automated-vehicles, illusion-and-dazzle-adversarial-optical-channel-exploits-against-lidars-for-automotive-applications, walnut-waging-doubt-on-the-integrity-of-mems-accelerometers-with-acoustic-injection-attacks, adversarial-sensor-attack-on-lidar-based-perception-in-autonomous-driving]
+related: [potential-cyberattacks-on-automated-vehicles, illusion-and-dazzle-adversarial-optical-channel-exploits-against-lidars-for-automotive-applications, walnut-waging-doubt-on-the-integrity-of-mems-accelerometers-with-acoustic-injection-attacks, adversarial-sensor-attack-on-lidar-based-perception-in-autonomous-driving, physical-channel-sensor-attacks]
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
