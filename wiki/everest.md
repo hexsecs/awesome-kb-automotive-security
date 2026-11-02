@@ -12,7 +12,7 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: 61ba124
 list_summary: "Linux Foundation Energy full-stack open-source EV charging firmware implementing OCPP 1.6/2.0.1/2.1, ISO 15118-2/-3/-20, IEC 61851, and DIN SPEC 70121, useful as a reference target and test peer."
-related: [checkocpp, emuocpp, ocpp-charging-attacks, dsv2gshark, wwcp-iso15118, pyplc]
+related: [checkocpp, emuocpp, ocpp-charging-attacks, dsv2gshark, wwcp-iso15118, pyplc, charging-trust-chain]
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

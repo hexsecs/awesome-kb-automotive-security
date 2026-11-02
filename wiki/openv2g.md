@@ -12,7 +12,7 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "C implementation of the ISO 15118 and DIN 70121 vehicle-to-grid interface with an EXI codec, widely reused as the encoding engine behind other V2G analysis tooling."
-related: [pyplc, v2gdecoder, wwcp-iso15118, open-plc-utils]
+related: [pyplc, v2gdecoder, wwcp-iso15118, open-plc-utils, charging-trust-chain]
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

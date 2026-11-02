@@ -24,6 +24,7 @@ related:
   - current-affairs-a-security-measurement-study-of-ccs-ev-charging-deployments
   - brokenwire-wireless-disruption-of-ccs-electric-vehicle-charging
   - ocpp-charging-attacks
+  - charging-trust-chain
 ---
 
 Löw et al., USENIX VehicleSec 2026. Relays Plug and Charge authentication so the attacker charges their own car while the victim is billed, exploiting missing station identity in the signature and weak TLS certificate handling, with a proof of concept.
