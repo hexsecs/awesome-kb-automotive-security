@@ -25,6 +25,7 @@ Generated from page frontmatter by tools/ingest.py; do not edit by hand.
 
 ## Concepts
 
+- [Bootloader stages and bootstrap entry](wiki/concepts/bootloader-stages.md) — Production ECUs boot through layers owned by different parties; the corpus's breaks concentrate at the stage transitions and the weakest stage, not the application.
 - [CAN availability and denial of service](wiki/concepts/can-availability.md) — Availability attacks remove or suppress the bus's genuine traffic, below the layer message authentication defends: flooding, bus-off, dominance, silencing.
 - [CAN injection](wiki/concepts/can-injection.md) — Attacker taps exposed CAN wiring and impersonates a trusted ECU: classic CAN frames carry no sender authentication, so fake 'key valid' messages are believed.
 - [CAN message authentication: the retrofit design space](wiki/concepts/can-message-authentication.md) — Two complete academic designs and the standardised answer, compared on freshness, key scope, frame cost, and evidence — plus the two limits they all share.

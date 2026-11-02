@@ -4,7 +4,7 @@ summary: "Before analysis comes acquisition: the channels the corpus documents f
 type: concept
 created: 2026-11-01
 updated: 2026-11-01
-related: [tc1791-can-bsl, pq-flasher, conescan, uds-firmware-extraction, vw-flash, secoc-key-extractor, reversing-a-brake-ecu-firmware-update, secure-firmware-updates]
+related: [tc1791-can-bsl, pq-flasher, conescan, uds-firmware-extraction, vw-flash, secoc-key-extractor, reversing-a-brake-ecu-firmware-update, secure-firmware-updates, bootloader-stages]
 sources:
   - url: "https://github.com/bri3d/CCM19XX-CCP-Flashing"
     retrieved: 2026-11-01

@@ -12,7 +12,7 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Scripts to extract SecOC (Secure On-Board Communication) keys from Toyota vehicles using comma.ai panda hardware."
-related: [panda, uds-seed-key, uds-firmware-extraction, firmware-acquisition]
+related: [panda, uds-seed-key, uds-firmware-extraction, firmware-acquisition, bootloader-stages]
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

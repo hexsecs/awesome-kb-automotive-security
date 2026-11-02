@@ -12,7 +12,7 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Flashing tools for VW AG control units over UDS supporting Simos18.1/6/10 and DQ250-MQB."
-related: [odxtools, pq-flasher, udsoncan, uds-seed-key, ivi-update-trust, firmware-acquisition]
+related: [odxtools, pq-flasher, udsoncan, uds-seed-key, ivi-update-trust, firmware-acquisition, bootloader-stages]
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
