@@ -612,3 +612,14 @@ Minted the KB `uid` and a `uid` for all 257 pages with `openshelf uid`
 lifecycle: mint on stub creation, preserve verbatim on rewrites.
 Gates: ingest ×2 idempotent (0/0/0), `openshelf lint --strict` clean;
 wiki diff is exactly one added `uid:` line per page.
+
+## [2026-11-02] closeout | Research Papers campaign closed: 64 of 65 at full/deep (#12)
+
+Issue #12 closed as deferred by the owner's decision. Every writable
+Research Paper is at full depth (Koscher 2010 at deep); the sole
+exception, Petit & Shladover 2015 (DOI 10.1109/TITS.2014.2342271),
+stays at stub — the IEEE full text is paywalled, no open copy exists
+(re-verified 2026-11-02 via Unpaywall, OpenAlex, Semantic Scholar),
+and a full page is not written from secondary sources. Reopens if a
+legitimate full text surfaces; the batch-5 attributed draft is
+preserved in the research notes. The KB now has no open issues.
