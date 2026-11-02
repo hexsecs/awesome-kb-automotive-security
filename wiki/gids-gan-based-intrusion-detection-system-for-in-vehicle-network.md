@@ -4,7 +4,7 @@ summary: "Seo, Song, and Kim, PST 2018. Trains a GAN on normal CAN traffic only,
 type: entity
 category: "Research Papers"
 url: "https://arxiv.org/abs/1907.07377"
-status: unknown
+status: published
 last_checked: 2026-11-01
 created: 2026-10-31
 updated: 2026-11-01
@@ -56,7 +56,7 @@ From the paper and its own evaluation design:
 
 ## Status and sources
 
-Status: **unknown** (finished 2018 publication; no living artefact). Bibliographic verification: PST 2018 proceedings record — IEEE, pp. 1–6, Belfast, 28–30 August 2018 — and DOI [10.1109/PST.2018.8514157](https://doi.org/10.1109/PST.2018.8514157) verified against Crossref. Full text read: the authors' arXiv preprint (arXiv:1907.07377v1, posted 17 July 2019) — the openly readable version; the proceedings version is shorter (6 vs 9 pages) and whether its figures differ is unverified, so the figures here are the preprint's.
+Status: **published** (finished 2018 publication; no living artefact). Bibliographic verification: PST 2018 proceedings record — IEEE, pp. 1–6, Belfast, 28–30 August 2018 — and DOI [10.1109/PST.2018.8514157](https://doi.org/10.1109/PST.2018.8514157) verified against Crossref. Full text read: the authors' arXiv preprint (arXiv:1907.07377v1, posted 17 July 2019) — the openly readable version; the proceedings version is shorter (6 vs 9 pages) and whether its figures differ is unverified, so the figures here are the preprint's.
 
 ## Related
 

@@ -4,7 +4,7 @@ summary: "Checkoway et al., USENIX Security 2011. Follow-up establishing the rem
 type: entity
 category: "Research Papers"
 url: "https://www.usenix.org/conference/usenix-security-11/comprehensive-experimental-analyses-automotive-attack-surfaces"
-status: unknown
+status: published
 last_checked: 2026-11-01
 created: 2026-10-31
 updated: 2026-11-01
@@ -57,7 +57,7 @@ Stated in the paper: one representative sedan; portability to other models and m
 
 ## Status and sources
 
-Status: **unknown** — a finished 2011 publication; no living artefact. No DOI is confirmed (USENIX papers of this era typically carry none). Full text openly available from USENIX and the authors' group site; read in full 2026-11-01.
+Status: **published** — a finished 2011 publication; no living artefact. No DOI is confirmed (USENIX papers of this era typically carry none). Full text openly available from USENIX and the authors' group site; read in full 2026-11-01.
 
 ## Related
 

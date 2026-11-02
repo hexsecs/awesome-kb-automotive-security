@@ -4,7 +4,7 @@ summary: "Sato et al., USENIX Security 2021. Physical dirty-road patches that st
 type: entity
 category: "Research Papers"
 url: "https://www.usenix.org/conference/usenixsecurity21/presentation/sato"
-status: unknown
+status: published
 last_checked: 2026-10-31
 created: 2026-10-31
 updated: 2026-10-31

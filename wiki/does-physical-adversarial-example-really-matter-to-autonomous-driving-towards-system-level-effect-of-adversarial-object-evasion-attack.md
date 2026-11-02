@@ -4,7 +4,7 @@ summary: "Wang et al., ICCV 2023. Measures published physical adversarial attack
 type: entity
 category: "Research Papers"
 url: "https://arxiv.org/abs/2308.11894"
-status: unknown
+status: published
 last_checked: 2026-10-31
 created: 2026-10-31
 updated: 2026-10-31

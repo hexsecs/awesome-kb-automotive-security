@@ -4,7 +4,7 @@ summary: "Baker and Martinovic, USENIX Security 2019. Recovers ISO 15118 chargin
 type: entity
 category: "Research Papers"
 url: "https://www.usenix.org/conference/usenixsecurity19/presentation/baker"
-status: unknown
+status: published
 last_checked: 2026-11-01
 created: 2026-10-31
 updated: 2026-11-01
@@ -52,7 +52,7 @@ As the paper states them: **Passive only.** Testing on public infrastructure res
 
 ## Status and sources
 
-Status: **unknown** — a finished 2019 publication. The eavesdropping tool was open-sourced under MIT (gitlab.com/rbaker/hpgp-emis-rx, as cited in the paper); no maintenance claim is made for it here. **DOI: none** — USENIX does not assign DOIs to its proceedings papers; no aggregator identifier is substituted (verified by Crossref query, 2026-11-01). Full text open at USENIX; read in full 2026-11-01.
+Status: **published** — a finished 2019 publication. The eavesdropping tool was open-sourced under MIT (gitlab.com/rbaker/hpgp-emis-rx, as cited in the paper); no maintenance claim is made for it here. **DOI: none** — USENIX does not assign DOIs to its proceedings papers; no aggregator identifier is substituted (verified by Crossref query, 2026-11-01). Full text open at USENIX; read in full 2026-11-01.
 
 ## Related
 

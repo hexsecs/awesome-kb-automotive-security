@@ -4,7 +4,7 @@ summary: "Cho and Shin, USENIX Security 2016. Clock-based IDS that fingerprints 
 type: entity
 category: "Research Papers"
 url: "https://www.usenix.org/conference/usenixsecurity16/technical-sessions/presentation/cho"
-status: unknown
+status: published
 last_checked: 2026-11-01
 created: 2026-10-31
 updated: 2026-11-01
@@ -52,7 +52,7 @@ As the paper states them: **periodic messages only** — clock skews can only be
 
 ## Status and sources
 
-Status: **unknown** — a finished 2016 publication; no living artefact (CIDS was a research prototype). **DOI: none** — USENIX does not assign DOIs to its proceedings papers; no aggregator identifier is substituted. Full text openly available from USENIX; read in full 2026-11-01.
+Status: **published** — a finished 2016 publication; no living artefact (CIDS was a research prototype). **DOI: none** — USENIX does not assign DOIs to its proceedings papers; no aggregator identifier is substituted. Full text openly available from USENIX; read in full 2026-11-01.
 
 ## Related
 

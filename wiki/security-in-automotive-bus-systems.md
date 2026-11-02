@@ -4,7 +4,7 @@ summary: "Wolf, Weimerskirch, and Paar, Workshop on Embedded Security in Cars 20
 type: entity
 category: "Research Papers"
 url: "https://www.weimerskirch.org/files/WolfEtAl_SecureBus.pdf"
-status: unknown
+status: published
 last_checked: 2026-11-01
 created: 2026-10-31
 updated: 2026-11-01
@@ -51,7 +51,7 @@ The attacks are feasibility analysis, not demonstrations: §3 states they are de
 
 ## Status and sources
 
-Status: **unknown** — a finished 2004 publication; no living artefact. Sources: the paper (open author copy, weimerskirch.org), read in full 2026-11-01; the list.
+Status: **published** — a finished 2004 publication; no living artefact. Sources: the paper (open author copy, weimerskirch.org), read in full 2026-11-01; the list.
 
 ## Related
 

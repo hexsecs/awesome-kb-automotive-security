@@ -4,7 +4,7 @@ summary: "Jing et al., USENIX Security 2021. First lane-detection attack validat
 type: entity
 category: "Research Papers"
 url: "https://www.usenix.org/conference/usenixsecurity21/presentation/jing"
-status: unknown
+status: published
 last_checked: 2026-10-31
 created: 2026-10-31
 updated: 2026-10-31

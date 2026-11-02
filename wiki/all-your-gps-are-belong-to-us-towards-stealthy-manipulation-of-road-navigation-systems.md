@@ -4,7 +4,7 @@ summary: "Zeng et al., USENIX Security 2018. Spoofs GPS to reroute a driver to a
 type: entity
 category: "Research Papers"
 url: "https://www.usenix.org/conference/usenixsecurity18/presentation/zeng"
-status: unknown
+status: published
 last_checked: 2026-10-31
 created: 2026-10-31
 updated: 2026-10-31

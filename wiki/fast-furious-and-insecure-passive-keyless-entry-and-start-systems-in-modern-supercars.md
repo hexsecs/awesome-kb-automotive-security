@@ -4,7 +4,7 @@ summary: "Wouters et al., CHES 2019. Breaks the DST40-based PKES used by Tesla a
 type: entity
 category: "Research Papers"
 url: "https://tches.iacr.org/index.php/TCHES/article/view/8289"
-status: unknown
+status: published
 last_checked: 2026-11-01
 created: 2026-10-31
 updated: 2026-11-01
@@ -55,7 +55,7 @@ This is a **cloning** break, and the KB's [key-fob relay attacks](concepts/key-f
 
 ## Status and sources
 
-Status: **unknown** — a finished 2019 publication; no living artefact. Bibliographic record: *IACR Transactions on Cryptographic Hardware and Embedded Systems* 2019(3), pp. 66–85, published 9 May 2019. The paper carries DOI 10.13154/tches.v2019.i3.66-85, printed in the paper itself and on the publisher's article page, and registered with DataCite (record checked 2026-11-01: title and publisher match). It has **no Crossref record** (works endpoint returns 404, checked 2026-11-01), so it is flagged rather than asserted silently; every other bibliographic element was verified against the publisher's page and the paper. Full text read in full from the publisher's open PDF, 2026-11-01.
+Status: **published** — a finished 2019 publication; no living artefact. Bibliographic record: *IACR Transactions on Cryptographic Hardware and Embedded Systems* 2019(3), pp. 66–85, published 9 May 2019. The paper carries DOI 10.13154/tches.v2019.i3.66-85, printed in the paper itself and on the publisher's article page, and registered with DataCite (record checked 2026-11-01: title and publisher match). It has **no Crossref record** (works endpoint returns 404, checked 2026-11-01), so it is flagged rather than asserted silently; every other bibliographic element was verified against the publisher's page and the paper. Full text read in full from the publisher's open PDF, 2026-11-01.
 
 ## Related
 

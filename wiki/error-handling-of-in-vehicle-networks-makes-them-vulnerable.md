@@ -4,7 +4,7 @@ summary: "Cho and Shin, ACM CCS 2016. The bus-off attack, which abuses CAN error
 type: entity
 category: "Research Papers"
 url: "https://dl.acm.org/doi/10.1145/2976749.2978302"
-status: unknown
+status: published
 last_checked: 2026-11-01
 created: 2026-10-31
 updated: 2026-11-01
@@ -61,7 +61,7 @@ As the paper states them: **a compromised ECU is assumed** — the paper address
 
 ## Status and sources
 
-Status: **unknown** — a finished 2016 publication; no living artefact (the attack and defence were research prototypes). Bibliographic record: CCS '16 proceedings and DOI as printed on the paper; the authors' open copy was read in full 2026-11-01.
+Status: **published** — a finished 2016 publication; no living artefact (the attack and defence were research prototypes). Bibliographic record: CCS '16 proceedings and DOI as printed on the paper; the authors' open copy was read in full 2026-11-01.
 
 ## Related
 

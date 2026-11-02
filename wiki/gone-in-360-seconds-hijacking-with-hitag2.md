@@ -4,7 +4,7 @@ summary: "Verdult, Garcia, and Balasch, USENIX Security 2012. Breaks the Hitag2 
 type: entity
 category: "Research Papers"
 url: "https://www.usenix.org/conference/usenixsecurity12/technical-sessions/presentation/verdult"
-status: unknown
+status: published
 last_checked: 2026-11-01
 created: 2026-10-31
 updated: 2026-11-01
@@ -48,7 +48,7 @@ As the paper states them: the car-only cryptanalytic attack presupposes a valid 
 
 ## Status and sources
 
-Status: **unknown** — a finished 2012 publication; no living artefact (the Proxmark III tooling is generic; the authors' attack implementations were not released as a maintained project). No DOI — USENIX proceedings papers of this era carry none, and no library identifier is substituted. Full text openly available from USENIX and author mirrors; read in full 2026-11-01.
+Status: **published** — a finished 2012 publication; no living artefact (the Proxmark III tooling is generic; the authors' attack implementations were not released as a maintained project). No DOI — USENIX proceedings papers of this era carry none, and no library identifier is substituted. Full text openly available from USENIX and author mirrors; read in full 2026-11-01.
 
 ## Related
 

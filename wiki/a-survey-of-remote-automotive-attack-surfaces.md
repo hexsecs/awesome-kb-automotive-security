@@ -4,7 +4,7 @@ summary: "Miller and Valasek, Black Hat USA 2014. Compares the remote attack sur
 type: entity
 category: "Research Papers"
 url: "https://illmatics.com/remote%20attack%20surfaces.pdf"
-status: unknown
+status: published
 last_checked: 2026-11-01
 created: 2026-10-31
 updated: 2026-11-01
@@ -61,7 +61,7 @@ Inspection, not testing: ratings rest on manufacturers' published documentation 
 
 ## Status and sources
 
-Status: **unknown** — a finished 2014 white paper; no living artefact, no DOI (Crossref checked, above). Sources: the paper (authors' PDF, illmatics.com), read in full 2026-11-01; the list.
+Status: **published** — a finished 2014 white paper; no living artefact, no DOI (Crossref checked, above). Sources: the paper (authors' PDF, illmatics.com), read in full 2026-11-01; the list.
 
 ## Related
 

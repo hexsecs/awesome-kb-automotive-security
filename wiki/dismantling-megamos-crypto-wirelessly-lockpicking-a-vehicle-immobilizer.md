@@ -4,7 +4,7 @@ summary: "Verdult, Garcia, and Ege, USENIX Security 2015. Reverse engineers the 
 type: entity
 category: "Research Papers"
 url: "https://www.usenix.org/conference/usenixsecurity15/technical-sessions/presentation/verdult"
-status: unknown
+status: published
 last_checked: 2026-11-01
 created: 2026-10-31
 updated: 2026-11-01
@@ -54,7 +54,7 @@ As the paper states them: the cryptanalytic attack needs two traces and either F
 
 ## Status and sources
 
-Status: **unknown** — a finished publication; no living artefact beyond the authors' open-source Proxmark III RFID library. No DOI (USENIX practice for the era). Full text openly available; read in full 2026-11-01.
+Status: **published** — a finished publication; no living artefact beyond the authors' open-source Proxmark III RFID library. No DOI (USENIX practice for the era). Full text openly available; read in full 2026-11-01.
 
 **Publication and injunction history — sourced, not from the paper text.** The paper itself says only that the manufacturer was notified in November 2012, and that the output filter function is deliberately omitted. The list's summary records the paper was "famously injuncted for two years before publication". The documented record behind that line, from contemporary reporting (notably the Communications of the ACM account of *Volkswagen Aktiengesellschaft v Garcia et al.*): the paper was to be presented at USENIX Security in August 2013; Volkswagen (with Thales, originator of the algorithm) sued in the UK, and on 25 June 2013 the High Court granted an injunction, holding that the security of millions of cars outweighed academic free speech in that instance. Withdrawn from the 2013 symposium, it was finally presented at USENIX Security '15 and published in the supplement to the 2013 proceedings, with the filter function withheld. The litigation detail rests on the court reporting, not on the paper.
 

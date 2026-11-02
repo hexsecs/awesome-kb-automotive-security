@@ -4,7 +4,7 @@ summary: "Trippel, Weisse, Xu, Honeyman, and Fu, IEEE EuroS&P 2017. Acoustic res
 type: entity
 category: "Research Papers"
 url: "https://spqrlab1.github.io/papers/trippel-IEEE-oaklawn-walnut-2017.pdf"
-status: unknown
+status: published
 last_checked: 2026-11-01
 created: 2026-10-31
 updated: 2026-11-01
@@ -61,7 +61,7 @@ WALNUT establishes the analogue side channel as a sensor-integrity threat in its
 
 ## Status and sources
 
-Status: **unknown** (finished 2017 publication). The author PDF was read in full for this page; pp. 3–18 and the event dates rest on the Crossref record (the PDF itself is marked "To Appear" and carries no proceedings pagination). One internal discrepancy in the paper: its body/Fig. 12 spell the STMicroelectronics part "MIS2DSH" while Table 1 lists "MIS2DH"; this page uses the Table 1 form. Project page: spqr.eecs.umich.edu/walnut.
+Status: **published** (finished 2017 publication). The author PDF was read in full for this page; pp. 3–18 and the event dates rest on the Crossref record (the PDF itself is marked "To Appear" and carries no proceedings pagination). One internal discrepancy in the paper: its body/Fig. 12 spell the STMicroelectronics part "MIS2DSH" while Table 1 lists "MIS2DH"; this page uses the Table 1 form. Project page: spqr.eecs.umich.edu/walnut.
 
 ## Related
 

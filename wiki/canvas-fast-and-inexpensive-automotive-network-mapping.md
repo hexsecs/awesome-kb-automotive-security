@@ -4,7 +4,7 @@ summary: "Kulandaivel, Goyal, Agrawal, and Sekar, USENIX Security 2019. Builds a
 type: entity
 category: "Research Papers"
 url: "https://www.usenix.org/conference/usenixsecurity19/presentation/kulandaivel"
-status: unknown
+status: published
 last_checked: 2026-11-01
 created: 2026-10-31
 updated: 2026-11-01
@@ -50,7 +50,7 @@ As the paper states them: **Periodic, well-behaved traffic only.** Source mappin
 
 ## Status and sources
 
-Status: **unknown** — a finished 2019 publication; the mapper was a research artefact, released open-source (github.com/sekarkulandaivel/canvas, as cited in the paper); no maintenance claim is made for it here. **DOI: none** — USENIX does not assign DOIs to its proceedings papers; no aggregator identifier is substituted (verified by Crossref query, 2026-11-01). Full text open at USENIX; read in full 2026-11-01.
+Status: **published** — a finished 2019 publication; the mapper was a research artefact, released open-source (github.com/sekarkulandaivel/canvas, as cited in the paper); no maintenance claim is made for it here. **DOI: none** — USENIX does not assign DOIs to its proceedings papers; no aggregator identifier is substituted (verified by Crossref query, 2026-11-01). Full text open at USENIX; read in full 2026-11-01.
 
 ## Related
 

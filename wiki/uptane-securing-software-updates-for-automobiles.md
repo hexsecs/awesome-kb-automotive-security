@@ -4,7 +4,7 @@ summary: "Kuppusamy et al., escar Europe 2016. Extends TUF with a director role,
 type: entity
 category: "Research Papers"
 url: "https://uptane.org/papers/kuppusamy_escar_16.pdf"
-status: unknown
+status: published
 last_checked: 2026-11-01
 created: 2026-10-31
 updated: 2026-11-01
@@ -46,7 +46,7 @@ As the paper presents itself: this is a design and analysis paper — no impleme
 
 ## Status and sources
 
-Status: **unknown** — a finished 2016 conference paper; the artefact is tracked on the [Uptane](uptane.md) page (maintenance). Bibliographic record: 14th escar Europe 2016 (venue stated in the paper's own footnote). **DOI: none** — no Crossref record exists for the escar paper (checked 2026-11-01); DOI 10.1109/MVT.2017.2778751 belongs to a different, later (2018) publication by overlapping authors and must not be attached. Full text at uptane.org; read in full 2026-11-01.
+Status: **published** — a finished 2016 conference paper; the artefact is tracked on the [Uptane](uptane.md) page (maintenance). Bibliographic record: 14th escar Europe 2016 (venue stated in the paper's own footnote). **DOI: none** — no Crossref record exists for the escar paper (checked 2026-11-01); DOI 10.1109/MVT.2017.2778751 belongs to a different, later (2018) publication by overlapping authors and must not be attached. Full text at uptane.org; read in full 2026-11-01.
 
 ## Related
 

@@ -4,7 +4,7 @@ summary: "Gardiner, USENIX VehicleSec 2026. Reverse engineers the Bendix EC80 br
 type: entity
 category: "Research Papers"
 url: "https://www.usenix.org/conference/vehiclesec26/presentation/gardiner"
-status: unknown
+status: published
 last_checked: 2026-10-31
 created: 2026-10-31
 updated: 2026-10-31

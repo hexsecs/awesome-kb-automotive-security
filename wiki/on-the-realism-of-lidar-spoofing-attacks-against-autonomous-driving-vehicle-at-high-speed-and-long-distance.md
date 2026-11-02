@@ -4,7 +4,7 @@ summary: "Sato et al., NDSS 2025. Moving-vehicle spoofing rig and an adaptive hi
 type: entity
 category: "Research Papers"
 url: "https://www.ndss-symposium.org/ndss-paper/on-the-realism-of-lidar-spoofing-attacks-against-autonomous-driving-vehicle-at-high-speed-and-long-distance/"
-status: unknown
+status: published
 last_checked: 2026-10-31
 created: 2026-10-31
 updated: 2026-10-31

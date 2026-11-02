@@ -4,7 +4,7 @@ summary: "Garcia, Oswald, Kasper, and Pavlides, USENIX Security 2016. Recovers s
 type: entity
 category: "Research Papers"
 url: "https://www.usenix.org/conference/usenixsecurity16/technical-sessions/presentation/garcia"
-status: unknown
+status: published
 last_checked: 2026-11-01
 created: 2026-10-31
 updated: 2026-11-01
@@ -51,7 +51,7 @@ As the paper states them: the three remaining VW schemes (VW-5, VW-6, VW-7) and 
 
 ## Status and sources
 
-Status: **unknown** — a finished 2016 publication; no living artefact. Bibliographic record: 25th USENIX Security Symposium (USENIX Security '16), Austin, TX, August 2016, proceedings pp. 929–944. **DOI: none** — no Crossref record exists (checked 2026-11-01); USENIX assigned no DOIs to its 2016 proceedings. Full text from USENIX; read in full 2026-11-01.
+Status: **published** — a finished 2016 publication; no living artefact. Bibliographic record: 25th USENIX Security Symposium (USENIX Security '16), Austin, TX, August 2016, proceedings pp. 929–944. **DOI: none** — no Crossref record exists (checked 2026-11-01); USENIX assigned no DOIs to its 2016 proceedings. Full text from USENIX; read in full 2026-11-01.
 
 ## Related
 

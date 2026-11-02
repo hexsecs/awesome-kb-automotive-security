@@ -4,7 +4,7 @@ summary: "Cho and Shin, ACM CCS 2017. Fingerprints transmitting ECUs by their an
 type: entity
 category: "Research Papers"
 url: "https://arxiv.org/abs/1708.08414"
-status: unknown
+status: published
 last_checked: 2026-11-01
 created: 2026-10-31
 updated: 2026-11-01
@@ -58,7 +58,7 @@ The paper's own discussion:
 
 ## Status and sources
 
-Status: **unknown** (finished 2017 publication). The full text read for this page is the arXiv extended version (arXiv:1708.08414, 35 pp.) of the 15-page proceedings paper; whether any number differs in the proceedings version is unverified. DOI and pp. 1109–1123 verified via Crossref.
+Status: **published** (finished 2017 publication). The full text read for this page is the arXiv extended version (arXiv:1708.08414, 35 pp.) of the 15-page proceedings paper; whether any number differs in the proceedings version is unverified. DOI and pp. 1109–1123 verified via Crossref.
 
 ## Related
 

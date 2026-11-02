@@ -4,7 +4,7 @@ summary: "Zhang et al., arXiv 2025. Traces how sensor-induced errors propagate t
 type: entity
 category: "Research Papers"
 url: "https://arxiv.org/abs/2509.11120"
-status: unknown
+status: published
 last_checked: 2026-10-31
 created: 2026-10-31
 updated: 2026-10-31

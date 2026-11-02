@@ -4,7 +4,7 @@ summary: "Van Bulck, Muhlberg, and Piessens, ACSAC 2017. Combines message authen
 type: entity
 category: "Research Papers"
 url: "https://vanbulck.net/files/acsac17-vulcan.pdf"
-status: unknown
+status: published
 last_checked: 2026-11-01
 created: 2026-10-31
 updated: 2026-11-01
@@ -57,7 +57,7 @@ VulCAN treats [vatiCAN](vatican-vetted-authenticated-can-bus.md) and [LeiA](leia
 
 ## Status and sources
 
-Status: **unknown** (finished 2017 publication). The author PDF was read in full for this page, including Appendix A; code and hardware are public at distrinet.cs.kuleuven.be/software/vulcan. Pp. 225–237 rest on the Crossref record.
+Status: **published** (finished 2017 publication). The author PDF was read in full for this page, including Appendix A; code and hardware are public at distrinet.cs.kuleuven.be/software/vulcan. Pp. 225–237 rest on the Crossref record.
 
 ## Related
 

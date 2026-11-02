@@ -4,7 +4,7 @@ summary: "Raya and Hubaux, Journal of Computer Security 2007. Threat analysis an
 type: entity
 category: "Research Papers"
 url: "https://infoscience.epfl.ch/entities/publication/2976e5d8-215b-4465-834e-875efe55844f"
-status: unknown
+status: published
 last_checked: 2026-11-01
 created: 2026-10-31
 updated: 2026-11-01
@@ -54,7 +54,7 @@ A design and analysis paper: the architecture was not implemented or deployed by
 
 ## Status and sources
 
-Status: **unknown** — a finished 2007 publication. Sources: the journal record (EPFL Infoscience) and DOI, verified 2026-11-01; the SASN 2005 open full text, read in full 2026-11-01; the list.
+Status: **published** — a finished 2007 publication. Sources: the journal record (EPFL Infoscience) and DOI, verified 2026-11-01; the SASN 2005 open full text, read in full 2026-11-01; the list.
 
 ## Related
 
