@@ -27,6 +27,7 @@ related:
   - diagnostic-service-abuse
   - can-availability
   - external-attack-surface
+  - shared-and-default-secrets
 ---
 
 Koscher et al., IEEE S&P 2010. The paper that opened the field, demonstrating that an attacker with access to any single ECU can disable the brakes and stop the engine of a moving vehicle.

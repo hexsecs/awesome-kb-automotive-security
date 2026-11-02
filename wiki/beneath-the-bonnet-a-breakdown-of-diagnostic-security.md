@@ -24,6 +24,7 @@ related:
   - lock-it-and-still-lose-it-on-the-in-security-of-automotive-remote-keyless-entry-systems
   - diagnostic-service-abuse
   - calibration-plane
+  - shared-and-default-secrets
 ---
 
 Van den Herrewegen and Garcia, ESORICS 2018. Reverse engineers the seed-key ciphers of four manufacturers from ECU firmware and achieves remote code execution over CAN through diagnostics alone.
