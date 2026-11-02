@@ -21,6 +21,7 @@ related:
   - gone-in-360-seconds-hijacking-with-hitag2
   - key-fob-relay-attacks
   - lock-it-and-still-lose-it-on-the-in-security-of-automotive-remote-keyless-entry-systems
+  - fast-furious-and-insecure-passive-keyless-entry-and-start-systems-in-modern-supercars
 ---
 
 Verdult, Garcia, and Ege, USENIX Security 2015. Reverse engineers the Megamos immobilizer used by Audi, Fiat, Honda, Volkswagen, and Volvo; famously injuncted for two years before publication.

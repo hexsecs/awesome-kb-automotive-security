@@ -22,6 +22,7 @@ sources:
 related:
   - illusion-and-dazzle-adversarial-optical-channel-exploits-against-lidars-for-automotive-applications
   - remote-attacks-on-automated-vehicles-sensors-experiments-on-camera-and-lidar
+  - adversarial-sensor-attack-on-lidar-based-perception-in-autonomous-driving
 ---
 
 Trippel, Weisse, Xu, Honeyman, and Fu, IEEE EuroS&P 2017. Acoustic resonance attacks that forge accelerometer output, establishing analogue sensor integrity as its own threat model.
