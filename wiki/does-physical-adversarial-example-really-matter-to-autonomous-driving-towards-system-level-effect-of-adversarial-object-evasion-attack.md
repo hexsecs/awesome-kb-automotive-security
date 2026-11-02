@@ -25,6 +25,7 @@ related:
   - a-first-physical-world-trajectory-prediction-attack-via-lidar-induced-deceptions-in-autonomous-driving
   - dirty-road-can-attack-security-of-deep-learning-based-automated-lane-centering-under-physical-world-attack
   - sok-the-next-frontier-in-av-security-systematizing-perception-attacks-and-the-emerging-threat-of-multi-sensor-fusion
+  - robust-physical-world-attacks-on-deep-learning-visual-classification
 ---
 
 Wang et al., ICCV 2023. Measures published physical adversarial attacks against a full driving pipeline rather than the perception model alone, and finds that component-level success rarely translates into system-level effects such as traffic rule violations.
