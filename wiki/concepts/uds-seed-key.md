@@ -2,6 +2,7 @@
 title: "UDS seed/key (SecurityAccess)"
 summary: "UDS SecurityAccess (0x27) gates privileged diagnostics behind a seed/key exchange; weak seeds, reused secrets and simple algorithms defeat it."
 type: concept
+created: 2026-10-31
 updated: 2026-10-31
 related: [python-can-isotp, savvycan, cancat, udsoncan, unlockecu, experimental-security-analysis-of-a-modern-automobile]
 sources:

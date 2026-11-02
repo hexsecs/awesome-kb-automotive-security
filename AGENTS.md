@@ -30,9 +30,19 @@ what gets listed.
 
 - `summary` ≤ 160 chars (OpenShelf contract). The list's verbatim
   description lives in the body and in `list_summary`.
-- `depth: stub | full` (local field): stubs are generated; a page becomes
-  `full` when a human/LLM adds real depth — what it is, how it works,
-  outbound links checked, and `related` links to sibling pages.
+- `depth: stub | brief | full | deep` (OpenShelf SPEC §4.5): stubs are
+  generated; a page becomes `full` when a human/LLM adds real depth — what
+  it is, how it works, outbound links checked, and `related` links to
+  sibling pages. `brief` is the shortest authored tier (pointer entries);
+  `deep` is the rare research-grade tier, loaded on demand only.
+- `created` is the date the page first entered the KB (OpenShelf SPEC
+  §4.2): the ingester stamps it from the source commit date at stub
+  creation and preserves it verbatim thereafter; it never changes.
+  Concept pages are hand-written, so their author sets `created` to the
+  date the page is added. Existing pages were backfilled 2026-11-01 from
+  each file's first commit in this repo (232 pages 2026-10-31, 7 pages
+  2026-11-01). It is distinct from `updated` (last substantive change)
+  and `last_checked` (last verification of the listed thing itself).
 - `status` is the *resource's* status (active / maintenance / archived /
   unknown), verified when `last_checked` is stamped. Ingest sets `unknown`;
   a delisted entry's page is tombstoned to `archived`, never deleted.

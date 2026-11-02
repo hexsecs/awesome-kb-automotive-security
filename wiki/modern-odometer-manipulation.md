@@ -6,6 +6,7 @@ category: "Conference Presentations"
 url: "https://media.defcon.org/DEF%20CON%2033/DEF%20CON%2033%20villages%20and%20creators/DEF%20CON%2033%20-%20Car%20Hacking%20Village%20-%20collin%20%26%20oblivion%20-%20Modern%20Odometer%20Manipulation.pdf"
 status: unknown
 last_checked: 2026-10-31
+created: 2026-10-31
 updated: 2026-10-31
 depth: stub
 source_list: awesome-automotive-security

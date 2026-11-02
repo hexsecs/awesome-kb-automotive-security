@@ -6,6 +6,7 @@ category: "Books"
 url: "https://www.wiley.com/en-us/-p-9781119491804"
 status: unknown
 last_checked: 2026-10-31
+created: 2026-10-31
 updated: 2026-10-31
 depth: stub
 source_list: awesome-automotive-security

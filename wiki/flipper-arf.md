@@ -6,6 +6,7 @@ category: "RF and Key Fob Analysis"
 url: "https://github.com/D4C1-Labs/Flipper-ARF"
 status: active
 last_checked: 2026-11-01
+created: 2026-10-31
 updated: 2026-11-01
 depth: full
 source_list: awesome-automotive-security

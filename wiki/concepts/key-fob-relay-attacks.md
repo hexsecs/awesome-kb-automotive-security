@@ -2,6 +2,7 @@
 title: "Key-fob relay attacks"
 summary: "Two attackers relay a genuine key's radio exchange, so the car sees a valid key 'nearby' — encryption doesn't help, because nothing was forged, only forwarded."
 type: concept
+created: 2026-10-31
 updated: 2026-10-31
 related: [relay-attacks-on-passive-keyless-entry-and-start-systems-in-modern-cars, fast-furious-and-insecure-passive-keyless-entry-and-start-systems-in-modern-supercars, dismantling-megamos-crypto-wirelessly-lockpicking-a-vehicle-immobilizer]
 sources:

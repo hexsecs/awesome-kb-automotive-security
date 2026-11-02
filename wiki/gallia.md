@@ -6,6 +6,7 @@ category: "Diagnostic Tools"
 url: "https://github.com/Fraunhofer-AISEC/gallia"
 status: active
 last_checked: 2026-10-31
+created: 2026-10-31
 updated: 2026-10-31
 depth: full
 source_list: awesome-automotive-security

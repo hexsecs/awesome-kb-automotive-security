@@ -2,6 +2,7 @@
 title: "Misbehavior detection in V2X"
 summary: "Why V2X needs a layer beyond signatures: detecting false content from validly credentialed stations, reporting it, and the authority that decides."
 type: concept
+created: 2026-11-01
 updated: 2026-11-01
 related: [f2md, vanetza, v2verifier, artery, veins, van3twin, v2x-credential-management, securing-vehicular-ad-hoc-networks, secure-vehicular-communication-systems-design-and-architecture]
 sources:

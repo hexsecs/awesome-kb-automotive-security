@@ -2,6 +2,7 @@
 title: "OCPP and charging attacks"
 summary: "OCPP links chargers to cloud backends; weak transport security, shared identities and duplicate connections enable hijack, fraud and outage attacks."
 type: concept
+created: 2026-10-31
 updated: 2026-10-31
 related: [checkocpp, emuocpp, everest, ocppstorm-a-comprehensive-fuzzing-tool-for-ocpp-implementations]
 sources:

@@ -28,7 +28,10 @@ remains reachable from the index.
 A page is rewritten only when its own entry data changes (title, URL,
 section, or list description). `last_checked` is a human/agent verification
 stamp and is never moved by an ingest; `updated` and `source_commit`
-advance only on pages actually rewritten. Deterministic and idempotent:
+advance only on pages actually rewritten. `created` is stamped from the
+source commit date when a stub is first created and preserved verbatim
+thereafter — it records when the page first entered the KB and never
+changes (OpenShelf SPEC section 4.2). Deterministic and idempotent:
 dates come from the source commit, never the wall clock; same source
 commit in, byte-identical tree out.
 
@@ -103,7 +106,7 @@ def parse_list(readme: Path) -> list[dict]:
 
 
 MANAGED_KEYS = {"title", "summary", "type", "category", "url", "status",
-                "last_checked", "updated", "depth", "source_list",
+                "last_checked", "created", "updated", "depth", "source_list",
                 "source_commit", "list_summary"}
 
 
@@ -133,6 +136,7 @@ def extra_blocks(text: str) -> list[list[str]]:
 def frontmatter(e: dict, status: str, depth: str, date: str, commit: str,
                 extras: list[list[str]] | None = None,
                 last_checked: str | None = None,
+                created: str | None = None,
                 updated: str | None = None) -> str:
     lines = ["---",
              f"title: {q(e['title'])}",
@@ -142,6 +146,7 @@ def frontmatter(e: dict, status: str, depth: str, date: str, commit: str,
              f"url: {q(e['url'])}",
              f"status: {status}",
              f"last_checked: {last_checked or date}",
+             f"created: {created or date}",
              f"updated: {updated or date}",
              f"depth: {depth}",
              f"source_list: {SOURCE_ID}",
@@ -245,6 +250,7 @@ def main() -> int:
                 new_text = frontmatter(
                     e, status, depth, date, commit, extra_blocks(old_text),
                     last_checked=str(fields.get("last_checked", "")) or None,
+                    created=str(fields.get("created", "")) or None,
                     updated=date) + (
                     body if depth == "full" else stub_body(e))
                 page.write_text(new_text, encoding="utf-8")

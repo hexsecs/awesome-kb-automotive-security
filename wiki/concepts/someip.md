@@ -2,6 +2,7 @@
 title: "SOME/IP and SOME/IP-SD"
 summary: "AUTOSAR's service-oriented middleware over IP: how services are offered, found and invoked — and why discovery is the trust root of every SOME/IP conversation."
 type: concept
+created: 2026-11-01
 updated: 2026-11-01
 related: [vsomeip, eth-ws-someip, scapy, someip-protocol-fuzzer, protocrawler, ics-cap, autofuze]
 sources:

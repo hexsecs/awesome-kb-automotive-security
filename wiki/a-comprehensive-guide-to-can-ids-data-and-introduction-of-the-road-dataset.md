@@ -6,6 +6,7 @@ category: "Research Papers"
 url: "https://arxiv.org/abs/2012.14600"
 status: unknown
 last_checked: 2026-10-31
+created: 2026-10-31
 updated: 2026-10-31
 depth: stub
 source_list: awesome-automotive-security

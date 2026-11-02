@@ -2,6 +2,7 @@
 title: "IVI update-path trust"
 summary: "How head-unit update trust anchors fail across six IVI platforms: absent checks, a public test key, a fleet-wide key, CRC-only integrity, patchable verifiers."
 type: concept
+created: 2026-11-01
 updated: 2026-11-01
 related: [byd-dolphin-hacking, chimaera, gen5fw, ic1101, mmi3g-toolkit, q50-reverse-engineering, secure-firmware-updates, simos18-sboot]
 sources:

@@ -6,6 +6,7 @@ category: "Research Papers"
 url: "https://oparu.uni-ulm.de/items/b215d57b-06e1-4f27-a67e-a6ecaf3b45d2"
 status: unknown
 last_checked: 2026-10-31
+created: 2026-10-31
 updated: 2026-10-31
 depth: stub
 source_list: awesome-automotive-security

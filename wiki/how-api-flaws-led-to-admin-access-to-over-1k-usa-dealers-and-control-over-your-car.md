@@ -6,6 +6,7 @@ category: "Conference Presentations"
 url: "https://media.defcon.org/DEF%20CON%2033/DEF%20CON%2033%20villages%20and%20creators/DEF%20CON%2033%20-%20Car%20Hacking%20Village%20-%20Eaton%20Zveare%20-%20How%20API%20flaws%20led%20to%20admin%20access%20to%20over%201k%20USA%20dealers%20and%20control%20over%20your%20car.pdf"
 status: unknown
 last_checked: 2026-10-31
+created: 2026-10-31
 updated: 2026-10-31
 depth: stub
 source_list: awesome-automotive-security
