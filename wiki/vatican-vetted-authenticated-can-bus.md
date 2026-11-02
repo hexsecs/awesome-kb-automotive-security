@@ -23,6 +23,7 @@ related:
   - fingerprinting-electronic-control-units-for-vehicle-intrusion-detection
   - error-handling-of-in-vehicle-networks-makes-them-vulnerable
   - vulcan-efficient-component-authentication-and-software-isolation-for-automotive-control-networks
+  - can-message-authentication
 ---
 
 Nurnberger and Rossow, CHES 2016. Retrofit authentication for CAN using MACs and a global nonce, a reference point for later SecOC-style designs.

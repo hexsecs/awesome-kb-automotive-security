@@ -23,6 +23,7 @@ related:
   - can-injection
   - lock-it-and-still-lose-it-on-the-in-security-of-automotive-remote-keyless-entry-systems
   - vulcan-efficient-component-authentication-and-software-isolation-for-automotive-control-networks
+  - can-message-authentication
 ---
 
 Radu and Garcia, ESORICS 2016. Backwards-compatible per-ID authentication that fits CAN's timing and bandwidth limits, compartmentalising ECUs so a compromised head unit cannot actuate the powertrain.
