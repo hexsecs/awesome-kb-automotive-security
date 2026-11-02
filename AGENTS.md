@@ -4,6 +4,11 @@ This KB conforms to the **OpenShelf** standard (`openshelf: "0.1"`,
 `profile: awesome`) — spec and schemas live in
 [hexsecs/openkb](https://github.com/hexsecs/openkb); this file carries only
 what is local to this KB. Read `kb.yaml` for the declared layout.
+The maintenance **method** (deepening pipeline, evidence discipline,
+concept mining, gates, traps) lives in the awesome-kb skill —
+[hexsecs/awesome-kb-skill](https://github.com/hexsecs/awesome-kb-skill) —
+not in this file; this file wins on local facts, the skill on method,
+the spec on format.
 
 ## The canon rule
 
