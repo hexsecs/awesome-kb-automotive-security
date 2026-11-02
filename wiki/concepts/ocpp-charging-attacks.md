@@ -4,7 +4,7 @@ summary: "OCPP links chargers to cloud backends; weak transport security, shared
 type: concept
 created: 2026-10-31
 updated: 2026-10-31
-related: [checkocpp, emuocpp, everest, ocppstorm-a-comprehensive-fuzzing-tool-for-ocpp-implementations, losing-the-car-keys-wireless-phy-layer-insecurity-in-ev-charging]
+related: [checkocpp, emuocpp, everest, ocppstorm-a-comprehensive-fuzzing-tool-for-ocpp-implementations, losing-the-car-keys-wireless-phy-layer-insecurity-in-ev-charging, race-to-charge-concurrency-bugs-and-state-integrity-violations-in-ev-charging-infrastructure]
 sources:
   - url: "https://openchargealliance.org/ocpp-info-whitepapers/ocpp-1-6-security-whitepaper-4th-edition/"
     retrieved: 2026-10-31
