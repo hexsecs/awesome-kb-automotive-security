@@ -4,7 +4,7 @@ summary: "Löw et al., USENIX VehicleSec 2026. Relays Plug and Charge authentica
 type: entity
 category: "Research Papers"
 url: "https://www.usenix.org/conference/vehiclesec26/presentation/low"
-status: unknown
+status: published
 last_checked: 2026-10-31
 created: 2026-10-31
 updated: 2026-10-31

@@ -4,7 +4,7 @@ summary: "Rouf et al., USENIX Security 2010. Shows TPMS sensors are unauthentica
 type: entity
 category: "Research Papers"
 url: "https://www.usenix.org/conference/usenixsecurity10/security-and-privacy-vulnerabilities-car-wireless-networks-tire-pressure"
-status: unknown
+status: published
 last_checked: 2026-11-01
 created: 2026-10-31
 updated: 2026-11-01
@@ -53,7 +53,7 @@ Stated in the paper: the two sensor systems are anonymized and the results are d
 
 ## Status and sources
 
-Status: **unknown** — a finished 2010 publication; no living artefact. Bibliographic note: no DOI is confirmed for this paper — the ACM Digital Library identifier string (10.5555/…) is an internal identifier, not a registered DOI, and is not printed as one. Full text openly available from USENIX and author mirrors; read in full 2026-11-01.
+Status: **published** — a finished 2010 publication; no living artefact. Bibliographic note: no DOI is confirmed for this paper — the ACM Digital Library identifier string (10.5555/…) is an internal identifier, not a registered DOI, and is not printed as one. Full text openly available from USENIX and author mirrors; read in full 2026-11-01.
 
 ## Related
 

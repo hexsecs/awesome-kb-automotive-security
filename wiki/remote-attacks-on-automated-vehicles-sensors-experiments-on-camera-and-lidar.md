@@ -4,7 +4,7 @@ summary: "Petit, Stottelaar, Feiri, and Kargl, Black Hat Europe 2015. First prac
 type: entity
 category: "Research Papers"
 url: "https://blackhat.com/docs/eu-15/materials/eu-15-Petit-Self-Driving-And-Connected-Cars-Fooling-Sensors-And-Tracking-Drivers-wp1.pdf"
-status: unknown
+status: published
 last_checked: 2026-11-01
 created: 2026-10-31
 updated: 2026-11-01
@@ -55,7 +55,7 @@ The paper's own discussion (§7) is unusually explicit, and this page keeps its 
 
 ## Status and sources
 
-Status: **unknown** — a finished 2015 conference publication; no living artefact. Sources: the paper PDF from the Black Hat Europe 2015 materials archive (the stub's URL), read in full 2026-11-01; Crossref queried 2026-11-01 (no DOI record exists for this paper); the KB's Illusion and Dazzle and WALNUT pages for the forward links; the list.
+Status: **published** — a finished 2015 conference publication; no living artefact. Sources: the paper PDF from the Black Hat Europe 2015 materials archive (the stub's URL), read in full 2026-11-01; Crossref queried 2026-11-01 (no DOI record exists for this paper); the KB's Illusion and Dazzle and WALNUT pages for the forward links; the list.
 
 ## Related
 

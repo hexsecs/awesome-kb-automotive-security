@@ -4,7 +4,7 @@ summary: "Eykholt et al., CVPR 2018. The stop-sign sticker attack, the canonical
 type: entity
 category: "Research Papers"
 url: "https://arxiv.org/abs/1707.08945"
-status: unknown
+status: published
 last_checked: 2026-10-31
 created: 2026-10-31
 updated: 2026-10-31

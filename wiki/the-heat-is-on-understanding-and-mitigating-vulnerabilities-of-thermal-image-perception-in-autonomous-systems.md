@@ -4,7 +4,7 @@ summary: "Bhupathiraju et al., NDSS 2026. Shows heat sources degrade thermal-cam
 type: entity
 category: "Research Papers"
 url: "https://www.ndss-symposium.org/ndss-paper/the-heat-is-on-understanding-and-mitigating-vulnerabilities-of-thermal-image-perception-in-autonomous-systems/"
-status: unknown
+status: published
 last_checked: 2026-10-31
 created: 2026-10-31
 updated: 2026-10-31

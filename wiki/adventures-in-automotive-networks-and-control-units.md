@@ -4,7 +4,7 @@ summary: "Miller and Valasek, 2013. The wired precursor to the Jeep work, docume
 type: entity
 category: "Research Papers"
 url: "https://illmatics.com/car_hacking.pdf"
-status: unknown
+status: published
 last_checked: 2026-11-01
 created: 2026-10-31
 updated: 2026-11-01
@@ -50,7 +50,7 @@ Stated in the paper: entry is assumed, not solved — every result presupposes t
 
 ## Status and sources
 
-Status: **unknown** — a finished 2013 white paper; the released tools were research artefacts, not a maintained project. No DOI. Full text openly available (illmatics.com); read in full 2026-11-01.
+Status: **published** — a finished 2013 white paper; the released tools were research artefacts, not a maintained project. No DOI. Full text openly available (illmatics.com); read in full 2026-11-01.
 
 ## Related
 

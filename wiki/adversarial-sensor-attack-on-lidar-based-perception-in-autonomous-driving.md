@@ -4,7 +4,7 @@ summary: "Cao et al., ACM CCS 2019. Spoofs LiDAR returns to inject a fake obstac
 type: entity
 category: "Research Papers"
 url: "https://arxiv.org/abs/1907.06826"
-status: unknown
+status: published
 last_checked: 2026-11-01
 created: 2026-10-31
 updated: 2026-11-01
@@ -56,7 +56,7 @@ The paper's own discussion (§10.1) is direct about these, and the page keeps th
 
 ## Status and sources
 
-Status: **unknown** — a finished 2019 conference publication; no living artefact. Bibliographic record: *Proceedings of the 2019 ACM SIGSAC Conference on Computer and Communications Security (CCS '19)*, pp. 2267–2281. DOI [10.1145/3319535.3339815](https://doi.org/10.1145/3319535.3339815) verified against Crossref (title, venue, page range, and all nine authors match). Full text read end-to-end, appendices included, from the arXiv v2 author version (arXiv:1907.06826, revised 20 August 2019), 2026-11-01. Not the overlapping team's companion *Adversarial Objects Against LiDAR-Based Autonomous Driving Systems* (arXiv:1907.05418), a different attack (hiding real objects); this paper is the spoofing one.
+Status: **published** — a finished 2019 conference publication; no living artefact. Bibliographic record: *Proceedings of the 2019 ACM SIGSAC Conference on Computer and Communications Security (CCS '19)*, pp. 2267–2281. DOI [10.1145/3319535.3339815](https://doi.org/10.1145/3319535.3339815) verified against Crossref (title, venue, page range, and all nine authors match). Full text read end-to-end, appendices included, from the arXiv v2 author version (arXiv:1907.06826, revised 20 August 2019), 2026-11-01. Not the overlapping team's companion *Adversarial Objects Against LiDAR-Based Autonomous Driving Systems* (arXiv:1907.05418), a different attack (hiding real objects); this paper is the spoofing one.
 
 ## Related
 

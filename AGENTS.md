@@ -49,8 +49,12 @@ what gets listed.
   2026-11-01). It is distinct from `updated` (last substantive change)
   and `last_checked` (last verification of the listed thing itself).
 - `status` is the *resource's* status (active / maintenance / archived /
-  unknown), verified when `last_checked` is stamped. Ingest sets `unknown`;
-  a delisted entry's page is tombstoned to `archived`, never deleted.
+  published / unknown), verified when `last_checked` is stamped. Ingest
+  sets `unknown` — except the Research Papers category, whose entries are
+  finished works and get `published` (OpenShelf SPEC §9.2: `published` is
+  for completed publications; `unknown` is for living resources whose
+  state is unverified). A delisted entry's page is tombstoned to
+  `archived`, never deleted.
 - The ingester preserves unmanaged frontmatter blocks (`related`,
   `license`, a richer `sources`, …) and `full` bodies verbatim across
   syncs, and lists `wiki/concepts/` pages in the generated L1 index.

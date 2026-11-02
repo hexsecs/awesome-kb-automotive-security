@@ -4,7 +4,7 @@ summary: "Khan, Islam, and Hasan, arXiv 2026. Systematizes 48 studies of percept
 type: entity
 category: "Research Papers"
 url: "https://arxiv.org/abs/2604.20621"
-status: unknown
+status: published
 last_checked: 2026-10-31
 created: 2026-10-31
 updated: 2026-10-31

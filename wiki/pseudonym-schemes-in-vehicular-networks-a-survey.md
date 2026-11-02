@@ -4,7 +4,7 @@ summary: "Petit, Schaub, Feiri, and Kargl, IEEE Communications Surveys and Tutor
 type: entity
 category: "Research Papers"
 url: "https://oparu.uni-ulm.de/items/b215d57b-06e1-4f27-a67e-a6ecaf3b45d2"
-status: unknown
+status: published
 last_checked: 2026-11-01
 created: 2026-10-31
 updated: 2026-11-01
@@ -54,7 +54,7 @@ A survey, not an experiment: its category verdicts are the authors' analysis of 
 
 ## Status and sources
 
-Status: **unknown** — a finished 2015 publication. Sources: the authors' accepted manuscript, University of Twente repository (read in full 2026-11-01 via the Wayback Machine's snapshot; the live file currently 404s); DOI and published pagination verified via Crossref and the Ulm OPARU record, 2026-11-01; the list.
+Status: **published** — a finished 2015 publication. Sources: the authors' accepted manuscript, University of Twente repository (read in full 2026-11-01 via the Wayback Machine's snapshot; the live file currently 404s); DOI and published pagination verified via Crossref and the Ulm OPARU record, 2026-11-01; the list.
 
 ## Related
 

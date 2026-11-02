@@ -4,7 +4,7 @@ summary: "Francillon, Danev, and Capkun, NDSS 2011. Demonstrates the relay attac
 type: entity
 category: "Research Papers"
 url: "https://www.ndss-symposium.org/ndss2011/relay-attacks-on-passive-keyless-entry-and-start-systems-in-modern-cars/"
-status: unknown
+status: published
 last_checked: 2026-11-01
 created: 2026-10-31
 updated: 2026-11-01
@@ -49,7 +49,7 @@ Stated in the paper: the evaluated fleet is ten systems, models anonymized (this
 
 ## Status and sources
 
-Status: **unknown** — a finished 2011 publication; no living artefact. No DOI is confirmed (NDSS papers of this era typically carry none). Full text openly available from NDSS and ETH author mirrors; read in full 2026-11-01.
+Status: **published** — a finished 2011 publication; no living artefact. No DOI is confirmed (NDSS papers of this era typically carry none). Full text openly available from NDSS and ETH author mirrors; read in full 2026-11-01.
 
 ## Related
 

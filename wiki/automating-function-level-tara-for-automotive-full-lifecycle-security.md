@@ -4,7 +4,7 @@ summary: "Yang et al., NDSS 2026. DefenseWeaver, a multi-agent LLM system that a
 type: entity
 category: "Research Papers"
 url: "https://www.ndss-symposium.org/ndss-paper/automating-function-level-tara-for-automotive-full-lifecycle-security/"
-status: unknown
+status: published
 last_checked: 2026-10-31
 created: 2026-10-31
 updated: 2026-10-31

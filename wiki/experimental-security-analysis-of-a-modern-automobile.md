@@ -4,7 +4,7 @@ summary: "Koscher et al., IEEE S&P 2010. The paper that opened the field, demons
 type: entity
 category: "Research Papers"
 url: "https://www.autosec.org/pubs/cars-oakland2010.pdf"
-status: unknown
+status: published
 last_checked: 2026-11-01
 created: 2026-10-31
 updated: 2026-11-01
@@ -112,7 +112,7 @@ Scope as the paper states it: two vehicles of one (anonymized) make and model, c
 
 ## Status and sources
 
-Status: **unknown** — a finished 2010 publication; CARSHARK was the team's internal tool, not a maintained release. Sources: the paper (open author copy, autosec.org), read in full 2026-11-01 (and re-read end-to-end for this deep revision); the DOI record; the list. This page is the KB's first `deep` page (OpenShelf SPEC §4.5) — the pilot for the tier.
+Status: **published** — a finished 2010 publication; CARSHARK was the team's internal tool, not a maintained release. Sources: the paper (open author copy, autosec.org), read in full 2026-11-01 (and re-read end-to-end for this deep revision); the DOI record; the list. This page is the KB's first `deep` page (OpenShelf SPEC §4.5) — the pilot for the tier.
 
 ## Related
 

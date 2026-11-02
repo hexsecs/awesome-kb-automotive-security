@@ -4,7 +4,7 @@ summary: "Wouters, Gierlichs, and Preneel, CHES 2021. Chains a BLE firmware down
 type: entity
 category: "Research Papers"
 url: "https://tches.iacr.org/index.php/TCHES/article/view/9063"
-status: unknown
+status: published
 last_checked: 2026-10-31
 created: 2026-10-31
 updated: 2026-10-31

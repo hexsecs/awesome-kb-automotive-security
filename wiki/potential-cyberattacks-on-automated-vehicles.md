@@ -4,7 +4,7 @@ summary: "Petit and Shladover, IEEE T-ITS 2015. The standard reference taxonomy 
 type: entity
 category: "Research Papers"
 url: "https://its.berkeley.edu/publications/potential-cyberattacks-automated-vehicles"
-status: unknown
+status: published
 last_checked: 2026-10-31
 created: 2026-10-31
 updated: 2026-10-31

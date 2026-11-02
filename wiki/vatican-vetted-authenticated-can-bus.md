@@ -4,7 +4,7 @@ summary: "Nurnberger and Rossow, CHES 2016. Retrofit authentication for CAN usin
 type: entity
 category: "Research Papers"
 url: "https://christian-rossow.de/publications/vatican-ches2016.pdf"
-status: unknown
+status: published
 last_checked: 2026-11-01
 created: 2026-10-31
 updated: 2026-11-01
@@ -55,7 +55,7 @@ As the paper states them: **latency is real** — 3.3 ms of verification delay i
 
 ## Status and sources
 
-Status: **unknown** — a finished 2016 publication; the Arduino library was released as free software, but there is no maintained product (status follows the publication precedent). Bibliographic record: Springer record for CHES 2016 (LNCS 9813, pp. 106–124); the authors' PDF was read in full 2026-11-01.
+Status: **published** — a finished 2016 publication; the Arduino library was released as free software, but there is no maintained product (status follows the publication precedent). Bibliographic record: Springer record for CHES 2016 (LNCS 9813, pp. 106–124); the authors' PDF was read in full 2026-11-01.
 
 ## Related
 

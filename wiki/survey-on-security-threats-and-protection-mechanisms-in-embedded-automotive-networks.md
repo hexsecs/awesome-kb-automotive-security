@@ -4,7 +4,7 @@ summary: "Studnia et al., DSN Workshops 2013. Widely cited survey mapping in-veh
 type: entity
 category: "Research Papers"
 url: "https://ieeexplore.ieee.org/document/6615528/"
-status: unknown
+status: published
 last_checked: 2026-11-01
 created: 2026-10-31
 updated: 2026-11-01
@@ -60,7 +60,7 @@ A survey of other people's work: no new experiments, and its attack narrative le
 
 ## Status and sources
 
-Status: **unknown** — a finished 2013 workshop publication; no living artefact. Sources: the paper (open author manuscript, HAL hal-01176042), read in full 2026-11-01; the DOI record (Crossref); the list.
+Status: **published** — a finished 2013 workshop publication; no living artefact. Sources: the paper (open author manuscript, HAL hal-01176042), read in full 2026-11-01; the DOI record (Crossref); the list.
 
 ## Related
 

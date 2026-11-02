@@ -4,7 +4,7 @@ summary: "Bianchi et al., USENIX VehicleSec 2025. Systematization of RKE and pas
 type: entity
 category: "Research Papers"
 url: "https://www.usenix.org/conference/vehiclesec25/presentation/bianchi"
-status: unknown
+status: published
 last_checked: 2026-10-31
 created: 2026-10-31
 updated: 2026-10-31

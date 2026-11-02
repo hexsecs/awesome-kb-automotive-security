@@ -4,7 +4,7 @@ summary: "Papadimitratos et al., IEEE Communications Magazine 2008. The SeVeCom 
 type: entity
 category: "Research Papers"
 url: "https://arxiv.org/abs/0912.5391"
-status: unknown
+status: published
 last_checked: 2026-11-01
 created: 2026-10-31
 updated: 2026-11-01
@@ -59,7 +59,7 @@ An architecture paper: at publication, implementation and performance results we
 
 ## Status and sources
 
-Status: **unknown** — a finished 2008 publication. Sources: the paper (open author manuscript, arXiv:0912.5391), read in full 2026-11-01; the DOI record; the list.
+Status: **published** — a finished 2008 publication. Sources: the paper (open author manuscript, arXiv:0912.5391), read in full 2026-11-01; the DOI record; the list.
 
 ## Related
 

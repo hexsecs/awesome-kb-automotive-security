@@ -234,7 +234,12 @@ def main() -> int:
         if page is None:
             slug = slugify(e["title"], taken)
             page = WIKI / f"{slug}.md"
-            page.write_text(frontmatter(e, "unknown", "stub", date, commit)
+            # Finished works (the Research Papers category) are complete
+            # at listing time: their status is `published` (OpenShelf
+            # SPEC §9.2), not the unverified default for living resources.
+            new_status = ("published" if e["section"] == "Research Papers"
+                          else "unknown")
+            page.write_text(frontmatter(e, new_status, "stub", date, commit)
                             + stub_body(e), encoding="utf-8")
             created += 1
         else:

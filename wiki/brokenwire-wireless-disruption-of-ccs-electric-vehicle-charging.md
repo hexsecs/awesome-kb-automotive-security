@@ -4,7 +4,7 @@ summary: "Kohler, Baker, Strohmeier, and Martinovic, NDSS 2023. Aborts CCS rapid
 type: entity
 category: "Research Papers"
 url: "https://www.ndss-symposium.org/ndss-paper/brokenwire-wireless-disruption-of-ccs-electric-vehicle-charging/"
-status: unknown
+status: published
 last_checked: 2026-10-31
 created: 2026-10-31
 updated: 2026-10-31

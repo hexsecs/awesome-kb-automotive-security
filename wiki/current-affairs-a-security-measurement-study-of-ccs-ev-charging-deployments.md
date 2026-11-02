@@ -4,7 +4,7 @@ summary: "Szakaly et al., USENIX Security 2025. First measurement of publicly de
 type: entity
 category: "Research Papers"
 url: "https://www.usenix.org/conference/usenixsecurity25/presentation/szakaly"
-status: unknown
+status: published
 last_checked: 2026-10-31
 created: 2026-10-31
 updated: 2026-10-31

@@ -4,7 +4,7 @@ summary: "Cao et al., IEEE S&P 2021. Defeats the multi-sensor fusion designs tha
 type: entity
 category: "Research Papers"
 url: "https://arxiv.org/abs/2106.09249"
-status: unknown
+status: published
 last_checked: 2026-10-31
 created: 2026-10-31
 updated: 2026-10-31

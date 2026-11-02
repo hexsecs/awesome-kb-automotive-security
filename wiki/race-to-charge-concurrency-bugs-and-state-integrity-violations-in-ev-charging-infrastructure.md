@@ -4,7 +4,7 @@ summary: "Lee and Lee, USENIX VehicleSec 2026. Audits the open-source EVerest ch
 type: entity
 category: "Research Papers"
 url: "https://www.usenix.org/conference/vehiclesec26/presentation/lee"
-status: unknown
+status: published
 last_checked: 2026-11-01
 created: 2026-11-01
 updated: 2026-11-01

@@ -4,7 +4,7 @@ summary: "Foster, Prudhomme, Koscher, and Savage, USENIX WOOT 2015. Shows an aft
 type: entity
 category: "Research Papers"
 url: "https://www.usenix.org/conference/woot15/workshop-program/presentation/foster"
-status: unknown
+status: published
 last_checked: 2026-11-01
 created: 2026-10-31
 updated: 2026-11-01
@@ -60,7 +60,7 @@ One device family, purchased second-hand; the claim that the vulnerabilities spa
 
 ## Status and sources
 
-Status: **unknown** — a finished 2015 workshop publication; no DOI (Crossref checked, above). Sources: the paper (USENIX open PDF), read in full 2026-11-01; the list.
+Status: **published** — a finished 2015 workshop publication; no DOI (Crossref checked, above). Sources: the paper (USENIX open PDF), read in full 2026-11-01; the list.
 
 ## Related
 

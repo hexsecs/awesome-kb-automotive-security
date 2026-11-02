@@ -4,7 +4,7 @@ summary: "Shen et al., USENIX Security 2020. Shows sensor fusion does not neutra
 type: entity
 category: "Research Papers"
 url: "https://www.usenix.org/conference/usenixsecurity20/presentation/shen"
-status: unknown
+status: published
 last_checked: 2026-10-31
 created: 2026-10-31
 updated: 2026-10-31

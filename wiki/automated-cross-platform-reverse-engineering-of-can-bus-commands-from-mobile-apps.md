@@ -4,7 +4,7 @@ summary: "Wen, Zhao, Chen, and Lin, NDSS 2020. Recovers CAN command syntax and s
 type: entity
 category: "Research Papers"
 url: "https://www.ndss-symposium.org/ndss-paper/automated-cross-platform-reverse-engineering-of-can-bus-commands-from-mobile-apps/"
-status: unknown
+status: published
 last_checked: 2026-10-31
 created: 2026-10-31
 updated: 2026-10-31

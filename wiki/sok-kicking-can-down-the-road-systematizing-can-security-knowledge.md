@@ -4,7 +4,7 @@ summary: "Serag et al., 2025. Systematization of two decades of CAN security, wi
 type: entity
 category: "Research Papers"
 url: "https://arxiv.org/abs/2510.02960"
-status: unknown
+status: published
 last_checked: 2026-10-31
 created: 2026-10-31
 updated: 2026-10-31

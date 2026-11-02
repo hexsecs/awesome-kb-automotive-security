@@ -4,7 +4,7 @@ summary: "Radu and Garcia, ESORICS 2016. Backwards-compatible per-ID authenticat
 type: entity
 category: "Research Papers"
 url: "https://pure-oai.bham.ac.uk/ws/portalfiles/portal/29342174/leia.pdf"
-status: unknown
+status: published
 last_checked: 2026-11-01
 created: 2026-10-31
 updated: 2026-11-01
@@ -51,7 +51,7 @@ As the paper states them: **denial of service is explicitly out of scope** — L
 
 ## Status and sources
 
-Status: **unknown** — a finished 2016 publication; a protocol design, not a maintained artefact. Bibliographic record: ESORICS 2016, Proceedings Part II, LNCS 9879, Springer, pp. 283–300. DOI: [10.1007/978-3-319-45741-3_15](https://doi.org/10.1007/978-3-319-45741-3_15) — verified via the Birmingham portal's citation page and the Crossref record. Full text openly available from the Birmingham portal; read in full 2026-11-01.
+Status: **published** — a finished 2016 publication; a protocol design, not a maintained artefact. Bibliographic record: ESORICS 2016, Proceedings Part II, LNCS 9879, Springer, pp. 283–300. DOI: [10.1007/978-3-319-45741-3_15](https://doi.org/10.1007/978-3-319-45741-3_15) — verified via the Birmingham portal's citation page and the Crossref record. Full text openly available from the Birmingham portal; read in full 2026-11-01.
 
 ## Related
 

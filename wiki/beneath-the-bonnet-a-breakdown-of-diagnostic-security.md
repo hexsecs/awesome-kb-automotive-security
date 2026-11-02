@@ -4,7 +4,7 @@ summary: "Van den Herrewegen and Garcia, ESORICS 2018. Reverse engineers the see
 type: entity
 category: "Research Papers"
 url: "https://pure-oai.bham.ac.uk/ws/portalfiles/portal/50643148/Beneath_the_Bonnet.pdf"
-status: unknown
+status: published
 last_checked: 2026-11-01
 created: 2026-10-31
 updated: 2026-11-01
@@ -59,7 +59,7 @@ From the paper itself:
 
 ## Status and sources
 
-Status: **unknown** (finished 2018 publication; no living artefact). Bibliographic verification: LNCS vol. 11098 (portal record), pp. 305–324 (Crossref); DOI 10.1007/978-3-319-99073-6_15 is printed on the manuscript itself and Crossref-verified. Full text read: the **peer-reviewed author manuscript** (post-peer-review, pre-copyedit) from the University of Birmingham portal; wording may differ minutely from the final LNCS version.
+Status: **published** (finished 2018 publication; no living artefact). Bibliographic verification: LNCS vol. 11098 (portal record), pp. 305–324 (Crossref); DOI 10.1007/978-3-319-99073-6_15 is printed on the manuscript itself and Crossref-verified. Full text read: the **peer-reviewed author manuscript** (post-peer-review, pre-copyedit) from the University of Birmingham portal; wording may differ minutely from the final LNCS version.
 
 ## Related
 
