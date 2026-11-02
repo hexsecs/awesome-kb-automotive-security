@@ -4,7 +4,7 @@ summary: "How vehicles get pseudonymous credentials: split-knowledge issuance in
 type: concept
 created: 2026-11-01
 updated: 2026-11-01
-related: [vanetza, v2verifier, van3twin, f2md, misbehavior-detection, securing-vehicular-ad-hoc-networks, secure-vehicular-communication-systems-design-and-architecture]
+related: [vanetza, v2verifier, van3twin, f2md, misbehavior-detection, securing-vehicular-ad-hoc-networks, secure-vehicular-communication-systems-design-and-architecture, pseudonym-schemes-in-vehicular-networks-a-survey]
 sources:
   - url: "https://www.etsi.org/deliver/etsi_TS/102900_102999/102941/02.01.01_60/ts_102941v020101p.pdf"
     retrieved: 2026-11-01
