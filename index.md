@@ -26,10 +26,11 @@ Generated from page frontmatter by tools/ingest.py; do not edit by hand.
 ## Concepts
 
 - [Bootloader stages and bootstrap entry](wiki/concepts/bootloader-stages.md) — ECUs boot through layers owned by different parties; the corpus's breaks concentrate at the stage transitions and the weakest stage, not the application.
+- [The calibration plane (XCP/A2L)](wiki/concepts/calibration-plane.md) — Beside diagnostics sits a second access plane into production ECUs: XCP's direct memory access and the A2L maps that name everything it can touch.
 - [CAN availability and denial of service](wiki/concepts/can-availability.md) — Availability attacks remove or suppress the bus's genuine traffic, below the layer message authentication defends: flooding, bus-off, dominance, silencing.
 - [CAN injection](wiki/concepts/can-injection.md) — Attacker taps exposed CAN wiring and impersonates a trusted ECU: classic CAN frames carry no sender authentication, so fake 'key valid' messages are believed.
 - [CAN message authentication: the retrofit design space](wiki/concepts/can-message-authentication.md) — Two complete academic designs and the standardised answer, compared on freshness, key scope, frame cost, and evidence — plus the two limits they all share.
-- [Protocol-aware diagnostic fuzzing](wiki/concepts/diagnostic-fuzzing.md) — Fuzzing the diagnostic surface only reaches the deep states when generation is grammar- and state-aware: sessions and SecurityAccess are the fuzzer's real problem.
+- [Protocol-aware diagnostic fuzzing](wiki/concepts/diagnostic-fuzzing.md) — Fuzzing reaches the deep diagnostic states only when generation is grammar- and state-aware: sessions and SecurityAccess are the fuzzer's real problem.
 - [Diagnostic-service abuse](wiki/concepts/diagnostic-service-abuse.md) — The diagnostic service set is the highest-privilege surface on the vehicle network: what it actuates, how its gates fail, and the one case where they held.
 - [Firmware acquisition: the read-side channels](wiki/concepts/firmware-acquisition.md) — Before analysis comes acquisition: the channels the corpus documents for getting an ECU's image out — by bus, by bootstrap, by bench, by log, by package.
 - [In-vehicle intrusion detection and ECU fingerprinting](wiki/concepts/in-vehicle-intrusion-detection.md) — The bus's defence literature, organised by observable signal: timing, clock skew, voltage, learned models — and split by detecting an anomaly vs attributing it.
