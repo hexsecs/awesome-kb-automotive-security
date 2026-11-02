@@ -13,11 +13,11 @@ Generated from page frontmatter by tools/ingest.py; do not edit by hand.
 - [Infotainment and IVI](wiki/index-infotainment-and-ivi.md) — 6 entries
 - [V2X Security](wiki/index-v2x-security.md) — 6 entries
 - [EV Charging Security](wiki/index-ev-charging-security.md) — 11 entries
-- [Hardware Interfaces](wiki/index-hardware-interfaces.md) — 8 entries
+- [Hardware Interfaces](wiki/index-hardware-interfaces.md) — 9 entries
 - [Security Analysis](wiki/index-security-analysis.md) — 6 entries
 - [Penetration Testing](wiki/index-penetration-testing.md) — 11 entries
 - [Datasets](wiki/index-datasets.md) — 12 entries
-- [Research Papers](wiki/index-research-papers.md) — 65 entries
+- [Research Papers](wiki/index-research-papers.md) — 66 entries
 - [Conference Presentations](wiki/index-conference-presentations.md) — 14 entries
 - [Books](wiki/index-books.md) — 12 entries
 - [Learning Resources](wiki/index-learning-resources.md) — 7 entries
@@ -44,7 +44,7 @@ Generated from page frontmatter by tools/ingest.py; do not edit by hand.
 - [Physical-channel sensor attacks](wiki/concepts/physical-channel-sensor-attacks.md) — Attacks that manufacture the measurement itself — in acoustics, optics, RF, and heat — where no digital interface is touched and the output is faithfully wrong.
 - [Rolling-code failure classes](wiki/concepts/rolling-code-failure-classes.md) — Rolling codes move trust from the code's secrecy to the receiver's counter state; the failure classes attack that state: windows, resync, harvesting, blocking.
 - [Secure firmware updates (Uptane)](wiki/concepts/secure-firmware-updates.md) — How Uptane secures vehicle software updates: two repositories, per-vehicle signed instructions, and compromise resilience when servers or keys fall.
-- [Shared, default, and global secrets: the break-once pattern](wiki/concepts/shared-and-default-secrets.md) — Across the corpus the decisive failure is rarely cipher strength — it is one secret shared by a fleet, a type, or a default nobody changed. Break one, break all.
+- [Shared, default, and global secrets: the break-once pattern](wiki/concepts/shared-and-default-secrets.md) — The decisive failure is rarely cipher strength — it is one secret shared by a fleet or a type, or a default nobody changed. Break one, break all.
 - [Simulation and test doubles for vehicle networks](wiki/concepts/simulation-and-test-doubles.md) — The corpus's simulation layer, rung by rung — virtual bus, replay, declarative doubles, physical miniatures — and what each rung cannot tell you.
 - [SOME/IP and SOME/IP-SD](wiki/concepts/someip.md) — AUTOSAR's service-oriented middleware over IP: how services are offered, found and invoked — and why discovery is the trust root of every SOME/IP conversation.
 - [TARA methodology: the ISO/SAE 21434 artefact chain](wiki/concepts/tara-methodology.md) — How an automotive TARA is actually assembled: the ISO/SAE 21434 artefact chain, the layers the KB's tools occupy, and where automation helps and lies.
