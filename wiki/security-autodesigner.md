@@ -4,14 +4,14 @@ title: "Security AutoDesigner"
 summary: "Automated TARA platform for creating ISO 21434 and UNR 155 compliant threat analysis reports."
 type: entity
 category: "Security Analysis"
-url: "https://plaxidityx.com/products/security-autodesigner/"
+url: "https://plaxidityx.com/security-engines/security-autodesigner/"
 status: active
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-03
 depth: full
 source_list: awesome-automotive-security
-source_commit: b7b92a7
+source_commit: 1e15fb0
 list_summary: "Automated TARA platform for creating ISO 21434 and UNR 155 compliant threat analysis reports."
 related: [autotara, avcdl, automotive-threat-matrix, tara-methodology]
 sources:
