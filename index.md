@@ -7,7 +7,7 @@ Generated from page frontmatter by tools/ingest.py; do not edit by hand.
 
 - [CAN Bus Analysis](wiki/index-can-bus-analysis.md) — 28 entries
 - [Diagnostic Tools](wiki/index-diagnostic-tools.md) — 19 entries
-- [Firmware and ECU Reverse Engineering](wiki/index-firmware-and-ecu-reverse-engineering.md) — 7 entries
+- [Firmware and ECU Reverse Engineering](wiki/index-firmware-and-ecu-reverse-engineering.md) — 8 entries
 - [Automotive Ethernet](wiki/index-automotive-ethernet.md) — 6 entries
 - [RF and Key Fob Analysis](wiki/index-rf-and-key-fob-analysis.md) — 6 entries
 - [Infotainment and IVI](wiki/index-infotainment-and-ivi.md) — 6 entries
@@ -19,7 +19,7 @@ Generated from page frontmatter by tools/ingest.py; do not edit by hand.
 - [Datasets](wiki/index-datasets.md) — 12 entries
 - [Research Papers](wiki/index-research-papers.md) — 67 entries
 - [Conference Presentations](wiki/index-conference-presentations.md) — 14 entries
-- [Books](wiki/index-books.md) — 12 entries
+- [Books](wiki/index-books.md) — 13 entries
 - [Learning Resources](wiki/index-learning-resources.md) — 7 entries
 - [Related Awesome Lists](wiki/index-related-awesome-lists.md) — 6 entries
 
