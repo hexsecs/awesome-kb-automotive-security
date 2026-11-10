@@ -26,6 +26,7 @@
 - [OBDium](obdium.md) — Rust-based OBD-II diagnostic tool with modern Tauri GUI supporting live data, DTC analysis, and offline VIN decoding.
 - [opendbc](opendbc.md) — Python API for your car, bundling community-maintained DBC files with CAN parsing and car interface libraries for reading vehicle state and actuating controls.
 - [pretty_j1939](pretty-j1939.md) — NMFTA's Python library and CLI that decodes J1939 traffic from candump logs using the SAE J1939 Digital Annex, with transport protocol reassembly…
+- [pycangui](pycangui.md) — Graphical CAN bus tool with live trace and plots, transmit, CANopen, UDS, J1939, and XCP/CCP support on any python-can adapter, with Python scripting and…
 - [python-can](python-can.md) — Python library providing a common interface over many CAN hardware backends with CAN FD support and logging to ASC, BLF, MF4, TRC, CSV, and SQLite.
 - [python-can-isotp](python-can-isotp.md) — ISO-TP (ISO 15765) transport for Python on top of python-can or Linux SocketCAN, the segmentation layer that UDS and OBD-II diagnostics run over.
 - [SavvyCAN](savvycan.md) — Cross-platform Qt-based CAN bus reverse engineering and capture tool with DBC file loading, UDS scanning, and fuzzing support.

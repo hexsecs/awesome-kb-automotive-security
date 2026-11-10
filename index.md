@@ -5,7 +5,7 @@ Generated from page frontmatter by tools/ingest.py; do not edit by hand.
 
 ## Categories
 
-- [CAN Bus Analysis](wiki/index-can-bus-analysis.md) — 29 entries
+- [CAN Bus Analysis](wiki/index-can-bus-analysis.md) — 30 entries
 - [Diagnostic Tools](wiki/index-diagnostic-tools.md) — 19 entries
 - [Firmware and ECU Reverse Engineering](wiki/index-firmware-and-ecu-reverse-engineering.md) — 8 entries
 - [Automotive Ethernet](wiki/index-automotive-ethernet.md) — 6 entries
