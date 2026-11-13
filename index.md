@@ -18,7 +18,7 @@ Generated from page frontmatter by tools/ingest.py; do not edit by hand.
 - [Penetration Testing](wiki/index-penetration-testing.md) — 11 entries
 - [Datasets](wiki/index-datasets.md) — 12 entries
 - [Research Papers](wiki/index-research-papers.md) — 68 entries
-- [Conference Presentations](wiki/index-conference-presentations.md) — 18 entries
+- [Conference Presentations](wiki/index-conference-presentations.md) — 21 entries
 - [Books](wiki/index-books.md) — 13 entries
 - [Learning Resources](wiki/index-learning-resources.md) — 7 entries
 - [Related Awesome Lists](wiki/index-related-awesome-lists.md) — 6 entries
