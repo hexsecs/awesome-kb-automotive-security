@@ -623,3 +623,12 @@ stays at stub — the IEEE full text is paywalled, no open copy exists
 and a full page is not written from secondary sources. Reopens if a
 legitimate full text surfaces; the batch-5 attributed draft is
 preserved in the research notes. The KB now has no open issues.
+
+## [2026-11-14] edit | Scrub maintainer first name from two pages
+
+Owner direction: public KB pages carry the hexsecs handle only, never the
+maintainer's first name. wiki/canarchy.md and
+wiki/awesome-embedded-security.md both named the maintainer in prose; both
+now attribute to hexsecs, and the canarchy page keeps its
+maintainer-interest note in handle terms. No other page named the
+maintainer (full-KB sweep, 2026-11-14).

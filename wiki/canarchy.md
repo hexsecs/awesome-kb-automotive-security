@@ -8,7 +8,7 @@ url: "https://github.com/hexsecs/canarchy"
 status: active
 last_checked: 2026-10-31
 created: 2026-10-31
-updated: 2026-10-31
+updated: 2026-11-14
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -28,7 +28,7 @@ Stream-first CAN and J1939 toolkit that emits structured JSONL for automation, w
 
 A CLI-first CAN/CAN-FD and J1939 toolkit for security research and
 AI-agent use, by hexsecs (PyPI package `canarchy`, Python 3.11+). GPL-3.0.
-Phil's own toolkit — it is also the project this KB's maintainer works on
+hexsecs' own toolkit — it is also the project this KB's maintainer works on
 directly, which is worth knowing when weighing this page's enthusiasm.
 
 ## How it works
