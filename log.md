@@ -632,3 +632,11 @@ wiki/awesome-embedded-security.md both named the maintainer in prose; both
 now attribute to hexsecs, and the canarchy page keeps its
 maintainer-interest note in handle terms. No other page named the
 maintainer (full-KB sweep, 2026-11-14).
+
+## [2026-11-14] edit | Ownership sentences removed entirely (owner revision)
+
+Follow-up to the entry above: the owner revised the direction — the
+ownership sentences on wiki/canarchy.md and
+wiki/awesome-embedded-security.md are removed entirely rather than
+re-attributed to the handle. The canarchy page keeps its plain author
+credit.

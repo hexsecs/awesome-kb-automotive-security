@@ -28,8 +28,6 @@ Stream-first CAN and J1939 toolkit that emits structured JSONL for automation, w
 
 A CLI-first CAN/CAN-FD and J1939 toolkit for security research and
 AI-agent use, by hexsecs (PyPI package `canarchy`, Python 3.11+). GPL-3.0.
-hexsecs' own toolkit — it is also the project this KB's maintainer works on
-directly, which is worth knowing when weighing this page's enthusiasm.
 
 ## How it works
 
