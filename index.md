@@ -12,12 +12,12 @@ Generated from page frontmatter by tools/ingest.py; do not edit by hand.
 - [RF and Key Fob Analysis](wiki/index-rf-and-key-fob-analysis.md) — 6 entries
 - [Infotainment and IVI](wiki/index-infotainment-and-ivi.md) — 7 entries
 - [V2X Security](wiki/index-v2x-security.md) — 6 entries
-- [EV Charging Security](wiki/index-ev-charging-security.md) — 11 entries
+- [EV Charging Security](wiki/index-ev-charging-security.md) — 12 entries
 - [Hardware Interfaces](wiki/index-hardware-interfaces.md) — 10 entries
 - [Security Analysis](wiki/index-security-analysis.md) — 6 entries
 - [Penetration Testing](wiki/index-penetration-testing.md) — 11 entries
 - [Datasets](wiki/index-datasets.md) — 12 entries
-- [Research Papers](wiki/index-research-papers.md) — 68 entries
+- [Research Papers](wiki/index-research-papers.md) — 69 entries
 - [Conference Presentations](wiki/index-conference-presentations.md) — 21 entries
 - [Books](wiki/index-books.md) — 13 entries
 - [Learning Resources](wiki/index-learning-resources.md) — 7 entries
