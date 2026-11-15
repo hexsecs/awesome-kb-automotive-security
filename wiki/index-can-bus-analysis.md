@@ -2,6 +2,7 @@
 
 - [BUSMASTER](busmaster.md) — Open-source CAN simulation, analysis, and test tool from Bosch Engineering and ETAS, with a node simulator, DBC-driven signal interpretation, and scriptable…
 - [CAN Commander](can-commander.md) — Flipper Zero application and companion ESP32 CAN board for reverse engineering vehicle networks, with sniffing, DBC decoding, replay, and injection profiles…
+- [CAN Playground](can-playground.md) — Local-first Tauri desktop app for viewing, decoding, and capturing CAN bus traffic, with DBC import, signal annotation, and bit-level change timelines.
 - [can-utils](can-utils.md) — Linux-CAN SocketCAN userspace utilities including cansniffer, candump, cansend, canplayer, and cangen for CAN bus analysis.
 - [CANalyse](canalyse.md) — Vehicle network analysis tool with SQL-like queries on CAN data, smart signal scanning, and Telegram bot integration.
 - [CANalyzat0r](canalyzat0r.md) — Security analysis toolkit for proprietary car protocols with graphical sniffing, fuzzing, packet comparison, background-noise filtering, and UDS fuzzing.
