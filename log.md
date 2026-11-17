@@ -754,3 +754,21 @@ keep the speakers' own "lab only" / coordinated-disclosure caveats; the Savage
 page records that it is an abstract-based summary of a keynote. Fixed one body
 link missing the .md suffix. Gates: ingest x2 idempotent (0/0/0), lint clean,
 link checker 0/0/0, tests pass, diff check clean. ZERO STUBS after this slice.
+
+## [2026-11-17] deepen | Slice 6: six high-centrality briefs -> full
+
+car-hacking-dataset, road,
+expanding-the-attack-scenarios-of-sae-j1939-..., car-hacking-village,
+can-train-and-test and the-car-hacker-s-handbook promoted brief -> full.
+Primary sources: the HCRL Car-Hacking Dataset page and Lampe & Meng's arXiv
+survey of datasets (which supplies the parked-vehicle caveat and records a
+Hyundai-vs-Kia vehicle discrepancy that is now flagged rather than silently
+resolved); the ROAD project site and the PLOS ONE companion paper DOI; the
+Zenodo deposit for the J1939 paper with the full PDF extracted via pdftotext
+to name all 14 scenarios and the 11/14 success count; the Car Hacking Village
+events page (501(c)(3) EIN, 2025-26 calendar); the can-train-and-test arXiv
+paper for file counts, nine attack types and the four known/unknown splits;
+and the OpenGarages handbook page for the CC BY-NC-SA licence and contents.
+These were the six briefs named in the campaign brief; all remaining briefs
+stay at pointer tier. Gates: ingest x2 idempotent (0/0/0), lint clean, link
+checker 0/0/0, tests pass, diff check clean.
