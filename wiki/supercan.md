@@ -8,7 +8,7 @@ url: "https://github.com/jgressmann/supercan"
 status: active
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-16
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -18,6 +18,7 @@ related:
   - candlelight-fw
   - cantact
   - doggie
+  - can-injection
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -61,3 +62,7 @@ Checked 2026-11-01. **Active**, at a maintenance pace: the repository is not arc
 - [CFUC](cfuc.md)
 - [candleLight_fw](candlelight-fw.md)
 - [CANtact](cantact.md)
+
+## Connections
+
+- [CAN injection](concepts/can-injection.md) — the adapter firmware and host stack provide the CAN and CAN FD transmission path used for bench injection experiments.

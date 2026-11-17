@@ -8,7 +8,7 @@ url: "https://github.com/iDoka/awesome-canbus"
 status: active
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-17
 depth: brief
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -21,6 +21,7 @@ sources:
 related:
   - awesome-canb-ids
   - awesome-vehicle-security
+  - can-injection
 facets: [can, firmware, ids, tools, learning]
 ---
 
@@ -38,3 +39,7 @@ Status: **active** — last push 2026-08-07; not archived; 3,541 stars; CC0-1.0.
 
 - [Awesome CANb IDs](awesome-canb-ids.md) — the sibling database of decoded IDs and payloads
 - [Awesome Vehicle Security](awesome-vehicle-security.md) — the broader vehicle-security list this one nests inside
+
+## Connections
+
+- [CAN injection](concepts/can-injection.md) — the list's interfaces, analysers and protocol references equip the bench used to study forged CAN traffic.

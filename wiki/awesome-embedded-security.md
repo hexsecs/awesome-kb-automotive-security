@@ -8,7 +8,7 @@ url: "https://github.com/hexsecs/awesome-embedded-security"
 status: active
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-14
+updated: 2026-11-17
 depth: brief
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -21,6 +21,7 @@ sources:
 related:
   - awesome-connected-things-sec
   - awesome-vehicle-security
+  - firmware-acquisition
 facets: [firmware, hardware, attack, defense, tools, learning]
 ---
 
@@ -38,3 +39,7 @@ Status: **active** — maintained daily; commits land the same day as this check
 
 - [Awesome Connected Things Sec](awesome-connected-things-sec.md) — the broader cross-domain collection
 - [Awesome Vehicle Security](awesome-vehicle-security.md) — the long-running vehicle-security generalist list
+
+## Connections
+
+- [Firmware acquisition](concepts/firmware-acquisition.md) — the list's firmware extraction and debug-interface resources address the prerequisite of obtaining an image before reverse engineering it.

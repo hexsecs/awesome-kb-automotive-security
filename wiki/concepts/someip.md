@@ -5,7 +5,7 @@ summary: "AUTOSAR's service-oriented middleware over IP: how services are offere
 type: concept
 cluster: boundary
 created: 2026-11-01
-updated: 2026-11-01
+updated: 2026-11-17
 related:
   - vsomeip
   - eth-ws-someip
@@ -14,6 +14,7 @@ related:
   - protocrawler
   - ics-cap
   - autofuze
+  - automotive-ethernet
 sources:
   - url: "https://github.com/jamores/eth-ws-someip/tree/master/specs"
     retrieved: 2026-11-01

@@ -28,6 +28,8 @@ sources:
     retrieved: 2026-10-31
   - url: "https://github.com/ecubus/EcuBus-Pro"
     retrieved: 2026-10-31
+  - url: "https://app.whyengineer.com/docs/um/script/script.html"
+    retrieved: 2026-11-17
 facets: [can, diagnostics, doip, lin, someip, tools]
 ---
 
@@ -50,6 +52,26 @@ PEAK, Kvaser, Vector, ZLG, and Toomoss interfaces (CAN/CAN-FD/LIN),
 SLCAN and GS_USB/candleLight (CAN/CAN-FD), and the project's own
 EcuBus-LinCable.
 
+The [scripting manual](https://app.whyengineer.com/docs/um/script/script.html),
+checked with the repository on 2026-11-17, shows how bus work becomes
+repeatable automation. Scripts execute in a Node.js environment;
+TypeScript checks syntax and esbuild creates the build in `.ScriptBuild`.
+Build errors appear in the application's Message window. `Util.Init()`
+registers startup work, `Util.OnCan(id, callback)` handles a chosen CAN ID
+(or `true` for all CAN traffic), and `Util.OnKey()` attaches actions to
+keyboard input. CAN message objects carry an ID, direction, data buffer
+and flags such as standard/extended ID, CAN FD and bit-rate switching,
+rather than just a payload string.
+
+Diagnostic scripts can listen for configured tester/service send and
+receive events using `Util.On()`. The `runUdsSeq` API imported from `ECB`
+runs a named `Tester.Sequence`; an optional progress callback reports
+enabled items as they start and finish, and a sequence-stopping failure
+rejects the promise. A useful workflow is therefore to configure and
+exercise the diagnostic sequence interactively, add event handlers and
+assertions around it, then reuse the automation rather than manually
+clicking through each request.
+
 ## Where it fits
 
 Interactive ECU development and testing plus scripted diagnostic
@@ -63,6 +85,16 @@ interactively against the bus.
 ## Limits and notes
 
 No limits or safety warnings are stated in the checked sources.
+
+The README's database feature labels are deliberately asymmetric: DBC
+viewing is not a claim of full DBC editing or ODX-driven diagnostic
+generation. Likewise, "like CAPL" describes the scripting role, not
+source compatibility with CAPL; the documented runtime and API are
+TypeScript/JavaScript and Node.js. Vendor and bus support must be checked
+per adapter rather than inferred from the desktop operating-system list.
+Node.js timers and scripted CAN output do not by themselves establish
+hard-real-time scheduling guarantees, and a transmitted diagnostic
+sequence still depends on the ECU's sessions and access controls.
 
 ## Related
 

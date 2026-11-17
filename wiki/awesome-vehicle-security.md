@@ -19,6 +19,8 @@ related:
   - awesome-ev-charging
   - awesome-connected-things-sec
   - automotive-security-timeline
+  - external-attack-surface
+  - can-injection
 sources:
   - url: "https://github.com/jaredthecoder/awesome-vehicle-security"
     retrieved: 2026-11-01
@@ -66,3 +68,8 @@ Status: **active** — commits continue in 2026 (last push 2026-05-30); not arch
 
 - [Awesome CANbus](awesome-canbus.md) — the CAN-focused specialist list
 - [Awesome Embedded Security](awesome-embedded-security.md) — the embedded layer underneath vehicle security
+
+## Connections
+
+- [External attack surface](concepts/external-attack-surface.md) — the Learn section's remote-surface survey and Jeep research trace entry through connected vehicle interfaces.
+- [CAN injection](concepts/can-injection.md) — the list's Miller/Valasek injection research and CAN tooling connect its historical reading path to bus-side forgery.

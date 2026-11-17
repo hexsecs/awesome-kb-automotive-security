@@ -18,6 +18,10 @@ related:
   - uds-seed-key
   - diagnostic-service-abuse
   - doip
+  - owasp-automotive-emb-60
+  - piccante
+  - python-can
+  - uds-firmware-extraction
 sources:
   - url: "https://doi.org/10.5281/zenodo.18715820"
     retrieved: 2026-11-17

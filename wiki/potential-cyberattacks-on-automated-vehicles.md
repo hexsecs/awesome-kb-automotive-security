@@ -19,6 +19,7 @@ related:
   - over-the-air-compromise-of-modern-volkswagen-group-vehicles
   - pseudonym-schemes-in-vehicular-networks-a-survey
   - does-physical-adversarial-example-really-matter-to-autonomous-driving-towards-system-level-effect-of-adversarial-object-evasion-attack
+  - tara-methodology
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -61,3 +62,7 @@ Checked 2026-11-17. **Published** — IEEE T-ITS, April 2015; full text behind I
 - [Over the Air: Compromise of Modern Volkswagen Group Vehicles](over-the-air-compromise-of-modern-volkswagen-group-vehicles.md)
 - [Pseudonym schemes in vehicular networks: a survey](pseudonym-schemes-in-vehicular-networks-a-survey.md)
 - [Does physical adversarial example really matter to autonomous driving?](does-physical-adversarial-example-really-matter-to-autonomous-driving-towards-system-level-effect-of-adversarial-object-evasion-attack.md)
+
+## Connections
+
+- [TARA methodology](concepts/tara-methodology.md) — the paper's early threat-analysis framing provides background for scenario identification, not a substitute for the later ISO/SAE 21434 risk-assessment chain.

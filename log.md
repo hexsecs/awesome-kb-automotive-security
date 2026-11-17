@@ -900,3 +900,27 @@ New `tests/test_navigation.py` covers facet classification, backfill
 idempotence and taxonomy targets. Gates: ingest x2 idempotent, lint 0 errors
 and no new warnings (54 pre-existing warnings), link checker 0 broken / 0
 unresolved / 0 unreachable across 333 pages, 26 unittest tests pass.
+
+## [2026-11-17] deepen | Concept hooks, two deep concepts, and the thin-full six
+
+Three linked tranches landed together, closing the gap between the entity layer
+and the concept synthesis:
+
+- **Concept hooks** — 28 entity pages that previously linked to no concept now
+  carry 47 new concept `related` links and a short `## Connections` section;
+  the target concepts reciprocate. `entities_without_concept_link` is now 0.
+- **Deep concepts** — `shared-and-default-secrets` (1,535 words) and
+  `bootloader-stages` (1,611 words) moved to `depth: deep`, with checked
+  sources, explicit limits and sibling links. Dead upstream URLs were kept and
+  recorded rather than silently replaced with working mirrors.
+- **Thin-full six** — `uds-firmware-extraction`, `python-doipclient`, `autopi`,
+  `cantoolz`, `ecubus-pro` and `canmatrix` grew from 219–255 words to
+  463–541 words of sourced how-it-works, still at `depth: full`.
+
+Reciprocals were reconciled for every concept link added in this tranche, plus
+the one new entity–entity pair the audit caught. Gates: ingest x2 idempotent,
+lint 0 errors / 56 warnings (54 pre-existing; the two new ones are duplicate
+source citations on the deepened concepts), link checker 0 broken / 0
+unresolved / 0 unreachable across 333 pages, link audit 0 orphans / 0
+concept-less entities / 0 one-way pairs, 26 tests pass, `git diff --check`
+clean. Page uids, created dates and list provenance were preserved.

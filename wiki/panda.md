@@ -8,7 +8,7 @@ url: "https://github.com/commaai/panda"
 status: active
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-16
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -18,6 +18,8 @@ related:
   - ramn
   - secoc-key-extractor
   - piccante
+  - can-injection
+  - dbc-semantic-layer
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -57,3 +59,8 @@ Checked 2026-11-01. **Active**: the repository is not archived and commits land 
 
 - [CANtact](cantact.md)
 - [RAMN](ramn.md)
+
+## Connections
+
+- [CAN injection](concepts/can-injection.md) — panda's default-silent mode and per-car transmission policies constrain the frames a host can inject.
+- [DBC semantic layer](concepts/dbc-semantic-layer.md) — the separate opendbc safety policies illustrate that decoding vehicle signals and authorizing actuation are different decisions.

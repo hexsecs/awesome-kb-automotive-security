@@ -5,7 +5,7 @@ summary: "The corpus's simulation layer, rung by rung — virtual bus, replay, d
 type: concept
 cluster: method
 created: 2026-11-01
-updated: 2026-11-01
+updated: 2026-11-17
 related:
   - icsim
   - busmaster
@@ -16,6 +16,14 @@ related:
   - ramn
   - veins
   - van3twin
+  - opengarages
+  - canlab
+  - cannelloni
+  - car-toolkit
+  - fleet-cyber-challenge
+  - piccante
+  - python-can
+  - the-car-hacker-s-handbook
 sources:
   - url: "https://github.com/zombieCraig/ICSim"
     retrieved: 2026-11-01

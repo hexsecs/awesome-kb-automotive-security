@@ -8,7 +8,7 @@ url: "https://github.com/j-schmied/car-toolkit"
 status: unknown
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-16
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -19,6 +19,9 @@ related:
   - can-utils
   - canhack
   - pwnobd
+  - simulation-and-test-doubles
+  - can-injection
+  - can-availability
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -66,3 +69,9 @@ Checked 2026-11-01. **Unknown**: the repository is not archived and there are no
 - [ICSim](icsim.md)
 - [can-utils](can-utils.md)
 - [CANHack](canhack.md)
+
+## Connections
+
+- [Simulation and test doubles](concepts/simulation-and-test-doubles.md) — the virtual test bench uses vcan traffic or ICSim to rehearse attacks before hardware testing.
+- [CAN injection](concepts/can-injection.md) — CANAttack's ECU imitation and replay functions introduce frames in place of genuine vehicle traffic.
+- [CAN availability](concepts/can-availability.md) — CANAttack's bus-blocking function targets communication availability rather than message authenticity.

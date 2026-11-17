@@ -8,7 +8,7 @@ url: "https://github.com/automotive-security/Automotive-Security-Timeline"
 status: active
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-16
+updated: 2026-11-17
 depth: brief
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -17,6 +17,7 @@ related:
   - car-hacking-village
   - awesome-vehicle-security
   - research-only-understanding-the-scope-of-automotive-cyberattacks-in-the-wild
+  - tara-methodology
 sources:
   - url: "https://github.com/automotive-security/Automotive-Security-Timeline"
     retrieved: 2026-11-01
@@ -39,3 +40,7 @@ Status: **active** — commits continue through 2026 (most recently 2026-08-22, 
 
 - [Car Hacking Village](car-hacking-village.md) — the live-events counterpart to this archive of past ones
 - [Awesome Vehicle Security](awesome-vehicle-security.md) — the generalist list that also tracks the field's output
+
+## Connections
+
+- [TARA methodology](concepts/tara-methodology.md) — the timeline's referenced disclosures and attack demonstrations provide historical context for identifying threat scenarios, not a risk assessment on their own.

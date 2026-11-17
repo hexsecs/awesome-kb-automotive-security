@@ -5,7 +5,7 @@ summary: "Availability attacks remove or suppress the bus's genuine traffic, bel
 type: concept
 cluster: bus
 created: 2026-11-01
-updated: 2026-11-01
+updated: 2026-11-17
 related:
   - can-injection
   - sok-kicking-can-down-the-road-systematizing-can-security-knowledge
@@ -19,6 +19,10 @@ related:
   - canter
   - in-vehicle-intrusion-detection
   - can-message-authentication
+  - car-hacking-village
+  - car-toolkit
+  - doggie
+  - cantoolz
 sources:
   - url: "https://www.usenix.org/legacy/events/sec10/tech/full_papers/Koscher.pdf"
     retrieved: 2026-11-01

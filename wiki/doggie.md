@@ -19,6 +19,8 @@ related:
   - supercan
   - owasp-automotive-emb-60
   - python-can
+  - can-injection
+  - can-availability
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-02
@@ -66,3 +68,8 @@ Checked 2026-11-17. **Maintenance** at this check: public, not archived, MIT, 83
 - [Supercan](supercan.md)
 - [OWASP Automotive Embedded Security Cheat Sheet](owasp-automotive-emb-60.md)
 - [python-can](python-can.md)
+
+## Connections
+
+- [CAN injection](concepts/can-injection.md) — evilDoggie's spoofing and custom attacks turn the adapter into an adversarial bus participant.
+- [CAN availability](concepts/can-availability.md) — dominant-override and bus-off features exercise the physical and error-handling mechanisms that can silence legitimate traffic.

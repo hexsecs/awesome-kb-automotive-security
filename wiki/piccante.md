@@ -8,7 +8,7 @@ url: "https://github.com/Alia5/PiCCANTE"
 status: active
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -20,6 +20,8 @@ related:
   - cantact
   - panda
   - donglescope
+  - iso-tp
+  - simulation-and-test-doubles
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -63,3 +65,8 @@ Checked 2026-11-01. **Active**: the repository is not archived; created 2025-03-
 - [CANtact](cantact.md)
 - [panda](panda.md)
 - [DongleScope](donglescope.md)
+
+## Connections
+
+- [ISO-TP](concepts/iso-tp.md) — the partial ELM327 emulator handles multi-frame diagnostic transfers rather than only individual CAN frames.
+- [Simulation and test doubles](concepts/simulation-and-test-doubles.md) — ELM327 emulation makes PiCCANTE a limited bench stand-in for diagnostic dongles, not a complete reproduction of their behaviour.

@@ -8,7 +8,7 @@ url: "https://github.com/lindwurm-can/lindwurm"
 status: active
 last_checked: 2026-10-31
 created: 2026-10-31
-updated: 2026-10-31
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -17,6 +17,7 @@ related:
   - canalyzat0r
   - savvycan
   - can-utils
+  - can-injection
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -72,3 +73,7 @@ signal decoding, UDS tools, and transport-protocol support are listed as
 - [CANalyzat0r](canalyzat0r.md) — project-based GUI security analysis.
 - [SavvyCAN](savvycan.md) — the mature capture/RE GUI.
 - [can-utils](can-utils.md) — the command-line base layer.
+
+## Connections
+
+- [CAN injection](concepts/can-injection.md) — the composer replays and mutates captured frames, while the two-interface bridge supports intercept-and-modify testing.

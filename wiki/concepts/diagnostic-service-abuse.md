@@ -5,7 +5,7 @@ summary: "The diagnostic service set is the highest-privilege surface on the veh
 type: concept
 cluster: access
 created: 2026-11-01
-updated: 2026-11-01
+updated: 2026-11-17
 related:
   - uds-seed-key
   - experimental-security-analysis-of-a-modern-automobile
@@ -18,6 +18,8 @@ related:
   - bootloader-stages
   - diagnostic-fuzzing
   - calibration-plane
+  - autopi
+  - python-doipclient
 sources:
   - url: "https://www.usenix.org/legacy/events/sec10/tech/full_papers/Koscher.pdf"
     retrieved: 2026-11-01

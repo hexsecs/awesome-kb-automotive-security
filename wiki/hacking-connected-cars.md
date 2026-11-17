@@ -8,7 +8,7 @@ url: "https://www.wiley.com/en-us/-p-9781119491804"
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-16
+updated: 2026-11-17
 depth: brief
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -17,6 +17,8 @@ related:
   - the-car-hacker-s-handbook
   - offensive-automotive-cybersecurity
   - automotive-cybersecurity-protecting-connected-and-autonomous-vehicles
+  - external-attack-surface
+  - tara-methodology
 sources:
   - url: "https://www.wiley.com/en-us/-p-9781119491804"
     retrieved: 2026-11-01
@@ -39,3 +41,8 @@ Status: **published** — Alissa Knight, Wiley, March 2020. ISBN 978-1-119-49180
 
 - [The Car Hacker's Handbook](the-car-hacker-s-handbook.md) — the hands-on in-vehicle counterpart this book points readers to
 - [Offensive Automotive Cybersecurity](offensive-automotive-cybersecurity.md) — the newer, broader offensive handbook
+
+## Connections
+
+- [External attack surface](concepts/external-attack-surface.md) — the book's TCU hunting and rogue cellular base-station material concerns entry through vehicle connectivity units.
+- [TARA methodology](concepts/tara-methodology.md) — the artefact chain puts the book's threat modelling and risk-assessment frameworks in the context of modern automotive risk analysis.

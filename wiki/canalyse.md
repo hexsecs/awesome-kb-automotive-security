@@ -19,6 +19,7 @@ related:
   - canarchy
   - cangaroo
   - cantools
+  - can-injection
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -69,3 +70,7 @@ interface, and the archived repository means no fixes should be expected.
 - [CANarchy](canarchy.md) — maintained, script-first analysis toolkit.
 - [CANgaroo](cangaroo.md)
 - [cantools](cantools.md)
+
+## Connections
+
+- [CAN injection](concepts/can-injection.md) — capture replay and random payload mutation supply the tool's mechanisms for introducing adversarial frames on a test bus.

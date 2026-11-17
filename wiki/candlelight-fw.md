@@ -8,7 +8,7 @@ url: "https://github.com/candle-usb/candleLight_fw"
 status: active
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -17,6 +17,7 @@ related:
   - cantact
   - cfuc
   - supercan
+  - can-injection
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -57,3 +58,7 @@ Checked 2026-11-01. **Active**: the repository is not archived and development c
 - [CANtact](cantact.md)
 - [CFUC](cfuc.md)
 - [SuperCAN](supercan.md)
+
+## Connections
+
+- [CAN injection](concepts/can-injection.md) — the firmware's native SocketCAN interface supplies the hardware access layer for bench tools that transmit test frames.

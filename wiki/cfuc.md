@@ -8,7 +8,7 @@ url: "https://github.com/ucandevices/CFDC_embedded"
 status: maintenance
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-16
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -19,6 +19,7 @@ related:
   - cantact
   - doggie
   - linusbconverter
+  - can-injection
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -59,3 +60,7 @@ Checked 2026-11-01. **Maintenance**: the repository is not archived; the last *c
 - [candleLight_fw](candlelight-fw.md)
 - [SuperCAN](supercan.md)
 - [CANtact](cantact.md)
+
+## Connections
+
+- [CAN injection](concepts/can-injection.md) — the CAN FD interface supplies bus access for bench frame-transmission tools through either python-can or SocketCAN.

@@ -8,7 +8,7 @@ url: "https://github.com/hardbyte/python-can"
 status: active
 last_checked: 2026-10-31
 created: 2026-10-31
-updated: 2026-11-16
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -27,6 +27,8 @@ related:
   - ecubus-pro
   - pycangui
   - doggie
+  - simulation-and-test-doubles
+  - iso-tp
 license: LGPL-3.0
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
@@ -78,3 +80,8 @@ delivery and message ordering.
 - [python-can-isotp](python-can-isotp.md) — the ISO-TP layer built on it.
 - [cantools](cantools.md) — the usual pairing for DBC decode/encode.
 - [can-utils](can-utils.md) — the C command-line equivalent on Linux.
+
+## Connections
+
+- [Simulation and test doubles](concepts/simulation-and-test-doubles.md) — virtual backends support portable test automation but do not model real CAN arbitration or throughput.
+- [ISO-TP](concepts/iso-tp.md) — python-can supplies the frame-access layer beneath python-can-isotp rather than diagnostic message reassembly itself.
