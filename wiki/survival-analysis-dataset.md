@@ -22,10 +22,6 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-01
-related:
-  - car-hacking-dataset
-  - syncan
-  - tow-ids-automotive-ethernet-intrusion-dataset
 ---
 
 HCRL CAN captures from a Hyundai YF Sonata, Kia Soul, and Chevrolet Spark with labelled flooding, fuzzy, and malfunction attacks.

@@ -23,11 +23,6 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-01
-related:
-  - byd-dolphin-hacking
-  - experimental-security-analysis-of-a-modern-automobile
-  - secure-firmware-updates
-  - over-the-air-compromise-of-modern-volkswagen-group-vehicles
 ---
 
 Serdyuk, Kondikov, Razmakhnin, and Sakr, Black Hat Europe 2022. Maps the attack surface of the VW ID.3 across Wi-Fi, Bluetooth, V2X, cellular, CAN, and OBD-II entry points.

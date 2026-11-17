@@ -18,11 +18,6 @@ related:
   - caringcaribou
   - udsoncan
   - linusbconverter
-related:
-  - can-utils
-  - caringcaribou
-  - udsoncan
-  - linusbconverter
 license: "Apache-2.0"
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"

@@ -27,20 +27,6 @@ related:
   - canalyzat0r
   - candevstudio
   - cantot
-related:
-  - can-utils
-  - carpunk
-  - cantoolz
-  - caringcaribou
-  - simulation-and-test-doubles
-  - uds-server
-  - udsim
-  - opengarages
-  - car-toolkit
-  - can-commander
-  - canalyzat0r
-  - candevstudio
-  - cantot
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

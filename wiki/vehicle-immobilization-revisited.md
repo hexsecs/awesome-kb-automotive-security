@@ -23,11 +23,6 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-01
-related:
-  - dismantling-megamos-crypto-wirelessly-lockpicking-a-vehicle-immobilizer
-  - gone-in-360-seconds-hijacking-with-hitag2
-  - zephyr-reference-ecu
-  - ble-theft-auto-evaluating-the-security-of-aftermarket-ble-based-automotive-remote-control-systems
 ---
 
 Bokslag, 36C3 2019. Studies three vehicles and shows the immobilizer transponder talks to the body control module rather than the ECM, so weak authentication at either link allows an unauthorised start.

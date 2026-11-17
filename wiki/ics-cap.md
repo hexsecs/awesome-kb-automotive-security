@@ -19,12 +19,6 @@ related:
   - vsomeip
   - someip
   - protocrawler
-related:
-  - eth-ws-someip
-  - scapy
-  - vsomeip
-  - someip
-  - protocrawler
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

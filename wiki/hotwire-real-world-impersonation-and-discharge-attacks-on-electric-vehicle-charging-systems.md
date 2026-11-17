@@ -18,11 +18,6 @@ related:
   - race-to-charge-concurrency-bugs-and-state-integrity-violations-in-ev-charging-infrastructure
   - relay-attacks-on-passive-keyless-entry-and-start-systems-in-modern-cars
   - pedal-to-the-bare-metal
-related:
-  - brokenwire-wireless-disruption-of-ccs-electric-vehicle-charging
-  - race-to-charge-concurrency-bugs-and-state-integrity-violations-in-ev-charging-infrastructure
-  - relay-attacks-on-passive-keyless-entry-and-start-systems-in-modern-cars
-  - pedal-to-the-bare-metal
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-12

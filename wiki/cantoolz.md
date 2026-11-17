@@ -21,14 +21,6 @@ related:
   - diagnostic-fuzzing
   - cantot
   - carpunk
-related:
-  - caringcaribou
-  - canalyzat0r
-  - icsim
-  - savvycan
-  - diagnostic-fuzzing
-  - cantot
-  - carpunk
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

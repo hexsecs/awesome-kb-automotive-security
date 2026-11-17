@@ -26,14 +26,6 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-01
-related:
-  - survival-analysis-dataset
-  - can-train-and-test
-  - road
-  - autohack
-  - on-the-real-world-applicability-of-automotive-can-intrusion-detection-systems
-  - gem-can
-  - a-comprehensive-guide-to-can-ids-data-and-introduction-of-the-road-dataset
 ---
 
 HCRL captures from a Kia Soul with labelled DoS, fuzzing, and RPM and gear spoofing injections, the most widely cited baseline in CAN intrusion detection papers.

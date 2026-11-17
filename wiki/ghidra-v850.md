@@ -16,9 +16,6 @@ list_summary: "Ghidra processor module for Renesas V850E2 and V850E3/RH850 micro
 related:
   - ghidra-tc1797
   - bypassing-debug-password-protection-on-the-rh850-family
-related:
-  - ghidra-tc1797
-  - bypassing-debug-password-protection-on-the-rh850-family
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

@@ -24,28 +24,6 @@ related:
   - plug-n-pwned-comprehensive-vulnerability-analysis-of-obd-ii-dongles
   - ble-theft-auto-evaluating-the-security-of-aftermarket-ble-based-automotive-remote-control-systems
   - research-only-understanding-the-scope-of-automotive-cyberattacks-in-the-wild
-related:
-  - comprehensive-experimental-analyses-of-automotive-attack-surfaces
-  - remote-exploitation-of-an-unaltered-passenger-vehicle
-  - adventures-in-automotive-networks-and-control-units
-  - experimental-security-analysis-of-a-modern-automobile
-  - can-injection
-  - fast-and-compromised-automotive-security-on-a-timer
-  - how-api-flaws-led-to-admin-access-to-over-1k-usa-dealers-and-control-over-your-car
-  - plug-n-pwned-comprehensive-vulnerability-analysis-of-obd-ii-dongles
-  - ble-theft-auto-evaluating-the-security-of-aftermarket-ble-based-automotive-remote-control-systems
-  - research-only-understanding-the-scope-of-automotive-cyberattacks-in-the-wild
-related:
-  - comprehensive-experimental-analyses-of-automotive-attack-surfaces
-  - remote-exploitation-of-an-unaltered-passenger-vehicle
-  - adventures-in-automotive-networks-and-control-units
-  - experimental-security-analysis-of-a-modern-automobile
-  - can-injection
-  - fast-and-compromised-automotive-security-on-a-timer
-  - how-api-flaws-led-to-admin-access-to-over-1k-usa-dealers-and-control-over-your-car
-  - plug-n-pwned-comprehensive-vulnerability-analysis-of-obd-ii-dongles
-  - ble-theft-auto-evaluating-the-security-of-aftermarket-ble-based-automotive-remote-control-systems
-  - research-only-understanding-the-scope-of-automotive-cyberattacks-in-the-wild
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

@@ -22,24 +22,6 @@ related:
   - canlab
   - savvycan
   - can-playground
-related:
-  - python-can
-  - canmatrix
-  - canarchy
-  - kayak
-  - opendbc
-  - canlab
-  - savvycan
-  - can-playground
-related:
-  - python-can
-  - canmatrix
-  - canarchy
-  - kayak
-  - opendbc
-  - canlab
-  - savvycan
-  - can-playground
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

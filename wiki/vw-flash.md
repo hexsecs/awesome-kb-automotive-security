@@ -24,28 +24,6 @@ related:
   - secure-firmware-updates
   - reversing-a-brake-ecu-firmware-update
   - idrive7-8-ssh-root
-related:
-  - odxtools
-  - pq-flasher
-  - udsoncan
-  - uds-seed-key
-  - ivi-update-trust
-  - firmware-acquisition
-  - bootloader-stages
-  - secure-firmware-updates
-  - reversing-a-brake-ecu-firmware-update
-  - idrive7-8-ssh-root
-related:
-  - odxtools
-  - pq-flasher
-  - udsoncan
-  - uds-seed-key
-  - ivi-update-trust
-  - firmware-acquisition
-  - bootloader-stages
-  - secure-firmware-updates
-  - reversing-a-brake-ecu-firmware-update
-  - idrive7-8-ssh-root
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

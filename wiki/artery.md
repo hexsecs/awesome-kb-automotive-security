@@ -20,13 +20,6 @@ related:
   - van3twin
   - misbehavior-detection
   - v2verifier
-related:
-  - vanetza
-  - veins
-  - f2md
-  - van3twin
-  - misbehavior-detection
-  - v2verifier
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

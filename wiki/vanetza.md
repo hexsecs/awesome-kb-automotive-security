@@ -21,14 +21,6 @@ related:
   - v2x-credential-management
   - secure-vehicular-communication-systems-design-and-architecture
   - v2verifier
-related:
-  - artery
-  - van3twin
-  - veins
-  - misbehavior-detection
-  - v2x-credential-management
-  - secure-vehicular-communication-systems-design-and-architecture
-  - v2verifier
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

@@ -19,12 +19,6 @@ related:
   - caringcaribou
   - simulation-and-test-doubles
   - doip-sim-ecu-dsl
-related:
-  - udsim
-  - icsim
-  - caringcaribou
-  - simulation-and-test-doubles
-  - doip-sim-ecu-dsl
 license: "GPL-2.0"
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"

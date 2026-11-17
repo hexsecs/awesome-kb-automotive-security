@@ -19,12 +19,6 @@ related:
   - savvycan
   - canlab
   - obdium
-related:
-  - cantools
-  - python-can
-  - savvycan
-  - canlab
-  - obdium
 license: MIT
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"

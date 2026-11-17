@@ -27,15 +27,6 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
-related:
-  - gone-in-360-seconds-hijacking-with-hitag2
-  - key-fob-relay-attacks
-  - lock-it-and-still-lose-it-on-the-in-security-of-automotive-remote-keyless-entry-systems
-  - fast-furious-and-insecure-passive-keyless-entry-and-start-systems-in-modern-supercars
-  - shared-and-default-secrets
-  - proxmark3
-  - sok-stealing-cars-since-remote-keyless-entry-introduction-and-how-to-defend-from-it
-  - vehicle-immobilization-revisited
 ---
 
 Verdult, Garcia, and Ege, USENIX Security 2015. Reverse engineers the Megamos immobilizer used by Audi, Fiat, Honda, Volkswagen, and Volvo; famously injuncted for two years before publication.

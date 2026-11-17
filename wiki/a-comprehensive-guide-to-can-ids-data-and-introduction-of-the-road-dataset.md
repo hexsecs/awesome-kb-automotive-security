@@ -28,14 +28,6 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
-related:
-  - gids-gan-based-intrusion-detection-system-for-in-vehicle-network
-  - on-the-real-world-applicability-of-automotive-can-intrusion-detection-systems
-  - evading-voltage-based-intrusion-detection-on-automotive-can
-  - car-hacking-dataset
-  - can-train-and-test
-  - in-vehicle-intrusion-detection
-  - road
 ---
 
 Verma et al., 2020. Systematises the CAN IDS dataset landscape, documents the flaws in earlier datasets, and introduces ROAD.

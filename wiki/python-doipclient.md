@@ -19,12 +19,6 @@ related:
   - doip-sim-ecu-dsl
   - autofuze
   - scapy
-related:
-  - udsoncan
-  - uds
-  - doip-sim-ecu-dsl
-  - autofuze
-  - scapy
 license: "MIT"
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"

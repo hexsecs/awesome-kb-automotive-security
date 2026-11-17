@@ -31,24 +31,6 @@ related:
   - uds-firmware-extraction
   - unlockecu
   - vw-flash
-related:
-  - python-can-isotp
-  - python-doipclient
-  - python-can
-  - uds-seed-key
-  - uds
-  - iso14229
-  - atlas
-  - autopi
-  - conescan
-  - ecubus-pro
-  - ford-ecu-bruteforcer
-  - gallia
-  - odxtools
-  - opensovd-classic-diagnostic-adapter
-  - uds-firmware-extraction
-  - unlockecu
-  - vw-flash
 license: "MIT"
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"

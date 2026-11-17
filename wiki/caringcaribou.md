@@ -31,24 +31,6 @@ related:
   - gallia
   - icsim
   - nullsec-carfuzz
-related:
-  - python-can
-  - python-can-isotp
-  - cantoolz
-  - canalyzat0r
-  - diagnostic-fuzzing
-  - calibration-plane
-  - uds-server
-  - cantot
-  - autofuze
-  - autopi
-  - can-commander
-  - cancat
-  - canflict
-  - car-toolkit
-  - gallia
-  - icsim
-  - nullsec-carfuzz
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

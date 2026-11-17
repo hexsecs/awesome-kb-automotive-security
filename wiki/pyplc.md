@@ -24,17 +24,6 @@ related:
   - charging-trust-chain
   - losing-the-car-keys-wireless-phy-layer-insecurity-in-ev-charging
   - brokenwire-wireless-disruption-of-ccs-electric-vehicle-charging
-related:
-  - open-plc-utils
-  - openv2g
-  - acccs
-  - chargesploit
-  - dsv2gshark
-  - everest
-  - v2gdecoder
-  - charging-trust-chain
-  - losing-the-car-keys-wireless-phy-layer-insecurity-in-ev-charging
-  - brokenwire-wireless-disruption-of-ccs-electric-vehicle-charging
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

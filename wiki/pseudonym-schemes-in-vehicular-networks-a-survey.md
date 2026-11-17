@@ -19,12 +19,6 @@ related:
   - v2x-credential-management
   - misbehavior-detection
   - potential-cyberattacks-on-automated-vehicles
-related:
-  - securing-vehicular-ad-hoc-networks
-  - secure-vehicular-communication-systems-design-and-architecture
-  - v2x-credential-management
-  - misbehavior-detection
-  - potential-cyberattacks-on-automated-vehicles
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

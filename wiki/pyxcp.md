@@ -18,11 +18,6 @@ related:
   - uds-seed-key
   - calibration-plane
   - autofuze
-related:
-  - pya2l
-  - uds-seed-key
-  - calibration-plane
-  - autofuze
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

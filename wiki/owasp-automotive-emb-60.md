@@ -17,10 +17,6 @@ related:
   - ramn
   - cantact
   - doggie
-related:
-  - ramn
-  - cantact
-  - doggie
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

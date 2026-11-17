@@ -22,10 +22,6 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-01
-related:
-  - car-hacking-village
-  - awesome-vehicle-security
-  - research-only-understanding-the-scope-of-automotive-cyberattacks-in-the-wild
 ---
 
 Continuously updated knowledge base of automotive cybersecurity events including vulnerability disclosures, attack demonstrations, Pwn2Own Automotive results, and supply-chain incidents.

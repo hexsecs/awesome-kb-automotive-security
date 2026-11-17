@@ -28,16 +28,6 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
-related:
-  - error-handling-of-in-vehicle-networks-makes-them-vulnerable
-  - vatican-vetted-authenticated-can-bus
-  - viden-attacker-identification-on-in-vehicle-networks
-  - gids-gan-based-intrusion-detection-system-for-in-vehicle-network
-  - exposing-new-vulnerabilities-of-error-handling-mechanism-in-can
-  - evading-voltage-based-intrusion-detection-on-automotive-can
-  - in-vehicle-intrusion-detection
-  - canvas-fast-and-inexpensive-automotive-network-mapping
-  - sok-kicking-can-down-the-road-systematizing-can-security-knowledge
 ---
 
 Cho and Shin, USENIX Security 2016. Clock-based IDS that fingerprints ECUs from clock skew in periodic messages, the most-replicated CAN IDS baseline.

@@ -22,15 +22,6 @@ related:
   - current-affairs-a-security-measurement-study-of-ccs-ev-charging-deployments
   - low-energy-to-high-energy-hacking-nearby-ev-chargers-over-bluetooth
   - hotwire-real-world-impersonation-and-discharge-attacks-on-electric-vehicle-charging-systems
-related:
-  - losing-the-car-keys-wireless-phy-layer-insecurity-in-ev-charging
-  - charge-it-to-my-neighbor-a-relay-attack-on-iso-15118-plug-and-charge-payment
-  - pyplc
-  - ocpp-charging-attacks
-  - one-modem-to-brick-them-all-exploiting-vulnerabilities-in-the-ev-charging-communication
-  - current-affairs-a-security-measurement-study-of-ccs-ev-charging-deployments
-  - low-energy-to-high-energy-hacking-nearby-ev-chargers-over-bluetooth
-  - hotwire-real-world-impersonation-and-discharge-attacks-on-electric-vehicle-charging-systems
 sources:
   - url: "https://www.ndss-symposium.org/ndss-paper/brokenwire-wireless-disruption-of-ccs-electric-vehicle-charging/"
     retrieved: 2026-11-01
@@ -38,15 +29,6 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
-related:
-  - losing-the-car-keys-wireless-phy-layer-insecurity-in-ev-charging
-  - charge-it-to-my-neighbor-a-relay-attack-on-iso-15118-plug-and-charge-payment
-  - pyplc
-  - ocpp-charging-attacks
-  - one-modem-to-brick-them-all-exploiting-vulnerabilities-in-the-ev-charging-communication
-  - current-affairs-a-security-measurement-study-of-ccs-ev-charging-deployments
-  - low-energy-to-high-energy-hacking-nearby-ev-chargers-over-bluetooth
-  - hotwire-real-world-impersonation-and-discharge-attacks-on-electric-vehicle-charging-systems
 ---
 
 Kohler, Baker, Strohmeier, and Martinovic, NDSS 2023. Aborts CCS rapid-charging sessions wirelessly from tens of metres with off-the-shelf radio hardware, against individual vehicles or whole fleets.

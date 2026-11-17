@@ -19,12 +19,6 @@ related:
   - automated-cross-platform-reverse-engineering-of-can-bus-commands-from-mobile-apps
   - drivethru-car-hacking-fast-food-faster-data-breach
   - piccante
-related:
-  - plug-n-pwned-comprehensive-vulnerability-analysis-of-obd-ii-dongles
-  - pwnobd
-  - automated-cross-platform-reverse-engineering-of-can-bus-commands-from-mobile-apps
-  - drivethru-car-hacking-fast-food-faster-data-breach
-  - piccante
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

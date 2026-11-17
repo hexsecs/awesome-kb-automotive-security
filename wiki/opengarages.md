@@ -22,10 +22,6 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-01
-related:
-  - the-car-hacker-s-handbook
-  - icsim
-  - car-hacking-village
 ---
 
 Open vehicle research collective behind the Car Hacker's Handbook, publishing the free edition of the book, ICSim, and workshop material for hands-on vehicle security practice.

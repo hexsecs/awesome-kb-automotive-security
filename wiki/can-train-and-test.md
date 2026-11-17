@@ -25,13 +25,6 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-01
-related:
-  - cross-vehicle-generalisation-benchmark
-  - car-hacking-dataset
-  - road
-  - a-comprehensive-guide-to-can-ids-data-and-introduction-of-the-road-dataset
-  - can-mirgu
-  - on-the-real-world-applicability-of-automotive-can-intrusion-detection-systems
 ---
 
 Labelled CAN captures from four vehicles across two manufacturers with nine attack types, split into known and unknown vehicle and attack test subsets for evaluating IDS generalisation.

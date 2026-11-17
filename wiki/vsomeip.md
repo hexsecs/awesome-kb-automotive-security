@@ -21,22 +21,6 @@ related:
   - someip
   - ics-cap
   - automotive-ethernet
-related:
-  - someip-protocol-fuzzer
-  - scapy
-  - eth-ws-someip
-  - autofuze
-  - someip
-  - ics-cap
-  - automotive-ethernet
-related:
-  - someip-protocol-fuzzer
-  - scapy
-  - eth-ws-someip
-  - autofuze
-  - someip
-  - ics-cap
-  - automotive-ethernet
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

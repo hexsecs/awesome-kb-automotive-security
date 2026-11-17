@@ -18,11 +18,6 @@ related:
   - kayak
   - busmaster
   - cangaroo
-related:
-  - cantools
-  - kayak
-  - busmaster
-  - cangaroo
 license: BSD-2-Clause
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"

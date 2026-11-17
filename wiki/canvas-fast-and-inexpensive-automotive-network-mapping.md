@@ -30,18 +30,6 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
-related:
-  - fingerprinting-electronic-control-units-for-vehicle-intrusion-detection
-  - error-handling-of-in-vehicle-networks-makes-them-vulnerable
-  - viden-attacker-identification-on-in-vehicle-networks
-  - canalyzat0r
-  - can-utils
-  - can-injection
-  - sok-kicking-can-down-the-road-systematizing-can-security-knowledge
-  - automated-cross-platform-reverse-engineering-of-can-bus-commands-from-mobile-apps
-  - canflict-exploiting-peripheral-conflicts-for-data-link-layer-attacks-on-automotive-networks
-  - exposing-new-vulnerabilities-of-error-handling-mechanism-in-can
-  - silently-disabling-ecus-and-enabling-blind-attacks-on-the-can-bus
 ---
 
 Kulandaivel, Goyal, Agrawal, and Sekar, USENIX Security 2019. Builds an nmap for the vehicle, recovering the sender and receiver map of a CAN network in under an hour using clock offsets and forced ECU isolation.

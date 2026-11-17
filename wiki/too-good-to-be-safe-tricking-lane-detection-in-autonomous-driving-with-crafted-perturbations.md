@@ -23,11 +23,6 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
-related:
-  - dirty-road-can-attack-security-of-deep-learning-based-automated-lane-centering-under-physical-world-attack
-  - adversarial-sensor-attack-on-lidar-based-perception-in-autonomous-driving
-  - remote-attacks-on-automated-vehicles-sensors-experiments-on-camera-and-lidar
-  - robust-physical-world-attacks-on-deep-learning-visual-classification
 ---
 
 Jing et al., USENIX Security 2021. First lane-detection attack validated on a real production vehicle, exploiting the module's over-sensitivity with small road markings.

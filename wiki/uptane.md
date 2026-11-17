@@ -17,10 +17,6 @@ related:
   - secure-firmware-updates
   - uptane-securing-software-updates-for-automobiles
   - secv-securing-connected-vehicles-with-hardware-trust-anchors
-related:
-  - secure-firmware-updates
-  - uptane-securing-software-updates-for-automobiles
-  - secv-securing-connected-vehicles-with-hardware-trust-anchors
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

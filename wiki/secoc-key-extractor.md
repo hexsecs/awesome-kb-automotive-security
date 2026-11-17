@@ -20,13 +20,6 @@ related:
   - firmware-acquisition
   - bootloader-stages
   - back-in-the-driver-s-seat-recovering-critical-data-from-tesla-autopilot-using-voltage-glitching
-related:
-  - panda
-  - uds-seed-key
-  - uds-firmware-extraction
-  - firmware-acquisition
-  - bootloader-stages
-  - back-in-the-driver-s-seat-recovering-critical-data-from-tesla-autopilot-using-voltage-glitching
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

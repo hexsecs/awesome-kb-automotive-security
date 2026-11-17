@@ -20,13 +20,6 @@ related:
   - simulation-and-test-doubles
   - diagnostic-fuzzing
   - doip-sim-ecu-dsl
-related:
-  - uds-server
-  - icsim
-  - can-utils
-  - simulation-and-test-doubles
-  - diagnostic-fuzzing
-  - doip-sim-ecu-dsl
 license: "GPL-3.0"
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"

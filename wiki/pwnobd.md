@@ -18,11 +18,6 @@ related:
   - car-toolkit
   - autofuze
   - over-the-air-compromise-of-modern-volkswagen-group-vehicles
-related:
-  - donglescope
-  - car-toolkit
-  - autofuze
-  - over-the-air-compromise-of-modern-volkswagen-group-vehicles
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

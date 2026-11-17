@@ -35,21 +35,6 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
-related:
-  - security-in-automotive-bus-systems
-  - comprehensive-experimental-analyses-of-automotive-attack-surfaces
-  - uds-seed-key
-  - can-injection
-  - diagnostic-service-abuse
-  - can-availability
-  - external-attack-surface
-  - shared-and-default-secrets
-  - a-survey-of-remote-automotive-attack-surfaces
-  - adventures-in-automotive-networks-and-control-units
-  - back-connect-to-the-connected-car-search-for-vulnerabilities-in-the-vw-electric-car
-  - fast-and-vulnerable-a-story-of-telematic-failures
-  - security-and-privacy-vulnerabilities-of-in-car-wireless-networks-a-tire-pressure-monitoring-system-case-study
-  - survey-on-security-threats-and-protection-mechanisms-in-embedded-automotive-networks
 ---
 
 Koscher et al., IEEE S&P 2010. The paper that opened the field, demonstrating that an attacker with access to any single ECU can disable the brakes and stop the engine of a moving vehicle.

@@ -22,24 +22,6 @@ related:
   - obdium
   - uds-seed-key
   - openvehiclediag
-related:
-  - python-can
-  - savvycan
-  - caringcaribou
-  - uds
-  - udsoncan
-  - obdium
-  - uds-seed-key
-  - openvehiclediag
-related:
-  - python-can
-  - savvycan
-  - caringcaribou
-  - uds
-  - udsoncan
-  - obdium
-  - uds-seed-key
-  - openvehiclediag
 license: MIT
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"

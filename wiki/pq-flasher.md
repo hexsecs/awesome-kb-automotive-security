@@ -20,13 +20,6 @@ related:
   - firmware-acquisition
   - secure-firmware-updates
   - openvehiclediag
-related:
-  - vw-flash
-  - python-can
-  - cancat
-  - firmware-acquisition
-  - secure-firmware-updates
-  - openvehiclediag
 license: "MIT"
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"

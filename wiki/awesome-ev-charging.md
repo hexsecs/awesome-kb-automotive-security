@@ -22,10 +22,6 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-01
-related:
-  - ocpp-charging-attacks
-  - awesome-vehicle-security
-  - securing-electric-mobility
 ---
 
 Curated specifications, tools, and resources for EV charging protocols including OCPP, ISO 15118, OCPI, and Eichrecht.

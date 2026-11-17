@@ -21,14 +21,6 @@ related:
   - ivi-update-trust
   - ivi-runtime-privilege
   - idrive7-8-ssh-root
-related:
-  - ic1101
-  - q50-reverse-engineering
-  - secure-firmware-updates
-  - uds-seed-key
-  - ivi-update-trust
-  - ivi-runtime-privilege
-  - idrive7-8-ssh-root
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
