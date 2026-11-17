@@ -656,3 +656,12 @@ created by the sync and mined in the same pass. Authored pages'
 existing sets were preserved verbatim and in order; the miner only
 appended. Gates: ingest x2 idempotent (0/0/0); lint warnings are
 the pre-existing duplicate-source ones, untouched by this change.
+
+## [2026-11-16] scan | First concept scan: no new candidates filed
+
+tools/concept_scan.py over 250 entity pages / 25 existing concepts.
+Top recurring themes are venue tokens (filtered into the tool's
+GENERIC list with this entry), corpus-generic nouns, facets (dbc,
+doip, v2x), or themes existing concepts already own (UDS →
+diagnostic-service-abuse; CCS charging → charging-trust-chain).
+No filings; the weekly scan resurfaces themes as the corpus grows.

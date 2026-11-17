@@ -50,6 +50,7 @@ STOPWORDS = {
 GENERIC = {
     "firmware", "binary", "platform", "device", "devices", "covering",
     "open-source", "chips", "cves", "ghz", "mhz", "khz", "iot",
+    "usenix", "ecu", "ecus", "village",
     "providing", "supporting", "built", "across", "including", "includes",
     "allows", "allowing", "enables", "enabling", "designed", "featuring",
     "offers", "offering", "helps", "making", "makes", "comprehensive",
