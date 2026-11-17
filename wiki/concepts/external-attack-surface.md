@@ -5,7 +5,7 @@ summary: "Compromise repeatedly begins at a boundary interface and pivots throug
 type: concept
 cluster: boundary
 created: 2026-11-01
-updated: 2026-11-01
+updated: 2026-11-17
 related:
   - comprehensive-experimental-analyses-of-automotive-attack-surfaces
   - remote-exploitation-of-an-unaltered-passenger-vehicle
@@ -13,6 +13,10 @@ related:
   - security-and-privacy-vulnerabilities-of-in-car-wireless-networks-a-tire-pressure-monitoring-system-case-study
   - plug-n-pwned-comprehensive-vulnerability-analysis-of-obd-ii-dongles
   - can-injection
+  - hacking-connected-cars
+  - offensive-automotive-cybersecurity
+  - passive-and-active-attacks-on-tpms-systems
+  - awesome-vehicle-security
 sources:
   - url: "https://www.usenix.org/legacy/events/sec11/tech/full_papers/Checkoway.pdf"
     retrieved: 2026-11-01

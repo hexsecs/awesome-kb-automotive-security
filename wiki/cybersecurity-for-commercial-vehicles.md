@@ -17,6 +17,7 @@ related:
   - expanding-the-attack-scenarios-of-sae-j1939-a-comprehensive-analysis-of-established-and-novel-vulnerabilities-in-transport-protocol
   - automotive-cybersecurity-an-introduction-to-iso-sae-21434
   - fleet-cyber-challenge
+  - tara-methodology
 sources:
   - url: "https://books.google.com/books?id=R3h0EAAAQBAJ"
     retrieved: 2026-11-01
@@ -41,3 +42,7 @@ Status: **published** — Gloria D'Anna (lead author/editor) and contributors, S
 
 - [Expanding the Attack Scenarios of SAE J1939](expanding-the-attack-scenarios-of-sae-j1939-a-comprehensive-analysis-of-established-and-novel-vulnerabilities-in-transport-protocol.md) — attack research on the heavy-vehicle network this book defends
 - [Automotive Cybersecurity: An Introduction to ISO/SAE 21434](automotive-cybersecurity-an-introduction-to-iso-sae-21434.md) — the primer on the standard that superseded this book's J3061 anchor
+
+## Connections
+
+- [TARA methodology](concepts/tara-methodology.md) — the modern ISO/SAE 21434 threat-analysis chain supplies a current process lens for this book's older J3061-based treatment.

@@ -18,6 +18,7 @@ related:
   - eth-ws-someip
   - tow-ids-automotive-ethernet-intrusion-dataset
   - vsomeip
+  - someip
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-05
@@ -58,3 +59,7 @@ Checked 2026-11-17. **Published** — Cambridge University Press, third edition,
 - [eth-ws-someip](eth-ws-someip.md)
 - [TOW-IDS: automotive ethernet intrusion dataset](tow-ids-automotive-ethernet-intrusion-dataset.md)
 - [vsomeip](vsomeip.md)
+
+## Connections
+
+- [SOME/IP and SOME/IP-SD](concepts/someip.md) — the service and discovery protocols build on the Ethernet and IP architecture covered by the book.

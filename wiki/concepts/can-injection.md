@@ -5,7 +5,7 @@ summary: "Attacker taps exposed CAN wiring and impersonates a trusted ECU: class
 type: concept
 cluster: bus
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-17
 related:
   - canflict
   - canter
@@ -27,6 +27,18 @@ related:
   - in-vehicle-intrusion-detection
   - can-message-authentication
   - external-attack-surface
+  - awesome-canbus
+  - awesome-vehicle-security
+  - canalyse
+  - candlelight-fw
+  - car-toolkit
+  - cfuc
+  - doggie
+  - lindwurm
+  - panda
+  - supercan
+  - the-car-hacker-s-handbook
+  - cantoolz
 sources:
   - url: "https://plaxidityx.com/blog/blog-post/what-oems-can-do-to-prevent-can-injection-car-theft/"
     retrieved: 2026-10-31

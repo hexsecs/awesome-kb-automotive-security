@@ -5,7 +5,7 @@ summary: "Before analysis comes acquisition: the channels the corpus documents f
 type: concept
 cluster: access
 created: 2026-11-01
-updated: 2026-11-01
+updated: 2026-11-17
 related:
   - tc1791-can-bsl
   - pq-flasher
@@ -16,6 +16,8 @@ related:
   - reversing-a-brake-ecu-firmware-update
   - secure-firmware-updates
   - bootloader-stages
+  - awesome-connected-things-sec
+  - awesome-embedded-security
 sources:
   - url: "https://github.com/bri3d/CCM19XX-CCP-Flashing"
     retrieved: 2026-11-01

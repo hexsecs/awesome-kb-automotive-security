@@ -18,6 +18,9 @@ related:
   - hacking-connected-cars
   - a-comprehensible-guide-to-controller-area-network
   - automotive-cybersecurity-roadmap
+  - can-injection
+  - simulation-and-test-doubles
+  - tara-methodology
 sources:
   - url: "https://www.opengarages.org/handbook/"
     retrieved: 2026-11-01
@@ -66,3 +69,9 @@ Checked 2026-11-17. **Published** — Craig Smith, No Starch Press, March 2016; 
 - [Hacking Connected Cars](hacking-connected-cars.md) — the field manual for the telematics side this book touches lightly
 - [A Comprehensible Guide to Controller Area Network](a-comprehensible-guide-to-controller-area-network.md) — the protocol reference underneath this book's CAN chapters
 - [Automotive Cybersecurity Roadmap](automotive-cybersecurity-roadmap.md)
+
+## Connections
+
+- [CAN injection](concepts/can-injection.md) — the book's CAN reverse-engineering exercises include faking engine signals.
+- [Simulation and test doubles](concepts/simulation-and-test-doubles.md) — physical and virtual test benches are part of the book's approach to trying exploits safely.
+- [TARA methodology](concepts/tara-methodology.md) — the modern artefact chain extends the book's vehicle threat-modelling starting point without implying that this 2016 text covers ISO/SAE 21434.

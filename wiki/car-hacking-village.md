@@ -21,6 +21,7 @@ related:
   - abusing-can-bus-protocol-specification-for-denial-of-service-in-embedded-systems
   - meet-salinas-the-first-ever-sms-commanded-car-infotainment-rat
   - automotive-flash-bootloaders-exposing-automotive-ecu-updates
+  - can-availability
 sources:
   - url: "https://www.carhackingvillage.com/events"
     retrieved: 2026-11-01
@@ -71,3 +72,7 @@ Checked 2026-11-17. **Active** — the events page lists upcoming appearances at
 - [Abusing CAN bus protocol specification for denial of service](abusing-can-bus-protocol-specification-for-denial-of-service-in-embedded-systems.md)
 - [Meet Salinas](meet-salinas-the-first-ever-sms-commanded-car-infotainment-rat.md)
 - [Automotive flash bootloaders](automotive-flash-bootloaders-exposing-automotive-ecu-updates.md)
+
+## Connections
+
+- [CAN availability](concepts/can-availability.md) — the village's CAN DLC denial-of-service talk connects its research programme to attacks that suppress legitimate bus communication.

@@ -8,7 +8,7 @@ url: "https://owasp.org/www-project-automotive-emb-60/"
 status: unknown
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-16
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -17,6 +17,8 @@ related:
   - ramn
   - cantact
   - doggie
+  - iso-tp
+  - bootloader-stages
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -56,3 +58,8 @@ Checked 2026-11-01. **Unknown**: the project is still listed as an OWASP Incubat
 
 - [RAMN](ramn.md)
 - [CANtact](cantact.md)
+
+## Connections
+
+- [ISO-TP](concepts/iso-tp.md) — the documented design delivers firmware updates over ISO-TP/UDS, though no public implementation is available to verify.
+- [Bootloader stages](concepts/bootloader-stages.md) — the specified secure bootloader makes boot-time verification a distinct trust decision from transporting the update.

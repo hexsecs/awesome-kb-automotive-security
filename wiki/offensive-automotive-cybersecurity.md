@@ -8,7 +8,7 @@ url: "https://books.google.com/books/about/Offensive_Automotive_Cybersecurity.ht
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-17
 depth: brief
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -24,6 +24,7 @@ related:
   - automotive-cybersecurity-engineering-handbook
   - building-secure-cars
   - hacking-connected-cars
+  - external-attack-surface
 facets: [ethernet, firmware, sensors, attack, learning]
 ---
 
@@ -42,3 +43,7 @@ Status: **published** — Dr. Ahmad MK Nasser and Dr. Dennis Kengo Oka, Packt Pu
 - [Automotive Cybersecurity Engineering Handbook](automotive-cybersecurity-engineering-handbook.md) — Nasser's defensive companion volume
 - [Building Secure Cars](building-secure-cars.md) — Oka's lifecycle-assurance book
 - [Hacking Connected Cars](hacking-connected-cars.md) — the earlier offensive field manual
+
+## Connections
+
+- [External attack surface](concepts/external-attack-surface.md) — the book's cloud, wireless and in-vehicle attack-chain coverage spans the boundary interfaces through which connected vehicles are reached.

@@ -19,6 +19,8 @@ related:
   - expanding-the-attack-scenarios-of-sae-j1939-a-comprehensive-analysis-of-established-and-novel-vulnerabilities-in-transport-protocol
   - automotive-cyber-security
   - pretty-j1939
+  - j1939
+  - simulation-and-test-doubles
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-15
@@ -60,3 +62,8 @@ Checked 2026-11-17. **Active** at this check: the lab is open and free, with the
 - [Expanding the attack scenarios of SAE J1939](expanding-the-attack-scenarios-of-sae-j1939-a-comprehensive-analysis-of-established-and-novel-vulnerabilities-in-transport-protocol.md)
 - [Automotive cyber security](automotive-cyber-security.md)
 - [Pretty J1939](pretty-j1939.md)
+
+## Connections
+
+- [J1939 transport security](concepts/j1939.md) — the lab's commercial-vehicle CAN scenarios sit in the J1939 ecosystem rather than assuming passenger-car network semantics.
+- [Simulation and test doubles](concepts/simulation-and-test-doubles.md) — fictional data and simulated environments let fleet staff investigate attacks without touching production vehicles.

@@ -23,6 +23,7 @@ related:
   - uds-seed-key
   - openvehiclediag
   - iso-tp
+  - python-doipclient
 license: MIT
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"

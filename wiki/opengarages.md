@@ -8,7 +8,7 @@ url: "https://www.opengarages.org/"
 status: unknown
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-16
+updated: 2026-11-17
 depth: brief
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -17,6 +17,7 @@ related:
   - the-car-hacker-s-handbook
   - icsim
   - car-hacking-village
+  - simulation-and-test-doubles
 sources:
   - url: "https://www.opengarages.org/"
     retrieved: 2026-11-01
@@ -39,3 +40,7 @@ Status: **unknown** — the site is live and serving the handbook at https://www
 
 - [The Car Hacker's Handbook](the-car-hacker-s-handbook.md) — this collective's book, with its own KB page
 - [ICSim](icsim.md) — the instrument-cluster simulator from the same circle
+
+## Connections
+
+- [Simulation and test doubles](concepts/simulation-and-test-doubles.md) — OpenGarages' ICSim provides the virtual instrument cluster used to practise CAN work without a car.

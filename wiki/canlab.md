@@ -8,7 +8,7 @@ url: "https://github.com/Sherin-SEF-AI/CanLab"
 status: active
 last_checked: 2026-10-31
 created: 2026-10-31
-updated: 2026-11-16
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -18,6 +18,8 @@ related:
   - cantools
   - opendbc
   - can-playground
+  - dbc-semantic-layer
+  - simulation-and-test-doubles
 license: MIT
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
@@ -73,3 +75,8 @@ unauthenticated unless a token is set, so keep it on loopback.
 - [SavvyCAN](savvycan.md) — its sniffer/GVRET behaviour follows SavvyCAN's.
 - [cantools](cantools.md) — the DBC library in its stack.
 - [opendbc](opendbc.md) — source of checksum algorithms it adapts.
+
+## Connections
+
+- [DBC semantic layer](concepts/dbc-semantic-layer.md) — CanLab turns inferred signal boundaries into DBC definitions and checks those definitions against captured frames.
+- [Simulation and test doubles](concepts/simulation-and-test-doubles.md) — its virtual-bus and scripted-responder tests illustrate why bench validation does not establish behaviour on a real ECU.

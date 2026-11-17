@@ -8,7 +8,7 @@ url: "https://github.com/mguentner/cannelloni"
 status: active
 last_checked: 2026-10-31
 created: 2026-10-31
-updated: 2026-10-31
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -16,6 +16,7 @@ list_summary: "Tunnels SocketCAN interfaces over UDP, TCP, or SCTP, bridging a v
 related:
   - candevstudio
   - can-utils
+  - simulation-and-test-doubles
 license: GPL-2.0
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
@@ -66,3 +67,7 @@ built-in filtering: bridge a pre-filtered `vcan` via `cangw` instead.
 
 - [CANdevStudio](candevstudio.md) — ships a cannelloni plugin for remote simulation.
 - [can-utils](can-utils.md) — `cangw` provides the filtering cannelloni lacks.
+
+## Connections
+
+- [Simulation and test doubles](concepts/simulation-and-test-doubles.md) — tunnelling between virtual and physical interfaces supports CANdevStudio's no-hardware and remote bench setups, without preserving real-bus timing guarantees.

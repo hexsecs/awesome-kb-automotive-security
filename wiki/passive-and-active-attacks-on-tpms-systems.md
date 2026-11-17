@@ -17,6 +17,7 @@ related:
   - security-and-privacy-vulnerabilities-of-in-car-wireless-networks-a-tire-pressure-monitoring-system-case-study
   - rtl-433
   - vasp
+  - external-attack-surface
 sources:
   - url: "https://media.defcon.org/DEF%20CON%2033/DEF%20CON%2033%20villages%20and%20creators/DEF%20CON%2033%20-%20Car%20Hacking%20Village%20-%20Yago%20Lizarribar%20-%20Passive%20and%20Active%20Attacks%20on%20TPMS%20Systems.pdf"
     retrieved: 2026-11-01
@@ -39,3 +40,7 @@ Status: **published** — DEF CON 33, Car Hacking Village, August 2025; slides a
 
 - [Security and Privacy Vulnerabilities of In-Car Wireless Networks: A TPMS Case Study](security-and-privacy-vulnerabilities-of-in-car-wireless-networks-a-tire-pressure-monitoring-system-case-study.md) — the 2010 paper that founded this threat model; this talk is its modern sequel
 - [rtl_433](rtl-433.md) — the commodity-SDR receiver software class used for this kind of passive collection
+
+## Connections
+
+- [External attack surface](concepts/external-attack-surface.md) — clear-text TPMS identifiers and unauthenticated radio messages expose both passive tracking and active spoofing to nearby receivers and transmitters.

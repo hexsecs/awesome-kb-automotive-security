@@ -25,6 +25,8 @@ sources:
     retrieved: 2026-10-31
   - url: "https://github.com/ebroecker/canmatrix"
     retrieved: 2026-10-31
+  - url: "https://canmatrix.readthedocs.io/en/latest/cli.html"
+    retrieved: 2026-11-17
 facets: [can, tools]
 ---
 
@@ -47,6 +49,33 @@ dissectors, and Scapy. It ships `canconvert` (convert between formats)
 and `cancompare` (diff two databases), and can also encode and decode
 messages.
 
+The [CLI manual](https://canmatrix.readthedocs.io/en/latest/cli.html),
+checked with the repository on 2026-11-17, gives
+`canconvert source.arxml target.dbc` as the basic migration shape.
+An ARXML file can contain multiple CAN databases, so conversion can emit
+one DBC per bus with the bus name prefixed to the requested output name.
+Container-PDU frames are converted to multiplexed frames by default;
+the documented ignore-container option instead drops those frames.
+Choosing that policy is a semantic decision, not merely changing a file
+extension.
+
+Conversion also supports selective extraction and modification:
+`--ecus=REAR_ECU` keeps the frames the named ECU sends or receives,
+while `--frames=...` selects frames with their required ECUs and
+attributes. `--merge=second.dbc` combines matrices; rename/delete options
+operate on ECUs, frames, signals and attributes. Separate DBC import
+and export encodings for units and comments help preserve text across
+toolchains. `--recalcDLC=max` only enlarges a stored length when needed;
+`force` replaces it with the calculated length. These transformations
+should be deliberate, particularly before regenerating a database used
+to interpret security-test captures.
+
+A review workflow is to preserve the input, convert into a fresh output,
+inspect any per-bus files and transformation choices, and use
+`cancompare file1.dbc file2.dbc` to examine database differences.
+The comparison tool accepts different supported input formats, so it
+can help review migrations as well as revisions within one format.
+
 ## Where it fits
 
 Format migration (ARXML→DBC is the classic case), database diffing in CI,
@@ -61,6 +90,13 @@ rather than moving between formats.
 ARXML *export* is explicitly a "very basic implementation." It is a
 database tool, not a live-bus tool: no capture or analysis workflow is
 claimed.
+
+Import and export format lists are not symmetric: reading LDF or ODX
+does not imply writing those formats or executing LIN schedules and
+diagnostic sessions. Nor does a successful conversion establish lossless
+preservation of every source-specific attribute. In particular, review
+container-PDU handling, text encoding and any requested DLC/layout
+changes before treating the output as an equivalent wire contract.
 
 ## Related
 

@@ -5,7 +5,7 @@ summary: "How an automotive TARA is actually assembled: the ISO/SAE 21434 artefa
 type: concept
 cluster: method
 created: 2026-11-01
-updated: 2026-11-01
+updated: 2026-11-17
 related:
   - automotive-threat-matrix
   - automotive-threat-modeling-template
@@ -14,6 +14,11 @@ related:
   - automating-function-level-tara-for-automotive-full-lifecycle-security
   - avcdl
   - secure-firmware-updates
+  - automotive-security-timeline
+  - cybersecurity-for-commercial-vehicles
+  - hacking-connected-cars
+  - potential-cyberattacks-on-automated-vehicles
+  - the-car-hacker-s-handbook
 sources:
   - url: "https://github.com/nccgroup/autotara"
     retrieved: 2026-11-01

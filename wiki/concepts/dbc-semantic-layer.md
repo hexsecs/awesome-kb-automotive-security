@@ -24,6 +24,9 @@ related:
   - can-availability
   - calibration-plane
   - simulation-and-test-doubles
+  - canlab
+  - panda
+  - autopi
 sources:
   - url: "https://github.com/commaai/opendbc"
     retrieved: 2026-11-17

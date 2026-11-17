@@ -8,7 +8,7 @@ url: "https://github.com/V33RU/awesome-connected-things-sec"
 status: active
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-17
 depth: brief
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -21,6 +21,7 @@ sources:
 related:
   - awesome-embedded-security
   - awesome-vehicle-security
+  - firmware-acquisition
 facets: [can, firmware, learning]
 ---
 
@@ -38,3 +39,7 @@ Status: **active** — last push 2026-10-16; not archived; 3,569 stars; CC0-1.0.
 
 - [Awesome Embedded Security](awesome-embedded-security.md) — the embedded-only list, deeper in that one domain
 - [Awesome Vehicle Security](awesome-vehicle-security.md) — the automotive-only counterpart
+
+## Connections
+
+- [Firmware acquisition](concepts/firmware-acquisition.md) — the read-side channels provide context for moving from the collection's firmware and hardware material to vehicle ECU analysis.
