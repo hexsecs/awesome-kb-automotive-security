@@ -8,11 +8,39 @@ url: "https://dl.acm.org/doi/10.1145/2976749.2978302"
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Cho and Shin, ACM CCS 2016. The bus-off attack, which abuses CAN error handling to force an uncompromised ECU off the bus without any vehicle-specific reverse engineering."
+related:
+  - fingerprinting-electronic-control-units-for-vehicle-intrusion-detection
+  - vatican-vetted-authenticated-can-bus
+  - can-injection
+  - exposing-new-vulnerabilities-of-error-handling-mechanism-in-can
+  - silently-disabling-ecus-and-enabling-blind-attacks-on-the-can-bus
+  - canflict-exploiting-peripheral-conflicts-for-data-link-layer-attacks-on-automotive-networks
+  - canvas-fast-and-inexpensive-automotive-network-mapping
+  - sok-kicking-can-down-the-road-systematizing-can-security-knowledge
+  - can-availability
+  - a-comprehensible-guide-to-controller-area-network
+  - evading-voltage-based-intrusion-detection-on-automotive-can
+  - a-formal-security-analysis-of-can-xl
+  - abusing-can-bus-protocol-specification-for-denial-of-service-in-embedded-systems
+related:
+  - fingerprinting-electronic-control-units-for-vehicle-intrusion-detection
+  - vatican-vetted-authenticated-can-bus
+  - can-injection
+  - exposing-new-vulnerabilities-of-error-handling-mechanism-in-can
+  - silently-disabling-ecus-and-enabling-blind-attacks-on-the-can-bus
+  - canflict-exploiting-peripheral-conflicts-for-data-link-layer-attacks-on-automotive-networks
+  - canvas-fast-and-inexpensive-automotive-network-mapping
+  - sok-kicking-can-down-the-road-systematizing-can-security-knowledge
+  - can-availability
+  - a-comprehensible-guide-to-controller-area-network
+  - evading-voltage-based-intrusion-detection-on-automotive-can
+  - a-formal-security-analysis-of-can-xl
+  - abusing-can-bus-protocol-specification-for-denial-of-service-in-embedded-systems
 sources:
   - url: "https://rtcl.eecs.umich.edu/rtclweb/assets/publications/2016/ktcho_busoff_CCS_16.pdf"
     retrieved: 2026-11-01
@@ -30,6 +58,10 @@ related:
   - canvas-fast-and-inexpensive-automotive-network-mapping
   - sok-kicking-can-down-the-road-systematizing-can-security-knowledge
   - can-availability
+  - a-comprehensible-guide-to-controller-area-network
+  - evading-voltage-based-intrusion-detection-on-automotive-can
+  - a-formal-security-analysis-of-can-xl
+  - abusing-can-bus-protocol-specification-for-denial-of-service-in-embedded-systems
 ---
 
 Cho and Shin, ACM CCS 2016. The bus-off attack, which abuses CAN error handling to force an uncompromised ECU off the bus without any vehicle-specific reverse engineering.

@@ -8,11 +8,27 @@ url: "https://www.usenix.org/conference/vehiclesec26/presentation/lee"
 status: published
 last_checked: 2026-11-01
 created: 2026-11-01
-updated: 2026-11-01
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: 61ba124
 list_summary: "Lee and Lee, USENIX VehicleSec 2026. Audits the open-source EVerest charging stack and finds 11 CVE-assigned flaws, from data races confirmed with sanitizers to logic exploits such as charging that continues after a remote stop."
+related:
+  - everest
+  - ocppstorm-a-comprehensive-fuzzing-tool-for-ocpp-implementations
+  - ocpp-charging-attacks
+  - current-affairs-a-security-measurement-study-of-ccs-ev-charging-deployments
+  - charging-trust-chain
+  - hotwire-real-world-impersonation-and-discharge-attacks-on-electric-vehicle-charging-systems
+  - ocppuzz
+related:
+  - everest
+  - ocppstorm-a-comprehensive-fuzzing-tool-for-ocpp-implementations
+  - ocpp-charging-attacks
+  - current-affairs-a-security-measurement-study-of-ccs-ev-charging-deployments
+  - charging-trust-chain
+  - hotwire-real-world-impersonation-and-discharge-attacks-on-electric-vehicle-charging-systems
+  - ocppuzz
 sources:
   - url: "https://www.usenix.org/conference/vehiclesec26/presentation/lee"
     retrieved: 2026-11-01
@@ -25,6 +41,9 @@ related:
   - ocppstorm-a-comprehensive-fuzzing-tool-for-ocpp-implementations
   - ocpp-charging-attacks
   - current-affairs-a-security-measurement-study-of-ccs-ev-charging-deployments
+  - charging-trust-chain
+  - hotwire-real-world-impersonation-and-discharge-attacks-on-electric-vehicle-charging-systems
+  - ocppuzz
 ---
 
 Lee and Lee, USENIX VehicleSec 2026. Audits the open-source EVerest charging stack and finds 11 CVE-assigned flaws, from data races confirmed with sanitizers to logic exploits such as charging that continues after a remote stop.

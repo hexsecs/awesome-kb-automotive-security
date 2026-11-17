@@ -8,12 +8,44 @@ url: "https://www.usenix.org/conference/woot15/workshop-program/presentation/fos
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Foster, Prudhomme, Koscher, and Savage, USENIX WOOT 2015. Shows an aftermarket OBD-II telematics dongle exposing SMS-reachable remote control of vehicle CAN traffic."
-related: [comprehensive-experimental-analyses-of-automotive-attack-surfaces, remote-exploitation-of-an-unaltered-passenger-vehicle, adventures-in-automotive-networks-and-control-units, experimental-security-analysis-of-a-modern-automobile, can-injection]
+related:
+  - comprehensive-experimental-analyses-of-automotive-attack-surfaces
+  - remote-exploitation-of-an-unaltered-passenger-vehicle
+  - adventures-in-automotive-networks-and-control-units
+  - experimental-security-analysis-of-a-modern-automobile
+  - can-injection
+  - fast-and-compromised-automotive-security-on-a-timer
+  - how-api-flaws-led-to-admin-access-to-over-1k-usa-dealers-and-control-over-your-car
+  - plug-n-pwned-comprehensive-vulnerability-analysis-of-obd-ii-dongles
+  - ble-theft-auto-evaluating-the-security-of-aftermarket-ble-based-automotive-remote-control-systems
+  - research-only-understanding-the-scope-of-automotive-cyberattacks-in-the-wild
+related:
+  - comprehensive-experimental-analyses-of-automotive-attack-surfaces
+  - remote-exploitation-of-an-unaltered-passenger-vehicle
+  - adventures-in-automotive-networks-and-control-units
+  - experimental-security-analysis-of-a-modern-automobile
+  - can-injection
+  - fast-and-compromised-automotive-security-on-a-timer
+  - how-api-flaws-led-to-admin-access-to-over-1k-usa-dealers-and-control-over-your-car
+  - plug-n-pwned-comprehensive-vulnerability-analysis-of-obd-ii-dongles
+  - ble-theft-auto-evaluating-the-security-of-aftermarket-ble-based-automotive-remote-control-systems
+  - research-only-understanding-the-scope-of-automotive-cyberattacks-in-the-wild
+related:
+  - comprehensive-experimental-analyses-of-automotive-attack-surfaces
+  - remote-exploitation-of-an-unaltered-passenger-vehicle
+  - adventures-in-automotive-networks-and-control-units
+  - experimental-security-analysis-of-a-modern-automobile
+  - can-injection
+  - fast-and-compromised-automotive-security-on-a-timer
+  - how-api-flaws-led-to-admin-access-to-over-1k-usa-dealers-and-control-over-your-car
+  - plug-n-pwned-comprehensive-vulnerability-analysis-of-obd-ii-dongles
+  - ble-theft-auto-evaluating-the-security-of-aftermarket-ble-based-automotive-remote-control-systems
+  - research-only-understanding-the-scope-of-automotive-cyberattacks-in-the-wild
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

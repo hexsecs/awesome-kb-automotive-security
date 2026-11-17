@@ -8,12 +8,23 @@ url: "https://github.com/rgerganov/gen5fw"
 status: maintenance
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Python tools for decrypting, patching, and redeploying firmware on Mobis Gen5 navigation head units in Hyundai, Kia, and Genesis vehicles, including enabling ADB."
-related: [chimaera, secure-firmware-updates, uds-seed-key, ivi-update-trust]
+related:
+  - chimaera
+  - secure-firmware-updates
+  - uds-seed-key
+  - ivi-update-trust
+  - idrive7-8-ssh-root
+related:
+  - chimaera
+  - secure-firmware-updates
+  - uds-seed-key
+  - ivi-update-trust
+  - idrive7-8-ssh-root
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

@@ -8,12 +8,23 @@ url: "https://github.com/souravbaghz/Carpunk"
 status: active
 last_checked: 2026-10-31
 created: 2026-10-31
-updated: 2026-10-31
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "CAN injection toolkit and successor to CANghost, automating interface setup, sniffing, replay, and injection attacks."
-related: [can-utils, icsim, cantot, cantoolz]
+related:
+  - can-utils
+  - icsim
+  - cantot
+  - cantoolz
+  - can-injection
+related:
+  - can-utils
+  - icsim
+  - cantot
+  - cantoolz
+  - can-injection
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

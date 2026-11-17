@@ -8,12 +8,19 @@ url: "https://uptane.org/"
 status: maintenance
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Open standard for securing automotive over-the-air updates that extends TUF to limit the damage when a repository or signing key is compromised, governed under the Joint Development Foundation."
-related: [secure-firmware-updates, uptane-securing-software-updates-for-automobiles]
+related:
+  - secure-firmware-updates
+  - uptane-securing-software-updates-for-automobiles
+  - secv-securing-connected-vehicles-with-hardware-trust-anchors
+related:
+  - secure-firmware-updates
+  - uptane-securing-software-updates-for-automobiles
+  - secv-securing-connected-vehicles-with-hardware-trust-anchors
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

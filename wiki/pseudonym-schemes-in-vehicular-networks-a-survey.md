@@ -8,12 +8,23 @@ url: "https://oparu.uni-ulm.de/items/b215d57b-06e1-4f27-a67e-a6ecaf3b45d2"
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Petit, Schaub, Feiri, and Kargl, IEEE Communications Surveys and Tutorials 2015. Defines the pseudonym lifecycle and categorises the schemes that reconcile V2X message authentication with driver privacy."
-related: [securing-vehicular-ad-hoc-networks, secure-vehicular-communication-systems-design-and-architecture, v2x-credential-management, misbehavior-detection]
+related:
+  - securing-vehicular-ad-hoc-networks
+  - secure-vehicular-communication-systems-design-and-architecture
+  - v2x-credential-management
+  - misbehavior-detection
+  - potential-cyberattacks-on-automated-vehicles
+related:
+  - securing-vehicular-ad-hoc-networks
+  - secure-vehicular-communication-systems-design-and-architecture
+  - v2x-credential-management
+  - misbehavior-detection
+  - potential-cyberattacks-on-automated-vehicles
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

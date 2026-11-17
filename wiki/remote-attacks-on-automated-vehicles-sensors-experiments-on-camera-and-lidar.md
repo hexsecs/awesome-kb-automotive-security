@@ -8,12 +8,62 @@ url: "https://blackhat.com/docs/eu-15/materials/eu-15-Petit-Self-Driving-And-Con
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Petit, Stottelaar, Feiri, and Kargl, Black Hat Europe 2015. First practical spoofing and blinding of automotive camera and LiDAR using commodity hardware."
-related: [potential-cyberattacks-on-automated-vehicles, illusion-and-dazzle-adversarial-optical-channel-exploits-against-lidars-for-automotive-applications, walnut-waging-doubt-on-the-integrity-of-mems-accelerometers-with-acoustic-injection-attacks, adversarial-sensor-attack-on-lidar-based-perception-in-autonomous-driving, physical-channel-sensor-attacks]
+related:
+  - potential-cyberattacks-on-automated-vehicles
+  - illusion-and-dazzle-adversarial-optical-channel-exploits-against-lidars-for-automotive-applications
+  - walnut-waging-doubt-on-the-integrity-of-mems-accelerometers-with-acoustic-injection-attacks
+  - adversarial-sensor-attack-on-lidar-based-perception-in-autonomous-driving
+  - physical-channel-sensor-attacks
+  - invisible-for-both-camera-and-lidar-security-of-multi-sensor-fusion-based-perception-in-autonomous-driving
+  - a-first-physical-world-trajectory-prediction-attack-via-lidar-induced-deceptions-in-autonomous-driving
+  - on-the-realism-of-lidar-spoofing-attacks-against-autonomous-driving-vehicle-at-high-speed-and-long-distance
+  - sok-how-sensor-attacks-disrupt-autonomous-vehicles-an-end-to-end-analysis-challenges-and-missed-threats
+  - dirty-road-can-attack-security-of-deep-learning-based-automated-lane-centering-under-physical-world-attack
+  - sok-the-next-frontier-in-av-security-systematizing-perception-attacks-and-the-emerging-threat-of-multi-sensor-fusion
+  - the-heat-is-on-understanding-and-mitigating-vulnerabilities-of-thermal-image-perception-in-autonomous-systems
+  - too-good-to-be-safe-tricking-lane-detection-in-autonomous-driving-with-crafted-perturbations
+  - perspective-shift-attacks-against-optical-perception-sensors-a-novel-attack-vector-on-lidar-and-camera
+  - over-the-air-compromise-of-modern-volkswagen-group-vehicles
+  - research-only-understanding-the-scope-of-automotive-cyberattacks-in-the-wild
+related:
+  - potential-cyberattacks-on-automated-vehicles
+  - illusion-and-dazzle-adversarial-optical-channel-exploits-against-lidars-for-automotive-applications
+  - walnut-waging-doubt-on-the-integrity-of-mems-accelerometers-with-acoustic-injection-attacks
+  - adversarial-sensor-attack-on-lidar-based-perception-in-autonomous-driving
+  - physical-channel-sensor-attacks
+  - invisible-for-both-camera-and-lidar-security-of-multi-sensor-fusion-based-perception-in-autonomous-driving
+  - a-first-physical-world-trajectory-prediction-attack-via-lidar-induced-deceptions-in-autonomous-driving
+  - on-the-realism-of-lidar-spoofing-attacks-against-autonomous-driving-vehicle-at-high-speed-and-long-distance
+  - sok-how-sensor-attacks-disrupt-autonomous-vehicles-an-end-to-end-analysis-challenges-and-missed-threats
+  - dirty-road-can-attack-security-of-deep-learning-based-automated-lane-centering-under-physical-world-attack
+  - sok-the-next-frontier-in-av-security-systematizing-perception-attacks-and-the-emerging-threat-of-multi-sensor-fusion
+  - the-heat-is-on-understanding-and-mitigating-vulnerabilities-of-thermal-image-perception-in-autonomous-systems
+  - too-good-to-be-safe-tricking-lane-detection-in-autonomous-driving-with-crafted-perturbations
+  - perspective-shift-attacks-against-optical-perception-sensors-a-novel-attack-vector-on-lidar-and-camera
+  - over-the-air-compromise-of-modern-volkswagen-group-vehicles
+  - research-only-understanding-the-scope-of-automotive-cyberattacks-in-the-wild
+related:
+  - potential-cyberattacks-on-automated-vehicles
+  - illusion-and-dazzle-adversarial-optical-channel-exploits-against-lidars-for-automotive-applications
+  - walnut-waging-doubt-on-the-integrity-of-mems-accelerometers-with-acoustic-injection-attacks
+  - adversarial-sensor-attack-on-lidar-based-perception-in-autonomous-driving
+  - physical-channel-sensor-attacks
+  - invisible-for-both-camera-and-lidar-security-of-multi-sensor-fusion-based-perception-in-autonomous-driving
+  - a-first-physical-world-trajectory-prediction-attack-via-lidar-induced-deceptions-in-autonomous-driving
+  - on-the-realism-of-lidar-spoofing-attacks-against-autonomous-driving-vehicle-at-high-speed-and-long-distance
+  - sok-how-sensor-attacks-disrupt-autonomous-vehicles-an-end-to-end-analysis-challenges-and-missed-threats
+  - dirty-road-can-attack-security-of-deep-learning-based-automated-lane-centering-under-physical-world-attack
+  - sok-the-next-frontier-in-av-security-systematizing-perception-attacks-and-the-emerging-threat-of-multi-sensor-fusion
+  - the-heat-is-on-understanding-and-mitigating-vulnerabilities-of-thermal-image-perception-in-autonomous-systems
+  - too-good-to-be-safe-tricking-lane-detection-in-autonomous-driving-with-crafted-perturbations
+  - perspective-shift-attacks-against-optical-perception-sensors-a-novel-attack-vector-on-lidar-and-camera
+  - over-the-air-compromise-of-modern-volkswagen-group-vehicles
+  - research-only-understanding-the-scope-of-automotive-cyberattacks-in-the-wild
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

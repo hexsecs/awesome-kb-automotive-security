@@ -640,3 +640,19 @@ ownership sentences on wiki/canarchy.md and
 wiki/awesome-embedded-security.md are removed entirely rather than
 re-attributed to the handle. The canarchy page keeps its plain author
 credit.
+
+## [2026-11-16] tooling | link_mine.py + concept_scan.py: cross-link pass for the whole KB
+
+Ported the link miner from the embedded KB and ran it in fill +
+reciprocate mode: the 21 stub pages that carried no `related:` now
+have mined sets (eight hand-curated where venue-token matches made
+the raw sets a Car Hacking Village clique rather than topical
+links), and 358 one-way links in the hand-built graph were completed
+reciprocally — house practice is that a link runs both ways, and
+30% of the graph's edges didn't. Four list entries whose pages had
+never been ingested (bypassing-debug-password-protection-on-the-
+rh850-family, fleet-cyber-challenge, openvehiclediag, vasp) were
+created by the sync and mined in the same pass. Authored pages'
+existing sets were preserved verbatim and in order; the miner only
+appended. Gates: ingest x2 idempotent (0/0/0); lint warnings are
+the pre-existing duplicate-source ones, untouched by this change.

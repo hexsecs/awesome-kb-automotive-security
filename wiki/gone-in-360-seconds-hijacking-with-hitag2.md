@@ -8,11 +8,20 @@ url: "https://www.usenix.org/conference/usenixsecurity12/technical-sessions/pres
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Verdult, Garcia, and Balasch, USENIX Security 2012. Breaks the Hitag2 immobilizer transponder, then fitted to over 200 car models, recovering the key by radio in minutes."
+related:
+  - dismantling-megamos-crypto-wirelessly-lockpicking-a-vehicle-immobilizer
+  - key-fob-relay-attacks
+  - lock-it-and-still-lose-it-on-the-in-security-of-automotive-remote-keyless-entry-systems
+  - fast-furious-and-insecure-passive-keyless-entry-and-start-systems-in-modern-supercars
+  - shared-and-default-secrets
+  - vehicle-immobilization-revisited
+  - rollback-a-new-time-agnostic-replay-attack-against-the-automotive-remote-keyless-entry-systems
+  - sok-stealing-cars-since-remote-keyless-entry-introduction-and-how-to-defend-from-it
 sources:
   - url: "https://www.usenix.org/conference/usenixsecurity12/technical-sessions/presentation/verdult"
     retrieved: 2026-11-01
@@ -24,6 +33,9 @@ related:
   - lock-it-and-still-lose-it-on-the-in-security-of-automotive-remote-keyless-entry-systems
   - fast-furious-and-insecure-passive-keyless-entry-and-start-systems-in-modern-supercars
   - shared-and-default-secrets
+  - vehicle-immobilization-revisited
+  - rollback-a-new-time-agnostic-replay-attack-against-the-automotive-remote-keyless-entry-systems
+  - sok-stealing-cars-since-remote-keyless-entry-introduction-and-how-to-defend-from-it
 ---
 
 Verdult, Garcia, and Balasch, USENIX Security 2012. Breaks the Hitag2 immobilizer transponder, then fitted to over 200 car models, recovering the key by radio in minutes.

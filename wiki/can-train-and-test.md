@@ -8,11 +8,18 @@ url: "https://bitbucket.org/brooke-lampe/can-train-and-test/src/master/"
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: brief
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Labelled CAN captures from four vehicles across two manufacturers with nine attack types, split into known and unknown vehicle and attack test subsets for evaluating IDS generalisation."
+related:
+  - cross-vehicle-generalisation-benchmark
+  - car-hacking-dataset
+  - road
+  - a-comprehensive-guide-to-can-ids-data-and-introduction-of-the-road-dataset
+  - can-mirgu
+  - on-the-real-world-applicability-of-automotive-can-intrusion-detection-systems
 sources:
   - url: "https://bitbucket.org/brooke-lampe/can-train-and-test/src/master/"
     retrieved: 2026-11-01
@@ -22,6 +29,9 @@ related:
   - cross-vehicle-generalisation-benchmark
   - car-hacking-dataset
   - road
+  - a-comprehensive-guide-to-can-ids-data-and-introduction-of-the-road-dataset
+  - can-mirgu
+  - on-the-real-world-applicability-of-automotive-can-intrusion-detection-systems
 ---
 
 Labelled CAN captures from four vehicles across two manufacturers with nine attack types, split into known and unknown vehicle and attack test subsets for evaluating IDS generalisation.

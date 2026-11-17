@@ -8,11 +8,16 @@ url: "https://media.ccc.de/v/36c3-11020-vehicle_immobilization_revisited"
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: brief
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Bokslag, 36C3 2019. Studies three vehicles and shows the immobilizer transponder talks to the body control module rather than the ECM, so weak authentication at either link allows an unauthorised start."
+related:
+  - dismantling-megamos-crypto-wirelessly-lockpicking-a-vehicle-immobilizer
+  - gone-in-360-seconds-hijacking-with-hitag2
+  - zephyr-reference-ecu
+  - ble-theft-auto-evaluating-the-security-of-aftermarket-ble-based-automotive-remote-control-systems
 sources:
   - url: "https://media.ccc.de/v/36c3-11020-vehicle_immobilization_revisited"
     retrieved: 2026-11-01
@@ -21,6 +26,8 @@ sources:
 related:
   - dismantling-megamos-crypto-wirelessly-lockpicking-a-vehicle-immobilizer
   - gone-in-360-seconds-hijacking-with-hitag2
+  - zephyr-reference-ecu
+  - ble-theft-auto-evaluating-the-security-of-aftermarket-ble-based-automotive-remote-control-systems
 ---
 
 Bokslag, 36C3 2019. Studies three vehicles and shows the immobilizer transponder talks to the body control module rather than the ECM, so weak authentication at either link allows an unauthorised start.

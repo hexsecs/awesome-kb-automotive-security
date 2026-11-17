@@ -8,12 +8,23 @@ url: "https://github.com/Schildkroet/CANgaroo"
 status: active
 last_checked: 2026-10-31
 created: 2026-10-31
-updated: 2026-10-31
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Open-source CAN bus analyzer for Linux and Windows with DBC and LDF decoding, CAN FD, Python scripting, SocketCAN, PEAK, Kvaser, Vector, and candlelight interfaces, and Vector ASC, MDF4, candump, and PCAP export."
-related: [savvycan, canmatrix, can-utils]
+related:
+  - savvycan
+  - canmatrix
+  - can-utils
+  - pycangui
+  - can-playground
+related:
+  - savvycan
+  - canmatrix
+  - can-utils
+  - pycangui
+  - can-playground
 license: GPL-2.0
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"

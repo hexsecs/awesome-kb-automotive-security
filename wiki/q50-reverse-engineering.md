@@ -8,12 +8,25 @@ url: "https://github.com/oneezeeroo/Q50-Reverse-Engineering"
 status: active
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Independent reverse-engineering research into the Infiniti Q50 infotainment platform's Linux/Android environment, documenting its EPK firmware package format, code-signing process, and USB app-installation flow."
-related: [ic1101, mmi3g-toolkit, secure-firmware-updates, ivi-update-trust, ivi-runtime-privilege]
+related:
+  - ic1101
+  - mmi3g-toolkit
+  - secure-firmware-updates
+  - ivi-update-trust
+  - ivi-runtime-privilege
+  - automotive-security-research
+related:
+  - ic1101
+  - mmi3g-toolkit
+  - secure-firmware-updates
+  - ivi-update-trust
+  - ivi-runtime-privilege
+  - automotive-security-research
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

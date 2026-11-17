@@ -8,11 +8,25 @@ url: "https://www.weimerskirch.org/files/WolfEtAl_SecureBus.pdf"
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Wolf, Weimerskirch, and Paar, Workshop on Embedded Security in Cars 2004. The first systematic treatment of CAN, LIN, MOST, and FlexRay as security problems, proposing the gateway and cryptographic measures later echoed in SecOC."
+related:
+  - experimental-security-analysis-of-a-modern-automobile
+  - comprehensive-experimental-analyses-of-automotive-attack-surfaces
+  - can-injection
+  - survey-on-security-threats-and-protection-mechanisms-in-embedded-automotive-networks
+  - linusbconverter
+  - can-playground
+related:
+  - experimental-security-analysis-of-a-modern-automobile
+  - comprehensive-experimental-analyses-of-automotive-attack-surfaces
+  - can-injection
+  - survey-on-security-threats-and-protection-mechanisms-in-embedded-automotive-networks
+  - linusbconverter
+  - can-playground
 sources:
   - url: "https://www.weimerskirch.org/files/WolfEtAl_SecureBus.pdf"
     retrieved: 2026-11-01
@@ -22,6 +36,9 @@ related:
   - experimental-security-analysis-of-a-modern-automobile
   - comprehensive-experimental-analyses-of-automotive-attack-surfaces
   - can-injection
+  - survey-on-security-threats-and-protection-mechanisms-in-embedded-automotive-networks
+  - linusbconverter
+  - can-playground
 ---
 
 Wolf, Weimerskirch, and Paar, Workshop on Embedded Security in Cars 2004. The first systematic treatment of CAN, LIN, MOST, and FlexRay as security problems, proposing the gateway and cryptographic measures later echoed in SecOC.

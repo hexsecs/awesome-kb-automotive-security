@@ -8,11 +8,18 @@ url: "https://www.usenix.org/conference/vehiclesec26/presentation/calipari"
 status: published
 last_checked: 2026-11-03
 created: 2026-11-03
-updated: 2026-11-03
+updated: 2026-11-16
 depth: stub
 source_list: awesome-automotive-security
 source_commit: 43fd1f2
 list_summary: "Calipari et al., USENIX VehicleSec 2026. Introduces a new physical attack class that uses Direction Turning Film to shift LiDAR and camera fields of view, showing even a 20° shift significantly disrupts LiDAR odometry and camera lane detection in laboratory tests and on a real research vehicle, while barely affecting detection confidence."
+related:
+  - remote-attacks-on-automated-vehicles-sensors-experiments-on-camera-and-lidar
+  - a-first-physical-world-trajectory-prediction-attack-via-lidar-induced-deceptions-in-autonomous-driving
+  - invisible-for-both-camera-and-lidar-security-of-multi-sensor-fusion-based-perception-in-autonomous-driving
+  - adversarial-sensor-attack-on-lidar-based-perception-in-autonomous-driving
+  - does-physical-adversarial-example-really-matter-to-autonomous-driving-towards-system-level-effect-of-adversarial-object-evasion-attack
+  - expanding-the-attack-scenarios-of-sae-j1939-a-comprehensive-analysis-of-established-and-novel-vulnerabilities-in-transport-protocol
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-03

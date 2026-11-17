@@ -8,11 +8,17 @@ url: "https://github.com/infobyte/doggie"
 status: unknown
 last_checked: 2026-11-02
 created: 2026-11-02
-updated: 2026-11-02
+updated: 2026-11-16
 depth: stub
 source_list: awesome-automotive-security
 source_commit: e9533c9
 list_summary: "Modular DIY CAN-to-serial adapter from Faraday Security that speaks slcan over USB, BLE or UART for SocketCAN and python-can, with an EvilDoggie variant adding offensive features for automotive research."
+related:
+  - cfuc
+  - linusbconverter
+  - supercan
+  - owasp-automotive-emb-60
+  - python-can
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-02

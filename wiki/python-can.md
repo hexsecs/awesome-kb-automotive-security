@@ -8,12 +8,53 @@ url: "https://github.com/hardbyte/python-can"
 status: active
 last_checked: 2026-10-31
 created: 2026-10-31
-updated: 2026-10-31
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Python library providing a common interface over many CAN hardware backends with CAN FD support and logging to ASC, BLF, MF4, TRC, CSV, and SQLite."
-related: [python-can-isotp, cantools, can-utils]
+related:
+  - python-can-isotp
+  - cantools
+  - can-utils
+  - opendbc
+  - caringcaribou
+  - pretty-j1939
+  - pq-flasher
+  - uds
+  - udsoncan
+  - canarchy
+  - ecubus-pro
+  - pycangui
+  - doggie
+related:
+  - python-can-isotp
+  - cantools
+  - can-utils
+  - opendbc
+  - caringcaribou
+  - pretty-j1939
+  - pq-flasher
+  - uds
+  - udsoncan
+  - canarchy
+  - ecubus-pro
+  - pycangui
+  - doggie
+related:
+  - python-can-isotp
+  - cantools
+  - can-utils
+  - opendbc
+  - caringcaribou
+  - pretty-j1939
+  - pq-flasher
+  - uds
+  - udsoncan
+  - canarchy
+  - ecubus-pro
+  - pycangui
+  - doggie
 license: LGPL-3.0
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"

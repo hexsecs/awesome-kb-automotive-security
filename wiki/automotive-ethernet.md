@@ -8,11 +8,16 @@ url: "https://books.google.com/books?vid=ISBN9781108841955"
 status: unknown
 last_checked: 2026-11-05
 created: 2026-11-05
-updated: 2026-11-05
+updated: 2026-11-16
 depth: stub
 source_list: awesome-automotive-security
 source_commit: 082afab
 list_summary: "Matheus and Königseder, Cambridge University Press 2021. The standard reference on automotive Ethernet, covering PHYs, TSN, and security concepts for in-vehicle networks."
+related:
+  - a-comprehensible-guide-to-controller-area-network
+  - eth-ws-someip
+  - tow-ids-automotive-ethernet-intrusion-dataset
+  - vsomeip
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-05

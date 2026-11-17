@@ -8,12 +8,21 @@ url: "https://github.com/provrb/obdium"
 status: active
 last_checked: 2026-10-31
 created: 2026-10-31
-updated: 2026-10-31
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Rust-based OBD-II diagnostic tool with modern Tauri GUI supporting live data, DTC analysis, and offline VIN decoding."
-related: [opendbc, savvycan, python-can-isotp]
+related:
+  - opendbc
+  - savvycan
+  - python-can-isotp
+  - can-playground
+related:
+  - opendbc
+  - savvycan
+  - python-can-isotp
+  - can-playground
 license: GPL-3.0
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"

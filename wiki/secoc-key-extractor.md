@@ -8,12 +8,25 @@ url: "https://github.com/i-can-hack/secoc"
 status: maintenance
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Scripts to extract SecOC (Secure On-Board Communication) keys from Toyota vehicles using comma.ai panda hardware."
-related: [panda, uds-seed-key, uds-firmware-extraction, firmware-acquisition, bootloader-stages]
+related:
+  - panda
+  - uds-seed-key
+  - uds-firmware-extraction
+  - firmware-acquisition
+  - bootloader-stages
+  - back-in-the-driver-s-seat-recovering-critical-data-from-tesla-autopilot-using-voltage-glitching
+related:
+  - panda
+  - uds-seed-key
+  - uds-firmware-extraction
+  - firmware-acquisition
+  - bootloader-stages
+  - back-in-the-driver-s-seat-recovering-critical-data-from-tesla-autopilot-using-voltage-glitching
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

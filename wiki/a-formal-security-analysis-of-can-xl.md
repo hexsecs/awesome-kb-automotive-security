@@ -8,11 +8,15 @@ url: "https://www.usenix.org/conference/usenixsecurity26/presentation/tang-zhaoz
 status: published
 last_checked: 2026-11-02
 created: 2026-11-02
-updated: 2026-11-02
+updated: 2026-11-16
 depth: stub
 source_list: awesome-automotive-security
 source_commit: e9533c9
 list_summary: "Tang et al., USENIX Security 2026. First formal security analysis of the CAN XL standard, showing it retains all known classic CAN MAC sub-layer flaws and adds seven new vulnerabilities, validated on commercial controllers."
+related:
+  - canflict-exploiting-peripheral-conflicts-for-data-link-layer-attacks-on-automotive-networks
+  - error-handling-of-in-vehicle-networks-makes-them-vulnerable
+  - on-the-real-world-applicability-of-automotive-can-intrusion-detection-systems
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-02

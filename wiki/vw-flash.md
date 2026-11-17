@@ -8,12 +8,44 @@ url: "https://github.com/bri3d/VW_Flash"
 status: active
 last_checked: 2026-10-31
 created: 2026-10-31
-updated: 2026-10-31
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Flashing tools for VW AG control units over UDS supporting Simos18.1/6/10 and DQ250-MQB."
-related: [odxtools, pq-flasher, udsoncan, uds-seed-key, ivi-update-trust, firmware-acquisition, bootloader-stages, secure-firmware-updates]
+related:
+  - odxtools
+  - pq-flasher
+  - udsoncan
+  - uds-seed-key
+  - ivi-update-trust
+  - firmware-acquisition
+  - bootloader-stages
+  - secure-firmware-updates
+  - reversing-a-brake-ecu-firmware-update
+  - idrive7-8-ssh-root
+related:
+  - odxtools
+  - pq-flasher
+  - udsoncan
+  - uds-seed-key
+  - ivi-update-trust
+  - firmware-acquisition
+  - bootloader-stages
+  - secure-firmware-updates
+  - reversing-a-brake-ecu-firmware-update
+  - idrive7-8-ssh-root
+related:
+  - odxtools
+  - pq-flasher
+  - udsoncan
+  - uds-seed-key
+  - ivi-update-trust
+  - firmware-acquisition
+  - bootloader-stages
+  - secure-firmware-updates
+  - reversing-a-brake-ecu-firmware-update
+  - idrive7-8-ssh-root
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

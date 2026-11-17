@@ -8,12 +8,32 @@ url: "https://github.com/atlas0fd00m/CanCat"
 status: active
 last_checked: 2026-10-31
 created: 2026-10-31
-updated: 2026-10-31
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Firmware for Arduino CAN shields and Macchina M2 boards paired with a Python client for sniffing and injecting CAN traffic, running UDS and CCP sessions, and placing a device in the middle of a CAN link."
-related: [caringcaribou, canarchy, savvycan]
+related:
+  - caringcaribou
+  - canarchy
+  - savvycan
+  - pq-flasher
+  - uds-seed-key
+  - pycangui
+related:
+  - caringcaribou
+  - canarchy
+  - savvycan
+  - pq-flasher
+  - uds-seed-key
+  - pycangui
+related:
+  - caringcaribou
+  - canarchy
+  - savvycan
+  - pq-flasher
+  - uds-seed-key
+  - pycangui
 license: BSD-2-Clause
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"

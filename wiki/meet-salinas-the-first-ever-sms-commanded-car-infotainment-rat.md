@@ -8,11 +8,14 @@ url: "https://media.defcon.org/DEF%20CON%2026/DEF%20CON%2026%20villages/DEF%20CO
 status: unknown
 last_checked: 2026-11-13
 created: 2026-11-13
-updated: 2026-11-13
+updated: 2026-11-16
 depth: stub
 source_list: awesome-automotive-security
 source_commit: 6a8b17c
 list_summary: "Regalado, DEF CON 26 Car Hacking Village 2018. Shows how a production infotainment unit can be infected with malware that exfiltrates the driver's data through SMS via the paired phone."
+related:
+  - car-hacking-village
+  - security-and-privacy-vulnerabilities-of-in-car-wireless-networks-a-tire-pressure-monitoring-system-case-study
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-13

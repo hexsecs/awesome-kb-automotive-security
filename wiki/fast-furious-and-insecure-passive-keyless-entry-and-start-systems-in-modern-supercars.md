@@ -8,11 +8,19 @@ url: "https://tches.iacr.org/index.php/TCHES/article/view/8289"
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Wouters et al., CHES 2019. Breaks the DST40-based PKES used by Tesla and others, cloning a key fob from a few seconds of proximity."
+related:
+  - key-fob-relay-attacks
+  - relay-attacks-on-passive-keyless-entry-and-start-systems-in-modern-cars
+  - lock-it-and-still-lose-it-on-the-in-security-of-automotive-remote-keyless-entry-systems
+  - gone-in-360-seconds-hijacking-with-hitag2
+  - dismantling-megamos-crypto-wirelessly-lockpicking-a-vehicle-immobilizer
+  - my-other-car-is-your-car-compromising-the-tesla-model-x-keyless-entry-system
+  - sok-stealing-cars-since-remote-keyless-entry-introduction-and-how-to-defend-from-it
 sources:
   - url: "https://tches.iacr.org/index.php/TCHES/article/view/8289"
     retrieved: 2026-11-01
@@ -24,6 +32,8 @@ related:
   - lock-it-and-still-lose-it-on-the-in-security-of-automotive-remote-keyless-entry-systems
   - gone-in-360-seconds-hijacking-with-hitag2
   - dismantling-megamos-crypto-wirelessly-lockpicking-a-vehicle-immobilizer
+  - my-other-car-is-your-car-compromising-the-tesla-model-x-keyless-entry-system
+  - sok-stealing-cars-since-remote-keyless-entry-introduction-and-how-to-defend-from-it
 ---
 
 Wouters et al., CHES 2019. Breaks the DST40-based PKES used by Tesla and others, cloning a key fob from a few seconds of proximity.

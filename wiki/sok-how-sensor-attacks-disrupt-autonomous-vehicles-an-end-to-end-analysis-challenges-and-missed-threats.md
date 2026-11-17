@@ -8,11 +8,24 @@ url: "https://arxiv.org/abs/2509.11120"
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Zhang et al., arXiv 2025. Traces how sensor-induced errors propagate through perception, localization, planning, and control to physical impact, and identifies 12 previously overlooked attack vectors."
+related:
+  - sok-the-next-frontier-in-av-security-systematizing-perception-attacks-and-the-emerging-threat-of-multi-sensor-fusion
+  - remote-attacks-on-automated-vehicles-sensors-experiments-on-camera-and-lidar
+  - illusion-and-dazzle-adversarial-optical-channel-exploits-against-lidars-for-automotive-applications
+  - adversarial-sensor-attack-on-lidar-based-perception-in-autonomous-driving
+  - invisible-for-both-camera-and-lidar-security-of-multi-sensor-fusion-based-perception-in-autonomous-driving
+  - does-physical-adversarial-example-really-matter-to-autonomous-driving-towards-system-level-effect-of-adversarial-object-evasion-attack
+  - a-first-physical-world-trajectory-prediction-attack-via-lidar-induced-deceptions-in-autonomous-driving
+  - on-the-realism-of-lidar-spoofing-attacks-against-autonomous-driving-vehicle-at-high-speed-and-long-distance
+  - drift-with-devil-security-of-multi-sensor-fusion-based-localization-in-high-level-autonomous-driving-under-gps-spoofing
+  - all-your-gps-are-belong-to-us-towards-stealthy-manipulation-of-road-navigation-systems
+  - the-heat-is-on-understanding-and-mitigating-vulnerabilities-of-thermal-image-perception-in-autonomous-systems
+  - robust-physical-world-attacks-on-deep-learning-visual-classification
 sources:
   - url: "https://arxiv.org/abs/2509.11120"
     retrieved: 2026-11-01
@@ -29,6 +42,8 @@ related:
   - on-the-realism-of-lidar-spoofing-attacks-against-autonomous-driving-vehicle-at-high-speed-and-long-distance
   - drift-with-devil-security-of-multi-sensor-fusion-based-localization-in-high-level-autonomous-driving-under-gps-spoofing
   - all-your-gps-are-belong-to-us-towards-stealthy-manipulation-of-road-navigation-systems
+  - the-heat-is-on-understanding-and-mitigating-vulnerabilities-of-thermal-image-perception-in-autonomous-systems
+  - robust-physical-world-attacks-on-deep-learning-visual-classification
 ---
 
 Zhang et al., arXiv 2025. Traces how sensor-induced errors propagate through perception, localization, planning, and control to physical impact, and identifies 12 previously overlooked attack vectors.

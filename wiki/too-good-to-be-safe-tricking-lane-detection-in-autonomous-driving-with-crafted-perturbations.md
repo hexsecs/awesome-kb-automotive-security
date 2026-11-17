@@ -8,11 +8,16 @@ url: "https://www.usenix.org/conference/usenixsecurity21/presentation/jing"
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Jing et al., USENIX Security 2021. First lane-detection attack validated on a real production vehicle, exploiting the module's over-sensitivity with small road markings."
+related:
+  - dirty-road-can-attack-security-of-deep-learning-based-automated-lane-centering-under-physical-world-attack
+  - adversarial-sensor-attack-on-lidar-based-perception-in-autonomous-driving
+  - remote-attacks-on-automated-vehicles-sensors-experiments-on-camera-and-lidar
+  - robust-physical-world-attacks-on-deep-learning-visual-classification
 sources:
   - url: "https://www.usenix.org/conference/usenixsecurity21/presentation/jing"
     retrieved: 2026-11-01
@@ -22,6 +27,7 @@ related:
   - dirty-road-can-attack-security-of-deep-learning-based-automated-lane-centering-under-physical-world-attack
   - adversarial-sensor-attack-on-lidar-based-perception-in-autonomous-driving
   - remote-attacks-on-automated-vehicles-sensors-experiments-on-camera-and-lidar
+  - robust-physical-world-attacks-on-deep-learning-visual-classification
 ---
 
 Jing et al., USENIX Security 2021. First lane-detection attack validated on a real production vehicle, exploiting the module's over-sensitivity with small road markings.

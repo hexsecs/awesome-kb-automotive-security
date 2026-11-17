@@ -8,12 +8,25 @@ url: "https://github.com/Martin-P/OpenV2G"
 status: maintenance
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "C implementation of the ISO 15118 and DIN 70121 vehicle-to-grid interface with an EXI codec, widely reused as the encoding engine behind other V2G analysis tooling."
-related: [pyplc, v2gdecoder, wwcp-iso15118, open-plc-utils, charging-trust-chain]
+related:
+  - pyplc
+  - v2gdecoder
+  - wwcp-iso15118
+  - open-plc-utils
+  - charging-trust-chain
+  - losing-the-car-keys-wireless-phy-layer-insecurity-in-ev-charging
+related:
+  - pyplc
+  - v2gdecoder
+  - wwcp-iso15118
+  - open-plc-utils
+  - charging-trust-chain
+  - losing-the-car-keys-wireless-phy-layer-insecurity-in-ev-charging
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

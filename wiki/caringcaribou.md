@@ -8,12 +8,47 @@ url: "https://github.com/CaringCaribou/caringcaribou"
 status: active
 last_checked: 2026-10-31
 created: 2026-10-31
-updated: 2026-10-31
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Python automotive security exploration tool designed as the nmap of CAN bus with fuzzing, ECU discovery, and attack modules."
-related: [python-can, python-can-isotp, cantoolz, canalyzat0r, diagnostic-fuzzing, calibration-plane]
+related:
+  - python-can
+  - python-can-isotp
+  - cantoolz
+  - canalyzat0r
+  - diagnostic-fuzzing
+  - calibration-plane
+  - uds-server
+  - cantot
+  - autofuze
+  - autopi
+  - can-commander
+  - cancat
+  - canflict
+  - car-toolkit
+  - gallia
+  - icsim
+  - nullsec-carfuzz
+related:
+  - python-can
+  - python-can-isotp
+  - cantoolz
+  - canalyzat0r
+  - diagnostic-fuzzing
+  - calibration-plane
+  - uds-server
+  - cantot
+  - autofuze
+  - autopi
+  - can-commander
+  - cancat
+  - canflict
+  - car-toolkit
+  - gallia
+  - icsim
+  - nullsec-carfuzz
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

@@ -8,11 +8,16 @@ url: "https://www.opengarages.org/handbook/"
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: brief
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Craig Smith, No Starch Press 2016. The foundational practical guide to vehicle security, covering threat modelling, CAN reverse engineering, and ECU exploitation; free to read online via Open Garages."
+related:
+  - opengarages
+  - hacking-connected-cars
+  - a-comprehensible-guide-to-controller-area-network
+  - automotive-cybersecurity-roadmap
 sources:
   - url: "https://www.opengarages.org/handbook/"
     retrieved: 2026-11-01
@@ -22,6 +27,7 @@ related:
   - opengarages
   - hacking-connected-cars
   - a-comprehensible-guide-to-controller-area-network
+  - automotive-cybersecurity-roadmap
 ---
 
 Craig Smith, No Starch Press 2016. The foundational practical guide to vehicle security, covering threat modelling, CAN reverse engineering, and ECU exploitation; free to read online via Open Garages.

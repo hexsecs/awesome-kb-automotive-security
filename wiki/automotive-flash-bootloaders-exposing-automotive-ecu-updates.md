@@ -8,11 +8,15 @@ url: "https://infocon.org/cons/DEF%20CON/DEF%20CON%2026/DEF%20CON%2026%20village
 status: unknown
 last_checked: 2026-11-13
 created: 2026-11-13
-updated: 2026-11-13
+updated: 2026-11-16
 depth: stub
 source_list: awesome-automotive-security
 source_commit: 6a8b17c
 list_summary: "Lapczynski, DEF CON 26 Car Hacking Village 2018. Walks through how UDS programming sessions, seed-key exchange, and flash routines expose ECU firmware updates to attack."
+related:
+  - car-hacking-village
+  - uds-firmware-extraction
+  - zephyr-reference-ecu
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-13

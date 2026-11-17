@@ -8,11 +8,21 @@ url: "https://www.usenix.org/conference/vehiclesec25/presentation/bianchi"
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Bianchi et al., USENIX VehicleSec 2025. Systematization of RKE and passive keyless entry and start systems, covering their history, the attacks against them, and the defences."
+related:
+  - gone-in-360-seconds-hijacking-with-hitag2
+  - dismantling-megamos-crypto-wirelessly-lockpicking-a-vehicle-immobilizer
+  - lock-it-and-still-lose-it-on-the-in-security-of-automotive-remote-keyless-entry-systems
+  - fast-furious-and-insecure-passive-keyless-entry-and-start-systems-in-modern-supercars
+  - rollback-a-new-time-agnostic-replay-attack-against-the-automotive-remote-keyless-entry-systems
+  - key-fob-relay-attacks
+  - my-other-car-is-your-car-compromising-the-tesla-model-x-keyless-entry-system
+  - rolling-code-failure-classes
+  - research-only-understanding-the-scope-of-automotive-cyberattacks-in-the-wild
 sources:
   - url: "https://www.usenix.org/conference/vehiclesec25/presentation/bianchi"
     retrieved: 2026-11-01
@@ -27,6 +37,7 @@ related:
   - key-fob-relay-attacks
   - my-other-car-is-your-car-compromising-the-tesla-model-x-keyless-entry-system
   - rolling-code-failure-classes
+  - research-only-understanding-the-scope-of-automotive-cyberattacks-in-the-wild
 ---
 
 Bianchi et al., USENIX VehicleSec 2025. Systematization of RKE and passive keyless entry and start systems, covering their history, the attacks against them, and the defences.

@@ -8,12 +8,33 @@ url: "https://github.com/uhi22/pyPLC"
 status: active
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Python toolkit for CCS charging research that can pose as vehicle or charger, sniff HomePlug Green PHY traffic, and walk the SLAC, DIN 70121, and ISO 15118 state machines."
-related: [open-plc-utils, openv2g, acccs, chargesploit, dsv2gshark, everest, v2gdecoder, charging-trust-chain]
+related:
+  - open-plc-utils
+  - openv2g
+  - acccs
+  - chargesploit
+  - dsv2gshark
+  - everest
+  - v2gdecoder
+  - charging-trust-chain
+  - losing-the-car-keys-wireless-phy-layer-insecurity-in-ev-charging
+  - brokenwire-wireless-disruption-of-ccs-electric-vehicle-charging
+related:
+  - open-plc-utils
+  - openv2g
+  - acccs
+  - chargesploit
+  - dsv2gshark
+  - everest
+  - v2gdecoder
+  - charging-trust-chain
+  - losing-the-car-keys-wireless-phy-layer-insecurity-in-ev-charging
+  - brokenwire-wireless-disruption-of-ccs-electric-vehicle-charging
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

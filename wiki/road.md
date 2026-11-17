@@ -8,11 +8,19 @@ url: "https://0xsam.com/road/"
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: brief
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Real ORNL Automotive Dynamometer CAN intrusion dataset with verified fuzzing, targeted ID, masquerade, and accelerator attacks captured on a dynamometer."
+related:
+  - a-comprehensive-guide-to-can-ids-data-and-introduction-of-the-road-dataset
+  - can-train-and-test
+  - cross-vehicle-generalisation-benchmark
+  - can-mirgu
+  - autohack
+  - car-hacking-dataset
+  - cards
 sources:
   - url: "https://0xsam.com/road/"
     retrieved: 2026-11-01
@@ -22,6 +30,10 @@ related:
   - a-comprehensive-guide-to-can-ids-data-and-introduction-of-the-road-dataset
   - can-train-and-test
   - cross-vehicle-generalisation-benchmark
+  - can-mirgu
+  - autohack
+  - car-hacking-dataset
+  - cards
 ---
 
 Real ORNL Automotive Dynamometer CAN intrusion dataset with verified fuzzing, targeted ID, masquerade, and accelerator attacks captured on a dynamometer.

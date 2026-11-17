@@ -8,12 +8,32 @@ url: "https://github.com/mdabrowski1990/uds"
 status: active
 last_checked: 2026-10-31
 created: 2026-10-31
-updated: 2026-10-31
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Python package for ISO 14229 UDS in both client and server roles over CAN, Ethernet, LIN, FlexRay, and K-Line, usable for simulation, testing, and decoding UDS traffic."
-related: [udsoncan, python-can, python-can-isotp]
+related:
+  - udsoncan
+  - python-can
+  - python-can-isotp
+  - python-doipclient
+  - canexplorer
+  - pycangui
+related:
+  - udsoncan
+  - python-can
+  - python-can-isotp
+  - python-doipclient
+  - canexplorer
+  - pycangui
+related:
+  - udsoncan
+  - python-can
+  - python-can-isotp
+  - python-doipclient
+  - canexplorer
+  - pycangui
 license: "MIT"
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"

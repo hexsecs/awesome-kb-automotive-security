@@ -8,12 +8,21 @@ url: "https://github.com/jgressmann/supercan"
 status: active
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Open-source USB to CAN FD adapter firmware for the ATSAME51 and several other supported boards, giving a low-cost interface for capturing and injecting CAN and CAN FD traffic."
-related: [cfuc, candlelight-fw, cantact]
+related:
+  - cfuc
+  - candlelight-fw
+  - cantact
+  - doggie
+related:
+  - cfuc
+  - candlelight-fw
+  - cantact
+  - doggie
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

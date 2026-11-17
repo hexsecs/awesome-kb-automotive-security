@@ -8,12 +8,27 @@ url: "https://github.com/riebl/vanetza"
 status: active
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Open-source ETSI C-ITS protocol stack covering GeoNetworking, BTP, DCC, and the security layer, widely used as the reference implementation for V2X experimentation."
-related: [artery, van3twin, veins, misbehavior-detection, v2x-credential-management, secure-vehicular-communication-systems-design-and-architecture]
+related:
+  - artery
+  - van3twin
+  - veins
+  - misbehavior-detection
+  - v2x-credential-management
+  - secure-vehicular-communication-systems-design-and-architecture
+  - v2verifier
+related:
+  - artery
+  - van3twin
+  - veins
+  - misbehavior-detection
+  - v2x-credential-management
+  - secure-vehicular-communication-systems-design-and-architecture
+  - v2verifier
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

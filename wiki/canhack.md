@@ -8,12 +8,21 @@ url: "https://github.com/kentindell/canhack"
 status: maintenance
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Ken Tindell's proof-of-concept toolkit of low-level CAN protocol attacks such as Janus frames, bit-banged from a Raspberry Pi Pico on the CANPico board, with a Sigrok decoder for observing the attacks on a logic analyser."
-related: [piccante, can-injection, savvycan]
+related:
+  - piccante
+  - can-injection
+  - savvycan
+  - car-toolkit
+related:
+  - piccante
+  - can-injection
+  - savvycan
+  - car-toolkit
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

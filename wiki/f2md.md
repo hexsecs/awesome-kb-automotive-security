@@ -8,12 +8,27 @@ url: "https://github.com/josephkamel/F2MD"
 status: maintenance
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Simulation framework recreating the whole misbehavior detection chain for ITS-G5 and C-V2X, with plausibility checks, machine learning detectors, and both local and global attack implementations."
-related: [artery, veins, v2verifier, misbehavior-detection, v2x-credential-management]
+related:
+  - artery
+  - veins
+  - v2verifier
+  - misbehavior-detection
+  - v2x-credential-management
+  - veremi-extension
+  - van3twin
+related:
+  - artery
+  - veins
+  - v2verifier
+  - misbehavior-detection
+  - v2x-credential-management
+  - veremi-extension
+  - van3twin
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

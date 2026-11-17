@@ -8,12 +8,23 @@ url: "https://illmatics.com/remote%20attack%20surfaces.pdf"
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Miller and Valasek, Black Hat USA 2014. Compares the remote attack surfaces, network architectures, and cyber-physical features of a large set of production vehicles, framing a remote attack as initial access, CAN message injection, and physical effect."
-related: [comprehensive-experimental-analyses-of-automotive-attack-surfaces, adventures-in-automotive-networks-and-control-units, remote-exploitation-of-an-unaltered-passenger-vehicle, experimental-security-analysis-of-a-modern-automobile]
+related:
+  - comprehensive-experimental-analyses-of-automotive-attack-surfaces
+  - adventures-in-automotive-networks-and-control-units
+  - remote-exploitation-of-an-unaltered-passenger-vehicle
+  - experimental-security-analysis-of-a-modern-automobile
+  - pedal-to-the-bare-metal
+related:
+  - comprehensive-experimental-analyses-of-automotive-attack-surfaces
+  - adventures-in-automotive-networks-and-control-units
+  - remote-exploitation-of-an-unaltered-passenger-vehicle
+  - experimental-security-analysis-of-a-modern-automobile
+  - pedal-to-the-bare-metal
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

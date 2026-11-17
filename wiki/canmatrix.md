@@ -8,12 +8,21 @@ url: "https://github.com/ebroecker/canmatrix"
 status: active
 last_checked: 2026-10-31
 created: 2026-10-31
-updated: 2026-10-31
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Python package to read and write CAN database formats, converting between DBC, ARXML, KCD, SYM, LDF, ODX, and more."
-related: [cantools, kayak, busmaster]
+related:
+  - cantools
+  - kayak
+  - busmaster
+  - cangaroo
+related:
+  - cantools
+  - kayak
+  - busmaster
+  - cangaroo
 license: BSD-2-Clause
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"

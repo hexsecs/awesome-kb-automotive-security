@@ -8,12 +8,45 @@ url: "https://github.com/linux-can/can-utils"
 status: active
 last_checked: 2026-10-31
 created: 2026-10-31
-updated: 2026-10-31
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Linux-CAN SocketCAN userspace utilities including cansniffer, candump, cansend, canplayer, and cangen for CAN bus analysis."
-related: [python-can, cannelloni, pretty-j1939]
+related:
+  - python-can
+  - cannelloni
+  - pretty-j1939
+  - cangaroo
+  - autopi
+  - can-injection
+  - canarchy
+  - canvas-fast-and-inexpensive-automotive-network-mapping
+  - car-toolkit
+  - carpunk
+  - icsim
+  - lindwurm
+  - piccante
+  - savvycan
+  - uds-firmware-extraction
+  - udsim
+related:
+  - python-can
+  - cannelloni
+  - pretty-j1939
+  - cangaroo
+  - autopi
+  - can-injection
+  - canarchy
+  - canvas-fast-and-inexpensive-automotive-network-mapping
+  - car-toolkit
+  - carpunk
+  - icsim
+  - lindwurm
+  - piccante
+  - savvycan
+  - uds-firmware-extraction
+  - udsim
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

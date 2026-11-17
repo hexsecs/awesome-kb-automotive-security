@@ -8,11 +8,18 @@ url: "https://github.com/davhodg/pycangui"
 status: unknown
 last_checked: 2026-11-10
 created: 2026-11-10
-updated: 2026-11-10
+updated: 2026-11-16
 depth: stub
 source_list: awesome-automotive-security
 source_commit: 67533a4
 list_summary: "Graphical CAN bus tool with live trace and plots, transmit, CANopen, UDS, J1939, and XCP/CCP support on any python-can adapter, with Python scripting and simulated nodes."
+related:
+  - cancat
+  - python-can
+  - cangaroo
+  - canarchy
+  - uds
+  - canalyzat0r
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-10

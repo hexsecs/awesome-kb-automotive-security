@@ -8,11 +8,15 @@ url: "https://github.com/juherr/awesome-ev-charging"
 status: active
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: brief
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Curated specifications, tools, and resources for EV charging protocols including OCPP, ISO 15118, OCPI, and Eichrecht."
+related:
+  - ocpp-charging-attacks
+  - awesome-vehicle-security
+  - securing-electric-mobility
 sources:
   - url: "https://github.com/juherr/awesome-ev-charging"
     retrieved: 2026-11-01
@@ -21,6 +25,7 @@ sources:
 related:
   - ocpp-charging-attacks
   - awesome-vehicle-security
+  - securing-electric-mobility
 ---
 
 Curated specifications, tools, and resources for EV charging protocols including OCPP, ISO 15118, OCPI, and Eichrecht.

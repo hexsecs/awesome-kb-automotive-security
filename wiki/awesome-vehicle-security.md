@@ -8,11 +8,17 @@ url: "https://github.com/jaredthecoder/awesome-vehicle-security"
 status: active
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: brief
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Long-running curated list of vehicle security resources, hardware, software, researchers, and manufacturer disclosure programs."
+related:
+  - awesome-canbus
+  - awesome-embedded-security
+  - awesome-ev-charging
+  - awesome-connected-things-sec
+  - automotive-security-timeline
 sources:
   - url: "https://github.com/jaredthecoder/awesome-vehicle-security"
     retrieved: 2026-11-01
@@ -21,6 +27,9 @@ sources:
 related:
   - awesome-canbus
   - awesome-embedded-security
+  - awesome-ev-charging
+  - awesome-connected-things-sec
+  - automotive-security-timeline
 ---
 
 Long-running curated list of vehicle security resources, hardware, software, researchers, and manufacturer disclosure programs.

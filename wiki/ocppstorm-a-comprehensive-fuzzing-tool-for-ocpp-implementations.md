@@ -8,12 +8,32 @@ url: "https://www.ndss-symposium.org/ndss-paper/auto-draft-457/"
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Coppoletta et al., VehicleSec 2024. Black-box fuzzer for the OCPP charging-station protocol that tests implementations regardless of platform or language, and found five confirmed CVEs in two open-source OCPP systems."
-related: [checkocpp, emuocpp, ocpp-charging-attacks, everest]
+related:
+  - checkocpp
+  - emuocpp
+  - ocpp-charging-attacks
+  - everest
+  - race-to-charge-concurrency-bugs-and-state-integrity-violations-in-ev-charging-infrastructure
+  - ocppuzz
+related:
+  - checkocpp
+  - emuocpp
+  - ocpp-charging-attacks
+  - everest
+  - race-to-charge-concurrency-bugs-and-state-integrity-violations-in-ev-charging-infrastructure
+  - ocppuzz
+related:
+  - checkocpp
+  - emuocpp
+  - ocpp-charging-attacks
+  - everest
+  - race-to-charge-concurrency-bugs-and-state-integrity-violations-in-ev-charging-infrastructure
+  - ocppuzz
 sources:
   - url: "https://www.ndss-symposium.org/ndss-paper/auto-draft-457/"
     retrieved: 2026-11-01

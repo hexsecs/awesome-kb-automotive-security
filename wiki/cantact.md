@@ -8,12 +8,27 @@ url: "https://github.com/linklayer/cantact-app"
 status: unknown
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Open-source hardware CAN interface and desktop app supporting live tracing, frame transmission, ISO-TP, JavaScript scripting, and candump-format traces."
-related: [candlelight-fw, panda, can-daq]
+related:
+  - candlelight-fw
+  - panda
+  - can-daq
+  - cfuc
+  - owasp-automotive-emb-60
+  - piccante
+  - supercan
+related:
+  - candlelight-fw
+  - panda
+  - can-daq
+  - cfuc
+  - owasp-automotive-emb-60
+  - piccante
+  - supercan
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

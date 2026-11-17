@@ -8,11 +8,23 @@ url: "https://zenodo.org/records/18715820"
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: brief
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Lee, Lee, Jun, and Kim, escar USA 2024. Presents 14 attack scenarios against the J1939 protocol used in commercial vehicles, seven of them new."
+related:
+  - pretty-j1939
+  - truckdevil
+  - cybersecurity-for-commercial-vehicles
+  - reversing-a-brake-ecu-firmware-update
+  - perspective-shift-attacks-against-optical-perception-sensors-a-novel-attack-vector-on-lidar-and-camera
+related:
+  - pretty-j1939
+  - truckdevil
+  - cybersecurity-for-commercial-vehicles
+  - reversing-a-brake-ecu-firmware-update
+  - perspective-shift-attacks-against-optical-perception-sensors-a-novel-attack-vector-on-lidar-and-camera
 sources:
   - url: "https://zenodo.org/records/18715820"
     retrieved: 2026-11-01
@@ -21,6 +33,9 @@ sources:
 related:
   - pretty-j1939
   - truckdevil
+  - cybersecurity-for-commercial-vehicles
+  - reversing-a-brake-ecu-firmware-update
+  - perspective-shift-attacks-against-optical-perception-sensors-a-novel-attack-vector-on-lidar-and-camera
 ---
 
 Lee, Lee, Jun, and Kim, escar USA 2024. Presents 14 attack scenarios against the J1939 protocol used in commercial vehicles, seven of them new.

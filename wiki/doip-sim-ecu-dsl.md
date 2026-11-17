@@ -8,12 +8,23 @@ url: "https://github.com/doip-sim-ecu/doip-sim-ecu-dsl"
 status: active
 last_checked: 2026-10-31
 created: 2026-10-31
-updated: 2026-10-31
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Kotlin DSL for scripting simulated DoIP ECUs, reachable over Ethernet, CAN with ISO-TP, or both at once, for exercising diagnostic clients against UDS error and edge cases without hardware."
-related: [python-doipclient, uds-server, udsim, simulation-and-test-doubles]
+related:
+  - python-doipclient
+  - uds-server
+  - udsim
+  - simulation-and-test-doubles
+  - zephyr-reference-ecu
+related:
+  - python-doipclient
+  - uds-server
+  - udsim
+  - simulation-and-test-doubles
+  - zephyr-reference-ecu
 license: "Apache-2.0"
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"

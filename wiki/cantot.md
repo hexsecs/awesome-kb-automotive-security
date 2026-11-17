@@ -8,12 +8,23 @@ url: "https://github.com/shipcod3/canTot"
 status: active
 last_checked: 2026-10-31
 created: 2026-10-31
-updated: 2026-10-31
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Metasploit-style CAN bus exploitation framework built on sploitkit, packaging published vehicle-specific CAN attacks as selectable modules."
-related: [caringcaribou, carpunk, cantoolz, icsim]
+related:
+  - caringcaribou
+  - carpunk
+  - cantoolz
+  - icsim
+  - canter
+related:
+  - caringcaribou
+  - carpunk
+  - cantoolz
+  - icsim
+  - canter
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

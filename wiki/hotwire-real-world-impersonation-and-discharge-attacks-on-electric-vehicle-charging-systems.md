@@ -8,11 +8,21 @@ url: "https://www.usenix.org/conference/woot26/presentation/chen"
 status: published
 last_checked: 2026-11-12
 created: 2026-11-12
-updated: 2026-11-12
+updated: 2026-11-16
 depth: stub
 source_list: awesome-automotive-security
 source_commit: 058bc80
 list_summary: "Chen et al., USENIX WOOT 2026. Demonstrates identifier impersonation and forced battery discharge against production EVs and live charging networks, showing DIN 70121 sessions trust protocol messages over physical verification."
+related:
+  - brokenwire-wireless-disruption-of-ccs-electric-vehicle-charging
+  - race-to-charge-concurrency-bugs-and-state-integrity-violations-in-ev-charging-infrastructure
+  - relay-attacks-on-passive-keyless-entry-and-start-systems-in-modern-cars
+  - pedal-to-the-bare-metal
+related:
+  - brokenwire-wireless-disruption-of-ccs-electric-vehicle-charging
+  - race-to-charge-concurrency-bugs-and-state-integrity-violations-in-ev-charging-infrastructure
+  - relay-attacks-on-passive-keyless-entry-and-start-systems-in-modern-cars
+  - pedal-to-the-bare-metal
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-12

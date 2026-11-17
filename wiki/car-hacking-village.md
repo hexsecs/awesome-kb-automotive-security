@@ -8,11 +8,27 @@ url: "https://www.carhackingvillage.com/events"
 status: active
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: brief
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Non-profit running hands-on car hacking workshops and CTFs at DEF CON, Black Hat, HITCON, CODE BLUE, and other conferences."
+related:
+  - opengarages
+  - automotive-cybersecurity-roadmap
+  - automotive-security-timeline
+  - how-i-discovered-and-hacked-learning-codes-of-the-key-fob-of-a-car-assembled-in-my-country
+  - abusing-can-bus-protocol-specification-for-denial-of-service-in-embedded-systems
+  - meet-salinas-the-first-ever-sms-commanded-car-infotainment-rat
+  - automotive-flash-bootloaders-exposing-automotive-ecu-updates
+related:
+  - opengarages
+  - automotive-cybersecurity-roadmap
+  - automotive-security-timeline
+  - how-i-discovered-and-hacked-learning-codes-of-the-key-fob-of-a-car-assembled-in-my-country
+  - abusing-can-bus-protocol-specification-for-denial-of-service-in-embedded-systems
+  - meet-salinas-the-first-ever-sms-commanded-car-infotainment-rat
+  - automotive-flash-bootloaders-exposing-automotive-ecu-updates
 sources:
   - url: "https://www.carhackingvillage.com/events"
     retrieved: 2026-11-01
@@ -21,6 +37,11 @@ sources:
 related:
   - opengarages
   - automotive-cybersecurity-roadmap
+  - automotive-security-timeline
+  - how-i-discovered-and-hacked-learning-codes-of-the-key-fob-of-a-car-assembled-in-my-country
+  - abusing-can-bus-protocol-specification-for-denial-of-service-in-embedded-systems
+  - meet-salinas-the-first-ever-sms-commanded-car-infotainment-rat
+  - automotive-flash-bootloaders-exposing-automotive-ecu-updates
 ---
 
 Non-profit running hands-on car hacking workshops and CTFs at DEF CON, Black Hat, HITCON, CODE BLUE, and other conferences.

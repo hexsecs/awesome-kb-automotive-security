@@ -8,11 +8,20 @@ url: "https://www.ndss-symposium.org/ndss-paper/automated-cross-platform-reverse
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Wen, Zhao, Chen, and Lin, NDSS 2020. Recovers CAN command syntax and semantics for 360 car models from companion mobile apps alone, without touching a vehicle."
+related:
+  - canvas-fast-and-inexpensive-automotive-network-mapping
+  - plug-n-pwned-comprehensive-vulnerability-analysis-of-obd-ii-dongles
+  - donglescope
+  - canalyzat0r
+  - can-injection
+  - canexplorer
+  - idrive7-8-ssh-root
+  - linusbconverter
 sources:
   - url: "https://www.ndss-symposium.org/ndss-paper/automated-cross-platform-reverse-engineering-of-can-bus-commands-from-mobile-apps/"
     retrieved: 2026-11-01
@@ -26,6 +35,9 @@ related:
   - donglescope
   - canalyzat0r
   - can-injection
+  - canexplorer
+  - idrive7-8-ssh-root
+  - linusbconverter
 ---
 
 Wen, Zhao, Chen, and Lin, NDSS 2020. Recovers CAN command syntax and semantics for 360 car models from companion mobile apps alone, without touching a vehicle.

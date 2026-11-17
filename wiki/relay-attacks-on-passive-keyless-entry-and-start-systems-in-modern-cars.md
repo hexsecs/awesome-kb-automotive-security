@@ -8,11 +8,25 @@ url: "https://www.ndss-symposium.org/ndss2011/relay-attacks-on-passive-keyless-e
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Francillon, Danev, and Capkun, NDSS 2011. Demonstrates the relay attack that still underpins most keyless vehicle theft today, against ten PKES systems from eight manufacturers."
+related:
+  - key-fob-relay-attacks
+  - comprehensive-experimental-analyses-of-automotive-attack-surfaces
+  - security-and-privacy-vulnerabilities-of-in-car-wireless-networks-a-tire-pressure-monitoring-system-case-study
+  - fast-furious-and-insecure-passive-keyless-entry-and-start-systems-in-modern-supercars
+  - my-other-car-is-your-car-compromising-the-tesla-model-x-keyless-entry-system
+  - hotwire-real-world-impersonation-and-discharge-attacks-on-electric-vehicle-charging-systems
+related:
+  - key-fob-relay-attacks
+  - comprehensive-experimental-analyses-of-automotive-attack-surfaces
+  - security-and-privacy-vulnerabilities-of-in-car-wireless-networks-a-tire-pressure-monitoring-system-case-study
+  - fast-furious-and-insecure-passive-keyless-entry-and-start-systems-in-modern-supercars
+  - my-other-car-is-your-car-compromising-the-tesla-model-x-keyless-entry-system
+  - hotwire-real-world-impersonation-and-discharge-attacks-on-electric-vehicle-charging-systems
 sources:
   - url: "https://www.ndss-symposium.org/ndss2011/relay-attacks-on-passive-keyless-entry-and-start-systems-in-modern-cars/"
     retrieved: 2026-11-01
@@ -22,6 +36,9 @@ related:
   - key-fob-relay-attacks
   - comprehensive-experimental-analyses-of-automotive-attack-surfaces
   - security-and-privacy-vulnerabilities-of-in-car-wireless-networks-a-tire-pressure-monitoring-system-case-study
+  - fast-furious-and-insecure-passive-keyless-entry-and-start-systems-in-modern-supercars
+  - my-other-car-is-your-car-compromising-the-tesla-model-x-keyless-entry-system
+  - hotwire-real-world-impersonation-and-discharge-attacks-on-electric-vehicle-charging-systems
 ---
 
 Francillon, Danev, and Capkun, NDSS 2011. Demonstrates the relay attack that still underpins most keyless vehicle theft today, against ten PKES systems from eight manufacturers.

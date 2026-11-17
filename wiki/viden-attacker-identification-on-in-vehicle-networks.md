@@ -8,11 +8,17 @@ url: "https://arxiv.org/abs/1708.08414"
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Cho and Shin, ACM CCS 2017. Fingerprints transmitting ECUs by their analogue voltage signature, moving CAN defence from detecting an attack to naming the ECU responsible."
+related:
+  - fingerprinting-electronic-control-units-for-vehicle-intrusion-detection
+  - evading-voltage-based-intrusion-detection-on-automotive-can
+  - gids-gan-based-intrusion-detection-system-for-in-vehicle-network
+  - in-vehicle-intrusion-detection
+  - canvas-fast-and-inexpensive-automotive-network-mapping
 sources:
   - url: "https://arxiv.org/abs/1708.08414"
     retrieved: 2026-11-01
@@ -25,6 +31,7 @@ related:
   - evading-voltage-based-intrusion-detection-on-automotive-can
   - gids-gan-based-intrusion-detection-system-for-in-vehicle-network
   - in-vehicle-intrusion-detection
+  - canvas-fast-and-inexpensive-automotive-network-mapping
 ---
 
 Cho and Shin, ACM CCS 2017. Fingerprints transmitting ECUs by their analogue voltage signature, moving CAN defence from detecting an attack to naming the ECU responsible.

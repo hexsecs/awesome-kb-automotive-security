@@ -8,11 +8,15 @@ url: "https://i.blackhat.com/BH-USA-26/Presentations/US-26-Scharnowski-Pedal_to_
 status: unknown
 last_checked: 2026-11-08
 created: 2026-11-08
-updated: 2026-11-08
+updated: 2026-11-16
 depth: stub
 source_list: awesome-automotive-security
 source_commit: 825c8e5
 list_summary: "Scharnowski and Covic, Black Hat USA 2026. Demonstrates rehosting and fuzzing the Tesla Wall Connector firmware to trigger a worm spreading via SWCAN."
+related:
+  - hotwire-real-world-impersonation-and-discharge-attacks-on-electric-vehicle-charging-systems
+  - low-energy-to-high-energy-hacking-nearby-ev-chargers-over-bluetooth
+  - a-survey-of-remote-automotive-attack-surfaces
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-08

@@ -8,11 +8,25 @@ url: "https://www.usenix.org/conference/usenixsecurity10/security-and-privacy-vu
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Rouf et al., USENIX Security 2010. Shows TPMS sensors are unauthenticated and trackable at roughly 40m, the first published wireless in-car network attack."
+related:
+  - comprehensive-experimental-analyses-of-automotive-attack-surfaces
+  - experimental-security-analysis-of-a-modern-automobile
+  - relay-attacks-on-passive-keyless-entry-and-start-systems-in-modern-cars
+  - external-attack-surface
+  - passive-and-active-attacks-on-tpms-systems
+  - meet-salinas-the-first-ever-sms-commanded-car-infotainment-rat
+related:
+  - comprehensive-experimental-analyses-of-automotive-attack-surfaces
+  - experimental-security-analysis-of-a-modern-automobile
+  - relay-attacks-on-passive-keyless-entry-and-start-systems-in-modern-cars
+  - external-attack-surface
+  - passive-and-active-attacks-on-tpms-systems
+  - meet-salinas-the-first-ever-sms-commanded-car-infotainment-rat
 sources:
   - url: "https://www.usenix.org/conference/usenixsecurity10/security-and-privacy-vulnerabilities-car-wireless-networks-tire-pressure"
     retrieved: 2026-11-01
@@ -23,6 +37,8 @@ related:
   - experimental-security-analysis-of-a-modern-automobile
   - relay-attacks-on-passive-keyless-entry-and-start-systems-in-modern-cars
   - external-attack-surface
+  - passive-and-active-attacks-on-tpms-systems
+  - meet-salinas-the-first-ever-sms-commanded-car-infotainment-rat
 ---
 
 Rouf et al., USENIX Security 2010. Shows TPMS sensors are unauthenticated and trackable at roughly 40m, the first published wireless in-car network attack.

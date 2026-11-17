@@ -8,11 +8,19 @@ url: "https://www.usenix.org/conference/usenixsecurity25/presentation/szakaly"
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Szakaly et al., USENIX Security 2025. First measurement of publicly deployed CCS DC chargers, finding that only 12 percent of 325 units across four European countries negotiated TLS and that most ran decade-old HomePlug modem firmware."
+related:
+  - losing-the-car-keys-wireless-phy-layer-insecurity-in-ev-charging
+  - brokenwire-wireless-disruption-of-ccs-electric-vehicle-charging
+  - charge-it-to-my-neighbor-a-relay-attack-on-iso-15118-plug-and-charge-payment
+  - ocpp-charging-attacks
+  - charging-trust-chain
+  - one-modem-to-brick-them-all-exploiting-vulnerabilities-in-the-ev-charging-communication
+  - race-to-charge-concurrency-bugs-and-state-integrity-violations-in-ev-charging-infrastructure
 sources:
   - url: "https://www.usenix.org/conference/usenixsecurity25/presentation/szakaly"
     retrieved: 2026-11-01
@@ -26,6 +34,8 @@ related:
   - charge-it-to-my-neighbor-a-relay-attack-on-iso-15118-plug-and-charge-payment
   - ocpp-charging-attacks
   - charging-trust-chain
+  - one-modem-to-brick-them-all-exploiting-vulnerabilities-in-the-ev-charging-communication
+  - race-to-charge-concurrency-bugs-and-state-integrity-violations-in-ev-charging-infrastructure
 ---
 
 Szakaly et al., USENIX Security 2025. First measurement of publicly deployed CCS DC chargers, finding that only 12 percent of 325 units across four European countries negotiated TLS and that most ran decade-old HomePlug modem firmware.

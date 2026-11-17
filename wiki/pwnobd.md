@@ -8,12 +8,21 @@ url: "https://github.com/Nnubes256/pwnobd"
 status: maintenance
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Offensive cybersecurity toolkit for vulnerability analysis of OBD-II devices presented at Black Hat Europe 2024."
-related: [donglescope, car-toolkit, autofuze]
+related:
+  - donglescope
+  - car-toolkit
+  - autofuze
+  - over-the-air-compromise-of-modern-volkswagen-group-vehicles
+related:
+  - donglescope
+  - car-toolkit
+  - autofuze
+  - over-the-air-compromise-of-modern-volkswagen-group-vehicles
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

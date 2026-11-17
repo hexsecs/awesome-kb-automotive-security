@@ -8,12 +8,41 @@ url: "https://github.com/honinb0n/uds-firmware-extraction"
 status: unknown
 last_checked: 2026-10-31
 created: 2026-10-31
-updated: 2026-10-31
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Tool for extracting ECU firmware from UDS flash traffic following ISO-14229 standard."
-related: [can-utils, udsoncan, conescan, firmware-acquisition]
+related:
+  - can-utils
+  - udsoncan
+  - conescan
+  - firmware-acquisition
+  - reversing-a-brake-ecu-firmware-update
+  - atlas
+  - secoc-key-extractor
+  - automotive-flash-bootloaders-exposing-automotive-ecu-updates
+  - zephyr-reference-ecu
+related:
+  - can-utils
+  - udsoncan
+  - conescan
+  - firmware-acquisition
+  - reversing-a-brake-ecu-firmware-update
+  - atlas
+  - secoc-key-extractor
+  - automotive-flash-bootloaders-exposing-automotive-ecu-updates
+  - zephyr-reference-ecu
+related:
+  - can-utils
+  - udsoncan
+  - conescan
+  - firmware-acquisition
+  - reversing-a-brake-ecu-firmware-update
+  - atlas
+  - secoc-key-extractor
+  - automotive-flash-bootloaders-exposing-automotive-ecu-updates
+  - zephyr-reference-ecu
 license: "GPL-2.0"
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"

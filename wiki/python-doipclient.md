@@ -8,12 +8,23 @@ url: "https://github.com/jacobschaer/python-doipclient"
 status: active
 last_checked: 2026-10-31
 created: 2026-10-31
-updated: 2026-10-31
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Pure Python DoIP (ISO 13400) client that plugs into udsoncan as a transport layer for diagnostics over automotive Ethernet."
-related: [udsoncan, uds]
+related:
+  - udsoncan
+  - uds
+  - doip-sim-ecu-dsl
+  - autofuze
+  - scapy
+related:
+  - udsoncan
+  - uds
+  - doip-sim-ecu-dsl
+  - autofuze
+  - scapy
 license: "MIT"
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"

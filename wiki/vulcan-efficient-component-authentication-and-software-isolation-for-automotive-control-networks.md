@@ -8,11 +8,17 @@ url: "https://vanbulck.net/files/acsac17-vulcan.pdf"
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Van Bulck, Muhlberg, and Piessens, ACSAC 2017. Combines message authentication with trusted-computing isolation, defending against an adversary running arbitrary code on a participating ECU."
+related:
+  - vatican-vetted-authenticated-can-bus
+  - leia-a-lightweight-authentication-protocol-for-can
+  - can-injection
+  - can-message-authentication
+  - ble-theft-auto-evaluating-the-security-of-aftermarket-ble-based-automotive-remote-control-systems
 sources:
   - url: "https://vanbulck.net/files/acsac17-vulcan.pdf"
     retrieved: 2026-11-01
@@ -25,6 +31,7 @@ related:
   - leia-a-lightweight-authentication-protocol-for-can
   - can-injection
   - can-message-authentication
+  - ble-theft-auto-evaluating-the-security-of-aftermarket-ble-based-automotive-remote-control-systems
 ---
 
 Van Bulck, Muhlberg, and Piessens, ACSAC 2017. Combines message authentication with trusted-computing isolation, defending against an adversary running arbitrary code on a participating ECU.

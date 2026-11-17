@@ -8,12 +8,35 @@ url: "https://github.com/wheregoes/byd-dolphin-hacking"
 status: active
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Reverse engineering of the BYD Dolphin DiLink 3 head unit (Android 10 on a Qualcomm QCM6125), documenting its MCU and CAN interfaces, OTA update paths, and NFC digital key, along with permission-bypass and root-level service findings."
-related: [can-injection, secure-firmware-updates, ic1101, ivi-update-trust, ivi-runtime-privilege]
+related:
+  - can-injection
+  - secure-firmware-updates
+  - ic1101
+  - ivi-update-trust
+  - ivi-runtime-privilege
+  - back-connect-to-the-connected-car-search-for-vulnerabilities-in-the-vw-electric-car
+  - idrive7-8-ssh-root
+related:
+  - can-injection
+  - secure-firmware-updates
+  - ic1101
+  - ivi-update-trust
+  - ivi-runtime-privilege
+  - back-connect-to-the-connected-car-search-for-vulnerabilities-in-the-vw-electric-car
+  - idrive7-8-ssh-root
+related:
+  - can-injection
+  - secure-firmware-updates
+  - ic1101
+  - ivi-update-trust
+  - ivi-runtime-privilege
+  - back-connect-to-the-connected-car-search-for-vulnerabilities-in-the-vw-electric-car
+  - idrive7-8-ssh-root
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

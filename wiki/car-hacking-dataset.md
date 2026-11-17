@@ -8,11 +8,19 @@ url: "https://ocslab.hksecurity.net/Datasets/car-hacking-dataset"
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: brief
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "HCRL captures from a Kia Soul with labelled DoS, fuzzing, and RPM and gear spoofing injections, the most widely cited baseline in CAN intrusion detection papers."
+related:
+  - survival-analysis-dataset
+  - can-train-and-test
+  - road
+  - autohack
+  - on-the-real-world-applicability-of-automotive-can-intrusion-detection-systems
+  - gem-can
+  - a-comprehensive-guide-to-can-ids-data-and-introduction-of-the-road-dataset
 sources:
   - url: "https://ocslab.hksecurity.net/Datasets/car-hacking-dataset"
     retrieved: 2026-11-01
@@ -22,6 +30,10 @@ related:
   - survival-analysis-dataset
   - can-train-and-test
   - road
+  - autohack
+  - on-the-real-world-applicability-of-automotive-can-intrusion-detection-systems
+  - gem-can
+  - a-comprehensive-guide-to-can-ids-data-and-introduction-of-the-road-dataset
 ---
 
 HCRL captures from a Kia Soul with labelled DoS, fuzzing, and RPM and gear spoofing injections, the most widely cited baseline in CAN intrusion detection papers.

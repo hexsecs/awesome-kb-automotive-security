@@ -8,12 +8,25 @@ url: "https://ceur-ws.org/Vol-3962/paper69.pdf"
 status: unknown
 last_checked: 2026-10-31
 created: 2026-10-31
-updated: 2026-10-31
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Intrusion detection system for CAN and CAN-FD that detects drop-and-spoof attacks using frequency analysis of frame intervals."
-related: [canflict, canalyzat0r, cantot, can-availability, in-vehicle-intrusion-detection]
+related:
+  - canflict
+  - canalyzat0r
+  - cantot
+  - can-availability
+  - in-vehicle-intrusion-detection
+  - can-injection
+related:
+  - canflict
+  - canalyzat0r
+  - cantot
+  - can-availability
+  - in-vehicle-intrusion-detection
+  - can-injection
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

@@ -8,11 +8,15 @@ url: "https://media.defcon.org/DEF%20CON%2031/DEF%20CON%2031%20villages/DEF%20CO
 status: unknown
 last_checked: 2026-11-06
 created: 2026-11-06
-updated: 2026-11-06
+updated: 2026-11-16
 depth: stub
 source_list: awesome-automotive-security
 source_commit: a25e33d
 list_summary: "Petran, DEF CON 31 Car Hacking Village 2023. Shows how an out-of-range CAN data length code reaches firmware unchecked and overflows a buffer, demonstrated on a development board and a Tesla Model 3 ECU."
+related:
+  - canflict-exploiting-peripheral-conflicts-for-data-link-layer-attacks-on-automotive-networks
+  - error-handling-of-in-vehicle-networks-makes-them-vulnerable
+  - car-hacking-village
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-06

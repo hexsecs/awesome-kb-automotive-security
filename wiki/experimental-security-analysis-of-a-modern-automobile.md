@@ -8,11 +8,26 @@ url: "https://www.autosec.org/pubs/cars-oakland2010.pdf"
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: deep
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Koscher et al., IEEE S&P 2010. The paper that opened the field, demonstrating that an attacker with access to any single ECU can disable the brakes and stop the engine of a moving vehicle."
+related:
+  - security-in-automotive-bus-systems
+  - comprehensive-experimental-analyses-of-automotive-attack-surfaces
+  - uds-seed-key
+  - can-injection
+  - diagnostic-service-abuse
+  - can-availability
+  - external-attack-surface
+  - shared-and-default-secrets
+  - a-survey-of-remote-automotive-attack-surfaces
+  - adventures-in-automotive-networks-and-control-units
+  - back-connect-to-the-connected-car-search-for-vulnerabilities-in-the-vw-electric-car
+  - fast-and-vulnerable-a-story-of-telematic-failures
+  - security-and-privacy-vulnerabilities-of-in-car-wireless-networks-a-tire-pressure-monitoring-system-case-study
+  - survey-on-security-threats-and-protection-mechanisms-in-embedded-automotive-networks
 sources:
   - url: "https://www.autosec.org/pubs/cars-oakland2010.pdf"
     retrieved: 2026-11-01
@@ -29,6 +44,12 @@ related:
   - can-availability
   - external-attack-surface
   - shared-and-default-secrets
+  - a-survey-of-remote-automotive-attack-surfaces
+  - adventures-in-automotive-networks-and-control-units
+  - back-connect-to-the-connected-car-search-for-vulnerabilities-in-the-vw-electric-car
+  - fast-and-vulnerable-a-story-of-telematic-failures
+  - security-and-privacy-vulnerabilities-of-in-car-wireless-networks-a-tire-pressure-monitoring-system-case-study
+  - survey-on-security-threats-and-protection-mechanisms-in-embedded-automotive-networks
 ---
 
 Koscher et al., IEEE S&P 2010. The paper that opened the field, demonstrating that an attacker with access to any single ECU can disable the brakes and stop the engine of a moving vehicle.

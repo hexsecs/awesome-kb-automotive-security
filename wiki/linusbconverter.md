@@ -8,11 +8,17 @@ url: "https://github.com/uCAN-LIN/LinUSBConverter"
 status: unknown
 last_checked: 2026-11-08
 created: 2026-11-08
-updated: 2026-11-08
+updated: 2026-11-16
 depth: stub
 source_list: awesome-automotive-security
 source_commit: 825c8e5
 list_summary: "Open-source USB to LIN bus dongle that operates as master, slave or monitor with optical isolation and SLCAN compatibility for vehicle LIN traffic."
+related:
+  - security-in-automotive-bus-systems
+  - doggie
+  - cfuc
+  - autopi
+  - automated-cross-platform-reverse-engineering-of-can-bus-commands-from-mobile-apps
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-08

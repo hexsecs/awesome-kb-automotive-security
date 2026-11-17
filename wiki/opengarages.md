@@ -8,11 +8,15 @@ url: "https://www.opengarages.org/"
 status: unknown
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: brief
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Open vehicle research collective behind the Car Hacker's Handbook, publishing the free edition of the book, ICSim, and workshop material for hands-on vehicle security practice."
+related:
+  - the-car-hacker-s-handbook
+  - icsim
+  - car-hacking-village
 sources:
   - url: "https://www.opengarages.org/"
     retrieved: 2026-11-01
@@ -21,6 +25,7 @@ sources:
 related:
   - the-car-hacker-s-handbook
   - icsim
+  - car-hacking-village
 ---
 
 Open vehicle research collective behind the Car Hacker's Handbook, publishing the free edition of the book, ICSim, and workshop material for hands-on vehicle security practice.

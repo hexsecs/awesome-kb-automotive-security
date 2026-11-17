@@ -8,11 +8,19 @@ url: "https://arxiv.org/abs/2012.14600"
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Verma et al., 2020. Systematises the CAN IDS dataset landscape, documents the flaws in earlier datasets, and introduces ROAD."
+related:
+  - gids-gan-based-intrusion-detection-system-for-in-vehicle-network
+  - on-the-real-world-applicability-of-automotive-can-intrusion-detection-systems
+  - evading-voltage-based-intrusion-detection-on-automotive-can
+  - car-hacking-dataset
+  - can-train-and-test
+  - in-vehicle-intrusion-detection
+  - road
 sources:
   - url: "https://arxiv.org/abs/2012.14600"
     retrieved: 2026-11-01
@@ -27,6 +35,7 @@ related:
   - car-hacking-dataset
   - can-train-and-test
   - in-vehicle-intrusion-detection
+  - road
 ---
 
 Verma et al., 2020. Systematises the CAN IDS dataset landscape, documents the flaws in earlier datasets, and introduces ROAD.

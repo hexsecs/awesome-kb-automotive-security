@@ -8,11 +8,18 @@ url: "https://www.usenix.org/conference/vehiclesec26/presentation/lazeski"
 status: published
 last_checked: 2026-11-01
 created: 2026-11-01
-updated: 2026-11-01
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: 61ba124
 list_summary: "Lazeski et al., USENIX VehicleSec 2026. Work in progress showing that ML-based CAN intrusion detectors often learn dataset shortcuts because common datasets contain only simple attacks, so high scores do not imply robustness against a practical attacker."
+related:
+  - gids-gan-based-intrusion-detection-system-for-in-vehicle-network
+  - a-comprehensive-guide-to-can-ids-data-and-introduction-of-the-road-dataset
+  - car-hacking-dataset
+  - can-train-and-test
+  - in-vehicle-intrusion-detection
+  - a-formal-security-analysis-of-can-xl
 sources:
   - url: "https://www.usenix.org/conference/vehiclesec26/presentation/lazeski"
     retrieved: 2026-11-01
@@ -24,6 +31,7 @@ related:
   - car-hacking-dataset
   - can-train-and-test
   - in-vehicle-intrusion-detection
+  - a-formal-security-analysis-of-can-xl
 ---
 
 Lazeski et al., USENIX VehicleSec 2026. Work in progress showing that ML-based CAN intrusion detectors often learn dataset shortcuts because common datasets contain only simple attacks, so high scores do not imply robustness against a practical attacker.

@@ -8,11 +8,17 @@ url: "https://tches.iacr.org/index.php/TCHES/article/view/9063"
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Wouters, Gierlichs, and Preneel, CHES 2021. Chains a BLE firmware downgrade and a key fob update flaw into unlocking and driving away a Tesla Model X."
+related:
+  - fast-furious-and-insecure-passive-keyless-entry-and-start-systems-in-modern-supercars
+  - sok-stealing-cars-since-remote-keyless-entry-introduction-and-how-to-defend-from-it
+  - relay-attacks-on-passive-keyless-entry-and-start-systems-in-modern-cars
+  - key-fob-relay-attacks
+  - how-i-discovered-and-hacked-learning-codes-of-the-key-fob-of-a-car-assembled-in-my-country
 sources:
   - url: "https://tches.iacr.org/index.php/TCHES/article/view/9063"
     retrieved: 2026-11-01
@@ -25,6 +31,7 @@ related:
   - sok-stealing-cars-since-remote-keyless-entry-introduction-and-how-to-defend-from-it
   - relay-attacks-on-passive-keyless-entry-and-start-systems-in-modern-cars
   - key-fob-relay-attacks
+  - how-i-discovered-and-hacked-learning-codes-of-the-key-fob-of-a-car-assembled-in-my-country
 ---
 
 Wouters, Gierlichs, and Preneel, CHES 2021. Chains a BLE firmware downgrade and a key fob update flaw into unlocking and driving away a Tesla Model X.

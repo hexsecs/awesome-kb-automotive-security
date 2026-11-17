@@ -8,12 +8,35 @@ url: "https://github.com/jamores/eth-ws-someip"
 status: maintenance
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Wireshark LUA dissectors for Automotive Ethernet SOME/IP and SOME/IP-SD protocols (Autosar 4.2)."
-related: [vsomeip, scapy, ics-cap, someip-protocol-fuzzer, someip]
+related:
+  - vsomeip
+  - scapy
+  - ics-cap
+  - someip-protocol-fuzzer
+  - someip
+  - protocrawler
+  - automotive-ethernet
+related:
+  - vsomeip
+  - scapy
+  - ics-cap
+  - someip-protocol-fuzzer
+  - someip
+  - protocrawler
+  - automotive-ethernet
+related:
+  - vsomeip
+  - scapy
+  - ics-cap
+  - someip-protocol-fuzzer
+  - someip
+  - protocrawler
+  - automotive-ethernet
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

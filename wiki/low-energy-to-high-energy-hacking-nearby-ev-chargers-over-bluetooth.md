@@ -8,11 +8,17 @@ url: "https://citation.thinkst.com/talk/89711"
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: brief
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Alkemade and Nassar, Black Hat USA 2024. Bluetooth attacks on three EV chargers, built from exploits demonstrated at Pwn2Own Automotive 2024."
+related:
+  - pwn2own-automotive-2026-day-three-results-and-the-master-of-pwn
+  - ocpp-charging-attacks
+  - brokenwire-wireless-disruption-of-ccs-electric-vehicle-charging
+  - over-the-air-compromise-of-modern-volkswagen-group-vehicles
+  - pedal-to-the-bare-metal
 sources:
   - url: "https://citation.thinkst.com/talk/89711"
     retrieved: 2026-11-01
@@ -22,6 +28,8 @@ related:
   - pwn2own-automotive-2026-day-three-results-and-the-master-of-pwn
   - ocpp-charging-attacks
   - brokenwire-wireless-disruption-of-ccs-electric-vehicle-charging
+  - over-the-air-compromise-of-modern-volkswagen-group-vehicles
+  - pedal-to-the-bare-metal
 ---
 
 Alkemade and Nassar, Black Hat USA 2024. Bluetooth attacks on three EV chargers, built from exploits demonstrated at Pwn2Own Automotive 2024.

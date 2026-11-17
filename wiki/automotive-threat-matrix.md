@@ -8,12 +8,23 @@ url: "https://atm.automotiveisac.com/"
 status: active
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Auto-ISAC's MITRE ATT&CK-style matrix of automotive adversary tactics and techniques, drawn from validated attacks and reproducible research, for threat modelling, TARA, and intelligence sharing."
-related: [automotive-threat-modeling-template, autotara, avcdl, tara-methodology]
+related:
+  - automotive-threat-modeling-template
+  - autotara
+  - avcdl
+  - tara-methodology
+  - security-autodesigner
+related:
+  - automotive-threat-modeling-template
+  - autotara
+  - avcdl
+  - tara-methodology
+  - security-autodesigner
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

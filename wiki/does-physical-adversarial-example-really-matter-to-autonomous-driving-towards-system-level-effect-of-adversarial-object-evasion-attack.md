@@ -8,11 +8,31 @@ url: "https://arxiv.org/abs/2308.11894"
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Wang et al., ICCV 2023. Measures published physical adversarial attacks against a full driving pipeline rather than the perception model alone, and finds that component-level success rarely translates into system-level effects such as traffic rule violations."
+related:
+  - invisible-for-both-camera-and-lidar-security-of-multi-sensor-fusion-based-perception-in-autonomous-driving
+  - adversarial-sensor-attack-on-lidar-based-perception-in-autonomous-driving
+  - a-first-physical-world-trajectory-prediction-attack-via-lidar-induced-deceptions-in-autonomous-driving
+  - dirty-road-can-attack-security-of-deep-learning-based-automated-lane-centering-under-physical-world-attack
+  - sok-the-next-frontier-in-av-security-systematizing-perception-attacks-and-the-emerging-threat-of-multi-sensor-fusion
+  - robust-physical-world-attacks-on-deep-learning-visual-classification
+  - sok-how-sensor-attacks-disrupt-autonomous-vehicles-an-end-to-end-analysis-challenges-and-missed-threats
+  - perspective-shift-attacks-against-optical-perception-sensors-a-novel-attack-vector-on-lidar-and-camera
+  - potential-cyberattacks-on-automated-vehicles
+related:
+  - invisible-for-both-camera-and-lidar-security-of-multi-sensor-fusion-based-perception-in-autonomous-driving
+  - adversarial-sensor-attack-on-lidar-based-perception-in-autonomous-driving
+  - a-first-physical-world-trajectory-prediction-attack-via-lidar-induced-deceptions-in-autonomous-driving
+  - dirty-road-can-attack-security-of-deep-learning-based-automated-lane-centering-under-physical-world-attack
+  - sok-the-next-frontier-in-av-security-systematizing-perception-attacks-and-the-emerging-threat-of-multi-sensor-fusion
+  - robust-physical-world-attacks-on-deep-learning-visual-classification
+  - sok-how-sensor-attacks-disrupt-autonomous-vehicles-an-end-to-end-analysis-challenges-and-missed-threats
+  - perspective-shift-attacks-against-optical-perception-sensors-a-novel-attack-vector-on-lidar-and-camera
+  - potential-cyberattacks-on-automated-vehicles
 sources:
   - url: "https://arxiv.org/abs/2308.11894"
     retrieved: 2026-11-01
@@ -27,6 +47,9 @@ related:
   - dirty-road-can-attack-security-of-deep-learning-based-automated-lane-centering-under-physical-world-attack
   - sok-the-next-frontier-in-av-security-systematizing-perception-attacks-and-the-emerging-threat-of-multi-sensor-fusion
   - robust-physical-world-attacks-on-deep-learning-visual-classification
+  - sok-how-sensor-attacks-disrupt-autonomous-vehicles-an-end-to-end-analysis-challenges-and-missed-threats
+  - perspective-shift-attacks-against-optical-perception-sensors-a-novel-attack-vector-on-lidar-and-camera
+  - potential-cyberattacks-on-automated-vehicles
 ---
 
 Wang et al., ICCV 2023. Measures published physical adversarial attacks against a full driving pipeline rather than the perception model alone, and finds that component-level success rarely translates into system-level effects such as traffic rule violations.

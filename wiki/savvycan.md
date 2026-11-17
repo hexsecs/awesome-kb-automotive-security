@@ -8,12 +8,65 @@ url: "https://github.com/collin80/SavvyCAN"
 status: active
 last_checked: 2026-10-31
 created: 2026-10-31
-updated: 2026-10-31
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Cross-platform Qt-based CAN bus reverse engineering and capture tool with DBC file loading, UDS scanning, and fuzzing support."
-related: [can-utils, lindwurm, canalyzat0r, cantools]
+related:
+  - can-utils
+  - lindwurm
+  - canalyzat0r
+  - cantools
+  - canlab
+  - can-commander
+  - busmaster
+  - cancat
+  - cangaroo
+  - canhack
+  - cantoolz
+  - obdium
+  - opendbc
+  - piccante
+  - python-can-isotp
+  - uds-seed-key
+  - canexplorer
+related:
+  - can-utils
+  - lindwurm
+  - canalyzat0r
+  - cantools
+  - canlab
+  - can-commander
+  - busmaster
+  - cancat
+  - cangaroo
+  - canhack
+  - cantoolz
+  - obdium
+  - opendbc
+  - piccante
+  - python-can-isotp
+  - uds-seed-key
+  - canexplorer
+related:
+  - can-utils
+  - lindwurm
+  - canalyzat0r
+  - cantools
+  - canlab
+  - can-commander
+  - busmaster
+  - cancat
+  - cangaroo
+  - canhack
+  - cantoolz
+  - obdium
+  - opendbc
+  - piccante
+  - python-can-isotp
+  - uds-seed-key
+  - canexplorer
 license: MIT
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"

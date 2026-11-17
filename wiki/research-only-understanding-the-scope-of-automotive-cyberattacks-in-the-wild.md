@@ -8,11 +8,18 @@ url: "https://www.usenix.org/conference/vehiclesec26/presentation/keynote-savage
 status: unknown
 last_checked: 2026-11-06
 created: 2026-11-06
-updated: 2026-11-06
+updated: 2026-11-16
 depth: stub
 source_list: awesome-automotive-security
 source_commit: a25e33d
 list_summary: "Savage, USENIX VehicleSec 2026 keynote. Asks why fifteen years of remote-takeover demonstrations have not been matched by attacks in the wild, and what would change that."
+related:
+  - ble-theft-auto-evaluating-the-security-of-aftermarket-ble-based-automotive-remote-control-systems
+  - remote-attacks-on-automated-vehicles-sensors-experiments-on-camera-and-lidar
+  - sok-stealing-cars-since-remote-keyless-entry-introduction-and-how-to-defend-from-it
+  - fast-and-vulnerable-a-story-of-telematic-failures
+  - canflict-exploiting-peripheral-conflicts-for-data-link-layer-attacks-on-automotive-networks
+  - automotive-security-timeline
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-06

@@ -8,11 +8,19 @@ url: "https://www.ndss-symposium.org/ndss-paper/evading-voltage-based-intrusion-
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Bhatia et al., NDSS 2021. The DUET masquerade attack, in which two compromised ECUs corrupt the bus voltage and defeat every published voltage-based IDS, including Viden."
+related:
+  - viden-attacker-identification-on-in-vehicle-networks
+  - gids-gan-based-intrusion-detection-system-for-in-vehicle-network
+  - fingerprinting-electronic-control-units-for-vehicle-intrusion-detection
+  - error-handling-of-in-vehicle-networks-makes-them-vulnerable
+  - a-comprehensive-guide-to-can-ids-data-and-introduction-of-the-road-dataset
+  - in-vehicle-intrusion-detection
+  - sok-kicking-can-down-the-road-systematizing-can-security-knowledge
 sources:
   - url: "https://doi.org/10.14722/ndss.2021.23013"
     retrieved: 2026-11-01
@@ -25,6 +33,7 @@ related:
   - error-handling-of-in-vehicle-networks-makes-them-vulnerable
   - a-comprehensive-guide-to-can-ids-data-and-introduction-of-the-road-dataset
   - in-vehicle-intrusion-detection
+  - sok-kicking-can-down-the-road-systematizing-can-security-knowledge
 ---
 
 Bhatia et al., NDSS 2021. The DUET masquerade attack, in which two compromised ECUs corrupt the bus voltage and defeat every published voltage-based IDS, including Viden.

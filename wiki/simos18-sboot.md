@@ -8,12 +8,27 @@ url: "https://github.com/bri3d/Simos18_SBOOT"
 status: unknown
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Documented exploit chain against the VW Simos18 supplier bootloader, chaining PWM entry, a weak Mersenne Twister seed/key, and a CRC bounds-check flaw into arbitrary flash read."
-related: [tc1791-can-bsl, uds-seed-key, secure-firmware-updates, ivi-update-trust, diagnostic-service-abuse, bootloader-stages]
+related:
+  - tc1791-can-bsl
+  - uds-seed-key
+  - secure-firmware-updates
+  - ivi-update-trust
+  - diagnostic-service-abuse
+  - bootloader-stages
+  - automotive-security-research
+related:
+  - tc1791-can-bsl
+  - uds-seed-key
+  - secure-firmware-updates
+  - ivi-update-trust
+  - diagnostic-service-abuse
+  - bootloader-stages
+  - automotive-security-research
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

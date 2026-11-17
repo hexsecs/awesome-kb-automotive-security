@@ -8,12 +8,23 @@ url: "https://plaxidityx.com/security-engines/security-autodesigner/"
 status: active
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-03
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: 1e15fb0
 list_summary: "Automated TARA platform for creating ISO 21434 and UNR 155 compliant threat analysis reports."
-related: [autotara, avcdl, automotive-threat-matrix, tara-methodology]
+related:
+  - autotara
+  - avcdl
+  - automotive-threat-matrix
+  - tara-methodology
+  - automating-function-level-tara-for-automotive-full-lifecycle-security
+related:
+  - autotara
+  - avcdl
+  - automotive-threat-matrix
+  - tara-methodology
+  - automating-function-level-tara-for-automotive-full-lifecycle-security
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

@@ -8,11 +8,35 @@ url: "https://www.usenix.org/conference/usenixsecurity16/technical-sessions/pres
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Garcia, Oswald, Kasper, and Pavlides, USENIX Security 2016. Recovers shared global keys covering most Volkswagen Group vehicles sold over two decades, and breaks the Hitag2 rolling-code scheme."
+related:
+  - gone-in-360-seconds-hijacking-with-hitag2
+  - dismantling-megamos-crypto-wirelessly-lockpicking-a-vehicle-immobilizer
+  - fast-furious-and-insecure-passive-keyless-entry-and-start-systems-in-modern-supercars
+  - rolling-code-failure-classes
+  - shared-and-default-secrets
+  - sok-stealing-cars-since-remote-keyless-entry-introduction-and-how-to-defend-from-it
+  - rollback-a-new-time-agnostic-replay-attack-against-the-automotive-remote-keyless-entry-systems
+  - beneath-the-bonnet-a-breakdown-of-diagnostic-security
+  - leia-a-lightweight-authentication-protocol-for-can
+  - over-the-air-compromise-of-modern-volkswagen-group-vehicles
+  - how-i-discovered-and-hacked-learning-codes-of-the-key-fob-of-a-car-assembled-in-my-country
+related:
+  - gone-in-360-seconds-hijacking-with-hitag2
+  - dismantling-megamos-crypto-wirelessly-lockpicking-a-vehicle-immobilizer
+  - fast-furious-and-insecure-passive-keyless-entry-and-start-systems-in-modern-supercars
+  - rolling-code-failure-classes
+  - shared-and-default-secrets
+  - sok-stealing-cars-since-remote-keyless-entry-introduction-and-how-to-defend-from-it
+  - rollback-a-new-time-agnostic-replay-attack-against-the-automotive-remote-keyless-entry-systems
+  - beneath-the-bonnet-a-breakdown-of-diagnostic-security
+  - leia-a-lightweight-authentication-protocol-for-can
+  - over-the-air-compromise-of-modern-volkswagen-group-vehicles
+  - how-i-discovered-and-hacked-learning-codes-of-the-key-fob-of-a-car-assembled-in-my-country
 sources:
   - url: "https://www.usenix.org/system/files/conference/usenixsecurity16/sec16_paper_garcia.pdf"
     retrieved: 2026-11-01
@@ -24,6 +48,12 @@ related:
   - fast-furious-and-insecure-passive-keyless-entry-and-start-systems-in-modern-supercars
   - rolling-code-failure-classes
   - shared-and-default-secrets
+  - sok-stealing-cars-since-remote-keyless-entry-introduction-and-how-to-defend-from-it
+  - rollback-a-new-time-agnostic-replay-attack-against-the-automotive-remote-keyless-entry-systems
+  - beneath-the-bonnet-a-breakdown-of-diagnostic-security
+  - leia-a-lightweight-authentication-protocol-for-can
+  - over-the-air-compromise-of-modern-volkswagen-group-vehicles
+  - how-i-discovered-and-hacked-learning-codes-of-the-key-fob-of-a-car-assembled-in-my-country
 ---
 
 Garcia, Oswald, Kasper, and Pavlides, USENIX Security 2016. Recovers shared global keys covering most Volkswagen Group vehicles sold over two decades, and breaks the Hitag2 rolling-code scheme.

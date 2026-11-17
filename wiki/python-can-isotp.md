@@ -8,12 +8,27 @@ url: "https://github.com/pylessard/python-can-isotp"
 status: active
 last_checked: 2026-10-31
 created: 2026-10-31
-updated: 2026-10-31
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "ISO-TP (ISO 15765) transport for Python on top of python-can or Linux SocketCAN, the segmentation layer that UDS and OBD-II diagnostics run over."
-related: [python-can, savvycan, caringcaribou]
+related:
+  - python-can
+  - savvycan
+  - caringcaribou
+  - uds
+  - udsoncan
+  - obdium
+  - uds-seed-key
+related:
+  - python-can
+  - savvycan
+  - caringcaribou
+  - uds
+  - udsoncan
+  - obdium
+  - uds-seed-key
 license: MIT
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"

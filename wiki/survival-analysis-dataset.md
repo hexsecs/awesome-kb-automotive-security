@@ -8,11 +8,15 @@ url: "https://ocslab.hksecurity.net/Datasets/survival-ids"
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: brief
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "HCRL CAN captures from a Hyundai YF Sonata, Kia Soul, and Chevrolet Spark with labelled flooding, fuzzy, and malfunction attacks."
+related:
+  - car-hacking-dataset
+  - syncan
+  - tow-ids-automotive-ethernet-intrusion-dataset
 sources:
   - url: "https://ocslab.hksecurity.net/Datasets/survival-ids"
     retrieved: 2026-11-01
@@ -21,6 +25,7 @@ sources:
 related:
   - car-hacking-dataset
   - syncan
+  - tow-ids-automotive-ethernet-intrusion-dataset
 ---
 
 HCRL CAN captures from a Hyundai YF Sonata, Kia Soul, and Chevrolet Spark with labelled flooding, fuzzy, and malfunction attacks.

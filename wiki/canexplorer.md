@@ -8,11 +8,18 @@ url: "https://github.com/AKJ7/CANExplorer"
 status: unknown
 last_checked: 2026-11-09
 created: 2026-11-09
-updated: 2026-11-09
+updated: 2026-11-16
 depth: stub
 source_list: awesome-automotive-security
 source_commit: 40ccbae
 list_summary: "Cross-platform CAN, CAN FD, and LIN analysis GUI with reverse-engineering tools, UDS discovery and fuzzing, DoIP and SOME/IP support, and SecOC decoding."
+related:
+  - ecubus-pro
+  - savvycan
+  - automated-cross-platform-reverse-engineering-of-can-bus-commands-from-mobile-apps
+  - uds
+  - autofuze
+  - scapy
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-09

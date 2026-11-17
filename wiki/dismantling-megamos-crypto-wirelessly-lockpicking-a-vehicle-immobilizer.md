@@ -8,11 +8,20 @@ url: "https://www.usenix.org/conference/usenixsecurity15/technical-sessions/pres
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Verdult, Garcia, and Ege, USENIX Security 2015. Reverse engineers the Megamos immobilizer used by Audi, Fiat, Honda, Volkswagen, and Volvo; famously injuncted for two years before publication."
+related:
+  - gone-in-360-seconds-hijacking-with-hitag2
+  - key-fob-relay-attacks
+  - lock-it-and-still-lose-it-on-the-in-security-of-automotive-remote-keyless-entry-systems
+  - fast-furious-and-insecure-passive-keyless-entry-and-start-systems-in-modern-supercars
+  - shared-and-default-secrets
+  - proxmark3
+  - sok-stealing-cars-since-remote-keyless-entry-introduction-and-how-to-defend-from-it
+  - vehicle-immobilization-revisited
 sources:
   - url: "https://www.usenix.org/conference/usenixsecurity15/technical-sessions/presentation/verdult"
     retrieved: 2026-11-01
@@ -24,6 +33,9 @@ related:
   - lock-it-and-still-lose-it-on-the-in-security-of-automotive-remote-keyless-entry-systems
   - fast-furious-and-insecure-passive-keyless-entry-and-start-systems-in-modern-supercars
   - shared-and-default-secrets
+  - proxmark3
+  - sok-stealing-cars-since-remote-keyless-entry-introduction-and-how-to-defend-from-it
+  - vehicle-immobilization-revisited
 ---
 
 Verdult, Garcia, and Ege, USENIX Security 2015. Reverse engineers the Megamos immobilizer used by Audi, Fiat, Honda, Volkswagen, and Volvo; famously injuncted for two years before publication.

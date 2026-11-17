@@ -8,12 +8,21 @@ url: "https://github.com/commaai/panda"
 status: active
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Open-source CAN and CAN FD interface firmware from comma.ai running on an STM32H725, with Python bindings for full read/write access to vehicle buses."
-related: [cantact, ramn]
+related:
+  - cantact
+  - ramn
+  - secoc-key-extractor
+  - piccante
+related:
+  - cantact
+  - ramn
+  - secoc-key-extractor
+  - piccante
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

@@ -8,11 +8,15 @@ url: "https://zenodo.org/records/18714273"
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: brief
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Kulandaivel, Jain, Guajardo, and Sekar, escar USA 2022. Shows a compromised ECU can authenticate against a safety-critical ECU's SecurityAccess without the failed attempts a CAN IDS would flag."
+related:
+  - uds-seed-key
+  - silently-disabling-ecus-and-enabling-blind-attacks-on-the-can-bus
+  - ble-theft-auto-evaluating-the-security-of-aftermarket-ble-based-automotive-remote-control-systems
 sources:
   - url: "https://zenodo.org/records/18714273"
     retrieved: 2026-11-01
@@ -21,6 +25,7 @@ sources:
 related:
   - uds-seed-key
   - silently-disabling-ecus-and-enabling-blind-attacks-on-the-can-bus
+  - ble-theft-auto-evaluating-the-security-of-aftermarket-ble-based-automotive-remote-control-systems
 ---
 
 Kulandaivel, Jain, Guajardo, and Sekar, escar USA 2022. Shows a compromised ECU can authenticate against a safety-critical ECU's SecurityAccess without the failed attempts a CAN IDS would flag.

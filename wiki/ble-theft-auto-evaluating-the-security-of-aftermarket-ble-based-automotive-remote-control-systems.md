@@ -8,11 +8,18 @@ url: "https://cseweb.ucsd.edu/~schulman/docs/sec26-bletheftauto.pdf"
 status: published
 last_checked: 2026-11-14
 created: 2026-11-14
-updated: 2026-11-14
+updated: 2026-11-16
 depth: stub
 source_list: awesome-automotive-security
 source_commit: 46f5cc7
 list_summary: "Yu et al., USENIX Security 2026. Shows three of six aftermarket Bluetooth vehicle remote-control systems have critical pairing and authentication flaws, including a shared key across dealer-installed devices that lets a nearby attacker unlock doors and immobilize engines."
+related:
+  - fast-and-vulnerable-a-story-of-telematic-failures
+  - comprehensive-experimental-analyses-of-automotive-attack-surfaces
+  - research-only-understanding-the-scope-of-automotive-cyberattacks-in-the-wild
+  - vehicle-immobilization-revisited
+  - candid-a-stealthy-stepping-stone-attack-to-bypass-authentication-on-ecus
+  - vulcan-efficient-component-authentication-and-software-isolation-for-automotive-control-networks
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-14

@@ -8,12 +8,21 @@ url: "https://github.com/Fraunhofer-AISEC/gallia"
 status: active
 last_checked: 2026-10-31
 created: 2026-10-31
-updated: 2026-10-31
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Extendable automotive pentesting framework from Fraunhofer AISEC focused on UDS, with DoIP and ISO-TP transports and structured logging for reproducible scans."
-related: [udsoncan, iso14229, caringcaribou]
+related:
+  - udsoncan
+  - iso14229
+  - caringcaribou
+  - ford-ecu-bruteforcer
+related:
+  - udsoncan
+  - iso14229
+  - caringcaribou
+  - ford-ecu-bruteforcer
 license: "Apache-2.0"
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"

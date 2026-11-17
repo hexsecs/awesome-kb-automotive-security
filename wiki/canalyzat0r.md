@@ -8,12 +8,47 @@ url: "https://github.com/schutzwerk/CANalyzat0r"
 status: active
 last_checked: 2026-10-31
 created: 2026-10-31
-updated: 2026-10-31
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Security analysis toolkit for proprietary car protocols with graphical sniffing, fuzzing, packet comparison, background-noise filtering, and UDS fuzzing."
-related: [icsim, savvycan, cantoolz]
+related:
+  - icsim
+  - savvycan
+  - cantoolz
+  - automated-cross-platform-reverse-engineering-of-can-bus-commands-from-mobile-apps
+  - can-injection
+  - canflict
+  - canter
+  - canvas-fast-and-inexpensive-automotive-network-mapping
+  - caringcaribou
+  - lindwurm
+  - pycangui
+related:
+  - icsim
+  - savvycan
+  - cantoolz
+  - automated-cross-platform-reverse-engineering-of-can-bus-commands-from-mobile-apps
+  - can-injection
+  - canflict
+  - canter
+  - canvas-fast-and-inexpensive-automotive-network-mapping
+  - caringcaribou
+  - lindwurm
+  - pycangui
+related:
+  - icsim
+  - savvycan
+  - cantoolz
+  - automated-cross-platform-reverse-engineering-of-can-bus-commands-from-mobile-apps
+  - can-injection
+  - canflict
+  - canter
+  - canvas-fast-and-inexpensive-automotive-network-mapping
+  - caringcaribou
+  - lindwurm
+  - pycangui
 license: GPL-3.0
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"

@@ -8,12 +8,21 @@ url: "https://github.com/autopi-io/autopi-core"
 status: active
 last_checked: 2026-10-31
 created: 2026-10-31
-updated: 2026-10-31
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Open-source core software for the AutoPi dongle, a Raspberry Pi-based OBD-II device for vehicle diagnostics, CAN bus data collection, and automotive IoT applications."
-related: [can-utils, caringcaribou, udsoncan]
+related:
+  - can-utils
+  - caringcaribou
+  - udsoncan
+  - linusbconverter
+related:
+  - can-utils
+  - caringcaribou
+  - udsoncan
+  - linusbconverter
 license: "Apache-2.0"
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"

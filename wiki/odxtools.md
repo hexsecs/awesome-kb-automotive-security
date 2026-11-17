@@ -8,12 +8,21 @@ url: "https://github.com/mercedes-benz/odxtools"
 status: active
 last_checked: 2026-10-31
 created: 2026-10-31
-updated: 2026-10-31
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Python toolkit for parsing ODX/PDX (ISO 22901) diagnostic databases and encoding, decoding, and snooping ECU diagnostic sessions."
-related: [opensovd-classic-diagnostic-adapter, udsoncan, ecubus-pro]
+related:
+  - opensovd-classic-diagnostic-adapter
+  - udsoncan
+  - ecubus-pro
+  - vw-flash
+related:
+  - opensovd-classic-diagnostic-adapter
+  - udsoncan
+  - ecubus-pro
+  - vw-flash
 license: "MIT"
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"

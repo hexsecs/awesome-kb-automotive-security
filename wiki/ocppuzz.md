@@ -8,11 +8,17 @@ url: "https://github.com/jongchan-hong/OCPPuzz"
 status: unknown
 last_checked: 2026-11-14
 created: 2026-11-14
-updated: 2026-11-14
+updated: 2026-11-16
 depth: stub
 source_list: awesome-automotive-security
 source_commit: 46f5cc7
 list_summary: "Specification-driven fuzzer for OCPP charging station management systems that extracts message rules and state transitions from the specification with a language model and reports deviations, uncovering denial-of-service and free-charging flaws in open-source systems."
+related:
+  - ocppstorm-a-comprehensive-fuzzing-tool-for-ocpp-implementations
+  - emuocpp
+  - everest
+  - truckdevil
+  - race-to-charge-concurrency-bugs-and-state-integrity-violations-in-ev-charging-infrastructure
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-14

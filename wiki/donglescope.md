@@ -8,12 +8,23 @@ url: "https://github.com/OSUSecLab/DongleScope"
 status: unknown
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Automated tool for detecting vulnerabilities in wireless OBD-II dongles based on USENIX Security 2020 research."
-related: [plug-n-pwned-comprehensive-vulnerability-analysis-of-obd-ii-dongles, pwnobd]
+related:
+  - plug-n-pwned-comprehensive-vulnerability-analysis-of-obd-ii-dongles
+  - pwnobd
+  - automated-cross-platform-reverse-engineering-of-can-bus-commands-from-mobile-apps
+  - drivethru-car-hacking-fast-food-faster-data-breach
+  - piccante
+related:
+  - plug-n-pwned-comprehensive-vulnerability-analysis-of-obd-ii-dongles
+  - pwnobd
+  - automated-cross-platform-reverse-engineering-of-can-bus-commands-from-mobile-apps
+  - drivethru-car-hacking-fast-food-faster-data-breach
+  - piccante
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

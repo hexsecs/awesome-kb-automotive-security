@@ -8,12 +8,29 @@ url: "https://github.com/ecubus/EcuBus-Pro"
 status: active
 last_checked: 2026-10-31
 created: 2026-10-31
-updated: 2026-10-31
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Cross-platform open-source ECU tool with UDS, CAN-TP, DoIP, LIN, and SOME/IP support, DBC and LDF databases, TypeScript scripting in the style of CAPL, and a command-line interface."
-related: [udsoncan, odxtools, python-can]
+related:
+  - udsoncan
+  - odxtools
+  - python-can
+  - opensovd-classic-diagnostic-adapter
+  - canexplorer
+related:
+  - udsoncan
+  - odxtools
+  - python-can
+  - opensovd-classic-diagnostic-adapter
+  - canexplorer
+related:
+  - udsoncan
+  - odxtools
+  - python-can
+  - opensovd-classic-diagnostic-adapter
+  - canexplorer
 license: "Apache-2.0"
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"

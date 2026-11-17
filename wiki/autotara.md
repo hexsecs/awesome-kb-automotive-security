@@ -8,12 +8,27 @@ url: "https://github.com/HackProof/AutoTARA"
 status: active
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Web-based TARA (Threat Analysis and Risk Assessment) framework for ISO/SAE 21434 that models systems as attack graphs and applies MITRE's CTSA/CRRA prioritization methodology with a Meta Attack Language simulation backend."
-related: [automotive-threat-matrix, automotive-threat-modeling-template, security-autodesigner, automating-function-level-tara-for-automotive-full-lifecycle-security, tara-methodology]
+related:
+  - automotive-threat-matrix
+  - automotive-threat-modeling-template
+  - security-autodesigner
+  - automating-function-level-tara-for-automotive-full-lifecycle-security
+  - tara-methodology
+  - automotive-threat-analysis-and-risk-assessment-in-practice
+  - avcdl
+related:
+  - automotive-threat-matrix
+  - automotive-threat-modeling-template
+  - security-autodesigner
+  - automating-function-level-tara-for-automotive-full-lifecycle-security
+  - tara-methodology
+  - automotive-threat-analysis-and-risk-assessment-in-practice
+  - avcdl
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

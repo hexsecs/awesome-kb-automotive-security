@@ -6,12 +6,12 @@ Generated from page frontmatter by tools/ingest.py; do not edit by hand.
 ## Categories
 
 - [CAN Bus Analysis](wiki/index-can-bus-analysis.md) — 31 entries
-- [Diagnostic Tools](wiki/index-diagnostic-tools.md) — 19 entries
+- [Diagnostic Tools](wiki/index-diagnostic-tools.md) — 20 entries
 - [Firmware and ECU Reverse Engineering](wiki/index-firmware-and-ecu-reverse-engineering.md) — 8 entries
 - [Automotive Ethernet](wiki/index-automotive-ethernet.md) — 6 entries
 - [RF and Key Fob Analysis](wiki/index-rf-and-key-fob-analysis.md) — 6 entries
 - [Infotainment and IVI](wiki/index-infotainment-and-ivi.md) — 7 entries
-- [V2X Security](wiki/index-v2x-security.md) — 6 entries
+- [V2X Security](wiki/index-v2x-security.md) — 7 entries
 - [EV Charging Security](wiki/index-ev-charging-security.md) — 12 entries
 - [Hardware Interfaces](wiki/index-hardware-interfaces.md) — 10 entries
 - [Security Analysis](wiki/index-security-analysis.md) — 6 entries
@@ -20,7 +20,7 @@ Generated from page frontmatter by tools/ingest.py; do not edit by hand.
 - [Research Papers](wiki/index-research-papers.md) — 69 entries
 - [Conference Presentations](wiki/index-conference-presentations.md) — 21 entries
 - [Books](wiki/index-books.md) — 13 entries
-- [Learning Resources](wiki/index-learning-resources.md) — 7 entries
+- [Learning Resources](wiki/index-learning-resources.md) — 9 entries
 - [Related Awesome Lists](wiki/index-related-awesome-lists.md) — 6 entries
 
 ## Concepts

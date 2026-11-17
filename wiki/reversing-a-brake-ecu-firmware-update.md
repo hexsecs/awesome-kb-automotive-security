@@ -8,11 +8,19 @@ url: "https://www.usenix.org/conference/vehiclesec26/presentation/gardiner"
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Gardiner, USENIX VehicleSec 2026. Reverse engineers the Bendix EC80 brake ECU's J2497 power-line updater, diffs the firmware to show a safety recall also patched security bugs, and demonstrates a write-where primitive and DoS on a bench and in a moving truck."
+related:
+  - secure-firmware-updates
+  - uds-seed-key
+  - uds-firmware-extraction
+  - vw-flash
+  - expanding-the-attack-scenarios-of-sae-j1939-a-comprehensive-analysis-of-established-and-novel-vulnerabilities-in-transport-protocol
+  - firmware-acquisition
+  - zephyr-reference-ecu
 sources:
   - url: "https://www.usenix.org/conference/vehiclesec26/presentation/gardiner"
     retrieved: 2026-11-01
@@ -25,6 +33,7 @@ related:
   - vw-flash
   - expanding-the-attack-scenarios-of-sae-j1939-a-comprehensive-analysis-of-established-and-novel-vulnerabilities-in-transport-protocol
   - firmware-acquisition
+  - zephyr-reference-ecu
 ---
 
 Gardiner, USENIX VehicleSec 2026. Reverse engineers the Bendix EC80 brake ECU's J2497 power-line updater, diffs the firmware to show a safety recall also patched security bugs, and demonstrates a write-where primitive and DoS on a bench and in a moving truck.

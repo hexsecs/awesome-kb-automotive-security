@@ -8,12 +8,25 @@ url: "https://github.com/zombieCraig/UDSim"
 status: maintenance
 last_checked: 2026-10-31
 created: 2026-10-31
-updated: 2026-10-31
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "UDS (Unified Diagnostic Services) ECU simulator and fuzzer for discovering and testing UDS services."
-related: [uds-server, icsim, can-utils, simulation-and-test-doubles, diagnostic-fuzzing]
+related:
+  - uds-server
+  - icsim
+  - can-utils
+  - simulation-and-test-doubles
+  - diagnostic-fuzzing
+  - doip-sim-ecu-dsl
+related:
+  - uds-server
+  - icsim
+  - can-utils
+  - simulation-and-test-doubles
+  - diagnostic-fuzzing
+  - doip-sim-ecu-dsl
 license: "GPL-3.0"
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"

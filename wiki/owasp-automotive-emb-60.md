@@ -8,12 +8,19 @@ url: "https://owasp.org/www-project-automotive-emb-60/"
 status: unknown
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "OWASP incubator project with open hardware and software for a single-board computer that acts as a CAN-to-USB interface through SocketCAN for penetration testing."
-related: [ramn, cantact]
+related:
+  - ramn
+  - cantact
+  - doggie
+related:
+  - ramn
+  - cantact
+  - doggie
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

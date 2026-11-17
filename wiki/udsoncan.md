@@ -8,12 +8,47 @@ url: "https://github.com/pylessard/python-udsoncan"
 status: active
 last_checked: 2026-10-31
 created: 2026-10-31
-updated: 2026-10-31
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Python implementation of the ISO 14229 UDS protocol covering session control, security access, data identifiers, and routine control."
-related: [python-can-isotp, python-doipclient, python-can, uds-seed-key]
+related:
+  - python-can-isotp
+  - python-doipclient
+  - python-can
+  - uds-seed-key
+  - uds
+  - iso14229
+  - atlas
+  - autopi
+  - conescan
+  - ecubus-pro
+  - ford-ecu-bruteforcer
+  - gallia
+  - odxtools
+  - opensovd-classic-diagnostic-adapter
+  - uds-firmware-extraction
+  - unlockecu
+  - vw-flash
+related:
+  - python-can-isotp
+  - python-doipclient
+  - python-can
+  - uds-seed-key
+  - uds
+  - iso14229
+  - atlas
+  - autopi
+  - conescan
+  - ecubus-pro
+  - ford-ecu-bruteforcer
+  - gallia
+  - odxtools
+  - opensovd-classic-diagnostic-adapter
+  - uds-firmware-extraction
+  - unlockecu
+  - vw-flash
 license: "MIT"
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"

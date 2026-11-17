@@ -8,11 +8,15 @@ url: "https://citation.thinkst.com/talk/96125"
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: brief
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Chen et al., Black Hat Asia 2025. Attack chain against more than 24 dashcam models, delivered through a drive-through ordering flow, with an accompanying tool."
+related:
+  - plug-n-pwned-comprehensive-vulnerability-analysis-of-obd-ii-dongles
+  - donglescope
+  - over-the-air-compromise-of-modern-volkswagen-group-vehicles
 sources:
   - url: "https://citation.thinkst.com/talk/96125"
     retrieved: 2026-11-01
@@ -21,6 +25,7 @@ sources:
 related:
   - plug-n-pwned-comprehensive-vulnerability-analysis-of-obd-ii-dongles
   - donglescope
+  - over-the-air-compromise-of-modern-volkswagen-group-vehicles
 ---
 
 Chen et al., Black Hat Asia 2025. Attack chain against more than 24 dashcam models, delivered through a drive-through ordering flow, with an accompanying tool.

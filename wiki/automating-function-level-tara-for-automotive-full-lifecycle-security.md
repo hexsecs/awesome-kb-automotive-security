@@ -8,11 +8,17 @@ url: "https://www.ndss-symposium.org/ndss-paper/automating-function-level-tara-f
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Yang et al., NDSS 2026. DefenseWeaver, a multi-agent LLM system that automates function-level ISO/SAE 21434 threat analysis and risk assessment, reported as deployed in four automotive projects."
+related:
+  - autotara
+  - avcdl
+  - security-autodesigner
+  - tara-methodology
+  - automotive-threat-analysis-and-risk-assessment-in-practice
 sources:
   - url: "https://www.ndss-symposium.org/ndss-paper/automating-function-level-tara-for-automotive-full-lifecycle-security/"
     retrieved: 2026-11-01
@@ -25,6 +31,7 @@ related:
   - avcdl
   - security-autodesigner
   - tara-methodology
+  - automotive-threat-analysis-and-risk-assessment-in-practice
 ---
 
 Yang et al., NDSS 2026. DefenseWeaver, a multi-agent LLM system that automates function-level ISO/SAE 21434 threat analysis and risk assessment, reported as deployed in four automotive projects.

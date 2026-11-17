@@ -8,11 +8,39 @@ url: "https://www.usenix.org/conference/usenix-security-11/comprehensive-experim
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Checkoway et al., USENIX Security 2011. Follow-up establishing the remote attack surface, compromising a vehicle over Bluetooth, cellular, and the CD player."
+related:
+  - experimental-security-analysis-of-a-modern-automobile
+  - security-and-privacy-vulnerabilities-of-in-car-wireless-networks-a-tire-pressure-monitoring-system-case-study
+  - relay-attacks-on-passive-keyless-entry-and-start-systems-in-modern-cars
+  - can-injection
+  - a-survey-of-remote-automotive-attack-surfaces
+  - diagnostic-service-abuse
+  - external-attack-surface
+  - remote-exploitation-of-an-unaltered-passenger-vehicle
+  - fast-and-vulnerable-a-story-of-telematic-failures
+  - adventures-in-automotive-networks-and-control-units
+  - security-in-automotive-bus-systems
+  - survey-on-security-threats-and-protection-mechanisms-in-embedded-automotive-networks
+  - ble-theft-auto-evaluating-the-security-of-aftermarket-ble-based-automotive-remote-control-systems
+related:
+  - experimental-security-analysis-of-a-modern-automobile
+  - security-and-privacy-vulnerabilities-of-in-car-wireless-networks-a-tire-pressure-monitoring-system-case-study
+  - relay-attacks-on-passive-keyless-entry-and-start-systems-in-modern-cars
+  - can-injection
+  - a-survey-of-remote-automotive-attack-surfaces
+  - diagnostic-service-abuse
+  - external-attack-surface
+  - remote-exploitation-of-an-unaltered-passenger-vehicle
+  - fast-and-vulnerable-a-story-of-telematic-failures
+  - adventures-in-automotive-networks-and-control-units
+  - security-in-automotive-bus-systems
+  - survey-on-security-threats-and-protection-mechanisms-in-embedded-automotive-networks
+  - ble-theft-auto-evaluating-the-security-of-aftermarket-ble-based-automotive-remote-control-systems
 sources:
   - url: "https://www.usenix.org/conference/usenix-security-11/comprehensive-experimental-analyses-automotive-attack-surfaces"
     retrieved: 2026-11-01
@@ -26,6 +54,12 @@ related:
   - a-survey-of-remote-automotive-attack-surfaces
   - diagnostic-service-abuse
   - external-attack-surface
+  - remote-exploitation-of-an-unaltered-passenger-vehicle
+  - fast-and-vulnerable-a-story-of-telematic-failures
+  - adventures-in-automotive-networks-and-control-units
+  - security-in-automotive-bus-systems
+  - survey-on-security-threats-and-protection-mechanisms-in-embedded-automotive-networks
+  - ble-theft-auto-evaluating-the-security-of-aftermarket-ble-based-automotive-remote-control-systems
 ---
 
 Checkoway et al., USENIX Security 2011. Follow-up establishing the remote attack surface, compromising a vehicle over Bluetooth, cellular, and the CD player.

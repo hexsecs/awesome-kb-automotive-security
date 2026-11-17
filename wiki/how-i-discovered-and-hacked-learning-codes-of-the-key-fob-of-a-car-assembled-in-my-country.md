@@ -8,11 +8,16 @@ url: "https://media.defcon.org/DEF%20CON%2032/DEF%20CON%2032%20villages/DEF%20CO
 status: unknown
 last_checked: 2026-11-13
 created: 2026-11-13
-updated: 2026-11-13
+updated: 2026-11-16
 depth: stub
 source_list: awesome-automotive-security
 source_commit: 6a8b17c
 list_summary: "Erazo, DEF CON 32 Car Hacking Village 2024. Breaks the learning-code key fob of a locally assembled car with replay, a receiver backdoor, and a brute-force tool."
+related:
+  - car-hacking-village
+  - lock-it-and-still-lose-it-on-the-in-security-of-automotive-remote-keyless-entry-systems
+  - my-other-car-is-your-car-compromising-the-tesla-model-x-keyless-entry-system
+  - rollback-a-new-time-agnostic-replay-attack-against-the-automotive-remote-keyless-entry-systems
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-13

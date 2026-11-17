@@ -8,11 +8,27 @@ url: "https://i.blackhat.com/EU-24/Presentations/EU-24-Parnishchev-OverTheAirVW.
 status: unknown
 last_checked: 2026-11-07
 created: 2026-11-07
-updated: 2026-11-07
+updated: 2026-11-16
 depth: stub
 source_list: awesome-automotive-security
 source_commit: 6ab6e98
 list_summary: "Ivachev and Parnishchev, Black Hat Europe 2024. Bluetooth attack chain against Volkswagen Group MIB3 infotainment yielding persistent code execution, microphone recording, GPS tracking, and contact exfiltration across 1.4 million vehicles."
+related:
+  - back-connect-to-the-connected-car-search-for-vulnerabilities-in-the-vw-electric-car
+  - drivethru-car-hacking-fast-food-faster-data-breach
+  - remote-attacks-on-automated-vehicles-sensors-experiments-on-camera-and-lidar
+  - low-energy-to-high-energy-hacking-nearby-ev-chargers-over-bluetooth
+  - lock-it-and-still-lose-it-on-the-in-security-of-automotive-remote-keyless-entry-systems
+  - pwnobd
+  - potential-cyberattacks-on-automated-vehicles
+related:
+  - back-connect-to-the-connected-car-search-for-vulnerabilities-in-the-vw-electric-car
+  - drivethru-car-hacking-fast-food-faster-data-breach
+  - remote-attacks-on-automated-vehicles-sensors-experiments-on-camera-and-lidar
+  - low-energy-to-high-energy-hacking-nearby-ev-chargers-over-bluetooth
+  - lock-it-and-still-lose-it-on-the-in-security-of-automotive-remote-keyless-entry-systems
+  - pwnobd
+  - potential-cyberattacks-on-automated-vehicles
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-07

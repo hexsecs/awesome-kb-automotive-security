@@ -8,12 +8,23 @@ url: "https://github.com/commaai/opendbc"
 status: active
 last_checked: 2026-10-31
 created: 2026-10-31
-updated: 2026-10-31
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Python API for your car, bundling community-maintained DBC files with CAN parsing and car interface libraries for reading vehicle state and actuating controls."
-related: [cantools, python-can, savvycan]
+related:
+  - cantools
+  - python-can
+  - savvycan
+  - canlab
+  - obdium
+related:
+  - cantools
+  - python-can
+  - savvycan
+  - canlab
+  - obdium
 license: MIT
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"

@@ -8,12 +8,25 @@ url: "https://github.com/nutonomy/AVCDL"
 status: maintenance
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Motional's open-sourced Versatile Cybersecurity Development Lifecycle with process definitions and templates mapped to ISO/SAE 21434, ISO 24089, and UN R155/R156, assessed by TUV SUD."
-related: [autotara, security-autodesigner, automotive-threat-modeling-template, automating-function-level-tara-for-automotive-full-lifecycle-security, tara-methodology]
+related:
+  - autotara
+  - security-autodesigner
+  - automotive-threat-modeling-template
+  - automating-function-level-tara-for-automotive-full-lifecycle-security
+  - tara-methodology
+  - automotive-threat-matrix
+related:
+  - autotara
+  - security-autodesigner
+  - automotive-threat-modeling-template
+  - automating-function-level-tara-for-automotive-full-lifecycle-security
+  - tara-methodology
+  - automotive-threat-matrix
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

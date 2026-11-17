@@ -8,11 +8,15 @@ url: "https://www.wiley.com/en-us/-p-9781119491804"
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-16
 depth: brief
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Alissa Knight, Wiley 2020. Tactics, techniques, and procedures for penetration testing, threat modelling, and risk assessment of telematics control units and infotainment systems."
+related:
+  - the-car-hacker-s-handbook
+  - offensive-automotive-cybersecurity
+  - automotive-cybersecurity-protecting-connected-and-autonomous-vehicles
 sources:
   - url: "https://www.wiley.com/en-us/-p-9781119491804"
     retrieved: 2026-11-01
@@ -21,6 +25,7 @@ sources:
 related:
   - the-car-hacker-s-handbook
   - offensive-automotive-cybersecurity
+  - automotive-cybersecurity-protecting-connected-and-autonomous-vehicles
 ---
 
 Alissa Knight, Wiley 2020. Tactics, techniques, and procedures for penetration testing, threat modelling, and risk assessment of telematics control units and infotainment systems.

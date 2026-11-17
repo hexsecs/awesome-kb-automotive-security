@@ -8,11 +8,17 @@ url: "https://github.com/Xaloqi/Zephyr-Reference-ECU"
 status: unknown
 last_checked: 2026-11-05
 created: 2026-11-05
-updated: 2026-11-05
+updated: 2026-11-16
 depth: stub
 source_list: awesome-automotive-security
 source_commit: 082afab
 list_summary: "Forkable body control module on Zephyr with UDS diagnostics over CAN and DoIP, SecurityAccess with AES-128-CMAC, and signed firmware update, runnable with no hardware or on a NUCLEO-H753ZI board."
+related:
+  - vehicle-immobilization-revisited
+  - uds-firmware-extraction
+  - reversing-a-brake-ecu-firmware-update
+  - doip-sim-ecu-dsl
+  - automotive-flash-bootloaders-exposing-automotive-ecu-updates
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-05
