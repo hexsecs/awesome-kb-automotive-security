@@ -717,3 +717,20 @@ active for the NMFTA lab. Safety notes cover physical ECU modification,
 flash wiping coding and Digital Key pairings, and the DoS-only impact of
 the DLC overflow. Gates after the slice: ingest x2 idempotent
 (0/0/0), lint clean, link checker 0/0/0, tests pass, diff check clean.
+
+## [2026-11-17] deepen | Slice 4: research papers and the Ethernet reference (6 stubs -> full)
+
+a-formal-security-analysis-of-can-xl, automotive-ethernet,
+ble-theft-auto-..., hotwire-..., perspective-shift-... and
+potential-cyberattacks-on-automated-vehicles promoted stub -> full from
+primary sources: USENIX Security 26 / WOOT 26 / VehicleSec 26 official
+abstract pages, the UCSD BLE Theft Auto project site and disclosure
+timeline, UC Berkeley ITS's official abstract for Petit & Shladover, and
+the Cambridge/Google Books listing for Matheus & Königseder. Two sources
+were deliberately limited: the Petit & Shladover full text remains
+paywalled, so that page is full-depth strictly from the primary abstract
+with the limitation stated; the BLE exposure figures (1.4M systems in the
+paper abstract, >2M vehicles on the project site) are attributed separately
+rather than reconciled. Fixed two body links missing the .md suffix caught
+by the link checker. Gates: ingest x2 idempotent, lint clean, link checker
+0/0/0, tests pass, diff check clean.
