@@ -19,12 +19,6 @@ related:
   - uds-firmware-extraction
   - firmware-acquisition
   - openvehiclediag
-related:
-  - atlas
-  - udsoncan
-  - uds-firmware-extraction
-  - firmware-acquisition
-  - openvehiclediag
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

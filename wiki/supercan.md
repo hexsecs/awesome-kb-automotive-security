@@ -18,11 +18,6 @@ related:
   - candlelight-fw
   - cantact
   - doggie
-related:
-  - cfuc
-  - candlelight-fw
-  - cantact
-  - doggie
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

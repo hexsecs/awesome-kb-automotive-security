@@ -20,20 +20,6 @@ related:
   - everest
   - race-to-charge-concurrency-bugs-and-state-integrity-violations-in-ev-charging-infrastructure
   - ocppuzz
-related:
-  - checkocpp
-  - emuocpp
-  - ocpp-charging-attacks
-  - everest
-  - race-to-charge-concurrency-bugs-and-state-integrity-violations-in-ev-charging-infrastructure
-  - ocppuzz
-related:
-  - checkocpp
-  - emuocpp
-  - ocpp-charging-attacks
-  - everest
-  - race-to-charge-concurrency-bugs-and-state-integrity-violations-in-ev-charging-infrastructure
-  - ocppuzz
 sources:
   - url: "https://www.ndss-symposium.org/ndss-paper/auto-draft-457/"
     retrieved: 2026-11-01

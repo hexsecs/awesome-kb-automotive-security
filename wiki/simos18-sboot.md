@@ -21,14 +21,6 @@ related:
   - diagnostic-service-abuse
   - bootloader-stages
   - automotive-security-research
-related:
-  - tc1791-can-bsl
-  - uds-seed-key
-  - secure-firmware-updates
-  - ivi-update-trust
-  - diagnostic-service-abuse
-  - bootloader-stages
-  - automotive-security-research
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

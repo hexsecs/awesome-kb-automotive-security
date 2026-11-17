@@ -20,32 +20,11 @@ related:
   - reversing-a-brake-ecu-firmware-update
   - perspective-shift-attacks-against-optical-perception-sensors-a-novel-attack-vector-on-lidar-and-camera
   - fleet-cyber-challenge
-related:
-  - pretty-j1939
-  - truckdevil
-  - cybersecurity-for-commercial-vehicles
-  - reversing-a-brake-ecu-firmware-update
-  - perspective-shift-attacks-against-optical-perception-sensors-a-novel-attack-vector-on-lidar-and-camera
-  - fleet-cyber-challenge
-related:
-  - pretty-j1939
-  - truckdevil
-  - cybersecurity-for-commercial-vehicles
-  - reversing-a-brake-ecu-firmware-update
-  - perspective-shift-attacks-against-optical-perception-sensors-a-novel-attack-vector-on-lidar-and-camera
-  - fleet-cyber-challenge
 sources:
   - url: "https://zenodo.org/records/18715820"
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-01
-related:
-  - pretty-j1939
-  - truckdevil
-  - cybersecurity-for-commercial-vehicles
-  - reversing-a-brake-ecu-firmware-update
-  - perspective-shift-attacks-against-optical-perception-sensors-a-novel-attack-vector-on-lidar-and-camera
-  - fleet-cyber-challenge
 ---
 
 Lee, Lee, Jun, and Kim, escar USA 2024. Presents 14 attack scenarios against the J1939 protocol used in commercial vehicles, seven of them new.

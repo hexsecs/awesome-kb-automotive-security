@@ -18,11 +18,6 @@ related:
   - cantools
   - opendbc
   - can-playground
-related:
-  - savvycan
-  - cantools
-  - opendbc
-  - can-playground
 license: MIT
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"

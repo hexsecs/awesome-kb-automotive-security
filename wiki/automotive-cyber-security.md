@@ -24,10 +24,6 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-01
-related:
-  - automotive-cybersecurity-protecting-connected-and-autonomous-vehicles
-  - v2x-credential-management
-  - fleet-cyber-challenge
 ---
 
 Shiho Kim and Rakesh Shrestha, Springer 2020. Academic introduction to connected and autonomous vehicle security, threats, and the standardisation landscape.

@@ -21,14 +21,6 @@ related:
   - misbehavior-detection
   - v2x-credential-management
   - simulation-and-test-doubles
-related:
-  - veins
-  - artery
-  - vanetza
-  - f2md
-  - misbehavior-detection
-  - v2x-credential-management
-  - simulation-and-test-doubles
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

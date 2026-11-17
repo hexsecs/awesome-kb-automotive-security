@@ -26,12 +26,6 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
-related:
-  - fast-furious-and-insecure-passive-keyless-entry-and-start-systems-in-modern-supercars
-  - sok-stealing-cars-since-remote-keyless-entry-introduction-and-how-to-defend-from-it
-  - relay-attacks-on-passive-keyless-entry-and-start-systems-in-modern-cars
-  - key-fob-relay-attacks
-  - how-i-discovered-and-hacked-learning-codes-of-the-key-fob-of-a-car-assembled-in-my-country
 ---
 
 Wouters, Gierlichs, and Preneel, CHES 2021. Chains a BLE firmware downgrade and a key fob update flaw into unlocking and driving away a Tesla Model X.

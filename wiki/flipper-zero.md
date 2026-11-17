@@ -20,13 +20,6 @@ related:
   - universal-radio-hacker-urh
   - proxmark3
   - tesla-opener
-related:
-  - flipper-arf
-  - keyfob-analysis-toolkit-kat
-  - rtl-433
-  - universal-radio-hacker-urh
-  - proxmark3
-  - tesla-opener
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

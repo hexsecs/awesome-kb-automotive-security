@@ -20,13 +20,6 @@ related:
   - gen5fw
   - automated-cross-platform-reverse-engineering-of-can-bus-commands-from-mobile-apps
   - bypassing-debug-password-protection-on-the-rh850-family
-related:
-  - mmi3g-toolkit
-  - byd-dolphin-hacking
-  - vw-flash
-  - gen5fw
-  - automated-cross-platform-reverse-engineering-of-can-bus-commands-from-mobile-apps
-  - bypassing-debug-password-protection-on-the-rh850-family
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-08

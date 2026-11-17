@@ -20,13 +20,6 @@ related:
   - automating-function-level-tara-for-automotive-full-lifecycle-security
   - tara-methodology
   - automotive-threat-matrix
-related:
-  - autotara
-  - security-autodesigner
-  - automotive-threat-modeling-template
-  - automating-function-level-tara-for-automotive-full-lifecycle-security
-  - tara-methodology
-  - automotive-threat-matrix
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

@@ -22,10 +22,6 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-01
-related:
-  - uds-seed-key
-  - silently-disabling-ecus-and-enabling-blind-attacks-on-the-can-bus
-  - ble-theft-auto-evaluating-the-security-of-aftermarket-ble-based-automotive-remote-control-systems
 ---
 
 Kulandaivel, Jain, Guajardo, and Sekar, escar USA 2022. Shows a compromised ECU can authenticate against a safety-critical ECU's SecurityAccess without the failed attempts a CAN IDS would flag.

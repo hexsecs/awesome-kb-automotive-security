@@ -24,10 +24,6 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-01
-related:
-  - automotive-threat-analysis-and-risk-assessment-in-practice
-  - automotive-cybersecurity-engineering-handbook
-  - cybersecurity-for-commercial-vehicles
 ---
 
 David Ward and Paul Wooderson, SAE International 2021. Short introduction to ISO/SAE 21434 covering cybersecurity basics, setting up a company process, and assurance and certification.

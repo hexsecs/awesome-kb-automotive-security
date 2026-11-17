@@ -19,12 +19,6 @@ related:
   - uds-seed-key
   - ivi-update-trust
   - idrive7-8-ssh-root
-related:
-  - chimaera
-  - secure-firmware-updates
-  - uds-seed-key
-  - ivi-update-trust
-  - idrive7-8-ssh-root
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

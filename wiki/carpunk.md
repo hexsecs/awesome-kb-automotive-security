@@ -19,12 +19,6 @@ related:
   - cantot
   - cantoolz
   - can-injection
-related:
-  - can-utils
-  - icsim
-  - cantot
-  - cantoolz
-  - can-injection
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

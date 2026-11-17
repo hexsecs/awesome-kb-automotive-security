@@ -19,18 +19,6 @@ related:
   - python-can
   - opensovd-classic-diagnostic-adapter
   - canexplorer
-related:
-  - udsoncan
-  - odxtools
-  - python-can
-  - opensovd-classic-diagnostic-adapter
-  - canexplorer
-related:
-  - udsoncan
-  - odxtools
-  - python-can
-  - opensovd-classic-diagnostic-adapter
-  - canexplorer
 license: "Apache-2.0"
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"

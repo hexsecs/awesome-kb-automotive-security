@@ -27,15 +27,6 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
-related:
-  - remote-exploitation-of-an-unaltered-passenger-vehicle
-  - can-injection
-  - experimental-security-analysis-of-a-modern-automobile
-  - comprehensive-experimental-analyses-of-automotive-attack-surfaces
-  - diagnostic-service-abuse
-  - can-availability
-  - a-survey-of-remote-automotive-attack-surfaces
-  - fast-and-vulnerable-a-story-of-telematic-failures
 ---
 
 Miller and Valasek, 2013. The wired precursor to the Jeep work, documenting CAN injection against the Toyota Prius and Ford Escape and the methodology that followed.

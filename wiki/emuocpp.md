@@ -19,12 +19,6 @@ related:
   - ocpp-charging-attacks
   - ocppstorm-a-comprehensive-fuzzing-tool-for-ocpp-implementations
   - ocppuzz
-related:
-  - checkocpp
-  - everest
-  - ocpp-charging-attacks
-  - ocppstorm-a-comprehensive-fuzzing-tool-for-ocpp-implementations
-  - ocppuzz
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

@@ -19,12 +19,6 @@ related:
   - udsim
   - simulation-and-test-doubles
   - zephyr-reference-ecu
-related:
-  - python-doipclient
-  - uds-server
-  - udsim
-  - simulation-and-test-doubles
-  - zephyr-reference-ecu
 license: "Apache-2.0"
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"

@@ -26,14 +26,6 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-01
-related:
-  - a-comprehensive-guide-to-can-ids-data-and-introduction-of-the-road-dataset
-  - can-train-and-test
-  - cross-vehicle-generalisation-benchmark
-  - can-mirgu
-  - autohack
-  - car-hacking-dataset
-  - cards
 ---
 
 Real ORNL Automotive Dynamometer CAN intrusion dataset with verified fuzzing, targeted ID, masquerade, and accelerator attacks captured on a dynamometer.

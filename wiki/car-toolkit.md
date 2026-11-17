@@ -19,12 +19,6 @@ related:
   - can-utils
   - canhack
   - pwnobd
-related:
-  - caringcaribou
-  - icsim
-  - can-utils
-  - canhack
-  - pwnobd
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

@@ -18,21 +18,11 @@ related:
   - can-injection
   - the-car-hacker-s-handbook
   - automotive-ethernet
-related:
-  - error-handling-of-in-vehicle-networks-makes-them-vulnerable
-  - can-injection
-  - the-car-hacker-s-handbook
-  - automotive-ethernet
 sources:
   - url: "https://copperhilltech.com/a-comprehensible-guide-to-controller-area-network/"
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-01
-related:
-  - error-handling-of-in-vehicle-networks-makes-them-vulnerable
-  - can-injection
-  - the-car-hacker-s-handbook
-  - automotive-ethernet
 ---
 
 Wilfried Voss, Copperhill 2005. The standard plain-language reference on CAN itself, covering frame formats, arbitration, error handling, and timing that vehicle network attacks depend on.

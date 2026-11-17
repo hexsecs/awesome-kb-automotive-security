@@ -21,22 +21,6 @@ related:
   - someip
   - protocrawler
   - automotive-ethernet
-related:
-  - vsomeip
-  - scapy
-  - ics-cap
-  - someip-protocol-fuzzer
-  - someip
-  - protocrawler
-  - automotive-ethernet
-related:
-  - vsomeip
-  - scapy
-  - ics-cap
-  - someip-protocol-fuzzer
-  - someip
-  - protocrawler
-  - automotive-ethernet
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

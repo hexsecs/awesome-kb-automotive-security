@@ -23,31 +23,11 @@ related:
   - drift-with-devil-security-of-multi-sensor-fusion-based-localization-in-high-level-autonomous-driving-under-gps-spoofing
   - sok-the-next-frontier-in-av-security-systematizing-perception-attacks-and-the-emerging-threat-of-multi-sensor-fusion
   - perspective-shift-attacks-against-optical-perception-sensors-a-novel-attack-vector-on-lidar-and-camera
-related:
-  - adversarial-sensor-attack-on-lidar-based-perception-in-autonomous-driving
-  - invisible-for-both-camera-and-lidar-security-of-multi-sensor-fusion-based-perception-in-autonomous-driving
-  - does-physical-adversarial-example-really-matter-to-autonomous-driving-towards-system-level-effect-of-adversarial-object-evasion-attack
-  - remote-attacks-on-automated-vehicles-sensors-experiments-on-camera-and-lidar
-  - illusion-and-dazzle-adversarial-optical-channel-exploits-against-lidars-for-automotive-applications
-  - sok-how-sensor-attacks-disrupt-autonomous-vehicles-an-end-to-end-analysis-challenges-and-missed-threats
-  - drift-with-devil-security-of-multi-sensor-fusion-based-localization-in-high-level-autonomous-driving-under-gps-spoofing
-  - sok-the-next-frontier-in-av-security-systematizing-perception-attacks-and-the-emerging-threat-of-multi-sensor-fusion
-  - perspective-shift-attacks-against-optical-perception-sensors-a-novel-attack-vector-on-lidar-and-camera
 sources:
   - url: "https://www.usenix.org/conference/usenixsecurity24/presentation/lou"
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
-related:
-  - adversarial-sensor-attack-on-lidar-based-perception-in-autonomous-driving
-  - invisible-for-both-camera-and-lidar-security-of-multi-sensor-fusion-based-perception-in-autonomous-driving
-  - does-physical-adversarial-example-really-matter-to-autonomous-driving-towards-system-level-effect-of-adversarial-object-evasion-attack
-  - remote-attacks-on-automated-vehicles-sensors-experiments-on-camera-and-lidar
-  - illusion-and-dazzle-adversarial-optical-channel-exploits-against-lidars-for-automotive-applications
-  - sok-how-sensor-attacks-disrupt-autonomous-vehicles-an-end-to-end-analysis-challenges-and-missed-threats
-  - drift-with-devil-security-of-multi-sensor-fusion-based-localization-in-high-level-autonomous-driving-under-gps-spoofing
-  - sok-the-next-frontier-in-av-security-systematizing-perception-attacks-and-the-emerging-threat-of-multi-sensor-fusion
-  - perspective-shift-attacks-against-optical-perception-sensors-a-novel-attack-vector-on-lidar-and-camera
 ---
 
 Lou et al., USENIX Security 2024. Attacks trajectory prediction indirectly, by placing physical objects that deceive LiDAR perception, instead of manipulating an attacker vehicle's own history as prior work required.

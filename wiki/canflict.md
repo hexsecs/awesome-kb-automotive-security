@@ -19,12 +19,6 @@ related:
   - caringcaribou
   - canflict-exploiting-peripheral-conflicts-for-data-link-layer-attacks-on-automotive-networks
   - can-injection
-related:
-  - canter
-  - canalyzat0r
-  - caringcaribou
-  - canflict-exploiting-peripheral-conflicts-for-data-link-layer-attacks-on-automotive-networks
-  - can-injection
 license: GPL-3.0
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"

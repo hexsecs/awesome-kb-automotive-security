@@ -26,14 +26,6 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
-related:
-  - viden-attacker-identification-on-in-vehicle-networks
-  - gids-gan-based-intrusion-detection-system-for-in-vehicle-network
-  - fingerprinting-electronic-control-units-for-vehicle-intrusion-detection
-  - error-handling-of-in-vehicle-networks-makes-them-vulnerable
-  - a-comprehensive-guide-to-can-ids-data-and-introduction-of-the-road-dataset
-  - in-vehicle-intrusion-detection
-  - sok-kicking-can-down-the-road-systematizing-can-security-knowledge
 ---
 
 Bhatia et al., NDSS 2021. The DUET masquerade attack, in which two compromised ECUs corrupt the bus voltage and defeat every published voltage-based IDS, including Viden.

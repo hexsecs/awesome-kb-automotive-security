@@ -27,15 +27,6 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
-related:
-  - dismantling-megamos-crypto-wirelessly-lockpicking-a-vehicle-immobilizer
-  - key-fob-relay-attacks
-  - lock-it-and-still-lose-it-on-the-in-security-of-automotive-remote-keyless-entry-systems
-  - fast-furious-and-insecure-passive-keyless-entry-and-start-systems-in-modern-supercars
-  - shared-and-default-secrets
-  - vehicle-immobilization-revisited
-  - rollback-a-new-time-agnostic-replay-attack-against-the-automotive-remote-keyless-entry-systems
-  - sok-stealing-cars-since-remote-keyless-entry-introduction-and-how-to-defend-from-it
 ---
 
 Verdult, Garcia, and Balasch, USENIX Security 2012. Breaks the Hitag2 immobilizer transponder, then fitted to over 200 car models, recovering the key by radio in minutes.

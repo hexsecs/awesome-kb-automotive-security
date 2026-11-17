@@ -22,10 +22,6 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-01
-related:
-  - the-car-hacker-s-handbook
-  - offensive-automotive-cybersecurity
-  - automotive-cybersecurity-protecting-connected-and-autonomous-vehicles
 ---
 
 Alissa Knight, Wiley 2020. Tactics, techniques, and procedures for penetration testing, threat modelling, and risk assessment of telematics control units and infotainment systems.

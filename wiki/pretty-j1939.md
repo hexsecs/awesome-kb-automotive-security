@@ -19,18 +19,6 @@ related:
   - python-can
   - expanding-the-attack-scenarios-of-sae-j1939-a-comprehensive-analysis-of-established-and-novel-vulnerabilities-in-transport-protocol
   - fleet-cyber-challenge
-related:
-  - canarchy
-  - can-utils
-  - python-can
-  - expanding-the-attack-scenarios-of-sae-j1939-a-comprehensive-analysis-of-established-and-novel-vulnerabilities-in-transport-protocol
-  - fleet-cyber-challenge
-related:
-  - canarchy
-  - can-utils
-  - python-can
-  - expanding-the-attack-scenarios-of-sae-j1939-a-comprehensive-analysis-of-established-and-novel-vulnerabilities-in-transport-protocol
-  - fleet-cyber-challenge
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

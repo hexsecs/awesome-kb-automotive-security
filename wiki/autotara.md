@@ -21,14 +21,6 @@ related:
   - tara-methodology
   - automotive-threat-analysis-and-risk-assessment-in-practice
   - avcdl
-related:
-  - automotive-threat-matrix
-  - automotive-threat-modeling-template
-  - security-autodesigner
-  - automating-function-level-tara-for-automotive-full-lifecycle-security
-  - tara-methodology
-  - automotive-threat-analysis-and-risk-assessment-in-practice
-  - avcdl
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

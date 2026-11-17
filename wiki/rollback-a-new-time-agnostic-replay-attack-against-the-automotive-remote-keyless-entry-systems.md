@@ -27,13 +27,6 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
-related:
-  - sok-stealing-cars-since-remote-keyless-entry-introduction-and-how-to-defend-from-it
-  - lock-it-and-still-lose-it-on-the-in-security-of-automotive-remote-keyless-entry-systems
-  - gone-in-360-seconds-hijacking-with-hitag2
-  - key-fob-relay-attacks
-  - rolling-code-failure-classes
-  - how-i-discovered-and-hacked-learning-codes-of-the-key-fob-of-a-car-assembled-in-my-country
 ---
 
 Csikor et al., Black Hat USA 2022. Replaying already-invalid rolling codes in sequence triggers a resynchronisation rollback, unlocking a vehicle indefinitely and defeating the countermeasure that stopped RollJam.

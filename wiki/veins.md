@@ -21,22 +21,6 @@ related:
   - misbehavior-detection
   - simulation-and-test-doubles
   - vasp
-related:
-  - artery
-  - van3twin
-  - f2md
-  - vanetza
-  - misbehavior-detection
-  - simulation-and-test-doubles
-  - vasp
-related:
-  - artery
-  - van3twin
-  - f2md
-  - vanetza
-  - misbehavior-detection
-  - simulation-and-test-doubles
-  - vasp
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
