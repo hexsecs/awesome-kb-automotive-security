@@ -699,3 +699,21 @@ active for the four live projects, maintenance for doggie (last push
 evilDoggie's destructive bus primitives, the MGU flash wiping coding and
 Digital Key pairings, and OCPPuzz's LLM-derived oracle. Gates after the
 slice: ingest x2 idempotent, lint clean, link checker 0/0/0, tests pass.
+
+## [2026-11-17] deepen | Slice 3: firmware, debug and DEF CON talks (4 stubs -> full)
+
+bypassing-debug-password-protection-on-the-rh850-family,
+fleet-cyber-challenge,
+automotive-flash-bootloaders-exposing-automotive-ecu-updates and
+abusing-can-bus-protocol-specification-for-denial-of-service-in-embedded-systems
+promoted stub -> full. Primary sources: Quarkslab's March 2026 RH850
+fault-injection post (crowbar glitch of ISOVCL, power-analysis trigger,
+ChipWhisperer Husky vs Pico Glitcher), NMFTA's own Fleet Cyber Challenge
+page, and the DEF CON caption transcripts for Lapczynski (bootloaders,
+UDS 0x27/0x34/0x36/0x37 and the OTA attack surface) and Petran (CAN DLC
+0xF overflow into an 8-byte buffer, NXP board and Tesla Model 3 NFC
+security controller). Status: published for the three articles/talks,
+active for the NMFTA lab. Safety notes cover physical ECU modification,
+flash wiping coding and Digital Key pairings, and the DoS-only impact of
+the DLC overflow. Gates after the slice: ingest x2 idempotent
+(0/0/0), lint clean, link checker 0/0/0, tests pass, diff check clean.
