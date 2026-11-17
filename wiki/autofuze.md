@@ -35,6 +35,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/DanAurea/AutoFuze/blob/master/README.md"
     retrieved: 2026-11-01
+facets: [can, diagnostics, doip, xcp, someip, attack, tools]
 ---
 
 Python toolkit for fuzzing and penetration testing ECUs over UDS, XCP, SOME/IP, and OBD, across CAN, DoIP, USB, and SPI transports.

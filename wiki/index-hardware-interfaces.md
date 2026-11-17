@@ -1,5 +1,7 @@
 # Hardware Interfaces
 
+Browse by facet: [Tools & libraries](index-facet-tools.md) (10), [CAN](index-facet-can.md) (9), [Firmware & updates](index-facet-firmware.md) (4), [Hardware](index-facet-hardware.md) (3), [ISO-TP](index-facet-iso-tp.md) (1), [LIN](index-facet-lin.md) (1).
+
 - [CAN-DAQ](can-daq.md) — Open hardware ESP32-S3 CAN data-capture device with DBC-driven real-time plotting and SQLite logging, published in HardwareX as a sub-$25 alternative to…
 - [candleLight_fw](candlelight-fw.md) — Open firmware for low-cost STM32 USB to CAN adapters such as CANable, cantact, and candleLight that implements the mainline Linux gs_usb interface, turning…
 - [CANtact](cantact.md) — Open-source hardware CAN interface and desktop app supporting live tracing, frame transmission, ISO-TP, JavaScript scripting, and candump-format traces.

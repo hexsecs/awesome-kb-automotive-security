@@ -21,6 +21,7 @@ sources:
 related:
   - what-is-automotive-macsec
   - someip
+facets: [ethernet, authentication, learning, standards]
 ---
 
 Automotive networking security standards and solutions overview.

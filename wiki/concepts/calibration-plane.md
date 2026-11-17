@@ -3,14 +3,22 @@ uid: 01a19d3c-af5a-7e5d-bdf3-698d5606511e
 title: "The calibration plane (XCP/A2L)"
 summary: "Beside diagnostics sits a second access plane into production ECUs: XCP's direct memory access and the A2L maps that name everything it can touch."
 type: concept
+cluster: access
 created: 2026-11-01
 updated: 2026-11-01
-related: [pyxcp, pya2l, caringcaribou, autofuze, diagnostic-service-abuse, beneath-the-bonnet-a-breakdown-of-diagnostic-security]
+related:
+  - pyxcp
+  - pya2l
+  - caringcaribou
+  - autofuze
+  - diagnostic-service-abuse
+  - beneath-the-bonnet-a-breakdown-of-diagnostic-security
 sources:
   - url: "https://github.com/christoph2/pyxcp"
     retrieved: 2026-11-01
   - url: "https://github.com/christoph2/pya2l"
     retrieved: 2026-11-01
+facets: [can, diagnostics, xcp]
 ---
 
 The [diagnostic plane](diagnostic-service-abuse.md) is not the only standardised way into a production ECU. Beside UDS sits **XCP** (Universal Measurement and Calibration Protocol), the ASAM standard built for development: connect to a running ECU, read and write its memory directly, adjust calibration values live, and watch internal variables at rate. XCP exists so calibration engineers can tune an engine on a dyno without reflashing between iterations. The security question this page collects is what happens when that development plane survives into production vehicles — because its trust model was written for a laboratory, and the corpus documents it reachable from the vehicle network.

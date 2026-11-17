@@ -23,6 +23,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-01
+facets: [ivi, sensors, authentication, attack, defense, research]
 ---
 
 Kuhnapfel, Werling, and Jacob, 37C3 2023. Voltage-glitching attack that gives root on Tesla Autopilot hardware and recovers protected data.

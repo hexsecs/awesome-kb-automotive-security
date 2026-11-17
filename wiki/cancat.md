@@ -26,6 +26,7 @@ sources:
     retrieved: 2026-10-31
   - url: "https://github.com/atlas0fd00m/CanCat"
     retrieved: 2026-10-31
+facets: [can, diagnostics, firmware, tools]
 ---
 
 Firmware for Arduino CAN shields and Macchina M2 boards paired with a Python client for sniffing and injecting CAN traffic, running UDS and CCP sessions, and placing a device in the middle of a CAN link.

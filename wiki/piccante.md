@@ -13,7 +13,13 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Dirt-cheap CAN bus exploration tool built on Raspberry Pi Pico as an open-source hardware/software solution."
-related: [savvycan, can-utils, canhack, cantact, panda, donglescope]
+related:
+  - savvycan
+  - can-utils
+  - canhack
+  - cantact
+  - panda
+  - donglescope
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -21,6 +27,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/Alia5/PiCCANTE/blob/main/Readme.md"
     retrieved: 2026-11-01
+facets: [can, tools]
 ---
 
 Dirt-cheap CAN bus exploration tool built on Raspberry Pi Pico as an open-source hardware/software solution.

@@ -22,6 +22,7 @@ related:
   - low-energy-to-high-energy-hacking-nearby-ev-chargers-over-bluetooth
   - one-modem-to-brick-them-all-exploiting-vulnerabilities-in-the-ev-charging-communication
   - external-attack-surface
+facets: [ev-charging, ivi, attack, research]
 ---
 
 Zero Day Initiative, Tokyo 2026. Final results of the contest, where $1,047,000 was awarded for 76 unique zero-days in infotainment systems and EV chargers.

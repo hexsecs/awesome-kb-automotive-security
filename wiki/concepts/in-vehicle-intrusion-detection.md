@@ -3,14 +3,23 @@ uid: 01a19d3c-af64-71fa-9009-d1927143c3c0
 title: "In-vehicle intrusion detection and ECU fingerprinting"
 summary: "The bus's defence literature, organised by observable signal: timing, clock skew, voltage, learned models — and split by detecting an anomaly vs attributing it."
 type: concept
+cluster: bus
 created: 2026-11-01
 updated: 2026-11-01
-related: [fingerprinting-electronic-control-units-for-vehicle-intrusion-detection, viden-attacker-identification-on-in-vehicle-networks, gids-gan-based-intrusion-detection-system-for-in-vehicle-network, a-comprehensive-guide-to-can-ids-data-and-introduction-of-the-road-dataset, on-the-real-world-applicability-of-automotive-can-intrusion-detection-systems, canter, can-injection]
+related:
+  - fingerprinting-electronic-control-units-for-vehicle-intrusion-detection
+  - viden-attacker-identification-on-in-vehicle-networks
+  - gids-gan-based-intrusion-detection-system-for-in-vehicle-network
+  - a-comprehensive-guide-to-can-ids-data-and-introduction-of-the-road-dataset
+  - on-the-real-world-applicability-of-automotive-can-intrusion-detection-systems
+  - canter
+  - can-injection
 sources:
   - url: "https://www.usenix.org/system/files/conference/usenixsecurity16/sec16_paper_cho.pdf"
     retrieved: 2026-11-01
   - url: "https://doi.org/10.1371/journal.pone.0296879"
     retrieved: 2026-11-01
+facets: [can, authentication, ids, attack, defense]
 ---
 
 CAN carries no sender authentication: an identifier claims an ECU, and nothing on the wire proves it. Where authentication retrofit is impractical, the field's answer is to watch — learn what genuine traffic looks like so precisely that forged traffic stands out. This KB's defence literature for the bus is otherwise scattered as mitigations inside attack pages; collected, it organises along two axes. The first is the **observable signal**: what physical or statistical property of the traffic the detector measures. The second is the **claim**: *detection* (something is wrong) versus *attribution* (this specific ECU did or did not send this frame). Fingerprinting is attribution technology; most detectors only detect. Confusing the two overstates what a deployment buys.

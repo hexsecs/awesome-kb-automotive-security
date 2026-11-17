@@ -13,7 +13,12 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Idaho National Laboratory test platform on a Raspberry Pi that emulates either the vehicle or the charger in a CCS session, driving the J1772 control pilot, HomePlug Green PHY SLAC, and DIN 70121 exchange so either side can be tested without the other present."
-related: [pyplc, open-plc-utils, chargesploit, dsv2gshark, charging-trust-chain]
+related:
+  - pyplc
+  - open-plc-utils
+  - chargesploit
+  - dsv2gshark
+  - charging-trust-chain
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -23,6 +28,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/IdahoLabResearch/AcCCS/blob/1ff96ff0a2446c9432d3a0000d3f1e943730edcf/README.md"
     retrieved: 2026-11-01
+facets: [can, ev-charging, tools]
 ---
 
 Idaho National Laboratory test platform on a Raspberry Pi that emulates either the vehicle or the charger in a CCS session, driving the J1772 control pilot, HomePlug Green PHY SLAC, and DIN 70121 exchange so either side can be tested without the other present.

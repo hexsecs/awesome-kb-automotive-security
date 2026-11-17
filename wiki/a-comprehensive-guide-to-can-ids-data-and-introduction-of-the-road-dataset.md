@@ -28,6 +28,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
+facets: [can, ids, research]
 ---
 
 Verma et al., 2020. Systematises the CAN IDS dataset landscape, documents the flaws in earlier datasets, and introduces ROAD.

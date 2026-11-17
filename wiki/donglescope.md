@@ -29,6 +29,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://www.usenix.org/conference/usenixsecurity20/presentation/wen"
     retrieved: 2026-11-01
+facets: [diagnostics, attack, tools]
 ---
 
 Automated tool for detecting vulnerabilities in wireless OBD-II dongles based on USENIX Security 2020 research.

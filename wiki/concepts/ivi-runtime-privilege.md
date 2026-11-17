@@ -3,12 +3,18 @@ uid: 01a19d3c-af66-7d07-be99-e8c9dd43aedf
 title: "IVI runtime privilege and service exposure"
 summary: "The head unit's failures that are not on the update path: declared-but-unenforced permissions, unchecked service callers, and designed-in debug surfaces."
 type: concept
+cluster: access
 created: 2026-11-01
 updated: 2026-11-01
-related: [byd-dolphin-hacking, mmi3g-toolkit, q50-reverse-engineering, ivi-update-trust]
+related:
+  - byd-dolphin-hacking
+  - mmi3g-toolkit
+  - q50-reverse-engineering
+  - ivi-update-trust
 sources:
   - url: "https://github.com/redcat-3/BYD-Dolphin-Hacking"
     retrieved: 2026-11-01
+facets: [firmware, ivi, hardware]
 ---
 
 The [IVI update-trust](ivi-update-trust.md) page covers how firmware *arrives* at the head unit. This page covers the head unit while it *runs* — because the corpus documents a second IVI failure family that has nothing to do with updates: the platform's runtime privilege boundaries, declared on paper and not enforced in code. An IVI system inherits a general-purpose OS's privilege model (Android or Linux users, permission levels, inter-process service calls), and the failures below share one shape: a boundary the platform *has* — a permission declaration, a caller check, a debug surface meant to be off — turns out to be decorative. Whoever reaches the boundary (an app, a shell, a USB stick) inherits privileges the architecture diagram says they should not have, and from the head unit the vehicle network is one gateway hop away.

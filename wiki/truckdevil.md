@@ -25,6 +25,7 @@ sources:
     retrieved: 2026-10-31
   - url: "https://github.com/LittleBlondeDevil/TruckDevil"
     retrieved: 2026-11-01
+facets: [can, j1939, attack, tools]
 ---
 
 Framework for assessing heavy-vehicle ECUs that communicate over J1939, with ECU discovery, message reading and sending, and a J1939 fuzzer, running on a Macchina M2 or any python-can interface.

@@ -28,6 +28,7 @@ related:
   - automotive-cybersecurity-an-introduction-to-iso-sae-21434
   - owasp-automotive-security-cheat-sheet
   - tara-methodology
+facets: [firmware, tara, learning, standards]
 ---
 
 Ahmad MK Nasser, Packt 2023. Practitioner's guide to building cyber-resilient vehicles, covering threat analysis, hardware security, and ISO/SAE 21434 engineering practice.

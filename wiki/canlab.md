@@ -24,6 +24,7 @@ sources:
     retrieved: 2026-10-31
   - url: "https://github.com/Sherin-SEF-AI/CanLab"
     retrieved: 2026-10-31
+facets: [can, diagnostics, doip, xcp, j1939, firmware, tools]
 ---
 
 PyQt6 desktop application for offline CAN capture reverse engineering, combining automated counter and checksum detection with entropy-based signal boundary analysis, a visual DBC builder, and UDS/OBD-II/J1939/XCP/DoIP diagnostic support.

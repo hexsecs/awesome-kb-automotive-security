@@ -26,6 +26,7 @@ related:
   - automotive-cyber-security
   - automotive-cybersecurity-engineering-handbook
   - automotive-security-research
+facets: [firmware, authentication, tara, attack, defense, learning, standards]
 ---
 
 OWASP cheat sheet covering threat modeling, message authentication, secure boot, and update verification for vehicle ECUs and connected services.

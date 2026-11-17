@@ -28,6 +28,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://raw.githubusercontent.com/rgerganov/gen5fw/master/gen5.py"
     retrieved: 2026-11-01
+facets: [firmware, ivi, sensors, tools]
 ---
 
 Python tools for decrypting, patching, and redeploying firmware on Mobis Gen5 navigation head units in Hyundai, Kia, and Genesis vehicles, including enabling ADB.

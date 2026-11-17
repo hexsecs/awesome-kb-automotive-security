@@ -24,6 +24,7 @@ sources:
     retrieved: 2026-10-31
   - url: "https://its.berkeley.edu/publications/potential-cyberattacks-automated-vehicles"
     retrieved: 2026-11-17
+facets: [attack, research]
 ---
 
 Petit and Shladover, IEEE T-ITS 2015. The standard reference taxonomy of attack vectors against autonomous and cooperative automated vehicles.

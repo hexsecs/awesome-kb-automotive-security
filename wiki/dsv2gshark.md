@@ -13,7 +13,15 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Wireshark plugin that dissects ISO 15118 and DIN 70121 traffic, decoding EXI-encoded V2G payloads and SLAC handshakes into readable fields."
-related: [acccs, chargesploit, pyplc, v2gdecoder, wwcp-iso15118, everest, checkocpp, charging-trust-chain]
+related:
+  - acccs
+  - chargesploit
+  - pyplc
+  - v2gdecoder
+  - wwcp-iso15118
+  - everest
+  - checkocpp
+  - charging-trust-chain
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -23,6 +31,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/dspace-group/dsV2Gshark/blob/cde7bebec6b7194c314323d3d091fa11b5d48223/README.md"
     retrieved: 2026-11-01
+facets: [ev-charging, tools, standards]
 ---
 
 Wireshark plugin that dissects ISO 15118 and DIN 70121 traffic, decoding EXI-encoded V2G payloads and SLAC handshakes into readable fields.

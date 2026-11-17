@@ -3,9 +3,18 @@ uid: 01a19d3c-af74-70c5-a2da-850e091ff598
 title: "V2X credential management"
 summary: "How vehicles get pseudonymous credentials: split-knowledge issuance in the ETSI CCMS and US SCMS, so linking a ticket to an identity takes a quorum."
 type: concept
+cluster: boundary
 created: 2026-11-01
 updated: 2026-11-01
-related: [vanetza, v2verifier, van3twin, f2md, misbehavior-detection, securing-vehicular-ad-hoc-networks, secure-vehicular-communication-systems-design-and-architecture, pseudonym-schemes-in-vehicular-networks-a-survey]
+related:
+  - vanetza
+  - v2verifier
+  - van3twin
+  - f2md
+  - misbehavior-detection
+  - securing-vehicular-ad-hoc-networks
+  - secure-vehicular-communication-systems-design-and-architecture
+  - pseudonym-schemes-in-vehicular-networks-a-survey
 sources:
   - url: "https://www.etsi.org/deliver/etsi_TS/102900_102999/102941/02.01.01_60/ts_102941v020101p.pdf"
     retrieved: 2026-11-01
@@ -13,6 +22,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/vanetza/vanetza"
     retrieved: 2026-11-01
+facets: [v2x, authentication, tara]
 ---
 
 A V2X station never speaks under its own name. It holds a long-term enrolment credential that it shows only to the credential system, and spends short-lived pseudonymous certificates — Authorization Tickets in the ETSI system, pseudonym certificates in the US one — on the air. Both systems (ETSI's CCMS: TS 102 940 architecture, TS 102 941 protocols, TS 103 097 formats; the US SCMS of Brecht et al., IEEE T-ITS 2018) resolve one contradiction: messages must be authenticatable, yet the certificate in them must let no observer track the vehicle; a misbehaving device must be identifiable *to the system* and cut off, yet no single authority may be able to identify it. The threat model includes the authorities themselves — the SCMS is "designed such that at least two of its components need to collude to gain meaningful information for tracking a device". The structural answer both converged on is split knowledge: what is needed to link a pseudonym to an identity is divided across independent authorities, so linking is possible only as a quorum act (investigation, revocation), never a unilateral one (tracking).

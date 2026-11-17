@@ -35,6 +35,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/uhi22/pyPLC/blob/be5139bc6e66ba3b3bfa502666f494d3e157968b/doc/EvseMode.md"
     retrieved: 2026-11-01
+facets: [can, ev-charging, tools, standards]
 ---
 
 Python toolkit for CCS charging research that can pose as vehicle or charger, sniff HomePlug Green PHY traffic, and walk the SLAC, DIN 70121, and ISO 15118 state machines.

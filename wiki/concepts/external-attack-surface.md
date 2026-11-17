@@ -3,14 +3,22 @@ uid: 01a19d3c-af61-7d85-920a-5dfa0c1a4d39
 title: "The vehicle's external attack surface: remote entry and the telematics pivot"
 summary: "Compromise repeatedly begins at a boundary interface and pivots through the unit crossing it: connectivity units are most exposed and most privileged."
 type: concept
+cluster: boundary
 created: 2026-11-01
 updated: 2026-11-01
-related: [comprehensive-experimental-analyses-of-automotive-attack-surfaces, remote-exploitation-of-an-unaltered-passenger-vehicle, experimental-security-analysis-of-a-modern-automobile, security-and-privacy-vulnerabilities-of-in-car-wireless-networks-a-tire-pressure-monitoring-system-case-study, plug-n-pwned-comprehensive-vulnerability-analysis-of-obd-ii-dongles, can-injection]
+related:
+  - comprehensive-experimental-analyses-of-automotive-attack-surfaces
+  - remote-exploitation-of-an-unaltered-passenger-vehicle
+  - experimental-security-analysis-of-a-modern-automobile
+  - security-and-privacy-vulnerabilities-of-in-car-wireless-networks-a-tire-pressure-monitoring-system-case-study
+  - plug-n-pwned-comprehensive-vulnerability-analysis-of-obd-ii-dongles
+  - can-injection
 sources:
   - url: "https://www.usenix.org/legacy/events/sec11/tech/full_papers/Checkoway.pdf"
     retrieved: 2026-11-01
   - url: "https://illmatics.com/Remote%20Car%20Hacking.pdf"
     retrieved: 2026-11-01
+facets: [can, rf-keys, attack, tools]
 ---
 
 Ask how the attacks in this KB *got in*, and a pattern repeats across fifteen years of papers: complete vehicle compromise begins at a boundary interface — a disc, a dealership tool, a radio, a modem — and pivots through the single unit that straddles the boundary between the outside world and the vehicle buses. The bus-side concepts ([CAN injection](can-injection.md) and its neighbours) begin their story once an attacker is *on* the bus; this page covers the step before: the external surface, organised by entry class, and the pivot pattern the full pages establish jointly — **the connectivity units are at once the most externally exposed components in the vehicle and the most internally privileged**, dual-homed by design, and historically the least hardened code in the car.

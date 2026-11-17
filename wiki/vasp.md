@@ -29,6 +29,7 @@ sources:
     retrieved: 2026-11-17
   - url: "https://api.github.com/repos/quic/vasp"
     retrieved: 2026-11-17
+facets: [v2x, attack, tools]
 ---
 
 V2X Application Spoofing Platform from Qualcomm that runs a library of BSM spoofing and falsification attacks on top of Veins, the artifact of the VehicleSec 2023 paper; archived in 2026.

@@ -28,6 +28,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
+facets: [can, ids, research]
 ---
 
 Cho and Shin, USENIX Security 2016. Clock-based IDS that fingerprints ECUs from clock skew in periodic messages, the most-replicated CAN IDS baseline.

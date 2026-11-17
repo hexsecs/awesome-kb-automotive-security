@@ -3,9 +3,16 @@ uid: 01a19d3c-af67-773a-a448-f728cdbc1b33
 title: "Key-fob relay attacks"
 summary: "Two attackers relay a genuine key's radio exchange, so the car sees a valid key 'nearby' — encryption doesn't help, because nothing was forged, only forwarded."
 type: concept
+cluster: boundary
 created: 2026-10-31
 updated: 2026-10-31
-related: [relay-attacks-on-passive-keyless-entry-and-start-systems-in-modern-cars, fast-furious-and-insecure-passive-keyless-entry-and-start-systems-in-modern-supercars, dismantling-megamos-crypto-wirelessly-lockpicking-a-vehicle-immobilizer, sok-stealing-cars-since-remote-keyless-entry-introduction-and-how-to-defend-from-it, rollback-a-new-time-agnostic-replay-attack-against-the-automotive-remote-keyless-entry-systems, rolling-code-failure-classes]
+related:
+  - relay-attacks-on-passive-keyless-entry-and-start-systems-in-modern-cars
+  - fast-furious-and-insecure-passive-keyless-entry-and-start-systems-in-modern-supercars
+  - dismantling-megamos-crypto-wirelessly-lockpicking-a-vehicle-immobilizer
+  - sok-stealing-cars-since-remote-keyless-entry-introduction-and-how-to-defend-from-it
+  - rollback-a-new-time-agnostic-replay-attack-against-the-automotive-remote-keyless-entry-systems
+  - rolling-code-failure-classes
 sources:
   - url: "https://www.ndss-symposium.org/ndss2011/relay-attacks-on-passive-keyless-entry-and-start-systems-in-modern-cars/"
     retrieved: 2026-10-31
@@ -13,6 +20,7 @@ sources:
     retrieved: 2026-10-31
   - url: "https://www.usenix.org/conference/usenixsecurity15/technical-sessions/presentation/verdult"
     retrieved: 2026-10-31
+facets: [rf-keys, authentication, attack]
 ---
 
 A relay attack defeats passive keyless entry and start (PKES) without

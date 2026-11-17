@@ -26,6 +26,7 @@ sources:
     retrieved: 2026-10-31
   - url: "https://github.com/Fraunhofer-AISEC/gallia"
     retrieved: 2026-10-31
+facets: [diagnostics, iso-tp, doip, tools]
 ---
 
 Extendable automotive pentesting framework from Fraunhofer AISEC focused on UDS, with DoIP and ISO-TP transports and structured logging for reproducible scans.

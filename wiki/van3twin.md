@@ -28,6 +28,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://ms-van3ts-documentation.readthedocs.io/en/master/"
     retrieved: 2026-11-01
+facets: [v2x, simulation, tools]
 ---
 
 ETSI-compliant multi-stack V2X framework for ns-3 covering ITS-G5, C-V2X, and LTE with SUMO and CARLA co-simulation; the continuation of ms-van3t.

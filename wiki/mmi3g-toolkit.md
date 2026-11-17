@@ -28,6 +28,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/dspl1236/MMI3G-Toolkit/blob/main/README.md"
     retrieved: 2026-11-01
+facets: [can, diagnostics, firmware, ivi, attack, tools]
 ---
 
 SD-card-based toolkit for Audi/VW MMI3G head units covering boot-image extraction, reverse-engineered GEMMI protocol details, and an FSC signature-bypass technique alongside CAN diagnostic and variant-dumping tools.

@@ -36,6 +36,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/uhi22/pyPLC/blob/be5139bc6e66ba3b3bfa502666f494d3e157968b/readme.md"
     retrieved: 2026-11-01
+facets: [ev-charging, tools]
 ---
 
 Qualcomm Atheros powerline toolkit for HomePlug AV and Green PHY devices, the standard means of inspecting and manipulating the PLC layer that CCS charging sessions run over.

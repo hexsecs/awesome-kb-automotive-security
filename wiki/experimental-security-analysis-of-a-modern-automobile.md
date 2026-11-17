@@ -35,6 +35,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
+facets: [can, attack, research]
 ---
 
 Koscher et al., IEEE S&P 2010. The paper that opened the field, demonstrating that an attacker with access to any single ECU can disable the brakes and stop the engine of a moving vehicle.

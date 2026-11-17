@@ -24,6 +24,7 @@ sources:
     retrieved: 2026-11-13
   - url: "https://media.defcon.org/DEF%20CON%2032/DEF%20CON%2032%20villages/DEF%20CON%2032%20villages%20captions/DEF%20CON%2032%20-%20Car%20Hacking%20Village%20-%20How%20I%20discovered%20and%20hacked%20Learning%20Codes%20of%20the%20key%20job%20of%20a%20car%20assembled%20in%20my%20country%20-%20Danilo%20Erazo.eng.srt"
     retrieved: 2026-11-17
+facets: [rf-keys, simulation, attack, tools, research]
 ---
 
 Erazo, DEF CON 32 Car Hacking Village 2024. Breaks the learning-code key fob of a locally assembled car with replay, a receiver backdoor, and a brute-force tool.

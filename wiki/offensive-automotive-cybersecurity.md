@@ -24,6 +24,7 @@ related:
   - automotive-cybersecurity-engineering-handbook
   - building-secure-cars
   - hacking-connected-cars
+facets: [ethernet, firmware, sensors, attack, learning]
 ---
 
 Ahmad MK Nasser and Dennis Kengo Oka, Packt 2026. The two handbook authors together on the offensive side, covering exploitation of modern automotive platforms.

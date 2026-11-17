@@ -1,5 +1,7 @@
 # Learning Resources
 
+Browse by facet: [Learning](index-facet-learning.md) (9), [Attack techniques](index-facet-attack.md) (4), [Authentication & keys](index-facet-authentication.md) (3), [CAN](index-facet-can.md) (3), [Automotive Ethernet](index-facet-ethernet.md) (3), [Firmware & updates](index-facet-firmware.md) (3).
+
 - [Automotive Cybersecurity Roadmap](automotive-cybersecurity-roadmap.md) — Structured learning path from CAN and UDS fundamentals through TARA, firmware reverse engineering, and hardware hacking into specialized career tracks.
 - [Automotive Security Timeline](automotive-security-timeline.md) — Continuously updated knowledge base of automotive cybersecurity events including vulnerability disclosures, attack demonstrations, Pwn2Own Automotive…
 - [Automotive-Networking-Security](automotive-networking-security.md) — Automotive networking security standards and solutions overview.

@@ -32,6 +32,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://scapy.readthedocs.io/en/latest/layers/automotive.html"
     retrieved: 2026-11-01
+facets: [can, doip, someip, authentication, tools, standards]
 ---
 
 Python packet manipulation library with support for DoIP, SOME/IP, AUTOSAR PDUs, SecOC, CAN-FD, and FlexRay protocols.

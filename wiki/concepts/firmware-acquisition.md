@@ -3,14 +3,25 @@ uid: 01a19d3c-af63-725c-ac41-aad5e4cee8d8
 title: "Firmware acquisition: the read-side channels"
 summary: "Before analysis comes acquisition: the channels the corpus documents for getting an ECU's image out — by bus, by bootstrap, by bench, by log, by package."
 type: concept
+cluster: access
 created: 2026-11-01
 updated: 2026-11-01
-related: [tc1791-can-bsl, pq-flasher, conescan, uds-firmware-extraction, vw-flash, secoc-key-extractor, reversing-a-brake-ecu-firmware-update, secure-firmware-updates, bootloader-stages]
+related:
+  - tc1791-can-bsl
+  - pq-flasher
+  - conescan
+  - uds-firmware-extraction
+  - vw-flash
+  - secoc-key-extractor
+  - reversing-a-brake-ecu-firmware-update
+  - secure-firmware-updates
+  - bootloader-stages
 sources:
   - url: "https://github.com/bri3d/CCM19XX-CCP-Flashing"
     retrieved: 2026-11-01
   - url: "https://github.com/abrignoni/UDSFirmwareExtraction"
     retrieved: 2026-11-01
+facets: [xcp, firmware, ivi]
 ---
 
 Every analysis in this KB's firmware corpus starts from an artifact someone first had to *get*: an ECU's flash image, a calibration block, an update package's plaintext. The update-trust concepts ([secure firmware updates](secure-firmware-updates.md), [IVI update trust](ivi-update-trust.md)) cover the delivery direction — what a vehicle accepts. This page covers the read direction: the acquisition channels the corpus documents, organised by where the acquirer has to be (on the bus, at a bench, holding a log, holding a package) and by what each channel yields and what gate it must pass. The channel choice is usually forced by the research question — a differential patch analysis needs both sides of a change; a key-recovery project needs the bytes the keys live in — and each channel's preconditions quietly determine which ECUs are researchable at all.

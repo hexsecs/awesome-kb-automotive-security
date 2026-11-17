@@ -13,7 +13,12 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Encodes and decodes EXI-compressed V2G messages on the fly, turning captured ISO 15118 exchanges into editable XML for replay and fuzzing."
-related: [openv2g, dsv2gshark, pyplc, wwcp-iso15118, charging-trust-chain]
+related:
+  - openv2g
+  - dsv2gshark
+  - pyplc
+  - wwcp-iso15118
+  - charging-trust-chain
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -23,6 +28,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/FlUxIuS/V2Gdecoder/blob/2ee5bd94d94d0eaaff8ee693990182f6d6c6c084/README.md"
     retrieved: 2026-11-01
+facets: [ev-charging, simulation, attack, tools, standards]
 ---
 
 Encodes and decodes EXI-compressed V2G messages on the fly, turning captured ISO 15118 exchanges into editable XML for replay and fuzzing.

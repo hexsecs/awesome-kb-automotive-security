@@ -29,6 +29,7 @@ sources:
     retrieved: 2026-11-17
   - url: "https://api.github.com/repos/uCAN-LIN/LinUSBConverter"
     retrieved: 2026-11-17
+facets: [lin, tools]
 ---
 
 Open-source USB to LIN bus dongle that operates as master, slave or monitor with optical isolation and SLCAN compatibility for vehicle LIN traffic.

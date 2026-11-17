@@ -24,6 +24,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/esaulenka/ghidra_v850/blob/master/README.md"
     retrieved: 2026-11-01
+facets: [firmware, tools]
 ---
 
 Ghidra processor module for Renesas V850E2 and V850E3/RH850 microcontrollers, the core families behind many ECUs, for disassembling and decompiling their firmware.

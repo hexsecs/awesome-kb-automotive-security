@@ -3,9 +3,21 @@ uid: 01a19d3c-af68-73b2-97e1-ff778704f7d5
 title: "Misbehavior detection in V2X"
 summary: "Why V2X needs a layer beyond signatures: detecting false content from validly credentialed stations, reporting it, and the authority that decides."
 type: concept
+cluster: boundary
 created: 2026-11-01
 updated: 2026-11-01
-related: [f2md, vanetza, v2verifier, artery, veins, van3twin, v2x-credential-management, securing-vehicular-ad-hoc-networks, secure-vehicular-communication-systems-design-and-architecture, pseudonym-schemes-in-vehicular-networks-a-survey, in-vehicle-intrusion-detection]
+related:
+  - f2md
+  - vanetza
+  - v2verifier
+  - artery
+  - veins
+  - van3twin
+  - v2x-credential-management
+  - securing-vehicular-ad-hoc-networks
+  - secure-vehicular-communication-systems-design-and-architecture
+  - pseudonym-schemes-in-vehicular-networks-a-survey
+  - in-vehicle-intrusion-detection
 sources:
   - url: "https://github.com/josephkamel/F2MD"
     retrieved: 2026-11-01
@@ -15,6 +27,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://www.etsi.org/deliver/etsi_ts/103700_103799/103759/02.02.01_60/ts_103759v020201p.pdf"
     retrieved: 2026-11-01
+facets: [v2x, authentication, attack]
 ---
 
 V2X message security proves who sent a message and that it arrived intact. Misbehavior detection asks a different question: whether what the message says is true. The two are separate layers by definition — ETSI TS 103 759 defines a misbehaving entity as a station "sending false or misleading messages **using valid certificates**", faulty stations included alongside attackers. The standards split the work accordingly: detection mechanisms are the subject of ETSI TR 103 460, a pre-standardization study, while TS 103 759 — the *Misbehaviour Reporting* service — standardizes reporting and the authority architecture, not the detectors.

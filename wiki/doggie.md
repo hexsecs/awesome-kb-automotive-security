@@ -28,6 +28,7 @@ sources:
     retrieved: 2026-11-17
   - url: "https://api.github.com/repos/infobyte/doggie"
     retrieved: 2026-11-17
+facets: [can, tools]
 ---
 
 Modular DIY CAN-to-serial adapter from Faraday Security that speaks slcan over USB, BLE or UART for SocketCAN and python-can, with an EvilDoggie variant adding offensive features for automotive research.

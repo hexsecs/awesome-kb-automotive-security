@@ -1,5 +1,7 @@
 # Diagnostic Tools
 
+Browse by facet: [Tools & libraries](index-facet-tools.md) (20), [Diagnostics](index-facet-diagnostics.md) (19), [Standards & specs](index-facet-standards.md) (7), [CAN](index-facet-can.md) (5), [DoIP](index-facet-doip.md) (5), [Firmware & updates](index-facet-firmware.md) (5).
+
 - [Atlas](atlas.md) — Open-source ECU calibration application for reverse engineering and recalibrating Subaru, Toyota, and Honda ECUs, with an integrated Ghidra bundle for…
 - [AutoPi](autopi.md) — Open-source core software for the AutoPi dongle, a Raspberry Pi-based OBD-II device for vehicle diagnostics, CAN bus data collection, and automotive IoT…
 - [conescan](conescan.md) — Automotive ECU hacking supertool for firmware dumping and manipulation via J2534 OBD interfaces.

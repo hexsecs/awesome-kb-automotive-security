@@ -22,6 +22,7 @@ sources:
     retrieved: 2026-11-13
   - url: "https://media.defcon.org/DEF%20CON%2026/DEF%20CON%2026%20villages/DEF%20CON%2026%20villages%20captions/DEF%20CON%2026%20-%20CAR%20HACKING%20VILLAGE%20-%20Dan%20Regalado%20-%20Meet%20Salinas%20the%20first%20ever%20SMS-commanded%20Car%20Infotainment%20RAT.eng.srt"
     retrieved: 2026-11-17
+facets: [can, ivi, research]
 ---
 
 Regalado, DEF CON 26 Car Hacking Village 2018. Shows how a production infotainment unit can be infected with malware that exfiltrates the driver's data through SMS via the paired phone.

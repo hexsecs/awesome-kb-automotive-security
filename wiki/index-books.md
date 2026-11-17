@@ -1,5 +1,7 @@
 # Books
 
+Browse by facet: [Learning](index-facet-learning.md) (13), [TARA](index-facet-tara.md) (9), [Attack techniques](index-facet-attack.md) (7), [Standards & specs](index-facet-standards.md) (7), [CAN](index-facet-can.md) (4), [Automotive Ethernet](index-facet-ethernet.md) (4).
+
 - [A Comprehensible Guide to Controller Area Network](a-comprehensible-guide-to-controller-area-network.md) — Wilfried Voss, Copperhill 2005. The standard plain-language reference on CAN itself, covering frame formats, arbitration, error handling, and timing that…
 - [Automotive Cyber Security](automotive-cyber-security.md) — Shiho Kim and Rakesh Shrestha, Springer 2020. Academic introduction to connected and autonomous vehicle security, threats, and the standardisation landscape.
 - [Automotive Cybersecurity Engineering Handbook](automotive-cybersecurity-engineering-handbook.md) — Ahmad MK Nasser, Packt 2023. Practitioner's guide to building cyber-resilient vehicles, covering threat analysis, hardware security, and ISO/SAE 21434…

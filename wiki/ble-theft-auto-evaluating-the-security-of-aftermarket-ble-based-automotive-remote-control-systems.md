@@ -28,6 +28,7 @@ sources:
     retrieved: 2026-11-17
   - url: "https://bleauto.sysnet.ucsd.edu/"
     retrieved: 2026-11-17
+facets: [rf-keys, authentication, attack, research]
 ---
 
 Yu et al., USENIX Security 2026. Shows three of six aftermarket Bluetooth vehicle remote-control systems have critical pairing and authentication flaws, including a shared key across dealer-installed devices that lets a nearby attacker unlock doors and immobilize engines.

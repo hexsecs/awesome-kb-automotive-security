@@ -30,6 +30,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
+facets: [can, research]
 ---
 
 Kulandaivel, Goyal, Agrawal, and Sekar, USENIX Security 2019. Builds an nmap for the vehicle, recovering the sender and receiver map of a CAN network in under an hour using clock offsets and forced ECU isolation.

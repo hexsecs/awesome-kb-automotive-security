@@ -25,6 +25,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
+facets: [rf-keys, attack, research]
 ---
 
 Francillon, Danev, and Capkun, NDSS 2011. Demonstrates the relay attack that still underpins most keyless vehicle theft today, against ten PKES systems from eight manufacturers.

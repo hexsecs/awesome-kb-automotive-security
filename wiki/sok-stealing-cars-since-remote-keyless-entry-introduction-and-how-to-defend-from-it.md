@@ -28,6 +28,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
+facets: [rf-keys, attack, defense, research]
 ---
 
 Bianchi et al., USENIX VehicleSec 2025. Systematization of RKE and passive keyless entry and start systems, covering their history, the attacks against them, and the defences.

@@ -25,6 +25,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-01
+facets: [v2x, tara, learning, standards]
 ---
 
 Shiho Kim and Rakesh Shrestha, Springer 2020. Academic introduction to connected and autonomous vehicle security, threats, and the standardisation landscape.

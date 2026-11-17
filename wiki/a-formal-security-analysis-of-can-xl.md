@@ -23,6 +23,7 @@ sources:
     retrieved: 2026-11-02
   - url: "https://www.usenix.org/conference/usenixsecurity26/presentation/tang-zhaozhou"
     retrieved: 2026-11-17
+facets: [can, authentication, attack, research]
 ---
 
 Tang et al., USENIX Security 2026. First formal security analysis of the CAN XL standard, showing it retains all known classic CAN MAC sub-layer flaws and adds seven new vulnerabilities, validated on commercial controllers.

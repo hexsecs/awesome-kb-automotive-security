@@ -30,6 +30,7 @@ sources:
     retrieved: 2026-11-17
   - url: "https://api.github.com/repos/davhodg/pycangui"
     retrieved: 2026-11-17
+facets: [can, diagnostics, xcp, j1939, simulation, tools]
 ---
 
 Graphical CAN bus tool with live trace and plots, transmit, CANopen, UDS, J1939, and XCP/CCP support on any python-can adapter, with Python scripting and simulated nodes.

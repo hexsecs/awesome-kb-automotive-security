@@ -3,14 +3,22 @@ uid: 01a19d3c-af59-7cfe-80f9-3e41adbc3bc1
 title: "Bootloader stages and bootstrap entry"
 summary: "ECUs boot through layers owned by different parties; the corpus's breaks concentrate at the stage transitions and the weakest stage, not the application."
 type: concept
+cluster: access
 created: 2026-11-01
 updated: 2026-11-01
-related: [simos18-sboot, tc1791-can-bsl, secoc-key-extractor, vw-flash, diagnostic-service-abuse, secure-firmware-updates]
+related:
+  - simos18-sboot
+  - tc1791-can-bsl
+  - secoc-key-extractor
+  - vw-flash
+  - diagnostic-service-abuse
+  - secure-firmware-updates
 sources:
   - url: "https://github.com/0xD006/TC1791_CAN_BSL"
     retrieved: 2026-11-01
   - url: "https://github.com/bri3d/VW_Flash"
     retrieved: 2026-11-01
+facets: [firmware, attack]
 ---
 
 An ECU does not boot its application directly. Between power and application sits a chain of smaller programs, each loading and (in principle) verifying the next, and each typically owned by a different party: the **silicon vendor's** ROM bootstrap, the **Tier-1 supplier's** bootloader, and the **application-stage** loader that starts the OEM's software. This page synthesises what the KB's firmware corpus shows about that chain — because the demonstrated breaks do not attack the application head-on. They enter at a stage transition, or drop into the weakest stage and work from there. A layered boot only helps if every layer holds; the corpus is a record of layers that didn't.

@@ -29,6 +29,7 @@ sources:
     retrieved: 2026-11-17
   - url: "https://api.github.com/repos/rnd-ash/OpenVehicleDiag"
     retrieved: 2026-11-17
+facets: [can, diagnostics, tools]
 ---
 
 Rust ECU diagnostics and reprogramming application over J2534 pass-through adapters and Linux SocketCAN, with UDS and KWP2000 sessions and a converter that turns Mercedes CBF diagnostic databases into its own JSON format.

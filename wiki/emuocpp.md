@@ -28,6 +28,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/vfg27/EmuOCPP/blob/1265fe7028ff538626dc5358e50c413420682135/README.md"
     retrieved: 2026-11-01
+facets: [ev-charging, attack, tools]
 ---
 
 Mininet-based emulator for OCPP charging networks covering versions 1.6, 2.0, and 2.0.1 across all three security profiles, with attack demos for the MitM and downgrade flaws in its companion research.

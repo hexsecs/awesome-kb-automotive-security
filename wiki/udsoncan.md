@@ -39,6 +39,7 @@ sources:
     retrieved: 2026-10-31
   - url: "https://udsoncan.readthedocs.io/en/latest/"
     retrieved: 2026-10-31
+facets: [diagnostics, tools, standards]
 ---
 
 Python implementation of the ISO 14229 UDS protocol covering session control, security access, data identifiers, and routine control.

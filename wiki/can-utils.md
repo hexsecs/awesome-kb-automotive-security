@@ -36,6 +36,7 @@ sources:
     retrieved: 2026-10-31
   - url: "https://github.com/linux-can/can-utils"
     retrieved: 2026-10-31
+facets: [can, tools]
 ---
 
 Linux-CAN SocketCAN userspace utilities including cansniffer, candump, cansend, canplayer, and cangen for CAN bus analysis.

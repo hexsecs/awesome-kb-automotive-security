@@ -1,5 +1,7 @@
 # V2X Security
 
+Browse by facet: [Tools & libraries](index-facet-tools.md) (7), [V2X](index-facet-v2x.md) (7), [Simulation](index-facet-simulation.md) (5), [Attack techniques](index-facet-attack.md) (4).
+
 - [Artery](artery.md) — OMNeT++ simulation framework pairing the Vanetza ITS-G5 stack with SUMO traffic, providing the environment that most misbehavior-detection and V2X attack…
 - [F2MD](f2md.md) — Simulation framework recreating the whole misbehavior detection chain for ITS-G5 and C-V2X, with plausibility checks, machine learning detectors, and both…
 - [V2Verifier](v2verifier.md) — Open-source V2X security testbed with first open-source IEEE 1609.2 implementation for DSRC and C-V2X.

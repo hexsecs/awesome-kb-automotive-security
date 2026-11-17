@@ -21,6 +21,7 @@ sources:
 related:
   - awesome-embedded-security
   - awesome-vehicle-security
+facets: [can, firmware, learning]
 ---
 
 Security resources across IoT, embedded, industrial, and automotive systems with a dedicated automotive section.

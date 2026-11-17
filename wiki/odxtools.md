@@ -26,6 +26,7 @@ sources:
     retrieved: 2026-10-31
   - url: "https://github.com/mercedes-benz/odxtools"
     retrieved: 2026-10-31
+facets: [diagnostics, tools, standards]
 ---
 
 Python toolkit for parsing ODX/PDX (ISO 22901) diagnostic databases and encoding, decoding, and snooping ECU diagnostic sessions.

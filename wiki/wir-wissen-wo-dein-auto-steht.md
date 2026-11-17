@@ -21,6 +21,7 @@ sources:
 related:
   - how-api-flaws-led-to-admin-access-to-over-1k-usa-dealers-and-control-over-your-car
   - external-attack-surface
+facets: [attack, research]
 ---
 
 Kreil and Flupke, 38C3 2024. German-language talk on movement data of 800,000 Volkswagen group electric cars that was exposed unprotected online.

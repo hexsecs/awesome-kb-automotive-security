@@ -13,7 +13,10 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Open-source suite for wireless protocol investigation with native SDR support and easy signal demodulation."
-related: [keyfob-analysis-toolkit-kat, rtl-433, flipper-zero]
+related:
+  - keyfob-analysis-toolkit-kat
+  - rtl-433
+  - flipper-zero
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -23,6 +26,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/jopohl/urh/releases/tag/v2.10.0"
     retrieved: 2026-11-01
+facets: [rf-keys, tools]
 ---
 
 Open-source suite for wireless protocol investigation with native SDR support and easy signal demodulation.

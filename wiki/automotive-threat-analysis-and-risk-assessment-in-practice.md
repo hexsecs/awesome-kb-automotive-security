@@ -25,6 +25,7 @@ related:
   - autotara
   - automating-function-level-tara-for-automotive-full-lifecycle-security
   - tara-methodology
+facets: [tara, attack, tools, learning, standards]
 ---
 
 Rodrigo do Carmo and Alexander Schlensog, Springer 2024. Practitioner's guide to threat analysis and risk assessment (TARA) following ISO/SAE 21434, with worked examples for automotive embedded and IT/OT systems.

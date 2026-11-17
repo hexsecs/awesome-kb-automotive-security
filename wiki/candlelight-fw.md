@@ -13,7 +13,10 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Open firmware for low-cost STM32 USB to CAN adapters such as CANable, cantact, and candleLight that implements the mainline Linux gs_usb interface, turning them into native SocketCAN devices without a vendor driver."
-related: [cantact, cfuc, supercan]
+related:
+  - cantact
+  - cfuc
+  - supercan
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -21,6 +24,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/candle-usb/candleLight_fw/blob/master/README.md"
     retrieved: 2026-11-01
+facets: [can, firmware, hardware, tools]
 ---
 
 Open firmware for low-cost STM32 USB to CAN adapters such as CANable, cantact, and candleLight that implements the mainline Linux gs_usb interface, turning them into native SocketCAN devices without a vendor driver.

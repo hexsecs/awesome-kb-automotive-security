@@ -23,6 +23,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-01
+facets: [firmware, sensors, authentication, attack, tools, research]
 ---
 
 Chen et al., Black Hat Asia 2025. Attack chain against more than 24 dashcam models, delivered through a drive-through ordering flow, with an accompanying tool.

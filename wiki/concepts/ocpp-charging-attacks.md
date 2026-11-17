@@ -3,9 +3,17 @@ uid: 01a19d3c-af69-79fa-af04-e389daec6a4b
 title: "OCPP and charging attacks"
 summary: "OCPP links chargers to cloud backends; weak transport security, shared identities and duplicate connections enable hijack, fraud and outage attacks."
 type: concept
+cluster: boundary
 created: 2026-10-31
 updated: 2026-10-31
-related: [checkocpp, emuocpp, everest, ocppstorm-a-comprehensive-fuzzing-tool-for-ocpp-implementations, losing-the-car-keys-wireless-phy-layer-insecurity-in-ev-charging, race-to-charge-concurrency-bugs-and-state-integrity-violations-in-ev-charging-infrastructure, charging-trust-chain]
+related:
+  - checkocpp
+  - emuocpp
+  - everest
+  - ocppstorm-a-comprehensive-fuzzing-tool-for-ocpp-implementations
+  - losing-the-car-keys-wireless-phy-layer-insecurity-in-ev-charging
+  - race-to-charge-concurrency-bugs-and-state-integrity-violations-in-ev-charging-infrastructure
+  - charging-trust-chain
 sources:
   - url: "https://openchargealliance.org/ocpp-info-whitepapers/ocpp-1-6-security-whitepaper-4th-edition/"
     retrieved: 2026-10-31
@@ -13,6 +21,7 @@ sources:
     retrieved: 2026-10-31
   - url: "https://www.ndss-symposium.org/ndss-paper/auto-draft-457/"
     retrieved: 2026-10-31
+facets: [can, firmware, ev-charging, attack]
 ---
 
 The Open Charge Point Protocol (OCPP) connects each charge point (EVSE)

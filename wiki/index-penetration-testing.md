@@ -1,5 +1,7 @@
 # Penetration Testing
 
+Browse by facet: [Tools & libraries](index-facet-tools.md) (11), [CAN](index-facet-can.md) (7), [Attack techniques](index-facet-attack.md) (6), [Diagnostics](index-facet-diagnostics.md) (5), [DoIP](index-facet-doip.md) (2), [Authentication & keys](index-facet-authentication.md) (1).
+
 - [AutoFuze](autofuze.md) — Python toolkit for fuzzing and penetration testing ECUs over UDS, XCP, SOME/IP, and OBD, across CAN, DoIP, USB, and SPI transports.
 - [automotive-security-research](automotive-security-research.md) — Published reverse engineering results for two production vehicles including CAN matrices, extracted ECU security access keys, and UDS scanning…
 - [CANHack](canhack.md) — Ken Tindell's proof-of-concept toolkit of low-level CAN protocol attacks such as Janus frames, bit-banged from a Raspberry Pi Pico on the CANPico board…

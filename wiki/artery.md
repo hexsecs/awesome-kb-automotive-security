@@ -27,6 +27,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://artery.v2x-research.eu/"
     retrieved: 2026-11-01
+facets: [v2x, simulation, attack, tools]
 ---
 
 OMNeT++ simulation framework pairing the Vanetza ITS-G5 stack with SUMO traffic, providing the environment that most misbehavior-detection and V2X attack studies are built on.

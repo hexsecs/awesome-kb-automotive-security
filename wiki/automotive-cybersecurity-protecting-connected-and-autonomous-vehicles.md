@@ -22,6 +22,7 @@ related:
   - automotive-cyber-security
   - hacking-connected-cars
   - tara-methodology
+facets: [can, ethernet, firmware, ev-charging, ivi, sensors, tara, attack, learning, standards]
 ---
 
 Alfred Basta and Sam Hana, Kendall Hunt 2026. Textbook covering threats from ECU networks and sensor spoofing to OTA patching, EV charging breaches, and incident response.

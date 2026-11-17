@@ -27,6 +27,7 @@ related:
   - charge-it-to-my-neighbor-a-relay-attack-on-iso-15118-plug-and-charge-payment
   - current-affairs-a-security-measurement-study-of-ccs-ev-charging-deployments
   - charging-trust-chain
+facets: [ev-charging, research, standards]
 ---
 
 Baker and Martinovic, USENIX Security 2019. Recovers ISO 15118 charging messages from the unintentional wireless emissions of CCS power-line communication across 54 real charging sessions.

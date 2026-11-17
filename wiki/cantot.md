@@ -24,6 +24,7 @@ sources:
     retrieved: 2026-10-31
   - url: "https://github.com/shipcod3/canTot"
     retrieved: 2026-10-31
+facets: [can, attack, tools]
 ---
 
 Metasploit-style CAN bus exploitation framework built on sploitkit, packaging published vehicle-specific CAN attacks as selectable modules.

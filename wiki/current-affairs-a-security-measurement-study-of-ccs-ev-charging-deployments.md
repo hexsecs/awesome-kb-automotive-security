@@ -28,6 +28,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
+facets: [firmware, ev-charging, research]
 ---
 
 Szakaly et al., USENIX Security 2025. First measurement of publicly deployed CCS DC chargers, finding that only 12 percent of 325 units across four European countries negotiated TLS and that most ran decade-old HomePlug modem firmware.

@@ -1,0 +1,81 @@
+# Needs attention
+
+Generated from page frontmatter by tools/ingest.py. A page may appear in more than one queue. Do not edit by hand.
+
+## Unverified resources (17)
+
+- [Automotive Threat Modeling Template](automotive-threat-modeling-template.md)
+- [Automotive-Networking-Security](automotive-networking-security.md)
+- [CAN-DAQ](can-daq.md)
+- [CANtact](cantact.md)
+- [CANter](canter.md)
+- [Car Toolkit](car-toolkit.md)
+- [Chimaera](chimaera.md)
+- [DongleScope](donglescope.md)
+- [OWASP Automotive EMB 60](owasp-automotive-emb-60.md)
+- [OpenGarages](opengarages.md)
+- [Simos18_SBOOT](simos18-sboot.md)
+- [automotive-security-research](automotive-security-research.md)
+- [conescan](conescan.md)
+- [ghidra-tc1797](ghidra-tc1797.md)
+- [someip-protocol-fuzzer](someip-protocol-fuzzer.md)
+- [tesla-opener](tesla-opener.md)
+- [uds-firmware-extraction](uds-firmware-extraction.md)
+
+## Graph orphans (0)
+
+_None._
+
+## Pointer entries (39)
+
+- [A Comprehensible Guide to Controller Area Network](a-comprehensible-guide-to-controller-area-network.md)
+- [Automotive Cyber Security](automotive-cyber-security.md)
+- [Automotive Cybersecurity Roadmap](automotive-cybersecurity-roadmap.md)
+- [Automotive Cybersecurity: An Introduction to ISO/SAE 21434](automotive-cybersecurity-an-introduction-to-iso-sae-21434.md)
+- [Automotive Cybersecurity: Protecting Connected and Autonomous Vehicles](automotive-cybersecurity-protecting-connected-and-autonomous-vehicles.md)
+- [Automotive Security Timeline](automotive-security-timeline.md)
+- [Automotive Threat Analysis and Risk Assessment in Practice](automotive-threat-analysis-and-risk-assessment-in-practice.md)
+- [Automotive-Networking-Security](automotive-networking-security.md)
+- [Awesome CANb IDs](awesome-canb-ids.md)
+- [Awesome CANbus](awesome-canbus.md)
+- [Awesome Connected Things Sec](awesome-connected-things-sec.md)
+- [Awesome EV Charging](awesome-ev-charging.md)
+- [Awesome Embedded Security](awesome-embedded-security.md)
+- [Back in the Driver's Seat: Recovering Critical Data from Tesla Autopilot Using Voltage Glitching](back-in-the-driver-s-seat-recovering-critical-data-from-tesla-autopilot-using-voltage-glitching.md)
+- [Back-connect to the Connected Car. Search for Vulnerabilities in the VW Electric Car.](back-connect-to-the-connected-car-search-for-vulnerabilities-in-the-vw-electric-car.md)
+- [Building Secure Cars](building-secure-cars.md)
+- [CANdid: A Stealthy Stepping-Stone Attack to Bypass Authentication on ECUs](candid-a-stealthy-stepping-stone-attack-to-bypass-authentication-on-ecus.md)
+- [CarDS](cards.md)
+- [Cross-Vehicle Generalisation Benchmark](cross-vehicle-generalisation-benchmark.md)
+- [Cybersecurity for Commercial Vehicles](cybersecurity-for-commercial-vehicles.md)
+- [DriveThru Car Hacking: Fast Food, Faster Data Breach](drivethru-car-hacking-fast-food-faster-data-breach.md)
+- [Fast and Compromised: Automotive Security on a Timer](fast-and-compromised-automotive-security-on-a-timer.md)
+- [GEM-CAN](gem-can.md)
+- [Hacking Connected Cars](hacking-connected-cars.md)
+- [How API Flaws Led to Admin Access to Over 1k USA Dealers and Control Over Your Car](how-api-flaws-led-to-admin-access-to-over-1k-usa-dealers-and-control-over-your-car.md)
+- [Low Energy to High Energy: Hacking Nearby EV-Chargers Over Bluetooth](low-energy-to-high-energy-hacking-nearby-ev-chargers-over-bluetooth.md)
+- [Modern Odometer Manipulation](modern-odometer-manipulation.md)
+- [Offensive Automotive Cybersecurity](offensive-automotive-cybersecurity.md)
+- [One Modem to Brick Them All: Exploiting Vulnerabilities in the EV Charging Communication](one-modem-to-brick-them-all-exploiting-vulnerabilities-in-the-ev-charging-communication.md)
+- [OpenGarages](opengarages.md)
+- [Passive and Active Attacks on TPMS Systems](passive-and-active-attacks-on-tpms-systems.md)
+- [Pwn2Own Automotive 2026: Day Three Results and the Master of Pwn](pwn2own-automotive-2026-day-three-results-and-the-master-of-pwn.md)
+- [Securing Electric Mobility](securing-electric-mobility.md)
+- [Survival Analysis Dataset](survival-analysis-dataset.md)
+- [TOW-IDS Automotive Ethernet Intrusion Dataset](tow-ids-automotive-ethernet-intrusion-dataset.md)
+- [VeReMi Extension](veremi-extension.md)
+- [Vehicle Immobilization Revisited](vehicle-immobilization-revisited.md)
+- [What is Automotive MACsec?](what-is-automotive-macsec.md)
+- [Wir wissen, wo dein Auto steht](wir-wissen-wo-dein-auto-steht.md)
+
+## Stale verification (0)
+
+_None._
+
+## Tombstoned pages (5)
+
+- [CANalyse](canalyse.md)
+- [Kayak](kayak.md)
+- [SynCAN](syncan.md)
+- [Universal Radio Hacker (URH)](universal-radio-hacker-urh.md)
+- [VASP](vasp.md)

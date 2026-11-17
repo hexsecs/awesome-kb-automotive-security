@@ -1,5 +1,7 @@
 # Automotive Ethernet
 
+Browse by facet: [Tools & libraries](index-facet-tools.md) (6), [SOME/IP](index-facet-someip.md) (5), [Automotive Ethernet](index-facet-ethernet.md) (4), [Attack techniques](index-facet-attack.md) (3), [Standards & specs](index-facet-standards.md) (3), [CAN](index-facet-can.md) (2).
+
 - [eth-ws-someip](eth-ws-someip.md) — Wireshark LUA dissectors for Automotive Ethernet SOME/IP and SOME/IP-SD protocols (Autosar 4.2).
 - [ICS CAP](ics-cap.md) — Free Wireshark plugin for monitoring Automotive Ethernet, CAN, CAN FD, LIN, and FlexRay networks.
 - [ProtoCrawler](protocrawler.md) — Intelligent protocol fuzzer for SOME/IP, DoIP, UDS, and Ethernet AVB satisfying ISO/SAE 21434 testing requirements.

@@ -22,6 +22,7 @@ related:
   - drift-with-devil-security-of-multi-sensor-fusion-based-localization-in-high-level-autonomous-driving-under-gps-spoofing
   - sok-how-sensor-attacks-disrupt-autonomous-vehicles-an-end-to-end-analysis-challenges-and-missed-threats
   - physical-channel-sensor-attacks
+facets: [sensors, attack, research]
 ---
 
 Zeng et al., USENIX Security 2018. Spoofs GPS to reroute a driver to an attacker-chosen destination while keeping the displayed route plausible.

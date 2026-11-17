@@ -22,6 +22,7 @@ related:
   - the-car-hacker-s-handbook
   - car-hacking-village
   - tara-methodology
+facets: [can, diagnostics, iso-tp, lin, ethernet, firmware, simulation, tara, tools, learning, standards]
 ---
 
 Structured learning path from CAN and UDS fundamentals through TARA, firmware reverse engineering, and hardware hacking into specialized career tracks.

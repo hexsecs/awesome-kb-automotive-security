@@ -27,6 +27,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
+facets: [ev-charging, attack, tools, research]
 ---
 
 Coppoletta et al., VehicleSec 2024. Black-box fuzzer for the OCPP charging-station protocol that tests implementations regardless of platform or language, and found five confirmed CVEs in two open-source OCPP systems.

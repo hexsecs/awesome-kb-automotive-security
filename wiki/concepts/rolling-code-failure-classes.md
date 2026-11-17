@@ -3,14 +3,22 @@ uid: 01a19d3c-af6b-7b16-a341-3805a690a069
 title: "Rolling-code failure classes"
 summary: "Rolling codes move trust from the code's secrecy to the receiver's counter state; the failure classes attack that state: windows, resync, harvesting, blocking."
 type: concept
+cluster: boundary
 created: 2026-11-01
 updated: 2026-11-01
-related: [key-fob-relay-attacks, lock-it-and-still-lose-it-on-the-in-security-of-automotive-remote-keyless-entry-systems, rollback-a-new-time-agnostic-replay-attack-against-the-automotive-remote-keyless-entry-systems, flipper-arf, keyfob-analysis-toolkit-kat, sok-stealing-cars-since-remote-keyless-entry-introduction-and-how-to-defend-from-it]
+related:
+  - key-fob-relay-attacks
+  - lock-it-and-still-lose-it-on-the-in-security-of-automotive-remote-keyless-entry-systems
+  - rollback-a-new-time-agnostic-replay-attack-against-the-automotive-remote-keyless-entry-systems
+  - flipper-arf
+  - keyfob-analysis-toolkit-kat
+  - sok-stealing-cars-since-remote-keyless-entry-introduction-and-how-to-defend-from-it
 sources:
   - url: "https://arxiv.org/abs/2210.11923"
     retrieved: 2026-11-01
   - url: "https://www.usenix.org/conference/usenixsecurity16/presentation/garcia"
     retrieved: 2026-11-01
+facets: [rf-keys, attack, defense]
 ---
 
 Remote keyless entry has three attack families. Relay extends a live exchange (the [key-fob relay](key-fob-relay-attacks.md) page). Cryptanalysis recovers key material and clones the fob (the Hitag2/Megamos and DST breaks that page contrasts against). This page covers the third family: attacks on the **freshness machinery itself**. A rolling code makes each fob transmission single-use by encrypting a counter; the receiver accepts a transmission whose counter falls inside a forward window of the last-seen value. The security therefore no longer rests on the code's secrecy alone — it rests on the **receiver's counter state**: how wide the window is, what the resynchronisation protocol permits, and what the receiver does when counters move the wrong way. Every class below attacks that state rather than the cipher. The [Stealing Cars SoK](../sok-stealing-cars-since-remote-keyless-entry-introduction-and-how-to-defend-from-it.md)'s taxonomy reaches the same organisation from the literature side; its record that none of the published defences is deployed is the family's deployment baseline.

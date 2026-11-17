@@ -24,6 +24,7 @@ sources:
     retrieved: 2026-10-31
   - url: "https://github.com/ConnorRigby/conescan"
     retrieved: 2026-10-31
+facets: [diagnostics, firmware, tools]
 ---
 
 Automotive ECU hacking supertool for firmware dumping and manipulation via J2534 OBD interfaces.

@@ -26,6 +26,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
+facets: [firmware, research]
 ---
 
 Gardiner, USENIX VehicleSec 2026. Reverse engineers the Bendix EC80 brake ECU's J2497 power-line updater, diffs the firmware to show a safety recall also patched security bugs, and demonstrates a write-where primitive and DoS on a bench and in a moving truck.

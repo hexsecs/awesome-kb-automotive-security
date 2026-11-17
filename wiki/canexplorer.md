@@ -31,6 +31,7 @@ sources:
     retrieved: 2026-11-17
   - url: "https://api.github.com/repos/AKJ7/CANExplorer"
     retrieved: 2026-11-17
+facets: [can, diagnostics, doip, lin, someip, firmware, authentication, attack, tools]
 ---
 
 Cross-platform CAN, CAN FD, and LIN analysis GUI with reverse-engineering tools, UDS discovery and fuzzing, DoIP and SOME/IP support, and SecOC decoding.

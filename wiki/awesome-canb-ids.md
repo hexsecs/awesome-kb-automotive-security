@@ -21,6 +21,7 @@ sources:
 related:
   - awesome-canbus
   - can-injection
+facets: [can, diagnostics, firmware, ids, learning]
 ---
 
 CAN bus ID reference and documentation.

@@ -23,6 +23,7 @@ sources:
     retrieved: 2026-11-05
   - url: "https://books.google.com/books?vid=ISBN9781108841955"
     retrieved: 2026-11-17
+facets: [ethernet, learning]
 ---
 
 Matheus and Königseder, Cambridge University Press 2021. The standard reference on automotive Ethernet, covering PHYs, TSN, and security concepts for in-vehicle networks.

@@ -22,6 +22,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-01
+facets: [can, ethernet, v2x, ivi, tara, attack, learning]
 ---
 
 Alissa Knight, Wiley 2020. Tactics, techniques, and procedures for penetration testing, threat modelling, and risk assessment of telematics control units and infotainment systems.

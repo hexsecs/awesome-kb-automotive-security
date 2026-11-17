@@ -24,6 +24,7 @@ sources:
     retrieved: 2026-10-31
   - url: "https://github.com/souravbaghz/Carpunk"
     retrieved: 2026-10-31
+facets: [can, simulation, attack, tools]
 ---
 
 CAN injection toolkit and successor to CANghost, automating interface setup, sniffing, replay, and injection attacks.

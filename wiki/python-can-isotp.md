@@ -31,6 +31,7 @@ sources:
     retrieved: 2026-10-31
   - url: "https://can-isotp.readthedocs.io"
     retrieved: 2026-10-31
+facets: [can, diagnostics, iso-tp, defense, tools, standards]
 ---
 
 ISO-TP (ISO 15765) transport for Python on top of python-can or Linux SocketCAN, the segmentation layer that UDS and OBD-II diagnostics run over.

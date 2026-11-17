@@ -25,6 +25,7 @@ sources:
     retrieved: 2026-10-31
   - url: "https://github.com/provrb/obdium"
     retrieved: 2026-10-31
+facets: [diagnostics, tools]
 ---
 
 Rust-based OBD-II diagnostic tool with modern Tauri GUI supporting live data, DTC analysis, and offline VIN decoding.

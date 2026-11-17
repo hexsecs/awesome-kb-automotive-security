@@ -3,12 +3,34 @@ uid: 01a19d3c-af5d-766f-b83e-f77cc3223141
 title: "CAN injection"
 summary: "Attacker taps exposed CAN wiring and impersonates a trusted ECU: classic CAN frames carry no sender authentication, so fake 'key valid' messages are believed."
 type: concept
+cluster: bus
 created: 2026-10-31
 updated: 2026-11-01
-related: [canflict, canter, carpunk, canalyzat0r, can-utils, security-in-automotive-bus-systems, experimental-security-analysis-of-a-modern-automobile, comprehensive-experimental-analyses-of-automotive-attack-surfaces, adventures-in-automotive-networks-and-control-units, remote-exploitation-of-an-unaltered-passenger-vehicle, error-handling-of-in-vehicle-networks-makes-them-vulnerable, leia-a-lightweight-authentication-protocol-for-can, vulcan-efficient-component-authentication-and-software-isolation-for-automotive-control-networks, fast-and-vulnerable-a-story-of-telematic-failures, canvas-fast-and-inexpensive-automotive-network-mapping, plug-n-pwned-comprehensive-vulnerability-analysis-of-obd-ii-dongles, can-availability, in-vehicle-intrusion-detection, can-message-authentication, external-attack-surface]
+related:
+  - canflict
+  - canter
+  - carpunk
+  - canalyzat0r
+  - can-utils
+  - security-in-automotive-bus-systems
+  - experimental-security-analysis-of-a-modern-automobile
+  - comprehensive-experimental-analyses-of-automotive-attack-surfaces
+  - adventures-in-automotive-networks-and-control-units
+  - remote-exploitation-of-an-unaltered-passenger-vehicle
+  - error-handling-of-in-vehicle-networks-makes-them-vulnerable
+  - leia-a-lightweight-authentication-protocol-for-can
+  - vulcan-efficient-component-authentication-and-software-isolation-for-automotive-control-networks
+  - fast-and-vulnerable-a-story-of-telematic-failures
+  - canvas-fast-and-inexpensive-automotive-network-mapping
+  - plug-n-pwned-comprehensive-vulnerability-analysis-of-obd-ii-dongles
+  - can-availability
+  - in-vehicle-intrusion-detection
+  - can-message-authentication
+  - external-attack-surface
 sources:
   - url: "https://plaxidityx.com/blog/blog-post/what-oems-can-do-to-prevent-can-injection-car-theft/"
     retrieved: 2026-10-31
+facets: [can, authentication, attack]
 ---
 
 CAN injection is the attack behind a wave of keyless car thefts: the

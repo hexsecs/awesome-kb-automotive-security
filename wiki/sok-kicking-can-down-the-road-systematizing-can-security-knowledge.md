@@ -25,6 +25,7 @@ related:
   - evading-voltage-based-intrusion-detection-on-automotive-can
   - can-injection
   - can-availability
+facets: [can, attack, defense, research]
 ---
 
 Serag et al., 2025. Systematization of two decades of CAN security, with a unified taxonomy and assessment model for attackers, attacks, and defences.

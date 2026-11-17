@@ -27,6 +27,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
+facets: [rf-keys, attack, research]
 ---
 
 Verdult, Garcia, and Balasch, USENIX Security 2012. Breaks the Hitag2 immobilizer transponder, then fitted to over 200 car models, recovering the key by radio in minutes.

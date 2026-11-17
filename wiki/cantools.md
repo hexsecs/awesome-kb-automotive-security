@@ -31,6 +31,7 @@ sources:
     retrieved: 2026-10-31
   - url: "https://cantools.readthedocs.io/en/latest/"
     retrieved: 2026-10-31
+facets: [can, diagnostics, tools]
 ---
 
 Python library for CAN bus diagnostics, DBC parsing, and message decoding/encoding.

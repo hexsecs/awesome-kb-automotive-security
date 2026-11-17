@@ -13,7 +13,11 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Ghidra processor specification and language definitions for the Infineon TriCore TC1797, used to label memory regions when disassembling MED17 and similar ECU firmware."
-related: [ghidra-v850, medc17-checksum-tool, tc1791-can-bsl, firmware-acquisition]
+related:
+  - ghidra-v850
+  - medc17-checksum-tool
+  - tc1791-can-bsl
+  - firmware-acquisition
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -21,6 +25,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/christianobora/ghidra-tc1797/blob/master/README.md"
     retrieved: 2026-11-01
+facets: [firmware, tools, standards]
 ---
 
 Ghidra processor specification and language definitions for the Infineon TriCore TC1797, used to label memory regions when disassembling MED17 and similar ECU firmware.

@@ -32,6 +32,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
+facets: [attack, research]
 ---
 
 Checkoway et al., USENIX Security 2011. Follow-up establishing the remote attack surface, compromising a vehicle over Bluetooth, cellular, and the CD player.

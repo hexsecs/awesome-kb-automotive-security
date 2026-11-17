@@ -24,6 +24,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
+facets: [attack, research]
 ---
 
 Jing et al., USENIX Security 2021. First lane-detection attack validated on a real production vehicle, exploiting the module's over-sensitivity with small road markings.

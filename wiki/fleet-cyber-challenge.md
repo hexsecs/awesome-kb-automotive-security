@@ -24,6 +24,7 @@ sources:
     retrieved: 2026-11-15
   - url: "https://nmfta.org/standards/cybersecurity/fleet-cyber-challenge/"
     retrieved: 2026-11-17
+facets: [can, firmware, sensors, authentication, attack, learning]
 ---
 
 NMFTA's free self-paced capture-the-flag lab for commercial vehicle security, with scenarios on CAN traffic analysis, ELD compromise, GPS spoofing, firmware artifacts, and telematics API credentials, needing no account to start.

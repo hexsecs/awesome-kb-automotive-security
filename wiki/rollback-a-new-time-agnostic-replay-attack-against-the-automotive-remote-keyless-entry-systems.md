@@ -27,6 +27,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
+facets: [rf-keys, simulation, attack, research]
 ---
 
 Csikor et al., Black Hat USA 2022. Replaying already-invalid rolling codes in sequence triggers a resynchronisation rollback, unlocking a vehicle indefinitely and defeating the countermeasure that stopped RollJam.

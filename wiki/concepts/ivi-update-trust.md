@@ -3,9 +3,20 @@ uid: 01a19d3c-af66-77c1-b415-16df9b0b7742
 title: "IVI update-path trust"
 summary: "How head-unit update trust anchors fail across six IVI platforms: absent checks, a public test key, a fleet-wide key, CRC-only integrity, patchable verifiers."
 type: concept
+cluster: access
 created: 2026-11-01
 updated: 2026-11-01
-related: [byd-dolphin-hacking, chimaera, gen5fw, ic1101, mmi3g-toolkit, q50-reverse-engineering, secure-firmware-updates, simos18-sboot, secv-securing-connected-vehicles-with-hardware-trust-anchors, ivi-runtime-privilege]
+related:
+  - byd-dolphin-hacking
+  - chimaera
+  - gen5fw
+  - ic1101
+  - mmi3g-toolkit
+  - q50-reverse-engineering
+  - secure-firmware-updates
+  - simos18-sboot
+  - secv-securing-connected-vehicles-with-hardware-trust-anchors
+  - ivi-runtime-privilege
 sources:
   - url: "https://github.com/wheregoes/byd-dolphin-hacking/blob/master/README.md"
     retrieved: 2026-11-01
@@ -19,6 +30,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/oneezeeroo/Q50-Reverse-Engineering/blob/main/README.md"
     retrieved: 2026-11-01
+facets: [ivi, authentication, attack]
 ---
 
 Every head unit in this KB's IVI section decides what code it will run by trusting something on its update or package path: a signature, a key, a permission check, a checksum. Six platforms document that decision point — and in five of them the anchor did not bind. The failures are almost never broken cryptography: they are anchors that were missing, public, shared fleet-wide, unkeyed, or implemented in software the attacker could rewrite or interrogate — plus one platform, the Q50, where the anchor has not been located at all. This page is the taxonomy of those failures.

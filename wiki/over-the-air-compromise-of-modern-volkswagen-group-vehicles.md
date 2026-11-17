@@ -28,6 +28,7 @@ sources:
     retrieved: 2026-11-07
   - url: "https://i.blackhat.com/EU-24/Presentations/EU-24-Parnishchev-OverTheAirVW.pdf"
     retrieved: 2026-11-17
+facets: [firmware, ivi, sensors, attack, research]
 ---
 
 Ivachev and Parnishchev, Black Hat Europe 2024. Bluetooth attack chain against Volkswagen Group MIB3 infotainment yielding persistent code execution, microphone recording, GPS tracking, and contact exfiltration across 1.4 million vehicles.

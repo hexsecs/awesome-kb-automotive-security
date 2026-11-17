@@ -24,6 +24,7 @@ sources:
     retrieved: 2026-11-06
   - url: "https://media.defcon.org/DEF%20CON%2031/DEF%20CON%2031%20villages/DEF%20CON%2031%20villages%20captions/DEF%20CON%2031%20-%20Car%20Hacking%20Village%20-%20Abusing%20CAN%20Bus%20Protocol%20Specification%20for%20Denial%20of%20Service%20in%20Embedded%20Systems%20-%20Martin%20Petran.eng.txt"
     retrieved: 2026-11-17
+facets: [can, firmware, hardware, research, standards]
 ---
 
 Petran, DEF CON 31 Car Hacking Village 2023. Shows how an out-of-range CAN data length code reaches firmware unchecked and overflows a buffer, demonstrated on a development board and a Tesla Model 3 ECU.

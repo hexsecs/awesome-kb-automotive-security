@@ -13,13 +13,16 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Tunnels SocketCAN interfaces over UDP, TCP, or SCTP, bridging a vehicle bus to a remote analysis machine and letting bench setups share one physical CAN adapter."
-related: [candevstudio, can-utils]
+related:
+  - candevstudio
+  - can-utils
 license: GPL-2.0
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
   - url: "https://github.com/mguentner/cannelloni"
     retrieved: 2026-10-31
+facets: [can, tools]
 ---
 
 Tunnels SocketCAN interfaces over UDP, TCP, or SCTP, bridging a vehicle bus to a remote analysis machine and letting bench setups share one physical CAN adapter.

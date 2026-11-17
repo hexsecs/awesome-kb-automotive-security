@@ -26,6 +26,7 @@ sources:
     retrieved: 2026-10-31
   - url: "https://github.com/commaai/opendbc"
     retrieved: 2026-10-31
+facets: [can, tools]
 ---
 
 Python API for your car, bundling community-maintained DBC files with CAN parsing and car interface libraries for reading vehicle state and actuating controls.

@@ -22,6 +22,7 @@ related:
   - syncan
   - car-hacking-dataset
   - in-vehicle-intrusion-detection
+facets: [can, ids, attack, datasets]
 ---
 
 Labelled capture of about 143,000 CAN frames from an autonomous GEM e6 platform, with normal operation, DoS floods, and brake and steering-lock data-tampering injections, for benchmarking lightweight on-device IDS.

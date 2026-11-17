@@ -3,14 +3,23 @@ uid: 01a19d3c-af60-75e8-872d-1adf279d3fb0
 title: "Protocol-aware diagnostic fuzzing"
 summary: "Fuzzing reaches the deep diagnostic states only when generation is grammar- and state-aware: sessions and SecurityAccess are the fuzzer's real problem."
 type: concept
+cluster: access
 created: 2026-11-01
 updated: 2026-11-01
-related: [autofuze, nullsec-carfuzz, caringcaribou, cantoolz, udsim, diagnostic-service-abuse, simulation-and-test-doubles]
+related:
+  - autofuze
+  - nullsec-carfuzz
+  - caringcaribou
+  - cantoolz
+  - udsim
+  - diagnostic-service-abuse
+  - simulation-and-test-doubles
 sources:
   - url: "https://github.com/nccgroup/autofuze"
     retrieved: 2026-11-01
   - url: "https://github.com/einride/can-tools"
     retrieved: 2026-11-01
+facets: [can, diagnostics, attack, tools]
 ---
 
 Fuzzing is this corpus's oldest discovery method — [Koscher 2010](../experimental-security-analysis-of-a-modern-automobile.md)'s headline result began as fuzzing a proprietary service and correlating bits with behaviours — and the tool pages since have split into two kinds that share a name. **Frame-random mutation** generates malformed CAN frames and watches for effects; it finds disruption cheaply and Koscher's own verdict stands (a fuzzer is a near-universal *disruption* tool). **Protocol-aware fuzzing** exists because disruption is not the deep result: the states where the dangerous services live — programming sessions, routine execution, memory access — sit behind session management and SecurityAccess, and a mutator that cannot hold a session open, answer a seed, and sequence services in a valid order never reaches the code it exists to test. This page synthesises the strong instances' shared design, and says plainly, as its filing evaluation required, that several corpus pages' fuzzing claims are thin or aspirational — the page is written from the strong instances.

@@ -29,6 +29,7 @@ sources:
     retrieved: 2026-11-17
   - url: "https://api.github.com/repos/jongchan-hong/OCPPuzz"
     retrieved: 2026-11-17
+facets: [ev-charging, attack, tools, standards]
 ---
 
 Specification-driven fuzzer for OCPP charging station management systems that extracts message rules and state transitions from the specification with a language model and reports deviations, uncovering denial-of-service and free-charging flaws in open-source systems.

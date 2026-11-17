@@ -26,6 +26,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
+facets: [can, ids, attack, research]
 ---
 
 Bhatia et al., NDSS 2021. The DUET masquerade attack, in which two compromised ECUs corrupt the bus voltage and defeat every published voltage-based IDS, including Viden.

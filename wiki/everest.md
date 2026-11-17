@@ -39,6 +39,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/EVerest/EVerest/blob/2265c29a8dc0a841672012ccc0c31b00217174d8/modules/EVSE/EvseSecurity/manifest.yaml"
     retrieved: 2026-11-01
+facets: [firmware, ev-charging, tools, standards]
 ---
 
 Linux Foundation Energy full-stack open-source EV charging firmware implementing OCPP 1.6/2.0.1/2.1, ISO 15118-2/-3/-20, IEC 61851, and DIN SPEC 70121, useful as a reference target and test peer.

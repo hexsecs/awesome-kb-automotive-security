@@ -27,6 +27,7 @@ related:
   - autohack
   - can-train-and-test
   - in-vehicle-intrusion-detection
+facets: [can, ids, attack, datasets]
 ---
 
 CAN bus attack dataset from a modern vehicle driven on real roads over six days, with physically verified masquerade, suspension, and real attacks.

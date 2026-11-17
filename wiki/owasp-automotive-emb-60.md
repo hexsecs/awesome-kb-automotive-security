@@ -24,6 +24,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/OWASP/www-project-automotive-emb-60"
     retrieved: 2026-11-01
+facets: [can, tools]
 ---
 
 OWASP incubator project with open hardware and software for a single-board computer that acts as a CAN-to-USB interface through SocketCAN for penetration testing.

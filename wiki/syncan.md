@@ -28,6 +28,7 @@ related:
   - survival-analysis-dataset
   - in-vehicle-intrusion-detection
   - simulation-and-test-doubles
+facets: [can, simulation, ids, attack, datasets]
 ---
 
 ETAS synthetic CAN benchmark with continuous, plateau, playback, suspension, and flooding attacks in the signal space, for comparing IDS that work on decoded signals rather than raw arbitration IDs.

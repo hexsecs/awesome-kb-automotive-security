@@ -13,7 +13,12 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Security testing framework for ISO 15118-2 and DIN SPEC 70121 that emulates either the charger or the vehicle, with TLS support and extensible handlers for injecting non-compliant behaviour at any step of a session."
-related: [acccs, pyplc, dsv2gshark, wwcp-iso15118, charging-trust-chain]
+related:
+  - acccs
+  - pyplc
+  - dsv2gshark
+  - wwcp-iso15118
+  - charging-trust-chain
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -23,6 +28,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/konicst1/ChargeSploit/blob/9d80027a4b05a94ad6b97fa7c95c1653bbe0c176/README.md"
     retrieved: 2026-11-01
+facets: [ev-charging, tools, standards]
 ---
 
 Security testing framework for ISO 15118-2 and DIN SPEC 70121 that emulates either the charger or the vehicle, with TLS support and extensible handlers for injecting non-compliant behaviour at any step of a session.

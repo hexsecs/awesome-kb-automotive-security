@@ -25,6 +25,7 @@ sources:
     retrieved: 2026-10-31
   - url: "https://github.com/necst/CANflict"
     retrieved: 2026-10-31
+facets: [can, ev-charging, tools]
 ---
 
 C library that manipulates the CAN bus at the data link layer from an unmodified microcontroller, abusing pin conflicts between peripherals to craft polyglot frames; the implementation behind the CCS 2022 paper.

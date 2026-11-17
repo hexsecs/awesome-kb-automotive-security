@@ -33,6 +33,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
+facets: [sensors, research]
 ---
 
 Cao et al., IEEE S&P 2021. Defeats the multi-sensor fusion designs that production stacks actually use, with a single adversarial object invisible to camera and LiDAR at once.

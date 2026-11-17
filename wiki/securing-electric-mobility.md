@@ -21,6 +21,7 @@ sources:
 related:
   - ocpp-charging-attacks
   - awesome-ev-charging
+facets: [ev-charging, authentication, learning]
 ---
 
 Aparna Kumari (ed.), Elsevier 2026. Edited volume on the security of electric vehicles and charging infrastructure.

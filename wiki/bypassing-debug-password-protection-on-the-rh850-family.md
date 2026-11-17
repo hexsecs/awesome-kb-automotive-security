@@ -25,6 +25,7 @@ sources:
     retrieved: 2026-11-15
   - url: "https://blog.quarkslab.com/bypassing-debug-password-protection-on-the-rh850-family-using-fault-injection.html"
     retrieved: 2026-11-17
+facets: [hardware, attack, learning]
 ---
 
 Quarkslab walkthrough of defeating the 16-byte IDCODE debug lock on Renesas RH850 ECU microcontrollers with crowbar voltage glitching, using a ChipWhisperer Husky or a low-cost Pico Glitcher.

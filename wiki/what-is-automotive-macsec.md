@@ -21,6 +21,7 @@ sources:
 related:
   - automotive-networking-security
   - someip
+facets: [ethernet, learning]
 ---
 
 Video training on Automotive MACsec concepts by Technica Engineering.

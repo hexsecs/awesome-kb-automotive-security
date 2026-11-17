@@ -13,7 +13,9 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Open-source tool to open Tesla charging port using HackRF and WebUSB with ASK/OOK RF transmission."
-related: [key-fob-relay-attacks, flipper-zero]
+related:
+  - key-fob-relay-attacks
+  - flipper-zero
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -23,6 +25,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/rgerganov/tesla-opener/blob/master/docs/js/hackrf.js"
     retrieved: 2026-11-01
+facets: [rf-keys, tools]
 ---
 
 Open-source tool to open Tesla charging port using HackRF and WebUSB with ASK/OOK RF transmission.

@@ -28,6 +28,7 @@ sources:
     retrieved: 2026-10-31
   - url: "https://www.can-cia.org/fileadmin/cia/documents/proceedings/2012_lorenz.pdf"
     retrieved: 2026-10-31
+facets: [can, simulation, tools]
 ---
 
 Open-source CAN simulation, analysis, and test tool from Bosch Engineering and ETAS, with a node simulator, DBC-driven signal interpretation, and scriptable test automation.

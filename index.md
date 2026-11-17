@@ -3,6 +3,12 @@
 Knowledge base for automotive security, ingested from the curated awesome list hexsecs/awesome-automotive-security.
 Generated from page frontmatter by tools/ingest.py; do not edit by hand.
 
+## Start here
+
+- [Concept map](wiki/index-concept-map.md) — the concept layer by theme, with reading paths through it.
+- [Glossary](wiki/index-glossary.md) — acronyms and standards, linked to the page that explains each one.
+- [Needs attention](wiki/index-needs-attention.md) — 61 maintenance-queue entries.
+
 ## Categories
 
 - [CAN Bus Analysis](wiki/index-can-bus-analysis.md) — 31 entries
@@ -55,3 +61,35 @@ Generated from page frontmatter by tools/ingest.py; do not edit by hand.
 - [TARA methodology: the ISO/SAE 21434 artefact chain](wiki/concepts/tara-methodology.md) — How an automotive TARA is actually assembled: the ISO/SAE 21434 artefact chain, the layers the KB's tools occupy, and where automation helps and lies.
 - [UDS seed/key (SecurityAccess)](wiki/concepts/uds-seed-key.md) — UDS SecurityAccess (0x27) gates privileged diagnostics behind a seed/key exchange; weak seeds, reused secrets and simple algorithms defeat it.
 - [V2X credential management](wiki/concepts/v2x-credential-management.md) — How vehicles get pseudonymous credentials: split-knowledge issuance in the ETSI CCMS and US SCMS, so linking a ticket to an identity takes a quorum.
+
+## Facets
+
+Cross-cutting topics — browse a theme across every list section.
+
+- [Attack techniques](wiki/index-facet-attack.md) — 145 pages. Exploits, fuzzing, injection, spoofing and bypasses.
+- [Tools & libraries](wiki/index-facet-tools.md) — 142 pages. Software, toolkits and libraries you can run.
+- [CAN](wiki/index-facet-can.md) — 127 pages. Controller Area Network, CAN FD, CAN XL and SocketCAN.
+- [Research](wiki/index-facet-research.md) — 91 pages. Papers, surveys and conference presentations.
+- [Firmware & updates](wiki/index-facet-firmware.md) — 68 pages. Firmware acquisition, bootloaders, flashing and OTA updates.
+- [Diagnostics](wiki/index-facet-diagnostics.md) — 57 pages. UDS, OBD, KWP, SecurityAccess and diagnostic services.
+- [Standards & specs](wiki/index-facet-standards.md) — 48 pages. ISO, SAE, AUTOSAR, UNECE and published specifications.
+- [Authentication & keys](wiki/index-facet-authentication.md) — 37 pages. Message authentication, SecOC, key management and shared secrets.
+- [EV charging](wiki/index-facet-ev-charging.md) — 33 pages. EVSE, ISO 15118, OCPP, V2G, CCS and PLC.
+- [Learning](wiki/index-facet-learning.md) — 28 pages. Books, guides, courses and meta-lists.
+- [Simulation](wiki/index-facet-simulation.md) — 28 pages. Virtual buses, replay, SIL/HIL and physical miniatures.
+- [RF & keys](wiki/index-facet-rf-keys.md) — 27 pages. Key fobs, RKE/PKE, rolling codes, TPMS and radio tooling.
+- [Sensors & perception](wiki/index-facet-sensors.md) — 27 pages. LiDAR, camera, radar, GNSS and physical-channel attacks.
+- [Automotive Ethernet](wiki/index-facet-ethernet.md) — 24 pages. 100/1000BASE-T1, MACsec and in-vehicle IP networking.
+- [Intrusion detection](wiki/index-facet-ids.md) — 23 pages. IDS, ECU fingerprinting and anomaly attribution.
+- [TARA](wiki/index-facet-tara.md) — 22 pages. Threat analysis and risk assessment, ISO/SAE 21434.
+- [IVI](wiki/index-facet-ivi.md) — 18 pages. Infotainment and head-unit runtime and update trust.
+- [Defense & architecture](wiki/index-facet-defense.md) — 16 pages. Mitigations, secure design, segmentation and standards compliance.
+- [V2X](wiki/index-facet-v2x.md) — 16 pages. Vehicle-to-everything, pseudonym credentials and misbehaviour reporting.
+- [DoIP](wiki/index-facet-doip.md) — 14 pages. Diagnostics over IP and its discovery/routing boundary.
+- [Datasets](wiki/index-facet-datasets.md) — 12 pages. Captures, benchmarks and labelled datasets.
+- [Hardware](wiki/index-facet-hardware.md) — 11 pages. Debug ports, boards, adapters and bench interfaces.
+- [LIN](wiki/index-facet-lin.md) — 10 pages. The subordinate LIN bus behind gateways.
+- [XCP / A2L](wiki/index-facet-xcp.md) — 10 pages. Measurement and calibration, XCP and A2L description files.
+- [SOME/IP](wiki/index-facet-someip.md) — 9 pages. AUTOSAR service-oriented middleware and service discovery.
+- [ISO-TP](wiki/index-facet-iso-tp.md) — 8 pages. ISO 15765-2 transport, segmentation and flow control.
+- [J1939](wiki/index-facet-j1939.md) — 8 pages. Heavy-vehicle J1939 request and transport semantics.

@@ -24,6 +24,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-01
+facets: [can, diagnostics, firmware, rf-keys, hardware, authentication, attack, research]
 ---
 
 Bokslag, 36C3 2019. Studies three vehicles and shows the immobilizer transponder talks to the body control module rather than the ECM, so weak authentication at either link allows an unauthorised start.

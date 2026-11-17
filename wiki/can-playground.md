@@ -30,6 +30,7 @@ sources:
     retrieved: 2026-11-17
   - url: "https://api.github.com/repos/numbpill3d/can-playground"
     retrieved: 2026-11-17
+facets: [can, tools]
 ---
 
 Local-first Tauri desktop app for viewing, decoding, and capturing CAN bus traffic, with DBC import, signal annotation, and bit-level change timelines.

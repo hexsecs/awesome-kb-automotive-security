@@ -30,6 +30,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
+facets: [rf-keys, research]
 ---
 
 Garcia, Oswald, Kasper, and Pavlides, USENIX Security 2016. Recovers shared global keys covering most Volkswagen Group vehicles sold over two decades, and breaks the Hitag2 rolling-code scheme.

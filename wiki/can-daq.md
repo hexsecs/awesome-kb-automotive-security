@@ -13,7 +13,10 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Open hardware ESP32-S3 CAN data-capture device with DBC-driven real-time plotting and SQLite logging, published in HardwareX as a sub-$25 alternative to commercial CAN loggers."
-related: [ramn, cantact, dbc-semantic-layer]
+related:
+  - ramn
+  - cantact
+  - dbc-semantic-layer
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -23,6 +26,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://doi.org/10.1016/j.ohx.2026.e00743"
     retrieved: 2026-11-01
+facets: [can, tools]
 ---
 
 Open hardware ESP32-S3 CAN data-capture device with DBC-driven real-time plotting and SQLite logging, published in HardwareX as a sub-$25 alternative to commercial CAN loggers.

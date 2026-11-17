@@ -3,14 +3,23 @@ uid: 01a19d3c-af72-743d-bc20-aeb33a3b57e2
 title: "TARA methodology: the ISO/SAE 21434 artefact chain"
 summary: "How an automotive TARA is actually assembled: the ISO/SAE 21434 artefact chain, the layers the KB's tools occupy, and where automation helps and lies."
 type: concept
+cluster: method
 created: 2026-11-01
 updated: 2026-11-01
-related: [automotive-threat-matrix, automotive-threat-modeling-template, autotara, security-autodesigner, automating-function-level-tara-for-automotive-full-lifecycle-security, avcdl, secure-firmware-updates]
+related:
+  - automotive-threat-matrix
+  - automotive-threat-modeling-template
+  - autotara
+  - security-autodesigner
+  - automating-function-level-tara-for-automotive-full-lifecycle-security
+  - avcdl
+  - secure-firmware-updates
 sources:
   - url: "https://github.com/nccgroup/autotara"
     retrieved: 2026-11-01
   - url: "https://doi.org/10.14722/ndss.2026.231408"
     retrieved: 2026-11-01
+facets: [tara, tools, standards]
 ---
 
 Every other concept in this KB is a mechanism. This one is a *method*: the Threat Analysis and Risk Assessment (TARA) that ISO/SAE 21434 requires and UN R155 audits — the process by which an organisation decides, on paper and in advance, which of the mechanisms in this KB matter for a given vehicle system. The KB's Security Analysis pages each occupy one layer of that process without stating the whole; this page assembles the whole, because the joins between layers are where the method's real behaviour lives. The filing evaluation flagged the risk plainly — a methodology page earns its place only as falsifiable synthesis, not a section tour — so each layer below carries the claim the corpus actually supports about it.

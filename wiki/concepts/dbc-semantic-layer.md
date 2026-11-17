@@ -3,9 +3,27 @@ uid: 01a1ea9a-c0db-711a-9628-42df41640d10
 title: "DBC as the CAN semantic layer"
 summary: "A DBC file is the shared contract that turns CAN IDs and bytes into named signals — but it is a human claim about layout, not ground truth."
 type: concept
+cluster: bus
 created: 2026-11-17
 updated: 2026-11-17
-related: [opendbc, cantools, canmatrix, can-playground, canarchy, cangaroo, savvycan, busmaster, kayak, candevstudio, can-commander, can-daq, ecubus-pro, can-injection, can-availability, calibration-plane, simulation-and-test-doubles]
+related:
+  - opendbc
+  - cantools
+  - canmatrix
+  - can-playground
+  - canarchy
+  - cangaroo
+  - savvycan
+  - busmaster
+  - kayak
+  - candevstudio
+  - can-commander
+  - can-daq
+  - ecubus-pro
+  - can-injection
+  - can-availability
+  - calibration-plane
+  - simulation-and-test-doubles
 sources:
   - url: "https://github.com/commaai/opendbc"
     retrieved: 2026-11-17
@@ -15,6 +33,7 @@ sources:
     retrieved: 2026-11-17
   - url: "https://github.com/numbpill3d/can-playground"
     retrieved: 2026-11-17
+facets: [can, ids]
 ---
 
 A CAN frame is an ID and up to eight bytes of payload. Nothing in the frame

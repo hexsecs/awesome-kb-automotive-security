@@ -33,6 +33,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
+facets: [sensors, attack, research]
 ---
 
 Khan, Islam, and Hasan, arXiv 2026. Systematizes 48 studies of perception-layer attacks into a taxonomy of 20 attack vectors and shows how multi-sensor fusion opens cross-modal attacks.

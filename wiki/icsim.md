@@ -32,6 +32,7 @@ sources:
     retrieved: 2026-10-31
   - url: "https://github.com/zombieCraig/ICSim"
     retrieved: 2026-10-31
+facets: [can, simulation, tools]
 ---
 
 Instrument Cluster Simulator for safe CAN bus security testing with virtual dashboard controls.

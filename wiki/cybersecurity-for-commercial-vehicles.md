@@ -24,6 +24,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-01
+facets: [tara, tools, learning, standards]
 ---
 
 Gloria D'Anna, SAE International 2018. Covers heavy vehicle and fleet security, how it differs from passenger cars, SAE J3061, platooning, and breach forensics.

@@ -26,6 +26,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://ris.utwente.nl/ws/files/5314057/Petit_Pseudonym_schemes.pdf"
     retrieved: 2026-11-01
+facets: [v2x, authentication, research]
 ---
 
 Petit, Schaub, Feiri, and Kargl, IEEE Communications Surveys and Tutorials 2015. Defines the pseudonym lifecycle and categorises the schemes that reconcile V2X message authentication with driver privacy.

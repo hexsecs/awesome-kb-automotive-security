@@ -23,6 +23,7 @@ sources:
     retrieved: 2026-11-08
   - url: "https://i.blackhat.com/BH-USA-26/Presentations/US-26-Scharnowski-Pedal_to_the_Bare_Metal.pdf"
     retrieved: 2026-11-17
+facets: [firmware, attack, research]
 ---
 
 Scharnowski and Covic, Black Hat USA 2026. Demonstrates rehosting and fuzzing the Tesla Wall Connector firmware to trigger a worm spreading via SWCAN.

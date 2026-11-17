@@ -13,7 +13,10 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Automotive-focused firmware fork for Flipper Zero supporting Keeloq, rolling codes, and VAG protocol analysis."
-related: [flipper-zero, keyfob-analysis-toolkit-kat, rolling-code-failure-classes]
+related:
+  - flipper-zero
+  - keyfob-analysis-toolkit-kat
+  - rolling-code-failure-classes
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -21,6 +24,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/D4C1-Labs/Flipper-ARF/blob/main/README.md"
     retrieved: 2026-11-01
+facets: [firmware, rf-keys, tools]
 ---
 
 Automotive-focused firmware fork for Flipper Zero supporting Keeloq, rolling codes, and VAG protocol analysis.

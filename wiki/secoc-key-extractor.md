@@ -27,6 +27,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://icanhack.nl/blog/secoc-key-extraction/"
     retrieved: 2026-11-01
+facets: [hardware, authentication, tools]
 ---
 
 Scripts to extract SecOC (Secure On-Board Communication) keys from Toyota vehicles using comma.ai panda hardware.

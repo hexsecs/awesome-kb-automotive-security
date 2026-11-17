@@ -3,14 +3,23 @@ uid: 01a19d3c-af6f-7dff-a1c9-8cf0e3927076
 title: "Shared, default, and global secrets: the break-once pattern"
 summary: "The decisive failure is rarely cipher strength — it is one secret shared by a fleet or a type, or a default nobody changed. Break one, break all."
 type: concept
+cluster: boundary
 created: 2026-11-01
 updated: 2026-11-01
-related: [lock-it-and-still-lose-it-on-the-in-security-of-automotive-remote-keyless-entry-systems, beneath-the-bonnet-a-breakdown-of-diagnostic-security, experimental-security-analysis-of-a-modern-automobile, gone-in-360-seconds-hijacking-with-hitag2, dismantling-megamos-crypto-wirelessly-lockpicking-a-vehicle-immobilizer, uds-seed-key, secure-firmware-updates]
+related:
+  - lock-it-and-still-lose-it-on-the-in-security-of-automotive-remote-keyless-entry-systems
+  - beneath-the-bonnet-a-breakdown-of-diagnostic-security
+  - experimental-security-analysis-of-a-modern-automobile
+  - gone-in-360-seconds-hijacking-with-hitag2
+  - dismantling-megamos-crypto-wirelessly-lockpicking-a-vehicle-immobilizer
+  - uds-seed-key
+  - secure-firmware-updates
 sources:
   - url: "https://www.usenix.org/conference/usenixsecurity16/presentation/garcia"
     retrieved: 2026-11-01
   - url: "https://www.usenix.org/legacy/events/sec10/tech/full_papers/Koscher.pdf"
     retrieved: 2026-11-01
+facets: [authentication]
 ---
 
 Read the corpus's breaks in sequence and a pattern emerges that no single page is about: the cipher usually survives, and the **secret management** fails. Again and again, a sound primitive is deployed behind a key that is shared by an entire fleet, identical across every unit of a type, left at its factory default, or derived from a constant — so the cost of the break is paid *once*, on one unit, on a bench, and the yield is every vehicle that shares the secret. This page collects the four shapes the pattern takes, because the countermeasure is the same in all of them and the corpus's authors keep having to restate it.

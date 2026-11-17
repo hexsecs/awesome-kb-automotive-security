@@ -24,6 +24,7 @@ sources:
     retrieved: 2026-11-13
   - url: "https://infocon.org/cons/DEF%20CON/DEF%20CON%2026/DEF%20CON%2026%20villages/DEF%20CON%2026%20villages%20captions/DEF%20CON%2026%20-%20CAR%20HACKING%20VILLAGE%20-%20Philip%20Lapczynski%20-%20Automotive%20Flash%20Bootloaders%20Exposing%20automotive%20ECU%20updates.eng.txt"
     retrieved: 2026-11-17
+facets: [diagnostics, firmware, attack, research]
 ---
 
 Lapczynski, DEF CON 26 Car Hacking Village 2018. Walks through how UDS programming sessions, seed-key exchange, and flash routines expose ECU firmware updates to attack.

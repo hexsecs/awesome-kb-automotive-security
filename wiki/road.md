@@ -29,6 +29,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://doi.org/10.1371/journal.pone.0296879"
     retrieved: 2026-11-17
+facets: [can, attack, datasets]
 ---
 
 Real ORNL Automotive Dynamometer CAN intrusion dataset with verified fuzzing, targeted ID, masquerade, and accelerator attacks captured on a dynamometer.

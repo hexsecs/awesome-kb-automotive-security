@@ -30,6 +30,7 @@ sources:
     retrieved: 2026-10-31
   - url: "https://uds.readthedocs.io/en/stable/"
     retrieved: 2026-10-31
+facets: [can, diagnostics, lin, ethernet, simulation, tools, standards]
 ---
 
 Python package for ISO 14229 UDS in both client and server roles over CAN, Ethernet, LIN, FlexRay, and K-Line, usable for simulation, testing, and decoding UDS traffic.

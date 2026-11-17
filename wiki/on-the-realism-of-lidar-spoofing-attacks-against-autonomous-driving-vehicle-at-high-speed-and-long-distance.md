@@ -28,6 +28,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
+facets: [sensors, attack, research]
 ---
 
 Sato et al., NDSS 2025. Moving-vehicle spoofing rig and an adaptive high-frequency removal attack that succeed at 60 km/h and 110 m against production driving stacks, closing the gap between bench demonstrations and moving-vehicle conditions.

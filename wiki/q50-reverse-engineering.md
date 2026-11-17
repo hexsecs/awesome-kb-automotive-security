@@ -27,6 +27,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/oneezeeroo/Q50-Reverse-Engineering/blob/main/README.md"
     retrieved: 2026-11-01
+facets: [firmware, ivi, tools]
 ---
 
 Independent reverse-engineering research into the Infiniti Q50 infotainment platform's Linux/Android environment, documenting its EPK firmware package format, code-signing process, and USB app-installation flow.

@@ -24,6 +24,7 @@ sources:
     retrieved: 2026-11-12
   - url: "https://www.usenix.org/conference/woot26/presentation/chen"
     retrieved: 2026-11-17
+facets: [ev-charging, attack, research]
 ---
 
 Chen et al., USENIX WOOT 2026. Demonstrates identifier impersonation and forced battery discharge against production EVs and live charging networks, showing DIN 70121 sessions trust protocol messages over physical verification.

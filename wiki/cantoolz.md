@@ -26,6 +26,7 @@ sources:
     retrieved: 2026-10-31
   - url: "https://github.com/CANToolz/CANToolz"
     retrieved: 2026-10-31
+facets: [can, attack, tools]
 ---
 
 Black-box CAN network analysis framework also known as YACHT with modular architecture for fuzzing and ECU discovery.
