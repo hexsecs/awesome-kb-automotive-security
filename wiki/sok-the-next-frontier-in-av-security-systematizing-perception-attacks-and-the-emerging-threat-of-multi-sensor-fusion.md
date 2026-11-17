@@ -25,18 +25,6 @@ related:
   - the-heat-is-on-understanding-and-mitigating-vulnerabilities-of-thermal-image-perception-in-autonomous-systems
   - robust-physical-world-attacks-on-deep-learning-visual-classification
   - potential-cyberattacks-on-automated-vehicles
-related:
-  - sok-how-sensor-attacks-disrupt-autonomous-vehicles-an-end-to-end-analysis-challenges-and-missed-threats
-  - invisible-for-both-camera-and-lidar-security-of-multi-sensor-fusion-based-perception-in-autonomous-driving
-  - adversarial-sensor-attack-on-lidar-based-perception-in-autonomous-driving
-  - remote-attacks-on-automated-vehicles-sensors-experiments-on-camera-and-lidar
-  - illusion-and-dazzle-adversarial-optical-channel-exploits-against-lidars-for-automotive-applications
-  - does-physical-adversarial-example-really-matter-to-autonomous-driving-towards-system-level-effect-of-adversarial-object-evasion-attack
-  - a-first-physical-world-trajectory-prediction-attack-via-lidar-induced-deceptions-in-autonomous-driving
-  - drift-with-devil-security-of-multi-sensor-fusion-based-localization-in-high-level-autonomous-driving-under-gps-spoofing
-  - the-heat-is-on-understanding-and-mitigating-vulnerabilities-of-thermal-image-perception-in-autonomous-systems
-  - robust-physical-world-attacks-on-deep-learning-visual-classification
-  - potential-cyberattacks-on-automated-vehicles
 sources:
   - url: "https://arxiv.org/abs/2604.20621"
     retrieved: 2026-11-01
@@ -44,18 +32,6 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
-related:
-  - sok-how-sensor-attacks-disrupt-autonomous-vehicles-an-end-to-end-analysis-challenges-and-missed-threats
-  - invisible-for-both-camera-and-lidar-security-of-multi-sensor-fusion-based-perception-in-autonomous-driving
-  - adversarial-sensor-attack-on-lidar-based-perception-in-autonomous-driving
-  - remote-attacks-on-automated-vehicles-sensors-experiments-on-camera-and-lidar
-  - illusion-and-dazzle-adversarial-optical-channel-exploits-against-lidars-for-automotive-applications
-  - does-physical-adversarial-example-really-matter-to-autonomous-driving-towards-system-level-effect-of-adversarial-object-evasion-attack
-  - a-first-physical-world-trajectory-prediction-attack-via-lidar-induced-deceptions-in-autonomous-driving
-  - drift-with-devil-security-of-multi-sensor-fusion-based-localization-in-high-level-autonomous-driving-under-gps-spoofing
-  - the-heat-is-on-understanding-and-mitigating-vulnerabilities-of-thermal-image-perception-in-autonomous-systems
-  - robust-physical-world-attacks-on-deep-learning-visual-classification
-  - potential-cyberattacks-on-automated-vehicles
 ---
 
 Khan, Islam, and Hasan, arXiv 2026. Systematizes 48 studies of perception-layer attacks into a taxonomy of 20 attack vectors and shows how multi-sensor fusion opens cross-modal attacks.

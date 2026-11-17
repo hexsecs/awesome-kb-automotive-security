@@ -20,13 +20,6 @@ related:
   - doip-sim-ecu-dsl
   - automotive-flash-bootloaders-exposing-automotive-ecu-updates
   - openvehiclediag
-related:
-  - vehicle-immobilization-revisited
-  - uds-firmware-extraction
-  - reversing-a-brake-ecu-firmware-update
-  - doip-sim-ecu-dsl
-  - automotive-flash-bootloaders-exposing-automotive-ecu-updates
-  - openvehiclediag
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-05

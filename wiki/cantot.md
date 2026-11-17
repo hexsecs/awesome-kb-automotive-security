@@ -19,12 +19,6 @@ related:
   - cantoolz
   - icsim
   - canter
-related:
-  - caringcaribou
-  - carpunk
-  - cantoolz
-  - icsim
-  - canter
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

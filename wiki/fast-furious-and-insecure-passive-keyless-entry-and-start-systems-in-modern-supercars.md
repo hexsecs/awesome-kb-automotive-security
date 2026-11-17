@@ -26,14 +26,6 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
-related:
-  - key-fob-relay-attacks
-  - relay-attacks-on-passive-keyless-entry-and-start-systems-in-modern-cars
-  - lock-it-and-still-lose-it-on-the-in-security-of-automotive-remote-keyless-entry-systems
-  - gone-in-360-seconds-hijacking-with-hitag2
-  - dismantling-megamos-crypto-wirelessly-lockpicking-a-vehicle-immobilizer
-  - my-other-car-is-your-car-compromising-the-tesla-model-x-keyless-entry-system
-  - sok-stealing-cars-since-remote-keyless-entry-introduction-and-how-to-defend-from-it
 ---
 
 Wouters et al., CHES 2019. Breaks the DST40-based PKES used by Tesla and others, cloning a key fob from a few seconds of proximity.

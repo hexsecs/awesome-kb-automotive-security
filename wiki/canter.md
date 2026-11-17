@@ -20,13 +20,6 @@ related:
   - can-availability
   - in-vehicle-intrusion-detection
   - can-injection
-related:
-  - canflict
-  - canalyzat0r
-  - cantot
-  - can-availability
-  - in-vehicle-intrusion-detection
-  - can-injection
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

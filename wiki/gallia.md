@@ -18,11 +18,6 @@ related:
   - iso14229
   - caringcaribou
   - ford-ecu-bruteforcer
-related:
-  - udsoncan
-  - iso14229
-  - caringcaribou
-  - ford-ecu-bruteforcer
 license: "Apache-2.0"
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"

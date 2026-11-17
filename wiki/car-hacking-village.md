@@ -21,27 +21,11 @@ related:
   - abusing-can-bus-protocol-specification-for-denial-of-service-in-embedded-systems
   - meet-salinas-the-first-ever-sms-commanded-car-infotainment-rat
   - automotive-flash-bootloaders-exposing-automotive-ecu-updates
-related:
-  - opengarages
-  - automotive-cybersecurity-roadmap
-  - automotive-security-timeline
-  - how-i-discovered-and-hacked-learning-codes-of-the-key-fob-of-a-car-assembled-in-my-country
-  - abusing-can-bus-protocol-specification-for-denial-of-service-in-embedded-systems
-  - meet-salinas-the-first-ever-sms-commanded-car-infotainment-rat
-  - automotive-flash-bootloaders-exposing-automotive-ecu-updates
 sources:
   - url: "https://www.carhackingvillage.com/events"
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-01
-related:
-  - opengarages
-  - automotive-cybersecurity-roadmap
-  - automotive-security-timeline
-  - how-i-discovered-and-hacked-learning-codes-of-the-key-fob-of-a-car-assembled-in-my-country
-  - abusing-can-bus-protocol-specification-for-denial-of-service-in-embedded-systems
-  - meet-salinas-the-first-ever-sms-commanded-car-infotainment-rat
-  - automotive-flash-bootloaders-exposing-automotive-ecu-updates
 ---
 
 Non-profit running hands-on car hacking workshops and CTFs at DEF CON, Black Hat, HITCON, CODE BLUE, and other conferences.

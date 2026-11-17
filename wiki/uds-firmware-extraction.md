@@ -23,26 +23,6 @@ related:
   - secoc-key-extractor
   - automotive-flash-bootloaders-exposing-automotive-ecu-updates
   - zephyr-reference-ecu
-related:
-  - can-utils
-  - udsoncan
-  - conescan
-  - firmware-acquisition
-  - reversing-a-brake-ecu-firmware-update
-  - atlas
-  - secoc-key-extractor
-  - automotive-flash-bootloaders-exposing-automotive-ecu-updates
-  - zephyr-reference-ecu
-related:
-  - can-utils
-  - udsoncan
-  - conescan
-  - firmware-acquisition
-  - reversing-a-brake-ecu-firmware-update
-  - atlas
-  - secoc-key-extractor
-  - automotive-flash-bootloaders-exposing-automotive-ecu-updates
-  - zephyr-reference-ecu
 license: "GPL-2.0"
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"

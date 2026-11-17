@@ -18,11 +18,6 @@ related:
   - udsoncan
   - gallia
   - bypassing-debug-password-protection-on-the-rh850-family
-related:
-  - uds-seed-key
-  - udsoncan
-  - gallia
-  - bypassing-debug-password-protection-on-the-rh850-family
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

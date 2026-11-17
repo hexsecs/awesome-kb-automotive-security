@@ -20,13 +20,6 @@ related:
   - ivi-update-trust
   - ivi-runtime-privilege
   - automotive-security-research
-related:
-  - ic1101
-  - mmi3g-toolkit
-  - secure-firmware-updates
-  - ivi-update-trust
-  - ivi-runtime-privilege
-  - automotive-security-research
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

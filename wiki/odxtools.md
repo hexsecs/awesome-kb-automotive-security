@@ -18,11 +18,6 @@ related:
   - udsoncan
   - ecubus-pro
   - vw-flash
-related:
-  - opensovd-classic-diagnostic-adapter
-  - udsoncan
-  - ecubus-pro
-  - vw-flash
 license: "MIT"
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"

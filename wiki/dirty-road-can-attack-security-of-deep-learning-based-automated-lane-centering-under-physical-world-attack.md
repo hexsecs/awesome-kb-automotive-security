@@ -28,14 +28,6 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
-related:
-  - too-good-to-be-safe-tricking-lane-detection-in-autonomous-driving-with-crafted-perturbations
-  - adversarial-sensor-attack-on-lidar-based-perception-in-autonomous-driving
-  - remote-attacks-on-automated-vehicles-sensors-experiments-on-camera-and-lidar
-  - invisible-for-both-camera-and-lidar-security-of-multi-sensor-fusion-based-perception-in-autonomous-driving
-  - does-physical-adversarial-example-really-matter-to-autonomous-driving-towards-system-level-effect-of-adversarial-object-evasion-attack
-  - on-the-realism-of-lidar-spoofing-attacks-against-autonomous-driving-vehicle-at-high-speed-and-long-distance
-  - robust-physical-world-attacks-on-deep-learning-visual-classification
 ---
 
 Sato et al., USENIX Security 2021. Physical dirty-road patches that steer a production lane-centering system out of its lane.

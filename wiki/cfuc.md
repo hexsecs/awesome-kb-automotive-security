@@ -19,12 +19,6 @@ related:
   - cantact
   - doggie
   - linusbconverter
-related:
-  - candlelight-fw
-  - supercan
-  - cantact
-  - doggie
-  - linusbconverter
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

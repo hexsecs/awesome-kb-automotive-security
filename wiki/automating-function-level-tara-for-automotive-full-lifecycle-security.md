@@ -26,12 +26,6 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
-related:
-  - autotara
-  - avcdl
-  - security-autodesigner
-  - tara-methodology
-  - automotive-threat-analysis-and-risk-assessment-in-practice
 ---
 
 Yang et al., NDSS 2026. DefenseWeaver, a multi-agent LLM system that automates function-level ISO/SAE 21434 threat analysis and risk assessment, reported as deployed in four automotive projects.

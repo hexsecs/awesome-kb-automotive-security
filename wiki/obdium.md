@@ -18,11 +18,6 @@ related:
   - savvycan
   - python-can-isotp
   - can-playground
-related:
-  - opendbc
-  - savvycan
-  - python-can-isotp
-  - can-playground
 license: GPL-3.0
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"

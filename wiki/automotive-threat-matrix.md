@@ -19,12 +19,6 @@ related:
   - avcdl
   - tara-methodology
   - security-autodesigner
-related:
-  - automotive-threat-modeling-template
-  - autotara
-  - avcdl
-  - tara-methodology
-  - security-autodesigner
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

@@ -22,24 +22,6 @@ related:
   - someip
   - ics-cap
   - canexplorer
-related:
-  - vsomeip
-  - someip-protocol-fuzzer
-  - eth-ws-someip
-  - autofuze
-  - python-doipclient
-  - someip
-  - ics-cap
-  - canexplorer
-related:
-  - vsomeip
-  - someip-protocol-fuzzer
-  - eth-ws-someip
-  - autofuze
-  - python-doipclient
-  - someip
-  - ics-cap
-  - canexplorer
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

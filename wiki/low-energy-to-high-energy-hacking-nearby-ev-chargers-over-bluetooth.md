@@ -24,12 +24,6 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-01
-related:
-  - pwn2own-automotive-2026-day-three-results-and-the-master-of-pwn
-  - ocpp-charging-attacks
-  - brokenwire-wireless-disruption-of-ccs-electric-vehicle-charging
-  - over-the-air-compromise-of-modern-volkswagen-group-vehicles
-  - pedal-to-the-bare-metal
 ---
 
 Alkemade and Nassar, Black Hat USA 2024. Bluetooth attacks on three EV chargers, built from exploits demonstrated at Pwn2Own Automotive 2024.

@@ -22,24 +22,6 @@ related:
   - cancat
   - can-playground
   - pycangui
-related:
-  - can-utils
-  - cantools
-  - python-can
-  - pretty-j1939
-  - truckdevil
-  - cancat
-  - can-playground
-  - pycangui
-related:
-  - can-utils
-  - cantools
-  - python-can
-  - pretty-j1939
-  - truckdevil
-  - cancat
-  - can-playground
-  - pycangui
 license: GPL-3.0
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"

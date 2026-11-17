@@ -28,16 +28,6 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
-related:
-  - gone-in-360-seconds-hijacking-with-hitag2
-  - dismantling-megamos-crypto-wirelessly-lockpicking-a-vehicle-immobilizer
-  - lock-it-and-still-lose-it-on-the-in-security-of-automotive-remote-keyless-entry-systems
-  - fast-furious-and-insecure-passive-keyless-entry-and-start-systems-in-modern-supercars
-  - rollback-a-new-time-agnostic-replay-attack-against-the-automotive-remote-keyless-entry-systems
-  - key-fob-relay-attacks
-  - my-other-car-is-your-car-compromising-the-tesla-model-x-keyless-entry-system
-  - rolling-code-failure-classes
-  - research-only-understanding-the-scope-of-automotive-cyberattacks-in-the-wild
 ---
 
 Bianchi et al., USENIX VehicleSec 2025. Systematization of RKE and passive keyless entry and start systems, covering their history, the attacks against them, and the defences.

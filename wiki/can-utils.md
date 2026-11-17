@@ -30,23 +30,6 @@ related:
   - savvycan
   - uds-firmware-extraction
   - udsim
-related:
-  - python-can
-  - cannelloni
-  - pretty-j1939
-  - cangaroo
-  - autopi
-  - can-injection
-  - canarchy
-  - canvas-fast-and-inexpensive-automotive-network-mapping
-  - car-toolkit
-  - carpunk
-  - icsim
-  - lindwurm
-  - piccante
-  - savvycan
-  - uds-firmware-extraction
-  - udsim
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

@@ -20,20 +20,6 @@ related:
   - pq-flasher
   - uds-seed-key
   - pycangui
-related:
-  - caringcaribou
-  - canarchy
-  - savvycan
-  - pq-flasher
-  - uds-seed-key
-  - pycangui
-related:
-  - caringcaribou
-  - canarchy
-  - savvycan
-  - pq-flasher
-  - uds-seed-key
-  - pycangui
 license: BSD-2-Clause
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"

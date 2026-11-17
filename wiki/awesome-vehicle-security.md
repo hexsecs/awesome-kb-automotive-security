@@ -24,12 +24,6 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-01
-related:
-  - awesome-canbus
-  - awesome-embedded-security
-  - awesome-ev-charging
-  - awesome-connected-things-sec
-  - automotive-security-timeline
 ---
 
 Long-running curated list of vehicle security resources, hardware, software, researchers, and manufacturer disclosure programs.

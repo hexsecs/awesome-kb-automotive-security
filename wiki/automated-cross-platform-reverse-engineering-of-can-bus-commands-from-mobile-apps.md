@@ -29,15 +29,6 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
-related:
-  - canvas-fast-and-inexpensive-automotive-network-mapping
-  - plug-n-pwned-comprehensive-vulnerability-analysis-of-obd-ii-dongles
-  - donglescope
-  - canalyzat0r
-  - can-injection
-  - canexplorer
-  - idrive7-8-ssh-root
-  - linusbconverter
 ---
 
 Wen, Zhao, Chen, and Lin, NDSS 2020. Recovers CAN command syntax and semantics for 360 car models from companion mobile apps alone, without touching a vehicle.

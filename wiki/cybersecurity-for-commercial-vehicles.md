@@ -24,10 +24,6 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-01
-related:
-  - expanding-the-attack-scenarios-of-sae-j1939-a-comprehensive-analysis-of-established-and-novel-vulnerabilities-in-transport-protocol
-  - automotive-cybersecurity-an-introduction-to-iso-sae-21434
-  - fleet-cyber-challenge
 ---
 
 Gloria D'Anna, SAE International 2018. Covers heavy vehicle and fleet security, how it differs from passenger cars, SAE J3061, platooning, and breach forensics.

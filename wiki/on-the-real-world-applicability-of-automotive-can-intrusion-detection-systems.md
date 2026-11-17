@@ -25,13 +25,6 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-01
-related:
-  - gids-gan-based-intrusion-detection-system-for-in-vehicle-network
-  - a-comprehensive-guide-to-can-ids-data-and-introduction-of-the-road-dataset
-  - car-hacking-dataset
-  - can-train-and-test
-  - in-vehicle-intrusion-detection
-  - a-formal-security-analysis-of-can-xl
 ---
 
 Lazeski et al., USENIX VehicleSec 2026. Work in progress showing that ML-based CAN intrusion detectors often learn dataset shortcuts because common datasets contain only simple attacks, so high scores do not imply robustness against a practical attacker.

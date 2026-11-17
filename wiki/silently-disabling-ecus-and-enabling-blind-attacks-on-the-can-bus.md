@@ -25,13 +25,6 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
-related:
-  - error-handling-of-in-vehicle-networks-makes-them-vulnerable
-  - exposing-new-vulnerabilities-of-error-handling-mechanism-in-can
-  - canvas-fast-and-inexpensive-automotive-network-mapping
-  - canflict-exploiting-peripheral-conflicts-for-data-link-layer-attacks-on-automotive-networks
-  - can-availability
-  - candid-a-stealthy-stepping-stone-attack-to-bypass-authentication-on-ecus
 ---
 
 Rogers and Rasmussen, arXiv 2022. Disables an ECU with a single frame and without generating bus errors, evading the error-counting that earlier bus-off detection relies on, and adds a synchronisation method letting an attacker who cannot read the bus strike reliably.

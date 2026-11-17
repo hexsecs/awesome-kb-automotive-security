@@ -18,11 +18,6 @@ related:
   - experimental-security-analysis-of-a-modern-automobile
   - comprehensive-experimental-analyses-of-automotive-attack-surfaces
   - bypassing-debug-password-protection-on-the-rh850-family
-related:
-  - security-in-automotive-bus-systems
-  - experimental-security-analysis-of-a-modern-automobile
-  - comprehensive-experimental-analyses-of-automotive-attack-surfaces
-  - bypassing-debug-password-protection-on-the-rh850-family
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

@@ -24,28 +24,6 @@ related:
   - race-to-charge-concurrency-bugs-and-state-integrity-violations-in-ev-charging-infrastructure
   - ocppstorm-a-comprehensive-fuzzing-tool-for-ocpp-implementations
   - ocppuzz
-related:
-  - checkocpp
-  - emuocpp
-  - ocpp-charging-attacks
-  - dsv2gshark
-  - wwcp-iso15118
-  - pyplc
-  - charging-trust-chain
-  - race-to-charge-concurrency-bugs-and-state-integrity-violations-in-ev-charging-infrastructure
-  - ocppstorm-a-comprehensive-fuzzing-tool-for-ocpp-implementations
-  - ocppuzz
-related:
-  - checkocpp
-  - emuocpp
-  - ocpp-charging-attacks
-  - dsv2gshark
-  - wwcp-iso15118
-  - pyplc
-  - charging-trust-chain
-  - race-to-charge-concurrency-bugs-and-state-integrity-violations-in-ev-charging-infrastructure
-  - ocppstorm-a-comprehensive-fuzzing-tool-for-ocpp-implementations
-  - ocppuzz
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

@@ -19,12 +19,6 @@ related:
   - kayak
   - simulation-and-test-doubles
   - canmatrix
-related:
-  - candevstudio
-  - savvycan
-  - kayak
-  - simulation-and-test-doubles
-  - canmatrix
 license: GPL-3.0
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"

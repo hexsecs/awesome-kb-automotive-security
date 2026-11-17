@@ -18,11 +18,6 @@ related:
   - acccs
   - openv2g
   - losing-the-car-keys-wireless-phy-layer-insecurity-in-ev-charging
-related:
-  - pyplc
-  - acccs
-  - openv2g
-  - losing-the-car-keys-wireless-phy-layer-insecurity-in-ev-charging
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

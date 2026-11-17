@@ -25,18 +25,6 @@ related:
   - dirty-road-can-attack-security-of-deep-learning-based-automated-lane-centering-under-physical-world-attack
   - robust-physical-world-attacks-on-deep-learning-visual-classification
   - perspective-shift-attacks-against-optical-perception-sensors-a-novel-attack-vector-on-lidar-and-camera
-related:
-  - adversarial-sensor-attack-on-lidar-based-perception-in-autonomous-driving
-  - remote-attacks-on-automated-vehicles-sensors-experiments-on-camera-and-lidar
-  - illusion-and-dazzle-adversarial-optical-channel-exploits-against-lidars-for-automotive-applications
-  - does-physical-adversarial-example-really-matter-to-autonomous-driving-towards-system-level-effect-of-adversarial-object-evasion-attack
-  - a-first-physical-world-trajectory-prediction-attack-via-lidar-induced-deceptions-in-autonomous-driving
-  - sok-the-next-frontier-in-av-security-systematizing-perception-attacks-and-the-emerging-threat-of-multi-sensor-fusion
-  - the-heat-is-on-understanding-and-mitigating-vulnerabilities-of-thermal-image-perception-in-autonomous-systems
-  - sok-how-sensor-attacks-disrupt-autonomous-vehicles-an-end-to-end-analysis-challenges-and-missed-threats
-  - dirty-road-can-attack-security-of-deep-learning-based-automated-lane-centering-under-physical-world-attack
-  - robust-physical-world-attacks-on-deep-learning-visual-classification
-  - perspective-shift-attacks-against-optical-perception-sensors-a-novel-attack-vector-on-lidar-and-camera
 sources:
   - url: "https://arxiv.org/abs/2106.09249"
     retrieved: 2026-11-01
@@ -44,18 +32,6 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
-related:
-  - adversarial-sensor-attack-on-lidar-based-perception-in-autonomous-driving
-  - remote-attacks-on-automated-vehicles-sensors-experiments-on-camera-and-lidar
-  - illusion-and-dazzle-adversarial-optical-channel-exploits-against-lidars-for-automotive-applications
-  - does-physical-adversarial-example-really-matter-to-autonomous-driving-towards-system-level-effect-of-adversarial-object-evasion-attack
-  - a-first-physical-world-trajectory-prediction-attack-via-lidar-induced-deceptions-in-autonomous-driving
-  - sok-the-next-frontier-in-av-security-systematizing-perception-attacks-and-the-emerging-threat-of-multi-sensor-fusion
-  - the-heat-is-on-understanding-and-mitigating-vulnerabilities-of-thermal-image-perception-in-autonomous-systems
-  - sok-how-sensor-attacks-disrupt-autonomous-vehicles-an-end-to-end-analysis-challenges-and-missed-threats
-  - dirty-road-can-attack-security-of-deep-learning-based-automated-lane-centering-under-physical-world-attack
-  - robust-physical-world-attacks-on-deep-learning-visual-classification
-  - perspective-shift-attacks-against-optical-perception-sensors-a-novel-attack-vector-on-lidar-and-camera
 ---
 
 Cao et al., IEEE S&P 2021. Defeats the multi-sensor fusion designs that production stacks actually use, with a single adversarial object invisible to camera and LiDAR at once.

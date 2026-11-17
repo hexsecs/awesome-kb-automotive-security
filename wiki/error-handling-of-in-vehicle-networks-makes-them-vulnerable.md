@@ -27,20 +27,6 @@ related:
   - evading-voltage-based-intrusion-detection-on-automotive-can
   - a-formal-security-analysis-of-can-xl
   - abusing-can-bus-protocol-specification-for-denial-of-service-in-embedded-systems
-related:
-  - fingerprinting-electronic-control-units-for-vehicle-intrusion-detection
-  - vatican-vetted-authenticated-can-bus
-  - can-injection
-  - exposing-new-vulnerabilities-of-error-handling-mechanism-in-can
-  - silently-disabling-ecus-and-enabling-blind-attacks-on-the-can-bus
-  - canflict-exploiting-peripheral-conflicts-for-data-link-layer-attacks-on-automotive-networks
-  - canvas-fast-and-inexpensive-automotive-network-mapping
-  - sok-kicking-can-down-the-road-systematizing-can-security-knowledge
-  - can-availability
-  - a-comprehensible-guide-to-controller-area-network
-  - evading-voltage-based-intrusion-detection-on-automotive-can
-  - a-formal-security-analysis-of-can-xl
-  - abusing-can-bus-protocol-specification-for-denial-of-service-in-embedded-systems
 sources:
   - url: "https://rtcl.eecs.umich.edu/rtclweb/assets/publications/2016/ktcho_busoff_CCS_16.pdf"
     retrieved: 2026-11-01
@@ -48,20 +34,6 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
-related:
-  - fingerprinting-electronic-control-units-for-vehicle-intrusion-detection
-  - vatican-vetted-authenticated-can-bus
-  - can-injection
-  - exposing-new-vulnerabilities-of-error-handling-mechanism-in-can
-  - silently-disabling-ecus-and-enabling-blind-attacks-on-the-can-bus
-  - canflict-exploiting-peripheral-conflicts-for-data-link-layer-attacks-on-automotive-networks
-  - canvas-fast-and-inexpensive-automotive-network-mapping
-  - sok-kicking-can-down-the-road-systematizing-can-security-knowledge
-  - can-availability
-  - a-comprehensible-guide-to-controller-area-network
-  - evading-voltage-based-intrusion-detection-on-automotive-can
-  - a-formal-security-analysis-of-can-xl
-  - abusing-can-bus-protocol-specification-for-denial-of-service-in-embedded-systems
 ---
 
 Cho and Shin, ACM CCS 2016. The bus-off attack, which abuses CAN error handling to force an uncompromised ECU off the bus without any vehicle-specific reverse engineering.

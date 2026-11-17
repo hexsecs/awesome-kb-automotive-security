@@ -18,11 +18,6 @@ related:
   - ramn
   - secoc-key-extractor
   - piccante
-related:
-  - cantact
-  - ramn
-  - secoc-key-extractor
-  - piccante
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

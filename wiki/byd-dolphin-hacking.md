@@ -21,22 +21,6 @@ related:
   - ivi-runtime-privilege
   - back-connect-to-the-connected-car-search-for-vulnerabilities-in-the-vw-electric-car
   - idrive7-8-ssh-root
-related:
-  - can-injection
-  - secure-firmware-updates
-  - ic1101
-  - ivi-update-trust
-  - ivi-runtime-privilege
-  - back-connect-to-the-connected-car-search-for-vulnerabilities-in-the-vw-electric-car
-  - idrive7-8-ssh-root
-related:
-  - can-injection
-  - secure-firmware-updates
-  - ic1101
-  - ivi-update-trust
-  - ivi-runtime-privilege
-  - back-connect-to-the-connected-car-search-for-vulnerabilities-in-the-vw-electric-car
-  - idrive7-8-ssh-root
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

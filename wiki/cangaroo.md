@@ -19,12 +19,6 @@ related:
   - can-utils
   - pycangui
   - can-playground
-related:
-  - savvycan
-  - canmatrix
-  - can-utils
-  - pycangui
-  - can-playground
 license: GPL-2.0
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"

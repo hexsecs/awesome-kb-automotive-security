@@ -21,14 +21,6 @@ related:
   - v2x-credential-management
   - veremi-extension
   - van3twin
-related:
-  - artery
-  - veins
-  - v2verifier
-  - misbehavior-detection
-  - v2x-credential-management
-  - veremi-extension
-  - van3twin
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

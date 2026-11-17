@@ -21,14 +21,6 @@ related:
   - owasp-automotive-emb-60
   - piccante
   - supercan
-related:
-  - candlelight-fw
-  - panda
-  - can-daq
-  - cfuc
-  - owasp-automotive-emb-60
-  - piccante
-  - supercan
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
