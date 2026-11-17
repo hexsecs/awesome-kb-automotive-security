@@ -688,3 +688,14 @@ Slice 1 (`558de50`): can-playground, canexplorer, pycangui and
 openvehiclediag promoted stub -> full from upstream READMEs and GitHub
 API status (checked 2026-11-17), with reciprocal `related:` already in
 place. Over-long restored `summary:` lines kept verbatim from HEAD.
+
+## [2026-11-17] deepen | Slice 2: tools and hardware interfaces (6 stubs -> full)
+
+doggie, linusbconverter, zephyr-reference-ecu, idrive7-8-ssh-root, ocppuzz
+and vasp promoted stub -> full from upstream READMEs and GitHub API status
+(checked 2026-11-17), keeping uid/summary/related verbatim. Status values:
+active for the four live projects, maintenance for doggie (last push
+2025-10-27), archived for vasp (owner-archived, 2023). Safety notes call out
+evilDoggie's destructive bus primitives, the MGU flash wiping coding and
+Digital Key pairings, and OCPPuzz's LLM-derived oracle. Gates after the
+slice: ingest x2 idempotent, lint clean, link checker 0/0/0, tests pass.
