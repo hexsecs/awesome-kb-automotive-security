@@ -21,6 +21,7 @@ related:
   - autohack
   - car-hacking-dataset
   - cards
+  - in-vehicle-intrusion-detection
 sources:
   - url: "https://0xsam.com/road/"
     retrieved: 2026-11-01
@@ -77,3 +78,4 @@ Checked 2026-11-17. **Published** — a finished static release under CC BY, dis
 - [AutoHack](autohack.md)
 - [Car Hacking Dataset](car-hacking-dataset.md)
 - [CARDS](cards.md)
+- [In-vehicle intrusion detection and ECU fingerprinting](concepts/in-vehicle-intrusion-detection.md)

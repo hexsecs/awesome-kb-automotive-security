@@ -8,7 +8,7 @@ url: "https://cheatsheetseries.owasp.org/cheatsheets/Automotive_Security_Cheat_S
 status: active
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-17
 depth: brief
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -21,6 +21,9 @@ sources:
 related:
   - secure-firmware-updates
   - uds-seed-key
+  - automotive-cyber-security
+  - automotive-cybersecurity-engineering-handbook
+  - automotive-security-research
 ---
 
 OWASP cheat sheet covering threat modeling, message authentication, secure boot, and update verification for vehicle ECUs and connected services.
@@ -37,3 +40,6 @@ Status: **active** — published and maintained as part of the OWASP Cheat Sheet
 
 - [Secure firmware updates](concepts/secure-firmware-updates.md) — the concept behind the cheat sheet's update-verification section
 - [UDS seed/key](concepts/uds-seed-key.md) — the diagnostic-access mechanism its access-control guidance assumes
+- [Automotive Cyber Security](automotive-cyber-security.md)
+- [Automotive Cybersecurity Engineering Handbook](automotive-cybersecurity-engineering-handbook.md)
+- [automotive-security-research](automotive-security-research.md)

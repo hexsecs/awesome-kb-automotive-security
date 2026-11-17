@@ -8,7 +8,7 @@ url: "https://illmatics.com/remote%20attack%20surfaces.pdf"
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-16
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -19,6 +19,7 @@ related:
   - remote-exploitation-of-an-unaltered-passenger-vehicle
   - experimental-security-analysis-of-a-modern-automobile
   - pedal-to-the-bare-metal
+  - external-attack-surface
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -75,3 +76,4 @@ Status: **published** — a finished 2014 white paper; no living artefact, no DO
 - [Adventures in Automotive Networks and Control Units](adventures-in-automotive-networks-and-control-units.md)
 - [Remote Exploitation of an Unaltered Passenger Vehicle](remote-exploitation-of-an-unaltered-passenger-vehicle.md)
 - [Experimental Security Analysis of a Modern Automobile](experimental-security-analysis-of-a-modern-automobile.md)
+- [The vehicle's external attack surface: remote entry and the telematics pivot](concepts/external-attack-surface.md)

@@ -20,6 +20,7 @@ related:
   - vehicle-immobilization-revisited
   - candid-a-stealthy-stepping-stone-attack-to-bypass-authentication-on-ecus
   - vulcan-efficient-component-authentication-and-software-isolation-for-automotive-control-networks
+  - key-fob-relay-attacks
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-14
@@ -68,3 +69,4 @@ Checked 2026-11-17. **Published** — USENIX Security 26, August 2026, open acce
 - [Vehicle immobilization revisited](vehicle-immobilization-revisited.md)
 - [CANDID: a stealthy stepping-stone attack to bypass authentication on ECUs](candid-a-stealthy-stepping-stone-attack-to-bypass-authentication-on-ecus.md)
 - [Vulcan: efficient component authentication and software isolation for automotive control networks](vulcan-efficient-component-authentication-and-software-isolation-for-automotive-control-networks.md)
+- [Key-fob relay attacks](concepts/key-fob-relay-attacks.md)

@@ -16,6 +16,7 @@ list_summary: "Ghidra processor module for Renesas V850E2 and V850E3/RH850 micro
 related:
   - ghidra-tc1797
   - bypassing-debug-password-protection-on-the-rh850-family
+  - firmware-acquisition
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -53,3 +54,4 @@ Checked 2026-11-01. **Maintenance**: the repository is not archived and still re
 ## Related
 
 - [ghidra-tc1797](ghidra-tc1797.md)
+- [Firmware acquisition: the read-side channels](concepts/firmware-acquisition.md)

@@ -8,12 +8,12 @@ url: "https://github.com/kylehulscher/atlas"
 status: active
 last_checked: 2026-10-31
 created: 2026-10-31
-updated: 2026-10-31
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Open-source ECU calibration application for reverse engineering and recalibrating Subaru, Toyota, and Honda ECUs, with an integrated Ghidra bundle for analysing tables and emulating ROM machine code."
-related: [conescan, udsoncan, uds-firmware-extraction]
+related: [conescan, udsoncan, uds-firmware-extraction, calibration-plane]
 license: "AGPL-3.0"
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
@@ -63,3 +63,4 @@ Planned or In Progress, and supported vehicles "may not be complete."
 - [ConeScan](conescan.md) — the other calibration-oriented tool here.
 - [udsoncan](udsoncan.md) — UDS client work beneath calibration tools.
 - [UDS Firmware Extraction](uds-firmware-extraction.md) — recovering the images calibration starts from.
+- [The calibration plane (XCP/A2L)](concepts/calibration-plane.md)

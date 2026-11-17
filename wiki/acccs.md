@@ -8,12 +8,12 @@ url: "https://github.com/IdahoLabResearch/AcCCS"
 status: active
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Idaho National Laboratory test platform on a Raspberry Pi that emulates either the vehicle or the charger in a CCS session, driving the J1772 control pilot, HomePlug Green PHY SLAC, and DIN 70121 exchange so either side can be tested without the other present."
-related: [pyplc, open-plc-utils, chargesploit, dsv2gshark]
+related: [pyplc, open-plc-utils, chargesploit, dsv2gshark, charging-trust-chain]
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -55,3 +55,4 @@ Checked 2026-11-01. **Active** at this check: the repository is not archived and
 - [open-plc-utils](open-plc-utils.md)
 - [ChargeSploit](chargesploit.md)
 - [dsV2Gshark](dsv2gshark.md)
+- [The EV–EVSE charging trust chain (ISO 15118 / DIN 70121)](concepts/charging-trust-chain.md)

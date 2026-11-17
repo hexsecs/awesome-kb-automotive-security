@@ -17,6 +17,8 @@ related:
   - canflict-exploiting-peripheral-conflicts-for-data-link-layer-attacks-on-automotive-networks
   - error-handling-of-in-vehicle-networks-makes-them-vulnerable
   - car-hacking-village
+  - the-vehicle-may-be-sick-denial-of-diagnostic-services-by-exploiting-the-can-transport-protocol
+  - can-availability
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-06
@@ -61,3 +63,5 @@ Checked 2026-11-17. **Published** — the talk was given at DEF CON 31 (2023) an
 - [CANflict: exploiting peripheral conflicts for data-link layer attacks on automotive networks](canflict-exploiting-peripheral-conflicts-for-data-link-layer-attacks-on-automotive-networks.md)
 - [Error handling of in-vehicle networks makes them vulnerable](error-handling-of-in-vehicle-networks-makes-them-vulnerable.md)
 - [Car Hacking Village](car-hacking-village.md)
+- [The Vehicle May Be Sick: Denial of Diagnostic Services by Exploiting the CAN Transport Protocol](the-vehicle-may-be-sick-denial-of-diagnostic-services-by-exploiting-the-can-transport-protocol.md)
+- [CAN availability and denial of service](concepts/can-availability.md)

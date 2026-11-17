@@ -8,7 +8,7 @@ url: "https://github.com/Nnubes256/pwnobd"
 status: maintenance
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-16
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -18,6 +18,8 @@ related:
   - car-toolkit
   - autofuze
   - over-the-air-compromise-of-modern-volkswagen-group-vehicles
+  - external-attack-surface
+  - diagnostic-service-abuse
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -60,3 +62,5 @@ Checked 2026-11-01. **Maintenance**: the repository is not archived; created 202
 - [DongleScope](donglescope.md)
 - [Car Toolkit](car-toolkit.md)
 - [AutoFuze](autofuze.md)
+- [The vehicle's external attack surface: remote entry and the telematics pivot](concepts/external-attack-surface.md)
+- [Diagnostic-service abuse](concepts/diagnostic-service-abuse.md)

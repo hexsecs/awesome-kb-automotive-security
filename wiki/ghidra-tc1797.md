@@ -8,12 +8,12 @@ url: "https://github.com/christianobora/ghidra-tc1797"
 status: unknown
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Ghidra processor specification and language definitions for the Infineon TriCore TC1797, used to label memory regions when disassembling MED17 and similar ECU firmware."
-related: [ghidra-v850, medc17-checksum-tool, tc1791-can-bsl]
+related: [ghidra-v850, medc17-checksum-tool, tc1791-can-bsl, firmware-acquisition]
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -53,3 +53,4 @@ Checked 2026-11-01. **Unknown**: the repository is not archived, but it was crea
 - [ghidra_v850](ghidra-v850.md)
 - [medc17-checksum-tool](medc17-checksum-tool.md)
 - [TC1791_CAN_BSL](tc1791-can-bsl.md)
+- [Firmware acquisition: the read-side channels](concepts/firmware-acquisition.md)

@@ -8,7 +8,7 @@ url: "https://media.ccc.de/v/36c3-11020-vehicle_immobilization_revisited"
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-16
+updated: 2026-11-17
 depth: brief
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -18,6 +18,7 @@ related:
   - gone-in-360-seconds-hijacking-with-hitag2
   - zephyr-reference-ecu
   - ble-theft-auto-evaluating-the-security-of-aftermarket-ble-based-automotive-remote-control-systems
+  - rolling-code-failure-classes
 sources:
   - url: "https://media.ccc.de/v/36c3-11020-vehicle_immobilization_revisited"
     retrieved: 2026-11-01
@@ -39,3 +40,4 @@ Status: **published** — 36C3, December 2019; recording and slides public. Veri
 
 - [Dismantling Megamos Crypto](dismantling-megamos-crypto-wirelessly-lockpicking-a-vehicle-immobilizer.md) — the transponder-side break; this talk is about the link behind the transponder
 - [Gone in 360 Seconds: Hijacking with Hitag2](gone-in-360-seconds-hijacking-with-hitag2.md) — the other classic transponder case study
+- [Rolling-code failure classes](concepts/rolling-code-failure-classes.md)

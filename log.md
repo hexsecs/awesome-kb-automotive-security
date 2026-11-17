@@ -809,3 +809,36 @@ regenerated index.md through ingest. Coverage after: 163/255 entity pages link
 to a concept, 0 article orphans, 14 one-way entity related pairs, all 30
 concepts have >= 6 inbound links. Gates: ingest x2 idempotent, lint 0 errors,
 link checker 0/0/0, 17 tests pass, diff check clean.
+
+## [2026-11-17] hygiene | Crosslink hygiene: reciprocate related pairs and add concept hooks
+
+Follow-up to the crosslink/concept audit. Two deterministic passes over the
+255 entity pages and 30 concept pages:
+
+1. Auto-reciprocated all 14 one-way entity `related:` pairs reported by
+   tools/link_audit.py — the target page now links back to the source in both
+   frontmatter and the body `## Related` section.
+2. Added curated concept hooks to entity pages that linked to no concept,
+   grouped by clear thematic fit: physical-channel-sensor-attacks (10 sensor /
+   perception papers), in-vehicle-intrusion-detection (11 dataset / IDS
+   entries), charging-trust-chain (8 EV charging entries), tara-methodology
+   (6 standards / risk entries), external-attack-surface (11 remote-access /
+   telematics entries), plus targeted hooks for firmware-acquisition,
+   bootloader-stages, can-availability, calibration-plane, diagnostic-service-
+   abuse, can-message-authentication, rolling-code-failure-classes, key-fob-
+   relay-attacks, ivi-runtime-privilege, ocpp-charging-attacks, simulation-
+   and-test-doubles and misbehavior-detection.
+
+71 pages edited. Coverage: one-way entity related pairs 14 → 0; entity pages
+with no concept link 92 → 28; orphans still 0. The 28 remaining unlinked pages
+have no clear thematic hook and were left alone rather than force-linked.
+
+Four pages (a-first-physical-world-trajectory-prediction…, a-survey-of-remote-
+automotive-attack-surfaces, does-physical-adversarial-example…, robust-physical-
+world-attacks…) moved a few tokens over the 2500-token soft `full` budget from
+the added link (2501–2519). Accepted: the warnings are non-failing advisories,
+lint reports 0 errors, and trimming researched prose to save 1–19 tokens would
+degrade the content. Total warnings 50 → 54.
+
+Gates: ingest ×2 idempotent, lint 0 errors, link checker 0/0/0, link audit
+0 orphans, 17 tests pass, diff check clean.

@@ -8,12 +8,12 @@ url: "https://github.com/FlUxIuS/V2Gdecoder"
 status: active
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Encodes and decodes EXI-compressed V2G messages on the fly, turning captured ISO 15118 exchanges into editable XML for replay and fuzzing."
-related: [openv2g, dsv2gshark, pyplc, wwcp-iso15118]
+related: [openv2g, dsv2gshark, pyplc, wwcp-iso15118, charging-trust-chain]
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -55,3 +55,4 @@ Checked 2026-11-01. **Active** at this check: the repository is not archived and
 - [dsV2Gshark](dsv2gshark.md)
 - [pyPLC](pyplc.md)
 - [WWCP_ISO15118](wwcp-iso15118.md)
+- [The EV–EVSE charging trust chain (ISO 15118 / DIN 70121)](concepts/charging-trust-chain.md)

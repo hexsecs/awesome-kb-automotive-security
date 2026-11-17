@@ -21,6 +21,8 @@ related:
   - on-the-real-world-applicability-of-automotive-can-intrusion-detection-systems
   - gem-can
   - a-comprehensive-guide-to-can-ids-data-and-introduction-of-the-road-dataset
+  - syncan
+  - in-vehicle-intrusion-detection
 sources:
   - url: "https://ocslab.hksecurity.net/Datasets/car-hacking-dataset"
     retrieved: 2026-11-01
@@ -76,3 +78,5 @@ Checked 2026-11-17. **Published** — a static release hosted by HCRL for years 
 - [On the real-world applicability of automotive CAN intrusion detection systems](on-the-real-world-applicability-of-automotive-can-intrusion-detection-systems.md)
 - [GEM-CAN](gem-can.md)
 - [A Comprehensive Guide to CAN IDS Data and Introduction of the ROAD Dataset](a-comprehensive-guide-to-can-ids-data-and-introduction-of-the-road-dataset.md)
+- [SynCAN](syncan.md)
+- [In-vehicle intrusion detection and ECU fingerprinting](concepts/in-vehicle-intrusion-detection.md)

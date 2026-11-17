@@ -8,7 +8,7 @@ url: "https://media.defcon.org/DEF%20CON%2033/DEF%20CON%2033%20villages%20and%20
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-17
 depth: brief
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -21,6 +21,7 @@ sources:
 related:
   - fast-and-vulnerable-a-story-of-telematic-failures
   - wir-wissen-wo-dein-auto-steht
+  - external-attack-surface
 ---
 
 Eaton Zveare, DEF CON 33 Car Hacking Village 2025. Slides showing how flaws in an automaker's central dealer platform yielded a national admin account across over a thousand dealers.
@@ -37,3 +38,4 @@ Status: **published** — DEF CON 33, Car Hacking Village, August 2025; slides p
 
 - [Fast and Vulnerable: A Story of Telematic Failures](fast-and-vulnerable-a-story-of-telematic-failures.md) — backend/telematics weaknesses turned into vehicle access, a decade earlier
 - [Wir wissen, wo dein Auto steht](wir-wissen-wo-dein-auto-steht.md) — backend-side owner-data exposure at fleet scale
+- [The vehicle's external attack surface: remote entry and the telematics pivot](concepts/external-attack-surface.md)

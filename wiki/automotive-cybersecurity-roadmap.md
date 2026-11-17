@@ -8,7 +8,7 @@ url: "https://github.com/AutoSecurityy/Automotive-Cybersecurity-Roadmap"
 status: maintenance
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-17
 depth: brief
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -21,6 +21,7 @@ sources:
 related:
   - the-car-hacker-s-handbook
   - car-hacking-village
+  - tara-methodology
 ---
 
 Structured learning path from CAN and UDS fundamentals through TARA, firmware reverse engineering, and hardware hacking into specialized career tracks.
@@ -37,3 +38,4 @@ Status: **maintenance** — repo live and not archived, but every commit dates f
 
 - [The Car Hacker's Handbook](the-car-hacker-s-handbook.md) — the free book to work through alongside the roadmap's early stages
 - [Car Hacking Village](car-hacking-village.md) — where the roadmap's hands-on skills get practised in person
+- [TARA methodology: the ISO/SAE 21434 artefact chain](concepts/tara-methodology.md)

@@ -8,7 +8,7 @@ url: "https://arxiv.org/abs/2106.09249"
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-16
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -25,6 +25,7 @@ related:
   - dirty-road-can-attack-security-of-deep-learning-based-automated-lane-centering-under-physical-world-attack
   - robust-physical-world-attacks-on-deep-learning-visual-classification
   - perspective-shift-attacks-against-optical-perception-sensors-a-novel-attack-vector-on-lidar-and-camera
+  - physical-channel-sensor-attacks
 sources:
   - url: "https://arxiv.org/abs/2106.09249"
     retrieved: 2026-11-01
@@ -76,3 +77,4 @@ Status: **published** — a finished 2021 conference publication; no living arte
 - [Does Physical Adversarial Example Really Matter to Autonomous Driving?](does-physical-adversarial-example-really-matter-to-autonomous-driving-towards-system-level-effect-of-adversarial-object-evasion-attack.md) — Wang et al. 2023, the system-level reality check on this attack class
 - [A First Physical-World Trajectory Prediction Attack via LiDAR-induced Deceptions](a-first-physical-world-trajectory-prediction-attack-via-lidar-induced-deceptions-in-autonomous-driving.md) — Lou et al. 2024, the pipeline-propagation step downstream of perception
 - [SoK: The Next Frontier in AV Security](sok-the-next-frontier-in-av-security-systematizing-perception-attacks-and-the-emerging-threat-of-multi-sensor-fusion.md) — the systematization of this line (still a stub)
+- [Physical-channel sensor attacks](concepts/physical-channel-sensor-attacks.md)

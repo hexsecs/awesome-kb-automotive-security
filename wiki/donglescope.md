@@ -8,7 +8,7 @@ url: "https://github.com/OSUSecLab/DongleScope"
 status: unknown
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-16
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -19,6 +19,7 @@ related:
   - automated-cross-platform-reverse-engineering-of-can-bus-commands-from-mobile-apps
   - drivethru-car-hacking-fast-food-faster-data-breach
   - piccante
+  - external-attack-surface
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -60,3 +61,4 @@ Checked 2026-11-01. **Unknown**: the repository is **not** archived — the arch
 
 - [Plug-N-Pwned (paper)](plug-n-pwned-comprehensive-vulnerability-analysis-of-obd-ii-dongles.md)
 - [pwnobd](pwnobd.md)
+- [The vehicle's external attack surface: remote entry and the telematics pivot](concepts/external-attack-surface.md)

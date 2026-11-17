@@ -8,7 +8,7 @@ url: "https://www.usenix.org/conference/usenixsecurity21/presentation/sato"
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-16
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -21,6 +21,7 @@ related:
   - does-physical-adversarial-example-really-matter-to-autonomous-driving-towards-system-level-effect-of-adversarial-object-evasion-attack
   - on-the-realism-of-lidar-spoofing-attacks-against-autonomous-driving-vehicle-at-high-speed-and-long-distance
   - robust-physical-world-attacks-on-deep-learning-visual-classification
+  - physical-channel-sensor-attacks
 sources:
   - url: "https://www.usenix.org/conference/usenixsecurity21/presentation/sato"
     retrieved: 2026-11-01
@@ -68,3 +69,4 @@ Status: **published** — a finished 2021 conference publication; no living arte
 - [Invisible for both Camera and LiDAR](invisible-for-both-camera-and-lidar-security-of-multi-sensor-fusion-based-perception-in-autonomous-driving.md) — the same group's multi-sensor-fusion perception attack
 - [Does Physical Adversarial Example Really Matter to Autonomous Driving?](does-physical-adversarial-example-really-matter-to-autonomous-driving-towards-system-level-effect-of-adversarial-object-evasion-attack.md) — Wang et al. 2023; the system-level measurement frame for this attack class
 - [On the Realism of LiDAR Spoofing Attacks](on-the-realism-of-lidar-spoofing-attacks-against-autonomous-driving-vehicle-at-high-speed-and-long-distance.md) — Sato and Chen's LiDAR-side counterpart
+- [Physical-channel sensor attacks](concepts/physical-channel-sensor-attacks.md)

@@ -8,7 +8,7 @@ url: "https://www.zerodayinitiative.com/blog/2026/1/23/pwn2own-automotive-2026-d
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-17
 depth: brief
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -21,6 +21,7 @@ sources:
 related:
   - low-energy-to-high-energy-hacking-nearby-ev-chargers-over-bluetooth
   - one-modem-to-brick-them-all-exploiting-vulnerabilities-in-the-ev-charging-communication
+  - external-attack-surface
 ---
 
 Zero Day Initiative, Tokyo 2026. Final results of the contest, where $1,047,000 was awarded for 76 unique zero-days in infotainment systems and EV chargers.
@@ -37,3 +38,4 @@ Status: **published** — Zero Day Initiative blog, January 23, 2026. Verified a
 
 - [Low Energy to High Energy](low-energy-to-high-energy-hacking-nearby-ev-chargers-over-bluetooth.md) — what a post-Pwn2Own technical talk looks like: the 2024 charger exploits explained by their authors
 - [One Modem to Brick Them All](one-modem-to-brick-them-all-exploiting-vulnerabilities-in-the-ev-charging-communication.md) — charger-communication research from the same ecosystem and period
+- [The vehicle's external attack surface: remote entry and the telematics pivot](concepts/external-attack-surface.md)

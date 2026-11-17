@@ -8,7 +8,7 @@ url: "https://books.google.com/books?id=A3l0EAAAQBAJ"
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-16
+updated: 2026-11-17
 depth: brief
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -17,6 +17,7 @@ related:
   - automotive-threat-analysis-and-risk-assessment-in-practice
   - automotive-cybersecurity-engineering-handbook
   - cybersecurity-for-commercial-vehicles
+  - tara-methodology
 sources:
   - url: "https://books.google.com/books?id=A3l0EAAAQBAJ"
     retrieved: 2026-11-01
@@ -40,3 +41,4 @@ Status: **published** — David Ward and Paul Wooderson, SAE International, 2021
 
 - [Automotive Threat Analysis and Risk Assessment in Practice](automotive-threat-analysis-and-risk-assessment-in-practice.md) — the deep, worked treatment of the standard's risk-assessment core
 - [Automotive Cybersecurity Engineering Handbook](automotive-cybersecurity-engineering-handbook.md) — the practitioner handbook built around the same standard
+- [TARA methodology: the ISO/SAE 21434 artefact chain](concepts/tara-methodology.md)

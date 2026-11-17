@@ -17,6 +17,7 @@ related:
   - canflict-exploiting-peripheral-conflicts-for-data-link-layer-attacks-on-automotive-networks
   - error-handling-of-in-vehicle-networks-makes-them-vulnerable
   - on-the-real-world-applicability-of-automotive-can-intrusion-detection-systems
+  - can-message-authentication
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-02
@@ -55,3 +56,4 @@ Checked 2026-11-17. **Published** — USENIX Security 26, August 2026, open acce
 - [CANflict: exploiting peripheral conflicts for data-link layer attacks on automotive networks](canflict-exploiting-peripheral-conflicts-for-data-link-layer-attacks-on-automotive-networks.md)
 - [Error handling of in-vehicle networks makes them vulnerable](error-handling-of-in-vehicle-networks-makes-them-vulnerable.md)
 - [On the real-world applicability of automotive CAN intrusion detection systems](on-the-real-world-applicability-of-automotive-can-intrusion-detection-systems.md)
+- [CAN message authentication: the retrofit design space](concepts/can-message-authentication.md)

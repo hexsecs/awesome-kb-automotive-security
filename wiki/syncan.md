@@ -8,7 +8,7 @@ url: "https://github.com/etas/SynCAN"
 status: archived
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-17
 depth: brief
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -21,6 +21,9 @@ sources:
 related:
   - car-hacking-dataset
   - gem-can
+  - survival-analysis-dataset
+  - in-vehicle-intrusion-detection
+  - simulation-and-test-doubles
 ---
 
 ETAS synthetic CAN benchmark with continuous, plateau, playback, suspension, and flooding attacks in the signal space, for comparing IDS that work on decoded signals rather than raw arbitration IDs.
@@ -37,3 +40,6 @@ Status: **archived** — ETAS has archived the GitHub repository; the release is
 
 - [Car Hacking Dataset](car-hacking-dataset.md) — the real-vehicle raw-frame counterpart
 - [GEM-CAN](gem-can.md) — a small real-vehicle dataset for lightweight IDS benchmarking
+- [Survival Analysis Dataset](survival-analysis-dataset.md)
+- [In-vehicle intrusion detection and ECU fingerprinting](concepts/in-vehicle-intrusion-detection.md)
+- [Simulation and test doubles for vehicle networks](concepts/simulation-and-test-doubles.md)

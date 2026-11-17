@@ -8,7 +8,7 @@ url: "https://arxiv.org/abs/2604.20621"
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-16
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -25,6 +25,7 @@ related:
   - the-heat-is-on-understanding-and-mitigating-vulnerabilities-of-thermal-image-perception-in-autonomous-systems
   - robust-physical-world-attacks-on-deep-learning-visual-classification
   - potential-cyberattacks-on-automated-vehicles
+  - physical-channel-sensor-attacks
 sources:
   - url: "https://arxiv.org/abs/2604.20621"
     retrieved: 2026-11-01
@@ -65,3 +66,4 @@ Status: **published**: *2026 IEEE 11th European Symposium on Security and Privac
 - [Illusion and Dazzle](illusion-and-dazzle-adversarial-optical-channel-exploits-against-lidars-for-automotive-applications.md)
 - [Does Physical Adversarial Example Really Matter to Autonomous Driving](does-physical-adversarial-example-really-matter-to-autonomous-driving-towards-system-level-effect-of-adversarial-object-evasion-attack.md)
 - [A First Physical-World Trajectory Prediction Attack](a-first-physical-world-trajectory-prediction-attack-via-lidar-induced-deceptions-in-autonomous-driving.md)
+- [Physical-channel sensor attacks](concepts/physical-channel-sensor-attacks.md)

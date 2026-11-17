@@ -8,7 +8,7 @@ url: "https://ocslab.hksecurity.net/Datasets/survival-ids"
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-16
+updated: 2026-11-17
 depth: brief
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -17,6 +17,7 @@ related:
   - car-hacking-dataset
   - syncan
   - tow-ids-automotive-ethernet-intrusion-dataset
+  - in-vehicle-intrusion-detection
 sources:
   - url: "https://ocslab.hksecurity.net/Datasets/survival-ids"
     retrieved: 2026-11-01
@@ -38,3 +39,4 @@ Status: **published** — a finished static release, hosted unchanged on HCRL's 
 
 - [Car Hacking Dataset](car-hacking-dataset.md) — HCRL's single-vehicle predecessor and the field's default baseline
 - [SynCAN](syncan.md) — the synthetic alternative for signal-space IDS work
+- [In-vehicle intrusion detection and ECU fingerprinting](concepts/in-vehicle-intrusion-detection.md)

@@ -18,6 +18,7 @@ related:
   - road
   - car-hacking-dataset
   - vasp
+  - in-vehicle-intrusion-detection
 sources:
   - url: "https://zenodo.org/records/19661006"
     retrieved: 2026-11-01
@@ -40,3 +41,4 @@ Status: **published** — a finished, versioned archival release on Zenodo (v3, 
 - [CAN-MIRGU](can-mirgu.md) — physically verified attacks from a moving vehicle
 - [ROAD](road.md) — the dynamometer dataset with verified masquerade attacks
 - [Car Hacking Dataset](car-hacking-dataset.md) — the single-bus HCRL baseline
+- [In-vehicle intrusion detection and ECU fingerprinting](concepts/in-vehicle-intrusion-detection.md)

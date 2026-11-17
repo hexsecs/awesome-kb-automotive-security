@@ -18,6 +18,7 @@ related:
   - uds-firmware-extraction
   - zephyr-reference-ecu
   - openvehiclediag
+  - bootloader-stages
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-13
@@ -63,3 +64,4 @@ Checked 2026-11-17. **Published** — the talk was given at DEF CON 26 (2018) an
 - [UDS firmware extraction](uds-firmware-extraction.md)
 - [Zephyr-Reference-ECU](zephyr-reference-ecu.md)
 - [OpenVehicleDiag](openvehiclediag.md)
+- [Bootloader stages and bootstrap entry](concepts/bootloader-stages.md)

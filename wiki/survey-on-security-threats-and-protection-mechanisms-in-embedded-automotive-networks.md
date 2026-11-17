@@ -18,6 +18,7 @@ related:
   - experimental-security-analysis-of-a-modern-automobile
   - comprehensive-experimental-analyses-of-automotive-attack-surfaces
   - bypassing-debug-password-protection-on-the-rh850-family
+  - can-availability
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -72,3 +73,4 @@ Status: **published** — a finished 2013 workshop publication; no living artefa
 - [Security in Automotive Bus Systems](security-in-automotive-bus-systems.md)
 - [Experimental Security Analysis of a Modern Automobile](experimental-security-analysis-of-a-modern-automobile.md)
 - [Comprehensive Experimental Analyses of Automotive Attack Surfaces](comprehensive-experimental-analyses-of-automotive-attack-surfaces.md)
+- [CAN availability and denial of service](concepts/can-availability.md)

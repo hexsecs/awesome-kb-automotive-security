@@ -17,6 +17,7 @@ related:
   - modern-odometer-manipulation
   - secoc-key-extractor
   - bypassing-debug-password-protection-on-the-rh850-family
+  - firmware-acquisition
 sources:
   - url: "https://media.ccc.de/v/37c3-12144-back_in_the_driver_s_seat_recovering_critical_data_from_tesla_autopilot_using_voltage_glitching"
     retrieved: 2026-11-01
@@ -38,3 +39,4 @@ Status: **published** — 37C3, December 2023; recording public. Verified agains
 
 - [Modern Odometer Manipulation](modern-odometer-manipulation.md) — the same technique family: glitching past STM32 flash read protection
 - [SecOC key extractor](secoc-key-extractor.md) — fault-injection key extraction from an automotive ECU
+- [Firmware acquisition: the read-side channels](concepts/firmware-acquisition.md)

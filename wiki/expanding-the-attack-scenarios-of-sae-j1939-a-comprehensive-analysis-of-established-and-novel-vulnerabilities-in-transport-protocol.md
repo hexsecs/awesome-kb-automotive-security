@@ -21,6 +21,7 @@ related:
   - perspective-shift-attacks-against-optical-perception-sensors-a-novel-attack-vector-on-lidar-and-camera
   - fleet-cyber-challenge
   - j1939
+  - the-vehicle-may-be-sick-denial-of-diagnostic-services-by-exploiting-the-can-transport-protocol
 sources:
   - url: "https://zenodo.org/records/18715820"
     retrieved: 2026-11-01

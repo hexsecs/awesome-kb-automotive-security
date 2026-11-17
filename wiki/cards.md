@@ -8,7 +8,7 @@ url: "https://tudatalib.ulb.tu-darmstadt.de/handle/tudatalib/5080"
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-17
 depth: brief
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -21,6 +21,7 @@ sources:
 related:
   - tow-ids-automotive-ethernet-intrusion-dataset
   - road
+  - in-vehicle-intrusion-detection
 ---
 
 ACSAC 2025 dataset of over nine hours of traffic from a 2020 electric vehicle with 10 CAN buses and 6 automotive Ethernet buses, covering benign driving and attack scenarios.
@@ -37,3 +38,4 @@ Status: **published** — a finished dataset release accompanying the ACSAC 2025
 
 - [TOW-IDS Automotive Ethernet Intrusion Dataset](tow-ids-automotive-ethernet-intrusion-dataset.md) — the earlier, testbed-scale Ethernet dataset
 - [ROAD](road.md) — single-bus but physically verified dynamometer attacks
+- [In-vehicle intrusion detection and ECU fingerprinting](concepts/in-vehicle-intrusion-detection.md)

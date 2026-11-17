@@ -8,7 +8,7 @@ url: "https://he.kendallhunt.com/product/automotive-cybersecurity-protecting-con
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-17
 depth: brief
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -21,6 +21,7 @@ sources:
 related:
   - automotive-cyber-security
   - hacking-connected-cars
+  - tara-methodology
 ---
 
 Alfred Basta and Sam Hana, Kendall Hunt 2026. Textbook covering threats from ECU networks and sensor spoofing to OTA patching, EV charging breaches, and incident response.
@@ -37,3 +38,4 @@ Status: **published** — Alfred Basta and Sam Hana, Kendall Hunt Publishing, 20
 
 - [Automotive Cyber Security](automotive-cyber-security.md) — the earlier academic survey this textbook supersedes in coverage
 - [Hacking Connected Cars](hacking-connected-cars.md) — the practitioner field manual for the offensive topics this book surveys
+- [TARA methodology: the ISO/SAE 21434 artefact chain](concepts/tara-methodology.md)

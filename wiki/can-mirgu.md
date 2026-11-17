@@ -8,7 +8,7 @@ url: "https://github.com/sampathrajapaksha/CAN-MIRGU"
 status: maintenance
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-17
 depth: brief
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -22,6 +22,7 @@ related:
   - road
   - autohack
   - can-train-and-test
+  - in-vehicle-intrusion-detection
 ---
 
 CAN bus attack dataset from a modern vehicle driven on real roads over six days, with physically verified masquerade, suspension, and real attacks.
@@ -39,3 +40,4 @@ Status: **maintenance** — the dataset is complete and the repository is live b
 - [ROAD](road.md) — verified attacks, but captured on a dynamometer
 - [AutoHack](autohack.md) — verified multi-bus attacks from a real vehicle
 - [can-train-and-test](can-train-and-test.md) — labelled captures from four vehicles
+- [In-vehicle intrusion detection and ECU fingerprinting](concepts/in-vehicle-intrusion-detection.md)

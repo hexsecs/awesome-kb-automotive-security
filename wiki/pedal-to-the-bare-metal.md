@@ -17,6 +17,7 @@ related:
   - hotwire-real-world-impersonation-and-discharge-attacks-on-electric-vehicle-charging-systems
   - low-energy-to-high-energy-hacking-nearby-ev-chargers-over-bluetooth
   - a-survey-of-remote-automotive-attack-surfaces
+  - firmware-acquisition
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-08
@@ -57,3 +58,4 @@ Checked 2026-11-17. **Published** — Black Hat USA 2026; official briefing slid
 - [HotWire: Real-World Impersonation and Discharge Attacks on Electric Vehicle Charging Systems](hotwire-real-world-impersonation-and-discharge-attacks-on-electric-vehicle-charging-systems.md)
 - [Low Energy to High Energy: hacking nearby EV chargers over Bluetooth](low-energy-to-high-energy-hacking-nearby-ev-chargers-over-bluetooth.md)
 - [A Survey of Remote Automotive Attack Surfaces](a-survey-of-remote-automotive-attack-surfaces.md)
+- [Firmware acquisition: the read-side channels](concepts/firmware-acquisition.md)
