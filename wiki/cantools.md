@@ -8,7 +8,7 @@ url: "https://github.com/cantools/cantools"
 status: active
 last_checked: 2026-10-31
 created: 2026-10-31
-updated: 2026-11-16
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -22,6 +22,8 @@ related:
   - canlab
   - savvycan
   - can-playground
+  - dbc-semantic-layer
+  - canalyse
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -71,3 +73,5 @@ is stated in the checked project documentation.
 - [canmatrix](canmatrix.md) — format conversion between databases.
 - [CANarchy](canarchy.md) — builds its DBC workflows on cantools.
 - [Kayak](kayak.md) — KCD is Kayak's native format.
+- [DBC as the CAN semantic layer](concepts/dbc-semantic-layer.md)
+- [CANalyse](canalyse.md)

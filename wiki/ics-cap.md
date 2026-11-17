@@ -8,7 +8,7 @@ url: "https://intrepidcs.com/products/software/ics-cap/"
 status: active
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-16
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -19,6 +19,7 @@ related:
   - vsomeip
   - someip
   - protocrawler
+  - lin-bus
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -64,3 +65,4 @@ Checked 2026-11-01. **Active**: the vendor's own download index shows eight vers
 - [Scapy](scapy.md)
 - [vsomeip](vsomeip.md)
 - [SOME/IP and SOME/IP-SD](concepts/someip.md)
+- [LIN as the trusted subordinate bus](concepts/lin-bus.md)

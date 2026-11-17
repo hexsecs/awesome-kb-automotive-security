@@ -20,6 +20,7 @@ related:
   - canarchy
   - uds
   - canalyzat0r
+  - j1939
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-10
@@ -70,3 +71,4 @@ Checked 2026-11-17. **Active** at this check: public, not archived, default bran
 - [CANarchy](canarchy.md)
 - [UDS](uds.md)
 - [CANalyzat0r](canalyzat0r.md)
+- [J1939 transport security](concepts/j1939.md)

@@ -21,6 +21,7 @@ related:
   - canexplorer
   - pycangui
   - openvehiclediag
+  - lin-bus
 license: "MIT"
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
@@ -72,3 +73,4 @@ vehicle-safety warning is stated in the checked sources.
 
 - [udsoncan](udsoncan.md) — the session-level client one layer up.
 - [python-can](python-can.md) and [python-can-isotp](python-can-isotp.md) — its CAN transports.
+- [LIN as the trusted subordinate bus](concepts/lin-bus.md)

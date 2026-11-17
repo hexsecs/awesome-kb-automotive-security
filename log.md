@@ -772,3 +772,40 @@ and the OpenGarages handbook page for the CC BY-NC-SA licence and contents.
 These were the six briefs named in the campaign brief; all remaining briefs
 stay at pointer tier. Gates: ingest x2 idempotent (0/0/0), lint clean, link
 checker 0/0/0, tests pass, diff check clean.
+
+## [2026-11-17] audit | Crosslink coverage and concept-theme mining pass
+
+Corpus-wide audit of the 255 entity pages and 25 existing concepts. Built
+tools/link_audit.py (5 unit tests) to measure crosslink coverage alongside
+link_check.py's validity gate and concept_scan.py's theme candidates.
+
+Coverage before: 141/255 entity pages linked to any concept; two article-level
+orphans (canalyse, owasp-automotive-security-cheat-sheet) had no inbound link
+from another article; 30 theme candidates recurred across full-depth pages.
+
+Concept verdicts (evaluation standard: corpus evidence, synthesis, overlap,
+build readiness):
+- ADD: dbc-semantic-layer (13 full pages), doip (11), iso-tp (6), j1939 (5),
+  lin-bus (8). Each states a synthesis no entity page states — a DBC is an
+  unverified claim the toolchain treats as fact; DoIP converts a physical
+  access assumption into network reachability plus a new handshake; ISO-TP
+  and J1939 transports are stateful attack surfaces, not pipes; LIN is
+  trusted by topology, not authentication — with explicit boundaries against
+  neighbouring concepts and counter-cases. Uids minted by `openshelf uid`.
+- UPDATE: can-injection / external-attack-surface — OBD-II access-path and
+  dongle material already covered there; reciprocated links added instead of
+  a second page. uds-seed-key / diagnostic-service-abuse — UDS themes covered;
+  new concepts link in rather than duplicate.
+- DECLINE: venue/format labels (def con, black hat, ndss, ieee, vehiclesec,
+  car hacking) are categories, not syntheses; iso/21434 and tara belong to
+  tara-methodology; ccs/ocpp to charging-trust-chain and ocpp-charging-attacks;
+  ids to in-vehicle-intrusion-detection and misbehavior-detection; keyless
+  entry to key-fob-relay-attacks and rolling-code-failure-classes; socketcan,
+  python-can and usb are technology labels rather than cross-cutting claims.
+
+Reciprocated `related:` frontmatter and body links on all 40 entity pages the
+new concepts draw on, added four inbound article links to each orphan, and
+regenerated index.md through ingest. Coverage after: 163/255 entity pages link
+to a concept, 0 article orphans, 14 one-way entity related pairs, all 30
+concepts have >= 6 inbound links. Gates: ingest x2 idempotent, lint 0 errors,
+link checker 0/0/0, 17 tests pass, diff check clean.

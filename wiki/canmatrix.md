@@ -8,7 +8,7 @@ url: "https://github.com/ebroecker/canmatrix"
 status: active
 last_checked: 2026-10-31
 created: 2026-10-31
-updated: 2026-11-16
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -18,6 +18,7 @@ related:
   - kayak
   - busmaster
   - cangaroo
+  - dbc-semantic-layer
 license: BSD-2-Clause
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
@@ -65,3 +66,4 @@ claimed.
 - [cantools](cantools.md) — decode/encode against a database, live or offline.
 - [Kayak](kayak.md) — KCD is Kayak's native format.
 - [BUSMASTER](busmaster.md) — DBF is BUSMASTER's database format.
+- [DBC as the CAN semantic layer](concepts/dbc-semantic-layer.md)

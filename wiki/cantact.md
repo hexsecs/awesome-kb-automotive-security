@@ -8,7 +8,7 @@ url: "https://github.com/linklayer/cantact-app"
 status: unknown
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-16
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -21,6 +21,7 @@ related:
   - owasp-automotive-emb-60
   - piccante
   - supercan
+  - iso-tp
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -63,3 +64,4 @@ Checked 2026-11-01. **Unknown** — a split record, stated in full: **neither** 
 - [candleLight_fw](candlelight-fw.md)
 - [panda](panda.md)
 - [CAN-DAQ](can-daq.md)
+- [ISO-TP: the stateful transport under diagnostics](concepts/iso-tp.md)

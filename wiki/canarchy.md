@@ -8,7 +8,7 @@ url: "https://github.com/hexsecs/canarchy"
 status: active
 last_checked: 2026-10-31
 created: 2026-10-31
-updated: 2026-11-16
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -22,6 +22,9 @@ related:
   - cancat
   - can-playground
   - pycangui
+  - dbc-semantic-layer
+  - j1939
+  - canalyse
 license: GPL-3.0
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
@@ -73,3 +76,6 @@ live bus by accident.
 - [cantools](cantools.md) — the DBC engine CANarchy builds on.
 - [python-can](python-can.md) — the transport library underneath.
 - [pretty_j1939](pretty-j1939.md) — the other J1939-first tool in this section.
+- [DBC as the CAN semantic layer](concepts/dbc-semantic-layer.md)
+- [J1939 transport security](concepts/j1939.md)
+- [CANalyse](canalyse.md)

@@ -8,7 +8,7 @@ url: "https://github.com/collin80/SavvyCAN"
 status: active
 last_checked: 2026-10-31
 created: 2026-10-31
-updated: 2026-11-16
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -31,6 +31,9 @@ related:
   - python-can-isotp
   - uds-seed-key
   - canexplorer
+  - dbc-semantic-layer
+  - canalyse
+  - kayak
 license: MIT
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
@@ -91,3 +94,6 @@ for anything deeper (see [UDS seed/key](concepts/uds-seed-key.md)).
 - [Lindwurm](lindwurm.md) — pentest-workflow tracing and fuzzing.
 - [CANalyzat0r](canalyzat0r.md) — project-based protocol RE.
 - [cantools](cantools.md) — programmatic DBC decode/encode.
+- [DBC as the CAN semantic layer](concepts/dbc-semantic-layer.md)
+- [CANalyse](canalyse.md)
+- [Kayak](kayak.md)

@@ -8,12 +8,12 @@ url: "https://github.com/MatthewKuKanich/CAN_Commander"
 status: active
 last_checked: 2026-10-31
 created: 2026-10-31
-updated: 2026-10-31
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Flipper Zero application and companion ESP32 CAN board for reverse engineering vehicle networks, with sniffing, DBC decoding, replay, and injection profiles usable without a laptop."
-related: [savvycan, caringcaribou, icsim]
+related: [savvycan, caringcaribou, icsim, dbc-semantic-layer]
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -66,3 +66,4 @@ the README explicitly tells users to change.
 - [SavvyCAN](savvycan.md) — the laptop-side capture/RE counterpart.
 - [CaringCaribou](caringcaribou.md) — scripted ECU discovery and exploration.
 - [ICSim](icsim.md) — safe virtual instrument cluster for practice.
+- [DBC as the CAN semantic layer](concepts/dbc-semantic-layer.md)

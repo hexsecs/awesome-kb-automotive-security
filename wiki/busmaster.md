@@ -8,7 +8,7 @@ url: "https://github.com/rbei-etas/busmaster"
 status: active
 last_checked: 2026-10-31
 created: 2026-10-31
-updated: 2026-11-16
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -19,6 +19,7 @@ related:
   - kayak
   - simulation-and-test-doubles
   - canmatrix
+  - dbc-semantic-layer
 license: GPL-3.0
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
@@ -71,3 +72,4 @@ guidance.
 - [CANdevStudio](candevstudio.md) — flow-based graphical simulation of missing ECUs.
 - [SavvyCAN](savvycan.md) — cross-platform capture and reverse-engineering GUI.
 - [Kayak](kayak.md) — Java-based bus monitoring with DBC/KCD loading.
+- [DBC as the CAN semantic layer](concepts/dbc-semantic-layer.md)

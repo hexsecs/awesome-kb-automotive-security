@@ -8,7 +8,7 @@ url: "https://books.google.com/books/about/Automotive_Cybersecurity_Engineering_
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-17
 depth: brief
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -24,6 +24,7 @@ related:
   - building-secure-cars
   - offensive-automotive-cybersecurity
   - automotive-cybersecurity-an-introduction-to-iso-sae-21434
+  - owasp-automotive-security-cheat-sheet
 ---
 
 Ahmad MK Nasser, Packt 2023. Practitioner's guide to building cyber-resilient vehicles, covering threat analysis, hardware security, and ISO/SAE 21434 engineering practice.
@@ -41,3 +42,4 @@ Status: **published** — Dr. Ahmad MK Nasser, Packt Publishing, 13 October 2023
 - [Building Secure Cars](building-secure-cars.md) — the SDLC-assurance counterpart from his later co-author
 - [Offensive Automotive Cybersecurity](offensive-automotive-cybersecurity.md) — the same author's offensive-side companion volume
 - [Automotive Cybersecurity: An Introduction to ISO/SAE 21434](automotive-cybersecurity-an-introduction-to-iso-sae-21434.md) — the short primer on the standard this handbook operationalises
+- [OWASP Automotive Security Cheat Sheet](owasp-automotive-security-cheat-sheet.md)

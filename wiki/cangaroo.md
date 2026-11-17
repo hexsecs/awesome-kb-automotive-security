@@ -8,7 +8,7 @@ url: "https://github.com/Schildkroet/CANgaroo"
 status: active
 last_checked: 2026-10-31
 created: 2026-10-31
-updated: 2026-11-16
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -19,6 +19,9 @@ related:
   - can-utils
   - pycangui
   - can-playground
+  - dbc-semantic-layer
+  - canalyse
+  - kayak
 license: GPL-2.0
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
@@ -69,3 +72,6 @@ entirely at your own risk" disclaimer.
 - [SavvyCAN](savvycan.md) — the other cross-platform analysis GUI.
 - [canmatrix](canmatrix.md) — CANgaroo's README points ARXML users to its converter.
 - [can-utils](can-utils.md) — the command-line base on Linux benches.
+- [DBC as the CAN semantic layer](concepts/dbc-semantic-layer.md)
+- [CANalyse](canalyse.md)
+- [Kayak](kayak.md)

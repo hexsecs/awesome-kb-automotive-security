@@ -19,6 +19,7 @@ related:
   - cfuc
   - autopi
   - automated-cross-platform-reverse-engineering-of-can-bus-commands-from-mobile-apps
+  - lin-bus
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-08
@@ -65,3 +66,4 @@ Checked 2026-11-17. **Active** at this check: public, not archived, GPL-3.0, 94 
 - [CFUC](cfuc.md)
 - [AutoPi](autopi.md)
 - [Automated cross-platform reverse engineering of CAN bus commands from mobile apps](automated-cross-platform-reverse-engineering-of-can-bus-commands-from-mobile-apps.md)
+- [LIN as the trusted subordinate bus](concepts/lin-bus.md)

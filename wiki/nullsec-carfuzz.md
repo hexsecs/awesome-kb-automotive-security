@@ -8,12 +8,12 @@ url: "https://github.com/bad-antics/nullsec-carfuzz"
 status: maintenance
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Rust fuzzer for CAN, UDS, OBD-II, and DoIP with grammar-aware test generation and coverage tracking."
-related: [autofuze, truckdevil, uds-seed-key, caringcaribou, diagnostic-fuzzing]
+related: [autofuze, truckdevil, uds-seed-key, caringcaribou, diagnostic-fuzzing, doip]
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -54,3 +54,4 @@ Checked 2026-11-01. **Maintenance**: the repository is not archived and was crea
 - [TruckDevil](truckdevil.md)
 - [UDS seed/key](concepts/uds-seed-key.md)
 - [CaringCaribou](caringcaribou.md)
+- [DoIP moves diagnostics onto the network](concepts/doip.md)

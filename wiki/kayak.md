@@ -8,12 +8,12 @@ url: "https://github.com/dschanoeh/Kayak"
 status: archived
 last_checked: 2026-10-31
 created: 2026-10-31
-updated: 2026-10-31
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Java-based CAN bus analysis tool with bus monitoring and DBC/KCD file loading support."
-related: [cantools, canmatrix, savvycan, cangaroo]
+related: [cantools, canmatrix, savvycan, cangaroo, dbc-semantic-layer, busmaster]
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -68,3 +68,5 @@ pages.
 - [canmatrix](canmatrix.md) — converts DBC↔KCD and most other formats.
 - [SavvyCAN](savvycan.md) — maintained GUI successor.
 - [CANgaroo](cangaroo.md) — maintained analyser with KCD-adjacent workflows.
+- [DBC as the CAN semantic layer](concepts/dbc-semantic-layer.md)
+- [BUSMASTER](busmaster.md)

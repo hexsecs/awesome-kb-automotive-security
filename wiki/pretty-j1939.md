@@ -19,6 +19,7 @@ related:
   - python-can
   - expanding-the-attack-scenarios-of-sae-j1939-a-comprehensive-analysis-of-established-and-novel-vulnerabilities-in-transport-protocol
   - fleet-cyber-challenge
+  - j1939
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -70,3 +71,4 @@ almost all commercial-vehicle SPNs/PGNs.
 - [CANarchy](canarchy.md) — J1939-first analysis in an event-stream toolkit.
 - [can-utils](can-utils.md) — produces the candump logs it decodes.
 - [python-can](python-can.md) — its live-capture path.
+- [J1939 transport security](concepts/j1939.md)

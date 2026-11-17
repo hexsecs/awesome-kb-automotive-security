@@ -8,7 +8,7 @@ url: "https://www.ndss-symposium.org/ndss-paper/automated-cross-platform-reverse
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-16
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -22,6 +22,7 @@ related:
   - canexplorer
   - idrive7-8-ssh-root
   - linusbconverter
+  - lin-bus
 sources:
   - url: "https://www.ndss-symposium.org/ndss-paper/automated-cross-platform-reverse-engineering-of-can-bus-commands-from-mobile-apps/"
     retrieved: 2026-11-01
@@ -66,3 +67,4 @@ Status: **published** — *Proceedings of NDSS 2020*, Internet Society, ISBN 1-8
 - [DongleScope](donglescope.md) — the sibling OSU SecLab tool for the dongle half of this ecosystem
 - [CANalyzat0r](canalyzat0r.md) — the manual capture-and-correlate workflow CANHUNTER automates from a different artefact
 - [CAN injection](concepts/can-injection.md) — the concept whose prerequisite knowledge this paper measures in the wild
+- [LIN as the trusted subordinate bus](concepts/lin-bus.md)

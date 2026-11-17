@@ -8,7 +8,7 @@ url: "https://www.weimerskirch.org/files/WolfEtAl_SecureBus.pdf"
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-16
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -20,6 +20,7 @@ related:
   - survey-on-security-threats-and-protection-mechanisms-in-embedded-automotive-networks
   - linusbconverter
   - can-playground
+  - lin-bus
 sources:
   - url: "https://www.weimerskirch.org/files/WolfEtAl_SecureBus.pdf"
     retrieved: 2026-11-01
@@ -62,3 +63,4 @@ Status: **published** — a finished 2004 publication; no living artefact. Sourc
 - [Experimental Security Analysis of a Modern Automobile](experimental-security-analysis-of-a-modern-automobile.md)
 - [Comprehensive Experimental Analyses of Automotive Attack Surfaces](comprehensive-experimental-analyses-of-automotive-attack-surfaces.md)
 - [CAN injection](concepts/can-injection.md)
+- [LIN as the trusted subordinate bus](concepts/lin-bus.md)

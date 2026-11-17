@@ -8,12 +8,12 @@ url: "https://github.com/GENIVI/CANdevStudio"
 status: active
 last_checked: 2026-10-31
 created: 2026-10-31
-updated: 2026-10-31
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Flow-based graphical CAN simulation environment that wires senders, receivers, DBC decoders, and signal viewers together to stand in for missing ECUs on a bench."
-related: [cannelloni, busmaster, icsim, simulation-and-test-doubles]
+related: [cannelloni, busmaster, icsim, simulation-and-test-doubles, dbc-semantic-layer]
 license: MPL-2.0
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
@@ -62,3 +62,4 @@ warnings are stated.
 - [cannelloni](cannelloni.md) — the tunnel its remote setups use.
 - [BUSMASTER](busmaster.md) — rest-bus simulation from Bosch/ETAS.
 - [ICSim](icsim.md) — a single virtual instrument cluster, ready-made.
+- [DBC as the CAN semantic layer](concepts/dbc-semantic-layer.md)

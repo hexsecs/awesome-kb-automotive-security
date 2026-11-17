@@ -17,6 +17,7 @@ related:
   - automotive-cybersecurity-protecting-connected-and-autonomous-vehicles
   - v2x-credential-management
   - fleet-cyber-challenge
+  - owasp-automotive-security-cheat-sheet
 sources:
   - url: "https://books.google.com/books?id=uTD_DwAAQBAJ"
     retrieved: 2026-11-01
@@ -40,3 +41,4 @@ Status: **published** — Shiho Kim and Rakesh Shrestha, Springer Singapore, 202
 
 - [Automotive Cybersecurity: Protecting Connected and Autonomous Vehicles](automotive-cybersecurity-protecting-connected-and-autonomous-vehicles.md) — the newer textbook survey of the same territory
 - [V2X credential management](concepts/v2x-credential-management.md) — depth on the inter-vehicle communication security this book surveys
+- [OWASP Automotive Security Cheat Sheet](owasp-automotive-security-cheat-sheet.md)

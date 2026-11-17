@@ -8,12 +8,12 @@ url: "https://github.com/ps1337/automotive-security-research"
 status: unknown
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Published reverse engineering results for two production vehicles including CAN matrices, extracted ECU security access keys, and UDS scanning proof-of-concepts."
-related: [uds-seed-key, simos18-sboot, q50-reverse-engineering]
+related: [uds-seed-key, simos18-sboot, q50-reverse-engineering, owasp-automotive-security-cheat-sheet]
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -53,3 +53,4 @@ Checked 2026-11-01. **Unknown**: the repository is not archived, but its commits
 - [UDS seed/key](concepts/uds-seed-key.md)
 - [Simos18_SBOOT](simos18-sboot.md)
 - [q50-reverse-engineering](q50-reverse-engineering.md)
+- [OWASP Automotive Security Cheat Sheet](owasp-automotive-security-cheat-sheet.md)
