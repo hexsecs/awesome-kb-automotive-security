@@ -110,12 +110,16 @@ def write_page(path: Path, fm_lines: list[str], body: str,
     out: list[str] = []
     i = 0
     block = ["related:"] + [f"  - {slug}" for slug in related]
+    # Pre-scan: if any related: block exists, the single replacement
+    # block goes where the FIRST one was; never also after list_summary.
+    had_related = any(l.startswith("related:") for l in fm_lines)
     placed = False
     while i < len(fm_lines):
         line = fm_lines[i]
         if line.startswith("related:"):
-            out.extend(block)
-            placed = True
+            if not placed:
+                out.extend(block)
+                placed = True
             i += 1
             # skip the old block's continuation lines
             while i < len(fm_lines) and fm_lines[i].startswith((" ", "-")):
@@ -124,7 +128,7 @@ def write_page(path: Path, fm_lines: list[str], body: str,
         if line.startswith("updated:"):
             line = f"updated: {run_date}"
         out.append(line)
-        if not placed and line.startswith("list_summary:"):
+        if not placed and not had_related and line.startswith("list_summary:"):
             out.extend(block)
             placed = True
         i += 1
