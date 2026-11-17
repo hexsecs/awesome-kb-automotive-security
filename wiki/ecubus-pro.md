@@ -8,7 +8,7 @@ url: "https://github.com/ecubus/EcuBus-Pro"
 status: active
 last_checked: 2026-10-31
 created: 2026-10-31
-updated: 2026-11-16
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -19,6 +19,9 @@ related:
   - python-can
   - opensovd-classic-diagnostic-adapter
   - canexplorer
+  - dbc-semantic-layer
+  - doip
+  - lin-bus
 license: "Apache-2.0"
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
@@ -65,3 +68,6 @@ No limits or safety warnings are stated in the checked sources.
 - [udsoncan](udsoncan.md) — the Python UDS client library.
 - [odxtools](odxtools.md) — database-driven diagnostics from ODX.
 - [python-can](python-can.md) — the transport layer under much of this section.
+- [DBC as the CAN semantic layer](concepts/dbc-semantic-layer.md)
+- [DoIP moves diagnostics onto the network](concepts/doip.md)
+- [LIN as the trusted subordinate bus](concepts/lin-bus.md)

@@ -8,12 +8,12 @@ url: "https://github.com/eccentricOrange/can-daq"
 status: unknown
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Open hardware ESP32-S3 CAN data-capture device with DBC-driven real-time plotting and SQLite logging, published in HardwareX as a sub-$25 alternative to commercial CAN loggers."
-related: [ramn, cantact]
+related: [ramn, cantact, dbc-semantic-layer]
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -55,3 +55,4 @@ Checked 2026-11-01. **Unknown**: the repository is not archived; its entire hist
 
 - [RAMN](ramn.md)
 - [CANtact](cantact.md)
+- [DBC as the CAN semantic layer](concepts/dbc-semantic-layer.md)

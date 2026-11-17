@@ -22,6 +22,7 @@ related:
   - obdium
   - uds-seed-key
   - openvehiclediag
+  - iso-tp
 license: MIT
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
@@ -79,3 +80,4 @@ stack is the portable option.
 - [python-can](python-can.md) — the bus layer underneath.
 - [SavvyCAN](savvycan.md) — GUI analysis, including UDS scanning.
 - [CaringCaribou](caringcaribou.md) — diagnostics-driven exploration tool.
+- [ISO-TP: the stateful transport under diagnostics](concepts/iso-tp.md)

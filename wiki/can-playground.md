@@ -20,6 +20,7 @@ related:
   - cangaroo
   - cantools
   - obdium
+  - dbc-semantic-layer
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-15
@@ -71,3 +72,4 @@ Checked 2026-11-17. **Active** at this check: the repository is public, not arch
 - [Cangaroo](cangaroo.md)
 - [cantools](cantools.md)
 - [OBDium](obdium.md)
+- [DBC as the CAN semantic layer](concepts/dbc-semantic-layer.md)

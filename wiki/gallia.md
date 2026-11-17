@@ -8,7 +8,7 @@ url: "https://github.com/Fraunhofer-AISEC/gallia"
 status: active
 last_checked: 2026-10-31
 created: 2026-10-31
-updated: 2026-11-16
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -18,6 +18,8 @@ related:
   - iso14229
   - caringcaribou
   - ford-ecu-bruteforcer
+  - doip
+  - iso-tp
 license: "Apache-2.0"
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
@@ -68,3 +70,5 @@ responsibility for damage caused by the usage of this tool."
 - [udsoncan](udsoncan.md) — the production UDS client.
 - [iso14229](iso14229.md) — the embedded C implementation, server and client.
 - [CaringCaribou](caringcaribou.md) — CAN-layer exploration, the layer below.
+- [DoIP moves diagnostics onto the network](concepts/doip.md)
+- [ISO-TP: the stateful transport under diagnostics](concepts/iso-tp.md)

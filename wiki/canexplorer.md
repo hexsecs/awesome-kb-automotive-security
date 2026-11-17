@@ -20,6 +20,8 @@ related:
   - uds
   - autofuze
   - scapy
+  - doip
+  - lin-bus
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-09
@@ -71,3 +73,5 @@ Checked 2026-11-17. **Active** at this check: public, not archived, default bran
 - [UDS](uds.md)
 - [Autofuze](autofuze.md)
 - [Scapy](scapy.md)
+- [DoIP moves diagnostics onto the network](concepts/doip.md)
+- [LIN as the trusted subordinate bus](concepts/lin-bus.md)

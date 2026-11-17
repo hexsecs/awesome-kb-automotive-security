@@ -8,7 +8,7 @@ url: "https://github.com/jacobschaer/python-doipclient"
 status: active
 last_checked: 2026-10-31
 created: 2026-10-31
-updated: 2026-11-16
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -19,6 +19,7 @@ related:
   - doip-sim-ecu-dsl
   - autofuze
   - scapy
+  - doip
 license: "MIT"
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
@@ -68,3 +69,4 @@ checked sources.
 
 - [udsoncan](udsoncan.md) — the client it was built to carry.
 - [py-uds](uds.md) — message-level UDS work over the same transports.
+- [DoIP moves diagnostics onto the network](concepts/doip.md)

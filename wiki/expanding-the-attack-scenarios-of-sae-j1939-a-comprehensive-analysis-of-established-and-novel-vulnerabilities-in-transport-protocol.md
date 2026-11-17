@@ -20,6 +20,7 @@ related:
   - reversing-a-brake-ecu-firmware-update
   - perspective-shift-attacks-against-optical-perception-sensors-a-novel-attack-vector-on-lidar-and-camera
   - fleet-cyber-challenge
+  - j1939
 sources:
   - url: "https://zenodo.org/records/18715820"
     retrieved: 2026-11-01
@@ -80,3 +81,4 @@ Checked 2026-11-17. **Published** — escar USA 2024; full paper PDF open on Zen
 - [Reversing a brake ECU firmware update](reversing-a-brake-ecu-firmware-update.md)
 - [Perspective-Shift Attacks Against Optical Perception Sensors](perspective-shift-attacks-against-optical-perception-sensors-a-novel-attack-vector-on-lidar-and-camera.md)
 - [Fleet Cyber Challenge](fleet-cyber-challenge.md)
+- [J1939 transport security](concepts/j1939.md)

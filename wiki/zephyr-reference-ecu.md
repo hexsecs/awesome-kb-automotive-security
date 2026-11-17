@@ -20,6 +20,7 @@ related:
   - doip-sim-ecu-dsl
   - automotive-flash-bootloaders-exposing-automotive-ecu-updates
   - openvehiclediag
+  - doip
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-05
@@ -69,3 +70,4 @@ Checked 2026-11-17. **Active** at this check: public, not archived, Apache-2.0 f
 - [DoIP sim ECU DSL](doip-sim-ecu-dsl.md)
 - [Automotive flash bootloaders: exposing automotive ECU updates](automotive-flash-bootloaders-exposing-automotive-ecu-updates.md)
 - [OpenVehicleDiag](openvehiclediag.md)
+- [DoIP moves diagnostics onto the network](concepts/doip.md)
