@@ -842,3 +842,38 @@ degrade the content. Total warnings 50 → 54.
 
 Gates: ingest ×2 idempotent, lint 0 errors, link checker 0/0/0, link audit
 0 orphans, 17 tests pass, diff check clean.
+
+## [2026-11-17] deepen | Brief tranche 2: six high-centrality briefs to full
+
+Ranked all 45 remaining brief pages by inbound-link centrality (distinct pages
+linking in, counting YAML related slugs and body links). Promoted the top
+sourceable six from `brief` to `full`, keeping uid, summary, list_summary,
+related, category, URL and status verbatim and adding a sourced "How it works"
+section plus explicit limits:
+
+- awesome-vehicle-security (5 inbound) — structure of the annotated README:
+  Learn front door, language-sliced Software tree, untiered Hardware catalogue,
+  and the Coordinated Disclosure subsection (GM/Stellantis/Tesla/ASRG/Zeekr).
+- autohack (4) — multi-bus capture design, the two-file Zenodo delivery, the
+  five-class attack taxonomy including UDS, and reconciliation of the licence
+  observation (brief recorded none; current record shows CC BY 4.0).
+- automotive-cybersecurity-engineering-handbook (4) — Google Books contents
+  arc from E/E architecture to ECU-level controls, TARA chain and author's
+  builder background; notes the unresolved ISBN and chapter-count deltas.
+- owasp-automotive-security-cheat-sheet (3) — all five sections and the
+  inline "what this does not do" limits; safety-failure framing.
+- can-mirgu (3) — moving-vehicle capture, two-tree folder structure, the
+  three attack directories and the role of Attacks_metadata.json.
+- syncan (3) — signal-space schema, 10 IDs / 20 signals, four-file training
+  concatenation, six test conditions and the all-IDs labelling rule.
+
+Deferred the other high-centrality briefs (mostly books and forum/venue labels)
+where a `full` page would have no accessible primary source beyond the already-
+recorded publisher abstract, or where centrality came from list membership
+rather than substantive reuse. The rank remains recorded for the next tranche.
+
+Sources read 2026-11-17: the upstream READMEs for the four repo/list entries,
+the OWASP Cheat Sheet Series master markdown, the Zenodo record and Google
+Books. No archives downloaded, no vehicles or benches exercised. Gates: ingest
+x2 idempotent, lint 0 errors and no new warnings, link checker 0/0/0, 17 tests
+pass, diff check clean.
