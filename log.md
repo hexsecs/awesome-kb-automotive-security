@@ -734,3 +734,23 @@ paper abstract, >2M vehicles on the project site) are attributed separately
 rather than reconciled. Fixed two body links missing the .md suffix caught
 by the link checker. Gates: ingest x2 idempotent, lint clean, link checker
 0/0/0, tests pass, diff check clean.
+
+## [2026-11-17] deepen | Slice 5: the last 6 stubs (all conference talks)
+
+how-i-discovered-and-hacked-learning-codes-of-the-key-fob-of-a-car-assembled-in-my-country,
+meet-salinas-the-first-ever-sms-commanded-car-infotainment-rat,
+over-the-air-compromise-of-modern-volkswagen-group-vehicles,
+pedal-to-the-bare-metal,
+research-only-understanding-the-scope-of-automotive-cyberattacks-in-the-wild and
+the-vehicle-may-be-sick-denial-of-diagnostic-services-by-exploiting-the-can-transport-protocol
+promoted stub -> full. Primary sources: DEF CON 32 and DEF CON 26 Car Hacking
+Village caption transcripts (Erazo key fob / Regalado Salinas RAT), the official
+Black Hat EU 24 (VW MIB3) and Black Hat USA 26 (Tesla Wall Connector) slide
+decks extracted with pdftotext, the USENIX VehicleSec 26 keynote abstract for
+Savage, and the official escar USA 2026 slides for the ISO-TP DoS work. Auto-
+generated caption transcripts are flagged as such, and each page states what
+was not independently verified. Scope limits preserved: the VW and pedal pages
+keep the speakers' own "lab only" / coordinated-disclosure caveats; the Savage
+page records that it is an abstract-based summary of a keynote. Fixed one body
+link missing the .md suffix. Gates: ingest x2 idempotent (0/0/0), lint clean,
+link checker 0/0/0, tests pass, diff check clean. ZERO STUBS after this slice.
