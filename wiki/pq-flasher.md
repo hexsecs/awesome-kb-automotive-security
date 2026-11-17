@@ -8,12 +8,25 @@ url: "https://github.com/I-CAN-hack/pq-flasher"
 status: maintenance
 last_checked: 2026-10-31
 created: 2026-10-31
-updated: 2026-10-31
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Python tools for reflashing VW PQ35 EPS using TP 2.0 transport layer and KWP2000 diagnostics."
-related: [vw-flash, python-can, cancat, firmware-acquisition, secure-firmware-updates]
+related:
+  - vw-flash
+  - python-can
+  - cancat
+  - firmware-acquisition
+  - secure-firmware-updates
+  - openvehiclediag
+related:
+  - vw-flash
+  - python-can
+  - cancat
+  - firmware-acquisition
+  - secure-firmware-updates
+  - openvehiclediag
 license: "MIT"
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"

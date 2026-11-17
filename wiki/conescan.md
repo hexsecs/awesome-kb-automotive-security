@@ -8,12 +8,23 @@ url: "https://github.com/ConnorRigby/conescan"
 status: unknown
 last_checked: 2026-10-31
 created: 2026-10-31
-updated: 2026-10-31
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Automotive ECU hacking supertool for firmware dumping and manipulation via J2534 OBD interfaces."
-related: [atlas, udsoncan, uds-firmware-extraction, firmware-acquisition]
+related:
+  - atlas
+  - udsoncan
+  - uds-firmware-extraction
+  - firmware-acquisition
+  - openvehiclediag
+related:
+  - atlas
+  - udsoncan
+  - uds-firmware-extraction
+  - firmware-acquisition
+  - openvehiclediag
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

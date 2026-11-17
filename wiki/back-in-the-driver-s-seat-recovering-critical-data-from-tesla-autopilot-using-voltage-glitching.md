@@ -8,11 +8,15 @@ url: "https://media.ccc.de/v/37c3-12144-back_in_the_driver_s_seat_recovering_cri
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-17
 depth: brief
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Kuhnapfel, Werling, and Jacob, 37C3 2023. Voltage-glitching attack that gives root on Tesla Autopilot hardware and recovers protected data."
+related:
+  - modern-odometer-manipulation
+  - secoc-key-extractor
+  - bypassing-debug-password-protection-on-the-rh850-family
 sources:
   - url: "https://media.ccc.de/v/37c3-12144-back_in_the_driver_s_seat_recovering_critical_data_from_tesla_autopilot_using_voltage_glitching"
     retrieved: 2026-11-01
@@ -21,6 +25,7 @@ sources:
 related:
   - modern-odometer-manipulation
   - secoc-key-extractor
+  - bypassing-debug-password-protection-on-the-rh850-family
 ---
 
 Kuhnapfel, Werling, and Jacob, 37C3 2023. Voltage-glitching attack that gives root on Tesla Autopilot hardware and recovers protected data.

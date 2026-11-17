@@ -8,7 +8,7 @@ url: "https://www.ndss-symposium.org/ndss-paper/on-the-realism-of-lidar-spoofing
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-16
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -20,6 +20,15 @@ related:
   - dirty-road-can-attack-security-of-deep-learning-based-automated-lane-centering-under-physical-world-attack
   - physical-channel-sensor-attacks
   - sok-how-sensor-attacks-disrupt-autonomous-vehicles-an-end-to-end-analysis-challenges-and-missed-threats
+  - vasp
+related:
+  - illusion-and-dazzle-adversarial-optical-channel-exploits-against-lidars-for-automotive-applications
+  - adversarial-sensor-attack-on-lidar-based-perception-in-autonomous-driving
+  - remote-attacks-on-automated-vehicles-sensors-experiments-on-camera-and-lidar
+  - dirty-road-can-attack-security-of-deep-learning-based-automated-lane-centering-under-physical-world-attack
+  - physical-channel-sensor-attacks
+  - sok-how-sensor-attacks-disrupt-autonomous-vehicles-an-end-to-end-analysis-challenges-and-missed-threats
+  - vasp
 sources:
   - url: "https://www.ndss-symposium.org/ndss-paper/on-the-realism-of-lidar-spoofing-attacks-against-autonomous-driving-vehicle-at-high-speed-and-long-distance/"
     retrieved: 2026-11-01
@@ -34,6 +43,7 @@ related:
   - dirty-road-can-attack-security-of-deep-learning-based-automated-lane-centering-under-physical-world-attack
   - physical-channel-sensor-attacks
   - sok-how-sensor-attacks-disrupt-autonomous-vehicles-an-end-to-end-analysis-challenges-and-missed-threats
+  - vasp
 ---
 
 Sato et al., NDSS 2025. Moving-vehicle spoofing rig and an adaptive high-frequency removal attack that succeed at 60 km/h and 110 m against production driving stacks, closing the gap between bench demonstrations and moving-vehicle conditions.

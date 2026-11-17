@@ -8,12 +8,21 @@ url: "https://ieeexplore.ieee.org/document/6615528/"
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Studnia et al., DSN Workshops 2013. Widely cited survey mapping in-vehicle protocols, the threats against them, and candidate countermeasures."
-related: [security-in-automotive-bus-systems, experimental-security-analysis-of-a-modern-automobile, comprehensive-experimental-analyses-of-automotive-attack-surfaces]
+related:
+  - security-in-automotive-bus-systems
+  - experimental-security-analysis-of-a-modern-automobile
+  - comprehensive-experimental-analyses-of-automotive-attack-surfaces
+  - bypassing-debug-password-protection-on-the-rh850-family
+related:
+  - security-in-automotive-bus-systems
+  - experimental-security-analysis-of-a-modern-automobile
+  - comprehensive-experimental-analyses-of-automotive-attack-surfaces
+  - bypassing-debug-password-protection-on-the-rh850-family
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

@@ -8,12 +8,21 @@ url: "https://github.com/jakka351/Ford-ECU-Bruteforcer"
 status: maintenance
 last_checked: 2026-10-31
 created: 2026-10-31
-updated: 2026-10-31
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Security access brute-force tool for pre-2011 Ford ECUs with 3-byte seed and 5-byte key."
-related: [uds-seed-key, udsoncan, gallia]
+related:
+  - uds-seed-key
+  - udsoncan
+  - gallia
+  - bypassing-debug-password-protection-on-the-rh850-family
+related:
+  - uds-seed-key
+  - udsoncan
+  - gallia
+  - bypassing-debug-password-protection-on-the-rh850-family
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

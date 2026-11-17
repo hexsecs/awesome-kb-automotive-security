@@ -8,7 +8,7 @@ url: "https://infocon.org/cons/DEF%20CON/DEF%20CON%2026/DEF%20CON%2026%20village
 status: unknown
 last_checked: 2026-11-13
 created: 2026-11-13
-updated: 2026-11-16
+updated: 2026-11-17
 depth: stub
 source_list: awesome-automotive-security
 source_commit: 6a8b17c
@@ -17,6 +17,12 @@ related:
   - car-hacking-village
   - uds-firmware-extraction
   - zephyr-reference-ecu
+  - openvehiclediag
+related:
+  - car-hacking-village
+  - uds-firmware-extraction
+  - zephyr-reference-ecu
+  - openvehiclediag
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-13

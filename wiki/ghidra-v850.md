@@ -8,12 +8,17 @@ url: "https://github.com/esaulenka/ghidra_v850"
 status: maintenance
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Ghidra processor module for Renesas V850E2 and V850E3/RH850 microcontrollers, the core families behind many ECUs, for disassembling and decompiling their firmware."
-related: [ghidra-tc1797]
+related:
+  - ghidra-tc1797
+  - bypassing-debug-password-protection-on-the-rh850-family
+related:
+  - ghidra-tc1797
+  - bypassing-debug-password-protection-on-the-rh850-family
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

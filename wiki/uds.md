@@ -8,7 +8,7 @@ url: "https://github.com/mdabrowski1990/uds"
 status: active
 last_checked: 2026-10-31
 created: 2026-10-31
-updated: 2026-11-16
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -20,6 +20,7 @@ related:
   - python-doipclient
   - canexplorer
   - pycangui
+  - openvehiclediag
 related:
   - udsoncan
   - python-can
@@ -27,6 +28,7 @@ related:
   - python-doipclient
   - canexplorer
   - pycangui
+  - openvehiclediag
 related:
   - udsoncan
   - python-can
@@ -34,6 +36,15 @@ related:
   - python-doipclient
   - canexplorer
   - pycangui
+  - openvehiclediag
+related:
+  - udsoncan
+  - python-can
+  - python-can-isotp
+  - python-doipclient
+  - canexplorer
+  - pycangui
+  - openvehiclediag
 license: "MIT"
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"

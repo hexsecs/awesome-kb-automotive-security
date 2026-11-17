@@ -8,7 +8,7 @@ url: "https://github.com/pylessard/python-can-isotp"
 status: active
 last_checked: 2026-10-31
 created: 2026-10-31
-updated: 2026-11-16
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -21,6 +21,7 @@ related:
   - udsoncan
   - obdium
   - uds-seed-key
+  - openvehiclediag
 related:
   - python-can
   - savvycan
@@ -29,6 +30,16 @@ related:
   - udsoncan
   - obdium
   - uds-seed-key
+  - openvehiclediag
+related:
+  - python-can
+  - savvycan
+  - caringcaribou
+  - uds
+  - udsoncan
+  - obdium
+  - uds-seed-key
+  - openvehiclediag
 license: MIT
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"

@@ -8,11 +8,15 @@ url: "https://media.defcon.org/DEF%20CON%2033/DEF%20CON%2033%20villages%20and%20
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-17
 depth: brief
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Yago Lizarribar, DEF CON 33 Car Hacking Village 2025. Slides on long-term passive tracking of tire pressure sensors and active spoofing, both with commodity SDR hardware."
+related:
+  - security-and-privacy-vulnerabilities-of-in-car-wireless-networks-a-tire-pressure-monitoring-system-case-study
+  - rtl-433
+  - vasp
 sources:
   - url: "https://media.defcon.org/DEF%20CON%2033/DEF%20CON%2033%20villages%20and%20creators/DEF%20CON%2033%20-%20Car%20Hacking%20Village%20-%20Yago%20Lizarribar%20-%20Passive%20and%20Active%20Attacks%20on%20TPMS%20Systems.pdf"
     retrieved: 2026-11-01
@@ -21,6 +25,7 @@ sources:
 related:
   - security-and-privacy-vulnerabilities-of-in-car-wireless-networks-a-tire-pressure-monitoring-system-case-study
   - rtl-433
+  - vasp
 ---
 
 Yago Lizarribar, DEF CON 33 Car Hacking Village 2025. Slides on long-term passive tracking of tire pressure sensors and active spoofing, both with commodity SDR hardware.

@@ -8,7 +8,7 @@ url: "https://github.com/sommer/veins"
 status: active
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-16
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -20,6 +20,7 @@ related:
   - vanetza
   - misbehavior-detection
   - simulation-and-test-doubles
+  - vasp
 related:
   - artery
   - van3twin
@@ -27,6 +28,15 @@ related:
   - vanetza
   - misbehavior-detection
   - simulation-and-test-doubles
+  - vasp
+related:
+  - artery
+  - van3twin
+  - f2md
+  - vanetza
+  - misbehavior-detection
+  - simulation-and-test-doubles
+  - vasp
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

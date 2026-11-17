@@ -8,7 +8,7 @@ url: "https://github.com/Xaloqi/Zephyr-Reference-ECU"
 status: unknown
 last_checked: 2026-11-05
 created: 2026-11-05
-updated: 2026-11-16
+updated: 2026-11-17
 depth: stub
 source_list: awesome-automotive-security
 source_commit: 082afab
@@ -19,6 +19,14 @@ related:
   - reversing-a-brake-ecu-firmware-update
   - doip-sim-ecu-dsl
   - automotive-flash-bootloaders-exposing-automotive-ecu-updates
+  - openvehiclediag
+related:
+  - vehicle-immobilization-revisited
+  - uds-firmware-extraction
+  - reversing-a-brake-ecu-firmware-update
+  - doip-sim-ecu-dsl
+  - automotive-flash-bootloaders-exposing-automotive-ecu-updates
+  - openvehiclediag
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-05

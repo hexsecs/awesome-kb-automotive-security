@@ -8,11 +8,15 @@ url: "https://books.google.com/books?id=R3h0EAAAQBAJ"
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-17
 depth: brief
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Gloria D'Anna, SAE International 2018. Covers heavy vehicle and fleet security, how it differs from passenger cars, SAE J3061, platooning, and breach forensics."
+related:
+  - expanding-the-attack-scenarios-of-sae-j1939-a-comprehensive-analysis-of-established-and-novel-vulnerabilities-in-transport-protocol
+  - automotive-cybersecurity-an-introduction-to-iso-sae-21434
+  - fleet-cyber-challenge
 sources:
   - url: "https://books.google.com/books?id=R3h0EAAAQBAJ"
     retrieved: 2026-11-01
@@ -23,6 +27,7 @@ sources:
 related:
   - expanding-the-attack-scenarios-of-sae-j1939-a-comprehensive-analysis-of-established-and-novel-vulnerabilities-in-transport-protocol
   - automotive-cybersecurity-an-introduction-to-iso-sae-21434
+  - fleet-cyber-challenge
 ---
 
 Gloria D'Anna, SAE International 2018. Covers heavy vehicle and fleet security, how it differs from passenger cars, SAE J3061, platooning, and breach forensics.
