@@ -665,3 +665,110 @@ GENERIC list with this entry), corpus-generic nouns, facets (dbc,
 doip, v2x), or themes existing concepts already own (UDS →
 diagnostic-service-abuse; CCS charging → charging-trust-chain).
 No filings; the weekly scan resurfaces themes as the corpus grows.
+
+## [2026-11-17] campaign | Zero-stubs deepening campaign begins (local branches)
+
+Owner direction: promote all 26 stubs plus six high-centrality brief pages
+(car-hacking-dataset, road, the J1939 transport-protocol talk,
+car-hacking-village, can-train-and-test, the-car-hacker-s-handbook) to
+`depth: full`; the other 45 briefs stay the intentional pointer tier.
+All work is local — feature branches in worktrees, gates green, no push.
+
+Wave 0 (mechanical, verified before integration):
+- chore/dedupe-related `7f4f4a8` removes 198 duplicate `related:` blocks
+  across 156 pages (all blocks byte-identical; deletions only).
+- fix/linkmine-related-dupes `ee787aa` stops `write_page()` re-emitting
+  `related:` on every matching line; 4 regression tests.
+- tool/link-check `8d8774f` adds `tools/link_check.py` (stdlib, --json)
+  for broken body links, unresolved `related:` slugs and reachability;
+  8 regression tests. Real-KB scan: 0 / 0 / 0.
+All three merged into deepen/campaign-2026-11 before content work.
+
+Slice 1 (`558de50`): can-playground, canexplorer, pycangui and
+openvehiclediag promoted stub -> full from upstream READMEs and GitHub
+API status (checked 2026-11-17), with reciprocal `related:` already in
+place. Over-long restored `summary:` lines kept verbatim from HEAD.
+
+## [2026-11-17] deepen | Slice 2: tools and hardware interfaces (6 stubs -> full)
+
+doggie, linusbconverter, zephyr-reference-ecu, idrive7-8-ssh-root, ocppuzz
+and vasp promoted stub -> full from upstream READMEs and GitHub API status
+(checked 2026-11-17), keeping uid/summary/related verbatim. Status values:
+active for the four live projects, maintenance for doggie (last push
+2025-10-27), archived for vasp (owner-archived, 2023). Safety notes call out
+evilDoggie's destructive bus primitives, the MGU flash wiping coding and
+Digital Key pairings, and OCPPuzz's LLM-derived oracle. Gates after the
+slice: ingest x2 idempotent, lint clean, link checker 0/0/0, tests pass.
+
+## [2026-11-17] deepen | Slice 3: firmware, debug and DEF CON talks (4 stubs -> full)
+
+bypassing-debug-password-protection-on-the-rh850-family,
+fleet-cyber-challenge,
+automotive-flash-bootloaders-exposing-automotive-ecu-updates and
+abusing-can-bus-protocol-specification-for-denial-of-service-in-embedded-systems
+promoted stub -> full. Primary sources: Quarkslab's March 2026 RH850
+fault-injection post (crowbar glitch of ISOVCL, power-analysis trigger,
+ChipWhisperer Husky vs Pico Glitcher), NMFTA's own Fleet Cyber Challenge
+page, and the DEF CON caption transcripts for Lapczynski (bootloaders,
+UDS 0x27/0x34/0x36/0x37 and the OTA attack surface) and Petran (CAN DLC
+0xF overflow into an 8-byte buffer, NXP board and Tesla Model 3 NFC
+security controller). Status: published for the three articles/talks,
+active for the NMFTA lab. Safety notes cover physical ECU modification,
+flash wiping coding and Digital Key pairings, and the DoS-only impact of
+the DLC overflow. Gates after the slice: ingest x2 idempotent
+(0/0/0), lint clean, link checker 0/0/0, tests pass, diff check clean.
+
+## [2026-11-17] deepen | Slice 4: research papers and the Ethernet reference (6 stubs -> full)
+
+a-formal-security-analysis-of-can-xl, automotive-ethernet,
+ble-theft-auto-..., hotwire-..., perspective-shift-... and
+potential-cyberattacks-on-automated-vehicles promoted stub -> full from
+primary sources: USENIX Security 26 / WOOT 26 / VehicleSec 26 official
+abstract pages, the UCSD BLE Theft Auto project site and disclosure
+timeline, UC Berkeley ITS's official abstract for Petit & Shladover, and
+the Cambridge/Google Books listing for Matheus & Königseder. Two sources
+were deliberately limited: the Petit & Shladover full text remains
+paywalled, so that page is full-depth strictly from the primary abstract
+with the limitation stated; the BLE exposure figures (1.4M systems in the
+paper abstract, >2M vehicles on the project site) are attributed separately
+rather than reconciled. Fixed two body links missing the .md suffix caught
+by the link checker. Gates: ingest x2 idempotent, lint clean, link checker
+0/0/0, tests pass, diff check clean.
+
+## [2026-11-17] deepen | Slice 5: the last 6 stubs (all conference talks)
+
+how-i-discovered-and-hacked-learning-codes-of-the-key-fob-of-a-car-assembled-in-my-country,
+meet-salinas-the-first-ever-sms-commanded-car-infotainment-rat,
+over-the-air-compromise-of-modern-volkswagen-group-vehicles,
+pedal-to-the-bare-metal,
+research-only-understanding-the-scope-of-automotive-cyberattacks-in-the-wild and
+the-vehicle-may-be-sick-denial-of-diagnostic-services-by-exploiting-the-can-transport-protocol
+promoted stub -> full. Primary sources: DEF CON 32 and DEF CON 26 Car Hacking
+Village caption transcripts (Erazo key fob / Regalado Salinas RAT), the official
+Black Hat EU 24 (VW MIB3) and Black Hat USA 26 (Tesla Wall Connector) slide
+decks extracted with pdftotext, the USENIX VehicleSec 26 keynote abstract for
+Savage, and the official escar USA 2026 slides for the ISO-TP DoS work. Auto-
+generated caption transcripts are flagged as such, and each page states what
+was not independently verified. Scope limits preserved: the VW and pedal pages
+keep the speakers' own "lab only" / coordinated-disclosure caveats; the Savage
+page records that it is an abstract-based summary of a keynote. Fixed one body
+link missing the .md suffix. Gates: ingest x2 idempotent (0/0/0), lint clean,
+link checker 0/0/0, tests pass, diff check clean. ZERO STUBS after this slice.
+
+## [2026-11-17] deepen | Slice 6: six high-centrality briefs -> full
+
+car-hacking-dataset, road,
+expanding-the-attack-scenarios-of-sae-j1939-..., car-hacking-village,
+can-train-and-test and the-car-hacker-s-handbook promoted brief -> full.
+Primary sources: the HCRL Car-Hacking Dataset page and Lampe & Meng's arXiv
+survey of datasets (which supplies the parked-vehicle caveat and records a
+Hyundai-vs-Kia vehicle discrepancy that is now flagged rather than silently
+resolved); the ROAD project site and the PLOS ONE companion paper DOI; the
+Zenodo deposit for the J1939 paper with the full PDF extracted via pdftotext
+to name all 14 scenarios and the 11/14 success count; the Car Hacking Village
+events page (501(c)(3) EIN, 2025-26 calendar); the can-train-and-test arXiv
+paper for file counts, nine attack types and the four known/unknown splits;
+and the OpenGarages handbook page for the CC BY-NC-SA licence and contents.
+These were the six briefs named in the campaign brief; all remaining briefs
+stay at pointer tier. Gates: ingest x2 idempotent (0/0/0), lint clean, link
+checker 0/0/0, tests pass, diff check clean.
