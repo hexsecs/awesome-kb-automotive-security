@@ -5,8 +5,9 @@ summary: "Open hardware ESP32-S3 CAN data-capture device with DBC-driven real-ti
 type: entity
 category: "Hardware Interfaces"
 url: "https://github.com/eccentricOrange/can-daq"
-status: unknown
-last_checked: 2026-11-01
+status: active
+last_checked: 2026-11-17
+status_note: "GitHub repo not archived; last push 2026-02-10."
 created: 2026-10-31
 updated: 2026-11-17
 depth: full

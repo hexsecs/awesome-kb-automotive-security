@@ -5,10 +5,11 @@ summary: "Documented exploit chain against the VW Simos18 supplier bootloader, c
 type: entity
 category: "Firmware and ECU Reverse Engineering"
 url: "https://github.com/bri3d/Simos18_SBOOT"
-status: unknown
-last_checked: 2026-11-01
+status: maintenance
+last_checked: 2026-11-17
+status_note: "GitHub repo not archived; last push 2022-03-18."
 created: 2026-10-31
-updated: 2026-11-16
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7

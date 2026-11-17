@@ -5,8 +5,9 @@ summary: "Automated tool for detecting vulnerabilities in wireless OBD-II dongle
 type: entity
 category: "Penetration Testing"
 url: "https://github.com/OSUSecLab/DongleScope"
-status: unknown
-last_checked: 2026-11-01
+status: maintenance
+last_checked: 2026-11-17
+status_note: "GitHub repo not archived; last push 2020-07-27."
 created: 2026-10-31
 updated: 2026-11-17
 depth: full

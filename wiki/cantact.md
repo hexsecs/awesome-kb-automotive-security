@@ -5,8 +5,9 @@ summary: "Open-source hardware CAN interface and desktop app supporting live tra
 type: entity
 category: "Hardware Interfaces"
 url: "https://github.com/linklayer/cantact-app"
-status: unknown
-last_checked: 2026-11-01
+status: maintenance
+last_checked: 2026-11-17
+status_note: "GitHub repo not archived; last push 2020-04-13; 18 open issues."
 created: 2026-10-31
 updated: 2026-11-17
 depth: full

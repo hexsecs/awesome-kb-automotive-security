@@ -5,8 +5,9 @@ summary: "Python-based toolkit for automotive penetration testing with CAN suite
 type: entity
 category: "Penetration Testing"
 url: "https://github.com/j-schmied/car-toolkit"
-status: unknown
-last_checked: 2026-11-01
+status: maintenance
+last_checked: 2026-11-17
+status_note: "GitHub repo not archived; last push 2023-10-30."
 created: 2026-10-31
 updated: 2026-11-17
 depth: full

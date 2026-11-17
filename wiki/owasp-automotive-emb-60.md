@@ -5,8 +5,9 @@ summary: "OWASP incubator project with open hardware and software for a single-b
 type: entity
 category: "Hardware Interfaces"
 url: "https://owasp.org/www-project-automotive-emb-60/"
-status: unknown
-last_checked: 2026-11-01
+status: active
+last_checked: 2026-11-17
+status_note: "OWASP incubator project page live 2026-11-17; firmware and secure bootloader described as under development."
 created: 2026-10-31
 updated: 2026-11-17
 depth: full

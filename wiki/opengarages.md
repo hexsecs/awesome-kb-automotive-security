@@ -5,8 +5,9 @@ summary: "Open vehicle research collective behind the Car Hacker's Handbook, pub
 type: entity
 category: "Learning Resources"
 url: "https://www.opengarages.org/"
-status: unknown
-last_checked: 2026-11-01
+status: active
+last_checked: 2026-11-17
+status_note: "Site live 2026-11-17; Car Hacker's Handbook and HW Bridge documentation available."
 created: 2026-10-31
 updated: 2026-11-17
 depth: brief

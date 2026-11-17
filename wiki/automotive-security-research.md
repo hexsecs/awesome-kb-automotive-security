@@ -5,8 +5,9 @@ summary: "Published reverse engineering results for two production vehicles incl
 type: entity
 category: "Penetration Testing"
 url: "https://github.com/ps1337/automotive-security-research"
-status: unknown
-last_checked: 2026-11-01
+status: maintenance
+last_checked: 2026-11-17
+status_note: "GitHub repo not archived; last push 2019-05-26."
 created: 2026-10-31
 updated: 2026-11-17
 depth: full
