@@ -2,25 +2,9 @@
 
 Generated from page frontmatter by tools/ingest.py. A page may appear in more than one queue. Do not edit by hand.
 
-## Unverified resources (17)
+## Unverified resources (0)
 
-- [Automotive Threat Modeling Template](automotive-threat-modeling-template.md)
-- [Automotive-Networking-Security](automotive-networking-security.md)
-- [CAN-DAQ](can-daq.md)
-- [CANtact](cantact.md)
-- [CANter](canter.md)
-- [Car Toolkit](car-toolkit.md)
-- [Chimaera](chimaera.md)
-- [DongleScope](donglescope.md)
-- [OWASP Automotive EMB 60](owasp-automotive-emb-60.md)
-- [OpenGarages](opengarages.md)
-- [Simos18_SBOOT](simos18-sboot.md)
-- [automotive-security-research](automotive-security-research.md)
-- [conescan](conescan.md)
-- [ghidra-tc1797](ghidra-tc1797.md)
-- [someip-protocol-fuzzer](someip-protocol-fuzzer.md)
-- [tesla-opener](tesla-opener.md)
-- [uds-firmware-extraction](uds-firmware-extraction.md)
+_None._
 
 ## Graph orphans (0)
 

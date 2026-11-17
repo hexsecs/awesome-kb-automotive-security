@@ -5,10 +5,11 @@ summary: "Black-box SOME/IP fuzzer that mutates user-defined protocol fields wit
 type: entity
 category: "Automotive Ethernet"
 url: "https://github.com/cfanatic/someip-protocol-fuzzer"
-status: unknown
-last_checked: 2026-11-01
+status: maintenance
+last_checked: 2026-11-17
+status_note: "GitHub repo not archived; last push 2022-04-20."
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7

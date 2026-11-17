@@ -5,10 +5,11 @@ summary: "Automotive networking security standards and solutions overview."
 type: entity
 category: "Learning Resources"
 url: "https://automotive-network-security.com/standard_solutions.shtml"
-status: unknown
-last_checked: 2026-11-01
+status: active
+last_checked: 2026-11-17
+status_note: "Site live 2026-11-17; standards reference page, copyright 2012-2025."
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-17
 depth: brief
 source_list: awesome-automotive-security
 source_commit: b7b92a7

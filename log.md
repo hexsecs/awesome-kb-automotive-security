@@ -924,3 +924,23 @@ source citations on the deepened concepts), link checker 0 broken / 0
 unresolved / 0 unreachable across 333 pages, link audit 0 orphans / 0
 concept-less entities / 0 one-way pairs, 26 tests pass, `git diff --check`
 clean. Page uids, created dates and list provenance were preserved.
+
+## [2026-11-17] verify | Resolve the 17 unknown resource statuses
+
+Verified every `status: unknown` page against its live resource: GitHub
+repository metadata (`pushed_at`, archived/disabled flags, open issues) for the
+12 repos, direct HTTP for the three sites, CEUR-WS PDF download and title check
+for CANter, and Crossref metadata for Chimaera (Springer's page was
+bot-blocked; DOI record confirmed publication 2024-05-08).
+
+Stamped `last_checked: 2026-11-17` and a `status_note` carrying the evidence on
+all 17 pages: 4 active, 11 maintenance, 2 published. `unknown` is now 0. The
+four active resources are can-daq, OWASP Automotive EMB 60, OpenGarages and the
+AutoNetSec standards page; the two publications are CANter and Chimaera.
+`archived` remains reserved for delisted entries, so dormant-but-listed repos
+became `maintenance`, not `archived`.
+
+`status_note` is documented in AGENTS.md and preserved by the ingester as an
+unmanaged block. Gates: ingest x2 idempotent, lint 0 errors / 56 warnings
+(unchanged), link checker 0/0/0, link audit 0 orphans / 0 concept-less entities
+/ 0 one-way pairs, 26 tests pass, `git diff --check` clean.

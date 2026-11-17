@@ -5,8 +5,9 @@ summary: "Automotive ECU hacking supertool for firmware dumping and manipulation
 type: entity
 category: "Diagnostic Tools"
 url: "https://github.com/ConnorRigby/conescan"
-status: unknown
-last_checked: 2026-10-31
+status: maintenance
+last_checked: 2026-11-17
+status_note: "GitHub repo not archived; last push 2022-11-11."
 created: 2026-10-31
 updated: 2026-11-17
 depth: full

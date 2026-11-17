@@ -72,9 +72,13 @@ what gets listed.
   for completed publications; `unknown` is for living resources whose
   state is unverified). A delisted entry's page is tombstoned to
   `archived`, never deleted.
+- `status_note` records the evidence behind a verification stamp (e.g.
+  "GitHub repo not archived; last push 2026-02-10"). It is written on a
+  verification pass together with `status` and `last_checked`, and is an
+  unmanaged block the ingester preserves verbatim.
 - The ingester preserves unmanaged frontmatter blocks (`related`,
-  `license`, a richer `sources`, …) and `full` bodies verbatim across
-  syncs, and lists `wiki/concepts/` pages in the generated L1 index.
+  `status_note`, `license`, a richer `sources`, …) and `full` bodies verbatim
+  across syncs, and lists `wiki/concepts/` pages in the generated L1 index.
 
 ## Operations
 

@@ -5,10 +5,11 @@ summary: "Intrusion detection system for CAN and CAN-FD that detects drop-and-sp
 type: entity
 category: "CAN Bus Analysis"
 url: "https://ceur-ws.org/Vol-3962/paper69.pdf"
-status: unknown
-last_checked: 2026-10-31
+status: published
+last_checked: 2026-11-17
+status_note: "CEUR-WS Vol-3962 paper69; PDF reachable and title verified 2026-11-17; completed paper."
 created: 2026-10-31
-updated: 2026-11-16
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7

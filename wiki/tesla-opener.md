@@ -5,10 +5,11 @@ summary: "Open-source tool to open Tesla charging port using HackRF and WebUSB w
 type: entity
 category: "Penetration Testing"
 url: "https://github.com/rgerganov/tesla-opener"
-status: unknown
-last_checked: 2026-11-01
+status: maintenance
+last_checked: 2026-11-17
+status_note: "GitHub repo not archived; last push 2023-03-14."
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7

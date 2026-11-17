@@ -5,8 +5,9 @@ summary: "Ghidra processor specification and language definitions for the Infine
 type: entity
 category: "Firmware and ECU Reverse Engineering"
 url: "https://github.com/christianobora/ghidra-tc1797"
-status: unknown
-last_checked: 2026-11-01
+status: maintenance
+last_checked: 2026-11-17
+status_note: "GitHub repo not archived; last push 2024-04-20."
 created: 2026-10-31
 updated: 2026-11-17
 depth: full

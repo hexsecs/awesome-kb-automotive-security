@@ -5,10 +5,11 @@ summary: "Research framework for IVI (In-Vehicle Infotainment) firmware reverse 
 type: entity
 category: "Infotainment and IVI"
 url: "https://link.springer.com/article/10.1007/s11416-024-00522-4"
-status: unknown
-last_checked: 2026-11-01
+status: published
+last_checked: 2026-11-17
+status_note: "Crossref: journal article published 2024-05-08, doi 10.1007/s11416-024-00522-4; Springer page bot-blocked, metadata verified."
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7

@@ -5,10 +5,11 @@ summary: "NCC Group stencil set for the Microsoft Threat Modeling Tool, supplyin
 type: entity
 category: "Security Analysis"
 url: "https://github.com/nccgroup/The_Automotive_Threat_Modeling_Template"
-status: unknown
-last_checked: 2026-11-01
+status: maintenance
+last_checked: 2026-11-17
+status_note: "GitHub repo not archived; last push 2020-07-10; template targets Threat Modeling Tool 2016."
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7

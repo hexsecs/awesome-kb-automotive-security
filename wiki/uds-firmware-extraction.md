@@ -5,8 +5,9 @@ summary: "Tool for extracting ECU firmware from UDS flash traffic following ISO-
 type: entity
 category: "Diagnostic Tools"
 url: "https://github.com/honinb0n/uds-firmware-extraction"
-status: unknown
-last_checked: 2026-10-31
+status: maintenance
+last_checked: 2026-11-17
+status_note: "GitHub repo not archived; last push 2024-03-04."
 created: 2026-10-31
 updated: 2026-11-17
 depth: full
