@@ -26,6 +26,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/ucandevices/CFDC_embedded/blob/master/README.md"
     retrieved: 2026-11-01
+facets: [can, firmware, tools]
 ---
 
 Open hardware and firmware ISO CAN FD to USB dongle built on the STM32G431, presenting as a native SocketCAN or gs_usb interface with a bundled python-can plugin.

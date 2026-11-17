@@ -25,6 +25,7 @@ sources:
     retrieved: 2026-10-31
   - url: "https://github.com/autopi-io/autopi-core"
     retrieved: 2026-10-31
+facets: [can, diagnostics, tools]
 ---
 
 Open-source core software for the AutoPi dongle, a Raspberry Pi-based OBD-II device for vehicle diagnostics, CAN bus data collection, and automotive IoT applications.

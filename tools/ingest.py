@@ -40,6 +40,13 @@ Deterministic and idempotent otherwise: dates come from the source
 commit, never the wall clock; same source commit in, byte-identical
 tree out.
 
+- `wiki/index-facet-<slug>.md` — cross-cutting topic indexes, from page
+  frontmatter `facets:` assigned by `tools/taxonomy.py`,
+- `wiki/index-glossary.md` — acronym/standard hub,
+- `wiki/index-concept-map.md` — clusters and reading paths over concepts,
+- `wiki/index-needs-attention.md` — maintenance queue (unverified, orphaned,
+  brief, stale or tombstoned pages).
+
 Usage: python3 tools/ingest.py [--source ../awesome-automotive-security]
 """
 
@@ -53,7 +60,12 @@ import subprocess
 import sys
 import time
 import uuid
+from datetime import date, timedelta
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from taxonomy import (CONCEPT_CLUSTERS, FACET_BY_SLUG, FACETS,  # noqa: E402
+                      GLOSSARY, READING_PATHS)
 
 ROOT = Path(__file__).resolve().parent.parent
 WIKI = ROOT / "wiki"
@@ -209,6 +221,180 @@ def split_page(text: str) -> tuple[dict, str]:
     return fields, text[end + 5:]
 
 
+def parse_slugs(value: object) -> set[str]:
+    """Read a YAML inline list (or a flat scalar) of slugs from split_page."""
+    return set(re.findall(r"[a-z0-9]+(?:-[a-z0-9]+)*", str(value)))
+
+
+def related_count(text: str) -> int:
+    """Count `related` targets in either frontmatter list shape."""
+    if not text.startswith("---\n"):
+        return 0
+    end = text.find("\n---\n", 4)
+    if end == -1:
+        return 0
+    fm = text[4:end]
+    inline = re.search(r"^related:\s*\[(.*)\]\s*$", fm, re.M)
+    if inline:
+        return len([v for v in inline.group(1).split(",") if v.strip()])
+    block = re.search(r"^related:\s*\n((?:[ \t]+.*\n?)*)", fm, re.M)
+    return len(re.findall(r"^\s*-\s", block.group(1), re.M)) if block else 0
+
+
+def all_pages() -> list[tuple[Path, dict, str]]:
+    """Every authored page (entities and concepts), in stable path order."""
+    pages = []
+    for page in sorted(WIKI.rglob("*.md")):
+        if page.name.startswith("index-"):
+            continue
+        fields, body = split_page(page.read_text(encoding="utf-8"))
+        if "title" in fields:
+            pages.append((page, fields, body))
+    return pages
+
+
+def write_facet_indexes(pages: list[tuple[Path, dict, str]],
+                        section_order: list[str]) -> dict[str, int]:
+    """One index per facet with at least two pages; return facet -> count."""
+    grouped: dict[str, list[tuple[Path, dict]]] = {f.slug: [] for f in FACETS}
+    for page, fields, _ in pages:
+        for slug in parse_slugs(fields.get("facets", "")):
+            if slug in grouped:
+                grouped[slug].append((page, fields))
+
+    counts: dict[str, int] = {}
+    order = {name: i for i, name in enumerate(section_order)}
+    for facet in FACETS:
+        items = grouped[facet.slug]
+        if len(items) < 2:
+            continue
+        counts[facet.slug] = len(items)
+        lines = [f"# Facet: {facet.label}", "", facet.description, "",
+                 "Generated from page frontmatter by tools/ingest.py;"
+                 f" {len(items)} pages. Do not edit by hand.", ""]
+        by_group: dict[str, list[str]] = {}
+        for page, fields in items:
+            group = ("Concepts" if fields.get("type") == "concept"
+                     else str(fields.get("category", "Other")))
+            target = ("concepts/" if group == "Concepts" else "") + page.stem
+            by_group.setdefault(group, []).append(
+                f"- [{fields['title']}]({target}.md) — {fields.get('summary', '')}")
+        for group in sorted(by_group, key=lambda g: (order.get(g, 999), g)):
+            lines += [f"## {group}", ""] + sorted(by_group[group]) + [""]
+        (WIKI / f"index-facet-{facet.slug}.md").write_text(
+            "\n".join(lines), encoding="utf-8")
+
+    # Remove stale facet indexes when a facet drops below the threshold.
+    for path in WIKI.glob("index-facet-*.md"):
+        if path.stem.removeprefix("index-facet-") not in counts:
+            path.unlink()
+    return counts
+
+
+def write_needs_attention(pages: list[tuple[Path, dict, str]],
+                          source_date: str) -> int:
+    """A deterministic maintenance queue, relative to the source commit date."""
+    buckets: dict[str, list[str]] = {
+        "Unverified resources": [], "Graph orphans": [],
+        "Pointer entries": [], "Stale verification": [],
+        "Tombstoned pages": [],
+    }
+    cutoff = date.fromisoformat(source_date) - timedelta(days=180)
+    for page, fields, _ in pages:
+        target = ("concepts/" if fields.get("type") == "concept" else "") + page.stem
+        entry = f"- [{fields['title']}]({target}.md)"
+        if str(fields.get("status", "")) == "unknown":
+            buckets["Unverified resources"].append(entry)
+        if related_count(page.read_text(encoding="utf-8")) == 0:
+            buckets["Graph orphans"].append(entry)
+        if str(fields.get("depth", "")) == "brief":
+            buckets["Pointer entries"].append(entry)
+        checked = str(fields.get("last_checked", ""))
+        if checked:
+            try:
+                if date.fromisoformat(checked) < cutoff:
+                    buckets["Stale verification"].append(
+                        f"{entry} — last checked {checked}")
+            except ValueError:
+                pass
+        if str(fields.get("status", "")) == "archived":
+            buckets["Tombstoned pages"].append(entry)
+
+    lines = ["# Needs attention", "",
+             "Generated from page frontmatter by tools/ingest.py. A page may"
+             " appear in more than one queue. Do not edit by hand.", ""]
+    for name, entries in buckets.items():
+        lines += [f"## {name} ({len(entries)})", ""]
+        if entries:
+            lines += sorted(entries)
+        else:
+            lines.append("_None._")
+        lines.append("")
+    (WIKI / "index-needs-attention.md").write_text("\n".join(lines),
+                                                    encoding="utf-8")
+    return sum(len(v) for v in buckets.values())
+
+
+def write_glossary(pages: list[tuple[Path, dict, str]]) -> None:
+    titles = {("concepts/" if f.get("type") == "concept" else "") + p.stem: f
+              for p, f, _ in pages}
+    lines = ["# Glossary", "",
+             "Acronyms and standards used across this KB, with the page that"
+             " explains each one. Generated from tools/taxonomy.py;"
+             " do not edit by hand.", ""]
+    for entry in GLOSSARY:
+        target = entry.target + ".md"
+        fields = titles.get(entry.target)
+        if fields is None or not (WIKI / target).exists():
+            continue
+        lines.append(f"- **{entry.term}** — {entry.expansion}."
+                     f" See [{fields['title']}]({target}) — {entry.note}")
+    lines.append("")
+    (WIKI / "index-glossary.md").write_text("\n".join(lines), encoding="utf-8")
+
+
+def write_concept_map(pages: list[tuple[Path, dict, str]]) -> None:
+    concepts = {p.stem: f for p, f, _ in pages
+                if f.get("type") == "concept"}
+    lines = ["# Concept map", "",
+             "The concept layer organised by theme, with reading paths through"
+             " it. Generated from tools/taxonomy.py and concept frontmatter;"
+             " do not edit by hand.", ""]
+
+    placed: set[str] = set()
+    for cluster in CONCEPT_CLUSTERS:
+        lines += [f"## {cluster.label}", "", cluster.description, ""]
+        for slug in dict.fromkeys(cluster.concepts):
+            fields = concepts.get(slug)
+            if fields is None:
+                continue
+            placed.add(slug)
+            lines.append(f"- [{fields['title']}](concepts/{slug}.md)"
+                         f" — {fields.get('summary', '')}")
+        lines.append("")
+
+    orphans = [s for s in sorted(concepts) if s not in placed]
+    if orphans:
+        lines += ["## Unclustered concepts", "",
+                  "Concepts added since the taxonomy was last updated:", ""]
+        for slug in orphans:
+            fields = concepts[slug]
+            lines.append(f"- [{fields['title']}](concepts/{slug}.md)"
+                         f" — {fields.get('summary', '')}")
+        lines.append("")
+
+    lines += ["## Reading paths", ""]
+    for path in READING_PATHS:
+        lines += [f"### {path.title}", "", path.description, ""]
+        for i, slug in enumerate(path.steps, 1):
+            fields = concepts.get(slug)
+            if fields is not None:
+                lines.append(f"{i}. [{fields['title']}](concepts/{slug}.md)")
+        lines.append("")
+    (WIKI / "index-concept-map.md").write_text("\n".join(lines),
+                                                encoding="utf-8")
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--source", default=str(ROOT.parent / SOURCE_ID),
@@ -310,6 +496,23 @@ def main() -> int:
                  "summary": short_summary(
                      str(fields.get("list_summary", "")))})
 
+    pages = all_pages()
+    facet_counts = write_facet_indexes(pages, list(by_section.keys()))
+    attention_count = write_needs_attention(pages, date)
+    write_glossary(pages)
+    write_concept_map(pages)
+
+    # Facet counts per list section, for the sub-index browse lines.
+    facets_by_section: dict[str, dict[str, int]] = {}
+    for page, fields, _ in pages:
+        section = str(fields.get("category", ""))
+        if not section:
+            continue
+        for slug in parse_slugs(fields.get("facets", "")):
+            if slug in facet_counts:
+                counts = facets_by_section.setdefault(section, {})
+                counts[slug] = counts.get(slug, 0) + 1
+
     # Sub-indexes (no frontmatter — OpenShelf detects them as sub-indexes).
     by_section_order = list(by_section.keys())
     catslug = {}
@@ -317,6 +520,12 @@ def main() -> int:
         cs = slugify(section, set())
         catslug[section] = cs
         lines = [f"# {section}", ""]
+        browse = ", ".join(
+            f"[{FACET_BY_SLUG[s].label}](index-facet-{s}.md) ({n})"
+            for s, n in sorted(facets_by_section.get(section, {}).items(),
+                               key=lambda kv: (-kv[1], kv[0]))[:6])
+        if browse:
+            lines += [f"Browse by facet: {browse}.", ""]
         for item in by_section[section]:
             lines.append(f"- [{item['title']}]({item['slug']}.md) — {item['summary']}")
         lines.append("")
@@ -325,7 +534,15 @@ def main() -> int:
     # L1 index.
     lines = [f"# {KB_TITLE}", "", KB_DESC,
              "Generated from page frontmatter by tools/ingest.py;"
-             " do not edit by hand.", "", "## Categories", ""]
+             " do not edit by hand.", "",
+             "## Start here", "",
+             "- [Concept map](wiki/index-concept-map.md) — the concept layer"
+             " by theme, with reading paths through it.",
+             "- [Glossary](wiki/index-glossary.md) — acronyms and standards,"
+             " linked to the page that explains each one.",
+             f"- [Needs attention](wiki/index-needs-attention.md) —"
+             f" {attention_count} maintenance-queue entries.", "",
+             "## Categories", ""]
     for section in by_section_order:
         n = len(by_section[section])
         lines.append(f"- [{section}](wiki/index-{catslug[section]}.md)"
@@ -344,6 +561,15 @@ def main() -> int:
         lines += ["", "## Concepts", ""]
         for title, slug, summary in concepts:
             lines.append(f"- [{title}](wiki/concepts/{slug}.md) — {summary}")
+
+    if facet_counts:
+        lines += ["", "## Facets", "",
+                  "Cross-cutting topics — browse a theme across every list"
+                  " section.", ""]
+        for slug in sorted(facet_counts, key=lambda s: (-facet_counts[s], s)):
+            facet = FACET_BY_SLUG[slug]
+            lines.append(f"- [{facet.label}](wiki/index-facet-{slug}.md) —"
+                         f" {facet_counts[slug]} pages. {facet.description}")
     lines.append("")
     (ROOT / "index.md").write_text("\n".join(lines), encoding="utf-8")
 

@@ -28,6 +28,7 @@ related:
   - sok-how-sensor-attacks-disrupt-autonomous-vehicles-an-end-to-end-analysis-challenges-and-missed-threats
   - sok-the-next-frontier-in-av-security-systematizing-perception-attacks-and-the-emerging-threat-of-multi-sensor-fusion
   - physical-channel-sensor-attacks
+facets: [attack, research]
 ---
 
 Eykholt et al., CVPR 2018. The stop-sign sticker attack, the canonical physical adversarial example against road sign recognition.

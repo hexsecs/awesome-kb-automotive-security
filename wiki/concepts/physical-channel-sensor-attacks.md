@@ -3,9 +3,17 @@ uid: 01a19d3c-af6a-7527-8a41-b139008692d9
 title: "Physical-channel sensor attacks"
 summary: "Attacks that manufacture the measurement itself — in acoustics, optics, RF, and heat — where no digital interface is touched and the output is faithfully wrong."
 type: concept
+cluster: boundary
 created: 2026-11-01
 updated: 2026-11-01
-related: [walnut-waging-doubt-on-the-integrity-of-mems-accelerometers-with-acoustic-injection-attacks, illusion-and-dazzle-adversarial-optical-channel-exploits-against-lidars-for-automotive-applications, remote-attacks-on-automated-vehicles-sensors-experiments-on-camera-and-lidar, on-the-realism-of-lidar-spoofing-attacks-against-autonomous-driving-vehicle-at-high-speed-and-long-distance, drift-with-devil-security-of-multi-sensor-fusion-based-localization-in-high-level-autonomous-driving-under-gps-spoofing, all-your-gps-are-belong-to-us-towards-stealthy-manipulation-of-road-navigation-systems, the-heat-is-on-understanding-and-mitigating-vulnerabilities-of-thermal-image-perception-in-autonomous-systems]
+related:
+  - walnut-waging-doubt-on-the-integrity-of-mems-accelerometers-with-acoustic-injection-attacks
+  - illusion-and-dazzle-adversarial-optical-channel-exploits-against-lidars-for-automotive-applications
+  - remote-attacks-on-automated-vehicles-sensors-experiments-on-camera-and-lidar
+  - on-the-realism-of-lidar-spoofing-attacks-against-autonomous-driving-vehicle-at-high-speed-and-long-distance
+  - drift-with-devil-security-of-multi-sensor-fusion-based-localization-in-high-level-autonomous-driving-under-gps-spoofing
+  - all-your-gps-are-belong-to-us-towards-stealthy-manipulation-of-road-navigation-systems
+  - the-heat-is-on-understanding-and-mitigating-vulnerabilities-of-thermal-image-perception-in-autonomous-systems
 sources:
   - url: "https://doi.org/10.1109/EuroSP.2017.42"
     retrieved: 2026-11-01
@@ -13,6 +21,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://doi.org/10.14722/ndss.2026.230330"
     retrieved: 2026-11-01
+facets: [rf-keys, sensors, authentication, attack, defense]
 ---
 
 Every other attack class in this KB forges a *message*: a frame, a packet, a credential. This class forges a **measurement**. The attacker acts on the physical channel the sensor transduces — sound pressure, light, radio, heat — and the sensor faithfully converts the manufactured stimulus into a wrong reading. No digital interface is touched, nothing is malformed, and no cryptographic defence applies, because the compromise sits *below* the first bit, in the analogue conditioning chain that turns physics into numbers. Two papers from different modalities established the class in this corpus, and the papers campaign has since filled it in across nearly every automotive sensing modality.

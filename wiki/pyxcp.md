@@ -27,6 +27,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/christoph2/pyxcp/releases/tag/v0.28.0"
     retrieved: 2026-11-01
+facets: [can, xcp, ethernet, firmware, tools]
 ---
 
 Python implementation of the ASAM MCD-1 XCP protocol over CAN, Ethernet, and USB, with seed-and-key access handling, for measuring, calibrating, and flashing ECUs.

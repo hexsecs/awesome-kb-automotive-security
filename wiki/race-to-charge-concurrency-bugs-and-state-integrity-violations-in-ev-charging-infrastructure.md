@@ -28,6 +28,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-01
+facets: [ev-charging, attack, research]
 ---
 
 Lee and Lee, USENIX VehicleSec 2026. Audits the open-source EVerest charging stack and finds 11 CVE-assigned flaws, from data races confirmed with sanitizers to logic exploits such as charging that continues after a remote stop.

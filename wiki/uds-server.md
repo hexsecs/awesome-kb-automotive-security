@@ -25,6 +25,7 @@ sources:
     retrieved: 2026-10-31
   - url: "https://github.com/zombieCraig/uds-server"
     retrieved: 2026-10-31
+facets: [diagnostics, simulation, attack, tools]
 ---
 
 UDS ECU simulator and fuzzer for use alongside ICSim, for practising diagnostic command discovery and fuzzing scan tools.

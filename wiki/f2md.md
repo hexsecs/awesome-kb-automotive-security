@@ -26,6 +26,7 @@ sources:
     retrieved: 2026-10-31
   - url: "https://github.com/josephkamel/F2MD"
     retrieved: 2026-11-01
+facets: [v2x, simulation, attack, tools]
 ---
 
 Simulation framework recreating the whole misbehavior detection chain for ITS-G5 and C-V2X, with plausibility checks, machine learning detectors, and both local and global attack implementations.

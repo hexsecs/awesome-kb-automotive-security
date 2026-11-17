@@ -22,6 +22,7 @@ related:
   - fast-and-vulnerable-a-story-of-telematic-failures
   - uds-seed-key
   - the-vehicle-may-be-sick-denial-of-diagnostic-services-by-exploiting-the-can-transport-protocol
+facets: [diagnostics, ethernet, ev-charging, authentication, defense, research]
 ---
 
 Ziv and Alfasi, escar USA 2025. Penetration test taking a production electric vehicle from an insecure Wi-Fi network to full compromise in eight working days, via hardcoded credentials, insecure MQTT, and weak UDS Security Access.

@@ -26,6 +26,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://plaxidityx.com/"
     retrieved: 2026-11-01
+facets: [tara, standards]
 ---
 
 Automated TARA platform for creating ISO 21434 and UNR 155 compliant threat analysis reports.

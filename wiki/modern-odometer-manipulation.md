@@ -21,6 +21,7 @@ sources:
 related:
   - back-in-the-driver-s-seat-recovering-critical-data-from-tesla-autopilot-using-voltage-glitching
   - can-injection
+facets: [can, firmware, attack, tools, research]
 ---
 
 collin and oblivion, DEF CON 33 Car Hacking Village 2025. Slides reverse engineering a device that alters a message before it reaches the instrument cluster, using a glitching bypass of flash read protection.

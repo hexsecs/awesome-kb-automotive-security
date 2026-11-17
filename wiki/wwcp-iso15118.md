@@ -13,7 +13,13 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "ISO 15118 implementation covering SLAC, SDP, V2GTP, -2 and -20, explicitly shipping attack vectors and penetration-testing workflows for the individual subprotocols."
-related: [chargesploit, dsv2gshark, openv2g, v2gdecoder, everest, charging-trust-chain]
+related:
+  - chargesploit
+  - dsv2gshark
+  - openv2g
+  - v2gdecoder
+  - everest
+  - charging-trust-chain
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -23,6 +29,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/OpenChargingCloud/WWCP_ISO15118/blob/e2f9d3e961f136183c171f38a6de3f623468efd1/README.md"
     retrieved: 2026-11-01
+facets: [ev-charging, attack, tools, standards]
 ---
 
 ISO 15118 implementation covering SLAC, SDP, V2GTP, -2 and -20, explicitly shipping attack vectors and penetration-testing workflows for the individual subprotocols.

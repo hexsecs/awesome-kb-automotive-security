@@ -26,6 +26,7 @@ sources:
     retrieved: 2026-10-31
   - url: "https://github.com/HackProof/AutoTARA"
     retrieved: 2026-11-01
+facets: [simulation, tara, attack, tools, standards]
 ---
 
 Web-based TARA (Threat Analysis and Risk Assessment) framework for ISO/SAE 21434 that models systems as attack graphs and applies MITRE's CTSA/CRRA prioritization methodology with a Meta Attack Language simulation backend.

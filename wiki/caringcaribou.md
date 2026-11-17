@@ -36,6 +36,7 @@ sources:
     retrieved: 2026-10-31
   - url: "https://github.com/CaringCaribou/caringcaribou"
     retrieved: 2026-10-31
+facets: [can, attack, tools]
 ---
 
 Python automotive security exploration tool designed as the nmap of CAN bus with fuzzing, ECU discovery, and attack modules.

@@ -31,6 +31,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://linklayer.github.io/cantact/"
     retrieved: 2026-11-01
+facets: [can, iso-tp, hardware, tools]
 ---
 
 Open-source hardware CAN interface and desktop app supporting live tracing, frame transmission, ISO-TP, JavaScript scripting, and candump-format traces.

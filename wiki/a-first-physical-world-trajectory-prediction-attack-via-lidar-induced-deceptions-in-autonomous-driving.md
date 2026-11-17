@@ -29,6 +29,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
+facets: [sensors, attack, research]
 ---
 
 Lou et al., USENIX Security 2024. Attacks trajectory prediction indirectly, by placing physical objects that deceive LiDAR perception, instead of manipulating an attacker vehicle's own history as prior work required.

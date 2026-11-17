@@ -27,6 +27,7 @@ sources:
     retrieved: 2026-10-31
   - url: "https://github.com/doip-sim-ecu/doip-sim-ecu-dsl"
     retrieved: 2026-10-31
+facets: [can, diagnostics, iso-tp, doip, ethernet, simulation, tools]
 ---
 
 Kotlin DSL for scripting simulated DoIP ECUs, reachable over Ethernet, CAN with ISO-TP, or both at once, for exercising diagnostic clients against UDS error and edge cases without hardware.

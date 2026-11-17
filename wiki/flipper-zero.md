@@ -29,6 +29,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/flipperdevices/flipperzero-firmware/releases/tag/1.5.1"
     retrieved: 2026-11-01
+facets: [rf-keys, tools]
 ---
 
 Handheld multi-tool with Sub-GHz capabilities for reading, saving, and transmitting key fob signals with automotive database.

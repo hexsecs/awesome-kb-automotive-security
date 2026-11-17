@@ -33,6 +33,7 @@ sources:
     retrieved: 2026-10-31
   - url: "https://github.com/hardbyte/python-can"
     retrieved: 2026-10-31
+facets: [can, tools]
 ---
 
 Python library providing a common interface over many CAN hardware backends with CAN FD support and logging to ASC, BLF, MF4, TRC, CSV, and SQLite.

@@ -22,6 +22,7 @@ related:
   - tow-ids-automotive-ethernet-intrusion-dataset
   - road
   - in-vehicle-intrusion-detection
+facets: [can, ethernet, ids, attack, datasets]
 ---
 
 ACSAC 2025 dataset of over nine hours of traffic from a 2020 electric vehicle with 10 CAN buses and 6 automotive Ethernet buses, covering benign driving and attack scenarios.

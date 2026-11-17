@@ -3,9 +3,21 @@ uid: 01a1ea9a-c0db-711a-9628-42e1d08668bb
 title: "ISO-TP: the stateful transport under diagnostics"
 summary: "ISO 15765-2 reassembles multi-frame diagnostic payloads on CAN; its flow-control state machine is an attacker-controllable resource."
 type: concept
+cluster: bus
 created: 2026-11-17
 updated: 2026-11-17
-related: [the-vehicle-may-be-sick-denial-of-diagnostic-services-by-exploiting-the-can-transport-protocol, python-can-isotp, iso14229, gallia, doip-sim-ecu-dsl, cantact, j1939, can-availability, uds-seed-key, diagnostic-service-abuse, doip]
+related:
+  - the-vehicle-may-be-sick-denial-of-diagnostic-services-by-exploiting-the-can-transport-protocol
+  - python-can-isotp
+  - iso14229
+  - gallia
+  - doip-sim-ecu-dsl
+  - cantact
+  - j1939
+  - can-availability
+  - uds-seed-key
+  - diagnostic-service-abuse
+  - doip
 sources:
   - url: "https://doi.org/10.5281/zenodo.18715820"
     retrieved: 2026-11-17
@@ -15,6 +27,7 @@ sources:
     retrieved: 2026-11-17
   - url: "https://www.iso.org/standard/66574.html"
     retrieved: 2026-11-17
+facets: [can, diagnostics, iso-tp, attack, standards]
 ---
 
 CAN frames carry at most eight bytes. UDS requests and responses routinely

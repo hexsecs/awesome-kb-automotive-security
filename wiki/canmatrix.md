@@ -25,6 +25,7 @@ sources:
     retrieved: 2026-10-31
   - url: "https://github.com/ebroecker/canmatrix"
     retrieved: 2026-10-31
+facets: [can, tools]
 ---
 
 Python package to read and write CAN database formats, converting between DBC, ARXML, KCD, SYM, LDF, ODX, and more.

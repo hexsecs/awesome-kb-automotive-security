@@ -13,7 +13,10 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Python parser for ASAM MCD-2 MC (A2L) description files, exposing the characteristic, measurement, and memory-layout metadata needed to make sense of ECU calibration data during firmware analysis."
-related: [pyxcp, medc17-checksum-tool, calibration-plane]
+related:
+  - pyxcp
+  - medc17-checksum-tool
+  - calibration-plane
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -23,6 +26,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://pypi.org/project/pya2ldb/"
     retrieved: 2026-11-01
+facets: [xcp, firmware, tools]
 ---
 
 Python parser for ASAM MCD-2 MC (A2L) description files, exposing the characteristic, measurement, and memory-layout metadata needed to make sense of ECU calibration data during firmware analysis.

@@ -27,6 +27,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/nutonomy/AVCDL/blob/main/README.md"
     retrieved: 2026-11-01
+facets: [tara, standards]
 ---
 
 Motional's open-sourced Versatile Cybersecurity Development Lifecycle with process definitions and templates mapped to ISO/SAE 21434, ISO 24089, and UN R155/R156, assessed by TUV SUD.

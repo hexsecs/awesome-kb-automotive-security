@@ -31,6 +31,7 @@ sources:
     retrieved: 2026-10-31
   - url: "https://github.com/schutzwerk/CANalyzat0r"
     retrieved: 2026-10-31
+facets: [diagnostics, attack, tools]
 ---
 
 Security analysis toolkit for proprietary car protocols with graphical sniffing, fuzzing, packet comparison, background-noise filtering, and UDS fuzzing.

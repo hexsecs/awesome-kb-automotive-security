@@ -25,6 +25,7 @@ sources:
     retrieved: 2026-10-31
   - url: "https://illmatics.com/remote%20attack%20surfaces.pdf"
     retrieved: 2026-11-01
+facets: [can, attack, research]
 ---
 
 Miller and Valasek, Black Hat USA 2014. Compares the remote attack surfaces, network architectures, and cyber-physical features of a large set of production vehicles, framing a remote attack as initial access, CAN message injection, and physical effect.

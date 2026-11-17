@@ -3,14 +3,28 @@ uid: 01a19d3c-af5b-7ec9-9746-a6b70fbce553
 title: "CAN availability and denial of service"
 summary: "Availability attacks remove or suppress the bus's genuine traffic, below the layer message authentication defends: flooding, bus-off, dominance, silencing."
 type: concept
+cluster: bus
 created: 2026-11-01
 updated: 2026-11-01
-related: [can-injection, sok-kicking-can-down-the-road-systematizing-can-security-knowledge, experimental-security-analysis-of-a-modern-automobile, adventures-in-automotive-networks-and-control-units, error-handling-of-in-vehicle-networks-makes-them-vulnerable, exposing-new-vulnerabilities-of-error-handling-mechanism-in-can, canflict-exploiting-peripheral-conflicts-for-data-link-layer-attacks-on-automotive-networks, silently-disabling-ecus-and-enabling-blind-attacks-on-the-can-bus, diagnostic-service-abuse, canter, in-vehicle-intrusion-detection, can-message-authentication]
+related:
+  - can-injection
+  - sok-kicking-can-down-the-road-systematizing-can-security-knowledge
+  - experimental-security-analysis-of-a-modern-automobile
+  - adventures-in-automotive-networks-and-control-units
+  - error-handling-of-in-vehicle-networks-makes-them-vulnerable
+  - exposing-new-vulnerabilities-of-error-handling-mechanism-in-can
+  - canflict-exploiting-peripheral-conflicts-for-data-link-layer-attacks-on-automotive-networks
+  - silently-disabling-ecus-and-enabling-blind-attacks-on-the-can-bus
+  - diagnostic-service-abuse
+  - canter
+  - in-vehicle-intrusion-detection
+  - can-message-authentication
 sources:
   - url: "https://www.usenix.org/legacy/events/sec10/tech/full_papers/Koscher.pdf"
     retrieved: 2026-11-01
   - url: "https://arxiv.org/abs/2510.02960"
     retrieved: 2026-11-01
+facets: [can, authentication, attack, defense]
 ---
 
 Most CAN attacks in this KB forge: they add messages the bus never sent. Availability attacks do the opposite — they *remove* messages, or the ECUs that send them, or the receivers' ability to hear anything else. The [Kicking CAN SoK](../sok-kicking-can-down-the-road-systematizing-can-security-knowledge.md) grades availability the most exposed security element on the bus across its 150-paper corpus, ahead of integrity and confidentiality. This page organises the mechanisms the KB's full pages document, because they share one structural fact: they operate at or below the arbitration and error-handling layers, where the bus's best-known defences — message authentication — do not reach.

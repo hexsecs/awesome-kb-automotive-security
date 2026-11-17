@@ -28,6 +28,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/bri3d/Simos18_SBOOT/blob/master/README.md"
     retrieved: 2026-11-01
+facets: [diagnostics, firmware, attack, tools]
 ---
 
 Documented exploit chain against the VW Simos18 supplier bootloader, chaining PWM entry, a weak Mersenne Twister seed/key, and a CRC bounds-check flaw into arbitrary flash read.

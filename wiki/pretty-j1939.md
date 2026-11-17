@@ -25,6 +25,7 @@ sources:
     retrieved: 2026-10-31
   - url: "https://github.com/nmfta-repo/pretty_j1939"
     retrieved: 2026-10-31
+facets: [j1939, tools, standards]
 ---
 
 NMFTA's Python library and CLI that decodes J1939 traffic from candump logs using the SAE J1939 Digital Annex, with transport protocol reassembly, filtering, JSON output, and a live terminal view.

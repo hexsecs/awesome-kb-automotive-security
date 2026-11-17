@@ -3,9 +3,22 @@ uid: 01a1ea9a-c0dc-7790-9d00-bf0f2bc92186
 title: "LIN as the trusted subordinate bus"
 summary: "LIN sits behind gateways on door modules and sensors, so it is treated as trusted — yet its wiring is often the most reachable."
 type: concept
+cluster: bus
 created: 2026-11-17
 updated: 2026-11-17
-related: [linusbconverter, security-in-automotive-bus-systems, plug-n-pwned-comprehensive-vulnerability-analysis-of-obd-ii-dongles, automated-cross-platform-reverse-engineering-of-can-bus-commands-from-mobile-apps, canexplorer, ecubus-pro, ics-cap, uds, can-injection, external-attack-surface, physical-channel-sensor-attacks, simulation-and-test-doubles]
+related:
+  - linusbconverter
+  - security-in-automotive-bus-systems
+  - plug-n-pwned-comprehensive-vulnerability-analysis-of-obd-ii-dongles
+  - automated-cross-platform-reverse-engineering-of-can-bus-commands-from-mobile-apps
+  - canexplorer
+  - ecubus-pro
+  - ics-cap
+  - uds
+  - can-injection
+  - external-attack-surface
+  - physical-channel-sensor-attacks
+  - simulation-and-test-doubles
 sources:
   - url: "https://github.com/IntergatedCircuits/USB-LIN-Converter"
     retrieved: 2026-11-17
@@ -13,6 +26,7 @@ sources:
     retrieved: 2026-11-17
   - url: "https://www.usenix.org/conference/usenixsecurity20/presentation/wen"
     retrieved: 2026-11-17
+facets: [can, lin, sensors]
 ---
 
 LIN is the single-wire, 9600/19200-baud subordinate bus behind door modules,

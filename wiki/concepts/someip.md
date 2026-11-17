@@ -3,9 +3,17 @@ uid: 01a19d3c-af71-74b5-a15a-e988e764c108
 title: "SOME/IP and SOME/IP-SD"
 summary: "AUTOSAR's service-oriented middleware over IP: how services are offered, found and invoked — and why discovery is the trust root of every SOME/IP conversation."
 type: concept
+cluster: boundary
 created: 2026-11-01
 updated: 2026-11-01
-related: [vsomeip, eth-ws-someip, scapy, someip-protocol-fuzzer, protocrawler, ics-cap, autofuze]
+related:
+  - vsomeip
+  - eth-ws-someip
+  - scapy
+  - someip-protocol-fuzzer
+  - protocrawler
+  - ics-cap
+  - autofuze
 sources:
   - url: "https://github.com/jamores/eth-ws-someip/tree/master/specs"
     retrieved: 2026-11-01
@@ -17,6 +25,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/COVESA/vsomeip/blob/master/documentation/vsomeipConfiguration.md"
     retrieved: 2026-11-01
+facets: [can, ethernet, someip, authentication, standards]
 ---
 
 Modern vehicle Ethernet backbones do not exchange fixed CAN-style frames; they offer **services**. SOME/IP — AUTOSAR's "Scalable service-Oriented MiddlewarE over IP" — is the middleware protocol those services run on, specified once in the AUTOSAR Foundation for Classic and Adaptive platforms alike. Its companion, SOME/IP-SD, is how providers announce services and consumers find and subscribe to them. That split is the security centre of gravity: **SD is the trust root of every SOME/IP conversation** — a client learns where a service lives from discovery messages — and neither specification defines authentication, encryption or access control.

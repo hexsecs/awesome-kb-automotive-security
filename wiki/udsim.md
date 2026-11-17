@@ -27,6 +27,7 @@ sources:
     retrieved: 2026-10-31
   - url: "https://github.com/zombieCraig/UDSim"
     retrieved: 2026-10-31
+facets: [diagnostics, simulation, attack, tools]
 ---
 
 UDS (Unified Diagnostic Services) ECU simulator and fuzzer for discovering and testing UDS services.

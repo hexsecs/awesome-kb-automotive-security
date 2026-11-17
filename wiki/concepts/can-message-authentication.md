@@ -3,9 +3,15 @@ uid: 01a19d3c-af5e-7711-a7da-b8fc246900a9
 title: "CAN message authentication: the retrofit design space"
 summary: "Two complete academic designs and the standardised answer, compared on freshness, key scope, frame cost, and evidence — plus the two limits they all share."
 type: concept
+cluster: bus
 created: 2026-11-01
 updated: 2026-11-01
-related: [vatican-vetted-authenticated-can-bus, leia-a-lightweight-authentication-protocol-for-can, vulcan-efficient-component-authentication-and-software-isolation-for-automotive-control-networks, can-injection, can-availability]
+related:
+  - vatican-vetted-authenticated-can-bus
+  - leia-a-lightweight-authentication-protocol-for-can
+  - vulcan-efficient-component-authentication-and-software-isolation-for-automotive-control-networks
+  - can-injection
+  - can-availability
 sources:
   - url: "https://doi.org/10.1007/978-3-662-53140-2_6"
     retrieved: 2026-11-01
@@ -13,6 +19,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://doi.org/10.1145/3134600.3134623"
     retrieved: 2026-11-01
+facets: [can, authentication, attack]
 ---
 
 CAN frames carry no proof of who sent them — the gap [CAN injection](can-injection.md) exploits. The retrofit question is how to add that proof to a bus designed in the 1980s: 8-byte classical payloads, broadcast delivery, ECUs that cannot be recalled for new hardware, and hard real-time deadlines. This KB holds two complete academic answers at full depth, built in the same year from opposite directions, and the standardised third answer they both predate in deployment. Comparing them exposes the design space itself: every choice trades frame space, key-management burden, and what a failed check actually *does*.

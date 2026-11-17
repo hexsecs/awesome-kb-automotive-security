@@ -27,6 +27,7 @@ related:
   - on-the-real-world-applicability-of-automotive-can-intrusion-detection-systems
   - a-comprehensive-guide-to-can-ids-data-and-introduction-of-the-road-dataset
   - in-vehicle-intrusion-detection
+facets: [can, ethernet, ids, research]
 ---
 
 Seo, Song, and Kim, PST 2018. Trains a GAN on normal CAN traffic only, and is a common deep-learning IDS baseline alongside the authors' Car-Hacking dataset.

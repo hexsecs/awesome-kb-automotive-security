@@ -29,6 +29,7 @@ sources:
     retrieved: 2026-10-31
   - url: "https://github.com/honinb0n/uds-firmware-extraction"
     retrieved: 2026-10-31
+facets: [diagnostics, firmware, tools, standards]
 ---
 
 Tool for extracting ECU firmware from UDS flash traffic following ISO-14229 standard.

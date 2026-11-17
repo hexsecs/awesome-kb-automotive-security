@@ -13,7 +13,10 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Research framework for IVI (In-Vehicle Infotainment) firmware reverse engineering and exploitation targeting Hyundai/Kia Gen5W_L systems."
-related: [gen5fw, secure-firmware-updates, ivi-update-trust]
+related:
+  - gen5fw
+  - secure-firmware-updates
+  - ivi-update-trust
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -21,6 +24,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://api.crossref.org/works/10.1007%2FS11416-024-00522-4"
     retrieved: 2026-11-01
+facets: [firmware, ivi, attack, tools]
 ---
 
 Research framework for IVI (In-Vehicle Infotainment) firmware reverse engineering and exploitation targeting Hyundai/Kia Gen5W_L systems.

@@ -23,6 +23,7 @@ sources:
     retrieved: 2026-10-31
   - url: "https://github.com/jakka351/Ford-ECU-Bruteforcer"
     retrieved: 2026-10-31
+facets: [diagnostics, attack, tools]
 ---
 
 Security access brute-force tool for pre-2011 Ford ECUs with 3-byte seed and 5-byte key.

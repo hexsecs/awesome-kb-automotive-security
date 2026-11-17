@@ -28,6 +28,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/wheregoes/byd-dolphin-hacking/blob/master/README.md"
     retrieved: 2026-11-01
+facets: [can, firmware, ivi, attack, tools]
 ---
 
 Reverse engineering of the BYD Dolphin DiLink 3 head unit (Android 10 on a Qualcomm QCM6125), documenting its MCU and CAN interfaces, OTA update paths, and NFC digital key, along with permission-bypass and root-level service findings.

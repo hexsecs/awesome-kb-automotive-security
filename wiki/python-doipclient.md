@@ -28,6 +28,7 @@ sources:
     retrieved: 2026-10-31
   - url: "https://python-doipclient.readthedocs.io/en/latest/"
     retrieved: 2026-10-31
+facets: [diagnostics, doip, ethernet, tools, standards]
 ---
 
 Pure Python DoIP (ISO 13400) client that plugs into udsoncan as a transport layer for diagnostics over automotive Ethernet.

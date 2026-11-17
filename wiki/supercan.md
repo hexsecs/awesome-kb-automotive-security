@@ -27,6 +27,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/jgressmann/supercan/releases/tag/v1.0.28"
     retrieved: 2026-11-01
+facets: [can, firmware, tools]
 ---
 
 Open-source USB to CAN FD adapter firmware for the ATSAME51 and several other supported boards, giving a low-cost interface for capturing and injecting CAN and CAN FD traffic.

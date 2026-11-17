@@ -26,6 +26,7 @@ related:
   - misbehavior-detection
   - vanetza
   - pseudonym-schemes-in-vehicular-networks-a-survey
+facets: [v2x, research]
 ---
 
 Papadimitratos et al., IEEE Communications Magazine 2008. The SeVeCom architecture, which defined the certificate and pseudonym model underlying today's V2X security stacks.

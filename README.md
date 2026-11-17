@@ -40,7 +40,16 @@ decision — not drift.
 - `index.md` — L1 index, generated from page frontmatter; reads as the list.
 - `wiki/` — the pages: one entity page per list entry, concept pages under
   `wiki/concepts/`, and a generated sub-index per list section.
+- `wiki/index-facet-*.md` — generated cross-cutting topic indexes, built from
+  each page's `facets:` frontmatter. Facets are assigned from a curated
+  vocabulary in `tools/taxonomy.py` and cut across the 17 list sections.
+- `wiki/index-glossary.md`, `wiki/index-concept-map.md`,
+  `wiki/index-needs-attention.md` — generated navigation and maintenance hubs.
+- `raw/` — the L3 evidence tier: the upstream list and each page's `sources:`
+  URLs are canonical; local captures are staged here only when needed.
 - `tools/ingest.py` — the deterministic ingester (see below).
+- `tools/taxonomy.py` — the curated facet, glossary and concept-map vocabulary.
+- `tools/backfill_navigation.py` — applies that vocabulary to page frontmatter.
 - `AGENTS.md` — the maintainer schema: local rules for humans and LLMs.
 - `log.md` — append-only activity log.
 
@@ -50,9 +59,16 @@ decision — not drift.
 entry grammar, keyed on each entry's normalised URL. It creates stub pages
 for new entries, refreshes provenance on existing pages without touching
 added depth, and tombstones pages whose entry leaves the list — pages are
-never silently deleted. Dates come from the source commit, so a sync is
+never silently deleted. It also regenerates the category, facet, glossary,
+concept-map and needs-attention indexes from page frontmatter; none of them
+should be edited by hand. Dates come from the source commit, so a sync is
 byte-deterministic and safe to run in CI. Check conformance any time with
 `openshelf lint .`
+
+When the taxonomy changes, run `python3 tools/backfill_navigation.py` before
+the next ingest. It is idempotent: it adds `facets:` (and `cluster:` on concept
+pages), normalises `related:` lists to one shape, and never touches a page's
+body, uid or dates.
 
 ## Landing rules
 

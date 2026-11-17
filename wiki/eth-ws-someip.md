@@ -28,6 +28,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/jamores/eth-ws-someip/blob/master/README.md"
     retrieved: 2026-11-01
+facets: [ethernet, someip, tools, standards]
 ---
 
 Wireshark LUA dissectors for Automotive Ethernet SOME/IP and SOME/IP-SD protocols (Autosar 4.2).

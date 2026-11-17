@@ -31,6 +31,7 @@ sources:
     retrieved: 2026-10-31
   - url: "https://github.com/hexsecs/canarchy"
     retrieved: 2026-10-31
+facets: [can, diagnostics, doip, j1939, attack, tools]
 ---
 
 Stream-first CAN and J1939 toolkit that emits structured JSONL for automation, with live capture, DBC/ARXML/KCD decoding, J1939 PGN/SPN and DM1 fault parsing, UDS and DoIP support, constrained fuzzing, and an MCP server for agent-driven workflows.

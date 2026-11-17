@@ -26,6 +26,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://automotiveisac.com/atm-white-paper"
     retrieved: 2026-11-01
+facets: [tara, attack]
 ---
 
 Auto-ISAC's MITRE ATT&CK-style matrix of automotive adversary tactics and techniques, drawn from validated attacks and reproducible research, for threat modelling, TARA, and intelligence sharing.

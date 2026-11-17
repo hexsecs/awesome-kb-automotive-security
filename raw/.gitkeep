@@ -1,0 +1,20 @@
+# Raw sources (L3)
+
+OpenShelf's third tier is where you verify or extend a page. This KB's list of
+record is the upstream repository
+[hexsecs/awesome-automotive-security](https://github.com/hexsecs/awesome-automotive-security),
+so the raw material has two homes:
+
+- **The source list** — `README.md` at the pinned `source_commit` in each page's
+  frontmatter. `tools/ingest.py` reads it; it is not copied into this directory.
+- **The cited evidence** — the `sources:` URLs on every page, which point to
+  the papers, documentation and blog posts the page is built from. Concept
+  pages cite the entity pages and papers their synthesis rests on.
+
+This directory is the local staging area for material that needs to be kept
+verbatim: downloaded PDFs, HTML captures, datasets or logs that a page relies
+on and that might otherwise disappear. Nothing is required to be here today.
+Add a file here only when a page needs a durable, checkable local copy — and
+record it in that page's `sources:` block with a relative path.
+
+Never put derived prose here. Pages go in `wiki/`; this directory is evidence.

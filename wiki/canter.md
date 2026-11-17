@@ -25,6 +25,7 @@ sources:
     retrieved: 2026-10-31
   - url: "https://ceur-ws.org/Vol-3962/paper69.pdf"
     retrieved: 2026-10-31
+facets: [can, ids, attack, tools]
 ---
 
 Intrusion detection system for CAN and CAN-FD that detects drop-and-spoof attacks using frequency analysis of frame intervals.

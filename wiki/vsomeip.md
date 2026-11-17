@@ -28,6 +28,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/COVESA/vsomeip/releases/tag/3.7.6"
     retrieved: 2026-11-01
+facets: [ethernet, someip, attack, tools]
 ---
 
 COVESA reference implementation of SOME/IP and SOME/IP-SD, used both as the target in automotive Ethernet fuzzing research and as a client for crafting service calls against production ECUs.

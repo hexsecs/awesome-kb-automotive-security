@@ -13,12 +13,19 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Java-based CAN bus analysis tool with bus monitoring and DBC/KCD file loading support."
-related: [cantools, canmatrix, savvycan, cangaroo, dbc-semantic-layer, busmaster]
+related:
+  - cantools
+  - canmatrix
+  - savvycan
+  - cangaroo
+  - dbc-semantic-layer
+  - busmaster
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
   - url: "https://github.com/dschanoeh/Kayak"
     retrieved: 2026-10-31
+facets: [can, tools]
 ---
 
 Java-based CAN bus analysis tool with bus monitoring and DBC/KCD file loading support.

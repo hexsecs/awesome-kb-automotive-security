@@ -3,9 +3,26 @@ uid: 01a1ea9a-c0db-711a-9628-42e012b2af53
 title: "DoIP moves diagnostics onto the network"
 summary: "DoIP replaces the physical OBD port with a routable endpoint; discovery and routing activation become the new trust boundary."
 type: concept
+cluster: boundary
 created: 2026-11-17
 updated: 2026-11-17
-related: [python-doipclient, doip-sim-ecu-dsl, gallia, autofuze, canexplorer, ecubus-pro, nullsec-carfuzz, opensovd-classic-diagnostic-adapter, protocrawler, scapy, zephyr-reference-ecu, uds-seed-key, diagnostic-service-abuse, someip, iso-tp, external-attack-surface]
+related:
+  - python-doipclient
+  - doip-sim-ecu-dsl
+  - gallia
+  - autofuze
+  - canexplorer
+  - ecubus-pro
+  - nullsec-carfuzz
+  - opensovd-classic-diagnostic-adapter
+  - protocrawler
+  - scapy
+  - zephyr-reference-ecu
+  - uds-seed-key
+  - diagnostic-service-abuse
+  - someip
+  - iso-tp
+  - external-attack-surface
 sources:
   - url: "https://github.com/jacobschaer/python-doipclient"
     retrieved: 2026-11-17
@@ -15,6 +32,7 @@ sources:
     retrieved: 2026-11-17
   - url: "https://www.iso.org/standard/78176.html"
     retrieved: 2026-11-17
+facets: [can, diagnostics, doip, standards]
 ---
 
 Diagnostics over IP (DoIP, ISO 13400) carries the same UDS services that

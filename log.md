@@ -877,3 +877,26 @@ the OWASP Cheat Sheet Series master markdown, the Zenodo record and Google
 Books. No archives downloaded, no vehicles or benches exercised. Gates: ingest
 x2 idempotent, lint 0 errors and no new warnings, link checker 0/0/0, 17 tests
 pass, diff check clean.
+
+## [2026-11-17] navigate | Faceted indexes, concept map, glossary and maintenance queue
+
+Added a second navigation axis without touching the flat page namespace or the
+ingest contract. `tools/taxonomy.py` now holds the curated vocabularies: 27
+cross-cutting facets, a 36-entry acronym/standard glossary, four concept
+clusters and four reading paths. `tools/backfill_navigation.py` is an idempotent
+one-off that wrote `facets:` to all 285 pages, `cluster:` to the 30 concept
+pages, and normalised 68 inline `related:` lists into the block shape used by
+the rest of the KB — no body, uid or date changed.
+
+`tools/ingest.py` now generates and the L1 index now links:
+`wiki/index-facet-*.md` (27 topic indexes with per-section browse lines),
+`wiki/index-concept-map.md`, `wiki/index-glossary.md` and
+`wiki/index-needs-attention.md` (17 unverified, 39 brief, 5 tombstoned; the
+graph-orphan and stale-verification queues were empty at generation time).
+The declared `sources: raw` path is now real: `raw/.gitkeep` marks the L3
+staging directory, with its conventions recorded in README.md and AGENTS.md.
+
+New `tests/test_navigation.py` covers facet classification, backfill
+idempotence and taxonomy targets. Gates: ingest x2 idempotent, lint 0 errors
+and no new warnings (54 pre-existing warnings), link checker 0 broken / 0
+unresolved / 0 unreachable across 333 pages, 26 unittest tests pass.

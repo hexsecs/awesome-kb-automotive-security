@@ -23,6 +23,7 @@ related:
   - v2x-credential-management
   - misbehavior-detection
   - pseudonym-schemes-in-vehicular-networks-a-survey
+facets: [v2x, tara, defense, research]
 ---
 
 Raya and Hubaux, Journal of Computer Security 2007. Threat analysis and security architecture for VANETs that set the direction for most later V2X security work.

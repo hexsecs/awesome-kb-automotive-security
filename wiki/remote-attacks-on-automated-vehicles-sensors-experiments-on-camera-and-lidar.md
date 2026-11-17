@@ -35,6 +35,7 @@ sources:
     retrieved: 2026-10-31
   - url: "https://blackhat.com/docs/eu-15/materials/eu-15-Petit-Self-Driving-And-Connected-Cars-Fooling-Sensors-And-Tracking-Drivers-wp1.pdf"
     retrieved: 2026-11-01
+facets: [sensors, attack, research]
 ---
 
 Petit, Stottelaar, Feiri, and Kargl, Black Hat Europe 2015. First practical spoofing and blinding of automotive camera and LiDAR using commodity hardware.

@@ -13,12 +13,18 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Vehicle network analysis tool with SQL-like queries on CAN data, smart signal scanning, and Telegram bot integration."
-related: [can-utils, savvycan, canarchy, cangaroo, cantools]
+related:
+  - can-utils
+  - savvycan
+  - canarchy
+  - cangaroo
+  - cantools
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
   - url: "https://github.com/canalyse/CANalyse-2.0"
     retrieved: 2026-10-31
+facets: [can, tools]
 ---
 
 Vehicle network analysis tool with SQL-like queries on CAN data, smart signal scanning, and Telegram bot integration.

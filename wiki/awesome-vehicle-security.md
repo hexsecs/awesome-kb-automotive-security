@@ -26,6 +26,7 @@ sources:
     retrieved: 2026-11-17
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-01
+facets: [learning]
 ---
 
 Long-running curated list of vehicle security resources, hardware, software, researchers, and manufacturer disclosure programs.

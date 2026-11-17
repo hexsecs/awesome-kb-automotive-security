@@ -30,6 +30,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://arxiv.org/html/2308.04972v1"
     retrieved: 2026-11-17
+facets: [can, ids, attack, datasets]
 ---
 
 HCRL captures from a Kia Soul with labelled DoS, fuzzing, and RPM and gear spoofing injections, the most widely cited baseline in CAN intrusion detection papers.

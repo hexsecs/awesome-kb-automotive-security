@@ -13,13 +13,16 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Free seed-key unlocking tool for Bosch, Continental, Delphi, Daimler, and Marquardt ECUs without proprietary DLLs."
-related: [uds-seed-key, udsoncan]
+related:
+  - uds-seed-key
+  - udsoncan
 license: "MIT"
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
   - url: "https://github.com/jglim/UnlockECU"
     retrieved: 2026-10-31
+facets: [diagnostics, tools]
 ---
 
 Free seed-key unlocking tool for Bosch, Continental, Delphi, Daimler, and Marquardt ECUs without proprietary DLLs.

@@ -22,6 +22,7 @@ related:
   - automotive-cybersecurity-engineering-handbook
   - offensive-automotive-cybersecurity
   - tara-methodology
+facets: [tara, attack, tools, learning]
 ---
 
 Dennis Kengo Oka, Wiley 2021. Focuses on assuring the automotive software development lifecycle, from secure coding and static analysis through fuzzing and penetration testing.

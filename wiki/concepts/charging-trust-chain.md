@@ -3,14 +3,24 @@ uid: 01a19d3c-af5f-7345-a8e2-1d04ca6c743d
 title: "The EV–EVSE charging trust chain (ISO 15118 / DIN 70121)"
 summary: "The vehicle–charger link's trust is a chain — association, transport, contract authorisation — whose links fail independently and are measured failing."
 type: concept
+cluster: boundary
 created: 2026-11-01
 updated: 2026-11-01
-related: [losing-the-car-keys-wireless-phy-layer-insecurity-in-ev-charging, current-affairs-a-security-measurement-study-of-ccs-ev-charging-deployments, charge-it-to-my-neighbor-a-relay-attack-on-iso-15118-plug-and-charge-payment, race-to-charge-concurrency-bugs-and-state-integrity-violations-in-ev-charging-infrastructure, openv2g, pyplc, everest, ocpp-charging-attacks]
+related:
+  - losing-the-car-keys-wireless-phy-layer-insecurity-in-ev-charging
+  - current-affairs-a-security-measurement-study-of-ccs-ev-charging-deployments
+  - charge-it-to-my-neighbor-a-relay-attack-on-iso-15118-plug-and-charge-payment
+  - race-to-charge-concurrency-bugs-and-state-integrity-violations-in-ev-charging-infrastructure
+  - openv2g
+  - pyplc
+  - everest
+  - ocpp-charging-attacks
 sources:
   - url: "https://www.usenix.org/conference/usenixsecurity25/presentation/szakaly"
     retrieved: 2026-11-01
   - url: "https://www.usenix.org/conference/usenixsecurity19/presentation/baker"
     retrieved: 2026-11-01
+facets: [ev-charging, attack, tools, standards]
 ---
 
 Charging a vehicle is a negotiation between two computers that have never met, over a power cable, ending in money moving. The KB's charging coverage splits across two links: the charger↔backend link, owned by the [OCPP concept](ocpp-charging-attacks.md), and the **vehicle↔charger link** — ISO 15118 and its predecessor DIN 70121, running over power-line communication (HomePlug Green PHY) on the CCS connector. This page covers that second link. Its organising fact, established jointly by the KB's tool and paper pages, is that "the charging session is secure" is not one property but a **chain of independent links** — physical association, transport protection, and contract authorisation — and the corpus documents every link failing separately, including in sessions where the other links held.

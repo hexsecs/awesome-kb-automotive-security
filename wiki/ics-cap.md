@@ -29,6 +29,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://cdn.intrepidcs.net/icscap/"
     retrieved: 2026-11-01
+facets: [can, lin, ethernet, tools]
 ---
 
 Free Wireshark plugin for monitoring Automotive Ethernet, CAN, CAN FD, LIN, and FlexRay networks.

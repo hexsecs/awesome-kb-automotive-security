@@ -25,9 +25,18 @@ what gets listed.
   synthesis over entities; listed in `index.md` directly.
 - `wiki/index-<category>.md` — generated sub-index per list section
   (no frontmatter; do not edit by hand).
+- `wiki/index-facet-<slug>.md` — generated cross-cutting topic index, from the
+  page's `facets:` frontmatter. Facets come from the curated vocabulary in
+  `tools/taxonomy.py`; they may be edited only there, then propagated with
+  `python3 tools/backfill_navigation.py`. Do not edit the generated index.
+- `wiki/index-concept-map.md`, `wiki/index-glossary.md`,
+  `wiki/index-needs-attention.md` — generated navigation and maintenance hubs.
+  Do not edit by hand.
 - `index.md` — the L1 index, generated from page frontmatter; it reads as a
   classic awesome list. Do not edit by hand.
 - `tools/ingest.py` — the ingester (see `x-ingest` in `kb.yaml`).
+- `raw/` — L3 evidence staging: local captures go here only when a page needs
+  a durable copy; the upstream list and page `sources:` URLs remain canonical.
 - `log.md` — append-only activity log, one `## [YYYY-MM-DD] <op> | <title>`
   heading per operation.
 
@@ -79,4 +88,8 @@ what gets listed.
   when he chooses to review a specific PR.
 - **query** — read `index.md`, then pages, then sources. File useful
   answers back as pages so explorations compound.
+- **navigate** — edit `tools/taxonomy.py` (facets, glossary, concept clusters and
+  reading paths), run `python3 tools/backfill_navigation.py`, then
+  `python3 tools/ingest.py`. Both tools are idempotent; the ingester owns all
+  `index*.md` files.
 - **lint** — `openshelf lint .` must report no errors before a PR merges.

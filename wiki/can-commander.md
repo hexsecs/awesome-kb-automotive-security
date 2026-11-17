@@ -13,12 +13,17 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Flipper Zero application and companion ESP32 CAN board for reverse engineering vehicle networks, with sniffing, DBC decoding, replay, and injection profiles usable without a laptop."
-related: [savvycan, caringcaribou, icsim, dbc-semantic-layer]
+related:
+  - savvycan
+  - caringcaribou
+  - icsim
+  - dbc-semantic-layer
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
   - url: "https://github.com/MatthewKuKanich/CAN_Commander"
     retrieved: 2026-10-31
+facets: [can, firmware, rf-keys, simulation, attack, tools]
 ---
 
 Flipper Zero application and companion ESP32 CAN board for reverse engineering vehicle networks, with sniffing, DBC decoding, replay, and injection profiles usable without a laptop.

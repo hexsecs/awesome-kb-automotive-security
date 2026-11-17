@@ -28,6 +28,7 @@ sources:
     retrieved: 2026-10-31
   - url: "https://github.com/ecubus/EcuBus-Pro"
     retrieved: 2026-10-31
+facets: [can, diagnostics, doip, lin, someip, tools]
 ---
 
 Cross-platform open-source ECU tool with UDS, CAN-TP, DoIP, LIN, and SOME/IP support, DBC and LDF databases, TypeScript scripting in the style of CAPL, and a command-line interface.

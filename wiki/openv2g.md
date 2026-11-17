@@ -31,6 +31,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/uhi22/pyPLC/blob/be5139bc6e66ba3b3bfa502666f494d3e157968b/readme.md"
     retrieved: 2026-11-01
+facets: [ev-charging, tools, standards]
 ---
 
 C implementation of the ISO 15118 and DIN 70121 vehicle-to-grid interface with an EXI codec, widely reused as the encoding engine behind other V2G analysis tooling.

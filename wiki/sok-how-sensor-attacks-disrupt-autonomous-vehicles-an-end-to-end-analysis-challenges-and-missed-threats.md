@@ -32,6 +32,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
+facets: [sensors, attack, research]
 ---
 
 Zhang et al., arXiv 2025. Traces how sensor-induced errors propagate through perception, localization, planning, and control to physical impact, and identifies 12 previously overlooked attack vectors.

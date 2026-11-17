@@ -13,13 +13,19 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Flow-based graphical CAN simulation environment that wires senders, receivers, DBC decoders, and signal viewers together to stand in for missing ECUs on a bench."
-related: [cannelloni, busmaster, icsim, simulation-and-test-doubles, dbc-semantic-layer]
+related:
+  - cannelloni
+  - busmaster
+  - icsim
+  - simulation-and-test-doubles
+  - dbc-semantic-layer
 license: MPL-2.0
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
   - url: "https://github.com/GENIVI/CANdevStudio"
     retrieved: 2026-10-31
+facets: [can, simulation, tools]
 ---
 
 Flow-based graphical CAN simulation environment that wires senders, receivers, DBC decoders, and signal viewers together to stand in for missing ECUs on a bench.

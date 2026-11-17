@@ -13,7 +13,10 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Open-source CAN bus tracing and fuzzing tool designed for penetration testing with Burp Suite-inspired workflow."
-related: [canalyzat0r, savvycan, can-utils]
+related:
+  - canalyzat0r
+  - savvycan
+  - can-utils
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -21,6 +24,7 @@ sources:
     retrieved: 2026-10-31
   - url: "https://www.lindwurm-can.org/index.html"
     retrieved: 2026-10-31
+facets: [can, attack, tools]
 ---
 
 Open-source CAN bus tracing and fuzzing tool designed for penetration testing with Burp Suite-inspired workflow.

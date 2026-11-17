@@ -28,6 +28,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://veins.car2x.org"
     retrieved: 2026-11-01
+facets: [v2x, simulation, attack, tools]
 ---
 
 Open-source vehicular network simulation framework coupling OMNeT++ and SUMO, used as the testbed for VANET and V2X security and attack studies.

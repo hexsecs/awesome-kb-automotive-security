@@ -25,6 +25,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/commaai/panda/blob/master/README.md"
     retrieved: 2026-11-01
+facets: [can, firmware, hardware, tools]
 ---
 
 Open-source CAN and CAN FD interface firmware from comma.ai running on an STM32H725, with Python bindings for full read/write access to vehicle buses.

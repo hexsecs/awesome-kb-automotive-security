@@ -29,6 +29,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/Nnubes256/pwnobd/blob/main/src/pwnobd/modules/attacks/elm327.py"
     retrieved: 2026-11-01
+facets: [diagnostics, attack, tools]
 ---
 
 Offensive cybersecurity toolkit for vulnerability analysis of OBD-II devices presented at Black Hat Europe 2024.

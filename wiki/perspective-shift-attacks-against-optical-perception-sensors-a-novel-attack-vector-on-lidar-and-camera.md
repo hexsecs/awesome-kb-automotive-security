@@ -26,6 +26,7 @@ sources:
     retrieved: 2026-11-03
   - url: "https://www.usenix.org/conference/vehiclesec26/presentation/calipari"
     retrieved: 2026-11-17
+facets: [sensors, attack, research]
 ---
 
 Calipari et al., USENIX VehicleSec 2026. Introduces a new physical attack class that uses Direction Turning Film to shift LiDAR and camera fields of view, showing even a 20° shift significantly disrupts LiDAR odometry and camera lane detection in laboratory tests and on a real research vehicle, while barely affecting detection confidence.

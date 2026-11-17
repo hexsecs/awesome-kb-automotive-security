@@ -26,6 +26,7 @@ sources:
     retrieved: 2026-10-31
   - url: "https://github.com/I-CAN-hack/pq-flasher"
     retrieved: 2026-10-31
+facets: [diagnostics, firmware, tools]
 ---
 
 Python tools for reflashing VW PQ35 EPS using TP 2.0 transport layer and KWP2000 diagnostics.

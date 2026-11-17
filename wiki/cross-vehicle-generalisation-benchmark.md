@@ -22,6 +22,7 @@ related:
   - road
   - can-train-and-test
   - in-vehicle-intrusion-detection
+facets: [can, diagnostics, xcp, simulation, ids, attack, datasets]
 ---
 
 Leave-one-vehicle-out benchmark unifying ROAD, CIDv2, and can-train-and-test into 217 captures across eight vehicles for evaluating whether CAN IDS models transfer.

@@ -13,13 +13,18 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Eclipse OpenSOVD bridge in Rust that translates SOVD (ISO 17978) requests into UDS over DoIP for legacy ECUs, with a security plugin architecture."
-related: [odxtools, udsoncan, ecubus-pro, doip]
+related:
+  - odxtools
+  - udsoncan
+  - ecubus-pro
+  - doip
 license: "Apache-2.0"
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
   - url: "https://github.com/eclipse-opensovd/classic-diagnostic-adapter"
     retrieved: 2026-10-31
+facets: [diagnostics, doip, tools, standards]
 ---
 
 Eclipse OpenSOVD bridge in Rust that translates SOVD (ISO 17978) requests into UDS over DoIP for legacy ECUs, with a security plugin architecture.

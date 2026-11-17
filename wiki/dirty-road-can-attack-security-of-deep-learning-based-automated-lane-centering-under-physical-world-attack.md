@@ -29,6 +29,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
+facets: [can, attack, research]
 ---
 
 Sato et al., USENIX Security 2021. Physical dirty-road patches that steer a production lane-centering system out of its lane.

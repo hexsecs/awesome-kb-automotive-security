@@ -28,6 +28,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://arxiv.org/html/2308.04972v1"
     retrieved: 2026-11-17
+facets: [can, ids, attack, datasets]
 ---
 
 Labelled CAN captures from four vehicles across two manufacturers with nine attack types, split into known and unknown vehicle and attack test subsets for evaluating IDS generalisation.

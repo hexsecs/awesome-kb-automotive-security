@@ -3,9 +3,20 @@ uid: 01a19d3c-af6e-774f-b325-e47f370acef2
 title: "Secure firmware updates (Uptane)"
 summary: "How Uptane secures vehicle software updates: two repositories, per-vehicle signed instructions, and compromise resilience when servers or keys fall."
 type: concept
+cluster: access
 created: 2026-11-01
 updated: 2026-11-01
-related: [uptane, uptane-securing-software-updates-for-automobiles, simos18-sboot, tc1791-can-bsl, medc17-checksum-tool, uds-seed-key, firmware-acquisition, pq-flasher, vw-flash, ivi-update-trust]
+related:
+  - uptane
+  - uptane-securing-software-updates-for-automobiles
+  - simos18-sboot
+  - tc1791-can-bsl
+  - medc17-checksum-tool
+  - uds-seed-key
+  - firmware-acquisition
+  - pq-flasher
+  - vw-flash
+  - ivi-update-trust
 sources:
   - url: "https://uptane.org/docs/latest/standard/uptane-standard"
     retrieved: 2026-11-01
@@ -19,6 +30,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://uptane.org/docs/latest/all-versions"
     retrieved: 2026-11-01
+facets: [firmware, attack, tools]
 ---
 
 A vehicle that receives software over the air has a second attack

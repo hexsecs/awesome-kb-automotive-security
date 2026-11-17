@@ -27,6 +27,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://kentindell.github.io/categories"
     retrieved: 2026-11-01
+facets: [can, attack, tools]
 ---
 
 Ken Tindell's proof-of-concept toolkit of low-level CAN protocol attacks such as Janus frames, bit-banged from a Raspberry Pi Pico on the CANPico board, with a Sigrok decoder for observing the attacks on a logic analyser.

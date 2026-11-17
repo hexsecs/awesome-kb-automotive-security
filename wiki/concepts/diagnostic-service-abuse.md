@@ -3,9 +3,21 @@ uid: 01a19d3c-af61-7448-a302-5183d6ca18e2
 title: "Diagnostic-service abuse"
 summary: "The diagnostic service set is the highest-privilege surface on the vehicle network: what it actuates, how its gates fail, and the one case where they held."
 type: concept
+cluster: access
 created: 2026-11-01
 updated: 2026-11-01
-related: [uds-seed-key, experimental-security-analysis-of-a-modern-automobile, adventures-in-automotive-networks-and-control-units, remote-exploitation-of-an-unaltered-passenger-vehicle, comprehensive-experimental-analyses-of-automotive-attack-surfaces, beneath-the-bonnet-a-breakdown-of-diagnostic-security, simos18-sboot, can-availability, bootloader-stages, diagnostic-fuzzing, calibration-plane]
+related:
+  - uds-seed-key
+  - experimental-security-analysis-of-a-modern-automobile
+  - adventures-in-automotive-networks-and-control-units
+  - remote-exploitation-of-an-unaltered-passenger-vehicle
+  - comprehensive-experimental-analyses-of-automotive-attack-surfaces
+  - beneath-the-bonnet-a-breakdown-of-diagnostic-security
+  - simos18-sboot
+  - can-availability
+  - bootloader-stages
+  - diagnostic-fuzzing
+  - calibration-plane
 sources:
   - url: "https://www.usenix.org/legacy/events/sec10/tech/full_papers/Koscher.pdf"
     retrieved: 2026-11-01
@@ -13,6 +25,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://illmatics.com/Remote%20Car%20Hacking.pdf"
     retrieved: 2026-11-01
+facets: [can, diagnostics, firmware, tools]
 ---
 
 Normal traffic on a vehicle network is narrow: an ECU broadcasts what it measures, and receivers act on it. The diagnostic service set is different in kind. It exists so that a technician — or a factory tool — can command the car: run the brake bleed, drive an actuator, download new firmware, silence a module for testing. Across this KB's paper pages, nearly every highest-privilege effect runs through a diagnostic service rather than through forged normal traffic: brakes released and locked at speed, engines killed, code uploaded and executed, ECUs silenced so their identity can be borrowed. The [seed/key gate](uds-seed-key.md) has its own page; this page is about what the gate protects — and the recurring cases where there is no gate, the gate is not checked, or the service itself is the payload.

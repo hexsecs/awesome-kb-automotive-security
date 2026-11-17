@@ -21,6 +21,7 @@ sources:
 related:
   - awesome-canb-ids
   - awesome-vehicle-security
+facets: [can, firmware, ids, tools, learning]
 ---
 
 Comprehensive CAN bus security resources.

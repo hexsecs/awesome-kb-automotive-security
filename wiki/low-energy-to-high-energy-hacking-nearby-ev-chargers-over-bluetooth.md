@@ -24,6 +24,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-01
+facets: [firmware, ev-charging, attack, defense, research]
 ---
 
 Alkemade and Nassar, Black Hat USA 2024. Bluetooth attacks on three EV chargers, built from exploits demonstrated at Pwn2Own Automotive 2024.

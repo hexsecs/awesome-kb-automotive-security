@@ -26,6 +26,7 @@ related:
   - diagnostic-service-abuse
   - calibration-plane
   - shared-and-default-secrets
+facets: [can, diagnostics, firmware, research]
 ---
 
 Van den Herrewegen and Garcia, ESORICS 2018. Reverse engineers the seed-key ciphers of four manufacturers from ECU firmware and achieves remote code execution over CAN through diagnostics alone.

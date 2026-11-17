@@ -3,14 +3,25 @@ uid: 01a19d3c-af70-7f14-b747-84f22c57e2df
 title: "Simulation and test doubles for vehicle networks"
 summary: "The corpus's simulation layer, rung by rung — virtual bus, replay, declarative doubles, physical miniatures — and what each rung cannot tell you."
 type: concept
+cluster: method
 created: 2026-11-01
 updated: 2026-11-01
-related: [icsim, busmaster, candevstudio, udsim, uds-server, doip-sim-ecu-dsl, ramn, veins, van3twin]
+related:
+  - icsim
+  - busmaster
+  - candevstudio
+  - udsim
+  - uds-server
+  - doip-sim-ecu-dsl
+  - ramn
+  - veins
+  - van3twin
 sources:
   - url: "https://github.com/zombieCraig/ICSim"
     retrieved: 2026-11-01
   - url: "https://github.com/candle-usb/uds-server"
     retrieved: 2026-11-01
+facets: [simulation, attack, tools]
 ---
 
 Almost nothing in this KB was first tried on a real car. The corpus's tools presume a stand-in: a virtual bus to develop against, a recorded ECU to replay, a simulated network to rehearse on — because the real target is dangerous to experiment on, stateful in ways a bench session corrupts, and non-repeatable (a car that has been fuzzed into a stuck brake does not reset for the next run; [Koscher 2010](../experimental-security-analysis-of-a-modern-automobile.md)'s team had to fuzz their way back out). The safety guidance across the KB's pages repeats one instruction — *use the simulator first* — and this page is that instruction's home: the simulation layer organised by what is being doubled, and by the fidelity limit each rung states or implies.

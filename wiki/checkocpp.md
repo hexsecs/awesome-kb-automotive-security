@@ -13,7 +13,12 @@ depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Wireshark dissector for OCPP 1.6 and 2.0.1 that identifies the protocol version and flags messages that do not match the schema."
-related: [emuocpp, everest, ocpp-charging-attacks, ocppstorm-a-comprehensive-fuzzing-tool-for-ocpp-implementations, dsv2gshark]
+related:
+  - emuocpp
+  - everest
+  - ocpp-charging-attacks
+  - ocppstorm-a-comprehensive-fuzzing-tool-for-ocpp-implementations
+  - dsv2gshark
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -23,6 +28,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/vfg27/CheckOCPP/blob/19f5040fd8769d9a62f1af7d5b63074b36fbcf52/README.md"
     retrieved: 2026-11-01
+facets: [ev-charging, tools]
 ---
 
 Wireshark dissector for OCPP 1.6 and 2.0.1 that identifies the protocol version and flags messages that do not match the schema.

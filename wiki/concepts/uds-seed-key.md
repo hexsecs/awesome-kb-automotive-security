@@ -3,9 +3,20 @@ uid: 01a19d3c-af73-782e-8337-e83eddc02286
 title: "UDS seed/key (SecurityAccess)"
 summary: "UDS SecurityAccess (0x27) gates privileged diagnostics behind a seed/key exchange; weak seeds, reused secrets and simple algorithms defeat it."
 type: concept
+cluster: access
 created: 2026-10-31
 updated: 2026-11-01
-related: [python-can-isotp, savvycan, cancat, udsoncan, unlockecu, experimental-security-analysis-of-a-modern-automobile, beneath-the-bonnet-a-breakdown-of-diagnostic-security, ford-ecu-bruteforcer, diagnostic-service-abuse, shared-and-default-secrets]
+related:
+  - python-can-isotp
+  - savvycan
+  - cancat
+  - udsoncan
+  - unlockecu
+  - experimental-security-analysis-of-a-modern-automobile
+  - beneath-the-bonnet-a-breakdown-of-diagnostic-security
+  - ford-ecu-bruteforcer
+  - diagnostic-service-abuse
+  - shared-and-default-secrets
 sources:
   - url: "https://doi.org/10.29354/diag/192162"
     retrieved: 2026-10-31
@@ -13,6 +24,7 @@ sources:
     retrieved: 2026-10-31
   - url: "https://www.autosec.org/pubs/cars-oakland2010.pdf"
     retrieved: 2026-11-01
+facets: [diagnostics, authentication, attack, standards]
 ---
 
 UDS SecurityAccess — service 0x27 of the Unified Diagnostic Services

@@ -25,6 +25,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-01
+facets: [can, ids, attack, research]
 ---
 
 Lazeski et al., USENIX VehicleSec 2026. Work in progress showing that ML-based CAN intrusion detectors often learn dataset shortcuts because common datasets contain only simple attacks, so high scores do not imply robustness against a practical attacker.

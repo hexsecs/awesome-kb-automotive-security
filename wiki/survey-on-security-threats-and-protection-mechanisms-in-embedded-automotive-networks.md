@@ -26,6 +26,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://doi.org/10.1109/DSNW.2013.6615528"
     retrieved: 2026-11-01
+facets: [research]
 ---
 
 Studnia et al., DSN Workshops 2013. Widely cited survey mapping in-vehicle protocols, the threats against them, and candidate countermeasures.

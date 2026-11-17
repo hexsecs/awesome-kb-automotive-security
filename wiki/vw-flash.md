@@ -29,6 +29,7 @@ sources:
     retrieved: 2026-10-31
   - url: "https://github.com/bri3d/VW_Flash"
     retrieved: 2026-10-31
+facets: [diagnostics, firmware, tools]
 ---
 
 Flashing tools for VW AG control units over UDS supporting Simos18.1/6/10 and DQ250-MQB.

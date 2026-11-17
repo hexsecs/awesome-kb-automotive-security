@@ -28,6 +28,7 @@ related:
   - sok-how-sensor-attacks-disrupt-autonomous-vehicles-an-end-to-end-analysis-challenges-and-missed-threats
   - sok-the-next-frontier-in-av-security-systematizing-perception-attacks-and-the-emerging-threat-of-multi-sensor-fusion
   - physical-channel-sensor-attacks
+facets: [sensors, attack, defense, research]
 ---
 
 Bhupathiraju et al., NDSS 2026. Shows heat sources degrade thermal-camera pedestrian detection and sensor fusion, including in real driving, and proposes real-time defences.

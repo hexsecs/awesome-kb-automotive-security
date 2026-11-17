@@ -30,6 +30,7 @@ sources:
     retrieved: 2026-11-17
   - url: "https://api.github.com/repos/Xaloqi/Zephyr-Reference-ECU"
     retrieved: 2026-11-17
+facets: [can, diagnostics, doip, firmware, tools]
 ---
 
 Forkable body control module on Zephyr with UDS diagnostics over CAN and DoIP, SecurityAccess with AES-128-CMAC, and signed firmware update, runnable with no hardware or on a NUCLEO-H753ZI board.

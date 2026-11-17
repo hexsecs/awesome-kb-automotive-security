@@ -25,6 +25,7 @@ related:
   - silently-disabling-ecus-and-enabling-blind-attacks-on-the-can-bus
   - fingerprinting-electronic-control-units-for-vehicle-intrusion-detection
   - can-availability
+facets: [can, attack, research]
 ---
 
 Serag et al., USENIX Security 2021. Systematically tests CAN node behaviour under error conditions with CANOX and finds three further vulnerabilities in the standard beyond the bus-off attack.

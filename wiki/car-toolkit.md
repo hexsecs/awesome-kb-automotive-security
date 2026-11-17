@@ -30,6 +30,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/j-schmied/car-toolkit/blob/main/src/car-analysis/README.md"
     retrieved: 2026-11-01
+facets: [can, tools]
 ---
 
 Python-based toolkit for automotive penetration testing with CAN suite, CARAL, and virtual test bench setup.

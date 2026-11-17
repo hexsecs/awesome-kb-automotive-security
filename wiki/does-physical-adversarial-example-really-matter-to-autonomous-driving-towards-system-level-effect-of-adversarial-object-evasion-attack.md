@@ -31,6 +31,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
+facets: [sensors, attack, research]
 ---
 
 Wang et al., ICCV 2023. Measures published physical adversarial attacks against a full driving pipeline rather than the perception model alone, and finds that component-level success rarely translates into system-level effects such as traffic rule violations.

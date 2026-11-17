@@ -26,6 +26,7 @@ sources:
     retrieved: 2026-11-06
   - url: "https://www.usenix.org/conference/vehiclesec26/presentation/keynote-savage"
     retrieved: 2026-11-17
+facets: [attack, research]
 ---
 
 Savage, USENIX VehicleSec 2026 keynote. Asks why fifteen years of remote-takeover demonstrations have not been matched by attacks in the wild, and what would change that.

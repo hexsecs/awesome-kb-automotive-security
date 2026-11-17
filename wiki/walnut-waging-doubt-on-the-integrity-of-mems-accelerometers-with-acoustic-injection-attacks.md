@@ -25,6 +25,7 @@ related:
   - remote-attacks-on-automated-vehicles-sensors-experiments-on-camera-and-lidar
   - adversarial-sensor-attack-on-lidar-based-perception-in-autonomous-driving
   - physical-channel-sensor-attacks
+facets: [sensors, tara, attack, research]
 ---
 
 Trippel, Weisse, Xu, Honeyman, and Fu, IEEE EuroS&P 2017. Acoustic resonance attacks that forge accelerometer output, establishing analogue sensor integrity as its own threat model.

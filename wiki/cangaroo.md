@@ -28,6 +28,7 @@ sources:
     retrieved: 2026-10-31
   - url: "https://github.com/Schildkroet/CANgaroo"
     retrieved: 2026-10-31
+facets: [can, hardware, tools]
 ---
 
 Open-source CAN bus analyzer for Linux and Windows with DBC and LDF decoding, CAN FD, Python scripting, SocketCAN, PEAK, Kvaser, Vector, and candlelight interfaces, and Vector ASC, MDF4, candump, and PCAP export.

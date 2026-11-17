@@ -30,6 +30,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/riebl/vanetza/blob/master/vanetza/security/README.md"
     retrieved: 2026-11-01
+facets: [v2x, tools]
 ---
 
 Open-source ETSI C-ITS protocol stack covering GeoNetworking, BTP, DCC, and the security layer, widely used as the reference implementation for V2X experimentation.

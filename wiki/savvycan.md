@@ -42,6 +42,7 @@ sources:
     retrieved: 2026-10-31
   - url: "https://www.savvycan.com/docs/uds_scanner.html"
     retrieved: 2026-10-31
+facets: [can, diagnostics, firmware, attack, tools]
 ---
 
 Cross-platform Qt-based CAN bus reverse engineering and capture tool with DBC file loading, UDS scanning, and fuzzing support.

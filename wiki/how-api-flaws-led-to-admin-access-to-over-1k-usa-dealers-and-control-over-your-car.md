@@ -22,6 +22,7 @@ related:
   - fast-and-vulnerable-a-story-of-telematic-failures
   - wir-wissen-wo-dein-auto-steht
   - external-attack-surface
+facets: [authentication, attack, research]
 ---
 
 Eaton Zveare, DEF CON 33 Car Hacking Village 2025. Slides showing how flaws in an automaker's central dealer platform yielded a national admin account across over a thousand dealers.

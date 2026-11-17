@@ -21,6 +21,7 @@ sources:
 related:
   - awesome-connected-things-sec
   - awesome-vehicle-security
+facets: [firmware, hardware, attack, defense, tools, learning]
 ---
 
 Tools and knowledge for embedded security research.

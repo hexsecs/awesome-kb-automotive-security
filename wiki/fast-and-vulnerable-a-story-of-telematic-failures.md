@@ -29,6 +29,7 @@ sources:
     retrieved: 2026-10-31
   - url: "https://www.usenix.org/system/files/conference/woot15/woot15-paper-foster.pdf"
     retrieved: 2026-11-01
+facets: [can, diagnostics, attack, research]
 ---
 
 Foster, Prudhomme, Koscher, and Savage, USENIX WOOT 2015. Shows an aftermarket OBD-II telematics dongle exposing SMS-reachable remote control of vehicle CAN traffic.

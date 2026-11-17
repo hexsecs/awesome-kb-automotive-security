@@ -25,6 +25,7 @@ related:
   - error-handling-of-in-vehicle-networks-makes-them-vulnerable
   - vulcan-efficient-component-authentication-and-software-isolation-for-automotive-control-networks
   - can-message-authentication
+facets: [can, authentication, research]
 ---
 
 Nurnberger and Rossow, CHES 2016. Retrofit authentication for CAN using MACs and a global nonce, a reference point for later SecOC-style designs.

@@ -28,6 +28,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://uptane.org/learn-more/adoptions"
     retrieved: 2026-11-01
+facets: [firmware]
 ---
 
 Open standard for securing automotive over-the-air updates that extends TUF to limit the damage when a repository or signing key is compromised, governed under the Joint Development Foundation.

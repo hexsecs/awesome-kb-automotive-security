@@ -25,6 +25,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
+facets: [can, attack, research]
 ---
 
 Rogers and Rasmussen, arXiv 2022. Disables an ECU with a single frame and without generating bus errors, evading the error-counting that earlier bus-off detection relies on, and adds a synchronisation method letting an attacker who cannot read the bus strike reliably.

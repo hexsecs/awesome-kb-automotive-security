@@ -30,6 +30,7 @@ sources:
     retrieved: 2026-11-17
   - url: "https://api.github.com/repos/cauliflowermossgrape/idrive7-8-ssh-root"
     retrieved: 2026-11-17
+facets: [firmware, ivi, hardware, tools]
 ---
 
 Enable root SSH on BMW iDrive 7/8 MGU head units over ENET via debug image flash and persistent SSH without B7F8E5 DTC, for head unit reverse engineering.
