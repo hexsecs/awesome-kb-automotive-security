@@ -8,7 +8,7 @@ url: "https://github.com/mercedes-benz/odxtools"
 status: active
 last_checked: 2026-10-31
 created: 2026-10-31
-updated: 2026-11-16
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -18,6 +18,8 @@ related:
   - udsoncan
   - ecubus-pro
   - vw-flash
+  - the-vehicle-may-be-sick-denial-of-diagnostic-services-by-exploiting-the-can-transport-protocol
+  - diagnostic-service-abuse
 license: "MIT"
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
@@ -68,3 +70,5 @@ when it suspects it cannot fulfil an operation correctly.
 - [OpenSOVD Classic Diagnostic Adapter](opensovd-classic-diagnostic-adapter.md) — serves ODX-derived data over SOVD/REST.
 - [udsoncan](udsoncan.md) — the session-level UDS client this complements.
 - [EcuBus-Pro](ecubus-pro.md) — interactive counterpart for diagnostic sessions.
+- [The Vehicle May Be Sick: Denial of Diagnostic Services by Exploiting the CAN Transport Protocol](the-vehicle-may-be-sick-denial-of-diagnostic-services-by-exploiting-the-can-transport-protocol.md)
+- [Diagnostic-service abuse](concepts/diagnostic-service-abuse.md)

@@ -20,6 +20,7 @@ related:
   - adversarial-sensor-attack-on-lidar-based-perception-in-autonomous-driving
   - does-physical-adversarial-example-really-matter-to-autonomous-driving-towards-system-level-effect-of-adversarial-object-evasion-attack
   - expanding-the-attack-scenarios-of-sae-j1939-a-comprehensive-analysis-of-established-and-novel-vulnerabilities-in-transport-protocol
+  - physical-channel-sensor-attacks
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-03
@@ -61,3 +62,4 @@ Checked 2026-11-17. **Published** — VehicleSec 26, August 2026, Best Paper, op
 - [Adversarial sensor attack on LiDAR-based perception in autonomous driving](adversarial-sensor-attack-on-lidar-based-perception-in-autonomous-driving.md)
 - [Does physical adversarial example really matter to autonomous driving?](does-physical-adversarial-example-really-matter-to-autonomous-driving-towards-system-level-effect-of-adversarial-object-evasion-attack.md)
 - [Expanding the attack scenarios of SAE J1939](expanding-the-attack-scenarios-of-sae-j1939-a-comprehensive-analysis-of-established-and-novel-vulnerabilities-in-transport-protocol.md)
+- [Physical-channel sensor attacks](concepts/physical-channel-sensor-attacks.md)

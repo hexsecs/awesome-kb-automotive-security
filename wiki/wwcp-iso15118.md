@@ -8,12 +8,12 @@ url: "https://github.com/OpenChargingCloud/WWCP_ISO15118"
 status: active
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "ISO 15118 implementation covering SLAC, SDP, V2GTP, -2 and -20, explicitly shipping attack vectors and penetration-testing workflows for the individual subprotocols."
-related: [chargesploit, dsv2gshark, openv2g, v2gdecoder, everest]
+related: [chargesploit, dsv2gshark, openv2g, v2gdecoder, everest, charging-trust-chain]
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -56,3 +56,4 @@ Checked 2026-11-01. **Active** at this check: the repository is not archived and
 - [OpenV2G](openv2g.md)
 - [V2Gdecoder](v2gdecoder.md)
 - [EVerest](everest.md)
+- [The EV–EVSE charging trust chain (ISO 15118 / DIN 70121)](concepts/charging-trust-chain.md)

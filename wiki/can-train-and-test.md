@@ -20,6 +20,7 @@ related:
   - a-comprehensive-guide-to-can-ids-data-and-introduction-of-the-road-dataset
   - can-mirgu
   - on-the-real-world-applicability-of-automotive-can-intrusion-detection-systems
+  - in-vehicle-intrusion-detection
 sources:
   - url: "https://bitbucket.org/brooke-lampe/can-train-and-test/src/master/"
     retrieved: 2026-11-01
@@ -74,3 +75,4 @@ Checked 2026-11-17. **Published** — a finished, curated static release; the Bi
 - [A Comprehensive Guide to CAN IDS Data and Introduction of the ROAD Dataset](a-comprehensive-guide-to-can-ids-data-and-introduction-of-the-road-dataset.md)
 - [CAN-MIRGU](can-mirgu.md)
 - [On the real-world applicability of automotive CAN intrusion detection systems](on-the-real-world-applicability-of-automotive-can-intrusion-detection-systems.md)
+- [In-vehicle intrusion detection and ECU fingerprinting](concepts/in-vehicle-intrusion-detection.md)

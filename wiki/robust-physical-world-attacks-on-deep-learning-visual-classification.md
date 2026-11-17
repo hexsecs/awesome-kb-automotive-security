@@ -8,7 +8,7 @@ url: "https://arxiv.org/abs/1707.08945"
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -27,6 +27,7 @@ related:
   - invisible-for-both-camera-and-lidar-security-of-multi-sensor-fusion-based-perception-in-autonomous-driving
   - sok-how-sensor-attacks-disrupt-autonomous-vehicles-an-end-to-end-analysis-challenges-and-missed-threats
   - sok-the-next-frontier-in-av-security-systematizing-perception-attacks-and-the-emerging-threat-of-multi-sensor-fusion
+  - physical-channel-sensor-attacks
 ---
 
 Eykholt et al., CVPR 2018. The stop-sign sticker attack, the canonical physical adversarial example against road sign recognition.
@@ -66,3 +67,4 @@ Status: **published** — a finished 2018 conference publication. Bibliographic 
 - [Too Good to Be Safe](too-good-to-be-safe-tricking-lane-detection-in-autonomous-driving-with-crafted-perturbations.md) — crafted perturbations against lane detection on a production-grade stack
 - [Invisible for Both Camera and LiDAR](invisible-for-both-camera-and-lidar-security-of-multi-sensor-fusion-based-perception-in-autonomous-driving.md) — the adversarial-object line extended to multi-sensor fusion
 - [SoK: How Sensor Attacks Disrupt Autonomous Vehicles](sok-how-sensor-attacks-disrupt-autonomous-vehicles-an-end-to-end-analysis-challenges-and-missed-threats.md) — the end-to-end systematization this attack sits inside
+- [Physical-channel sensor attacks](concepts/physical-channel-sensor-attacks.md)

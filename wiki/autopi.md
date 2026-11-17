@@ -8,7 +8,7 @@ url: "https://github.com/autopi-io/autopi-core"
 status: active
 last_checked: 2026-10-31
 created: 2026-10-31
-updated: 2026-11-16
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -18,6 +18,7 @@ related:
   - caringcaribou
   - udsoncan
   - linusbconverter
+  - external-attack-surface
 license: "Apache-2.0"
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
@@ -63,3 +64,4 @@ on" it — documentation is incomplete by the project's own account.
 - [can-utils](can-utils.md) — the SocketCAN utilities such devices expose.
 - [CaringCaribou](caringcaribou.md) — Pi-based CAN exploration, the security-side neighbour.
 - [udsoncan](udsoncan.md) — diagnostics over the dongle's data.
+- [The vehicle's external attack surface: remote entry and the telematics pivot](concepts/external-attack-surface.md)

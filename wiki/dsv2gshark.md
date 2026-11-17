@@ -8,12 +8,12 @@ url: "https://github.com/dspace-group/dsV2Gshark"
 status: active
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Wireshark plugin that dissects ISO 15118 and DIN 70121 traffic, decoding EXI-encoded V2G payloads and SLAC handshakes into readable fields."
-related: [acccs, chargesploit, pyplc, v2gdecoder, wwcp-iso15118, everest, checkocpp]
+related: [acccs, chargesploit, pyplc, v2gdecoder, wwcp-iso15118, everest, checkocpp, charging-trust-chain]
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -58,3 +58,4 @@ Checked 2026-11-01. **Active** at this check: the repository is not archived and
 - [WWCP_ISO15118](wwcp-iso15118.md)
 - [EVerest](everest.md)
 - [CheckOCPP](checkocpp.md)
+- [The EV–EVSE charging trust chain (ISO 15118 / DIN 70121)](concepts/charging-trust-chain.md)

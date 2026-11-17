@@ -8,7 +8,7 @@ url: "https://www.usenix.org/conference/usenixsecurity21/presentation/jing"
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-16
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -18,6 +18,7 @@ related:
   - adversarial-sensor-attack-on-lidar-based-perception-in-autonomous-driving
   - remote-attacks-on-automated-vehicles-sensors-experiments-on-camera-and-lidar
   - robust-physical-world-attacks-on-deep-learning-visual-classification
+  - physical-channel-sensor-attacks
 sources:
   - url: "https://www.usenix.org/conference/usenixsecurity21/presentation/jing"
     retrieved: 2026-11-01
@@ -59,3 +60,4 @@ Status: **published** — a finished 2021 conference publication; no living arte
 - [Dirty Road Can Attack](dirty-road-can-attack-security-of-deep-learning-based-automated-lane-centering-under-physical-world-attack.md) — the companion lane attack in the same proceedings: bending real lanes, white-box, on OpenPilot
 - [Adversarial Sensor Attack on LiDAR-based Perception in Autonomous Driving](adversarial-sensor-attack-on-lidar-based-perception-in-autonomous-driving.md) — the perception-layer analogue on the LiDAR channel
 - [Remote Attacks on Automated Vehicles Sensors](remote-attacks-on-automated-vehicles-sensors-experiments-on-camera-and-lidar.md) — the camera attacked at the optical layer (blinding), one layer below this paper's detector-level attack
+- [Physical-channel sensor attacks](concepts/physical-channel-sensor-attacks.md)

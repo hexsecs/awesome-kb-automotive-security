@@ -19,6 +19,7 @@ related:
   - everest
   - truckdevil
   - race-to-charge-concurrency-bugs-and-state-integrity-violations-in-ev-charging-infrastructure
+  - ocpp-charging-attacks
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-14
@@ -62,3 +63,4 @@ Checked 2026-11-17. **Active** at this check: public, not archived, MIT, default
 - [EVerest](everest.md)
 - [TruckDevil](truckdevil.md)
 - [Race to Charge: concurrency bugs and state integrity violations in EV charging infrastructure](race-to-charge-concurrency-bugs-and-state-integrity-violations-in-ev-charging-infrastructure.md)
+- [OCPP and charging attacks](concepts/ocpp-charging-attacks.md)

@@ -19,6 +19,7 @@ related:
   - survey-on-security-threats-and-protection-mechanisms-in-embedded-automotive-networks
   - ford-ecu-bruteforcer
   - idrive7-8-ssh-root
+  - firmware-acquisition
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-15
@@ -61,3 +62,4 @@ Checked 2026-11-17. **Published** — the post is dated 2026-03-05 and is a stat
 - [Survey on security threats and protection mechanisms in embedded automotive networks](survey-on-security-threats-and-protection-mechanisms-in-embedded-automotive-networks.md)
 - [Ford ECU bruteforcer](ford-ecu-bruteforcer.md)
 - [idrive7-8-ssh-root](idrive7-8-ssh-root.md)
+- [Firmware acquisition: the read-side channels](concepts/firmware-acquisition.md)

@@ -8,7 +8,7 @@ url: "https://citation.thinkst.com/talk/96125"
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-16
+updated: 2026-11-17
 depth: brief
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -17,6 +17,7 @@ related:
   - plug-n-pwned-comprehensive-vulnerability-analysis-of-obd-ii-dongles
   - donglescope
   - over-the-air-compromise-of-modern-volkswagen-group-vehicles
+  - external-attack-surface
 sources:
   - url: "https://citation.thinkst.com/talk/96125"
     retrieved: 2026-11-01
@@ -38,3 +39,4 @@ Status: **published** — Black Hat Asia 2025 briefing; recording and slides pub
 
 - [Plug-N-Pwned](plug-n-pwned-comprehensive-vulnerability-analysis-of-obd-ii-dongles.md) — the same genre of audit for OBD-II dongles, the other aftermarket device class
 - [DongleScope](donglescope.md) — the tooling paper behind the dongle audit
+- [The vehicle's external attack surface: remote entry and the telematics pivot](concepts/external-attack-surface.md)

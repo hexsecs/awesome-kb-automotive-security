@@ -19,6 +19,7 @@ related:
   - drift-with-devil-security-of-multi-sensor-fusion-based-localization-in-high-level-autonomous-driving-under-gps-spoofing
   - autohack
   - passive-and-active-attacks-on-tpms-systems
+  - misbehavior-detection
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-15
@@ -63,3 +64,4 @@ Checked 2026-11-17. **Archived** at this check: public, archived, MIT, 25 stars 
 - [Drift with Devil: security of multi-sensor fusion based localization under GPS spoofing](drift-with-devil-security-of-multi-sensor-fusion-based-localization-in-high-level-autonomous-driving-under-gps-spoofing.md)
 - [AutoHack](autohack.md)
 - [Passive and active attacks on TPMS systems](passive-and-active-attacks-on-tpms-systems.md)
+- [Misbehavior detection in V2X](concepts/misbehavior-detection.md)

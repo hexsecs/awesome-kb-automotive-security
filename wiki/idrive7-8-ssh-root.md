@@ -20,6 +20,7 @@ related:
   - gen5fw
   - automated-cross-platform-reverse-engineering-of-can-bus-commands-from-mobile-apps
   - bypassing-debug-password-protection-on-the-rh850-family
+  - ivi-runtime-privilege
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-08
@@ -68,3 +69,4 @@ Checked 2026-11-17. **Active** at this check: public, not archived, Unlicense, 5
 - [Gen5FW](gen5fw.md)
 - [Automated cross-platform reverse engineering of CAN bus commands from mobile apps](automated-cross-platform-reverse-engineering-of-can-bus-commands-from-mobile-apps.md)
 - [Bypassing debug password protection on the RH850 family](bypassing-debug-password-protection-on-the-rh850-family.md)
+- [IVI runtime privilege and service exposure](concepts/ivi-runtime-privilege.md)

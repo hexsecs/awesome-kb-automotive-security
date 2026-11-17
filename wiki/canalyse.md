@@ -8,12 +8,12 @@ url: "https://github.com/canalyse/CANalyse-2.0"
 status: archived
 last_checked: 2026-10-31
 created: 2026-10-31
-updated: 2026-10-31
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Vehicle network analysis tool with SQL-like queries on CAN data, smart signal scanning, and Telegram bot integration."
-related: [can-utils, savvycan, canarchy]
+related: [can-utils, savvycan, canarchy, cangaroo, cantools]
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -61,3 +61,5 @@ interface, and the archived repository means no fixes should be expected.
 - [can-utils](can-utils.md) — produces and consumes the same log formats.
 - [SavvyCAN](savvycan.md) — maintained GUI alternative for capture analysis.
 - [CANarchy](canarchy.md) — maintained, script-first analysis toolkit.
+- [CANgaroo](cangaroo.md)
+- [cantools](cantools.md)

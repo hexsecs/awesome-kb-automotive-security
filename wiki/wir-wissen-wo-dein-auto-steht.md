@@ -8,7 +8,7 @@ url: "https://media.ccc.de/v/38c3-wir-wissen-wo-dein-auto-steht-volksdaten-von-v
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-17
 depth: brief
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -20,6 +20,7 @@ sources:
     retrieved: 2026-11-01
 related:
   - how-api-flaws-led-to-admin-access-to-over-1k-usa-dealers-and-control-over-your-car
+  - external-attack-surface
 ---
 
 Kreil and Flupke, 38C3 2024. German-language talk on movement data of 800,000 Volkswagen group electric cars that was exposed unprotected online.
@@ -35,3 +36,4 @@ Status: **published** — 38C3, December 2024; recording public. Verified agains
 ## Related
 
 - [How API Flaws Led to Admin Access to Over 1k USA Dealers](how-api-flaws-led-to-admin-access-to-over-1k-usa-dealers-and-control-over-your-car.md) — the other backend-side failure in this list: an automaker platform exposing owner data and car control at national scale
+- [The vehicle's external attack surface: remote entry and the telematics pivot](concepts/external-attack-surface.md)

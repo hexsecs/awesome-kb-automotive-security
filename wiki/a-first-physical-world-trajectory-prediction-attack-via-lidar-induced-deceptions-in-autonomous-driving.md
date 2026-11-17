@@ -8,7 +8,7 @@ url: "https://www.usenix.org/conference/usenixsecurity24/presentation/lou"
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-16
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -23,6 +23,7 @@ related:
   - drift-with-devil-security-of-multi-sensor-fusion-based-localization-in-high-level-autonomous-driving-under-gps-spoofing
   - sok-the-next-frontier-in-av-security-systematizing-perception-attacks-and-the-emerging-threat-of-multi-sensor-fusion
   - perspective-shift-attacks-against-optical-perception-sensors-a-novel-attack-vector-on-lidar-and-camera
+  - physical-channel-sensor-attacks
 sources:
   - url: "https://www.usenix.org/conference/usenixsecurity24/presentation/lou"
     retrieved: 2026-11-01
@@ -70,3 +71,4 @@ Status: **published** — a finished 2024 conference publication. Bibliographic 
 - [Does Physical Adversarial Example Really Matter to Autonomous Driving?](does-physical-adversarial-example-really-matter-to-autonomous-driving-towards-system-level-effect-of-adversarial-object-evasion-attack.md) — Wang et al. 2023; the system-level measurement frame this attack is designed inside
 - [Remote Attacks on Automated Vehicles Sensors](remote-attacks-on-automated-vehicles-sensors-experiments-on-camera-and-lidar.md) — Petit et al. 2015, the raw-echo foundation
 - [Illusion and Dazzle](illusion-and-dazzle-adversarial-optical-channel-exploits-against-lidars-for-automotive-applications.md) — Shin et al. 2017, the point-cloud step
+- [Physical-channel sensor attacks](concepts/physical-channel-sensor-attacks.md)

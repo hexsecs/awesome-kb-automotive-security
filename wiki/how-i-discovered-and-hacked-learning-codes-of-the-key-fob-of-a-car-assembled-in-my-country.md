@@ -18,6 +18,7 @@ related:
   - lock-it-and-still-lose-it-on-the-in-security-of-automotive-remote-keyless-entry-systems
   - my-other-car-is-your-car-compromising-the-tesla-model-x-keyless-entry-system
   - rollback-a-new-time-agnostic-replay-attack-against-the-automotive-remote-keyless-entry-systems
+  - rolling-code-failure-classes
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-13
@@ -61,3 +62,4 @@ Checked 2026-11-17. **Published** — DEF CON 32 Car Hacking Village, 2024; offi
 - [Lock it and still lose it: on the (in)security of automotive remote keyless entry systems](lock-it-and-still-lose-it-on-the-in-security-of-automotive-remote-keyless-entry-systems.md)
 - [My other car is your car: compromising the Tesla Model X keyless entry system](my-other-car-is-your-car-compromising-the-tesla-model-x-keyless-entry-system.md)
 - [Rollback: a new time-agnostic replay attack against the automotive remote keyless entry systems](rollback-a-new-time-agnostic-replay-attack-against-the-automotive-remote-keyless-entry-systems.md)
+- [Rolling-code failure classes](concepts/rolling-code-failure-classes.md)

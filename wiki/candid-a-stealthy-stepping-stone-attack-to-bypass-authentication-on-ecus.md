@@ -8,7 +8,7 @@ url: "https://zenodo.org/records/18714273"
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-16
+updated: 2026-11-17
 depth: brief
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -17,6 +17,7 @@ related:
   - uds-seed-key
   - silently-disabling-ecus-and-enabling-blind-attacks-on-the-can-bus
   - ble-theft-auto-evaluating-the-security-of-aftermarket-ble-based-automotive-remote-control-systems
+  - the-vehicle-may-be-sick-denial-of-diagnostic-services-by-exploiting-the-can-transport-protocol
 sources:
   - url: "https://zenodo.org/records/18714273"
     retrieved: 2026-11-01
@@ -38,3 +39,4 @@ Status: **published** — escar USA 2022; paper PDF public. Verified against the
 
 - [UDS seed/key](concepts/uds-seed-key.md) — the concept page; CANdid is the replay-against-weak-seed-randomness instance
 - [Silently Disabling ECUs and Enabling Blind Attacks on the CAN Bus](silently-disabling-ecus-and-enabling-blind-attacks-on-the-can-bus.md) — another attack that turns a trusted bus participant against the bus
+- [The Vehicle May Be Sick: Denial of Diagnostic Services by Exploiting the CAN Transport Protocol](the-vehicle-may-be-sick-denial-of-diagnostic-services-by-exploiting-the-can-transport-protocol.md)

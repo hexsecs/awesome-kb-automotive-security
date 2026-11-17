@@ -8,7 +8,7 @@ url: "https://ocslab.hksecurity.net/Datasets/tow-ids-automotive-ethernet-intrusi
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-16
+updated: 2026-11-17
 depth: brief
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -17,6 +17,7 @@ related:
   - cards
   - survival-analysis-dataset
   - automotive-ethernet
+  - in-vehicle-intrusion-detection
 sources:
   - url: "https://ocslab.hksecurity.net/Datasets/tow-ids-automotive-ethernet-intrusion-dataset"
     retrieved: 2026-11-01
@@ -38,3 +39,4 @@ Status: **published** — a finished static release, hosted by HCRL and mirrored
 
 - [CarDS](cards.md) — the 2025 whole-vehicle successor: real CAN and Ethernet buses in one capture
 - [Survival Analysis Dataset](survival-analysis-dataset.md) — HCRL's CAN-side multi-vehicle dataset
+- [In-vehicle intrusion detection and ECU fingerprinting](concepts/in-vehicle-intrusion-detection.md)

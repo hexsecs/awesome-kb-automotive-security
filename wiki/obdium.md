@@ -8,7 +8,7 @@ url: "https://github.com/provrb/obdium"
 status: active
 last_checked: 2026-10-31
 created: 2026-10-31
-updated: 2026-11-16
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -18,6 +18,7 @@ related:
   - savvycan
   - python-can-isotp
   - can-playground
+  - diagnostic-service-abuse
 license: GPL-3.0
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
@@ -67,3 +68,4 @@ README.
 - [opendbc](opendbc.md) — programmatic vehicle state and DBC corpus.
 - [SavvyCAN](savvycan.md) — raw-bus analysis beneath the OBD-II layer.
 - [python-can-isotp](python-can-isotp.md) — the transport diagnostics ride on.
+- [Diagnostic-service abuse](concepts/diagnostic-service-abuse.md)

@@ -8,7 +8,7 @@ url: "https://www.wiley.com/en-us/Building+Secure+Cars:+Assuring+the+Automotive+
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-17
 depth: brief
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -21,6 +21,7 @@ sources:
 related:
   - automotive-cybersecurity-engineering-handbook
   - offensive-automotive-cybersecurity
+  - tara-methodology
 ---
 
 Dennis Kengo Oka, Wiley 2021. Focuses on assuring the automotive software development lifecycle, from secure coding and static analysis through fuzzing and penetration testing.
@@ -37,3 +38,4 @@ Status: **published** — Dennis Kengo Oka, Wiley, 2021 (1st edition). ISBN 978-
 
 - [Automotive Cybersecurity Engineering Handbook](automotive-cybersecurity-engineering-handbook.md) — the broader engineering handbook covering the same lifecycle from the standards side
 - [Offensive Automotive Cybersecurity](offensive-automotive-cybersecurity.md) — the author's later offensive-side volume, co-written with Nasser
+- [TARA methodology: the ISO/SAE 21434 artefact chain](concepts/tara-methodology.md)

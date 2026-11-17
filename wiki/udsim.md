@@ -8,7 +8,7 @@ url: "https://github.com/zombieCraig/UDSim"
 status: maintenance
 last_checked: 2026-10-31
 created: 2026-10-31
-updated: 2026-11-16
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -20,6 +20,7 @@ related:
   - simulation-and-test-doubles
   - diagnostic-fuzzing
   - doip-sim-ecu-dsl
+  - the-vehicle-may-be-sick-denial-of-diagnostic-services-by-exploiting-the-can-transport-protocol
 license: "GPL-3.0"
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
@@ -75,3 +76,4 @@ since 2022-12-10 in the checked sources.
 - [uds-server](uds-server.md) — its predecessor, hand-coded simulation.
 - [ICSim](icsim.md) — the cluster-side simulator from the same author.
 - [can-utils](can-utils.md) — the capture format its learning mode reads.
+- [The Vehicle May Be Sick: Denial of Diagnostic Services by Exploiting the CAN Transport Protocol](the-vehicle-may-be-sick-denial-of-diagnostic-services-by-exploiting-the-can-transport-protocol.md)

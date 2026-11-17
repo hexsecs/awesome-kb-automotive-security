@@ -8,7 +8,7 @@ url: "https://zenodo.org/records/18716321"
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-17
 depth: brief
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -21,6 +21,7 @@ sources:
 related:
   - fast-and-vulnerable-a-story-of-telematic-failures
   - uds-seed-key
+  - the-vehicle-may-be-sick-denial-of-diagnostic-services-by-exploiting-the-can-transport-protocol
 ---
 
 Ziv and Alfasi, escar USA 2025. Penetration test taking a production electric vehicle from an insecure Wi-Fi network to full compromise in eight working days, via hardcoded credentials, insecure MQTT, and weak UDS Security Access.
@@ -37,3 +38,4 @@ Status: **published** — escar USA 2025; paper PDF public. Verified against the
 
 - [Fast and Vulnerable: A Story of Telematic Failures](fast-and-vulnerable-a-story-of-telematic-failures.md) — the earlier production-vehicle compromise case study (telematics unit rather than Wi-Fi/MQTT)
 - [UDS seed/key](concepts/uds-seed-key.md) — weak SecurityAccess is one leg of this chain, as in so many others
+- [The Vehicle May Be Sick: Denial of Diagnostic Services by Exploiting the CAN Transport Protocol](the-vehicle-may-be-sick-denial-of-diagnostic-services-by-exploiting-the-can-transport-protocol.md)

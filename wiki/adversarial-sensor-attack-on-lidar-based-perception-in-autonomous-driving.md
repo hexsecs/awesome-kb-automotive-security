@@ -8,7 +8,7 @@ url: "https://arxiv.org/abs/1907.06826"
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-16
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -27,6 +27,7 @@ related:
   - sok-how-sensor-attacks-disrupt-autonomous-vehicles-an-end-to-end-analysis-challenges-and-missed-threats
   - dirty-road-can-attack-security-of-deep-learning-based-automated-lane-centering-under-physical-world-attack
   - perspective-shift-attacks-against-optical-perception-sensors-a-novel-attack-vector-on-lidar-and-camera
+  - physical-channel-sensor-attacks
 sources:
   - url: "https://arxiv.org/abs/1907.06826"
     retrieved: 2026-11-01
@@ -74,3 +75,4 @@ Status: **published** — a finished 2019 conference publication; no living arte
 - [Illusion and Dazzle](illusion-and-dazzle-adversarial-optical-channel-exploits-against-lidars-for-automotive-applications.md) — Shin et al. 2017, the point-cloud step this paper builds on
 - [WALNUT](walnut-waging-doubt-on-the-integrity-of-mems-accelerometers-with-acoustic-injection-attacks.md) — the acoustic analogue
 - [On the Realism of LiDAR Spoofing Attacks](on-the-realism-of-lidar-spoofing-attacks-against-autonomous-driving-vehicle-at-high-speed-and-long-distance.md) — the later realism check on this line (still a stub)
+- [Physical-channel sensor attacks](concepts/physical-channel-sensor-attacks.md)

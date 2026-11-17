@@ -21,6 +21,8 @@ related:
   - lock-it-and-still-lose-it-on-the-in-security-of-automotive-remote-keyless-entry-systems
   - pwnobd
   - potential-cyberattacks-on-automated-vehicles
+  - external-attack-surface
+  - ivi-update-trust
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-07
@@ -67,3 +69,5 @@ Checked 2026-11-17. **Published** — Black Hat Europe 2024, December 2024; offi
 - [Lock it and still lose it: on the (in)security of automotive remote keyless entry systems](lock-it-and-still-lose-it-on-the-in-security-of-automotive-remote-keyless-entry-systems.md)
 - [PwnOBD](pwnobd.md)
 - [Potential Cyberattacks on Automated Vehicles](potential-cyberattacks-on-automated-vehicles.md)
+- [The vehicle's external attack surface: remote entry and the telematics pivot](concepts/external-attack-surface.md)
+- [IVI update-path trust](concepts/ivi-update-trust.md)

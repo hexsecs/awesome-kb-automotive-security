@@ -18,6 +18,7 @@ related:
   - race-to-charge-concurrency-bugs-and-state-integrity-violations-in-ev-charging-infrastructure
   - relay-attacks-on-passive-keyless-entry-and-start-systems-in-modern-cars
   - pedal-to-the-bare-metal
+  - charging-trust-chain
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-12
@@ -60,3 +61,4 @@ Checked 2026-11-17. **Published** — WOOT 26, August 2026; paper, slides and pr
 - [Race to Charge: concurrency bugs and state integrity violations in EV charging infrastructure](race-to-charge-concurrency-bugs-and-state-integrity-violations-in-ev-charging-infrastructure.md)
 - [Relay attacks on passive keyless entry and start systems in modern cars](relay-attacks-on-passive-keyless-entry-and-start-systems-in-modern-cars.md)
 - [Pedal to the Bare Metal](pedal-to-the-bare-metal.md)
+- [The EV–EVSE charging trust chain (ISO 15118 / DIN 70121)](concepts/charging-trust-chain.md)

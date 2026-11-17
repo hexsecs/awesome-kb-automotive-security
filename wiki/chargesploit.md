@@ -8,12 +8,12 @@ url: "https://github.com/konicst1/ChargeSploit"
 status: active
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Security testing framework for ISO 15118-2 and DIN SPEC 70121 that emulates either the charger or the vehicle, with TLS support and extensible handlers for injecting non-compliant behaviour at any step of a session."
-related: [acccs, pyplc, dsv2gshark, wwcp-iso15118]
+related: [acccs, pyplc, dsv2gshark, wwcp-iso15118, charging-trust-chain]
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -55,3 +55,4 @@ Checked 2026-11-01. **Active** at this check: the repository is not archived and
 - [pyPLC](pyplc.md)
 - [dsV2Gshark](dsv2gshark.md)
 - [WWCP_ISO15118](wwcp-iso15118.md)
+- [The EV–EVSE charging trust chain (ISO 15118 / DIN 70121)](concepts/charging-trust-chain.md)

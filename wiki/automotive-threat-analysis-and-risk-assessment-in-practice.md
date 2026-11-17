@@ -8,7 +8,7 @@ url: "https://books.google.com/books/about/Automotive_Threat_Analysis_and_Risk_A
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-17
 depth: brief
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -24,6 +24,7 @@ related:
   - automotive-cybersecurity-an-introduction-to-iso-sae-21434
   - autotara
   - automating-function-level-tara-for-automotive-full-lifecycle-security
+  - tara-methodology
 ---
 
 Rodrigo do Carmo and Alexander Schlensog, Springer 2024. Practitioner's guide to threat analysis and risk assessment (TARA) following ISO/SAE 21434, with worked examples for automotive embedded and IT/OT systems.
@@ -41,3 +42,4 @@ Status: **published** — Rodrigo do Carmo and Alexander Schlensog, Springer Ber
 - [Automotive Cybersecurity: An Introduction to ISO/SAE 21434](automotive-cybersecurity-an-introduction-to-iso-sae-21434.md) — the introductory primer this book deepens
 - [AutoTARA](autotara.md) — tooling for the method this book teaches
 - [Automating Function-Level TARA](automating-function-level-tara-for-automotive-full-lifecycle-security.md) — research on automating the same lifecycle
+- [TARA methodology: the ISO/SAE 21434 artefact chain](concepts/tara-methodology.md)

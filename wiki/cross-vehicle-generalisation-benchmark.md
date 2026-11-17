@@ -8,7 +8,7 @@ url: "https://github.com/obaf/Cross-Vehicle-Generalisation-of-In-Vehicle-Intrusi
 status: active
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-17
 depth: brief
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -21,6 +21,7 @@ sources:
 related:
   - road
   - can-train-and-test
+  - in-vehicle-intrusion-detection
 ---
 
 Leave-one-vehicle-out benchmark unifying ROAD, CIDv2, and can-train-and-test into 217 captures across eight vehicles for evaluating whether CAN IDS models transfer.
@@ -37,3 +38,4 @@ Status: **active** — a new, living benchmark repository (created September 202
 
 - [ROAD](road.md) — one of the three source corpora, and its hardest domain
 - [can-train-and-test](can-train-and-test.md) — the source corpus supplying four of the eight vehicles
+- [In-vehicle intrusion detection and ECU fingerprinting](concepts/in-vehicle-intrusion-detection.md)

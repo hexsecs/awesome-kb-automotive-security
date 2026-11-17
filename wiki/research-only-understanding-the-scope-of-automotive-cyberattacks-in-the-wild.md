@@ -20,6 +20,7 @@ related:
   - fast-and-vulnerable-a-story-of-telematic-failures
   - canflict-exploiting-peripheral-conflicts-for-data-link-layer-attacks-on-automotive-networks
   - automotive-security-timeline
+  - external-attack-surface
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-06
@@ -61,3 +62,4 @@ Checked 2026-11-17. **Published** — VehicleSec 26 keynote, August 2026; offici
 - [Fast and vulnerable: a story of telematic failures](fast-and-vulnerable-a-story-of-telematic-failures.md)
 - [CANflict: exploiting peripheral conflicts for data-link layer attacks on automotive networks](canflict-exploiting-peripheral-conflicts-for-data-link-layer-attacks-on-automotive-networks.md)
 - [Automotive Security Timeline](automotive-security-timeline.md)
+- [The vehicle's external attack surface: remote entry and the telematics pivot](concepts/external-attack-surface.md)
