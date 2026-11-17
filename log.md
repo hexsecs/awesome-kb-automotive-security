@@ -665,3 +665,26 @@ GENERIC list with this entry), corpus-generic nouns, facets (dbc,
 doip, v2x), or themes existing concepts already own (UDS →
 diagnostic-service-abuse; CCS charging → charging-trust-chain).
 No filings; the weekly scan resurfaces themes as the corpus grows.
+
+## [2026-11-17] campaign | Zero-stubs deepening campaign begins (local branches)
+
+Owner direction: promote all 26 stubs plus six high-centrality brief pages
+(car-hacking-dataset, road, the J1939 transport-protocol talk,
+car-hacking-village, can-train-and-test, the-car-hacker-s-handbook) to
+`depth: full`; the other 45 briefs stay the intentional pointer tier.
+All work is local — feature branches in worktrees, gates green, no push.
+
+Wave 0 (mechanical, verified before integration):
+- chore/dedupe-related `7f4f4a8` removes 198 duplicate `related:` blocks
+  across 156 pages (all blocks byte-identical; deletions only).
+- fix/linkmine-related-dupes `ee787aa` stops `write_page()` re-emitting
+  `related:` on every matching line; 4 regression tests.
+- tool/link-check `8d8774f` adds `tools/link_check.py` (stdlib, --json)
+  for broken body links, unresolved `related:` slugs and reachability;
+  8 regression tests. Real-KB scan: 0 / 0 / 0.
+All three merged into deepen/campaign-2026-11 before content work.
+
+Slice 1 (`558de50`): can-playground, canexplorer, pycangui and
+openvehiclediag promoted stub -> full from upstream READMEs and GitHub
+API status (checked 2026-11-17), with reciprocal `related:` already in
+place. Over-long restored `summary:` lines kept verbatim from HEAD.
