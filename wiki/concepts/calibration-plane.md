@@ -5,7 +5,7 @@ summary: "Beside diagnostics sits a second access plane into production ECUs: XC
 type: concept
 cluster: access
 created: 2026-11-01
-updated: 2026-11-01
+updated: 2026-11-17
 related:
   - pyxcp
   - pya2l
@@ -13,6 +13,7 @@ related:
   - autofuze
   - diagnostic-service-abuse
   - beneath-the-bonnet-a-breakdown-of-diagnostic-security
+  - atlas
 sources:
   - url: "https://github.com/christoph2/pyxcp"
     retrieved: 2026-11-01

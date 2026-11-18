@@ -19,6 +19,12 @@ related:
   - hacking-connected-cars
   - potential-cyberattacks-on-automated-vehicles
   - the-car-hacker-s-handbook
+  - automotive-cybersecurity-an-introduction-to-iso-sae-21434
+  - automotive-cybersecurity-engineering-handbook
+  - automotive-cybersecurity-protecting-connected-and-autonomous-vehicles
+  - automotive-cybersecurity-roadmap
+  - automotive-threat-analysis-and-risk-assessment-in-practice
+  - building-secure-cars
 sources:
   - url: "https://github.com/nccgroup/autotara"
     retrieved: 2026-11-01

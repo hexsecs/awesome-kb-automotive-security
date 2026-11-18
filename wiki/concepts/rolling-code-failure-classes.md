@@ -5,7 +5,7 @@ summary: "Rolling codes move trust from the code's secrecy to the receiver's cou
 type: concept
 cluster: boundary
 created: 2026-11-01
-updated: 2026-11-01
+updated: 2026-11-17
 related:
   - key-fob-relay-attacks
   - lock-it-and-still-lose-it-on-the-in-security-of-automotive-remote-keyless-entry-systems
@@ -13,6 +13,8 @@ related:
   - flipper-arf
   - keyfob-analysis-toolkit-kat
   - sok-stealing-cars-since-remote-keyless-entry-introduction-and-how-to-defend-from-it
+  - how-i-discovered-and-hacked-learning-codes-of-the-key-fob-of-a-car-assembled-in-my-country
+  - vehicle-immobilization-revisited
 sources:
   - url: "https://arxiv.org/abs/2210.11923"
     retrieved: 2026-11-01

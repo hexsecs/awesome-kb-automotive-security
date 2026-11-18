@@ -978,3 +978,20 @@ Gates: ingest x2 idempotent, lint 0 errors / 56 warnings (baseline — no new
 warnings), link checker 0/0/0 across 333 pages, link audit 0 orphans / 0
 concept-less entities / 0 one-way pairs, 30 tests pass, `git diff --check`
 clean.
+
+## [2026-11-17] chore | Reciprocate the historical entity→concept related pairs
+
+Closed the 112 one-way `related:` pairs between entity pages and concepts that
+predated the reciprocity discipline (the four introduced by the last tranche
+were already reconciled before merge). For each entity that named a concept in
+`related:` but was not named back, the entity slug was appended to that
+concept's `related:` block — 112 slugs across 21 concept pages, all valid
+entity pages (including three archived tombstones, consistent with the existing
+pattern that concepts still link to `syncan`, `vasp`, `canalyse` and `kayak`).
+
+No body prose, sources, provenance or uids changed; only concept `related:`
+lists and `updated:` stamps. The stricter entity→concept check now reports 0
+one-way pairs (it was 112), alongside `link_audit`'s 0 orphans / 0 concept-less
+entities / 0 entity one-way pairs. Gates: ingest x2 idempotent, lint 0 errors /
+56 warnings (baseline), link checker 0/0/0 across 333 pages, 30 tests pass,
+`git diff --check` clean.

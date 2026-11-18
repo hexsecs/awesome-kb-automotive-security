@@ -40,6 +40,14 @@ related:
   - the-car-hacker-s-handbook
   - cantoolz
   - icsim
+  - a-comprehensible-guide-to-controller-area-network
+  - automated-cross-platform-reverse-engineering-of-can-bus-commands-from-mobile-apps
+  - awesome-canb-ids
+  - byd-dolphin-hacking
+  - canflict-exploiting-peripheral-conflicts-for-data-link-layer-attacks-on-automotive-networks
+  - canhack
+  - modern-odometer-manipulation
+  - sok-kicking-can-down-the-road-systematizing-can-security-knowledge
 sources:
   - url: "https://plaxidityx.com/blog/blog-post/what-oems-can-do-to-prevent-can-injection-car-theft/"
     retrieved: 2026-10-31

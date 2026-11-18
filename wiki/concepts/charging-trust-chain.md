@@ -5,7 +5,7 @@ summary: "The vehicle–charger link's trust is a chain — association, transpo
 type: concept
 cluster: boundary
 created: 2026-11-01
-updated: 2026-11-01
+updated: 2026-11-17
 related:
   - losing-the-car-keys-wireless-phy-layer-insecurity-in-ev-charging
   - current-affairs-a-security-measurement-study-of-ccs-ev-charging-deployments
@@ -15,6 +15,14 @@ related:
   - pyplc
   - everest
   - ocpp-charging-attacks
+  - acccs
+  - chargesploit
+  - dsv2gshark
+  - hotwire-real-world-impersonation-and-discharge-attacks-on-electric-vehicle-charging-systems
+  - one-modem-to-brick-them-all-exploiting-vulnerabilities-in-the-ev-charging-communication
+  - open-plc-utils
+  - v2gdecoder
+  - wwcp-iso15118
 sources:
   - url: "https://www.usenix.org/conference/usenixsecurity25/presentation/szakaly"
     retrieved: 2026-11-01
