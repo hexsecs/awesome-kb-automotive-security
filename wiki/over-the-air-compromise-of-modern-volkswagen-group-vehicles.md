@@ -23,6 +23,7 @@ related:
   - potential-cyberattacks-on-automated-vehicles
   - external-attack-surface
   - ivi-update-trust
+  - ivi-runtime-privilege
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-07
@@ -72,3 +73,7 @@ Checked 2026-11-17. **Published** — Black Hat Europe 2024, December 2024; offi
 - [Potential Cyberattacks on Automated Vehicles](potential-cyberattacks-on-automated-vehicles.md)
 - [The vehicle's external attack surface: remote entry and the telematics pivot](concepts/external-attack-surface.md)
 - [IVI update-path trust](concepts/ivi-update-trust.md)
+
+## Connections
+
+- [IVI runtime privilege](concepts/ivi-runtime-privilege.md) — missing IPC access control and a networking service with module-loading capability turn the initial Bluetooth foothold into root execution before the separate persistence step.

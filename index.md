@@ -7,7 +7,7 @@ Generated from page frontmatter by tools/ingest.py; do not edit by hand.
 
 - [Concept map](wiki/index-concept-map.md) — the concept layer by theme, with reading paths through it.
 - [Glossary](wiki/index-glossary.md) — acronyms and standards, linked to the page that explains each one.
-- [Needs attention](wiki/index-needs-attention.md) — 44 maintenance-queue entries.
+- [Needs attention](wiki/index-needs-attention.md) — 8 maintenance-queue entries.
 
 ## Categories
 

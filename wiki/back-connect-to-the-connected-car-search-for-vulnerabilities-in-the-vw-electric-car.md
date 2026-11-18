@@ -8,8 +8,9 @@ url: "https://citation.thinkst.com/talk/83581"
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-16
+updated: 2026-11-17
 depth: brief
+depth_note: "brief by design — recorded talk and transcript, no separate paper"
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Serdyuk, Kondikov, Razmakhnin, and Sakr, Black Hat Europe 2022. Maps the attack surface of the VW ID.3 across Wi-Fi, Bluetooth, V2X, cellular, CAN, and OBD-II entry points."

@@ -8,7 +8,7 @@ url: "https://arxiv.org/abs/2510.02960"
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -25,6 +25,7 @@ related:
   - evading-voltage-based-intrusion-detection-on-automotive-can
   - can-injection
   - can-availability
+  - can-message-authentication
 facets: [can, attack, defense, research]
 ---
 

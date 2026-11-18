@@ -10,6 +10,7 @@ last_checked: 2026-11-01
 created: 2026-10-31
 updated: 2026-11-17
 depth: brief
+depth_note: "brief by design — curated tools and resource link list"
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Comprehensive CAN bus security resources."

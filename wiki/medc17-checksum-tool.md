@@ -8,7 +8,7 @@ url: "https://github.com/ConnorHowell/medc17-checksum-tool"
 status: active
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -17,6 +17,7 @@ related:
   - ghidra-tc1797
   - pya2l
   - secure-firmware-updates
+  - bootloader-stages
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -59,3 +60,7 @@ Checked 2026-11-01. **Active**: the repository (created 2025-11-20) is not archi
 - [ghidra-tc1797](ghidra-tc1797.md)
 - [pyA2L](pya2l.md)
 - [Secure firmware updates](concepts/secure-firmware-updates.md)
+
+## Connections
+
+- [Bootloader stages](concepts/bootloader-stages.md) — correcting an image's CRC and additive checksums is distinct from satisfying the authenticity checks enforced at executable stage transitions.

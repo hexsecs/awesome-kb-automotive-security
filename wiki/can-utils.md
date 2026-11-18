@@ -31,6 +31,7 @@ related:
   - uds-firmware-extraction
   - udsim
   - canalyse
+  - iso-tp
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -66,6 +67,26 @@ sockets, grouped by function:
 - **Log conversion** — asc2log, log2asc, log2long; plus slcan
   line-discipline setup.
 
+The [project README](https://github.com/linux-can/can-utils), checked
+2026-11-17, distinguishes displaying a frame, recording it, and replaying
+it: `candump` filters and logs received traffic, `canplayer` consumes CAN
+logfiles, and `cansend` transmits one frame. A useful bench workflow is
+therefore to preserve a baseline capture before selecting a small set of
+frames for controlled replay. `cansniffer` answers a different question:
+which payload contents changed, rather than what those bytes mean.
+The compact log representation can be converted to ASC and back; the
+human-readable long representation is another output, not a signal database.
+
+At the transport layer, the ISO-TP programs operate on protocol data
+units: `isotpsend` sends one PDU and `isotprecv` receives PDUs.
+`isotpdump` instead interprets the underlying CAN messages through CAN_RAW;
+`isotpsniffer` observes reassembled PDUs. This distinction matters when
+debugging a fragmented diagnostic exchange: seeing individual frames is
+not the same as obtaining the complete application payload.
+J1939 tools add address claiming and J1939-oriented send/receive paths,
+while `cangw` configures kernel forwarding rather than acting as a
+DBC-aware application gateway.
+
 ## Where it fits
 
 Scripted capture, replay, and generation on any Linux bench — and the
@@ -80,9 +101,18 @@ Linux/SocketCAN only; there is no Windows or macOS path. The README states
 no usage-safety guidance. Note that cangen generates random traffic by
 design — it is an active-transmit tool, not a passive listener.
 
+The toolkit does not supply vehicle-specific signal meanings, discover a
+DBC, or establish that a replayed command is safe. Hardware access still
+depends on a working SocketCAN interface and the appropriate kernel
+protocol support; having an ISO-TP utility is not a complete UDS client.
+
 ## Related
 
 - [python-can](python-can.md) — the library form of the same SocketCAN world.
 - [cannelloni](cannelloni.md) — tunnels SocketCAN interfaces over IP networks.
 - [pretty_j1939](pretty-j1939.md) — decodes J1939 traffic from candump logs.
 - [CANalyse](canalyse.md)
+
+For the conceptual boundary between observing traffic and transmitting
+it, see [CAN injection](concepts/can-injection.md). For segmentation and
+reassembly above individual frames, see [ISO-TP](concepts/iso-tp.md).

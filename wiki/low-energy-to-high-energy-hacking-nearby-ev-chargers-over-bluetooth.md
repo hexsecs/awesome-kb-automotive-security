@@ -8,8 +8,9 @@ url: "https://citation.thinkst.com/talk/89711"
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-16
+updated: 2026-11-17
 depth: brief
+depth_note: "brief by design — recorded briefing and abstract, no paper linked"
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Alkemade and Nassar, Black Hat USA 2024. Bluetooth attacks on three EV chargers, built from exploits demonstrated at Pwn2Own Automotive 2024."

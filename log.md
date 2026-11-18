@@ -944,3 +944,37 @@ became `maintenance`, not `archived`.
 unmanaged block. Gates: ingest x2 idempotent, lint 0 errors / 56 warnings
 (unchanged), link checker 0/0/0, link audit 0 orphans / 0 concept-less entities
 / 0 one-way pairs, 26 tests pass, `git diff --check` clean.
+
+## [2026-11-17] deepen | Concept hooks, brief triage, and the second thin-full six
+
+Three linked tranches, following the pattern of the earlier content campaigns:
+
+- **Reinforce five weak concepts** — 11 entity pages gained genuine inbound
+  hooks to `can-message-authentication`, `ivi-runtime-privilege`,
+  `diagnostic-fuzzing` and `bootloader-stages`, each reciprocated. Two
+  suggested shared-secret hooks were rejected as wrong (an RH850 fault-
+  injection bypass and a replay attack recover no secret). `can-message-
+  authentication` moved to `depth: deep` (1,365 words) with checked DOI and
+  PDF sources; two vatiCAN/LeiA inaccuracies were corrected. The lowest
+  concept inbound is now 11 (was 10).
+- **Brief triage** — all 39 `brief` pages carry a `depth_note`: 36
+  `brief by design` (books, talks, datasets, learning indexes, awesome lists
+  — no accessible primary text) and 3 `deepen candidate` (CANdid, Cross-
+  Vehicle Generalisation Benchmark, Fast and Compromised). The generated
+  needs-attention hub now splits those buckets, plus an `Untriaged briefs`
+  queue that is empty until a new brief arrives.
+- **Thin-full six** — `can-utils`, `canalyzat0r`, `cantools`, `conescan`,
+  `icsim` and `obdium` grew from 261–265 words to 491–549 words of sourced
+  how-it-works, still `depth: full`. `conescan`'s empty build doc and
+  unsupported "complete RequestDownload" wording were corrected.
+
+`tools/ingest.py` gained a `triage_kind()` classifier to drive the new queue;
+`tests/test_ingest.py` covers it (30 tests total now). Plain `depth_note` and
+`status_note` frontmatter remain unmanaged and survive syncs. `AGENTS.md`
+documents `depth_note`.
+
+Reciprocals were reconciled for every concept link added in this tranche.
+Gates: ingest x2 idempotent, lint 0 errors / 56 warnings (baseline — no new
+warnings), link checker 0/0/0 across 333 pages, link audit 0 orphans / 0
+concept-less entities / 0 one-way pairs, 30 tests pass, `git diff --check`
+clean.

@@ -10,6 +10,7 @@ last_checked: 2026-11-01
 created: 2026-10-31
 updated: 2026-11-17
 depth: brief
+depth_note: "brief by design — dataset deposit and artifact overview, no paper text linked"
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "ACSAC 2025 dataset of over nine hours of traffic from a 2020 electric vehicle with 10 CAN buses and 6 automotive Ethernet buses, covering benign driving and attack scenarios."

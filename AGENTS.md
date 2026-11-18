@@ -52,6 +52,13 @@ what gets listed.
   with the outbound link checked and status verified, but no
   how-it-works section; keeping `full` meaningful is the point.
   `deep` is the rare research-grade tier, loaded on demand only.
+- `depth_note` (on `brief` pages) records the triage decision: either
+  `brief by design — <reason>` (an intentional pointer — a book, talk,
+  dataset or list with no accessible primary text) or `deepen candidate —
+  <reason>` (a full source exists and the page is queued for deepening).
+  It is an unmanaged frontmatter block, preserved by the ingester. The
+  generated needs-attention hub splits brief pages by this key, so
+  intentional pointers no longer read as unfinished work.
 - `created` is the date the page first entered the KB (OpenShelf SPEC
   §4.2): the ingester stamps it from the source commit date at stub
   creation and preserves it verbatim thereafter; it never changes.

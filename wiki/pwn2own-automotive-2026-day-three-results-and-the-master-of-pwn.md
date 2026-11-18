@@ -10,6 +10,7 @@ last_checked: 2026-11-01
 created: 2026-10-31
 updated: 2026-11-17
 depth: brief
+depth_note: "brief by design — contest results blog, no technical exploit writeups"
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Zero Day Initiative, Tokyo 2026. Final results of the contest, where $1,047,000 was awarded for 76 unique zero-days in infotainment systems and EV chargers."

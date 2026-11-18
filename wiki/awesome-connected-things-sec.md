@@ -10,6 +10,7 @@ last_checked: 2026-11-01
 created: 2026-10-31
 updated: 2026-11-17
 depth: brief
+depth_note: "brief by design — curated cross-domain security link list"
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Security resources across IoT, embedded, industrial, and automotive systems with a dedicated automotive section."

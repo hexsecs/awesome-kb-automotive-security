@@ -58,3 +58,7 @@ Checked 2026-11-01. **Active**: the repository is not archived; created 2020-02-
 - [CANarchy](canarchy.md)
 - [expanding-the-attack-scenarios-of-sae-j1939-a-comprehensive-analysis-of-established-and-novel-vulnerabilities-in-transport-protocol](expanding-the-attack-scenarios-of-sae-j1939-a-comprehensive-analysis-of-established-and-novel-vulnerabilities-in-transport-protocol.md)
 - [J1939 transport security](concepts/j1939.md)
+
+## Connections
+
+- [Protocol-aware diagnostic fuzzing](concepts/diagnostic-fuzzing.md) — TruckDevil's J1939 fuzzer and PGN-oriented framework provide the heavy-vehicle comparison, although its page does not establish a particular state-aware generation strategy.

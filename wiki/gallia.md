@@ -20,6 +20,7 @@ related:
   - ford-ecu-bruteforcer
   - doip
   - iso-tp
+  - diagnostic-fuzzing
 license: "Apache-2.0"
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
@@ -73,3 +74,7 @@ responsibility for damage caused by the usage of this tool."
 - [CaringCaribou](caringcaribou.md) — CAN-layer exploration, the layer below.
 - [DoIP moves diagnostics onto the network](concepts/doip.md)
 - [ISO-TP: the stateful transport under diagnostics](concepts/iso-tp.md)
+
+## Connections
+
+- [Protocol-aware diagnostic fuzzing](concepts/diagnostic-fuzzing.md) — Gallia's UDS primitives, transport selection and structured logs support reproducible diagnostic test harnesses, without this page claiming a built-in fuzzing algorithm.

@@ -10,6 +10,7 @@ last_checked: 2026-11-01
 created: 2026-10-31
 updated: 2026-11-17
 depth: brief
+depth_note: "brief by design — recorded investigation talk, no separate primary text linked"
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Kreil and Flupke, 38C3 2024. German-language talk on movement data of 800,000 Volkswagen group electric cars that was exposed unprotected online."

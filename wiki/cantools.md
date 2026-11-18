@@ -53,6 +53,34 @@ commands decode or plot `candump` streams, dump and list a database,
 monitor traffic, and generate C pack/unpack code. It also supports
 diagnostic DID encoding/decoding and a node tester.
 
+The [API documentation](https://cantools.readthedocs.io/en/latest/) and
+[repository examples](https://github.com/cantools/cantools), checked
+2026-11-17, make the data boundary concrete.
+`cantools.database.load_file('vehicle.dbc')` returns a database;
+`get_message_by_name()` retrieves a message whose `encode()` method
+takes a dictionary of signal names and values and returns payload bytes.
+At receive time, `db.decode_message(frame_id, data)` returns a dictionary
+of decoded signals. Frame identifiers and extended-frame flags come from
+the message definition; the caller builds the actual python-can message
+and owns transmission.
+
+Signal definitions carry bit positions, lengths, byte order, signedness,
+scaling, offsets, units, and named choices. Simple and extended
+multiplexing let different signal layouts share a message according to a
+selector. By default, strict database validation raises an exception for
+overlapping signals or signals that do not fit their message. This checks
+layout consistency, not whether the database describes the vehicle being
+observed.
+
+For offline work, the CLI can read `candump` output from standard input
+and append decoded signal values, or plot selected signals with wildcard
+selection and separate axes. `dump` exposes bit layouts and the signal
+tree; `list` provides less decorative output suitable for scripts.
+The C generator emits header/source files containing message structs,
+pack/unpack functions, signal conversion functions, and frame metadata.
+Its options control floating-point representation and can restrict
+generated pack/unpack paths to a named node.
+
 ## Where it fits
 
 Programmatic DBC/KCD work, log decoding, signal plotting, automated node
@@ -67,6 +95,11 @@ the library for working against one database at a time.
 The C generator documents a maximum signal size of 64 bits. Plotting
 requires the optional Matplotlib installation. No vehicle-safety warning
 is stated in the checked project documentation.
+
+Neither the decoder nor generated codecs infer missing signal meanings
+from a capture. A successful decode is only as trustworthy as the supplied
+database; DID encoding support is also not a complete diagnostic transport
+or UDS session manager.
 
 ## Related
 

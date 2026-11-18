@@ -10,6 +10,7 @@ last_checked: 2026-11-01
 created: 2026-10-31
 updated: 2026-11-17
 depth: brief
+depth_note: "deepen candidate — full paper PDF linked, timing method and ECU results"
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Kulandaivel, Jain, Guajardo, and Sekar, escar USA 2022. Shows a compromised ECU can authenticate against a safety-critical ECU's SecurityAccess without the failed attempts a CAN IDS would flag."

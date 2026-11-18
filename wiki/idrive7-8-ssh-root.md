@@ -71,3 +71,7 @@ Checked 2026-11-17. **Active** at this check: public, not archived, Unlicense, 5
 - [Automated cross-platform reverse engineering of CAN bus commands from mobile apps](automated-cross-platform-reverse-engineering-of-can-bus-commands-from-mobile-apps.md)
 - [Bypassing debug password protection on the RH850 family](bypassing-debug-password-protection-on-the-rh850-family.md)
 - [IVI runtime privilege and service exposure](concepts/ivi-runtime-privilege.md)
+
+## Connections
+
+- [IVI runtime privilege](concepts/ivi-runtime-privilege.md) — persistent root SSH depends on changing the head unit's service-target and firewall gates, not merely installing a debug image.

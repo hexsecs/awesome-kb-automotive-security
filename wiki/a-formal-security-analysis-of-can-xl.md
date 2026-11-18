@@ -58,3 +58,7 @@ Checked 2026-11-17. **Published** — USENIX Security 26, August 2026, open acce
 - [Error handling of in-vehicle networks makes them vulnerable](error-handling-of-in-vehicle-networks-makes-them-vulnerable.md)
 - [On the real-world applicability of automotive CAN intrusion detection systems](on-the-real-world-applicability-of-automotive-can-intrusion-detection-systems.md)
 - [CAN message authentication: the retrofit design space](concepts/can-message-authentication.md)
+
+## Connections
+
+- [CAN message authentication](concepts/can-message-authentication.md) — the CAN XL MAC-sub-layer findings distinguish frame-format and error-handling security from the cryptographic authenticity provided by message authentication codes.

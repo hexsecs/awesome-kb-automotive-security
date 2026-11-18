@@ -8,8 +8,9 @@ url: "https://copperhilltech.com/a-comprehensible-guide-to-controller-area-netwo
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-16
+updated: 2026-11-17
 depth: brief
+depth_note: "brief by design — book, no open primary text"
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Wilfried Voss, Copperhill 2005. The standard plain-language reference on CAN itself, covering frame formats, arbitration, error handling, and timing that vehicle network attacks depend on."
