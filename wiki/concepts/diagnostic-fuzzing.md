@@ -5,7 +5,7 @@ summary: "Fuzzing reaches the deep diagnostic states only when generation is gra
 type: concept
 cluster: access
 created: 2026-11-01
-updated: 2026-11-01
+updated: 2026-11-17
 related:
   - autofuze
   - nullsec-carfuzz
@@ -14,6 +14,10 @@ related:
   - udsim
   - diagnostic-service-abuse
   - simulation-and-test-doubles
+  - truckdevil
+  - ocppuzz
+  - gallia
+  - canalyzat0r
 sources:
   - url: "https://github.com/nccgroup/autofuze"
     retrieved: 2026-11-01

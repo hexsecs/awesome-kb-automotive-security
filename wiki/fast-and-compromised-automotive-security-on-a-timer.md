@@ -10,6 +10,7 @@ last_checked: 2026-11-01
 created: 2026-10-31
 updated: 2026-11-17
 depth: brief
+depth_note: "deepen candidate — full paper PDF linked, production EV compromise case study"
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Ziv and Alfasi, escar USA 2025. Penetration test taking a production electric vehicle from an insecure Wi-Fi network to full compromise in eight working days, via hardcoded credentials, insecure MQTT, and weak UDS Security Access."

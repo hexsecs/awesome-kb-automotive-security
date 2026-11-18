@@ -18,6 +18,8 @@ related:
   - uds-seed-key
   - shared-and-default-secrets
   - owasp-automotive-emb-60
+  - ghidra-tc1797
+  - medc17-checksum-tool
 sources:
   - url: "https://github.com/0xD006/TC1791_CAN_BSL"
     retrieved: 2026-11-01

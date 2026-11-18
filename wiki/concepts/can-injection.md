@@ -39,6 +39,7 @@ related:
   - supercan
   - the-car-hacker-s-handbook
   - cantoolz
+  - icsim
 sources:
   - url: "https://plaxidityx.com/blog/blog-post/what-oems-can-do-to-prevent-can-injection-car-theft/"
     retrieved: 2026-10-31

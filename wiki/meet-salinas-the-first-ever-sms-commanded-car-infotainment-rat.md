@@ -17,6 +17,7 @@ related:
   - car-hacking-village
   - security-and-privacy-vulnerabilities-of-in-car-wireless-networks-a-tire-pressure-monitoring-system-case-study
   - external-attack-surface
+  - ivi-runtime-privilege
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-13
@@ -66,3 +67,7 @@ Checked 2026-11-17. **Published** — DEF CON 26 Car Hacking Village, 2018; offi
 - [Car Hacking Village](car-hacking-village.md)
 - [Security and privacy vulnerabilities of in-car wireless networks: a tire pressure monitoring system case study](security-and-privacy-vulnerabilities-of-in-car-wireless-networks-a-tire-pressure-monitoring-system-case-study.md)
 - [The vehicle's external attack surface: remote entry and the telematics pivot](concepts/external-attack-surface.md)
+
+## Connections
+
+- [IVI runtime privilege](concepts/ivi-runtime-privilege.md) — USB auto-run, an existing SMS service and a leftover manufacturer test client expose execution and service capabilities inside the running head unit.

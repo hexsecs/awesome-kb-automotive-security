@@ -11,6 +11,7 @@ status_note: "Site live 2026-11-17; standards reference page, copyright 2012-202
 created: 2026-10-31
 updated: 2026-11-17
 depth: brief
+depth_note: "brief by design — standards link catalogue, not a tutorial"
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Automotive networking security standards and solutions overview."

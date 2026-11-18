@@ -8,8 +8,9 @@ url: "https://media.defcon.org/DEF%20CON%2033/DEF%20CON%2033%20villages%20and%20
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-17
 depth: brief
+depth_note: "brief by design — conference slides and recording, no separate writeup linked"
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "collin and oblivion, DEF CON 33 Car Hacking Village 2025. Slides reverse engineering a device that alters a message before it reaches the instrument cluster, using a glitching bypass of flash read protection."

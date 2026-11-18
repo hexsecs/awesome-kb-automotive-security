@@ -10,6 +10,7 @@ last_checked: 2026-11-01
 created: 2026-10-31
 updated: 2026-11-17
 depth: brief
+depth_note: "brief by design — dataset archive with README and metadata, no paper text linked"
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Labelled capture of about 143,000 CAN frames from an autonomous GEM e6 platform, with normal operation, DoS floods, and brake and steering-lock data-tampering injections, for benchmarking lightweight on-device IDS."

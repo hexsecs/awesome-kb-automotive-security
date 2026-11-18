@@ -5,13 +5,17 @@ summary: "Two complete academic designs and the standardised answer, compared on
 type: concept
 cluster: bus
 created: 2026-11-01
-updated: 2026-11-01
+updated: 2026-11-17
+depth: deep
 related:
   - vatican-vetted-authenticated-can-bus
   - leia-a-lightweight-authentication-protocol-for-can
   - vulcan-efficient-component-authentication-and-software-isolation-for-automotive-control-networks
   - can-injection
   - can-availability
+  - secoc-key-extractor
+  - sok-kicking-can-down-the-road-systematizing-can-security-knowledge
+  - a-formal-security-analysis-of-can-xl
 sources:
   - url: "https://doi.org/10.1007/978-3-662-53140-2_6"
     retrieved: 2026-11-01
@@ -19,39 +23,71 @@ sources:
     retrieved: 2026-11-01
   - url: "https://doi.org/10.1145/3134600.3134623"
     retrieved: 2026-11-01
+  - url: "https://icanhack.nl/blog/secoc-key-extraction/"
+    retrieved: 2026-11-17
+  - url: "https://www.autosar.org/fileadmin/standards/R20-11/FO/AUTOSAR_PRS_SecOcProtocol.pdf"
+    retrieved: 2026-11-17
 facets: [can, authentication, attack]
 ---
 
-CAN frames carry no proof of who sent them — the gap [CAN injection](can-injection.md) exploits. The retrofit question is how to add that proof to a bus designed in the 1980s: 8-byte classical payloads, broadcast delivery, ECUs that cannot be recalled for new hardware, and hard real-time deadlines. This KB holds two complete academic answers at full depth, built in the same year from opposite directions, and the standardised third answer they both predate in deployment. Comparing them exposes the design space itself: every choice trades frame space, key-management burden, and what a failed check actually *does*.
+CAN receivers ordinarily learn a frame's identifier and contents, not the identity of its physical transmitter. An attacker able to transmit can therefore impersonate an expected message ID — the gap [CAN injection](can-injection.md) exploits. Message authentication adds evidence that an authorised key holder generated particular data in an acceptable freshness context. It does not prove that the data are safe, or that the key holder is uncompromised.
 
-## The designs
+## The bus constrains the construction
 
-**vatiCAN** (Nürnberger & Rossow, CHES 2016) adds a **second frame** after each protected message carrying a truncated HMAC-SHA256 over the data, keyed per message group. Freshness comes from a **global nonce** distributed by a dedicated trusted ECU — each nonce encrypted to its recipient under a per-ECU device key, a group key shared by all participants of an ID, and a shared broadcast value. Its failure semantics are detection-grade: a receiver that sees an invalid checksum floods an alarm and moves the suspect sender toward error state rather than silently dropping the frame. It is a **measured prototype** — real ECUs, Vector hardware, published latencies.
+Classical CAN (CAN CC) offers at most eight payload bytes. The identifier drives arbitration and message selection; it is not an authenticated source address. The frame CRC detects transmission errors, but an injecting controller can generate a valid CRC for invented data. Broadcast delivery also complicates key scope: several receivers may need to verify one sender, yet a symmetric verification key also permits generation.
 
-**LeiA** (Radu & Garcia, ESORICS 2016) spends no extra frames. It works on CAN with **extended identifiers**, carving the 29-bit ID into the arbitration ID, a session field, and a counter field, so freshness rides *inside* the frame's own header; a truncated MAC occupies payload bytes. Keys are **pairwise per ID** (a message ID's key shared by its sender and receivers), provisioned as long-term keys from which per-session keys are derived by a KDF, with a two-phase epoch synchronisation to recover from counter drift. Its evidence type is the mirror of vatiCAN's: a design with a **formal security proof** in the UC model — and **no implementation and no measurements**, a fact its page states plainly. Detection versus prevention is a configuration choice: receivers can drop unauthenticated frames or merely flag them.
+The framing budget differs across generations. Classical CAN 2.0B supports extended 29-bit identifiers, which LeiA uses for freshness metadata; this is not CAN FD. FD expands payloads to 64 bytes and supports a faster data phase. XL expands them to as much as 2,048 bytes, easing space pressure without automatically authenticating application messages. Neither extra space nor speed establishes secure key provisioning or replay handling.
 
-**AUTOSAR SecOC** is the industry's standardised answer and the one that ships: a MAC computed over the PDU plus a **freshness value** (a counter/timestamp hybrid managed by a Freshness Manager), truncated to a profile-chosen length, keys provisioned into HSMs. Verification failure means the PDU is discarded — prevention semantics by default. SecOC's constraint is deployment scope rather than cryptography: it authenticates configured PDUs on buses whose ECUs implement it, which makes it a new-platform answer, not a retrofit for the fleets the research papers attack.
+The [CAN security SoK](../sok-kicking-can-down-the-road-systematizing-can-security-knowledge.md) treats successor-bus transferability as indicative, not experimentally proven. The [CAN XL formal analysis](../a-formal-security-analysis-of-can-xl.md) separately reports inherited CAN CC MAC-sub-layer weaknesses and seven new vulnerabilities validated on commercial controllers. Here **MAC sub-layer means medium access control**, not message authentication code: those findings must not be described as cryptanalysis of a cryptographic MAC.
 
-## The comparison axes
+## Generation, verification and freshness
 
-- **Freshness.** A nonce service (vatiCAN: fresh, but needs a trusted distributor ECU and per-recipient encryption) vs. counters in-band (LeiA: no extra frames, but synchronisation becomes a protocol of its own) vs. managed counter/timestamp freshness (SecOC: standardised, but the Freshness Manager is infrastructure).
-- **Key scope.** Group keys per ID (vatiCAN) are cheap to provision and mean any group member can forge any other member's frames. Pairwise per-ID keys (LeiA) narrow the blast radius to the ID's participants. SecOC leaves key scope to the OEM's provisioning — the standard specifies the mechanism, not the trust topology.
-- **Frame and bandwidth cost.** vatiCAN doubles the protected traffic (an extra frame per message plus nonce distribution). LeiA spends identifier bits and payload bytes instead. SecOC spends payload bytes on MAC and freshness truncation. On a loaded classical bus each cost is real; none of the three is free.
-- **Failure semantics.** Detection-and-alarm (vatiCAN), configurable drop-or-flag (LeiA), drop (SecOC). On a safety bus the choice is not cosmetic: dropping a genuine frame whose counter desynchronised is itself an availability event.
-- **Evidence.** A measured prototype, a formal proof with no implementation, and a deployed standard whose public record is specification text rather than evaluation. The three evidence types do not rank each other; a retrofit decision needs all three questions answered and each design answers a different one best.
+A useful abstract construction is `tag = MAC(K, context | payload | freshness)`. Context binds the authenticator to the intended message, for example through an identifier or a distinct per-ID key. The receiver reconstructs the same inputs, computes its own tag and compares the transmitted portion before releasing the payload. A valid tag without freshness still permits replay of a recorded valid command.
 
-## The two shared limits
+Counters avoid clocks but create persistent-state and synchronisation requirements. A receiver must reject old values while tolerating legitimate losses; reboot and wraparound must not reuse accepted counter/key combinations. Epoch-derived session keys separate successive counter lifetimes. Timestamp approaches instead require an agreed time basis and acceptance window. Freshness reconstruction from transmitted low bits saves space but depends on the receiver's higher-order state.
 
-**Availability.** Authentication verifies frames that arrive; it cannot make frames arrive. Flooding, fault-confinement abuse, physical dominance, and silencing all act below or beside the layer these designs defend — the [CAN availability](can-availability.md) page owns that half, and any authentication deployment claim that prices injection but not removal is incomplete.
+Truncation is a security parameter, not merely packing. Under idealised independent guessing, a t-bit tag gives approximately 2^-t success per attempt; the number of accepted attempts matters. Short tags, permissive retry policies and startup exceptions therefore require explicit analysis. Freshness protects against old messages only when its own state and synchronisation messages are protected.
 
-**The compromised sender.** Symmetric keys authenticate a *key holder*, not an honest ECU: a fully compromised legitimate sender produces perfectly authentic malicious frames under every design above. [VulCAN](../vulcan-efficient-component-authentication-and-software-isolation-for-automotive-control-networks.md) (ACSAC 2017) is the corpus's answer to exactly this gap — it pairs its authentication protocol with **software isolation** (library-OS compartmentalisation of the sending stack) and remote attestation, arguing authentication is only meaningful if the thing holding the key is itself constrained. Its own limit is recorded on its page: the attestation-server half is design-only. The design space's frontier, in this corpus, is not stronger MACs — it is bounding what a key holder can do.
+## vatiCAN: preserve the data frame
 
-This page synthesizes the KB's own full entity pages named above and in its frontmatter; every load-bearing claim is carried on those pages with its primary source.
+[vatiCAN](../vatican-vetted-authenticated-can-bus.md), CHES 2016, leaves the original frame unchanged and follows it with a separate 64-bit HMAC frame, typically on ID `i+1`. The construction uses **Keccak**, not SHA-256, over identifier, payload and counter. Upgraded receivers defer execution until authentication succeeds; unchanged legacy recipients receive no such guarantee.
 
-## Related
+A trusted Nonce Generator periodically broadcasts a random global value to reset counters after loss or sleep. This nonce is public, not a per-recipient encrypted secret. Production-provisioned keys may be per ECU or shared within logical groups. The separate frame preserves existing payloads at the cost of one additional frame per protected message, plus nonce traffic.
 
-- [vatiCAN](../vatican-vetted-authenticated-can-bus.md) — second-frame HMAC, nonce service, measured prototype
-- [LeiA](../leia-a-lightweight-authentication-protocol-for-can.md) — in-ID freshness, pairwise keys, proof without implementation
-- [VulCAN](../vulcan-efficient-component-authentication-and-software-isolation-for-automotive-control-networks.md) — authentication plus isolation, aimed at the compromised sender
-- [CAN injection](can-injection.md) — the attack class these designs answer
-- [CAN availability](can-availability.md) — the limit none of them answers
+The prototype used ATmega328P microcontrollers, MCP2515 controllers, a Seat Ibiza cluster and replayed Passat traffic. Reported verification deferral was 3.3 ms at 500 kbit/s, not a universal deadline guarantee. Software can detect another transmitter using its ID; destroying a spoofed frame before legacy nodes accept it needs additional controller capabilities. Receiver-side rejection and bus-wide prevention are different properties.
+
+VulCAN later identified a replay weakness in vatiCAN's repeated random nonce resets: collisions or near-collisions can recreate authenticating state. Its Appendix A describes scenarios needing as little as 30 minutes of recorded traffic. This is a freshness failure, not an HMAC forgery. Original prototype measurements do not erase the later attack.
+
+## LeiA: per-ID epochs and explicit resynchronisation
+
+[LeiA](../leia-a-lightweight-authentication-protocol-for-can.md), ESORICS 2016, assigns each protected ID a long-term key shared by its sender and legitimate receivers. A 56-bit epoch derives a session key; a 16-bit counter advances per message, with epoch changes at startup and counter overflow. The same MAC primitive serves authentication and derivation, requiring the pseudorandomness assumption stated in the proof as well as MAC unforgeability.
+
+LeiA uses the extended identifier's 18 bits for a 16-bit counter and two-bit command code. Crucially, it **also sends a separate authentication frame**: the counter costs no payload bytes, but the MAC does cost another frame. Command codes distinguish data, data MAC, epoch and epoch MAC. Authenticated epoch exchange recovers synchronisation after an authentication-failure signal.
+
+Thus both designs normally add one authentication frame per data frame; they do not represent extra-frame versus zero-extra-frame alternatives. LeiA permits less frequent authentication as a bandwidth tradeoff. Extended-frame coexistence does not ensure compatibility with every existing identifier allocation or timing budget.
+
+The original paper provides a reduction-based security argument, not vehicle measurements. VulCAN supplies the first implementation and measured timings. Per-ID keys compartmentalise unrelated IDs, but are not pairwise secrets between exactly two ECUs when several receivers share them. A compromised receiver can forge within its key domain. Long-term provisioning and authorised replacement remain assumptions outside LeiA's protocol proof.
+
+## SecOC: configurable PDU protection
+
+[AUTOSAR's R20-11 protocol specification](https://www.autosar.org/fileadmin/standards/R20-11/FO/AUTOSAR_PRS_SecOcProtocol.pdf), §§5.1–5.4, defines authentication over a Data Identifier, the secured payload portion and the complete freshness value. A Freshness Manager supplies counter or timestamp state; only a configured fragment may be transmitted. The Data Identifier is a configured binding, not universally identical to the CAN arbitration ID.
+
+The standard supports authentication information appended to the PDU and separate authentic/cryptographic PDUs. It is therefore misleading to equate SecOC with one fixed frame layout. Profile 1 specifies AES-128 CMAC, 24 transmitted MAC bits and eight freshness bits. Profile 2 explicitly omits freshness when synchronised freshness is unavailable: the name SecOC alone does not guarantee replay resistance.
+
+Successful verification normally permits forwarding; failure handling includes retries, discard conditions and configurable verification-status overrides. Audits must inspect configuration and startup behaviour, not assume unconditional fail-closed operation. Nor does the protocol establish that all keys reside in HSMs. Larger FD/XL payloads ease packing, but application integration, latency and verification enforcement remain deployment work.
+
+## Key management and the compromised component
+
+The [Toyota SecOC key extractor](../secoc-key-extractor.md) demonstrates the distinction between primitive security and key security. The author's 2021 RAV4 Prime EPS investigation recovered firmware through fault injection, reconstructed the update authentication and uploaded an accepted RAM helper that exported keys. AES-CMAC was not broken: software-held keys and a symmetrically authenticated servicing path made valid authenticators available. [Bootloader stages](bootloader-stages.md) owns that execution chain.
+
+The writeup's newer Corolla Cross discussion reports code execution but HSM-protected keys that could not simply be dumped from RAM. Using the HSM as a signing oracle is presented as a theoretical route requiring further investigation, not a reproduced extraction. Neither case establishes one fleet-wide SecOC secret.
+
+[Shared and default secrets](shared-and-default-secrets.md) explains the blast-radius question: which other units accept recovered authority? Provisioning, replacement, rotation and revocation must preserve that boundary. Non-exportable keys help, but compromised authorised software may still invoke permitted cryptographic operations.
+
+[VulCAN](../vulcan-efficient-component-authentication-and-software-isolation-for-automotive-control-networks.md), ACSAC 2017, addresses this stronger adversary with Sancus hardware-isolated components. It implements LeiA and a modified vatiCAN using session-key renewal rather than the global nonce reset. Its FPGA/cluster experiments demonstrate protected processing under hostile surrounding software. The attestation server and session-key provisioning remain design-only; physical and side-channel extraction are excluded.
+
+## Limits and verification
+
+Authentication cannot ensure delivery. Flooding, frame destruction and fault-confinement abuse remain [CAN availability](can-availability.md) problems. Rejecting a genuine but desynchronised message can itself create an availability event; safe fallback requires a system-level argument.
+
+Checked 2026-11-17: all three existing DOI URLs resolved to bibliographic records. Their linked entity pages' primary vatiCAN, LeiA and VulCAN PDFs, and the added AUTOSAR PDF, were downloaded and text-extracted because webfetch cannot render PDFs. The Toyota author writeup and official USENIX CAN XL abstract were reachable. XL findings here are bounded to that abstract; no individual attack chain is inferred. This synthesis combines protocol proofs, bench evaluations, a specification and a particular extraction case, not fleet prevalence measurements, certification or reproduced vehicle testing.

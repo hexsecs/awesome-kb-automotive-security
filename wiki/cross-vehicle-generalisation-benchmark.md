@@ -10,6 +10,7 @@ last_checked: 2026-11-01
 created: 2026-10-31
 updated: 2026-11-17
 depth: brief
+depth_note: "deepen candidate — substantive benchmark README with method, results and reproduction code"
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Leave-one-vehicle-out benchmark unifying ROAD, CIDv2, and can-train-and-test into 217 captures across eight vehicles for evaluating whether CAN IDS models transfer."

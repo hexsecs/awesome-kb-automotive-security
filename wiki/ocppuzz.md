@@ -20,6 +20,7 @@ related:
   - truckdevil
   - race-to-charge-concurrency-bugs-and-state-integrity-violations-in-ev-charging-infrastructure
   - ocpp-charging-attacks
+  - diagnostic-fuzzing
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-14
@@ -65,3 +66,7 @@ Checked 2026-11-17. **Active** at this check: public, not archived, MIT, default
 - [TruckDevil](truckdevil.md)
 - [Race to Charge: concurrency bugs and state integrity violations in EV charging infrastructure](race-to-charge-concurrency-bugs-and-state-integrity-violations-in-ev-charging-infrastructure.md)
 - [OCPP and charging attacks](concepts/ocpp-charging-attacks.md)
+
+## Connections
+
+- [Protocol-aware diagnostic fuzzing](concepts/diagnostic-fuzzing.md) — OCPPuzz applies specification-derived message constraints and state-transition oracles to charging management, a cross-protocol comparison rather than a UDS diagnostic fuzzer.

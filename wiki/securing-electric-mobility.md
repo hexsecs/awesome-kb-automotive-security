@@ -8,8 +8,9 @@ url: "https://shop.elsevier.com/books/securing-electric-mobility/kumari/978-0-44
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-17
 depth: brief
+depth_note: "brief by design — book, no open primary text"
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Aparna Kumari (ed.), Elsevier 2026. Edited volume on the security of electric vehicles and charging infrastructure."

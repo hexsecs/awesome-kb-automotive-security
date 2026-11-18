@@ -22,6 +22,7 @@ related:
   - piccante
   - python-can
   - uds-firmware-extraction
+  - can-utils
 sources:
   - url: "https://doi.org/10.5281/zenodo.18715820"
     retrieved: 2026-11-17

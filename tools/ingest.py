@@ -45,7 +45,8 @@ tree out.
 - `wiki/index-glossary.md` — acronym/standard hub,
 - `wiki/index-concept-map.md` — clusters and reading paths over concepts,
 - `wiki/index-needs-attention.md` — maintenance queue (unverified, orphaned,
-  brief, stale or tombstoned pages).
+  brief, stale or tombstoned pages); brief pages are split into deepen
+  candidates, untriaged and triaged brief-by-design by their `depth_note`.
 
 Usage: python3 tools/ingest.py [--source ../awesome-automotive-security]
 """
@@ -291,13 +292,29 @@ def write_facet_indexes(pages: list[tuple[Path, dict, str]],
     return counts
 
 
+def triage_kind(fields: dict) -> tuple[str, str]:
+    """Classify a brief page's `depth_note` for the maintenance queue.
+
+    Returns (kind, note) where kind is 'deepen', 'by-design' or 'untriaged';
+    the note is the recorded rationale (empty when absent). The rationale is
+    an unmanaged frontmatter key, so it survives ingests verbatim.
+    """
+    note = str(fields.get("depth_note", "")).strip()
+    if note.startswith("deepen candidate"):
+        return "deepen", note
+    if note.startswith("brief by design"):
+        return "by-design", note
+    return "untriaged", note
+
+
 def write_needs_attention(pages: list[tuple[Path, dict, str]],
                           source_date: str) -> int:
     """A deterministic maintenance queue, relative to the source commit date."""
     buckets: dict[str, list[str]] = {
         "Unverified resources": [], "Graph orphans": [],
-        "Pointer entries": [], "Stale verification": [],
-        "Tombstoned pages": [],
+        "Deepen candidates": [], "Untriaged briefs": [],
+        "Stale verification": [], "Tombstoned pages": [],
+        "Brief by design (no action)": [],
     }
     cutoff = date.fromisoformat(source_date) - timedelta(days=180)
     for page, fields, _ in pages:
@@ -308,7 +325,14 @@ def write_needs_attention(pages: list[tuple[Path, dict, str]],
         if related_count(page.read_text(encoding="utf-8")) == 0:
             buckets["Graph orphans"].append(entry)
         if str(fields.get("depth", "")) == "brief":
-            buckets["Pointer entries"].append(entry)
+            kind, note = triage_kind(fields)
+            labelled = f"{entry} — {note}" if note else entry
+            if kind == "deepen":
+                buckets["Deepen candidates"].append(labelled)
+            elif kind == "by-design":
+                buckets["Brief by design (no action)"].append(labelled)
+            else:
+                buckets["Untriaged briefs"].append(entry)
         checked = str(fields.get("last_checked", ""))
         if checked:
             try:
@@ -322,7 +346,8 @@ def write_needs_attention(pages: list[tuple[Path, dict, str]],
 
     lines = ["# Needs attention", "",
              "Generated from page frontmatter by tools/ingest.py. A page may"
-             " appear in more than one queue. Do not edit by hand.", ""]
+             " appear in more than one queue. 'Brief by design' entries are"
+             " triaged pointers needing no action. Do not edit by hand.", ""]
     for name, entries in buckets.items():
         lines += [f"## {name} ({len(entries)})", ""]
         if entries:
@@ -332,7 +357,9 @@ def write_needs_attention(pages: list[tuple[Path, dict, str]],
         lines.append("")
     (WIKI / "index-needs-attention.md").write_text("\n".join(lines),
                                                     encoding="utf-8")
-    return sum(len(v) for v in buckets.values())
+    actionable = sum(len(v) for k, v in buckets.items()
+                     if k != "Brief by design (no action)")
+    return actionable
 
 
 def write_glossary(pages: list[tuple[Path, dict, str]]) -> None:

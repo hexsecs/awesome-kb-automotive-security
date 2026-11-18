@@ -10,6 +10,7 @@ last_checked: 2026-11-01
 created: 2026-10-31
 updated: 2026-11-17
 depth: brief
+depth_note: "brief by design — learning roadmap and resource links"
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Structured learning path from CAN and UDS fundamentals through TARA, firmware reverse engineering, and hardware hacking into specialized career tracks."

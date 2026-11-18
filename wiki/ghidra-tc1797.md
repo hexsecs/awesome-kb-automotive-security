@@ -19,6 +19,7 @@ related:
   - medc17-checksum-tool
   - tc1791-can-bsl
   - firmware-acquisition
+  - bootloader-stages
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -60,3 +61,7 @@ Checked 2026-11-01. **Unknown**: the repository is not archived, but it was crea
 - [medc17-checksum-tool](medc17-checksum-tool.md)
 - [TC1791_CAN_BSL](tc1791-can-bsl.md)
 - [Firmware acquisition: the read-side channels](concepts/firmware-acquisition.md)
+
+## Connections
+
+- [Bootloader stages](concepts/bootloader-stages.md) — labelling boot ROM, flash and scratchpad regions helps distinguish stages in a TC1797 dump, without transferring the sibling TC1791's layout or exploit claims.

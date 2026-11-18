@@ -8,8 +8,9 @@ url: "https://youtu.be/5QiHmMoJCOE"
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-17
 depth: brief
+depth_note: "brief by design — vendor training video, no written technical source linked"
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Video training on Automotive MACsec concepts by Technica Engineering."

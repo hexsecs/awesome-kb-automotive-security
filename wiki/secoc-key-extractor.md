@@ -8,7 +8,7 @@ url: "https://github.com/i-can-hack/secoc"
 status: maintenance
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-16
+updated: 2026-11-17
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
@@ -20,6 +20,7 @@ related:
   - firmware-acquisition
   - bootloader-stages
   - back-in-the-driver-s-seat-recovering-critical-data-from-tesla-autopilot-using-voltage-glitching
+  - can-message-authentication
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31
@@ -60,3 +61,7 @@ Checked 2026-11-01. **Maintenance**: the repository is not archived; created 202
 - [panda](panda.md)
 - [UDS seed/key](concepts/uds-seed-key.md)
 - [uds-firmware-extraction](uds-firmware-extraction.md)
+
+## Connections
+
+- [CAN message authentication](concepts/can-message-authentication.md) — the Toyota EPS extraction defeats key secrecy rather than AES-CMAC, illustrating the implementation boundary of authenticated CAN traffic.

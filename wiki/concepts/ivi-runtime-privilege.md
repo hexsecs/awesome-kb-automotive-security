@@ -5,12 +5,15 @@ summary: "The head unit's failures that are not on the update path: declared-but
 type: concept
 cluster: access
 created: 2026-11-01
-updated: 2026-11-01
+updated: 2026-11-17
 related:
   - byd-dolphin-hacking
   - mmi3g-toolkit
   - q50-reverse-engineering
   - ivi-update-trust
+  - idrive7-8-ssh-root
+  - over-the-air-compromise-of-modern-volkswagen-group-vehicles
+  - meet-salinas-the-first-ever-sms-commanded-car-infotainment-rat
 sources:
   - url: "https://github.com/redcat-3/BYD-Dolphin-Hacking"
     retrieved: 2026-11-01

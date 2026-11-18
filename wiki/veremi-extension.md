@@ -8,8 +8,9 @@ url: "https://github.com/josephkamel/VeReMi-Dataset"
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-17
 depth: brief
+depth_note: "brief by design — dataset landing page and paper citation, no open paper text linked"
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Simulated V2X misbehavior detection dataset generated with F2MD over the Luxembourg SUMO scenario, labelling position, speed, timing, replay, DoS, and Sybil attacks alongside faulty-sensor behaviour."

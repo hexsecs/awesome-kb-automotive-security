@@ -11,6 +11,7 @@ status_note: "Site live 2026-11-17; Car Hacker's Handbook and HW Bridge document
 created: 2026-10-31
 updated: 2026-11-17
 depth: brief
+depth_note: "brief by design — community landing page; handbook and simulator have their own pages"
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Open vehicle research collective behind the Car Hacker's Handbook, publishing the free edition of the book, ICSim, and workshop material for hands-on vehicle security practice."

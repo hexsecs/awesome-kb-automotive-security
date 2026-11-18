@@ -24,6 +24,7 @@ related:
   - piccante
   - python-can
   - the-car-hacker-s-handbook
+  - obdium
 sources:
   - url: "https://github.com/zombieCraig/ICSim"
     retrieved: 2026-11-01

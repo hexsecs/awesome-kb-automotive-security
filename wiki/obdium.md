@@ -19,6 +19,7 @@ related:
   - python-can-isotp
   - can-playground
   - diagnostic-service-abuse
+  - simulation-and-test-doubles
 license: GPL-3.0
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
@@ -50,6 +51,32 @@ data. Everything runs fully offline. A demo mode replays a recorded
 `requests.json` — responses can be recorded from a real vehicle — to
 simulate a car without hardware.
 
+The [project README](https://github.com/provrb/obdium), checked
+2026-11-17, describes connection configuration through a serial-port
+selector, an OBD-II protocol setting, and a baud-rate setting. Port
+discovery can be refreshed from the Connection panel. This is an
+ELM327-mediated request/response workflow, not direct SocketCAN frame
+capture; the adapter and selected protocol sit between the app and
+the vehicle's diagnostic interface.
+
+Once connected, the OBD Dashboard displays tracked metrics, the Graphs
+panel visualises live data, and the DTC panel presents fault codes.
+Clicking a metric card stops tracking it; it can be resumed from the
+bottom of the dashboard. The PID List provides an index and lets the
+user add a custom PID. Readiness reporting covers compression- and
+spark-ignition engines. VIN decoding is a separate local lookup/parsing
+path, so decoding a VIN should not be confused with discovering which
+diagnostic requests a particular ECU actually supports.
+
+For repeatable UI evaluation, enable **Record OBD Responses** in Settings
+while connected to capture the app's response data. The README places
+the default recording in a `data` subdirectory and allows its location
+to be changed. Supplying an OBDium `requests.json` recording and choosing
+**DEMO MODE** as the serial port replays those exchanges locally.
+That file is an application-specific replay fixture, not a raw CAN
+capture or a vehicle database. It lets a bug report or demonstration
+reuse observed responses without maintaining a live hardware connection.
+
 ## Where it fits
 
 End-user and technician OBD-II diagnostics and live-data viewing without
@@ -64,9 +91,17 @@ Manufacturer-specific PIDs are stated as planned, not present — current
 decoding is the standard PID set. No safety warnings are stated in the
 README.
 
+The custom-PID entry feature should not be conflated with built-in
+manufacturer-specific coverage. Similarly, displaying Body, Chassis,
+or Network DTC descriptions does not demonstrate access to every
+manufacturer's control modules. Demo replay validates handling of the
+recorded responses, not adapter reliability or full vehicle behaviour.
+
 ## Related
 
 - [opendbc](opendbc.md) — programmatic vehicle state and DBC corpus.
 - [SavvyCAN](savvycan.md) — raw-bus analysis beneath the OBD-II layer.
 - [python-can-isotp](python-can-isotp.md) — the transport diagnostics ride on.
 - [Diagnostic-service abuse](concepts/diagnostic-service-abuse.md)
+- [Simulation and test doubles](concepts/simulation-and-test-doubles.md) —
+  why recorded responses exercise the app without reproducing a whole ECU.
