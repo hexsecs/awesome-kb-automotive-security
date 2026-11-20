@@ -322,6 +322,21 @@ class BackfillSafetyTests(unittest.TestCase):
                     self.assertNotIn("telemetry", text)
                     self.assertNotIn("# mid", text)
 
+    def test_space_before_colon_related_is_canonicalised(self):
+        import link_check
+        with tempfile.TemporaryDirectory() as tmp:
+            use_temp_root(self, tmp)
+            page = self._page(
+                tmp, "x.md",
+                '---\ntitle: "X"\nsummary: "CAN tool"\ntype: entity\n'
+                'related : [beta]\n---\n\nBody.\n')
+            backfill_navigation.backfill(page, check=False)
+            text = page.read_text(encoding="utf-8")
+            self.assertIn("related:", text)
+            self.assertNotIn("related :", text)
+            fm, _ = link_check.split_frontmatter(text)
+            self.assertEqual(link_check.parse_related(fm), ["beta"])
+
     def test_space_before_colon_cluster_is_rewritten_in_place(self):
         with tempfile.TemporaryDirectory() as tmp:
             use_temp_root(self, tmp)

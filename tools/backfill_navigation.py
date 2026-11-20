@@ -151,7 +151,7 @@ def backfill(path: Path, check: bool) -> bool:
 
     for line in lines:
         # One related-list shape everywhere: block style.
-        inline = re.match(r"^related:\s*\[([^\]]*)\]\s*(?:#.*)?$", line)
+        inline = re.match(r"^related\s*:\s*\[([^\]]*)\]\s*(?:#.*)?$", line)
         if inline:
             values = [v.strip().strip("\"'") for v in inline.group(1).split(",") if v.strip()]
             out.append("related:")

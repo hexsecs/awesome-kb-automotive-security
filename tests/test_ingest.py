@@ -1053,5 +1053,62 @@ class SweepSevenRegressionTests(unittest.TestCase):
         self.assertNotIn("Probe Clone", concept_map)
 
 
+class SweepEightRegressionTests(SweepSevenRegressionTests):
+    """Regressions for the eighth sweep's case, status and reservation bugs."""
+
+    def test_url_move_reuses_an_uppercase_stem(self):
+        page = self.wiki / "Alpha.md"
+        page.write_text(
+            '---\nuid: "01aa0000-0000-7000-8000-000000000001"\n'
+            'title: "Alpha"\ntype: entity\nsummary: "s"\n'
+            'url: "https://example.com/old"\nstatus: "active"\n'
+            'created: "2026-01-01"\nlast_checked: "2026-01-01"\n'
+            '---\nbody\n', encoding="utf-8")
+        self.write_list("## Tools\n\n"
+                        "* [Alpha](https://example.com/old) - old desc\n")
+        self.write_list("## Tools\n\n"
+                        "* [Alpha](https://example.com/new) - new desc\n")
+        self.assertTrue(page.exists())
+        self.assertIn("example.com/new", page.read_text(encoding="utf-8"))
+        self.assertEqual(len(list(self.wiki.glob("[Aa]lpha*.md"))), 1)
+
+    def test_verified_archived_paper_stays_archived_on_edit(self):
+        page = self.wiki / "paper.md"
+        page.write_text(
+            '---\nuid: "01aa0000-0000-7000-8000-000000000001"\n'
+            'title: "Paper"\ntype: entity\nsummary: "s"\n'
+            'category: "Research Papers"\nurl: "https://example.com/paper"\n'
+            'status: "archived"\nstatus_note: "verified dead"\n'
+            'created: "2026-01-01"\nlast_checked: "2026-01-01"\n'
+            '---\nbody\n', encoding="utf-8")
+        self.write_list("## Research Papers\n\n"
+                        "* [Paper](https://example.com/paper) - old desc\n")
+        self.write_list("## Research Papers\n\n"
+                        "* [Paper](https://example.com/paper) - NEW desc\n")
+        text = page.read_text(encoding="utf-8")
+        self.assertIn('status: "archived"', text)
+        self.assertIn("status_note: \"verified dead\"", text)
+        self.assertNotIn('status: "published"', text)
+
+    def test_nested_index_page_does_not_reserve_the_root_slug(self):
+        nested = self.wiki / "topics" / "index-tools.md"
+        nested.parent.mkdir(parents=True)
+        nested.write_text(
+            '---\ntitle: "Nested hub"\ntype: entity\nsummary: "s"\n'
+            '---\nNESTED AUTHORED.\n', encoding="utf-8")
+        self.write_list("## Tools\n\n* [A](https://example.com/a) - a\n")
+        self.assertTrue((self.wiki / "index-tools.md").exists())
+        self.assertFalse((self.wiki / "index-tools-2.md").exists())
+
+    def test_canonical_concept_beats_a_nested_clone(self):
+        self.concept("concepts/probe.md", "Probe Canonical")
+        self.concept("concepts/deep/probe.md", "Probe Deep")
+        self.write_list("## Tools\n\n* [A](https://example.com/a) - a\n")
+        concept_map = (self.wiki / "index-concept-map.md").read_text(
+            encoding="utf-8")
+        self.assertIn("Probe Canonical", concept_map)
+        self.assertNotIn("Probe Deep", concept_map)
+
+
 if __name__ == "__main__":
     unittest.main()

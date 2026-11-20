@@ -31,8 +31,11 @@ LINK_RE = re.compile(
     r"(?:\s+(?:\"[^\"]*\"|'[^']*'))?\s*\)"
 )
 FRONTMATTER_RE = re.compile(r"\A\ufeff?---\n(.*?)\n---(?:\n|\Z)", re.DOTALL)
-RELATED_INLINE_RE = re.compile(r"^related:\s*\[([^\]]*)\]\s*(?:#.*)?$")
-RELATED_BLOCK_RE = re.compile(r"^related:\s*$")
+# YAML permits whitespace before the colon. A `related : [a]` key is the same
+# field as `related: [a]`; treating it as absent made the whole graph toolchain
+# (link_check, link_audit, link_mine, ingest) miss real links.
+RELATED_INLINE_RE = re.compile(r"^related\s*:\s*\[([^\]]*)\]\s*(?:#.*)?$")
+RELATED_BLOCK_RE = re.compile(r"^related\s*:\s*(?:#.*)?$")
 LIST_ITEM_RE = re.compile(r"^\s*-\s+(\S+)\s*(?:#.*)?$")
 
 

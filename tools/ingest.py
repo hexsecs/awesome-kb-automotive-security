@@ -585,7 +585,8 @@ def write_concept_map(pages: list[tuple[Path, dict, str]]) -> None:
     canonical = WIKI / "concepts"
     for p, f, _ in sorted(
             ((p, f, _) for p, f, _ in pages if f.get("type") == "concept"),
-            key=lambda item: not item[0].is_relative_to(canonical)):
+            key=lambda item: (not item[0].is_relative_to(canonical),
+                              item[0].parent != canonical)):
         concepts.setdefault(p.stem, (p, f))
     lines = ["# Concept map", "",
              "The concept layer organised by theme, with reading paths through"
@@ -672,7 +673,7 @@ def main(argv=None) -> int:
                      "replace it with the real page")
 
     existing: dict[str, Path] = {}
-    by_stem: dict[str, Path] = {}
+    by_stem: dict[str, list[Path]] = {}  # case-folded: slugs are lowercase
     page_category: dict[Path, str] = {}
     for page in sorted(safe_pages(WIKI.rglob("*.md"))):
         fields, _ = split_page(read_page(page))
@@ -685,7 +686,7 @@ def main(argv=None) -> int:
             if key in existing:
                 sys.exit(f"ingest: duplicate URL {key}: {existing[key]} and {page}")
             existing[key] = page
-            by_stem[page.stem] = page
+            by_stem.setdefault(page.stem.lower(), []).append(page)
             if fields.get("category"):
                 page_category[page] = str(fields["category"])
 
@@ -716,6 +717,7 @@ def main(argv=None) -> int:
         p.stem[len("index-"):].lower()
         for p in safe_pages(WIKI.rglob("*.md"))
         if p.stem.lower().startswith("index-")
+        and p.parent == WIKI
         and read_page(p).startswith("---\n")
     }
     catslug = category_slugs(section_order, authored_index_slugs)
@@ -736,9 +738,10 @@ def main(argv=None) -> int:
             # original instead of updating it.
             bases = {raw_slug(e["title"]), slugify(e["title"], set())}
             candidates = sorted(
-                (p for stem, p in by_stem.items()
+                (p for stem, grouped in by_stem.items()
                  if any(stem == base or re.fullmatch(re.escape(base) + r"-\d+",
-                                                     stem) for base in bases)),
+                                                     stem) for base in bases)
+                 for p in grouped),
                 key=lambda p: p.as_posix(),
             )
             for candidate in candidates:
@@ -794,7 +797,10 @@ def main(argv=None) -> int:
                 # the same rule). A re-listed resource returns to the default
                 # unverified status; any other section keeps its status —
                 # including a deliberately archived upstream project.
-                status = ("published" if e["section"] == "Research Papers"
+                entering_rp = (e["section"] == "Research Papers"
+                               and str(fields.get("category", ""))
+                               != e["section"])
+                status = ("published" if entering_rp
                           else "unknown" if was_tombstoned
                           else str(fields.get("status", "unknown")))
                 new_text = frontmatter(

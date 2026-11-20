@@ -289,6 +289,11 @@ def main() -> int:
         title_a = str(fa.get("title", "")).lower()
         summ_a = str(fa.get("summary", "")).lower()
         for b in slugs[i + 1:]:
+            # Two pages can share a stem. `related:` stores stems, so mining
+            # that pair would collapse into a self-link that link_check cannot
+            # even see as broken. Skip the ambiguous pair entirely.
+            if pages[a]["slug"] == pages[b]["slug"]:
+                continue
             tb = page_tokens[b]
             fb = pages[b]["fields"]
             shared = set(ta) & set(tb)
@@ -347,7 +352,11 @@ def main() -> int:
             continue
         fields, fm_lines, _ = split_page(text)
         if fields.get("type") == "concept" and "title" in fields:
-            concept_links[path.stem] = parse_related(fm_lines)
+            # Two concepts can share a stem. Last-write-wins here dropped the
+            # canonical page's links; every page with that stem must feed
+            # reciprocation (L1 and the concept map still prefer canonical).
+            concept_links.setdefault(path.stem, []).extend(
+                parse_related(fm_lines))
 
     changed = filled = recip_added = 0
     written: dict[str, list[str]] = {}
@@ -362,7 +371,10 @@ def main() -> int:
         incoming = {o for o in slugs if own in pages[o]["related"]}
         incoming |= {c for c, rels in concept_links.items()
                      if own in rels}
-        fill_branch = bool(args.fill_only and old)
+        # With --reciprocate, preserve an author-owned set as the base;
+        # otherwise default mode discarded it before adding the backlink and
+        # the pair flipped direction on every run forever.
+        fill_branch = bool(old) and (args.fill_only or args.reciprocate)
         if fill_branch:
             # Author-owned set: preserve it verbatim and in order;
             # only append missing reciprocal links.
@@ -388,7 +400,8 @@ def main() -> int:
                          key=lambda b: (-scores.get((slug, b), 0.0), b))
         # Path keys are internal; the written slugs stay stems, which is
         # what link_check resolves. Two pages sharing a stem dedupe here.
-        new_slugs = list(dict.fromkeys(stems.get(x, x) for x in new))
+        new_slugs = [s for s in dict.fromkeys(stems.get(x, x) for x in new)
+                     if s != own]
         written[slug] = new_slugs
         if new_slugs != old:
             changed += 1

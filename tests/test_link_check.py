@@ -120,6 +120,20 @@ class ParserAndBoundaryTests(unittest.TestCase):
     def tearDown(self):
         self._tmp.cleanup()
 
+    def test_space_before_colon_related_is_parsed(self):
+        self.assertEqual(link_check.parse_related("related : [alpha, beta]\n"),
+                         ["alpha", "beta"])
+        self.assertEqual(
+            link_check.parse_related("related :\n  - alpha\n  - beta\n"),
+            ["alpha", "beta"])
+
+    def test_commented_related_key_still_owns_its_block(self):
+        fm = ('related: # curated by a human\n'
+              '  - "can-injection"\n'
+              '  - "shared-and-default-secrets"\n')
+        self.assertEqual(link_check.parse_related(fm),
+                         ["can-injection", "shared-and-default-secrets"])
+
     def test_unindented_related_block_is_parsed(self):
         self.assertEqual(
             link_check.parse_related("related:\n- alpha\n- beta\n"),
