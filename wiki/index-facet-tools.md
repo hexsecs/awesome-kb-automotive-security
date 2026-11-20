@@ -2,7 +2,7 @@
 
 Software, toolkits and libraries you can run.
 
-Generated from page frontmatter by tools/ingest.py; 142 pages. Do not edit by hand.
+Generated from page frontmatter by tools/ingest.py; 143 pages (entities and concepts). Do not edit by hand.
 
 ## CAN Bus Analysis
 
@@ -18,6 +18,7 @@ Generated from page frontmatter by tools/ingest.py; 142 pages. Do not edit by ha
 - [CANflict](canflict.md) — C library that manipulates the CAN bus at the data link layer from an unmodified microcontroller, abusing pin conflicts between peripherals to craft…
 - [CANgaroo](cangaroo.md) — Open-source CAN bus analyzer for Linux and Windows with DBC and LDF decoding, CAN FD, Python scripting, SocketCAN, PEAK, Kvaser, Vector, and candlelight…
 - [CANter](canter.md) — Intrusion detection system for CAN and CAN-FD that detects drop-and-spoof attacks using frequency analysis of frame intervals.
+- [Cabana](cabana.md) — Standalone CAN and CAN FD analyzer split from openpilot, with live bit-level heatmaps, signal discovery, a DBC editor, and drive replay synchronized to video.
 - [CanCat](cancat.md) — Firmware for Arduino CAN shields and Macchina M2 boards paired with a Python client for sniffing and injecting CAN traffic, running UDS and CCP sessions…
 - [CanLab](canlab.md) — PyQt6 desktop application for offline CAN capture reverse engineering, combining automated counter and checksum detection with entropy-based signal boundary…
 - [CaringCaribou](caringcaribou.md) — Python automotive security exploration tool designed as the nmap of CAN bus with fuzzing, ECU discovery, and attack modules.

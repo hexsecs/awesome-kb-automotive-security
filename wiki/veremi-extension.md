@@ -22,7 +22,7 @@ sources:
 related:
   - f2md
   - misbehavior-detection
-facets: [can, rf-keys, v2x, sensors, simulation, attack, tools, datasets]
+facets: [rf-keys, v2x, sensors, simulation, attack, tools, datasets]
 ---
 
 Simulated V2X misbehavior detection dataset generated with F2MD over the Luxembourg SUMO scenario, labelling position, speed, timing, replay, DoS, and Sybil attacks alongside faulty-sensor behaviour.

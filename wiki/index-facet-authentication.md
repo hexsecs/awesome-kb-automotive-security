@@ -2,7 +2,7 @@
 
 Message authentication, SecOC, key management and shared secrets.
 
-Generated from page frontmatter by tools/ingest.py; 37 pages. Do not edit by hand.
+Generated from page frontmatter by tools/ingest.py; 38 pages (entities and concepts). Do not edit by hand.
 
 ## CAN Bus Analysis
 
@@ -55,6 +55,7 @@ Generated from page frontmatter by tools/ingest.py; 37 pages. Do not edit by han
 
 ## Concepts
 
+- [Bootloader stages and bootstrap entry](concepts/bootloader-stages.md) — ECUs boot through layers owned by different parties; the corpus's breaks concentrate at the stage transitions and the weakest stage, not the application.
 - [CAN availability and denial of service](concepts/can-availability.md) — Availability attacks remove or suppress the bus's genuine traffic, below the layer message authentication defends: flooding, bus-off, dominance, silencing.
 - [CAN injection](concepts/can-injection.md) — Attacker taps exposed CAN wiring and impersonates a trusted ECU: classic CAN frames carry no sender authentication, so fake 'key valid' messages are believed.
 - [CAN message authentication: the retrofit design space](concepts/can-message-authentication.md) — Two complete academic designs and the standardised answer, compared on freshness, key scope, frame cost, and evidence — plus the two limits they all share.

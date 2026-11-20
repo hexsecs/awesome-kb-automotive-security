@@ -1,6 +1,6 @@
 # Infotainment and IVI
 
-Browse by facet: [Firmware & updates](index-facet-firmware.md) (7), [IVI](index-facet-ivi.md) (7), [Tools & libraries](index-facet-tools.md) (7), [Attack techniques](index-facet-attack.md) (3), [CAN](index-facet-can.md) (2), [Diagnostics](index-facet-diagnostics.md) (1).
+Browse by facet: [Firmware & updates](index-facet-firmware.md) (7 here), [IVI](index-facet-ivi.md) (7 here), [Tools & libraries](index-facet-tools.md) (7 here), [Attack techniques](index-facet-attack.md) (3 here), [CAN](index-facet-can.md) (2 here), [Diagnostics](index-facet-diagnostics.md) (1 here).
 
 - [byd-dolphin-hacking](byd-dolphin-hacking.md) — Reverse engineering of the BYD Dolphin DiLink 3 head unit (Android 10 on a Qualcomm QCM6125), documenting its MCU and CAN interfaces, OTA update paths, and…
 - [Chimaera](chimaera.md) — Research framework for IVI (In-Vehicle Infotainment) firmware reverse engineering and exploitation targeting Hyundai/Kia Gen5W_L systems.

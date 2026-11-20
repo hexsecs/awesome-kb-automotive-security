@@ -1,6 +1,6 @@
 # RF and Key Fob Analysis
 
-Browse by facet: [RF & keys](index-facet-rf-keys.md) (6), [Tools & libraries](index-facet-tools.md) (6), [Firmware & updates](index-facet-firmware.md) (1), [Sensors & perception](index-facet-sensors.md) (1).
+Browse by facet: [RF & keys](index-facet-rf-keys.md) (6 here), [Tools & libraries](index-facet-tools.md) (6 here), [Firmware & updates](index-facet-firmware.md) (1 here), [Sensors & perception](index-facet-sensors.md) (1 here).
 
 - [Flipper Zero](flipper-zero.md) — Handheld multi-tool with Sub-GHz capabilities for reading, saving, and transmitting key fob signals with automotive database.
 - [Flipper-ARF](flipper-arf.md) — Automotive-focused firmware fork for Flipper Zero supporting Keeloq, rolling codes, and VAG protocol analysis.

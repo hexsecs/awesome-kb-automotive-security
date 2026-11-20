@@ -2,7 +2,7 @@
 
 100/1000BASE-T1, MACsec and in-vehicle IP networking.
 
-Generated from page frontmatter by tools/ingest.py; 24 pages. Do not edit by hand.
+Generated from page frontmatter by tools/ingest.py; 24 pages (entities and concepts). Do not edit by hand.
 
 ## Diagnostic Tools
 

@@ -31,7 +31,7 @@ sources:
     retrieved: 2026-11-17
   - url: "https://csrc.nist.gov/pubs/sp/800/193/final"
     retrieved: 2026-11-17
-facets: [firmware, attack]
+facets: [can, firmware, authentication]
 ---
 
 An ECU's boot path is an authority chain, not merely a list of binaries. Each transition decides which code may execute, which memory protections remain active, and whether earlier validation is still trustworthy. Manufacturing and recovery paths form branches around the normal startup sequence. A signature check in one branch does not secure another branch that can rewrite the checked bytes or the record of their validity.

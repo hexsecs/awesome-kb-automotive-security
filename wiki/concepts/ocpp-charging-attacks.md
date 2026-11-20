@@ -21,7 +21,7 @@ sources:
     retrieved: 2026-10-31
   - url: "https://www.ndss-symposium.org/ndss-paper/auto-draft-457/"
     retrieved: 2026-10-31
-facets: [can, firmware, ev-charging, attack]
+facets: [firmware, ev-charging, attack]
 ---
 
 The Open Charge Point Protocol (OCPP) connects each charge point (EVSE)

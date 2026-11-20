@@ -1,6 +1,6 @@
 # CAN Bus Analysis
 
-Browse by facet: [Tools & libraries](index-facet-tools.md) (31), [CAN](index-facet-can.md) (28), [Attack techniques](index-facet-attack.md) (11), [Diagnostics](index-facet-diagnostics.md) (10), [Simulation](index-facet-simulation.md) (6), [Firmware & updates](index-facet-firmware.md) (5).
+Browse by facet: [Tools & libraries](index-facet-tools.md) (32 here), [CAN](index-facet-can.md) (30 here), [Attack techniques](index-facet-attack.md) (11 here), [Diagnostics](index-facet-diagnostics.md) (10 here), [Simulation](index-facet-simulation.md) (7 here), [Firmware & updates](index-facet-firmware.md) (5 here).
 
 - [BUSMASTER](busmaster.md) — Open-source CAN simulation, analysis, and test tool from Bosch Engineering and ETAS, with a node simulator, DBC-driven signal interpretation, and scriptable…
 - [Cabana](cabana.md) — Standalone CAN and CAN FD analyzer split from openpilot, with live bit-level heatmaps, signal discovery, a DBC editor, and drive replay synchronized to video.

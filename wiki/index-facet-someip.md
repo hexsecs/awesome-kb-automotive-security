@@ -2,7 +2,7 @@
 
 AUTOSAR service-oriented middleware and service discovery.
 
-Generated from page frontmatter by tools/ingest.py; 9 pages. Do not edit by hand.
+Generated from page frontmatter by tools/ingest.py; 9 pages (entities and concepts). Do not edit by hand.
 
 ## CAN Bus Analysis
 

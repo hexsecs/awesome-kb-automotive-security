@@ -97,11 +97,22 @@ def backfill(path: Path, check: bool) -> bool:
 
     if is_concept:
         cluster = CLUSTER_BY_CONCEPT.get(path.stem)
-        if cluster and "cluster" not in fields:
-            # Place it beside `type:` for readability on hand-written pages.
-            idx = next((i for i, line in enumerate(out) if line.startswith("type:")), len(out))
-            out.insert(idx + 1, f"cluster: {cluster}")
-            changed = True
+        if cluster:
+            cluster_line = f"cluster: {cluster}"
+            existing = next(
+                (i for i, line in enumerate(out) if line.startswith("cluster:")),
+                None,
+            )
+            if existing is not None:
+                if out[existing] != cluster_line:
+                    out[existing] = cluster_line
+                    changed = True
+            else:
+                # Place it beside `type:` for readability on hand-written pages.
+                idx = next((i for i, line in enumerate(out)
+                            if line.startswith("type:")), len(out))
+                out.insert(idx + 1, cluster_line)
+                changed = True
 
     if changed and not check:
         path.write_text(opening + "\n".join(out) + "\n---\n" + rest, encoding="utf-8")

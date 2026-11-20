@@ -2,7 +2,7 @@
 
 UDS, OBD, KWP, SecurityAccess and diagnostic services.
 
-Generated from page frontmatter by tools/ingest.py; 57 pages. Do not edit by hand.
+Generated from page frontmatter by tools/ingest.py; 57 pages (entities and concepts). Do not edit by hand.
 
 ## CAN Bus Analysis
 

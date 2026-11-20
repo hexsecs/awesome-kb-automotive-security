@@ -31,12 +31,12 @@ Kept by Clyde, the cowboy coding agent — whether the humans care or not.
 | 22 | 2026-11-20 | Non-git source gives a raw traceback | `tools/ingest.py:434` | dead | caught subprocess errors + test | [#104](https://github.com/hexsecs/awesome-kb-automotive-security/pull/104) | Error handling took the day off. |
 | 23 | 2026-11-20 | `--fill-only` stats describe unmined sets | `tools/link_mine.py:296` | at large | — | — | Report counts what didn't happen. |
 | 24 | 2026-11-20 | Dead entries in the generic-phrase filter | `tools/concept_scan.py:50` | at large | — | — | Spaces in a word token. Classic. |
-| 25 | 2026-11-20 | Two pages carry facets stale after deepening | `wiki/concepts/bootloader-stages.md`, `wiki/concepts/shared-and-default-secrets.md` | at large | — | — | Facet indexes are trailing the prose. |
-| 26 | 2026-11-20 | Backfill never corrects an existing `cluster:` | `tools/backfill_navigation.py:100` | at large | — | — | Insert-only is not update. |
-| 27 | 2026-11-20 | DoIP lives in two concept clusters | `tools/taxonomy.py:244`, `:252` | at large | — | — | Two homes, one page, no consistency. |
-| 28 | 2026-11-20 | CAN facet regex matches the English word "can" | `tools/taxonomy.py:35` | at large | — | — | Modal verb in a bus costume. |
-| 29 | 2026-11-20 | Facet counts mix entity and concept pages | `tools/ingest.py:272`, `:534` | at large | — | — | Two numbers, both called "pages". |
-| 30 | 2026-11-20 | Untriaged `depth_note` rationale dropped from queue | `tools/ingest.py:335` | at large | — | — | Note kept, note hidden. |
+| 25 | 2026-11-20 | Pages carried facets stale after deepening | `wiki/concepts/bootloader-stages.md`, `wiki/concepts/shared-and-default-secrets.md` | dead | taxonomy backfill + regeneration | [#105](https://github.com/hexsecs/awesome-kb-automotive-security/pull/105) | Facet indexes are trailing the prose. |
+| 26 | 2026-11-20 | Backfill never corrects an existing `cluster:` | `tools/backfill_navigation.py:100` | dead | update-or-insert + test | [#105](https://github.com/hexsecs/awesome-kb-automotive-security/pull/105) | Insert-only is not update. |
+| 27 | 2026-11-20 | DoIP lives in two concept clusters | `tools/taxonomy.py:244`, `:252` | dead | unique ownership + test | [#105](https://github.com/hexsecs/awesome-kb-automotive-security/pull/105) | Two homes, one page, no consistency. |
+| 28 | 2026-11-20 | CAN facet regex matches the English word "can" | `tools/taxonomy.py:35` | dead | case-sensitive acronym + tests | [#105](https://github.com/hexsecs/awesome-kb-automotive-security/pull/105) | Modal verb in a bus costume. |
+| 29 | 2026-11-20 | Facet counts mix entity and concept pages | `tools/ingest.py:272`, `:534` | dead | explicit count labels | [#105](https://github.com/hexsecs/awesome-kb-automotive-security/pull/105) | Two numbers, both called "pages". |
+| 30 | 2026-11-20 | Untriaged `depth_note` rationale dropped from queue | `tools/ingest.py:335` | dead | preserve note in queue + test | [#105](https://github.com/hexsecs/awesome-kb-automotive-security/pull/105) | Note kept, note hidden. |
 | 31 | 2026-11-20 | Symlinked pages let tools write outside the KB | `tools/ingest.py:444`, `tools/backfill_navigation.py:115`, `tools/link_mine.py:158` | at large | — | — | Follow the link, leave the repo. |
 | 32 | 2026-11-20 | Unquoted frontmatter values allow YAML injection | `tools/ingest.py:174`, `:181` | at large | — | — | Newline in a UID, new key in a page. |
 | 33 | 2026-11-20 | Maintenance tools emit unquoted YAML values | `tools/link_mine.py:128`, `tools/backfill_navigation.py:81` | at large | — | — | Filenames make bad list items. |

@@ -1,6 +1,6 @@
 # Firmware and ECU Reverse Engineering
 
-Browse by facet: [Firmware & updates](index-facet-firmware.md) (8), [Tools & libraries](index-facet-tools.md) (8), [CAN](index-facet-can.md) (3), [Attack techniques](index-facet-attack.md) (2), [Diagnostics](index-facet-diagnostics.md) (2), [XCP / A2L](index-facet-xcp.md) (2).
+Browse by facet: [Firmware & updates](index-facet-firmware.md) (8 here), [Tools & libraries](index-facet-tools.md) (8 here), [CAN](index-facet-can.md) (3 here), [Attack techniques](index-facet-attack.md) (2 here), [Diagnostics](index-facet-diagnostics.md) (2 here), [XCP / A2L](index-facet-xcp.md) (2 here).
 
 - [ghidra-tc1797](ghidra-tc1797.md) — Ghidra processor specification and language definitions for the Infineon TriCore TC1797, used to label memory regions when disassembling MED17 and similar…
 - [ghidra_v850](ghidra-v850.md) — Ghidra processor module for Renesas V850E2 and V850E3/RH850 microcontrollers, the core families behind many ECUs, for disassembling and decompiling their…

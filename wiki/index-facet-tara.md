@@ -2,7 +2,7 @@
 
 Threat analysis and risk assessment, ISO/SAE 21434.
 
-Generated from page frontmatter by tools/ingest.py; 22 pages. Do not edit by hand.
+Generated from page frontmatter by tools/ingest.py; 22 pages (entities and concepts). Do not edit by hand.
 
 ## Automotive Ethernet
 

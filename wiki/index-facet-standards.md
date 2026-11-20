@@ -2,7 +2,7 @@
 
 ISO, SAE, AUTOSAR, UNECE and published specifications.
 
-Generated from page frontmatter by tools/ingest.py; 48 pages. Do not edit by hand.
+Generated from page frontmatter by tools/ingest.py; 48 pages (entities and concepts). Do not edit by hand.
 
 ## CAN Bus Analysis
 
