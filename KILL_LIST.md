@@ -14,21 +14,21 @@ Kept by Clyde, the cowboy coding agent — whether the humans care or not.
 | 5 | 2026-11-20 | Link resolution escapes the KB root | `tools/link_check.py:90` | dead | containment check + test | [#103](https://github.com/hexsecs/awesome-kb-automotive-security/pull/103) | `..` needs no invitation. |
 | 6 | 2026-11-20 | Audit stem resolution depends on set order | `tools/link_audit.py:73` | dead | sorted candidates + test | [#103](https://github.com/hexsecs/awesome-kb-automotive-security/pull/103) | Coin-flip metrics. |
 | 7 | 2026-11-20 | Entity named `index-*` misread as generated index | `tools/link_audit.py:63` | dead | frontmatter `type:` wins + test | [#103](https://github.com/hexsecs/awesome-kb-automotive-security/pull/103) | Name tags lie. Frontmatter doesn't. |
-| 8 | 2026-11-20 | List URLs with parentheses silently dropped | `tools/ingest.py:73` | at large | — | — | Wikipedia ate the entry. |
-| 9 | 2026-11-20 | Single-quoted YAML scalars mis-parsed | `tools/ingest.py:221` | at large | — | — | Only double quotes got the memo. |
-| 10 | 2026-11-20 | Tab-indented frontmatter lost on rewrite | `tools/ingest.py:216` vs `:153` | at large | — | — | Two parsers, one file, no truth. |
-| 11 | 2026-11-20 | Long summaries collapse to a single character | `tools/ingest.py:114` | at large | — | — | Word boundary, meet word. |
-| 12 | 2026-11-20 | `http://` and `https://` treated as different identities | `tools/ingest.py:93` | at large | — | — | Scheme change, identity crisis. |
-| 13 | 2026-11-20 | New entity slug collides with a concept stem | `tools/ingest.py:450` | at large | — | — | Two pages, one name, no warning. |
-| 14 | 2026-11-20 | Section-slug collision overwrites a category index | `tools/ingest.py:547` | at large | — | — | One heading eats another. |
-| 15 | 2026-11-20 | Stale category indexes never removed | `tools/ingest.py:543` | at large | — | — | Facet indexes got cleanup. Categories didn't. |
-| 16 | 2026-11-20 | Duplicate-URL pages collapse in ingester | `tools/ingest.py:442` | at large | — | — | One page goes invisible. |
-| 17 | 2026-11-20 | URL-move fallback misses suffixed slugs | `tools/ingest.py:461` | at large | — | — | `-2` never gets called home. |
-| 18 | 2026-11-20 | Tombstone rewrites the first `status:` anywhere | `tools/ingest.py:509` | at large | — | — | Whole-file regex, whole-file trouble. |
-| 19 | 2026-11-20 | Missing dates fabricated from source commit | `tools/ingest.py:490` | at large | — | — | Verified by nobody. Dated by everybody. |
-| 20 | 2026-11-20 | One unreadable page aborts ingest | `tools/ingest.py:245` | at large | — | — | One bad byte holds the town hostage. |
+| 8 | 2026-11-20 | List URLs with parentheses silently dropped | `tools/ingest.py:73` | dead | balanced-paren URL regex + test | [#104](https://github.com/hexsecs/awesome-kb-automotive-security/pull/104) | Wikipedia ate the entry. |
+| 9 | 2026-11-20 | Single-quoted YAML scalars mis-parsed | `tools/ingest.py:221` | dead | matching-quote scalar parser + test | [#104](https://github.com/hexsecs/awesome-kb-automotive-security/pull/104) | Only double quotes got the memo. |
+| 10 | 2026-11-20 | Tab-indented frontmatter lost on rewrite | `tools/ingest.py:216` vs `:153` | dead | aligned block/field parsers + test | [#104](https://github.com/hexsecs/awesome-kb-automotive-security/pull/104) | Two parsers, one file, no truth. |
+| 11 | 2026-11-20 | Long summaries collapse to a single character | `tools/ingest.py:114` | dead | hard-cut fallback + test | [#104](https://github.com/hexsecs/awesome-kb-automotive-security/pull/104) | Word boundary, meet word. |
+| 12 | 2026-11-20 | `http://` and `https://` treated as different identities | `tools/ingest.py:93` | dead | scheme-insensitive normalise + test | [#104](https://github.com/hexsecs/awesome-kb-automotive-security/pull/104) | Scheme change, identity crisis. |
+| 13 | 2026-11-20 | New entity slug collides with a concept stem | `tools/ingest.py:450` | dead | whole-wiki taken set | [#104](https://github.com/hexsecs/awesome-kb-automotive-security/pull/104) | Two pages, one name, no warning. |
+| 14 | 2026-11-20 | Section-slug collision overwrites a category index | `tools/ingest.py:547` | dead | shared slug set + index test | [#104](https://github.com/hexsecs/awesome-kb-automotive-security/pull/104) | One heading eats another. |
+| 15 | 2026-11-20 | Stale category indexes never removed | `tools/ingest.py:543` | dead | frontmatter-aware cleanup + test | [#104](https://github.com/hexsecs/awesome-kb-automotive-security/pull/104) | Facet indexes got cleanup. Categories didn't. |
+| 16 | 2026-11-20 | Duplicate-URL pages collapse in ingester | `tools/ingest.py:442` | dead | duplicate detection, exit + test | [#104](https://github.com/hexsecs/awesome-kb-automotive-security/pull/104) | One page goes invisible. |
+| 17 | 2026-11-20 | URL-move fallback misses suffixed slugs | `tools/ingest.py:461` | dead | suffix-aware candidate scan | [#104](https://github.com/hexsecs/awesome-kb-automotive-security/pull/104) | `-2` never gets called home. |
+| 18 | 2026-11-20 | Tombstone rewrites the first `status:` anywhere | `tools/ingest.py:509` | dead | frontmatter-scoped substitution | [#104](https://github.com/hexsecs/awesome-kb-automotive-security/pull/104) | Whole-file regex, whole-file trouble. |
+| 19 | 2026-11-20 | Missing dates fabricated from source commit | `tools/ingest.py:490` | dead | refuse missing identity fields | [#104](https://github.com/hexsecs/awesome-kb-automotive-security/pull/104) | Verified by nobody. Dated by everybody. |
+| 20 | 2026-11-20 | One unreadable page aborts ingest | `tools/ingest.py:245` | dead | read_page guard + test | [#104](https://github.com/hexsecs/awesome-kb-automotive-security/pull/104) | One bad byte holds the town hostage. |
 | 21 | 2026-11-20 | One unreadable page aborts link mining and backfill | `tools/link_mine.py:161`, `tools/backfill_navigation.py:58` | at large | — | — | Same bad byte, more victims. |
-| 22 | 2026-11-20 | Non-git source gives a raw traceback | `tools/ingest.py:434` | at large | — | — | Error handling took the day off. |
+| 22 | 2026-11-20 | Non-git source gives a raw traceback | `tools/ingest.py:434` | dead | caught subprocess errors + test | [#104](https://github.com/hexsecs/awesome-kb-automotive-security/pull/104) | Error handling took the day off. |
 | 23 | 2026-11-20 | `--fill-only` stats describe unmined sets | `tools/link_mine.py:296` | at large | — | — | Report counts what didn't happen. |
 | 24 | 2026-11-20 | Dead entries in the generic-phrase filter | `tools/concept_scan.py:50` | at large | — | — | Spaces in a word token. Classic. |
 | 25 | 2026-11-20 | Two pages carry facets stale after deepening | `wiki/concepts/bootloader-stages.md`, `wiki/concepts/shared-and-default-secrets.md` | at large | — | — | Facet indexes are trailing the prose. |
