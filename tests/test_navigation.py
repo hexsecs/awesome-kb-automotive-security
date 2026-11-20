@@ -49,7 +49,7 @@ class BackfillTests(unittest.TestCase):
                 '---\n\nBody text.\n', encoding="utf-8")
             self.assertTrue(backfill_navigation.backfill(page, check=False))
             first = page.read_text(encoding="utf-8")
-            self.assertIn("related:\n  - alpha\n  - beta", first)
+            self.assertIn('related:\n  - "alpha"\n  - "beta"', first)
             self.assertIn("facets: [", first)
             self.assertFalse(backfill_navigation.backfill(page, check=False))
             self.assertEqual(page.read_text(encoding="utf-8"), first)

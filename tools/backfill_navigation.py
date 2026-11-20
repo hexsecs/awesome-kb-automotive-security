@@ -19,6 +19,7 @@ Usage: python3 tools/backfill_navigation.py [--check]
 from __future__ import annotations
 
 import argparse
+import json
 import re
 import sys
 from pathlib import Path
@@ -55,7 +56,12 @@ def page_fields(fm: str) -> dict[str, str]:
 
 def backfill(path: Path, check: bool) -> bool:
     """Return True when the page would change."""
-    original = path.read_text(encoding="utf-8")
+    if path.is_symlink():
+        return False
+    try:
+        original = path.read_text(encoding="utf-8")
+    except (OSError, UnicodeDecodeError) as exc:
+        sys.exit(f"backfill_navigation: cannot read {path}: {exc}")
     parts = split_frontmatter(original)
     if parts is None:
         return False
@@ -80,7 +86,7 @@ def backfill(path: Path, check: bool) -> bool:
         if inline:
             values = [v.strip().strip("\"'") for v in inline.group(1).split(",") if v.strip()]
             out.append("related:")
-            out.extend(f"  - {v}" for v in values)
+            out.extend(f"  - {json.dumps(v, ensure_ascii=False)}" for v in values)
             changed = True
             continue
         out.append(line)
@@ -124,7 +130,7 @@ def main() -> int:
     parser.add_argument("--check", action="store_true", help="report changes without writing")
     args = parser.parse_args()
     pages = sorted(p for p in (ROOT / "wiki").rglob("*.md")
-                   if not p.name.startswith("index-"))
+                   if not p.name.startswith("index-") and not p.is_symlink())
     changed = [p for p in pages if backfill(p, args.check)]
     verb = "would change" if args.check else "updated"
     print(f"backfill_navigation: {verb} {len(changed)} of {len(pages)} pages")
