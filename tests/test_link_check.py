@@ -203,7 +203,7 @@ class ParserAndBoundaryTests(unittest.TestCase):
         outside.write_text("# Outside\n", encoding="utf-8")
         self.addCleanup(outside.unlink)
         write(self.root, "wiki/traveller.md",
-              f"See [x](../{outside.name}).\n")
+              f"See [x](../../{outside.name}).\n")
         write(self.root, "index.md",
               "# KB\n\n- [Alpha](wiki/alpha.md)\n- [Sub](wiki/index-sub.md)\n"
               "- [T](wiki/traveller.md)\n")

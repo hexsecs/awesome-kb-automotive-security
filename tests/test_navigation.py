@@ -301,6 +301,44 @@ class BackfillSafetyTests(unittest.TestCase):
             # so no category-derived `tools` facet may be injected.
             self.assertNotIn("tools", facet_line)
 
+    def test_block_form_facets_are_replaced_not_left_dangling(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            use_temp_root(self, tmp)
+            page = self._page(
+                tmp, "x.md",
+                '---\ntitle: "X"\nsummary: "CAN tool"\ntype: entity\n'
+                'facets:\n  - can-bus\n  - telemetry\n---\n\nBody.\n')
+            backfill_navigation.backfill(page, check=False)
+            text = page.read_text(encoding="utf-8")
+            self.assertRegex(text, r"(?m)^facets: \[[^\]]*\]$")
+            self.assertNotIn("  - can-bus", text)
+            self.assertNotIn("  - telemetry", text)
+
+    def test_duplicate_cluster_keys_are_collapsed(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            use_temp_root(self, tmp)
+            page = self._page(
+                tmp, "can-injection.md",
+                '---\ntitle: "CAN Injection"\ntype: concept\n'
+                'cluster: stale-one\ncluster: stale-two\n---\n\nBody.\n')
+            backfill_navigation.backfill(page, check=False)
+            text = page.read_text(encoding="utf-8")
+            self.assertEqual(text.count("cluster:"), 1)
+            self.assertIn("cluster: bus", text)
+
+    def test_space_before_colon_keys_are_recognised(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            use_temp_root(self, tmp)
+            page = self._page(
+                tmp, "x.md",
+                '---\ntitle : Alpha\ntype: entity\nsummary: "CAN tool"\n---\n\nBody.\n')
+            self.assertTrue(backfill_navigation.backfill(page, check=False))
+            concept = self._page(
+                tmp, "can-injection.md",
+                '---\ntitle: "CAN Injection"\ntype : concept\nsummary: "s"\n---\n\nBody.\n')
+            backfill_navigation.backfill(concept, check=False)
+            self.assertIn("cluster: bus", concept.read_text(encoding="utf-8"))
+
     def test_main_with_check_processes_index_prefixed_entity(self):
         with tempfile.TemporaryDirectory() as tmp:
             use_temp_root(self, tmp)

@@ -76,8 +76,31 @@ def page_fields(fm: str) -> dict[str, str]:
     for line in fm.splitlines():
         if ": " in line and not line.startswith((" ", "-", "\t")):
             key, value = line.split(": ", 1)
-            fields[key] = scalar(value)
+            # YAML allows space before the colon; ingest and link_audit strip
+            # it, so an unstripped key here silently hides the whole page.
+            fields[key.strip()] = scalar(value)
     return fields
+
+
+def managed_block_spans(lines: list[str], key: str
+                        ) -> tuple[list[int], set[int]]:
+    """Key lines and their indented list items for a frontmatter key.
+
+    Both `facets: [a, b]` and `facets:\\n  - a\\n  - b` are valid YAML. Writing
+    the inline form over only the key line leaves the block items dangling,
+    which is invalid YAML and makes ingest read a different (or no) value.
+    """
+    keys = [i for i, line in enumerate(lines) if line.startswith(f"{key}:")]
+    continuations: set[int] = set()
+    for i in keys:
+        for j in range(i + 1, len(lines)):
+            if re.match(r"^\s+-\s+", lines[j]):
+                continuations.add(j)
+            elif not lines[j].strip():
+                continue
+            else:
+                break
+    return keys, continuations
 
 
 def within_root(path: Path) -> bool:
@@ -129,14 +152,15 @@ def backfill(path: Path, check: bool) -> bool:
         out.append(line)
 
     facet_line = "facets: [" + ", ".join(facets) + "]"
-    idxs = [i for i, line in enumerate(out) if line.startswith("facets:")]
+    idxs, continuations = managed_block_spans(out, "facets")
     if not idxs:
         out.append(facet_line)
         changed = True
     else:
         # Duplicate YAML keys are legal but the LAST one wins: a stale second
-        # `facets:` would silently shadow the value just backfilled.
-        for i in reversed(idxs[1:]):
+        # `facets:` would silently shadow the value just backfilled. Remove
+        # its whole block, not just the key line, or the items are orphaned.
+        for i in sorted(continuations | set(idxs[1:]), reverse=True):
             del out[i]
             changed = True
         if out[idxs[0]] != facet_line:
@@ -147,13 +171,15 @@ def backfill(path: Path, check: bool) -> bool:
         cluster = CLUSTER_BY_CONCEPT.get(path.stem)
         if cluster:
             cluster_line = f"cluster: {cluster}"
-            existing = next(
-                (i for i, line in enumerate(out) if line.startswith("cluster:")),
-                None,
-            )
-            if existing is not None:
-                if out[existing] != cluster_line:
-                    out[existing] = cluster_line
+            existing, continuations = managed_block_spans(out, "cluster")
+            if existing:
+                # Same last-wins rule as facets: only the first cluster line
+                # is rewritten, so a stale second one must be removed.
+                for i in sorted(continuations | set(existing[1:]), reverse=True):
+                    del out[i]
+                    changed = True
+                if out[existing[0]] != cluster_line:
+                    out[existing[0]] = cluster_line
                     changed = True
             else:
                 # Place it beside `type:` for readability on hand-written pages.
