@@ -71,7 +71,9 @@ from taxonomy import (CONCEPT_CLUSTERS, FACET_BY_SLUG, FACETS,  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 WIKI = ROOT / "wiki"
-ENTRY_RE = re.compile(r"^\* \[(?P<name>[^\]]+)\]\((?P<url>[^)]+)\) - (?P<desc>.+)$")
+ENTRY_RE = re.compile(
+    r"^\* \[(?P<name>[^\]]+)\]\((?P<url>[^)]+(?:\([^)]*\)[^)]*)*)\) - (?P<desc>.+)$"
+)
 HEADING_RE = re.compile(r"^## (?P<title>.+)$")
 SKIP_SECTIONS = {"Contents"}
 SOURCE_ID = "awesome-automotive-security"
@@ -92,9 +94,9 @@ def mint_uid() -> str:
 
 
 def normalise(url: str) -> str:
-    """The list validator's identity rule: case, trailing slash, https ignored."""
+    """The list validator's identity rule: case, trailing slash, scheme ignored."""
     u = url.rstrip("/").lower()
-    return u[len("https://"):] if u.startswith("https://") else u
+    return re.sub(r"^https?://", "", u)
 
 
 def slugify(name: str, taken: set[str]) -> str:
@@ -118,12 +120,16 @@ def short_summary(desc: str) -> str:
     if len(desc) <= 160:
         return desc
     cut = desc[:157].rsplit(" ", 1)[0].rstrip(",;:")
+    if len(cut) < 80:
+        # A long unbroken token after an early space would otherwise leave
+        # almost nothing. Prefer a hard cut over an empty summary.
+        cut = desc[:159].rstrip()
     return cut + "…"
 
 
 def parse_list(readme: Path) -> list[dict]:
     entries, section = [], None
-    for line in readme.read_text(encoding="utf-8").splitlines():
+    for line in read_page(readme).splitlines():
         heading = HEADING_RE.match(line)
         if heading:
             section = heading.group("title").strip()
@@ -151,9 +157,11 @@ def frontmatter_blocks(text: str) -> list[tuple[str, list[str]]]:
         return []
     blocks: list[tuple[str, list[str]]] = []
     for line in text[4:end].splitlines():
-        if line and not line.startswith((" ", "-", "\t")) and ": " in line or \
-                line.endswith(":") and line[:-1].isidentifier():
-            blocks.append((line.split(":", 1)[0].strip(), [line]))
+        top_level = line and not line.startswith((" ", "-"))
+        if top_level and (": " in line or
+                          (line.strip().endswith(":")
+                           and line.strip()[:-1].isidentifier())):
+            blocks.append((line.strip().split(":", 1)[0].strip(), [line]))
         elif blocks:
             blocks[-1][1].append(line)
     return blocks
@@ -214,12 +222,16 @@ def split_page(text: str) -> tuple[dict, str]:
         return {}, text
     fields = {}
     for line in text[4:end].splitlines():
-        if ": " in line and not line.startswith(" "):
+        if ": " in line and not line.startswith((" ", "\t")):
             key, raw = line.split(": ", 1)
+            raw = raw.strip()
             try:
                 fields[key.strip()] = json.loads(raw)
             except json.JSONDecodeError:
-                fields[key.strip()] = raw.strip('"')
+                if len(raw) >= 2 and raw[0] == raw[-1] and raw[0] in "\"'":
+                    fields[key.strip()] = raw[1:-1]
+                else:
+                    fields[key.strip()] = raw
     return fields, text[end + 5:]
 
 
@@ -233,13 +245,21 @@ def related_count(text: str) -> int:
     return len(parse_related(split_frontmatter(text)[0]))
 
 
+def read_page(path: Path) -> str:
+    """Read a page with a clear error instead of a half-written ingest."""
+    try:
+        return path.read_text(encoding="utf-8")
+    except (OSError, UnicodeDecodeError) as exc:
+        sys.exit(f"ingest: cannot read {path}: {exc}")
+
+
 def all_pages() -> list[tuple[Path, dict, str]]:
     """Every authored page (entities and concepts), in stable path order."""
     pages = []
     for page in sorted(WIKI.rglob("*.md")):
         if page.name.startswith("index-"):
             continue
-        fields, body = split_page(page.read_text(encoding="utf-8"))
+        fields, body = split_page(read_page(page))
         if "title" in fields:
             pages.append((page, fields, body))
     return pages
@@ -313,7 +333,7 @@ def write_needs_attention(pages: list[tuple[Path, dict, str]],
         entry = f"- [{fields['title']}]({target}.md)"
         if str(fields.get("status", "")) == "unknown":
             buckets["Unverified resources"].append(entry)
-        if related_count(page.read_text(encoding="utf-8")) == 0:
+        if related_count(read_page(page)) == 0:
             buckets["Graph orphans"].append(entry)
         if str(fields.get("depth", "")) == "brief":
             kind, note = triage_kind(fields)
@@ -413,19 +433,26 @@ def write_concept_map(pages: list[tuple[Path, dict, str]]) -> None:
                                                 encoding="utf-8")
 
 
-def main() -> int:
+def main(argv=None) -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--source", default=str(ROOT.parent / SOURCE_ID),
                         help="checkout of the source list repo")
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
     source = Path(args.source)
     readme = source / "README.md"
     if not readme.exists():
         sys.exit(f"source README not found: {readme}")
-    commit = subprocess.run(["git", "-C", str(source), "rev-parse", "--short", "HEAD"],
-                            capture_output=True, text=True, check=True).stdout.strip()
-    date = subprocess.run(["git", "-C", str(source), "log", "-1", "--format=%cs", commit],
-                          capture_output=True, text=True, check=True).stdout.strip()
+    try:
+        commit = subprocess.run(
+            ["git", "-C", str(source), "rev-parse", "--short", "HEAD"],
+            capture_output=True, text=True, check=True,
+        ).stdout.strip()
+        date = subprocess.run(
+            ["git", "-C", str(source), "log", "-1", "--format=%cs", commit],
+            capture_output=True, text=True, check=True,
+        ).stdout.strip()
+    except (subprocess.CalledProcessError, OSError) as exc:
+        sys.exit(f"ingest: source is not a usable git checkout: {source} ({exc})")
 
     entries = parse_list(readme)
     WIKI.mkdir(exist_ok=True)
@@ -433,12 +460,15 @@ def main() -> int:
     existing: dict[str, Path] = {}
     by_stem: dict[str, Path] = {}
     for page in sorted(WIKI.rglob("*.md")):
-        fields, _ = split_page(page.read_text(encoding="utf-8"))
+        fields, _ = split_page(read_page(page))
         if "url" in fields:
-            existing[normalise(str(fields["url"]))] = page
+            key = normalise(str(fields["url"]))
+            if key in existing:
+                sys.exit(f"ingest: duplicate URL {key}: {existing[key]} and {page}")
+            existing[key] = page
             by_stem[page.stem] = page
 
-    taken = {p.stem for p in WIKI.glob("*.md")}
+    taken = {p.stem for p in WIKI.rglob("*.md")}
     entry_urls = {normalise(e["url"]) for e in entries}
     matched: set[Path] = set()
     by_section: dict[str, list[dict]] = {}
@@ -449,11 +479,19 @@ def main() -> int:
         if page is None:
             # URL moved? An entry under a new URL keeps its page when the
             # name's slug matches a page whose URL is no longer listed.
-            candidate = by_stem.get(slugify(e["title"], set()))
-            if candidate is not None and candidate not in matched:
-                cfields, _ = split_page(candidate.read_text(encoding="utf-8"))
+            base = slugify(e["title"], set())
+            candidates = sorted(
+                (p for stem, p in by_stem.items()
+                 if stem == base or re.fullmatch(re.escape(base) + r"-\d+", stem)),
+                key=lambda p: p.as_posix(),
+            )
+            for candidate in candidates:
+                if candidate in matched:
+                    continue
+                cfields, _ = split_page(read_page(candidate))
                 if normalise(str(cfields.get("url", ""))) not in entry_urls:
                     page = candidate
+                    break
         if page is None:
             slug = slugify(e["title"], taken)
             page = WIKI / f"{slug}.md"
@@ -466,7 +504,7 @@ def main() -> int:
                             + stub_body(e), encoding="utf-8")
             created += 1
         else:
-            old_text = page.read_text(encoding="utf-8")
+            old_text = read_page(page)
             fields, body = split_page(old_text)
             changed = (
                 str(fields.get("title", "")) != e["title"]
@@ -474,14 +512,21 @@ def main() -> int:
                 or str(fields.get("category", "")) != e["section"]
                 or str(fields.get("list_summary", "")) != e["summary"])
             if changed:
+                missing = [key for key in ("uid", "created", "last_checked")
+                           if not str(fields.get(key, "")).strip()]
+                if missing:
+                    sys.exit(
+                        f"ingest: {page} is missing {', '.join(missing)}; "
+                        "refusing to invent it"
+                    )
                 depth = str(fields.get("depth", "stub"))
                 status = str(fields.get("status", "unknown"))
                 new_text = frontmatter(
                     e, status, depth, date, commit, extra_blocks(old_text),
-                    last_checked=str(fields.get("last_checked", "")) or None,
-                    created=str(fields.get("created", "")) or None,
+                    last_checked=str(fields["last_checked"]),
+                    created=str(fields["created"]),
                     updated=date,
-                    uid=str(fields.get("uid", "")) or None) + (
+                    uid=str(fields["uid"])) + (
                     body if depth != "stub" else stub_body(e))
                 page.write_text(new_text, encoding="utf-8")
                 updated += 1
@@ -494,14 +539,17 @@ def main() -> int:
     for page in sorted(set(existing.values()) - matched):
         if page.stem.startswith("index-"):
             continue
-        text = page.read_text(encoding="utf-8")
+        text = read_page(page)
         fields, _ = split_page(text)
         if fields.get("status") != "archived":
-            text = re.sub(r"^status: .*$", "status: archived", text,
+            end = text.find("\n---\n", 4)
+            head, tail = (text[:end], text[end:]) if end != -1 else ("", text)
+            head = re.sub(r"^status: .*$", "status: archived", head,
                           count=1, flags=re.M)
-            if "Delisted from the source list" not in text:
-                text += (f"\n> Delisted from the source list as of {commit}."
+            if "Delisted from the source list" not in tail:
+                tail += (f"\n> Delisted from the source list as of {commit}."
                          f" Tombstoned, not deleted (see AGENTS.md).\n")
+            text = head + tail
             page.write_text(text, encoding="utf-8")
             tombstoned += 1
         # Tombstoned pages stay listed in their sub-index (marked), so
@@ -534,8 +582,9 @@ def main() -> int:
     # Sub-indexes (no frontmatter — OpenShelf detects them as sub-indexes).
     by_section_order = list(by_section.keys())
     catslug = {}
+    cat_taken: set[str] = set()
     for section in by_section_order:
-        cs = slugify(section, set())
+        cs = slugify(section, cat_taken)
         catslug[section] = cs
         lines = [f"# {section}", ""]
         browse = ", ".join(
@@ -548,6 +597,18 @@ def main() -> int:
             lines.append(f"- [{item['title']}]({item['slug']}.md) — {item['summary']}")
         lines.append("")
         (WIKI / f"index-{cs}.md").write_text("\n".join(lines), encoding="utf-8")
+
+    # Drop category indexes for sections no longer in the list. Generated
+    # sub-indexes have no frontmatter; an authored `index-*` page does.
+    generated_categories = {f"index-{cs}.md" for cs in catslug.values()}
+    hub_indexes = {"index-concept-map.md", "index-glossary.md",
+                   "index-needs-attention.md"}
+    for path in WIKI.glob("index-*.md"):
+        if (path.name in hub_indexes or path.name.startswith("index-facet-")
+                or path.name in generated_categories):
+            continue
+        if not read_page(path).startswith("---\n"):
+            path.unlink()
 
     # L1 index.
     lines = [f"# {KB_TITLE}", "", KB_DESC,
@@ -571,7 +632,7 @@ def main() -> int:
     concepts = []
     if concepts_dir.is_dir():
         for page in sorted(concepts_dir.glob("*.md")):
-            fields, _ = split_page(page.read_text(encoding="utf-8"))
+            fields, _ = split_page(read_page(page))
             if "title" in fields and "summary" in fields:
                 concepts.append((str(fields["title"]), page.stem,
                                  str(fields["summary"])))
