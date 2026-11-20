@@ -124,7 +124,10 @@ def audit(root: Path) -> dict:
         # would make the orphan metric vacuous.
         if kind.get(page.resolve()) in ("entity", "concept"):
             for target in targets:
-                inbound.setdefault(target, set()).add(page.resolve())
+                # Orphans are pages with no inbound link from ANOTHER article.
+                # A self-link (body or `related:`) is not company.
+                if target != page.resolve():
+                    inbound.setdefault(target, set()).add(page.resolve())
 
     def name(p: Path) -> str:
         return p.relative_to(root).as_posix()

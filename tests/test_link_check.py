@@ -241,6 +241,16 @@ class FilesystemGuardTests(unittest.TestCase):
     def tearDown(self):
         self._tmp.cleanup()
 
+    def test_symlinked_root_index_is_rejected_not_scanned_as_empty(self):
+        real = self.root / "real-index.md"
+        real.write_text((self.root / "index.md").read_text(encoding="utf-8"),
+                        encoding="utf-8")
+        (self.root / "index.md").unlink()
+        (self.root / "index.md").symlink_to(real)
+        with self.assertRaises(ValueError) as caught:
+            link_check.check(self.root)
+        self.assertIn("index.md", str(caught.exception))
+
     def test_directory_named_md_is_not_a_page(self):
         (self.root / "wiki" / "directory_page.md").mkdir()
         write(self.root, "wiki/alpha.md",

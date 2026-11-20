@@ -383,6 +383,11 @@ def checked(path: Path, action: str) -> None:
     # a directory at a generated-output path is misreported as a hardlink.
     if path.is_dir():
         sys.exit(f"ingest: refusing to {action} a directory at {path}")
+    # A FIFO (or socket/device node) at a generated output path would block
+    # on open-for-write forever. Every other tool skips non-regular files;
+    # ingest must refuse rather than hang the pipeline.
+    if path.exists() and not path.is_file():
+        sys.exit(f"ingest: refusing to {action} a non-regular file at {path}")
     if path.exists() and path.stat().st_nlink > 1:
         sys.exit(f"ingest: refusing to {action} hardlinked file {path}")
 
@@ -562,8 +567,8 @@ def write_glossary(pages: list[tuple[Path, dict, str]]) -> None:
 
 def write_index(path: Path, text: str) -> None:
     """Write a generated index, never over a page a human authored there."""
-    if path.is_symlink():
-        sys.exit(f"ingest: refusing to write through symlink {path}")
+    # Check BEFORE read_page(): a FIFO here would block on read, not write.
+    checked(path, "write generated index")
     if path.exists() and read_page(path).startswith("---\n"):
         sys.exit(f"ingest: refusing to overwrite authored page at {path}")
     write_page(path, text)
@@ -572,8 +577,16 @@ def write_index(path: Path, text: str) -> None:
 def write_concept_map(pages: list[tuple[Path, dict, str]]) -> None:
     # Keep the page alongside its fields: a concept need not be flat in
     # wiki/concepts/, and every other generated index uses link_target().
-    concepts = {p.stem: (p, f) for p, f, _ in pages
-                if f.get("type") == "concept"}
+    # Two concepts may share a stem (e.g. a draft under wiki/topics/). The
+    # L1 index lists only wiki/concepts/, so prefer that canonical page here
+    # too; otherwise this hub points at the clone while L1 points at the
+    # real concept, and link_check sees nothing wrong.
+    concepts: dict[str, tuple[Path, dict]] = {}
+    canonical = WIKI / "concepts"
+    for p, f, _ in sorted(
+            ((p, f, _) for p, f, _ in pages if f.get("type") == "concept"),
+            key=lambda item: not item[0].is_relative_to(canonical)):
+        concepts.setdefault(p.stem, (p, f))
     lines = ["# Concept map", "",
              "The concept layer organised by theme, with reading paths through"
              " it. Generated from tools/taxonomy.py and concept frontmatter;"
@@ -663,7 +676,11 @@ def main(argv=None) -> int:
     page_category: dict[Path, str] = {}
     for page in sorted(safe_pages(WIKI.rglob("*.md"))):
         fields, _ = split_page(read_page(page))
-        if "url" in fields:
+        # Concept pages are hand-written synthesis, not canon list entries.
+        # A `url:` on one is a cross-reference, not identity: treating it as
+        # identity tombstoned it on delist and made its URL collide with real
+        # entries. Only entity pages carry list identity.
+        if "url" in fields and str(fields.get("type")) != "concept":
             key = normalise(str(fields["url"]))
             if key in existing:
                 sys.exit(f"ingest: duplicate URL {key}: {existing[key]} and {page}")
@@ -691,9 +708,15 @@ def main(argv=None) -> int:
     # Lowercase like ``slugify`` does: on APFS ``index-Tools.md`` and
     # ``index-tools.md`` are one inode, so an uppercase authored stem must
     # still reserve the generated index's slug.
+    # Reserve from ALL authored pages, not just URL-bearing entities: a
+    # url-less hand-written `index-tools.md` must still route the generated
+    # Tools index to `index-tools-2.md`. Generated indexes have no frontmatter
+    # and are excluded, so they cannot poison the reservation on later runs.
     authored_index_slugs = {
-        p.stem[len("index-"):].lower() for p in existing.values()
+        p.stem[len("index-"):].lower()
+        for p in safe_pages(WIKI.rglob("*.md"))
         if p.stem.lower().startswith("index-")
+        and read_page(p).startswith("---\n")
     }
     catslug = category_slugs(section_order, authored_index_slugs)
     reserved |= {f"index-{cs}" for cs in catslug.values()}
@@ -906,7 +929,7 @@ def main(argv=None) -> int:
     concepts = []
     if concepts_dir.is_dir() and not concepts_dir.is_symlink() \
             and within_root(concepts_dir):
-        for page in sorted(safe_pages(concepts_dir.glob("*.md"))):
+        for page in sorted(safe_pages(concepts_dir.rglob("*.md"))):
             fields, _ = split_page(read_page(page))
             if "title" in fields and "summary" in fields:
                 concepts.append((str(fields["title"]), link_target(page),

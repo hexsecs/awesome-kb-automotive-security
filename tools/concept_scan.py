@@ -159,7 +159,8 @@ def main() -> int:
 
     pages: dict[str, dict] = {}
     categories: set[str] = set()
-    existing_concepts: set[str] = set()
+    existing_concepts: set[str] = set()  # normalised spellings for matching
+    concept_count = 0                    # pages, for the status line
     concept_dir = WIKI / "concepts"
     for path in sorted(WIKI.rglob("*.md")):
         # Authored entities can be named `index-*` and live in subdirectories;
@@ -174,7 +175,13 @@ def main() -> int:
         # A concept is any `type: concept` page, wherever it lives — the
         # concepts/ directory is a convention, not the definition.
         if path.is_relative_to(concept_dir) or f.get("type") == "concept":
-            existing_concepts.add(path.stem.replace("-", " "))
+            # Candidate phrases are lowercased and keep internal hyphens
+            # (TOKEN_RE treats `iso-tp` as one token). Store both spellings,
+            # case-folded, so the concept suppresses its own theme.
+            stem = path.stem.lower()
+            existing_concepts.add(stem)
+            existing_concepts.add(stem.replace("-", " "))
+            concept_count += 1
             continue
         if f.get("type") != "entity" or "title" not in f:
             continue
@@ -220,7 +227,7 @@ def main() -> int:
         pruned.append((phrase, slugs, score))
     pruned = pruned[:args.top]
 
-    print(f"concept_scan: {n} entity pages, {len(existing_concepts)} "
+    print(f"concept_scan: {n} entity pages, {concept_count} "
           f"existing concepts, {len(pruned)} candidates with "
           f">= {args.min_pages} pages\n")
     print("| Candidate theme | Pages | Example pages |")

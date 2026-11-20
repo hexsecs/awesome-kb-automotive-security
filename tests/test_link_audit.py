@@ -65,6 +65,13 @@ class LinkAuditTest(unittest.TestCase):
         self.assertIn("wiki/lonely.md", r["orphans"])
         self.assertIn("wiki/lonely.md", r["entities_without_concept_link"])
 
+    def test_self_link_does_not_count_as_inbound(self):
+        # Orphans are pages with no inbound link from ANOTHER article.
+        write(self.root, "wiki/a.md", "# A\n\nSee [self](a.md).\n")
+        self.assertIn("wiki/a.md", self.report()["orphans"])
+        write(self.root, "wiki/a.md", "---\nrelated: [a]\n---\n\n# A\n")
+        self.assertIn("wiki/a.md", self.report()["orphans"])
+
     def test_one_way_related_pair_is_detected(self):
         # beta stops linking back to alpha.
         write(self.root, "wiki/beta.md",

@@ -302,17 +302,39 @@ class BackfillSafetyTests(unittest.TestCase):
             self.assertNotIn("tools", facet_line)
 
     def test_block_form_facets_are_replaced_not_left_dangling(self):
+        blocks = {
+            "plain": "facets:\n  - can-bus\n  - telemetry\n",
+            "with comment": "facets:\n  - can-bus\n  # mid\n  - telemetry\n",
+            "unindented": "facets:\n- can-bus\n- telemetry\n",
+        }
+        for label, block in blocks.items():
+            with self.subTest(label):
+                with tempfile.TemporaryDirectory() as tmp:
+                    use_temp_root(self, tmp)
+                    page = self._page(
+                        tmp, "x.md",
+                        '---\ntitle: "X"\nsummary: "CAN tool"\ntype: entity\n'
+                        + block + '---\n\nBody.\n')
+                    backfill_navigation.backfill(page, check=False)
+                    text = page.read_text(encoding="utf-8")
+                    self.assertRegex(text, r"(?m)^facets: \[[^\]]*\]$")
+                    self.assertNotIn("can-bus", text)
+                    self.assertNotIn("telemetry", text)
+                    self.assertNotIn("# mid", text)
+
+    def test_space_before_colon_cluster_is_rewritten_in_place(self):
         with tempfile.TemporaryDirectory() as tmp:
             use_temp_root(self, tmp)
             page = self._page(
-                tmp, "x.md",
-                '---\ntitle: "X"\nsummary: "CAN tool"\ntype: entity\n'
-                'facets:\n  - can-bus\n  - telemetry\n---\n\nBody.\n')
-            backfill_navigation.backfill(page, check=False)
+                tmp, "can-injection.md",
+                '---\ntitle: "CAN Injection"\ntype: concept\n'
+                'cluster : stale-here\nsummary: "s"\n---\n\nBody.\n')
+            self.assertTrue(backfill_navigation.backfill(page, check=False))
             text = page.read_text(encoding="utf-8")
-            self.assertRegex(text, r"(?m)^facets: \[[^\]]*\]$")
-            self.assertNotIn("  - can-bus", text)
-            self.assertNotIn("  - telemetry", text)
+            self.assertEqual(text.count("cluster"), 1)
+            self.assertIn("cluster: bus", text)
+            self.assertNotIn("stale-here", text)
+            self.assertFalse(backfill_navigation.backfill(page, check=False))
 
     def test_duplicate_cluster_keys_are_collapsed(self):
         with tempfile.TemporaryDirectory() as tmp:
