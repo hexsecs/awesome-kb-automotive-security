@@ -85,6 +85,24 @@ class IngestParsingTests(unittest.TestCase):
                             for block in ingest.extra_blocks(text)
                             for line in block))
 
+    def test_scalar_drops_trailing_comment_and_keeps_embedded_quotes(self):
+        fields, _ = ingest.split_page(
+            '---\ntitle: "Foo" # a title\n'
+            'created: "2026-01-01" # first seen\n'
+            'nickname: \'He said "hello"\'\n---\n\nBody.\n'
+        )
+        self.assertEqual(fields["title"], "Foo")
+        self.assertEqual(fields["created"], "2026-01-01")
+        self.assertEqual(fields["nickname"], 'He said "hello"')
+
+    def test_frontmatter_without_final_newline_is_parsed(self):
+        fields, body = ingest.split_page('---\ntitle: "X"\nrelated: [ghost]\n---')
+        self.assertEqual(fields["title"], "X")
+        self.assertEqual(fields["related"], "[ghost]")
+        self.assertEqual(body, "")
+        blocks = ingest.frontmatter_blocks('---\ntitle: "X"\nrelated: [a]\n---')
+        self.assertTrue(any(k == "related" for k, _ in blocks))
+
 
 class IngestMainTests(unittest.TestCase):
     def setUp(self):
@@ -196,6 +214,25 @@ class IngestMainTests(unittest.TestCase):
         self.assertIn('status: "active"', text)
         self.assertIn("a changed", text)
 
+    def test_bom_page_preserves_unmanaged_frontmatter_blocks(self):
+        page = self.wiki / "a.md"
+        page.write_text(
+            "\ufeff---\nuid: \"01aa0000-0000-7000-8000-000000000000\"\n"
+            "title: \"A\"\nurl: \"https://example.com/a\"\n"
+            "category: \"CAN Bus Analysis\"\nstatus: \"active\"\n"
+            "created: \"2026-01-01\"\nlast_checked: \"2026-01-01\"\n"
+            "related:\n  - beta\ndepth_note: \"deepen candidate — x\"\n"
+            "---\n\nBody.\n",
+            encoding="utf-8",
+        )
+        self.write_list(
+            "## CAN Bus Analysis\n\n* [A](https://example.com/a) - a changed\n"
+        )
+        text = page.read_text(encoding="utf-8")
+        self.assertIn("related:", text)
+        self.assertIn("  - beta", text)
+        self.assertIn("depth_note:", text)
+
     def test_new_slug_cannot_collide_with_a_concept_stem(self):
         (self.wiki / "concepts" / "alpha.md").write_text(
             '---\ntitle: "Alpha concept"\ntype: concept\n---\n\nBody.\n',
@@ -224,6 +261,64 @@ class IngestMainTests(unittest.TestCase):
         hub = (self.wiki / "index-concept-map.md").read_text(encoding="utf-8")
         self.assertTrue(hub.startswith("# Concept map"))
         self.assertTrue((self.wiki / "index-concept-map-2.md").is_file())
+
+    def test_hub_named_section_index_does_not_clobber_an_entity(self):
+        self.write_list(
+            "## Concept map\n\n* [Alpha](https://example.com/alpha) - a\n\n"
+            "## Tools\n\n* [Index Concept Map 2](https://example.com/e) - e\n"
+        )
+        pages = [p for p in self.wiki.glob("*.md")
+                 if "https://example.com/e" in p.read_text(encoding="utf-8")]
+        self.assertEqual([p.name for p in pages], ["index-concept-map-2-2.md"])
+        self.assertTrue((self.wiki / "index-concept-map-2.md").read_text(
+            encoding="utf-8").startswith("# Concept map"))
+
+    def test_entity_slug_cannot_take_the_glossary_stem(self):
+        self.write_list(
+            "## CAN Bus Analysis\n\n* [Index Glossary](https://example.com/g) - g\n"
+        )
+        self.assertTrue((self.wiki / "index-glossary-2.md").is_file())
+
+    def test_facet_cleanup_keeps_an_authored_index_facet_page(self):
+        self.write_list(
+            "## Tools\n\n* [A](https://example.com/a) - a\n"
+            "* [B](https://example.com/b) - b\n"
+            "* [Index Facet Can](https://example.com/c) - c\n"
+        )
+        for name in ("a.md", "b.md"):
+            p = self.wiki / name
+            p.write_text(p.read_text(encoding="utf-8").replace(
+                "depth: ", "facets: [can]\ndepth: "), encoding="utf-8")
+        self.ingest()
+        self.assertTrue((self.wiki / "index-facet-can-2.md").is_file())
+        self.assertTrue((self.wiki / "index-facet-can.md").read_text(
+            encoding="utf-8").startswith("# Facet:"))
+
+    def test_relisted_entry_is_un_tombstoned(self):
+        self.write_list("## Tools\n\n* [A](https://example.com/a) - a\n")
+        self.write_list("# Empty\n")
+        page = self.wiki / "a.md"
+        self.assertIn('status: archived', page.read_text(encoding="utf-8"))
+        self.write_list("## Tools\n\n* [A](https://example.com/a) - a\n")
+        text = page.read_text(encoding="utf-8")
+        self.assertNotIn("archived", text)
+        self.assertNotIn("Delisted from the source list", text)
+
+    def test_verified_archived_project_is_not_un_tombstoned(self):
+        page = self.wiki / "a.md"
+        page.write_text(
+            '---\nuid: "01aa0000-0000-7000-8000-000000000000"\n'
+            'title: "A"\nurl: "https://example.com/a"\n'
+            'category: "CAN Bus Analysis"\nstatus: "archived"\n'
+            'created: "2026-01-01"\nlast_checked: "2026-01-01"\n'
+            '---\n\nThe upstream project is archived.\n',
+            encoding="utf-8",
+        )
+        self.write_list(
+            "## CAN Bus Analysis\n\n* [A](https://example.com/a) - a\n")
+        text = page.read_text(encoding="utf-8")
+        self.assertIn('status: "archived"', text)
+        self.assertNotIn("Delisted from the source list", text)
 
     def test_refuses_to_invent_identity_fields(self):
         (self.wiki / "a.md").write_text(
@@ -298,6 +393,17 @@ class ListParsingTests(unittest.TestCase):
         fields, _ = ingest.split_page(text)
         self.assertEqual(fields["url"], "https://example.com/a")
         self.assertEqual(fields["uid"], "01aa")
+
+    def test_bom_source_readme_keeps_the_first_section(self):
+        with tempfile.TemporaryDirectory() as d:
+            p = Path(d) / "README.md"
+            p.write_text(
+                '\ufeff## First\n\n* [A](https://example.com/a) - a\n\n'
+                '## Second\n\n* [B](https://example.com/b) - b\n',
+                encoding="utf-8",
+            )
+            self.assertEqual(
+                [e["title"] for e in ingest.parse_list(p)], ["A", "B"])
 
 
 class NeedsAttentionTests(unittest.TestCase):

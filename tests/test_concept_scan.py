@@ -50,6 +50,39 @@ class ScanningTests(unittest.TestCase):
             )
             self.assertIn("1 entity pages", run_scan(root))
 
+    def test_frontmatter_without_final_newline_is_scanned(self):
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            (root / "alpha.md").write_text(
+                '---\ntype: entity\ntitle: "Alpha"\nsummary: "CAN tool."\n---',
+                encoding="utf-8",
+            )
+            self.assertIn("1 entity pages", run_scan(root))
+
+    def test_symlinked_wiki_directory_is_skipped(self):
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            outside_dir = root.parent / f"outside-{root.name}"
+            outside_dir.mkdir()
+            self.addCleanup(
+                lambda: __import__("shutil").rmtree(outside_dir, ignore_errors=True))
+            (outside_dir / "alpha.md").write_text(
+                '---\ntype: entity\ntitle: "Alpha"\n---\n\nBody.\n',
+                encoding="utf-8",
+            )
+            wiki = root / "wiki"
+            wiki.symlink_to(outside_dir, target_is_directory=True)
+            saved = (concept_scan.ROOT, concept_scan.WIKI)
+            concept_scan.ROOT, concept_scan.WIKI = root, wiki
+            try:
+                sys.argv = ["concept_scan", "--min-pages", "1", "--top", "1"]
+                buf = io.StringIO()
+                with contextlib.redirect_stdout(buf):
+                    concept_scan.main()
+            finally:
+                concept_scan.ROOT, concept_scan.WIKI = saved
+            self.assertIn("0 entity pages", buf.getvalue())
+
     def test_symlinked_page_is_skipped(self):
         with tempfile.TemporaryDirectory() as d:
             root = Path(d)
@@ -83,6 +116,13 @@ class HardeningTests(unittest.TestCase):
         fields = concept_scan.fields_of(text)
         self.assertEqual(fields["type"], "entity")
         self.assertEqual(fields["title"], "Alpha")
+
+    def test_fields_of_drops_comments_and_keeps_embedded_quotes(self):
+        text = ('---\ntype: "entity" # a page\n'
+                'title: \'He said "hello"\'\n---\n\nBody.\n')
+        fields = concept_scan.fields_of(text)
+        self.assertEqual(fields["type"], "entity")
+        self.assertEqual(fields["title"], 'He said "hello"')
 
 
 if __name__ == "__main__":

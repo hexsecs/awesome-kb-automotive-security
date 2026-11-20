@@ -132,6 +132,31 @@ class ParserAndBoundaryTests(unittest.TestCase):
             ["alpha", "beta"],
         )
 
+    def test_inline_related_ignores_brackets_in_the_comment(self):
+        self.assertEqual(
+            link_check.parse_related("related: [alpha, beta] # see [spec]\n"),
+            ["alpha", "beta"],
+        )
+        self.assertEqual(
+            link_check.parse_related("related: [] # keeps [brackets]\n"), [])
+
+    def test_frontmatter_without_final_newline_is_parsed(self):
+        fm, body = link_check.split_frontmatter('---\nrelated: [alpha]\n---')
+        self.assertEqual(link_check.parse_related(fm), ["alpha"])
+        self.assertEqual(body, "")
+
+    def test_angle_bracket_external_and_anchor_targets_are_not_broken(self):
+        write(self.root, "wiki/brackets.md",
+              "[ext](<https://example.com/x>) [kb](<kb://other/p>) "
+              "[anchor](<#section>).\n")
+        write(self.root, "index.md",
+              "# KB\n\n- [Alpha](wiki/alpha.md)\n- [B](wiki/brackets.md)\n")
+        report = link_check.check(self.root)
+        self.assertEqual(report["broken_links"], [])
+        self.assertTrue(link_check.is_ignored("<https://example.com/x>"))
+        self.assertTrue(link_check.is_ignored("<kb://other/p>"))
+        self.assertTrue(link_check.is_ignored("<#section>"))
+
     def test_block_related_items_with_trailing_comments_are_parsed(self):
         self.assertEqual(
             link_check.parse_related(

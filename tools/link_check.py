@@ -30,8 +30,8 @@ LINK_RE = re.compile(
     r"(<[^>]+>|[^()\s]+(?:\([^()]*\)[^()\s]*)*|[^)\s]+)"
     r"(?:\s+(?:\"[^\"]*\"|'[^']*'))?\s*\)"
 )
-FRONTMATTER_RE = re.compile(r"\A\ufeff?---\n(.*?)\n---\n", re.DOTALL)
-RELATED_INLINE_RE = re.compile(r"^related:\s*\[(.*)\]\s*(?:#.*)?$")
+FRONTMATTER_RE = re.compile(r"\A\ufeff?---\n(.*?)\n---(?:\n|\Z)", re.DOTALL)
+RELATED_INLINE_RE = re.compile(r"^related:\s*\[([^\]]*)\]\s*(?:#.*)?$")
 RELATED_BLOCK_RE = re.compile(r"^related:\s*$")
 LIST_ITEM_RE = re.compile(r"^\s*-\s+(\S+)\s*(?:#.*)?$")
 
@@ -80,8 +80,14 @@ def parse_related(frontmatter: str):
     return slugs
 
 
+def unwrap(target: str) -> str:
+    """Markdown angle-bracket destinations: `<url>` wraps the real target."""
+    t = target.strip()
+    return t[1:-1].strip() if t.startswith("<") and t.endswith(">") else t
+
+
 def is_ignored(target: str) -> bool:
-    t = target.strip().lower()
+    t = unwrap(target).lower()
     return (
         t.startswith("http://")
         or t.startswith("https://")
@@ -92,9 +98,9 @@ def is_ignored(target: str) -> bool:
 
 
 def resolve_link(source: Path, target: str, root: Path) -> Path | None:
-    t = target.split("#", 1)[0].split("?", 1)[0].strip()
-    if t.startswith("<") and t.endswith(">"):
-        t = t[1:-1].strip()
+    # Unwrap BEFORE splitting off the fragment: `<#section>` is an anchor, not
+    # a file literally named `<`.
+    t = unwrap(target).split("#", 1)[0].split("?", 1)[0].strip()
     if not t:
         return None
     t = unquote(t)

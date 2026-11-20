@@ -86,22 +86,42 @@ def read_page(path: Path) -> str | None:
         return None
 
 
+def scalar(raw: str) -> str:
+    """Parse one YAML scalar, dropping a trailing comment outside quotes."""
+    raw = raw.strip()
+    quote = None
+    for i, ch in enumerate(raw):
+        if quote:
+            if ch == quote and (i == 0 or raw[i - 1] != "\\"):
+                quote = None
+        elif ch in "\"'":
+            quote = ch
+        elif ch == "#" and (i == 0 or raw[i - 1].isspace()):
+            raw = raw[:i].rstrip()
+            break
+    try:
+        return json.loads(raw)
+    except (json.JSONDecodeError, ValueError):
+        if len(raw) >= 2 and raw[0] == raw[-1] and raw[0] in "\"'":
+            return raw[1:-1]
+        return raw
+
+
 def fields_of(text: str) -> dict:
     if text.startswith("\ufeff"):
         text = text[1:]
     if not text.startswith("---\n"):
         return {}
     end = text.find("\n---\n", 4)
+    if end == -1 and text.endswith("\n---"):
+        end = len(text) - 4
     if end == -1:
         return {}
     fields = {}
     for line in text[4:end].splitlines():
         if ": " in line and not line.startswith((" ", "-")):
             key, raw = line.split(": ", 1)
-            try:
-                fields[key.strip()] = json.loads(raw)
-            except (json.JSONDecodeError, ValueError):
-                fields[key.strip()] = raw.strip().strip("\"'")
+            fields[key.strip()] = scalar(raw)
     return fields
 
 
