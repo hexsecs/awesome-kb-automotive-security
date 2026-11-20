@@ -45,6 +45,8 @@ from pathlib import Path
 from urllib.parse import urlparse
 from zoneinfo import ZoneInfo
 
+from link_check import parse_related as _shared_parse_related
+
 ROOT = Path(__file__).resolve().parent.parent
 WIKI = ROOT / "wiki"
 
@@ -69,6 +71,8 @@ def tokens(text: str) -> list[str]:
 
 def split_page(text: str) -> tuple[dict, list[str], str]:
     """(scalar fields, frontmatter lines, body) — scalars best-effort."""
+    if text.startswith("\ufeff"):
+        text = text[1:]
     if not text.startswith("---\n"):
         return {}, [], text
     end = text.find("\n---\n", 4)
@@ -82,26 +86,17 @@ def split_page(text: str) -> tuple[dict, list[str], str]:
             try:
                 fields[key.strip()] = json.loads(raw)
             except (json.JSONDecodeError, ValueError):
-                fields[key.strip()] = raw.strip('"')
+                fields[key.strip()] = raw.strip().strip("\"'")
     return fields, fm_lines, text[end + 5:]
 
 
 def parse_related(fm_lines: list[str]) -> list[str]:
-    rels: list[str] = []
-    for i, line in enumerate(fm_lines):
-        if line.startswith("related:"):
-            rest = line.split(":", 1)[1].strip()
-            if rest.startswith("["):
-                rels = [x.strip().strip("'\"")
-                        for x in rest.strip("[]").split(",") if x.strip()]
-            else:
-                for nxt in fm_lines[i + 1:]:
-                    if nxt.startswith(("  - ", "- ")):
-                        rels.append(nxt.split("- ", 1)[1].strip().strip("'\""))
-                    else:
-                        break
-            break
-    return rels
+    """Parse `related:` slugs using link_check's parser so the two agree.
+
+    Sharing the parser prevents the tools from disagreeing on comments,
+    tab-indented list items, quoted scalars, or duplicated blocks.
+    """
+    return _shared_parse_related("\n".join(fm_lines))
 
 
 def read_page(path: Path) -> str | None:
@@ -112,10 +107,18 @@ def read_page(path: Path) -> str | None:
         return None
 
 
+def within_root(path: Path) -> bool:
+    """True when ``path`` resolves to a location inside the KB root."""
+    try:
+        return path.resolve().is_relative_to(ROOT.resolve())
+    except OSError:
+        return False
+
+
 def write_page(path: Path, fm_lines: list[str], body: str,
                related: list[str], run_date: str) -> None:
     """Replace/insert the related block; bump `updated:`; write the file."""
-    if path.is_symlink():
+    if path.is_symlink() or not within_root(path):
         return
     out: list[str] = []
     i = 0
@@ -133,8 +136,9 @@ def write_page(path: Path, fm_lines: list[str], body: str,
                 out.extend(block)
                 placed = True
             i += 1
-            # skip the old block's continuation lines
-            while i < len(fm_lines) and fm_lines[i].startswith((" ", "-")):
+            # skip the old block's continuation lines (space- or tab-indented,
+            # with or without trailing comments — whatever link_check reads)
+            while i < len(fm_lines) and re.match(r"^\s*-\s+", fm_lines[i]):
                 i += 1
             continue
         if line.startswith("updated:"):
@@ -170,7 +174,8 @@ def main() -> int:
 
     pages: dict[str, dict] = {}
     for path in sorted(WIKI.glob("*.md")):
-        if path.stem.startswith("index-") or path.is_symlink():
+        if (path.stem.startswith("index-") or path.is_symlink()
+                or not within_root(path)):
             continue
         text = read_page(path)
         if text is None:
@@ -268,6 +273,8 @@ def main() -> int:
     cdir = WIKI / "concepts"
     if cdir.is_dir():
         for path in sorted(cdir.glob("*.md")):
+            if path.is_symlink() or not within_root(path):
+                continue
             text = read_page(path)
             if text is None:
                 continue

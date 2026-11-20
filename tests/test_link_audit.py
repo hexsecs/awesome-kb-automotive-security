@@ -80,6 +80,15 @@ class LinkAuditTest(unittest.TestCase):
         # alpha and beta both link to the concept.
         self.assertEqual(theme["inbound"], 2)
 
+    def test_generated_index_inbound_does_not_hide_an_orphan(self):
+        # A generated sub-index links to lonely.md, but no article does.
+        write(self.root, "wiki/index-sub.md",
+              "# Sub\n\n- [Lonely](lonely.md)\n")
+        write(self.root, "wiki/lonely.md",
+              "---\ntype: entity\nrelated: []\n---\n\nBody.\n")
+        r = self.report()
+        self.assertIn("wiki/lonely.md", r["orphans"])
+
 
 class AuditRobustnessTests(unittest.TestCase):
     def setUp(self):
@@ -111,6 +120,41 @@ class AuditRobustnessTests(unittest.TestCase):
 
     def test_bad_root_fails_instead_of_passing_empty(self):
         self.assertEqual(link_audit.main(["--root", str(self.root / "nope")]), 2)
+
+    def test_existing_dir_without_index_md_is_rejected(self):
+        (self.root / "index.md").unlink()
+        self.assertEqual(link_audit.main(["--root", str(self.root)]), 2)
+
+    def test_duplicate_stem_resolution_is_deterministic_across_seeds(self):
+        import json
+        import os
+        import subprocess
+
+        write(self.root, "wiki/dup.md", "---\nrelated: []\n---\n\nEntity.\n")
+        write(self.root, "wiki/concepts/dup.md",
+              "---\nrelated: [alpha, beta]\n---\n\nConcept.\n")
+        write(self.root, "wiki/a-ref.md", "---\nrelated: [dup]\n---\n\nBody.\n")
+        script = (
+            "import sys, json\n"
+            "from pathlib import Path\n"
+            f"sys.path.insert(0, {str(REPO / 'tools')!r})\n"
+            "import link_audit\n"
+            f"r = link_audit.audit(Path({str(self.root)!r}))\n"
+            "print(json.dumps([e for e in r['concept_inbound'] "
+            "if e['page'].endswith('/dup.md')]))\n"
+        )
+        outputs = []
+        for seed in range(10):
+            env = dict(os.environ, PYTHONHASHSEED=str(seed))
+            out = subprocess.run(
+                [sys.executable, "-c", script], env=env,
+                capture_output=True, text=True, check=True,
+            )
+            outputs.append(out.stdout.strip())
+        self.assertEqual(set(outputs), {outputs[0]},
+                         f"cross-seed drift: {outputs}")
+        # The sorted-first concept page wins, so it keeps the single inbound.
+        self.assertEqual(json.loads(outputs[0])[0]["inbound"], 1)
 
 
 if __name__ == "__main__":

@@ -33,7 +33,7 @@ LINK_RE = re.compile(
 FRONTMATTER_RE = re.compile(r"\A\ufeff?---\n(.*?)\n---\n", re.DOTALL)
 RELATED_INLINE_RE = re.compile(r"^related:\s*\[(.*)\]\s*(?:#.*)?$")
 RELATED_BLOCK_RE = re.compile(r"^related:\s*$")
-LIST_ITEM_RE = re.compile(r"^\s*-\s+(\S+)\s*$")
+LIST_ITEM_RE = re.compile(r"^\s*-\s+(\S+)\s*(?:#.*)?$")
 
 
 def iter_pages(root: Path):
