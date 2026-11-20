@@ -111,5 +111,65 @@ class LinkCheckTest(unittest.TestCase):
         self.assertEqual(rc, 0)
 
 
+class ParserAndBoundaryTests(unittest.TestCase):
+    def setUp(self):
+        self._tmp = tempfile.TemporaryDirectory()
+        self.root = Path(self._tmp.name)
+        make_kb(self.root)
+
+    def tearDown(self):
+        self._tmp.cleanup()
+
+    def test_unindented_related_block_is_parsed(self):
+        self.assertEqual(
+            link_check.parse_related("related:\n- alpha\n- beta\n"),
+            ["alpha", "beta"],
+        )
+
+    def test_inline_related_with_trailing_comment_is_parsed(self):
+        self.assertEqual(
+            link_check.parse_related("related: [alpha, beta] # note\n"),
+            ["alpha", "beta"],
+        )
+
+    def test_bom_frontmatter_is_parsed(self):
+        fm, _ = link_check.split_frontmatter(
+            "\ufeff---\nrelated: [alpha]\n---\n\nBody.\n"
+        )
+        self.assertEqual(link_check.parse_related(fm), ["alpha"])
+
+    def test_markdown_link_forms_are_recognised(self):
+        text = ("[x](<my file.md>) [y](foo(bar).md) "
+                "[z](page.md 'title') [a [b]](page.md)")
+        self.assertEqual(
+            [m.group(1) for m in link_check.LINK_RE.finditer(text)],
+            ["<my file.md>", "foo(bar).md", "page.md", "page.md"],
+        )
+
+    def test_angle_bracket_target_resolves_without_brackets(self):
+        with tempfile.TemporaryDirectory() as d:
+            r = Path(d)
+            (r / "wiki").mkdir()
+            target = link_check.resolve_link(
+                r / "wiki/a.md", "<my file.md>", r
+            )
+            self.assertEqual(target, (r / "wiki/my file.md").resolve())
+
+    def test_link_outside_root_is_reported_broken(self):
+        write(self.root, "wiki/traveller.md", "See [x](../../../../etc/passwd).\n")
+        write(self.root, "index.md",
+              "# KB\n\n- [Alpha](wiki/alpha.md)\n- [T](wiki/traveller.md)\n")
+        report = link_check.check(self.root)
+        self.assertEqual(report["counts"]["broken_links"], 1)
+        self.assertEqual(report["broken_links"][0]["source"], "wiki/traveller.md")
+
+    def test_bad_root_fails_instead_of_passing_empty(self):
+        with self.assertRaises(ValueError):
+            link_check.check(self.root / "not-a-dir")
+        self.assertEqual(
+            link_check.main(["--root", str(self.root / "not-a-dir")]), 2
+        )
+
+
 if __name__ == "__main__":
     unittest.main()

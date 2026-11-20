@@ -34,5 +34,15 @@ class TriageKindTests(unittest.TestCase):
         self.assertEqual(note, "something else")
 
 
+class RelatedCountTests(unittest.TestCase):
+    def test_unindented_related_block_is_counted(self):
+        text = '---\ntitle: "X"\nrelated:\n- alpha\n- beta\n---\n\nBody.\n'
+        self.assertEqual(ingest.related_count(text), 2)
+
+    def test_related_with_inline_comment_is_counted(self):
+        text = '---\ntitle: "X"\nrelated: [alpha, beta] # note\n---\n\nBody.\n'
+        self.assertEqual(ingest.related_count(text), 2)
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -26,6 +26,8 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
+import sys
 from pathlib import Path
 
 from link_check import (
@@ -33,6 +35,7 @@ from link_check import (
     is_ignored,
     iter_pages,
     parse_related,
+    require_kb_root,
     resolve_link,
     split_frontmatter,
 )
@@ -41,7 +44,7 @@ ROOT = Path(__file__).resolve().parent.parent
 
 
 def audit(root: Path) -> dict:
-    root = root.resolve()
+    root = require_kb_root(root)
     pages = list(iter_pages(root))
     wiki = root / "wiki"
     stems = {p.stem for p in pages if p.is_relative_to(wiki)}
@@ -61,7 +64,9 @@ def audit(root: Path) -> dict:
         is_wiki = page.is_relative_to(wiki)
         is_concept = is_wiki and page.parent.name == "concepts"
         is_index = page.stem.startswith("index-") or rel == "index.md"
+        declared = re.search(r"^type:\s*(concept|entity)\b", frontmatter, re.M)
         kind[page.resolve()] = (
+            declared.group(1) if declared else
             "index" if is_index else "concept" if is_concept
             else "entity" if is_wiki else "other"
         )
@@ -70,7 +75,10 @@ def audit(root: Path) -> dict:
         for slug in parse_related(frontmatter):
             # Resolve a bare slug to any wiki page with that stem.
             if slug in stems:
-                matches = [p for p in page_set if p.stem == slug and p.is_relative_to(wiki)]
+                matches = sorted(
+                    p for p in page_set
+                    if p.stem == slug and p.is_relative_to(wiki)
+                )
                 if matches:
                     targets.add(matches[0])
         for m in LINK_RE.finditer(body):
@@ -160,7 +168,11 @@ def main(argv=None) -> int:
     parser.add_argument("--json", action="store_true", help="machine-readable report")
     parser.add_argument("--root", type=Path, default=ROOT, help="KB root (default: repo root)")
     args = parser.parse_args(argv)
-    report = audit(args.root)
+    try:
+        report = audit(args.root)
+    except ValueError as exc:
+        print(f"link_audit: {exc}", file=sys.stderr)
+        return 2
     if args.json:
         print(json.dumps(report, indent=2))
     else:

@@ -81,5 +81,37 @@ class LinkAuditTest(unittest.TestCase):
         self.assertEqual(theme["inbound"], 2)
 
 
+class AuditRobustnessTests(unittest.TestCase):
+    def setUp(self):
+        self._tmp = tempfile.TemporaryDirectory()
+        self.root = Path(self._tmp.name)
+        make_kb(self.root)
+
+    def tearDown(self):
+        self._tmp.cleanup()
+
+    def test_duplicate_stem_resolution_is_deterministic(self):
+        write(self.root, "wiki/dup.md", "---\nrelated: []\n---\n\nEntity.\n")
+        write(self.root, "wiki/concepts/dup.md",
+              "---\nrelated: [alpha, beta]\n---\n\nConcept.\n")
+        write(self.root, "wiki/a-ref.md", "---\nrelated: [dup]\n---\n\nBody.\n")
+        results = [link_audit.audit(self.root) for _ in range(5)]
+        counts = {
+            next(e["inbound"] for e in r["concept_inbound"]
+                 if e["page"] == "wiki/concepts/dup.md")
+            for r in results
+        }
+        self.assertEqual(counts, {1})
+
+    def test_declared_entity_type_beats_index_prefix(self):
+        write(self.root, "wiki/index-utils.md",
+              "---\ntype: entity\nrelated: []\n---\n\nBody.\n")
+        r = link_audit.audit(self.root)
+        self.assertIn("wiki/index-utils.md", r["orphans"])
+
+    def test_bad_root_fails_instead_of_passing_empty(self):
+        self.assertEqual(link_audit.main(["--root", str(self.root / "nope")]), 2)
+
+
 if __name__ == "__main__":
     unittest.main()
