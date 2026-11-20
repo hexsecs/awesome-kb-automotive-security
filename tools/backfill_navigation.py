@@ -42,9 +42,33 @@ def split_frontmatter(text: str) -> tuple[str, str, str] | None:
     if not text.startswith("---\n"):
         return None
     end = text.find("\n---\n", 4)
+    body_start = end + 5
+    if end == -1 and text.endswith("\n---"):
+        end, body_start = len(text) - 4, len(text)
     if end == -1:
         return None
-    return "---\n", text[4:end], text[end + 5:]
+    return "---\n", text[4:end], text[body_start:]
+
+
+def scalar(raw: str) -> str:
+    """Parse one YAML scalar, dropping a trailing comment outside quotes."""
+    raw = raw.strip()
+    quote = None
+    for i, ch in enumerate(raw):
+        if quote:
+            if ch == quote and (i == 0 or raw[i - 1] != "\\"):
+                quote = None
+        elif ch in "\"'":
+            quote = ch
+        elif ch == "#" and (i == 0 or raw[i - 1].isspace()):
+            raw = raw[:i].rstrip()
+            break
+    try:
+        return json.loads(raw)
+    except (json.JSONDecodeError, ValueError):
+        if len(raw) >= 2 and raw[0] == raw[-1] and raw[0] in "\"'":
+            return raw[1:-1]
+        return raw
 
 
 def page_fields(fm: str) -> dict[str, str]:
@@ -52,7 +76,7 @@ def page_fields(fm: str) -> dict[str, str]:
     for line in fm.splitlines():
         if ": " in line and not line.startswith((" ", "-", "\t")):
             key, value = line.split(": ", 1)
-            fields[key] = value.strip().strip("\"'")
+            fields[key] = scalar(value)
     return fields
 
 
@@ -92,7 +116,7 @@ def backfill(path: Path, check: bool) -> bool:
 
     for line in lines:
         # One related-list shape everywhere: block style.
-        inline = re.match(r"^related:\s*\[(.*)\]\s*(?:#.*)?$", line)
+        inline = re.match(r"^related:\s*\[([^\]]*)\]\s*(?:#.*)?$", line)
         if inline:
             values = [v.strip().strip("\"'") for v in inline.group(1).split(",") if v.strip()]
             out.append("related:")
@@ -102,13 +126,18 @@ def backfill(path: Path, check: bool) -> bool:
         out.append(line)
 
     facet_line = "facets: [" + ", ".join(facets) + "]"
-    if "facets" not in fields:
+    idxs = [i for i, line in enumerate(out) if line.startswith("facets:")]
+    if not idxs:
         out.append(facet_line)
         changed = True
     else:
-        idx = next((i for i, line in enumerate(out) if line.startswith("facets:")), None)
-        if idx is not None and out[idx] != facet_line:
-            out[idx] = facet_line
+        # Duplicate YAML keys are legal but the LAST one wins: a stale second
+        # `facets:` would silently shadow the value just backfilled.
+        for i in reversed(idxs[1:]):
+            del out[i]
+            changed = True
+        if out[idxs[0]] != facet_line:
+            out[idxs[0]] = facet_line
             changed = True
 
     if is_concept:

@@ -64,7 +64,7 @@ def audit(root: Path) -> dict:
         is_wiki = page.is_relative_to(wiki)
         is_concept = is_wiki and page.parent.name == "concepts"
         is_index = page.stem.startswith("index-") or rel == "index.md"
-        declared = re.search(r"^type:\s*(concept|entity)\b", frontmatter, re.M)
+        declared = re.search(r"^type:\s*['\"]?(concept|entity)\b", frontmatter, re.M)
         kind[page.resolve()] = (
             declared.group(1) if declared else
             "index" if is_index else "concept" if is_concept

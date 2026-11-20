@@ -69,6 +69,27 @@ def tokens(text: str) -> list[str]:
     return out
 
 
+def scalar(raw: str) -> str:
+    """Parse one YAML scalar, dropping a trailing comment outside quotes."""
+    raw = raw.strip()
+    quote = None
+    for i, ch in enumerate(raw):
+        if quote:
+            if ch == quote and (i == 0 or raw[i - 1] != "\\"):
+                quote = None
+        elif ch in "\"'":
+            quote = ch
+        elif ch == "#" and (i == 0 or raw[i - 1].isspace()):
+            raw = raw[:i].rstrip()
+            break
+    try:
+        return json.loads(raw)
+    except (json.JSONDecodeError, ValueError):
+        if len(raw) >= 2 and raw[0] == raw[-1] and raw[0] in "\"'":
+            return raw[1:-1]
+        return raw
+
+
 def split_page(text: str) -> tuple[dict, list[str], str]:
     """(scalar fields, frontmatter lines, body) — scalars best-effort."""
     if text.startswith("\ufeff"):
@@ -76,6 +97,9 @@ def split_page(text: str) -> tuple[dict, list[str], str]:
     if not text.startswith("---\n"):
         return {}, [], text
     end = text.find("\n---\n", 4)
+    body_start = end + 5
+    if end == -1 and text.endswith("\n---"):
+        end, body_start = len(text) - 4, len(text)
     if end == -1:
         return {}, [], text
     fm_lines = text[4:end].splitlines()
@@ -83,11 +107,8 @@ def split_page(text: str) -> tuple[dict, list[str], str]:
     for line in fm_lines:
         if ": " in line and not line.startswith((" ", "-")):
             key, raw = line.split(": ", 1)
-            try:
-                fields[key.strip()] = json.loads(raw)
-            except (json.JSONDecodeError, ValueError):
-                fields[key.strip()] = raw.strip().strip("\"'")
-    return fields, fm_lines, text[end + 5:]
+            fields[key.strip()] = scalar(raw)
+    return fields, fm_lines, text[body_start:]
 
 
 def parse_related(fm_lines: list[str]) -> list[str]:

@@ -111,6 +111,18 @@ def slugify(name: str, taken: set[str]) -> str:
     return slug
 
 
+def category_slugs(sections: list[str]) -> dict[str, str]:
+    """Map each list section to its generated category-index slug.
+
+    This is the single source of truth for category slugs: both the stem
+    reservation for authored pages and the index writer call it, so an entity
+    can never be created at a stem the generator will later overwrite.
+    """
+    taken: set[str] = {"concept-map", "glossary", "needs-attention"}
+    taken |= {f"facet-{f.slug}" for f in FACETS}
+    return {section: slugify(section, taken) for section in sections}
+
+
 def q(value: str) -> str:
     """A YAML-safe double-quoted scalar (JSON strings are valid YAML)."""
     return json.dumps(value, ensure_ascii=False)
@@ -155,14 +167,56 @@ def strip_bom(text: str) -> str:
     return text[1:] if text.startswith("\ufeff") else text
 
 
+def scalar(raw: str) -> str:
+    """Parse one YAML scalar, dropping a trailing comment outside quotes.
+
+    ``json.loads`` handles double-quoted values with escapes; a matching
+    single/double outer pair is stripped by hand (YAML allows both). Crucially
+    only ONE matching pair is removed, so a value that legitimately ends in a
+    quote is not mangled, and a ``#`` after the value never becomes part of it.
+    """
+    raw = raw.strip()
+    quote = None
+    for i, ch in enumerate(raw):
+        if quote:
+            if ch == quote and (i == 0 or raw[i - 1] != "\\"):
+                quote = None
+        elif ch in "\"'":
+            quote = ch
+        elif ch == "#" and (i == 0 or raw[i - 1].isspace()):
+            raw = raw[:i].rstrip()
+            break
+    try:
+        return json.loads(raw)
+    except (json.JSONDecodeError, ValueError):
+        if len(raw) >= 2 and raw[0] == raw[-1] and raw[0] in "\"'":
+            return raw[1:-1]
+        return raw
+
+
+def frontmatter_bounds(text: str) -> tuple[int, int] | None:
+    """Return (fm_end, body_start) for the frontmatter fences.
+
+    The closing fence may sit at EOF with no trailing newline; such a page is
+    still valid and must not become invisible to the maintenance tools.
+    """
+    end = text.find("\n---\n", 4)
+    if end != -1:
+        return end, end + 5
+    if text.endswith("\n---"):
+        return len(text) - 4, len(text)
+    return None
+
+
 def frontmatter_blocks(text: str) -> list[tuple[str, list[str]]]:
     """Split a page's frontmatter into (key, raw lines) top-level blocks."""
     text = strip_bom(text)
     if not text.startswith("---\n"):
         return []
-    end = text.find("\n---\n", 4)
-    if end == -1:
+    bounds = frontmatter_bounds(text)
+    if bounds is None:
         return []
+    end = bounds[0]
     blocks: list[tuple[str, list[str]]] = []
     for line in text[4:end].splitlines():
         top_level = line and not line.startswith((" ", "-"))
@@ -226,22 +280,16 @@ def split_page(text: str) -> tuple[dict, str]:
     text = strip_bom(text)
     if not text.startswith("---\n"):
         return {}, text
-    end = text.find("\n---\n", 4)
-    if end == -1:
+    bounds = frontmatter_bounds(text)
+    if bounds is None:
         return {}, text
+    end, body_start = bounds
     fields = {}
     for line in text[4:end].splitlines():
         if ": " in line and not line.startswith((" ", "\t")):
             key, raw = line.split(": ", 1)
-            raw = raw.strip()
-            try:
-                fields[key.strip()] = json.loads(raw)
-            except json.JSONDecodeError:
-                if len(raw) >= 2 and raw[0] == raw[-1] and raw[0] in "\"'":
-                    fields[key.strip()] = raw[1:-1]
-                else:
-                    fields[key.strip()] = raw
-    return fields, text[end + 5:]
+            fields[key.strip()] = scalar(raw)
+    return fields, text[body_start:]
 
 
 def parse_slugs(value: object) -> set[str]:
@@ -255,9 +303,14 @@ def related_count(text: str) -> int:
 
 
 def read_page(path: Path) -> str:
-    """Read a page with a clear error instead of a half-written ingest."""
+    """Read a page with a clear error instead of a half-written ingest.
+
+    BOM is stripped here too (not only in the frontmatter splitters): the
+    source README is read through this function, and a BOM there would hide
+    the first section's heading and silently delist its entries.
+    """
     try:
-        return path.read_text(encoding="utf-8")
+        return strip_bom(path.read_text(encoding="utf-8"))
     except (OSError, UnicodeDecodeError) as exc:
         sys.exit(f"ingest: cannot read {path}: {exc}")
 
@@ -331,8 +384,13 @@ def write_facet_indexes(pages: list[tuple[Path, dict, str]],
         write_page(WIKI / f"index-facet-{facet.slug}.md", "\n".join(lines))
 
     # Remove stale facet indexes when a facet drops below the threshold.
+    # An authored page whose slug starts with ``index-facet-`` (e.g. the
+    # collision-safe ``index-facet-can-2``) has frontmatter and is NOT a
+    # generated index — deleting it would destroy that page silently.
     for path in WIKI.glob("index-facet-*.md"):
         if path.stem.removeprefix("index-facet-") not in counts:
+            if read_page(path).startswith("---\n"):
+                continue
             checked(path, "unlink")
             path.unlink()
     return counts
@@ -499,6 +557,7 @@ def main(argv=None) -> int:
 
     existing: dict[str, Path] = {}
     by_stem: dict[str, Path] = {}
+    page_category: dict[Path, str] = {}
     for page in sorted(WIKI.rglob("*.md")):
         fields, _ = split_page(read_page(page))
         if "url" in fields:
@@ -507,16 +566,28 @@ def main(argv=None) -> int:
                 sys.exit(f"ingest: duplicate URL {key}: {existing[key]} and {page}")
             existing[key] = page
             by_stem[page.stem] = page
+            if fields.get("category"):
+                page_category[page] = str(fields["category"])
 
+    entry_urls = {normalise(e["url"]) for e in entries}
     # Generated indexes own these stems; an authored page must never take one
     # (on a first ingest into an empty wiki they do not exist on disk yet).
     reserved = {"index-concept-map", "index-glossary", "index-needs-attention"}
     reserved |= {f"index-facet-{f.slug}" for f in FACETS}
-    section_order = list(dict.fromkeys(e["section"] for e in entries))
-    cat_taken: set[str] = set()
-    reserved |= {f"index-{slugify(s, cat_taken)}" for s in section_order}
+    # The sections that will actually generate an index are the listed ones
+    # plus those of tombstoned pages (which stay in their sub-index). Compute
+    # the mapping ONCE and reuse it below — two independent slugify seeds were
+    # the cause of entities being silently overwritten by their category index.
+    # Sections of pages that merely moved are NOT included, so their now-stale
+    # indexes are still cleaned up after the updates.
+    doomed = [p for key, p in existing.items() if key not in entry_urls]
+    section_order = list(dict.fromkeys(
+        [e["section"] for e in entries]
+        + [page_category[p] for p in doomed if p in page_category]
+    ))
+    catslug = category_slugs(section_order)
+    reserved |= {f"index-{cs}" for cs in catslug.values()}
     taken = {p.stem for p in WIKI.rglob("*.md")} | reserved
-    entry_urls = {normalise(e["url"]) for e in entries}
     matched: set[Path] = set()
     by_section: dict[str, list[dict]] = {}
     created = updated = 0
@@ -553,11 +624,18 @@ def main(argv=None) -> int:
         else:
             old_text = read_page(page)
             fields, body = split_page(old_text)
+            # A re-listed entry is a change even when its list text is byte-
+            # identical to the tombstoned version: it must come back to life.
+            # The delisting NOTE is the signal, not `status: archived` alone —
+            # a verification pass also archives pages whose upstream project
+            # is dead while the entry is still on the canon list.
+            was_tombstoned = "Delisted from the source list" in body
             changed = (
                 str(fields.get("title", "")) != e["title"]
                 or normalise(str(fields.get("url", ""))) != key
                 or str(fields.get("category", "")) != e["section"]
-                or str(fields.get("list_summary", "")) != e["summary"])
+                or str(fields.get("list_summary", "")) != e["summary"]
+                or was_tombstoned)
             if changed:
                 missing = [key for key in ("uid", "created", "last_checked")
                            if not str(fields.get(key, "")).strip()]
@@ -567,10 +645,19 @@ def main(argv=None) -> int:
                         "refusing to invent it"
                     )
                 depth = str(fields.get("depth", "stub"))
+                if was_tombstoned:
+                    # Back on the canon list: undo the tombstone rather than
+                    # carrying its delisted note forward.
+                    body = re.sub(
+                        r"^> Delisted from the source list.*\n?", "", body,
+                        flags=re.M)
                 # A finished work in Research Papers is `published` even when
                 # it moved there from another section (the create branch uses
-                # the same rule); any other section keeps its verified status.
+                # the same rule). A re-listed resource returns to the default
+                # unverified status; any other section keeps its status —
+                # including a deliberately archived upstream project.
                 status = ("published" if e["section"] == "Research Papers"
+                          else "unknown" if was_tombstoned
                           else str(fields.get("status", "unknown")))
                 new_text = frontmatter(
                     e, status, depth, date, commit, extra_blocks(old_text),
@@ -593,8 +680,8 @@ def main(argv=None) -> int:
         text = read_page(page)
         fields, _ = split_page(text)
         if fields.get("status") != "archived":
-            end = text.find("\n---\n", 4)
-            head, tail = (text[:end], text[end:]) if end != -1 else ("", text)
+            bounds = frontmatter_bounds(text)
+            head, tail = (text[:bounds[0]], text[bounds[0]:]) if bounds else ("", text)
             head = re.sub(r"^status: .*$", "status: archived", head,
                           count=1, flags=re.M)
             if "Delisted from the source list" not in tail:
@@ -631,15 +718,11 @@ def main(argv=None) -> int:
                 counts[slug] = counts.get(slug, 0) + 1
 
     # Sub-indexes (no frontmatter — OpenShelf detects them as sub-indexes).
+    # ``catslug`` was computed once, before stem reservation, so the stem
+    # written here is exactly the one every authored page was kept away from.
     by_section_order = list(by_section.keys())
-    catslug = {}
-    # A section named like a generated hub/facet (e.g. "Concept map") must
-    # not take the index stem those generators already own.
-    cat_taken: set[str] = {"concept-map", "glossary", "needs-attention"}
-    cat_taken |= {f"facet-{f.slug}" for f in FACETS}
     for section in by_section_order:
-        cs = slugify(section, cat_taken)
-        catslug[section] = cs
+        cs = catslug[section]
         lines = [f"# {section}", ""]
         browse = ", ".join(
             f"[{FACET_BY_SLUG[s].label}](index-facet-{s}.md) ({n} here)"

@@ -108,6 +108,66 @@ class BackfillTests(unittest.TestCase):
             self.assertTrue(backfill_navigation.backfill(page, check=False))
             self.assertIn("cluster: boundary", page.read_text(encoding="utf-8"))
 
+    def test_scalar_drops_comments_and_keeps_embedded_quotes(self) -> None:
+        fields = backfill_navigation.page_fields(
+            'title: \'He said "hello"\' # note\ntype: "entity" # a page')
+        self.assertEqual(fields["title"], 'He said "hello"')
+        self.assertEqual(fields["type"], "entity")
+
+    def test_frontmatter_without_final_newline_is_backfilled(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            use_temp_root(self, tmp)
+            page = Path(tmp) / "x.md"
+            page.write_text(
+                '---\ntitle: "X"\nsummary: "CAN tool"\nrelated: []\n---',
+                encoding="utf-8")
+            self.assertTrue(backfill_navigation.backfill(page, check=False))
+            self.assertIn("facets: [", page.read_text(encoding="utf-8"))
+
+    def test_inline_related_ignores_brackets_in_comment(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            use_temp_root(self, tmp)
+            page = Path(tmp) / "x.md"
+            page.write_text(
+                '---\ntitle: "X"\nsummary: "CAN tool"\n'
+                'related: [] # keeps [brackets]\n---\n\nBody.\n',
+                encoding="utf-8")
+            self.assertTrue(backfill_navigation.backfill(page, check=False))
+            out = page.read_text(encoding="utf-8")
+            self.assertNotIn("[brackets]", out)
+            self.assertIn("related:\n", out)
+
+    def test_duplicate_facets_key_is_collapsed(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            use_temp_root(self, tmp)
+            page = Path(tmp) / "x.md"
+            page.write_text(
+                '---\ntitle: "X"\nsummary: "CAN tool"\n'
+                'facets: []\nfacets: [also-stale]\n---\n\nBody.\n',
+                encoding="utf-8")
+            self.assertTrue(backfill_navigation.backfill(page, check=False))
+            out = page.read_text(encoding="utf-8")
+            self.assertEqual(out.count("facets:"), 1)
+            self.assertNotIn("also-stale", out)
+
+    def test_symlinked_parent_is_refused(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            use_temp_root(self, tmp)
+            root = Path(tmp)
+            outside_dir = root.parent / f"outside-{root.name}"
+            outside_dir.mkdir()
+            self.addCleanup(
+                lambda: __import__("shutil").rmtree(outside_dir, ignore_errors=True))
+            victim = outside_dir / "page.md"
+            victim.write_text('---\ntitle: "X"\nrelated: [a]\n---\n',
+                              encoding="utf-8")
+            linked = root / "linked"
+            linked.symlink_to(outside_dir, target_is_directory=True)
+            before = victim.read_text(encoding="utf-8")
+            self.assertFalse(
+                backfill_navigation.backfill(linked / "page.md", check=False))
+            self.assertEqual(victim.read_text(encoding="utf-8"), before)
+
     def test_symlinked_page_is_refused(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             use_temp_root(self, tmp)

@@ -158,6 +158,41 @@ class HardeningTests(_RootRestoringTest):
         )
         self.assertEqual(fields["type"], "entity")
 
+    def test_scalar_drops_comments_and_keeps_embedded_quotes(self):
+        fields, _, _ = link_mine.split_page(
+            "---\ntype: 'entity' # a concept page\n"
+            'title: \'He said "hello"\'\n---\n\nBody.\n'
+        )
+        self.assertEqual(fields["type"], "entity")
+        self.assertEqual(fields["title"], 'He said "hello"')
+
+    def test_frontmatter_without_final_newline_is_parsed(self):
+        fields, _, body = link_mine.split_page(
+            '---\ntitle: "X"\nrelated: [ghost]\n---')
+        self.assertEqual(fields["title"], "X")
+        self.assertEqual(body, "")
+
+    def test_write_page_refuses_a_symlinked_parent(self):
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            outside_dir = root.parent / f"outside-{root.name}"
+            outside_dir.mkdir()
+            self.addCleanup(
+                lambda: __import__("shutil").rmtree(outside_dir, ignore_errors=True))
+            victim = outside_dir / "page.md"
+            victim.write_text("do not touch", encoding="utf-8")
+            linked = root / "linked"
+            linked.symlink_to(outside_dir, target_is_directory=True)
+            _, fm_lines, body = split(PAGE_DUP)
+            saved = link_mine.ROOT
+            link_mine.ROOT = root
+            try:
+                link_mine.write_page(linked / "page.md", fm_lines, body,
+                                     ["x"], "2026-11-17")
+            finally:
+                link_mine.ROOT = saved
+            self.assertEqual(victim.read_text(encoding="utf-8"), "do not touch")
+
     def test_write_page_refuses_a_symlink(self):
         with tempfile.TemporaryDirectory() as d:
             root = Path(d)

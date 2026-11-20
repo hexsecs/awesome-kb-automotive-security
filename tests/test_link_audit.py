@@ -118,6 +118,17 @@ class AuditRobustnessTests(unittest.TestCase):
         r = link_audit.audit(self.root)
         self.assertIn("wiki/index-utils.md", r["orphans"])
 
+    def test_quoted_declared_type_beats_index_prefix(self):
+        for quote in ('"', "'"):
+            with self.subTest(quote=quote):
+                p = self.root / "wiki" / "index-utils.md"
+                p.write_text(
+                    f"---\ntype: {quote}entity{quote}\nrelated: []\n---\n\nBody.\n",
+                    encoding="utf-8")
+                r = link_audit.audit(self.root)
+                self.assertIn("wiki/index-utils.md", r["orphans"])
+                self.assertEqual(r["entity_pages"], 3)
+
     def test_bad_root_fails_instead_of_passing_empty(self):
         self.assertEqual(link_audit.main(["--root", str(self.root / "nope")]), 2)
 
