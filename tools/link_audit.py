@@ -29,6 +29,7 @@ import json
 import sys
 from pathlib import Path
 
+from ingest import scalar  # shared YAML scalar parser (comment/quote parity)
 from link_check import (
     LINK_RE,
     is_ignored,
@@ -57,7 +58,7 @@ def declared_type(frontmatter: str) -> str | None:
         key, raw = line.split(": ", 1)
         if key.strip() != "type":
             continue
-        candidate = raw.strip().strip("'\"").split("#", 1)[0].strip()
+        candidate = scalar(raw)
         if candidate in ("concept", "entity"):
             value = candidate
     return value

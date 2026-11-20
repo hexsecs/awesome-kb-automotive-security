@@ -2,6 +2,9 @@
 """Regression tests for tools/link_mine.py write_page(). Stdlib only."""
 
 import importlib.util
+import os
+import shutil
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -256,6 +259,76 @@ class FieldPrefixTests(unittest.TestCase):
     def test_tab_indented_type_does_not_override(self):
         text = '---\ntitle: "X"\ntype: entity\n\ttype: concept\n---\n\nBody.\n'
         self.assertEqual(link_mine.split_page(text)[0]["type"], "entity")
+
+
+class SweepFiveRegressionTests(unittest.TestCase):
+    """Regressions for the fifth sweep's miner enumeration and write guards."""
+
+    def setUp(self):
+        self._tmp = tempfile.TemporaryDirectory()
+        self.base = Path(self._tmp.name)
+        self.kb = self.base / "kb"
+        (self.kb / "tools").mkdir(parents=True)
+        for f in TOOLS_DIR.glob("*.py"):
+            shutil.copy2(f, self.kb / "tools" / f.name)
+        (self.kb / "wiki").mkdir()
+        (self.kb / "index.md").write_text("# KB\n", encoding="utf-8")
+        self.addCleanup(self._tmp.cleanup)
+
+    def page(self, rel, text):
+        path = self.kb / rel
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(text, encoding="utf-8")
+        return path
+
+    def run_tool(self, tool, *args, timeout=10):
+        return subprocess.run(
+            [sys.executable, "tools/" + tool, *args], cwd=self.kb,
+            capture_output=True, text=True, timeout=timeout)
+
+    @staticmethod
+    def entity(title, summary):
+        return (f'---\ntitle: "{title}"\ntype: entity\n'
+                f'summary: "{summary}"\n---\nbody\n')
+
+    def test_index_named_and_nested_entities_are_mined(self):
+        self.page("wiki/normal.md", self.entity("Normal", "plain"))
+        self.page("wiki/index-of-tools.md",
+                  self.entity("Index of tools", "authored hub"))
+        self.page("wiki/topics/sub.md", self.entity("Nested", "nested page"))
+        out = self.run_tool("link_mine.py", "--dry-run").stdout
+        self.assertIn("3 entity pages", out)
+
+    def test_fifo_named_md_does_not_block_the_miner(self):
+        if not hasattr(os, "mkfifo"):
+            self.skipTest("mkfifo unavailable")
+        self.page("wiki/a.md", self.entity("A", "plain"))
+        os.mkfifo(self.kb / "wiki" / "fifo.md")
+        result = self.run_tool("link_mine.py", "--dry-run", timeout=5)
+        self.assertEqual(result.returncode, 0)
+
+    def test_hardlinked_page_write_is_refused(self):
+        original = self.entity("Old research", "CAN bus intrusion detection")
+        victim = self.base / "outside-victim.md"
+        victim.write_text(original, encoding="utf-8")
+        (self.kb / "wiki" / "old.md").hardlink_to(victim)
+        self.page("wiki/other.md",
+                  self.entity("Other research", "CAN bus intrusion evaluation"))
+        result = self.run_tool("link_mine.py", "--threshold", "0",
+                               "--date", "2026-11-20")
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("hardlinked", result.stderr)
+        self.assertEqual(victim.read_text(encoding="utf-8"), original)
+
+    def test_readonly_page_write_exits_cleanly(self):
+        self.page("wiki/ro.md", self.entity("Ro", "CAN bus intrusion detection"))
+        self.page("wiki/other.md", self.entity("Other", "CAN bus intrusion evaluation"))
+        os.chmod(self.kb / "wiki" / "ro.md", 0o444)
+        result = self.run_tool("link_mine.py", "--threshold", "0",
+                               "--date", "2026-11-20")
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("cannot write", result.stderr)
+        self.assertNotIn("Traceback", result.stderr)
 
 
 if __name__ == "__main__":

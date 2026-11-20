@@ -163,7 +163,15 @@ def backfill(path: Path, check: bool) -> bool:
                 changed = True
 
     if changed and not check:
-        path.write_text(opening + "\n".join(out) + "\n---\n" + rest, encoding="utf-8")
+        if path.is_dir():
+            sys.exit(f"backfill_navigation: refusing to write a directory at {path}")
+        if path.exists() and path.stat().st_nlink > 1:
+            sys.exit(f"backfill_navigation: refusing to write hardlinked file {path}")
+        try:
+            path.write_text(opening + "\n".join(out) + "\n---\n" + rest,
+                            encoding="utf-8")
+        except OSError as exc:
+            sys.exit(f"backfill_navigation: cannot write {path}: {exc}")
     return changed
 
 

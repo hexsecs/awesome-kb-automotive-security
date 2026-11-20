@@ -4,6 +4,9 @@
 import contextlib
 import importlib.util
 import io
+import os
+import shutil
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -103,6 +106,8 @@ class HardeningTests(unittest.TestCase):
         bad = [word for word in concept_scan.GENERIC if not word.isalnum()
                and "-" not in word]
         self.assertEqual(bad, [], f"malformed GENERIC entries: {bad}")
+        self.assertGreater(len(concept_scan.GENERIC), 10,
+                           "an empty filter silently changes candidate output")
 
     def test_read_page_skips_invalid_bytes(self):
         with tempfile.TemporaryDirectory() as d:
@@ -152,6 +157,37 @@ class FilesystemGuardTests(unittest.TestCase):
             # The outside file's stem must not be treated as an existing
             # concept and suppress the real corpus candidate.
             self.assertIn("quintessential zephyr", out)
+
+    def test_index_named_and_nested_entities_are_scanned(self):
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            for rel in ("normal.md", "index-of-tools.md", "topics/sub.md"):
+                path = root / rel
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_text(
+                    '---\ntype: entity\ntitle: "Entity"\nsummary: "s"\n'
+                    '---\n\nBody.\n', encoding="utf-8")
+            self.assertIn("3 entity pages", run_scan(root))
+
+    def test_fifo_named_md_does_not_block_the_scan(self):
+        if not hasattr(os, "mkfifo"):
+            self.skipTest("mkfifo unavailable")
+        with tempfile.TemporaryDirectory() as d:
+            kb = Path(d) / "kb"
+            (kb / "tools").mkdir(parents=True)
+            for f in TOOLS.parent.glob("*.py"):
+                shutil.copy2(f, kb / "tools" / f.name)
+            (kb / "wiki").mkdir()
+            (kb / "index.md").write_text("# KB\n", encoding="utf-8")
+            (kb / "wiki" / "a.md").write_text(
+                '---\ntype: entity\ntitle: "A"\nsummary: "s"\n---\nbody\n',
+                encoding="utf-8")
+            os.mkfifo(kb / "wiki" / "fifo.md")
+            result = subprocess.run(
+                [sys.executable, "tools/concept_scan.py"], cwd=kb,
+                capture_output=True, text=True, timeout=5)
+            self.assertEqual(result.returncode, 0)
+            self.assertNotIn("fifo.md", result.stderr)
 
 
 if __name__ == "__main__":

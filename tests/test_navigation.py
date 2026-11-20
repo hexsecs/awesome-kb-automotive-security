@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import contextlib
 import io
+import os
 import sys
 import tempfile
 import unittest
@@ -299,6 +300,47 @@ class BackfillSafetyTests(unittest.TestCase):
             # \"Tools\" (with quotes) is not the canonical category "Tools",
             # so no category-derived `tools` facet may be injected.
             self.assertNotIn("tools", facet_line)
+
+    def test_main_with_check_processes_index_prefixed_entity(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            use_temp_root(self, tmp)
+            self._page(
+                tmp, "index-of-tools.md",
+                '---\ntitle: "Index of tools"\nsummary: "CAN tool"\n'
+                'type: entity\nrelated: []\n---\n\nBody.\n')
+            old_argv = sys.argv
+            sys.argv = ["backfill_navigation", "--check"]
+            self.addCleanup(setattr, sys, "argv", old_argv)
+            buf = io.StringIO()
+            with contextlib.redirect_stdout(buf):
+                backfill_navigation.main()
+            self.assertIn("would change 1 of 1 pages", buf.getvalue())
+
+    def test_hardlinked_page_write_is_refused(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            use_temp_root(self, tmp)
+            page = self._page(
+                tmp, "x.md",
+                '---\ntitle: "X"\nsummary: "CAN tool"\nrelated: []\n---\n\nBody.\n')
+            victim = Path(tmp) / "outside-victim.md"
+            victim.write_text(page.read_text(encoding="utf-8"), encoding="utf-8")
+            page.unlink()
+            page.hardlink_to(victim)
+            with self.assertRaises(SystemExit) as caught:
+                backfill_navigation.backfill(page, check=False)
+            self.assertIn("hardlinked", str(caught.exception))
+            self.assertNotIn("facets:", victim.read_text(encoding="utf-8"))
+
+    def test_readonly_page_write_exits_cleanly(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            use_temp_root(self, tmp)
+            page = self._page(
+                tmp, "x.md",
+                '---\ntitle: "X"\nsummary: "CAN tool"\nrelated: []\n---\n\nBody.\n')
+            os.chmod(page, 0o444)
+            with self.assertRaises(SystemExit) as caught:
+                backfill_navigation.backfill(page, check=False)
+            self.assertIn("cannot write", str(caught.exception))
 
     def test_tab_indented_type_is_ignored(self):
         with tempfile.TemporaryDirectory() as tmp:

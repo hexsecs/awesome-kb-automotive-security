@@ -135,6 +135,13 @@ class AuditRobustnessTests(unittest.TestCase):
     def test_bad_root_fails_instead_of_passing_empty(self):
         self.assertEqual(link_audit.main(["--root", str(self.root / "nope")]), 2)
 
+    def test_nul_target_is_recorded_without_aborting_the_audit(self):
+        write(self.root, "wiki/nul.md", "See [x](wiki/null%00.md).\n")
+        write(self.root, "index.md",
+              "# KB\n\n- [A](wiki/alpha.md)\n- [N](wiki/nul.md)\n")
+        report = link_audit.audit(self.root)  # must not raise
+        self.assertGreaterEqual(report["pages_scanned"], 4)
+
     def test_existing_dir_without_index_md_is_rejected(self):
         (self.root / "index.md").unlink()
         self.assertEqual(link_audit.main(["--root", str(self.root)]), 2)
@@ -185,6 +192,18 @@ class AuditRobustnessTests(unittest.TestCase):
         self.assertIn("wiki/dup-type.md", report["entities_without_concept_link"])
         self.assertNotIn("wiki/dup-type.md",
                          [e["page"] for e in report["concept_inbound"]])
+
+    def test_quoted_type_with_trailing_comment_uses_last_top_level_value(self):
+        write(self.root, "wiki/quoted-comment.md",
+              "---\ntype: entity\ntype: \"concept\" # last wins in YAML\n"
+              "---\n\nBody.\n")
+        write(self.root, "index.md",
+              "# KB\n\n- [A](wiki/alpha.md)\n- [Q](wiki/quoted-comment.md)\n")
+        report = link_audit.audit(self.root)
+        self.assertIn("wiki/quoted-comment.md",
+                      [e["page"] for e in report["concept_inbound"]])
+        self.assertNotIn("wiki/quoted-comment.md",
+                         report["entities_without_concept_link"])
 
     def test_tab_indented_type_does_not_override(self):
         write(self.root, "wiki/tab-type.md",

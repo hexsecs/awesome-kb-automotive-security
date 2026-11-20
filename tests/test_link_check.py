@@ -196,6 +196,21 @@ class ParserAndBoundaryTests(unittest.TestCase):
         self.assertEqual(report["counts"]["broken_links"], 1)
         self.assertEqual(report["broken_links"][0]["source"], "wiki/traveller.md")
 
+    def test_existing_file_outside_root_is_reported_broken(self):
+        # A non-existent target is broken for the wrong reason (is_file());
+        # this one really exists, so only the containment guard catches it.
+        outside = self.root.parent / f"outside-{self.root.name}.md"
+        outside.write_text("# Outside\n", encoding="utf-8")
+        self.addCleanup(outside.unlink)
+        write(self.root, "wiki/traveller.md",
+              f"See [x](../{outside.name}).\n")
+        write(self.root, "index.md",
+              "# KB\n\n- [Alpha](wiki/alpha.md)\n- [Sub](wiki/index-sub.md)\n"
+              "- [T](wiki/traveller.md)\n")
+        report = link_check.check(self.root)
+        self.assertEqual(report["counts"]["broken_links"], 1)
+        self.assertEqual(report["broken_links"][0]["source"], "wiki/traveller.md")
+
     def test_bad_root_fails_instead_of_passing_empty(self):
         with self.assertRaises(ValueError):
             link_check.check(self.root / "not-a-dir")
