@@ -394,5 +394,88 @@ class SweepSixRegressionTests(unittest.TestCase):
         self.assertIn('"deep"', alpha.read_text(encoding="utf-8"))
 
 
+class SweepSevenRegressionTests(unittest.TestCase):
+    """Regressions for the seventh sweep's scoring and reciprocity bugs."""
+
+    def setUp(self):
+        self._tmp = tempfile.TemporaryDirectory()
+        self.base = Path(self._tmp.name)
+        self.kb = self.base / "kb"
+        (self.kb / "tools").mkdir(parents=True)
+        for f in TOOLS_DIR.glob("*.py"):
+            shutil.copy2(f, self.kb / "tools" / f.name)
+        (self.kb / "wiki" / "concepts").mkdir(parents=True)
+        (self.kb / "index.md").write_text("# KB\n", encoding="utf-8")
+        self.addCleanup(self._tmp.cleanup)
+
+    def entity(self, rel, title, summary="s", related=None):
+        path = self.kb / "wiki" / rel
+        path.parent.mkdir(parents=True, exist_ok=True)
+        rel_block = (f"related: [{', '.join(related)}]\n"
+                     if related is not None else "")
+        path.write_text(
+            f'---\ntitle: "{title}"\ntype: entity\nsummary: "{summary}"\n'
+            f'{rel_block}---\nbody\n', encoding="utf-8")
+        return path
+
+    def concept(self, rel, title, related=None):
+        path = self.kb / "wiki" / rel
+        path.parent.mkdir(parents=True, exist_ok=True)
+        rel_block = (f"related: [{', '.join(related)}]\n"
+                     if related is not None else "")
+        path.write_text(
+            f'---\ntitle: "{title}"\ntype: concept\n{rel_block}---\nbody\n',
+            encoding="utf-8")
+        return path
+
+    def run_tool(self, *args):
+        return subprocess.run(
+            [sys.executable, "tools/link_mine.py", *args], cwd=self.kb,
+            capture_output=True, text=True, timeout=15)
+
+    def related_of(self, path):
+        return link_mine.parse_related(link_mine.split_page(
+            path.read_text(encoding="utf-8"))[1])
+
+    def test_substring_title_mention_does_not_invent_a_link(self):
+        alpha = self.entity("alpha.md", "Bus", "bus control research")
+        self.entity("beta.md", "Rebus", "rebus puzzles")
+        for i in range(15):
+            self.entity(f"f{i}.md", f"Filler{i}", f"unique filler{i}")
+        result = self.run_tool("--date", "2026-11-20")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertNotIn("beta", self.related_of(alpha))
+
+    def test_max_related_cap_keeps_every_pair_mutual(self):
+        a = self.entity("a.md", "Aaa", "same shared theme")
+        b = self.entity("b.md", "Bbb", "same shared theme")
+        c = self.entity("c.md", "Ccc", "same shared theme")
+        result = self.run_tool("--max-related", "1", "--threshold", "0",
+                               "--date", "2026-11-20")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        ra, rb, rc = (self.related_of(p) for p in (a, b, c))
+        self.assertEqual(ra, ["b"])
+        self.assertEqual(rb, ["a"])
+        self.assertEqual(rc, [], "the capped-out page must not link one way")
+
+    def test_reciprocate_counts_distinct_stems_only(self):
+        a = self.entity("a.md", "Aaa", related=[])
+        self.entity("sub1/x.md", "X one", related=["a"])
+        self.entity("sub2/x.md", "X two", related=["a"])
+        result = self.run_tool("--reciprocate", "--threshold", "100",
+                               "--date", "2026-11-20")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("1 reciprocal adds", result.stdout)
+        self.assertEqual(self.related_of(a), ["x"])
+
+    def test_concept_outside_concepts_dir_is_reciprocated(self):
+        cabana = self.entity("cabana.md", "Cabana", related=[])
+        self.concept("probe.md", "Probe", related=["cabana"])
+        result = self.run_tool("--fill-only", "--reciprocate",
+                               "--threshold", "100", "--date", "2026-11-20")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("probe", self.related_of(cabana))
+
+
 if __name__ == "__main__":
     unittest.main()

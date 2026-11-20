@@ -218,5 +218,60 @@ class FilesystemGuardTests(unittest.TestCase):
             self.assertNotIn("fifo.md", result.stderr)
 
 
+class ExistingConceptTests(unittest.TestCase):
+    """A concept must suppress its own theme regardless of spelling."""
+
+    def scan(self, root, *args):
+        saved = (concept_scan.ROOT, concept_scan.WIKI, sys.argv)
+        concept_scan.ROOT, concept_scan.WIKI = root, root
+        sys.argv = ["concept_scan", *args]
+        buf = io.StringIO()
+        try:
+            with contextlib.redirect_stdout(buf):
+                concept_scan.main()
+        finally:
+            concept_scan.ROOT, concept_scan.WIKI, sys.argv = saved
+        return buf.getvalue()
+
+    def corpus(self, root, theme, count=3):
+        for i in range(14):
+            (root / f"f{i}.md").write_text(
+                f'---\ntype: entity\ntitle: "Filler{i}"\n'
+                f'summary: "unique filler{i}"\n---\nbody\n',
+                encoding="utf-8")
+        for i in range(count):
+            (root / f"e{i}.md").write_text(
+                f'---\ntype: entity\ntitle: "Scheme{i}"\n'
+                f'summary: "uses {theme} in diagnostics"\n---\nbody\n',
+                encoding="utf-8")
+
+    def test_hyphenated_concept_suppresses_its_theme(self):
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            self.corpus(root, "iso-tp")
+            before = self.scan(root, "--min-pages", "3")
+            self.assertIn("| iso-tp |", before)
+            concepts = root / "concepts"
+            concepts.mkdir()
+            (concepts / "iso-tp.md").write_text(
+                '---\ntype: concept\ntitle: "ISO TP"\n---\nbody\n',
+                encoding="utf-8")
+            after = self.scan(root, "--min-pages", "3")
+            self.assertIn("1 existing concepts", after)
+            self.assertNotIn("| iso-tp |", after)
+
+    def test_case_variant_concept_suppresses_its_theme(self):
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            self.corpus(root, "tpm")
+            (root / "concepts").mkdir()
+            (root / "concepts" / "TPM.md").write_text(
+                '---\ntype: concept\ntitle: "TPM"\n---\nbody\n',
+                encoding="utf-8")
+            out = self.scan(root, "--min-pages", "3")
+            self.assertIn("1 existing concepts", out)
+            self.assertNotIn("| tpm |", out)
+
+
 if __name__ == "__main__":
     unittest.main()

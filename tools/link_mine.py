@@ -302,43 +302,52 @@ def main() -> int:
             summ_b = str(fb.get("summary", "")).lower()
             distinctive_a = [t for t in tokens(title_a) if idf.get(t, 0) > 2.0]
             distinctive_b = [t for t in tokens(title_b) if idf.get(t, 0) > 2.0]
-            if distinctive_b and all(t in summ_a for t in distinctive_b[:2]):
+            # Whole-token match only: a title "Bus" is not mentioned by a
+            # summary about "rebus puzzles". Substring hits invented links.
+            summ_a_tokens, summ_b_tokens = set(tokens(summ_a)), set(tokens(summ_b))
+            if distinctive_b and all(t in summ_a_tokens
+                                     for t in distinctive_b[:2]):
                 s += 3.0
-            if distinctive_a and all(t in summ_b for t in distinctive_a[:2]):
+            if distinctive_a and all(t in summ_b_tokens
+                                     for t in distinctive_a[:2]):
                 s += 3.0
             if s >= args.threshold:
                 scores[(a, b)] = s
                 scores[(b, a)] = s
 
-    # Directed top picks, then symmetrise by union, cap by pair score.
-    directed: dict[str, list[str]] = defaultdict(list)
-    for (a, b), s in scores.items():
-        directed[a].append(b)
-    for a in directed:
-        directed[a].sort(key=lambda b: (-scores[(a, b)], b))
-        directed[a] = directed[a][:5]
-    final: dict[str, list[str]] = {}
-    for a in slugs:
-        cand = set(directed.get(a, []))
-        cand |= {x for x in slugs if a in directed.get(x, [])}
-        ranked = sorted(cand, key=lambda b: (-scores.get((a, b), 0.0), b))
-        final[a] = ranked[:args.max_related]
+    # Grow mutual pairs in global score order. Capping AFTER symmetrising
+    # (the old way) cut one side of a pair and left one-way links, which
+    # --reciprocate then needed a second pass to repair. Each pair is added
+    # only when BOTH ends still have room, so every written link is mutual.
+    neighbours: dict[str, list[str]] = defaultdict(list)
+    for a, b in scores:
+        neighbours[a].append(b)
+    for a in neighbours:
+        neighbours[a].sort(key=lambda b: (-scores[(a, b)], b))
+    pairs = [(a, b) for a in slugs for b in neighbours[a] if a < b]
+    pairs.sort(key=lambda ab: (-scores[ab], ab))
+    final: dict[str, list[str]] = {a: [] for a in slugs}
+    for a, b in pairs:
+        if len(final[a]) < args.max_related and len(final[b]) < args.max_related:
+            final[a].append(b)
+            final[b].append(a)
 
     # Concept pages are never written by this tool, but their related
     # lists are sources for reciprocation: a concept that draws on an
     # entity should be linked back from that entity (house practice).
     concept_links: dict[str, list[str]] = {}
-    cdir = WIKI / "concepts"
-    if cdir.is_dir() and not cdir.is_symlink() and within_root(cdir):
-        for path in sorted(cdir.rglob("*.md")):
-            if not path.is_file() or path.is_symlink() or not within_root(path):
-                continue
-            text = read_page(path)
-            if text is None:
-                continue
-            fields, fm_lines, _ = split_page(text)
-            if "title" in fields:
-                concept_links[path.stem] = parse_related(fm_lines)
+    # A concept is any `type: concept` page, wherever it lives — this is the
+    # definition concept_scan and link_audit use. Scanning only concepts/
+    # missed root-level concepts and broke reciprocation for their links.
+    for path in sorted(WIKI.rglob("*.md")):
+        if not path.is_file() or path.is_symlink() or not within_root(path):
+            continue
+        text = read_page(path)
+        if text is None:
+            continue
+        fields, fm_lines, _ = split_page(text)
+        if fields.get("type") == "concept" and "title" in fields:
+            concept_links[path.stem] = parse_related(fm_lines)
 
     changed = filled = recip_added = 0
     written: dict[str, list[str]] = {}
@@ -353,22 +362,28 @@ def main() -> int:
         incoming = {o for o in slugs if own in pages[o]["related"]}
         incoming |= {c for c, rels in concept_links.items()
                      if own in rels}
-        if args.fill_only and old:
+        fill_branch = bool(args.fill_only and old)
+        if fill_branch:
             # Author-owned set: preserve it verbatim and in order;
             # only append missing reciprocal links.
             new = list(old)
-            if args.reciprocate:
-                adds = sorted(incoming - set(new),
-                              key=lambda b: (-scores.get((slug, b), 0.0), b))
-                recip_added += len(adds)
-                new = new + adds
         else:
             new = list(final[slug])
-            if args.reciprocate:
-                adds = sorted(incoming - set(new),
-                              key=lambda b: (-scores.get((slug, b), 0.0), b))
-                recip_added += len(adds)
-                new = new + adds
+        if args.reciprocate:
+            # `related:` holds stems, while `slugs` and `scores` use path
+            # keys. Work at stem level so a link already on disk, or a
+            # second path key sharing a stem, is not counted as a new add.
+            seen = {stems.get(x, x) for x in old + new}
+            adds = []
+            for o in sorted(incoming,
+                            key=lambda b: (-scores.get((slug, b), 0.0), b)):
+                stem = stems.get(o, o)
+                if stem not in seen:
+                    adds.append(o)
+                    seen.add(stem)
+            new = new + adds
+            recip_added += len(adds)
+        if not fill_branch:
             new = sorted(set(new),
                          key=lambda b: (-scores.get((slug, b), 0.0), b))
         # Path keys are internal; the written slugs stay stems, which is

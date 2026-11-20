@@ -84,20 +84,29 @@ def page_fields(fm: str) -> dict[str, str]:
 
 def managed_block_spans(lines: list[str], key: str
                         ) -> tuple[list[int], set[int]]:
-    """Key lines and their indented list items for a frontmatter key.
+    """Key lines and their block-list lines for a frontmatter key.
 
     Both `facets: [a, b]` and `facets:\\n  - a\\n  - b` are valid YAML. Writing
     the inline form over only the key line leaves the block items dangling,
     which is invalid YAML and makes ingest read a different (or no) value.
+    Comments and blanks between items belong to the block; a trailing comment
+    does not and is left alone.
     """
-    keys = [i for i, line in enumerate(lines) if line.startswith(f"{key}:")]
+    # YAML allows a space before the colon (ingest and page_fields strip it),
+    # so a `cluster : stale` key must be recognised and rewritten in place.
+    keys = [i for i, line in enumerate(lines)
+            if re.match(rf"^{re.escape(key)}\s*:", line)]
     continuations: set[int] = set()
     for i in keys:
+        pending: list[int] = []  # blank/comment lines awaiting a later item
         for j in range(i + 1, len(lines)):
-            if re.match(r"^\s+-\s+", lines[j]):
+            item = lines[j].lstrip()
+            if re.match(r"^-\s+", item):
+                continuations.update(pending)
                 continuations.add(j)
-            elif not lines[j].strip():
-                continue
+                pending = []
+            elif not item or item.startswith("#"):
+                pending.append(j)
             else:
                 break
     return keys, continuations

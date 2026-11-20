@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import os
 import subprocess
 import sys
 import tempfile
@@ -957,6 +958,99 @@ class SweepSixRegressionTests(unittest.TestCase):
         page.write_text(original, encoding="utf-8")
         self.write_list(body)
         self.assertEqual(len(list(self.wiki.glob("cabana*.md"))), 1)
+
+
+class SweepSevenRegressionTests(unittest.TestCase):
+    """Regressions for the seventh sweep's index, identity and FIFO bugs."""
+
+    def setUp(self):
+        self._tmp = tempfile.TemporaryDirectory()
+        self.base = Path(self._tmp.name)
+        self.source = self.base / "source"
+        self.kb = self.base / "kb"
+        self.wiki = self.kb / "wiki"
+        (self.wiki / "concepts").mkdir(parents=True)
+        self.source.mkdir()
+        self._saved = ingest.ROOT, ingest.WIKI
+        ingest.ROOT, ingest.WIKI = self.kb, self.wiki
+        for cmd in (
+            ["git", "-C", str(self.source), "init", "-q"],
+            ["git", "-C", str(self.source), "config", "user.email", "clyde@example.com"],
+            ["git", "-C", str(self.source), "config", "user.name", "Clyde"],
+        ):
+            subprocess.run(cmd, check=True, capture_output=True)
+        self.addCleanup(self._cleanup)
+
+    def _cleanup(self):
+        ingest.ROOT, ingest.WIKI = self._saved
+        self._tmp.cleanup()
+
+    def write_list(self, body):
+        (self.source / "README.md").write_text(body, encoding="utf-8")
+        for cmd in (
+            ["git", "-C", str(self.source), "add", "README.md"],
+            ["git", "-C", str(self.source), "commit", "--allow-empty", "-qm", "list"],
+        ):
+            subprocess.run(cmd, check=True, capture_output=True)
+        return ingest.main(["--source", str(self.source)])
+
+    def concept(self, rel, title, extra=""):
+        path = self.wiki / rel
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(
+            f'---\ntitle: "{title}"\nsummary: "concept summary"\n'
+            f'type: concept\n{extra}---\nbody\n', encoding="utf-8")
+        return path
+
+    def test_nested_concept_is_listed_in_l1_index(self):
+        self.concept("concepts/flat.md", "Flat Concept")
+        self.concept("concepts/deep/nested.md", "Nested Concept")
+        self.write_list("## Tools\n\n* [A](https://example.com/a) - a\n")
+        l1 = (self.kb / "index.md").read_text(encoding="utf-8")
+        concept_map = (self.wiki / "index-concept-map.md").read_text(
+            encoding="utf-8")
+        self.assertIn("Nested Concept", l1)
+        self.assertIn("Nested Concept", concept_map)
+
+    def test_url_less_authored_index_page_is_reserved(self):
+        page = self.wiki / "index-tools.md"
+        page.write_text(
+            '---\ntitle: "My Tools Note"\ntype: entity\nsummary: "s"\n'
+            'created: "2026-01-01"\n---\nAUTHORED BODY.\n', encoding="utf-8")
+        self.write_list("## Tools\n\n* [A](https://example.com/a) - a desc\n")
+        self.assertIn("AUTHORED BODY.", page.read_text(encoding="utf-8"))
+        self.assertTrue((self.wiki / "index-tools-2.md").exists())
+
+    def test_fifo_at_generated_index_path_is_refused(self):
+        path = self.wiki / "index-glossary.md"
+        os.mkfifo(path)
+        with self.assertRaises(SystemExit) as caught:
+            self.write_list("## Tools\n\n* [A](https://example.com/a) - a\n")
+        self.assertIn("non-regular", str(caught.exception))
+
+    def test_fifo_at_l1_index_path_is_refused(self):
+        os.mkfifo(self.kb / "index.md")
+        with self.assertRaises(SystemExit) as caught:
+            self.write_list("## Tools\n\n* [A](https://example.com/a) - a\n")
+        self.assertIn("non-regular", str(caught.exception))
+
+    def test_concept_url_is_a_cross_reference_not_list_identity(self):
+        page = self.concept("concepts/probe.md", "Probe",
+                            'url: "https://example.org/see-also"\n')
+        self.write_list("## Tools\n\n* [A](https://example.com/a) - a\n")
+        self.assertNotIn("status: archived", page.read_text(encoding="utf-8"))
+
+    def test_duplicate_concept_stems_agree_across_hubs(self):
+        self.concept("concepts/probe.md", "Probe Canonical")
+        self.concept("topics/probe.md", "Probe Clone")
+        self.write_list("## Tools\n\n* [A](https://example.com/a) - a\n")
+        l1 = (self.kb / "index.md").read_text(encoding="utf-8")
+        concept_map = (self.wiki / "index-concept-map.md").read_text(
+            encoding="utf-8")
+        self.assertIn("Probe Canonical", l1)
+        self.assertNotIn("Probe Clone", l1)
+        self.assertIn("Probe Canonical", concept_map)
+        self.assertNotIn("Probe Clone", concept_map)
 
 
 if __name__ == "__main__":

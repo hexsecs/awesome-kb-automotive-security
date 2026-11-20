@@ -123,8 +123,11 @@ def resolve_link(source: Path, target: str, root: Path) -> Path | None:
 def require_kb_root(root: Path) -> Path:
     """Fail loudly on a misconfigured root instead of passing an empty audit."""
     root = root.resolve()
-    if not root.is_dir() or not (root / "index.md").is_file():
-        raise ValueError(f"not a KB root (missing directory or index.md): {root}")
+    index = root / "index.md"
+    # iter_pages() refuses a symlinked index.md, so admitting it here would
+    # audit a KB with no start node and report every page as unreachable.
+    if not root.is_dir() or not index.is_file() or index.is_symlink():
+        raise ValueError(f"not a KB root (missing or symlinked index.md): {root}")
     return root
 
 
