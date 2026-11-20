@@ -132,6 +132,14 @@ class ParserAndBoundaryTests(unittest.TestCase):
             ["alpha", "beta"],
         )
 
+    def test_block_related_items_with_trailing_comments_are_parsed(self):
+        self.assertEqual(
+            link_check.parse_related(
+                "related:\n  - ghost # why\n  - phantom # why\n"
+            ),
+            ["ghost", "phantom"],
+        )
+
     def test_bom_frontmatter_is_parsed(self):
         fm, _ = link_check.split_frontmatter(
             "\ufeff---\nrelated: [alpha]\n---\n\nBody.\n"
@@ -169,6 +177,17 @@ class ParserAndBoundaryTests(unittest.TestCase):
         self.assertEqual(
             link_check.main(["--root", str(self.root / "not-a-dir")]), 2
         )
+
+    def test_directory_without_index_md_is_rejected(self):
+        # A dir with wiki/*.md but no L1 index.md is not a valid KB root.
+        (self.root / "index.md").unlink()
+        (self.root / "wiki").mkdir(exist_ok=True)
+        (self.root / "wiki" / "orphan.md").write_text(
+            "---\nrelated: []\n---\n\nBody.\n", encoding="utf-8"
+        )
+        with self.assertRaises(ValueError):
+            link_check.check(self.root)
+        self.assertEqual(link_check.main(["--root", str(self.root)]), 2)
 
 
 if __name__ == "__main__":

@@ -39,9 +39,17 @@ class FacetAssignmentTests(unittest.TestCase):
         self.assertEqual(list(facets), sorted(facets, key=order.get))
 
 
+def use_temp_root(test, tmp: str) -> None:
+    """Point backfill's containment guard at the temp KB for a test."""
+    old = backfill_navigation.ROOT
+    backfill_navigation.ROOT = Path(tmp)
+    test.addCleanup(setattr, backfill_navigation, "ROOT", old)
+
+
 class BackfillTests(unittest.TestCase):
     def test_inline_related_is_normalised_and_idempotent(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
+            use_temp_root(self, tmp)
             page = Path(tmp) / "example.md"
             page.write_text(
                 '---\nuid: 01\ntitle: "Example"\nsummary: "CAN tool."\n'
@@ -57,12 +65,69 @@ class BackfillTests(unittest.TestCase):
 
     def test_blank_lines_in_frontmatter_are_preserved_on_rewrite(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
+            use_temp_root(self, tmp)
             page = Path(tmp) / "example.md"
             page.write_text(
                 '---\ntitle: "Example"\nsummary: "A tool."\n'
                 '---\n\nBody.\n', encoding="utf-8")
             backfill_navigation.backfill(page, check=False)
             self.assertIn("\n---\n\nBody.\n", page.read_text(encoding="utf-8"))
+
+    def test_inline_related_with_comment_is_normalised(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            use_temp_root(self, tmp)
+            page = Path(tmp) / "example.md"
+            page.write_text(
+                '---\ntitle: "Example"\nsummary: "A tool."\n'
+                'related: [alpha, beta] # keep\n'
+                '---\n\nBody.\n', encoding="utf-8")
+            self.assertTrue(backfill_navigation.backfill(page, check=False))
+            out = page.read_text(encoding="utf-8")
+            self.assertIn('related:\n  - "alpha"\n  - "beta"', out)
+            self.assertNotIn("related: [alpha, beta]", out)
+
+    def test_bom_page_is_backfilled(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            use_temp_root(self, tmp)
+            page = Path(tmp) / "example.md"
+            page.write_text(
+                '\ufeff---\ntitle: "Example"\nsummary: "A tool."\n'
+                'type: entity\ncategory: "Tools"\n---\n\nBody.\n',
+                encoding="utf-8")
+            self.assertTrue(backfill_navigation.backfill(page, check=False))
+            self.assertIn("facets: [", page.read_text(encoding="utf-8"))
+
+    def test_single_quoted_type_is_understood(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            use_temp_root(self, tmp)
+            page = Path(tmp) / "doip.md"
+            page.write_text(
+                "---\ntitle: 'DoIP'\nsummary: 'Diagnostics over IP.'\n"
+                "type: 'concept'\ncategory: ''\ncluster: bus\nrelated: []\n"
+                "---\n\nBody.\n", encoding="utf-8")
+            self.assertTrue(backfill_navigation.backfill(page, check=False))
+            self.assertIn("cluster: boundary", page.read_text(encoding="utf-8"))
+
+    def test_symlinked_page_is_refused(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            use_temp_root(self, tmp)
+            root = Path(tmp)
+            outside = root / "outside.md"
+            outside.write_text('---\ntitle: "X"\nrelated: [a]\n---\n', encoding="utf-8")
+            link = root / "page.md"
+            link.symlink_to(outside)
+            before = outside.read_text(encoding="utf-8")
+            self.assertFalse(backfill_navigation.backfill(link, check=False))
+            self.assertEqual(outside.read_text(encoding="utf-8"), before)
+
+    def test_unreadable_page_fails_loudly(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            use_temp_root(self, tmp)
+            page = Path(tmp) / "bad.md"
+            page.write_bytes(b"---\ntitle: \xff\xfe\n---\n")
+            with self.assertRaises(SystemExit) as caught:
+                backfill_navigation.backfill(page, check=False)
+            self.assertIn("cannot read", str(caught.exception))
 
 
 class TaxonomyTargetTests(unittest.TestCase):
@@ -97,6 +162,7 @@ class TaxonomyRegressionTests(unittest.TestCase):
 
     def test_backfill_corrects_a_stale_cluster(self):
         with tempfile.TemporaryDirectory() as tmp:
+            use_temp_root(self, tmp)
             page = Path(tmp) / "doip.md"
             page.write_text(
                 '---\ntitle: "DoIP"\nsummary: "Diagnostics over IP."\n'

@@ -37,6 +37,15 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 WIKI = ROOT / "wiki"
 
+
+def within_root(path: Path) -> bool:
+    """True when ``path`` resolves to a location inside the KB root."""
+    try:
+        return path.resolve().is_relative_to(ROOT.resolve())
+    except OSError:
+        return False
+
+
 STOPWORDS = {
     "the", "a", "an", "and", "or", "of", "for", "to", "in", "on", "with",
     "via", "using", "use", "used", "based", "from", "by", "at", "as",
@@ -78,6 +87,8 @@ def read_page(path: Path) -> str | None:
 
 
 def fields_of(text: str) -> dict:
+    if text.startswith("\ufeff"):
+        text = text[1:]
     if not text.startswith("---\n"):
         return {}
     end = text.find("\n---\n", 4)
@@ -90,7 +101,7 @@ def fields_of(text: str) -> dict:
             try:
                 fields[key.strip()] = json.loads(raw)
             except (json.JSONDecodeError, ValueError):
-                fields[key.strip()] = raw.strip('"')
+                fields[key.strip()] = raw.strip().strip("\"'")
     return fields
 
 
@@ -127,7 +138,8 @@ def main() -> int:
     pages: dict[str, dict] = {}
     categories: set[str] = set()
     for path in sorted(WIKI.glob("*.md")):
-        if path.stem.startswith("index-") or path.is_symlink():
+        if (path.stem.startswith("index-") or path.is_symlink()
+                or not within_root(path)):
             continue
         text = read_page(path)
         if text is None:

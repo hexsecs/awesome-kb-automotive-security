@@ -90,8 +90,12 @@ def audit(root: Path) -> dict:
                 targets.add(resolved)
 
         out[page.resolve()] = targets
-        for target in targets:
-            inbound.setdefault(target, set()).add(page.resolve())
+        # Only articles (entity/concept) count as an inbound link; generated
+        # index-* pages are reached from the L1 index by construction and
+        # would make the orphan metric vacuous.
+        if kind.get(page.resolve()) in ("entity", "concept"):
+            for target in targets:
+                inbound.setdefault(target, set()).add(page.resolve())
 
     def name(p: Path) -> str:
         return p.relative_to(root).as_posix()

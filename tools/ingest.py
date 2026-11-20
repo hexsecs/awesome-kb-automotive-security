@@ -71,8 +71,10 @@ from taxonomy import (CONCEPT_CLUSTERS, FACET_BY_SLUG, FACETS,  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 WIKI = ROOT / "wiki"
+# Lazy capture up to the `) - ` delimiter: handles URLs with any depth of
+# nested parentheses (e.g. Wikipedia titles) without a recursive regex.
 ENTRY_RE = re.compile(
-    r"^\* \[(?P<name>[^\]]+)\]\((?P<url>[^)]+(?:\([^)]*\)[^)]*)*)\) - (?P<desc>.+)$"
+    r"^\* \[(?P<name>[^\]]+)\]\((?P<url>.*?)\) - (?P<desc>.+)$"
 )
 HEADING_RE = re.compile(r"^## (?P<title>.+)$")
 SKIP_SECTIONS = {"Contents"}
@@ -148,8 +150,14 @@ MANAGED_KEYS = {"title", "uid", "summary", "type", "category", "url", "status",
                 "source_commit", "list_summary"}
 
 
+def strip_bom(text: str) -> str:
+    """Drop a leading UTF-8 BOM so frontmatter is never hidden by three bytes."""
+    return text[1:] if text.startswith("\ufeff") else text
+
+
 def frontmatter_blocks(text: str) -> list[tuple[str, list[str]]]:
     """Split a page's frontmatter into (key, raw lines) top-level blocks."""
+    text = strip_bom(text)
     if not text.startswith("---\n"):
         return []
     end = text.find("\n---\n", 4)
@@ -215,6 +223,7 @@ def stub_body(e: dict) -> str:
 
 
 def split_page(text: str) -> tuple[dict, str]:
+    text = strip_bom(text)
     if not text.startswith("---\n"):
         return {}, text
     end = text.find("\n---\n", 4)
@@ -253,10 +262,28 @@ def read_page(path: Path) -> str:
         sys.exit(f"ingest: cannot read {path}: {exc}")
 
 
+def within_root(path: Path) -> bool:
+    """True when ``path`` resolves to a location inside the KB root.
+
+    A leaf-only ``is_symlink()`` check misses a symlinked parent (e.g. a
+    ``wiki/`` that points outside the repo). Resolving the full path and
+    checking containment covers every component at once.
+    """
+    try:
+        return path.resolve().is_relative_to(ROOT.resolve())
+    except OSError:
+        return False
+
+
+def checked(path: Path, action: str) -> None:
+    """Refuse to touch a path that escapes the KB or is itself a symlink."""
+    if path.is_symlink() or not within_root(path):
+        sys.exit(f"ingest: refusing to {action} through symlink {path}")
+
+
 def write_page(path: Path, text: str) -> None:
     """Write a page, refusing to follow a symlink out of the KB."""
-    if path.is_symlink():
-        sys.exit(f"ingest: refusing to write through symlink {path}")
+    checked(path, "write")
     path.write_text(text, encoding="utf-8")
 
 
@@ -306,6 +333,7 @@ def write_facet_indexes(pages: list[tuple[Path, dict, str]],
     # Remove stale facet indexes when a facet drops below the threshold.
     for path in WIKI.glob("index-facet-*.md"):
         if path.stem.removeprefix("index-facet-") not in counts:
+            checked(path, "unlink")
             path.unlink()
     return counts
 
@@ -460,6 +488,13 @@ def main(argv=None) -> int:
         sys.exit(f"ingest: source is not a usable git checkout: {source} ({exc})")
 
     entries = parse_list(readme)
+    seen_urls: set[str] = set()
+    for e in entries:
+        key = normalise(e["url"])
+        if key in seen_urls:
+            sys.exit(f"ingest: duplicate URL in source list: {key} "
+                     f"({e['title']})")
+        seen_urls.add(key)
     WIKI.mkdir(exist_ok=True)
 
     existing: dict[str, Path] = {}
@@ -473,7 +508,14 @@ def main(argv=None) -> int:
             existing[key] = page
             by_stem[page.stem] = page
 
-    taken = {p.stem for p in WIKI.rglob("*.md")}
+    # Generated indexes own these stems; an authored page must never take one
+    # (on a first ingest into an empty wiki they do not exist on disk yet).
+    reserved = {"index-concept-map", "index-glossary", "index-needs-attention"}
+    reserved |= {f"index-facet-{f.slug}" for f in FACETS}
+    section_order = list(dict.fromkeys(e["section"] for e in entries))
+    cat_taken: set[str] = set()
+    reserved |= {f"index-{slugify(s, cat_taken)}" for s in section_order}
+    taken = {p.stem for p in WIKI.rglob("*.md")} | reserved
     entry_urls = {normalise(e["url"]) for e in entries}
     matched: set[Path] = set()
     by_section: dict[str, list[dict]] = {}
@@ -525,7 +567,11 @@ def main(argv=None) -> int:
                         "refusing to invent it"
                     )
                 depth = str(fields.get("depth", "stub"))
-                status = str(fields.get("status", "unknown"))
+                # A finished work in Research Papers is `published` even when
+                # it moved there from another section (the create branch uses
+                # the same rule); any other section keeps its verified status.
+                status = ("published" if e["section"] == "Research Papers"
+                          else str(fields.get("status", "unknown")))
                 new_text = frontmatter(
                     e, status, depth, date, commit, extra_blocks(old_text),
                     last_checked=str(fields["last_checked"]),
@@ -587,7 +633,10 @@ def main(argv=None) -> int:
     # Sub-indexes (no frontmatter — OpenShelf detects them as sub-indexes).
     by_section_order = list(by_section.keys())
     catslug = {}
-    cat_taken: set[str] = set()
+    # A section named like a generated hub/facet (e.g. "Concept map") must
+    # not take the index stem those generators already own.
+    cat_taken: set[str] = {"concept-map", "glossary", "needs-attention"}
+    cat_taken |= {f"facet-{f.slug}" for f in FACETS}
     for section in by_section_order:
         cs = slugify(section, cat_taken)
         catslug[section] = cs
@@ -613,6 +662,7 @@ def main(argv=None) -> int:
                 or path.name in generated_categories):
             continue
         if not read_page(path).startswith("---\n"):
+            checked(path, "unlink")
             path.unlink()
 
     # L1 index.

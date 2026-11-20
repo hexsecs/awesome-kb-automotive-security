@@ -37,6 +37,8 @@ CLUSTER_BY_CONCEPT = {
 
 def split_frontmatter(text: str) -> tuple[str, str, str] | None:
     """Return (opening, frontmatter body, rest) for a YAML-frontmatter page."""
+    if text.startswith("\ufeff"):
+        text = text[1:]
     if not text.startswith("---\n"):
         return None
     end = text.find("\n---\n", 4)
@@ -50,13 +52,21 @@ def page_fields(fm: str) -> dict[str, str]:
     for line in fm.splitlines():
         if ": " in line and not line.startswith((" ", "-", "\t")):
             key, value = line.split(": ", 1)
-            fields[key] = value
+            fields[key] = value.strip().strip("\"'")
     return fields
+
+
+def within_root(path: Path) -> bool:
+    """True when ``path`` resolves to a location inside the KB root."""
+    try:
+        return path.resolve().is_relative_to(ROOT.resolve())
+    except OSError:
+        return False
 
 
 def backfill(path: Path, check: bool) -> bool:
     """Return True when the page would change."""
-    if path.is_symlink():
+    if path.is_symlink() or not within_root(path):
         return False
     try:
         original = path.read_text(encoding="utf-8")
@@ -82,7 +92,7 @@ def backfill(path: Path, check: bool) -> bool:
 
     for line in lines:
         # One related-list shape everywhere: block style.
-        inline = re.match(r"^related:\s*\[(.*)\]\s*$", line)
+        inline = re.match(r"^related:\s*\[(.*)\]\s*(?:#.*)?$", line)
         if inline:
             values = [v.strip().strip("\"'") for v in inline.group(1).split(",") if v.strip()]
             out.append("related:")
@@ -130,7 +140,8 @@ def main() -> int:
     parser.add_argument("--check", action="store_true", help="report changes without writing")
     args = parser.parse_args()
     pages = sorted(p for p in (ROOT / "wiki").rglob("*.md")
-                   if not p.name.startswith("index-") and not p.is_symlink())
+                   if not p.name.startswith("index-") and not p.is_symlink()
+                   and within_root(p))
     changed = [p for p in pages if backfill(p, args.check)]
     verb = "would change" if args.check else "updated"
     print(f"backfill_navigation: {verb} {len(changed)} of {len(pages)} pages")
