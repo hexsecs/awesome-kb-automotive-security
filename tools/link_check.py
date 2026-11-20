@@ -37,12 +37,23 @@ LIST_ITEM_RE = re.compile(r"^\s*-\s+(\S+)\s*(?:#.*)?$")
 
 
 def iter_pages(root: Path):
+    root = root.resolve()
     index = root / "index.md"
-    if index.is_file():
+    if index.is_file() and not index.is_symlink():
         yield index
     wiki = root / "wiki"
-    if wiki.is_dir():
-        yield from sorted(wiki.rglob("*.md"))
+    if wiki.is_dir() and not wiki.is_symlink():
+        for page in sorted(wiki.rglob("*.md")):
+            # ``rglob`` matches directories named ``*.md`` too, and a
+            # symlinked leaf would read from outside the KB. Skip both.
+            if not page.is_file() or page.is_symlink():
+                continue
+            try:
+                if not page.resolve().is_relative_to(root):
+                    continue
+            except (OSError, RuntimeError):
+                continue
+            yield page
 
 
 def split_frontmatter(text: str):
@@ -144,19 +155,24 @@ def check(root: Path) -> dict:
             raw = m.group(1)
             if is_ignored(raw):
                 continue
-            resolved = resolve_link(page, raw, root)
-            if resolved is None:
+            # A `%00` escape becomes a NUL after unquoting and makes
+            # ``Path.resolve``/``is_file`` raise. Record it as a broken link
+            # rather than aborting the whole audit.
+            try:
+                resolved = resolve_link(page, raw, root)
+                broken = resolved is not None and (
+                    not resolved.is_relative_to(root) or not resolved.is_file()
+                )
+            except (OSError, ValueError, RuntimeError):
+                resolved, broken = None, True
+            if resolved is None and not broken:
                 continue
-            if not resolved.is_relative_to(root):
+            if broken:
                 broken_links.append(
                     {"source": rel_page, "target": raw.split("#", 1)[0]}
                 )
                 continue
             targets.add(resolved)
-            if not resolved.is_file():
-                broken_links.append(
-                    {"source": rel_page, "target": raw.split("#", 1)[0]}
-                )
         graph[page.resolve()] = targets
 
     # Reachability from index.md through links to in-repo .md files.

@@ -215,5 +215,52 @@ class ParserAndBoundaryTests(unittest.TestCase):
         self.assertEqual(link_check.main(["--root", str(self.root)]), 2)
 
 
+class FilesystemGuardTests(unittest.TestCase):
+    """Regressions for directory/symlink/NUL handling in the link checker."""
+
+    def setUp(self):
+        self._tmp = tempfile.TemporaryDirectory()
+        self.root = Path(self._tmp.name)
+        make_kb(self.root)
+
+    def tearDown(self):
+        self._tmp.cleanup()
+
+    def test_directory_named_md_is_not_a_page(self):
+        (self.root / "wiki" / "directory_page.md").mkdir()
+        write(self.root, "wiki/alpha.md",
+              "---\nrelated: [directory_page]\n---\n\nBody.\n")
+        report = link_check.check(self.root)
+        slugs = [e["slug"] for e in report["unresolved_related"]]
+        self.assertIn("directory_page", slugs)
+        self.assertNotIn("wiki/directory_page.md", report["unreachable"])
+
+    def test_symlinked_leaf_is_not_audited(self):
+        outside = self.root.parent / f"outside-{self.root.name}"
+        outside.mkdir()
+        self.addCleanup(
+            lambda: __import__("shutil").rmtree(outside, ignore_errors=True))
+        secret = outside / "outside.md"
+        secret.write_text(
+            "---\nrelated: [ghost]\n---\n\n[broken](missing.md)\n",
+            encoding="utf-8",
+        )
+        (self.root / "wiki" / "outside.md").symlink_to(secret)
+        report = link_check.check(self.root)
+        self.assertFalse(any("outside.md" in e["source"]
+                             for e in report["broken_links"]))
+        self.assertNotIn("ghost", [e["slug"]
+                                   for e in report["unresolved_related"]])
+
+    def test_nul_escape_is_a_broken_link_not_a_crash(self):
+        write(self.root, "wiki/nul.md", "See [x](wiki/null%00.md).\n")
+        write(self.root, "index.md",
+              "# KB\n\n- [Alpha](wiki/alpha.md)\n- [Sub](wiki/index-sub.md)\n"
+              "- [Nul](wiki/nul.md)\n")
+        report = link_check.check(self.root)  # must not raise
+        self.assertEqual(report["counts"]["broken_links"], 1)
+        self.assertEqual(report["broken_links"][0]["source"], "wiki/nul.md")
+
+
 if __name__ == "__main__":
     unittest.main()

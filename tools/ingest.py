@@ -101,10 +101,15 @@ def normalise(url: str) -> str:
     return re.sub(r"^https?://", "", u)
 
 
-def slugify(name: str, taken: set[str]) -> str:
+def slugify(name: str, taken: set[str], folder: Path | None = None) -> str:
+    # ``taken`` must be case-folded: on a case-insensitive filesystem (APFS)
+    # ``Alpha.md`` and ``alpha.md`` are the same inode, so a case-sensitive
+    # reservation silently destroys an authored page. The filesystem check
+    # catches collisions the caller did not put in ``taken`` at all.
     slug = re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-") or "entry"
     base, n = slug, 2
-    while slug in taken:
+    while (slug in taken
+           or (folder is not None and (folder / f"{slug}.md").exists())):
         slug = f"{base}-{n}"
         n += 1
     taken.add(slug)
@@ -329,9 +334,39 @@ def within_root(path: Path) -> bool:
 
 
 def checked(path: Path, action: str) -> None:
-    """Refuse to touch a path that escapes the KB or is itself a symlink."""
+    """Refuse to touch a path that escapes the KB, is a symlink or a hardlink.
+
+    A hardlink is neither a symlink nor resolvable outside the root, so the
+    resolve-based containment check alone lets ``write_text`` truncate the
+    other name of the inode — possibly outside the KB. Refuse extras links.
+    """
     if path.is_symlink() or not within_root(path):
         sys.exit(f"ingest: refusing to {action} through symlink {path}")
+    if path.exists() and path.stat().st_nlink > 1:
+        sys.exit(f"ingest: refusing to {action} hardlinked file {path}")
+
+
+def safe_pages(paths):
+    """Yield real, in-root, non-symlink markdown files from an iterable.
+
+    ``glob("*.md")`` matches directories too, and a symlinked leaf would be
+    read from outside the root and merged into a generated index. Both must
+    be skipped on the READ side, not just on writes.
+    """
+    for path in paths:
+        if not path.is_file() or path.is_symlink() or not within_root(path):
+            continue
+        yield path
+
+
+def link_target(page: Path) -> str:
+    """Markdown link target for a page, relative to ``wiki/``.
+
+    Generated indexes live at the wiki root; a page nested in a subdirectory
+    (e.g. ``wiki/topics/foo.md``) needs ``topics/foo`` rather than its bare
+    stem, or every generated link to it is dead.
+    """
+    return page.relative_to(WIKI).with_suffix("").as_posix()
 
 
 def write_page(path: Path, text: str) -> None:
@@ -341,11 +376,14 @@ def write_page(path: Path, text: str) -> None:
 
 
 def all_pages() -> list[tuple[Path, dict, str]]:
-    """Every authored page (entities and concepts), in stable path order."""
+    """Every authored page (entities and concepts), in stable path order.
+
+    Generated indexes have no frontmatter, so the ``"title" in fields`` check
+    excludes them without needing a filename-prefix filter — which used to
+    hide legitimately named entities such as ``index-of-tools``.
+    """
     pages = []
-    for page in sorted(WIKI.rglob("*.md")):
-        if page.name.startswith("index-"):
-            continue
+    for page in sorted(safe_pages(WIKI.rglob("*.md"))):
         fields, body = split_page(read_page(page))
         if "title" in fields:
             pages.append((page, fields, body))
@@ -376,9 +414,9 @@ def write_facet_indexes(pages: list[tuple[Path, dict, str]],
         for page, fields in items:
             group = ("Concepts" if fields.get("type") == "concept"
                      else str(fields.get("category", "Other")))
-            target = ("concepts/" if group == "Concepts" else "") + page.stem
             by_group.setdefault(group, []).append(
-                f"- [{fields['title']}]({target}.md) — {fields.get('summary', '')}")
+                f"- [{fields['title']}]({link_target(page)}.md)"
+                f" — {fields.get('summary', '')}")
         for group in sorted(by_group, key=lambda g: (order.get(g, 999), g)):
             lines += [f"## {group}", ""] + sorted(by_group[group]) + [""]
         write_page(WIKI / f"index-facet-{facet.slug}.md", "\n".join(lines))
@@ -387,7 +425,7 @@ def write_facet_indexes(pages: list[tuple[Path, dict, str]],
     # An authored page whose slug starts with ``index-facet-`` (e.g. the
     # collision-safe ``index-facet-can-2``) has frontmatter and is NOT a
     # generated index — deleting it would destroy that page silently.
-    for path in WIKI.glob("index-facet-*.md"):
+    for path in safe_pages(WIKI.glob("index-facet-*.md")):
         if path.stem.removeprefix("index-facet-") not in counts:
             if read_page(path).startswith("---\n"):
                 continue
@@ -422,8 +460,7 @@ def write_needs_attention(pages: list[tuple[Path, dict, str]],
     }
     cutoff = date.fromisoformat(source_date) - timedelta(days=180)
     for page, fields, _ in pages:
-        target = ("concepts/" if fields.get("type") == "concept" else "") + page.stem
-        entry = f"- [{fields['title']}]({target}.md)"
+        entry = f"- [{fields['title']}]({link_target(page)}.md)"
         if str(fields.get("status", "")) == "unknown":
             buckets["Unverified resources"].append(entry)
         if related_count(read_page(page)) == 0:
@@ -466,8 +503,7 @@ def write_needs_attention(pages: list[tuple[Path, dict, str]],
 
 
 def write_glossary(pages: list[tuple[Path, dict, str]]) -> None:
-    titles = {("concepts/" if f.get("type") == "concept" else "") + p.stem: f
-              for p, f, _ in pages}
+    titles = {link_target(p): f for p, f, _ in pages}
     lines = ["# Glossary", "",
              "Acronyms and standards used across this KB, with the page that"
              " explains each one. Generated from tools/taxonomy.py;"
@@ -558,7 +594,7 @@ def main(argv=None) -> int:
     existing: dict[str, Path] = {}
     by_stem: dict[str, Path] = {}
     page_category: dict[Path, str] = {}
-    for page in sorted(WIKI.rglob("*.md")):
+    for page in sorted(safe_pages(WIKI.rglob("*.md"))):
         fields, _ = split_page(read_page(page))
         if "url" in fields:
             key = normalise(str(fields["url"]))
@@ -587,7 +623,7 @@ def main(argv=None) -> int:
     ))
     catslug = category_slugs(section_order)
     reserved |= {f"index-{cs}" for cs in catslug.values()}
-    taken = {p.stem for p in WIKI.rglob("*.md")} | reserved
+    taken = {p.stem.lower() for p in safe_pages(WIKI.rglob("*.md"))} | reserved
     matched: set[Path] = set()
     by_section: dict[str, list[dict]] = {}
     created = updated = 0
@@ -611,7 +647,7 @@ def main(argv=None) -> int:
                     page = candidate
                     break
         if page is None:
-            slug = slugify(e["title"], taken)
+            slug = slugify(e["title"], taken, WIKI)
             page = WIKI / f"{slug}.md"
             # Finished works (the Research Papers category) are complete
             # at listing time: their status is `published` (OpenShelf
@@ -670,7 +706,7 @@ def main(argv=None) -> int:
                 updated += 1
         matched.add(page)
         by_section.setdefault(e["section"], []).append(
-            {"slug": page.stem, "title": e["title"],
+            {"slug": link_target(page), "title": e["title"],
              "summary": short_summary(e["summary"])})
 
     tombstoned = 0
@@ -695,7 +731,7 @@ def main(argv=None) -> int:
         category = str(fields.get("category", ""))
         if category:
             by_section.setdefault(category, []).append(
-                {"slug": page.stem,
+                {"slug": link_target(page),
                  "title": f"{fields.get('title', page.stem)} (delisted)",
                  "summary": short_summary(
                      str(fields.get("list_summary", "")))})
@@ -721,8 +757,10 @@ def main(argv=None) -> int:
     # ``catslug`` was computed once, before stem reservation, so the stem
     # written here is exactly the one every authored page was kept away from.
     by_section_order = list(by_section.keys())
+    written_categories: set[str] = set()
     for section in by_section_order:
         cs = catslug[section]
+        written_categories.add(f"index-{cs}.md")
         lines = [f"# {section}", ""]
         browse = ", ".join(
             f"[{FACET_BY_SLUG[s].label}](index-facet-{s}.md) ({n} here)"
@@ -735,14 +773,17 @@ def main(argv=None) -> int:
         lines.append("")
         write_page(WIKI / f"index-{cs}.md", "\n".join(lines))
 
-    # Drop category indexes for sections no longer in the list. Generated
-    # sub-indexes have no frontmatter; an authored `index-*` page does.
-    generated_categories = {f"index-{cs}.md" for cs in catslug.values()}
+    # Drop category indexes not actually written this run. Trusting
+    # ``catslug.values()`` instead left a stale index behind whenever a page
+    # was matched by its title slug after a combined URL + section move — and
+    # deleted it on the *next* identical ingest, breaking idempotency. Tracking
+    # the files we really wrote makes the sweep correct by construction.
+    # Generated sub-indexes have no frontmatter; an authored `index-*` page does.
     hub_indexes = {"index-concept-map.md", "index-glossary.md",
                    "index-needs-attention.md"}
-    for path in WIKI.glob("index-*.md"):
+    for path in safe_pages(WIKI.glob("index-*.md")):
         if (path.name in hub_indexes or path.name.startswith("index-facet-")
-                or path.name in generated_categories):
+                or path.name in written_categories):
             continue
         if not read_page(path).startswith("---\n"):
             checked(path, "unlink")
@@ -768,16 +809,17 @@ def main(argv=None) -> int:
     # Concept pages (hand-written synthesis) are listed directly in the L1.
     concepts_dir = WIKI / "concepts"
     concepts = []
-    if concepts_dir.is_dir():
-        for page in sorted(concepts_dir.glob("*.md")):
+    if concepts_dir.is_dir() and not concepts_dir.is_symlink() \
+            and within_root(concepts_dir):
+        for page in sorted(safe_pages(concepts_dir.glob("*.md"))):
             fields, _ = split_page(read_page(page))
             if "title" in fields and "summary" in fields:
-                concepts.append((str(fields["title"]), page.stem,
+                concepts.append((str(fields["title"]), link_target(page),
                                  str(fields["summary"])))
     if concepts:
         lines += ["", "## Concepts", ""]
-        for title, slug, summary in concepts:
-            lines.append(f"- [{title}](wiki/concepts/{slug}.md) — {summary}")
+        for title, target, summary in concepts:
+            lines.append(f"- [{title}](wiki/{target}.md) — {summary}")
 
     if facet_counts:
         lines += ["", "## Facets", "",

@@ -26,7 +26,6 @@ from __future__ import annotations
 
 import argparse
 import json
-import re
 import sys
 from pathlib import Path
 
@@ -41,6 +40,27 @@ from link_check import (
 )
 
 ROOT = Path(__file__).resolve().parent.parent
+
+
+def declared_type(frontmatter: str) -> str | None:
+    """Read `type:` the way the other tools do: top-level, LAST match wins.
+
+    A regex with ``re.M`` and a first-match search disagreed with every other
+    tool (they build a dict from top-level fields, so a duplicate key's last
+    value wins). Malformed duplicate keys should not make this audit classify
+    a page differently from the ingester that wrote it.
+    """
+    value = None
+    for line in frontmatter.splitlines():
+        if ": " not in line or line.startswith((" ", "\t", "-")):
+            continue
+        key, raw = line.split(": ", 1)
+        if key.strip() != "type":
+            continue
+        candidate = raw.strip().strip("'\"").split("#", 1)[0].strip()
+        if candidate in ("concept", "entity"):
+            value = candidate
+    return value
 
 
 def audit(root: Path) -> dict:
@@ -64,9 +84,9 @@ def audit(root: Path) -> dict:
         is_wiki = page.is_relative_to(wiki)
         is_concept = is_wiki and page.parent.name == "concepts"
         is_index = page.stem.startswith("index-") or rel == "index.md"
-        declared = re.search(r"^type:\s*['\"]?(concept|entity)\b", frontmatter, re.M)
+        declared = declared_type(frontmatter)
         kind[page.resolve()] = (
-            declared.group(1) if declared else
+            declared if declared else
             "index" if is_index else "concept" if is_concept
             else "entity" if is_wiki else "other"
         )
@@ -76,8 +96,13 @@ def audit(root: Path) -> dict:
             # Resolve a bare slug to any wiki page with that stem.
             if slug in stems:
                 matches = sorted(
-                    p for p in page_set
-                    if p.stem == slug and p.is_relative_to(wiki)
+                    (p for p in page_set
+                     if p.stem == slug and p.is_relative_to(wiki)),
+                    # A bare slug names the ENTITY at wiki/<slug>.md; a
+                    # concept at wiki/concepts/<slug>.md is a different page.
+                    # Without this tie-break the concept won (it sorts first)
+                    # and the entity was reported as an orphan.
+                    key=lambda p: (p.parent.name == "concepts", str(p)),
                 )
                 if matches:
                     targets.add(matches[0])
@@ -85,7 +110,10 @@ def audit(root: Path) -> dict:
             raw = m.group(1)
             if is_ignored(raw):
                 continue
-            resolved = resolve_link(page, raw, root)
+            try:
+                resolved = resolve_link(page, raw, root)
+            except (OSError, ValueError, RuntimeError):
+                continue  # e.g. a `%00` escape — a reporting tool must not abort
             if resolved is not None and resolved in page_set:
                 targets.add(resolved)
 

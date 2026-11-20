@@ -110,7 +110,10 @@ class AuditRobustnessTests(unittest.TestCase):
                  if e["page"] == "wiki/concepts/dup.md")
             for r in results
         }
-        self.assertEqual(counts, {1})
+        # The entity wiki/dup.md (not the concept) receives the bare-slug link.
+        self.assertEqual(counts, {0})
+        for r in results:
+            self.assertNotIn("wiki/dup.md", r["orphans"])
 
     def test_declared_entity_type_beats_index_prefix(self):
         write(self.root, "wiki/index-utils.md",
@@ -151,8 +154,10 @@ class AuditRobustnessTests(unittest.TestCase):
             f"sys.path.insert(0, {str(REPO / 'tools')!r})\n"
             "import link_audit\n"
             f"r = link_audit.audit(Path({str(self.root)!r}))\n"
-            "print(json.dumps([e for e in r['concept_inbound'] "
-            "if e['page'].endswith('/dup.md')]))\n"
+            "concept = [e for e in r['concept_inbound'] "
+            "if e['page'].endswith('/dup.md')]\n"
+            "print(json.dumps({'concept_inbound': concept, "
+            "'entity_orphan': 'wiki/dup.md' in r['orphans']}))\n"
         )
         outputs = []
         for seed in range(10):
@@ -164,8 +169,30 @@ class AuditRobustnessTests(unittest.TestCase):
             outputs.append(out.stdout.strip())
         self.assertEqual(set(outputs), {outputs[0]},
                          f"cross-seed drift: {outputs}")
-        # The sorted-first concept page wins, so it keeps the single inbound.
-        self.assertEqual(json.loads(outputs[0])[0]["inbound"], 1)
+        # A bare slug names the ENTITY (wiki/dup.md), not the same-stemmed
+        # concept that happens to sort first. The entity gets the inbound and
+        # is no longer an orphan; the concept gets none.
+        result = json.loads(outputs[0])
+        self.assertEqual(result["concept_inbound"][0]["inbound"], 0)
+        self.assertFalse(result["entity_orphan"])
+
+    def test_declared_type_uses_last_top_level_value(self):
+        write(self.root, "wiki/dup-type.md",
+              "---\ntype: concept\ntype: entity\n---\n\nBody.\n")
+        write(self.root, "index.md",
+              "# KB\n\n- [A](wiki/alpha.md)\n- [D](wiki/dup-type.md)\n")
+        report = link_audit.audit(self.root)
+        self.assertIn("wiki/dup-type.md", report["entities_without_concept_link"])
+        self.assertNotIn("wiki/dup-type.md",
+                         [e["page"] for e in report["concept_inbound"]])
+
+    def test_tab_indented_type_does_not_override(self):
+        write(self.root, "wiki/tab-type.md",
+              "---\ntype: entity\n\ttype: concept\n---\n\nBody.\n")
+        write(self.root, "index.md",
+              "# KB\n\n- [A](wiki/alpha.md)\n- [T](wiki/tab-type.md)\n")
+        report = link_audit.audit(self.root)
+        self.assertIn("wiki/tab-type.md", report["entities_without_concept_link"])
 
 
 if __name__ == "__main__":

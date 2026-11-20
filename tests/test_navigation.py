@@ -3,6 +3,8 @@
 
 from __future__ import annotations
 
+import contextlib
+import io
 import sys
 import tempfile
 import unittest
@@ -233,6 +235,82 @@ class TaxonomyRegressionTests(unittest.TestCase):
             self.assertTrue(backfill_navigation.backfill(page, check=False))
             self.assertIn("cluster: boundary", page.read_text(encoding="utf-8"))
             self.assertFalse(backfill_navigation.backfill(page, check=False))
+
+
+class BackfillSafetyTests(unittest.TestCase):
+    """Regressions for the fourth sweep's navigation-tool bugs."""
+
+    def _page(self, tmp, name, text):
+        wiki = Path(tmp) / "wiki"
+        wiki.mkdir(exist_ok=True)
+        page = wiki / name
+        page.write_text(text, encoding="utf-8")
+        return page
+
+    def test_check_reports_changes_without_writing(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            use_temp_root(self, tmp)
+            page = self._page(
+                tmp, "x.md",
+                '---\ntitle: "X"\nsummary: "CAN tool"\nrelated: []\n---\n\nBody.\n')
+            original = page.read_text(encoding="utf-8")
+            old_argv = sys.argv
+            sys.argv = ["backfill_navigation", "--check"]
+            self.addCleanup(setattr, sys, "argv", old_argv)
+            buf = io.StringIO()
+            with contextlib.redirect_stdout(buf):
+                backfill_navigation.main()
+            self.assertIn("would change 1 of 1 pages", buf.getvalue())
+            self.assertEqual(page.read_text(encoding="utf-8"), original)
+
+    def test_directory_named_md_does_not_abort_main(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            use_temp_root(self, tmp)
+            self._page(tmp, "x.md",
+                       '---\ntitle: "X"\nsummary: "CAN tool"\nrelated: []\n---\n\nBody.\n')
+            (Path(tmp) / "wiki" / "notes.md").mkdir()
+            old_argv = sys.argv
+            sys.argv = ["backfill_navigation", "--check"]
+            self.addCleanup(setattr, sys, "argv", old_argv)
+            with contextlib.redirect_stdout(io.StringIO()):
+                backfill_navigation.main()  # must not sys.exit
+
+    def test_index_prefixed_entity_is_processed(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            use_temp_root(self, tmp)
+            page = self._page(
+                tmp, "index-of-tools.md",
+                '---\ntitle: "Index of tools"\nsummary: "CAN tool"\n'
+                'type: entity\nrelated: []\n---\n\nBody.\n')
+            self.assertTrue(backfill_navigation.backfill(page, check=False))
+            self.assertIn("facets: [", page.read_text(encoding="utf-8"))
+
+    def test_trailing_quote_in_category_is_not_double_stripped(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            use_temp_root(self, tmp)
+            page = self._page(
+                tmp, "x.md",
+                '---\ntitle: "X"\nsummary: "Thing"\ncategory: \'"Tools"\'\n'
+                'related: []\n---\n\nBody.\n')
+            backfill_navigation.backfill(page, check=False)
+            facet_line = next(
+                line for line in page.read_text(encoding="utf-8").splitlines()
+                if line.startswith("facets:"))
+            # \"Tools\" (with quotes) is not the canonical category "Tools",
+            # so no category-derived `tools` facet may be injected.
+            self.assertNotIn("tools", facet_line)
+
+    def test_tab_indented_type_is_ignored(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            use_temp_root(self, tmp)
+            page = self._page(
+                tmp, "x.md",
+                '---\ntitle: "X"\nsummary: "Thing"\n'
+                'type: concept\n\ttype: entity\n---\n\nBody.\n')
+            fields = backfill_navigation.page_fields(
+                backfill_navigation.split_frontmatter(
+                    page.read_text(encoding="utf-8"))[1])
+            self.assertEqual(fields["type"], "concept")
 
 
 if __name__ == "__main__":

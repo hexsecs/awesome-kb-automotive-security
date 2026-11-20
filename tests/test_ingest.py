@@ -499,5 +499,196 @@ class FrontmatterSafetyTests(unittest.TestCase):
             self.assertFalse(list(outside.glob("index-*.md")))
 
 
+class SweepFourRegressionTests(unittest.TestCase):
+    """Regressions for the fourth sweep's verified runtime bugs."""
+
+    def setUp(self):
+        self._tmp = tempfile.TemporaryDirectory()
+        self.base = Path(self._tmp.name)
+        self.source = self.base / "source"
+        self.kb = self.base / "kb"
+        self.wiki = self.kb / "wiki"
+        (self.wiki / "concepts").mkdir(parents=True)
+        self.source.mkdir()
+        self._old_root, self._old_wiki = ingest.ROOT, ingest.WIKI
+        ingest.ROOT, ingest.WIKI = self.kb, self.wiki
+        self.addCleanup(self._restore)
+
+    def _restore(self):
+        ingest.ROOT, ingest.WIKI = self._old_root, self._old_wiki
+        self._tmp.cleanup()
+
+    def commit_list(self, body):
+        (self.source / "README.md").write_text(body, encoding="utf-8")
+        for cmd in (
+            ["git", "-C", str(self.source), "init", "-q"],
+            ["git", "-C", str(self.source), "add", "README.md"],
+            ["git", "-C", str(self.source), "-c", "user.email=clyde@example.com",
+             "-c", "user.name=Clyde", "commit", "-q", "-m", "list"],
+        ):
+            subprocess.run(cmd, check=True, capture_output=True)
+
+    def ingest(self):
+        return ingest.main(["--source", str(self.source)])
+
+    def test_case_insensitive_slug_preserves_authored_page(self):
+        authored = self.wiki / "Alpha.md"
+        authored.write_text(
+            '---\ntitle: "Authored alpha"\n---\n\nAUTHORED BODY.\n',
+            encoding="utf-8",
+        )
+        self.commit_list("## Tools\n\n* [Alpha](https://example.com/alpha) - a\n")
+        self.ingest()
+        text = authored.read_text(encoding="utf-8")
+        self.assertIn("AUTHORED BODY.", text)
+        self.assertNotIn("example.com/alpha", text)
+        self.assertTrue((self.wiki / "alpha-2.md").is_file())
+
+    def test_nested_page_links_are_relative_to_wiki(self):
+        nested = self.wiki / "nested"
+        nested.mkdir()
+        (nested / "deep.md").write_text(
+            '---\ntitle: "Deep"\nsummary: "s"\ntype: entity\n'
+            'status: "unknown"\nfacets: [can]\n---\n\nBody.\n',
+            encoding="utf-8",
+        )
+        (nested / "other.md").write_text(
+            '---\ntitle: "Other"\nsummary: "s"\ntype: entity\n'
+            'facets: [can]\n---\n\nBody.\n',
+            encoding="utf-8",
+        )
+        self.commit_list("## Tools\n\n* [A](https://example.com/a) - a\n")
+        self.ingest()
+        attention = (self.wiki / "index-needs-attention.md").read_text(
+            encoding="utf-8")
+        facet = (self.wiki / "index-facet-can.md").read_text(encoding="utf-8")
+        self.assertIn("(nested/deep.md)", attention)
+        self.assertIn("(nested/deep.md)", facet)
+        self.assertNotIn("(deep.md)", attention)
+
+    def test_directory_named_md_does_not_abort_ingest(self):
+        (self.wiki / "notes.md").mkdir()
+        self.commit_list("## Tools\n\n* [A](https://example.com/a) - a\n")
+        self.ingest()  # must not raise
+        self.assertTrue((self.wiki / "a.md").is_file())
+
+    def test_out_of_root_concept_symlink_is_not_listed(self):
+        outside = self.base / "OUTSIDE"
+        outside.mkdir()
+        secret = outside / "secret.md"
+        secret.write_text(
+            '---\ntitle: "Secret"\nsummary: "LEAKCONCEPT"\n---\n\nBody.\n',
+            encoding="utf-8",
+        )
+        (self.wiki / "concepts" / "leak.md").symlink_to(secret)
+        self.commit_list("## Tools\n\n* [A](https://example.com/a) - a\n")
+        self.ingest()
+        index = (self.kb / "index.md").read_text(encoding="utf-8")
+        self.assertNotIn("LEAKCONCEPT", index)
+        self.assertNotIn("secret.md", index)
+
+    def test_hardlinked_page_write_is_refused(self):
+        victim = self.base / "outside-victim.md"
+        victim.write_text(
+            '---\nuid: "01aa0000-0000-7000-8000-000000000000"\n'
+            'title: "Old"\nurl: "https://example.com/old"\n'
+            'status: "active"\ncreated: "2020-01-01"\n'
+            'last_checked: "2020-01-01"\n---\n\nOld body.\n',
+            encoding="utf-8",
+        )
+        (self.wiki / "old.md").hardlink_to(victim)
+        self.commit_list("## Tools\n\n* [A](https://example.com/a) - a\n")
+        with self.assertRaises(SystemExit) as caught:
+            self.ingest()
+        self.assertIn("hardlinked", str(caught.exception))
+        self.assertNotIn("archived", victim.read_text(encoding="utf-8"))
+
+    def test_url_and_section_move_removes_stale_index_idempotently(self):
+        self.commit_list("## Old Section\n\n* [A](https://example.com/old) - a\n")
+        self.ingest()
+        self.assertTrue((self.wiki / "index-old-section.md").exists())
+        self.commit_list("## New Section\n\n* [A](https://example.com/new) - a\n")
+        self.ingest()
+        self.assertFalse((self.wiki / "index-old-section.md").exists())
+        self.assertTrue((self.wiki / "index-new-section.md").exists())
+        before = {p.name: p.read_bytes() for p in self.kb.rglob("*.md")}
+        self.ingest()
+        after = {p.name: p.read_bytes() for p in self.kb.rglob("*.md")}
+        self.assertEqual(before, after, "no-op re-ingest must be byte-identical")
+
+    def test_index_prefixed_entity_is_visible_to_generated_hubs(self):
+        self.commit_list(
+            "## Tools\n\n* [Index Concept Map](https://example.com/hub) - h\n"
+        )
+        self.ingest()
+        page = self.wiki / "index-concept-map-2.md"
+        self.assertTrue(page.is_file())
+        attention = (self.wiki / "index-needs-attention.md").read_text(
+            encoding="utf-8")
+        self.assertIn("index-concept-map-2.md", attention)
+
+    def test_provenance_fields_are_immutable_across_updates(self):
+        page = self.wiki / "a.md"
+        page.write_text(
+            '---\nuid: "01aa0000-0000-7000-8000-000000000001"\n'
+            'title: "A"\nurl: "https://example.com/old"\n'
+            'category: "Tools"\nstatus: "active"\n'
+            'created: "2020-01-01"\nlast_checked: "2020-01-02"\n'
+            'updated: "2020-01-03"\n'
+            'source_commit: "OLDCOMMIT"\nsource_list: "old-list"\n'
+            'list_summary: "old summary"\n'
+            'status_note: "verified manually"\n---\n\nBody.\n',
+            encoding="utf-8",
+        )
+        self.commit_list("## Tools\n\n* [A](https://example.com/new) - new summary\n")
+        self.ingest()
+        fields, body = ingest.split_page(page.read_text(encoding="utf-8"))
+        self.assertEqual(fields["uid"], "01aa0000-0000-7000-8000-000000000001")
+        self.assertEqual(fields["created"], "2020-01-01")
+        self.assertEqual(fields["last_checked"], "2020-01-02")
+        # An unmanaged block (status_note) is preserved verbatim; the managed
+        # provenance stamps are refreshed from the source commit.
+        self.assertEqual(fields["status_note"], "verified manually")
+        self.assertEqual(fields["list_summary"], "new summary")
+        self.assertNotEqual(fields["source_commit"], "OLDCOMMIT")
+        self.assertNotEqual(fields["updated"], "2020-01-03")
+
+    def test_authored_depth_and_body_survive_an_update(self):
+        page = self.wiki / "a.md"
+        authored = (
+            '---\nuid: "01aa0000-0000-7000-8000-000000000001"\n'
+            'title: "A"\nurl: "https://example.com/old"\n'
+            'category: "Tools"\nstatus: "active"\n'
+            'created: "2020-01-01"\nlast_checked: "2020-01-02"\n'
+            'depth: full\n---\n\n# Authored research\n\nA real paragraph.\n'
+        )
+        page.write_text(authored, encoding="utf-8")
+        self.commit_list("## Tools\n\n* [A](https://example.com/new) - new summary\n")
+        self.ingest()
+        text = page.read_text(encoding="utf-8")
+        self.assertIn('depth: "full"', text)
+        self.assertIn("# Authored research", text)
+        self.assertIn("A real paragraph.", text)
+        self.assertNotIn("generated stub", text)
+
+    def test_relisted_full_page_drops_delisted_note(self):
+        page = self.wiki / "a.md"
+        page.write_text(
+            '---\nuid: "01aa0000-0000-7000-8000-000000000001"\n'
+            'title: "A"\nurl: "https://example.com/a"\n'
+            'category: "Tools"\nstatus: "archived"\n'
+            'created: "2020-01-01"\nlast_checked: "2020-01-02"\n'
+            'depth: full\n---\n\n# Real research.\n\n'
+            '> Delisted from the source list as of deadbeef.\n',
+            encoding="utf-8",
+        )
+        self.commit_list("## Tools\n\n* [A](https://example.com/a) - a\n")
+        self.ingest()
+        text = page.read_text(encoding="utf-8")
+        self.assertNotIn("Delisted from the source list", text)
+        self.assertIn('depth: "full"', text)
+        self.assertIn("# Real research.", text)
+
+
 if __name__ == "__main__":
     unittest.main()
