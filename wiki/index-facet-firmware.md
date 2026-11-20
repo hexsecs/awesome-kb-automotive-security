@@ -2,7 +2,7 @@
 
 Firmware acquisition, bootloaders, flashing and OTA updates.
 
-Generated from page frontmatter by tools/ingest.py; 68 pages. Do not edit by hand.
+Generated from page frontmatter by tools/ingest.py; 68 pages (entities and concepts). Do not edit by hand.
 
 ## CAN Bus Analysis
 

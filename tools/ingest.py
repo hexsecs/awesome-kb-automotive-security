@@ -283,7 +283,8 @@ def write_facet_indexes(pages: list[tuple[Path, dict, str]],
         counts[facet.slug] = len(items)
         lines = [f"# Facet: {facet.label}", "", facet.description, "",
                  "Generated from page frontmatter by tools/ingest.py;"
-                 f" {len(items)} pages. Do not edit by hand.", ""]
+                 f" {len(items)} pages (entities and concepts)."
+                 " Do not edit by hand.", ""]
         by_group: dict[str, list[str]] = {}
         for page, fields in items:
             group = ("Concepts" if fields.get("type") == "concept"
@@ -343,7 +344,7 @@ def write_needs_attention(pages: list[tuple[Path, dict, str]],
             elif kind == "by-design":
                 buckets["Brief by design (no action)"].append(labelled)
             else:
-                buckets["Untriaged briefs"].append(entry)
+                buckets["Untriaged briefs"].append(labelled)
         checked = str(fields.get("last_checked", ""))
         if checked:
             try:
@@ -588,7 +589,7 @@ def main(argv=None) -> int:
         catslug[section] = cs
         lines = [f"# {section}", ""]
         browse = ", ".join(
-            f"[{FACET_BY_SLUG[s].label}](index-facet-{s}.md) ({n})"
+            f"[{FACET_BY_SLUG[s].label}](index-facet-{s}.md) ({n} here)"
             for s, n in sorted(facets_by_section.get(section, {}).items(),
                                key=lambda kv: (-kv[1], kv[0]))[:6])
         if browse:
@@ -648,7 +649,8 @@ def main(argv=None) -> int:
         for slug in sorted(facet_counts, key=lambda s: (-facet_counts[s], s)):
             facet = FACET_BY_SLUG[slug]
             lines.append(f"- [{facet.label}](wiki/index-facet-{slug}.md) —"
-                         f" {facet_counts[slug]} pages. {facet.description}")
+                         f" {facet_counts[slug]} pages (entities and concepts)."
+                         f" {facet.description}")
     lines.append("")
     (ROOT / "index.md").write_text("\n".join(lines), encoding="utf-8")
 

@@ -2,7 +2,7 @@
 
 Captures, benchmarks and labelled datasets.
 
-Generated from page frontmatter by tools/ingest.py; 12 pages. Do not edit by hand.
+Generated from page frontmatter by tools/ingest.py; 12 pages (entities and concepts). Do not edit by hand.
 
 ## Datasets
 

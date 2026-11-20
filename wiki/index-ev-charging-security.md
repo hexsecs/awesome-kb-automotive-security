@@ -1,6 +1,6 @@
 # EV Charging Security
 
-Browse by facet: [EV charging](index-facet-ev-charging.md) (12), [Tools & libraries](index-facet-tools.md) (12), [Standards & specs](index-facet-standards.md) (8), [Attack techniques](index-facet-attack.md) (4), [CAN](index-facet-can.md) (2), [Firmware & updates](index-facet-firmware.md) (1).
+Browse by facet: [EV charging](index-facet-ev-charging.md) (12 here), [Tools & libraries](index-facet-tools.md) (12 here), [Standards & specs](index-facet-standards.md) (8 here), [Attack techniques](index-facet-attack.md) (4 here), [Firmware & updates](index-facet-firmware.md) (1 here), [Simulation](index-facet-simulation.md) (1 here).
 
 - [AcCCS](acccs.md) — Idaho National Laboratory test platform on a Raspberry Pi that emulates either the vehicle or the charger in a CCS session, driving the J1772 control pilot…
 - [ChargeSploit](chargesploit.md) — Security testing framework for ISO 15118-2 and DIN SPEC 70121 that emulates either the charger or the vehicle, with TLS support and extensible handlers for…

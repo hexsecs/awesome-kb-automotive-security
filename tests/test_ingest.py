@@ -164,5 +164,27 @@ class IngestMainTests(unittest.TestCase):
         self.assertIn("not a usable git checkout", str(caught.exception))
 
 
+class NeedsAttentionTests(unittest.TestCase):
+    def test_unrecognised_note_is_visible_in_the_queue(self):
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            page = root / "brief.md"
+            page.write_text('---\ntitle: "Brief"\n---\n\nBody.\n',
+                            encoding="utf-8")
+            old_wiki = ingest.WIKI
+            ingest.WIKI = root
+            try:
+                ingest.write_needs_attention(
+                    [(page, {"title": "Brief", "depth": "brief",
+                             "depth_note": "needs review — PDF but no method"}, "")],
+                    "2026-11-20",
+                )
+                text = (root / "index-needs-attention.md").read_text(
+                    encoding="utf-8")
+            finally:
+                ingest.WIKI = old_wiki
+            self.assertIn("needs review — PDF but no method", text)
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -2,7 +2,7 @@
 
 EVSE, ISO 15118, OCPP, V2G, CCS and PLC.
 
-Generated from page frontmatter by tools/ingest.py; 33 pages. Do not edit by hand.
+Generated from page frontmatter by tools/ingest.py; 33 pages (entities and concepts). Do not edit by hand.
 
 ## CAN Bus Analysis
 

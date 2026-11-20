@@ -83,5 +83,31 @@ class TaxonomyTargetTests(unittest.TestCase):
                     self.assertIn(slug, known)
 
 
+class TaxonomyRegressionTests(unittest.TestCase):
+    def test_modal_can_is_not_a_can_bus_facet(self):
+        self.assertNotIn("can", taxonomy.assign_facets(
+            "A tool that can scan a network", "Tools"))
+        self.assertIn("can", taxonomy.assign_facets(
+            "SocketCAN candump CAN bus frames", "Tools"))
+
+    def test_each_concept_has_one_home(self):
+        homes = [slug for cluster in taxonomy.CONCEPT_CLUSTERS
+                 for slug in cluster.concepts]
+        self.assertEqual(len(homes), len(set(homes)))
+
+    def test_backfill_corrects_a_stale_cluster(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            page = Path(tmp) / "doip.md"
+            page.write_text(
+                '---\ntitle: "DoIP"\nsummary: "Diagnostics over IP."\n'
+                'type: concept\ncategory: ""\ncluster: bus\nrelated: []\n'
+                '---\n\nBody.\n',
+                encoding="utf-8",
+            )
+            self.assertTrue(backfill_navigation.backfill(page, check=False))
+            self.assertIn("cluster: boundary", page.read_text(encoding="utf-8"))
+            self.assertFalse(backfill_navigation.backfill(page, check=False))
+
+
 if __name__ == "__main__":
     unittest.main()

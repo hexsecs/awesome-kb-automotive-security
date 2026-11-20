@@ -2,7 +2,7 @@
 
 LiDAR, camera, radar, GNSS and physical-channel attacks.
 
-Generated from page frontmatter by tools/ingest.py; 27 pages. Do not edit by hand.
+Generated from page frontmatter by tools/ingest.py; 27 pages (entities and concepts). Do not edit by hand.
 
 ## RF and Key Fob Analysis
 

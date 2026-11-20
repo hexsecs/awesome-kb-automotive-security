@@ -2,7 +2,7 @@
 
 Infotainment and head-unit runtime and update trust.
 
-Generated from page frontmatter by tools/ingest.py; 18 pages. Do not edit by hand.
+Generated from page frontmatter by tools/ingest.py; 18 pages (entities and concepts). Do not edit by hand.
 
 ## Infotainment and IVI
 

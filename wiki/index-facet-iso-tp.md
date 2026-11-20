@@ -2,7 +2,7 @@
 
 ISO 15765-2 transport, segmentation and flow control.
 
-Generated from page frontmatter by tools/ingest.py; 8 pages. Do not edit by hand.
+Generated from page frontmatter by tools/ingest.py; 8 pages (entities and concepts). Do not edit by hand.
 
 ## CAN Bus Analysis
 

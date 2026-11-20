@@ -2,13 +2,14 @@
 
 Virtual buses, replay, SIL/HIL and physical miniatures.
 
-Generated from page frontmatter by tools/ingest.py; 28 pages. Do not edit by hand.
+Generated from page frontmatter by tools/ingest.py; 29 pages (entities and concepts). Do not edit by hand.
 
 ## CAN Bus Analysis
 
 - [BUSMASTER](busmaster.md) — Open-source CAN simulation, analysis, and test tool from Bosch Engineering and ETAS, with a node simulator, DBC-driven signal interpretation, and scriptable…
 - [CAN Commander](can-commander.md) — Flipper Zero application and companion ESP32 CAN board for reverse engineering vehicle networks, with sniffing, DBC decoding, replay, and injection profiles…
 - [CANdevStudio](candevstudio.md) — Flow-based graphical CAN simulation environment that wires senders, receivers, DBC decoders, and signal viewers together to stand in for missing ECUs on a…
+- [Cabana](cabana.md) — Standalone CAN and CAN FD analyzer split from openpilot, with live bit-level heatmaps, signal discovery, a DBC editor, and drive replay synchronized to video.
 - [Carpunk](carpunk.md) — CAN injection toolkit and successor to CANghost, automating interface setup, sniffing, replay, and injection attacks.
 - [ICSim](icsim.md) — Instrument Cluster Simulator for safe CAN bus security testing with virtual dashboard controls.
 - [pycangui](pycangui.md) — Graphical CAN bus tool with live trace and plots, transmit, CANopen, UDS, J1939, and XCP/CCP support on any python-can adapter, with Python scripting and…

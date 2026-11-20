@@ -1,6 +1,6 @@
 # Conference Presentations
 
-Browse by facet: [Research](index-facet-research.md) (22), [Attack techniques](index-facet-attack.md) (19), [Firmware & updates](index-facet-firmware.md) (10), [CAN](index-facet-can.md) (8), [Authentication & keys](index-facet-authentication.md) (7), [Diagnostics](index-facet-diagnostics.md) (6).
+Browse by facet: [Research](index-facet-research.md) (22 here), [Attack techniques](index-facet-attack.md) (19 here), [Firmware & updates](index-facet-firmware.md) (10 here), [Authentication & keys](index-facet-authentication.md) (7 here), [CAN](index-facet-can.md) (6 here), [Diagnostics](index-facet-diagnostics.md) (6 here).
 
 - [Abusing CAN Bus Protocol Specification for Denial of Service in Embedded Systems](abusing-can-bus-protocol-specification-for-denial-of-service-in-embedded-systems.md) — Petran, DEF CON 31 Car Hacking Village 2023. Shows how an out-of-range CAN data length code reaches firmware unchecked and overflows a buffer, demonstrated…
 - [Automotive Flash Bootloaders: Exposing Automotive ECU Updates](automotive-flash-bootloaders-exposing-automotive-ecu-updates.md) — Lapczynski, DEF CON 26 Car Hacking Village 2018. Walks through how UDS programming sessions, seed-key exchange, and flash routines expose ECU firmware…

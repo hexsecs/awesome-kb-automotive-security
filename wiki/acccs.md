@@ -28,7 +28,7 @@ sources:
     retrieved: 2026-11-01
   - url: "https://github.com/IdahoLabResearch/AcCCS/blob/1ff96ff0a2446c9432d3a0000d3f1e943730edcf/README.md"
     retrieved: 2026-11-01
-facets: [can, ev-charging, tools]
+facets: [ev-charging, tools]
 ---
 
 Idaho National Laboratory test platform on a Raspberry Pi that emulates either the vehicle or the charger in a CCS session, driving the J1772 control pilot, HomePlug Green PHY SLAC, and DIN 70121 exchange so either side can be tested without the other present.

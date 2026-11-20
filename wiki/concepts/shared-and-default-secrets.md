@@ -29,7 +29,7 @@ sources:
     retrieved: 2026-11-17
   - url: "https://illmatics.com/car_hacking.pdf"
     retrieved: 2026-11-17
-facets: [authentication]
+facets: [authentication, attack]
 ---
 
 The break-once pattern is a failure of **compromise containment**: a credential recovered from one ECU, transponder, or workshop program authorises operations on other units. Strong encryption cannot distinguish the rightful holder from an attacker who possesses the same key. But shared secrets, defaults, weak keys, and constant challenges are not interchangeable findings. This synthesis separates their mechanisms and evidence; it does not claim that every automotive cipher survives, or that every recovered key unlocks a fleet.

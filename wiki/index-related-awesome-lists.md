@@ -1,6 +1,6 @@
 # Related Awesome Lists
 
-Browse by facet: [Learning](index-facet-learning.md) (6), [Firmware & updates](index-facet-firmware.md) (4), [CAN](index-facet-can.md) (3), [Tools & libraries](index-facet-tools.md) (3), [Attack techniques](index-facet-attack.md) (2), [Intrusion detection](index-facet-ids.md) (2).
+Browse by facet: [Learning](index-facet-learning.md) (6 here), [Firmware & updates](index-facet-firmware.md) (4 here), [CAN](index-facet-can.md) (3 here), [Tools & libraries](index-facet-tools.md) (3 here), [Attack techniques](index-facet-attack.md) (2 here), [Intrusion detection](index-facet-ids.md) (2 here).
 
 - [Awesome CANb IDs](awesome-canb-ids.md) — CAN bus ID reference and documentation.
 - [Awesome CANbus](awesome-canbus.md) — Comprehensive CAN bus security resources.

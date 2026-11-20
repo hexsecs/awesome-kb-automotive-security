@@ -2,7 +2,7 @@
 
 Key fobs, RKE/PKE, rolling codes, TPMS and radio tooling.
 
-Generated from page frontmatter by tools/ingest.py; 27 pages. Do not edit by hand.
+Generated from page frontmatter by tools/ingest.py; 27 pages (entities and concepts). Do not edit by hand.
 
 ## CAN Bus Analysis
 

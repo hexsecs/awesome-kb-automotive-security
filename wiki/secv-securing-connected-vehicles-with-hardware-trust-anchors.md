@@ -25,7 +25,7 @@ related:
   - secure-firmware-updates
   - uptane
   - ivi-update-trust
-facets: [can, research]
+facets: [research]
 ---
 
 Kayondo et al., NDSS 2026. Mediates external-network control messages inside a TEE backed by an EVITA-compliant HSM, so the gateway can verify them even when the external network manager is compromised, at 6.5 percent transmission overhead.

@@ -2,7 +2,7 @@
 
 Vehicle-to-everything, pseudonym credentials and misbehaviour reporting.
 
-Generated from page frontmatter by tools/ingest.py; 16 pages. Do not edit by hand.
+Generated from page frontmatter by tools/ingest.py; 16 pages (entities and concepts). Do not edit by hand.
 
 ## V2X Security
 

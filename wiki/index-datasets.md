@@ -1,6 +1,6 @@
 # Datasets
 
-Browse by facet: [Attack techniques](index-facet-attack.md) (12), [CAN](index-facet-can.md) (12), [Datasets](index-facet-datasets.md) (12), [Intrusion detection](index-facet-ids.md) (10), [Simulation](index-facet-simulation.md) (5), [Diagnostics](index-facet-diagnostics.md) (2).
+Browse by facet: [Attack techniques](index-facet-attack.md) (12 here), [Datasets](index-facet-datasets.md) (12 here), [CAN](index-facet-can.md) (11 here), [Intrusion detection](index-facet-ids.md) (10 here), [Simulation](index-facet-simulation.md) (5 here), [Diagnostics](index-facet-diagnostics.md) (2 here).
 
 - [AutoHack](autohack.md) — Multi-bus CAN dataset from a real vehicle covering C-CAN, P-CAN, and B-CAN, with physically verified fuzzing, spoofing, replay, DoS, and UDS-based attacks.
 - [CAN-MIRGU](can-mirgu.md) — CAN bus attack dataset from a modern vehicle driven on real roads over six days, with physically verified masquerade, suspension, and real attacks.

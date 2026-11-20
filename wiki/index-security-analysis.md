@@ -1,6 +1,6 @@
 # Security Analysis
 
-Browse by facet: [TARA](index-facet-tara.md) (5), [Standards & specs](index-facet-standards.md) (3), [Attack techniques](index-facet-attack.md) (2), [Tools & libraries](index-facet-tools.md) (2), [Automotive Ethernet](index-facet-ethernet.md) (1), [Firmware & updates](index-facet-firmware.md) (1).
+Browse by facet: [TARA](index-facet-tara.md) (5 here), [Standards & specs](index-facet-standards.md) (3 here), [Attack techniques](index-facet-attack.md) (2 here), [Tools & libraries](index-facet-tools.md) (2 here), [Automotive Ethernet](index-facet-ethernet.md) (1 here), [Firmware & updates](index-facet-firmware.md) (1 here).
 
 - [Automotive Threat Matrix](automotive-threat-matrix.md) — Auto-ISAC's MITRE ATT&CK-style matrix of automotive adversary tactics and techniques, drawn from validated attacks and reproducible research, for threat…
 - [Automotive Threat Modeling Template](automotive-threat-modeling-template.md) — NCC Group stencil set for the Microsoft Threat Modeling Tool, supplying vehicle-specific element types, trust boundaries, and threat rules for ECU and…

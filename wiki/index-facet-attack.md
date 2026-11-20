@@ -2,7 +2,7 @@
 
 Exploits, fuzzing, injection, spoofing and bypasses.
 
-Generated from page frontmatter by tools/ingest.py; 145 pages. Do not edit by hand.
+Generated from page frontmatter by tools/ingest.py; 145 pages (entities and concepts). Do not edit by hand.
 
 ## CAN Bus Analysis
 
@@ -177,7 +177,6 @@ Generated from page frontmatter by tools/ingest.py; 145 pages. Do not edit by ha
 
 ## Concepts
 
-- [Bootloader stages and bootstrap entry](concepts/bootloader-stages.md) — ECUs boot through layers owned by different parties; the corpus's breaks concentrate at the stage transitions and the weakest stage, not the application.
 - [CAN availability and denial of service](concepts/can-availability.md) — Availability attacks remove or suppress the bus's genuine traffic, below the layer message authentication defends: flooding, bus-off, dominance, silencing.
 - [CAN injection](concepts/can-injection.md) — Attacker taps exposed CAN wiring and impersonates a trusted ECU: classic CAN frames carry no sender authentication, so fake 'key valid' messages are believed.
 - [CAN message authentication: the retrofit design space](concepts/can-message-authentication.md) — Two complete academic designs and the standardised answer, compared on freshness, key scope, frame cost, and evidence — plus the two limits they all share.
@@ -192,6 +191,7 @@ Generated from page frontmatter by tools/ingest.py; 145 pages. Do not edit by ha
 - [Protocol-aware diagnostic fuzzing](concepts/diagnostic-fuzzing.md) — Fuzzing reaches the deep diagnostic states only when generation is grammar- and state-aware: sessions and SecurityAccess are the fuzzer's real problem.
 - [Rolling-code failure classes](concepts/rolling-code-failure-classes.md) — Rolling codes move trust from the code's secrecy to the receiver's counter state; the failure classes attack that state: windows, resync, harvesting, blocking.
 - [Secure firmware updates (Uptane)](concepts/secure-firmware-updates.md) — How Uptane secures vehicle software updates: two repositories, per-vehicle signed instructions, and compromise resilience when servers or keys fall.
+- [Shared, default, and global secrets: the break-once pattern](concepts/shared-and-default-secrets.md) — The decisive failure is rarely cipher strength — it is one secret shared by a fleet or a type, or a default nobody changed. Break one, break all.
 - [Simulation and test doubles for vehicle networks](concepts/simulation-and-test-doubles.md) — The corpus's simulation layer, rung by rung — virtual bus, replay, declarative doubles, physical miniatures — and what each rung cannot tell you.
 - [The EV–EVSE charging trust chain (ISO 15118 / DIN 70121)](concepts/charging-trust-chain.md) — The vehicle–charger link's trust is a chain — association, transport, contract authorisation — whose links fail independently and are measured failing.
 - [The vehicle's external attack surface: remote entry and the telematics pivot](concepts/external-attack-surface.md) — Compromise repeatedly begins at a boundary interface and pivots through the unit crossing it: connectivity units are most exposed and most privileged.

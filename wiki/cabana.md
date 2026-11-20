@@ -16,6 +16,7 @@ list_summary: "Standalone CAN and CAN FD analyzer split from openpilot, with liv
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-20
+facets: [can, simulation, tools]
 ---
 
 Standalone CAN and CAN FD analyzer split from openpilot, with live bit-level heatmaps, signal discovery, a DBC editor, and drive replay synchronized to video.

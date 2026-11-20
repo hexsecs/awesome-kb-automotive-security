@@ -2,7 +2,7 @@
 
 Books, guides, courses and meta-lists.
 
-Generated from page frontmatter by tools/ingest.py; 28 pages. Do not edit by hand.
+Generated from page frontmatter by tools/ingest.py; 28 pages (entities and concepts). Do not edit by hand.
 
 ## Books
 

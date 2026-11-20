@@ -32,7 +32,9 @@ class Facet(NamedTuple):
 
 FACETS: tuple[Facet, ...] = (
     Facet("can", "CAN", "Controller Area Network, CAN FD, CAN XL and SocketCAN.",
-          (r"\bcan(?:-?bus|bus|fd|xl|alyz|matic)?\b", r"socketcan", r"can frame")),
+          (r"(?-i:\bCAN\b)", r"\bcan[- ]?(?:bus|fd|xl)\b", r"\bcanaly[sz]",
+           r"\bcanmatic\b", r"\bsocketcan\b", r"python[- ]can\b",
+           r"\bcan frames?\b")),
     Facet("diagnostics", "Diagnostics", "UDS, OBD, KWP, SecurityAccess and diagnostic services.",
           (r"\buds\b", r"iso[\s-]?14229", r"\bobd(?:-ii|-2)?\b", r"diagnos",
            r"\bkwp\b", r"\bsovd\b", r"security\s?access", r"seed[\s/-]?key")),
@@ -241,7 +243,7 @@ CONCEPT_CLUSTERS: tuple[Cluster, ...] = (
              "in-vehicle-intrusion-detection", "lin-bus", "j1939", "iso-tp")),
     Cluster("access", "Access, diagnostics and updates",
             "The privileged paths into an ECU, and where their gates break.",
-            ("diagnostic-service-abuse", "uds-seed-key", "diagnostic-fuzzing", "doip",
+            ("diagnostic-service-abuse", "uds-seed-key", "diagnostic-fuzzing",
              "calibration-plane", "firmware-acquisition", "bootloader-stages",
              "secure-firmware-updates", "ivi-update-trust", "ivi-runtime-privilege")),
     Cluster("boundary", "The external boundary",
