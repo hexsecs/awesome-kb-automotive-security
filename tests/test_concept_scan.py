@@ -125,5 +125,34 @@ class HardeningTests(unittest.TestCase):
         self.assertEqual(fields["title"], 'He said "hello"')
 
 
+class FilesystemGuardTests(unittest.TestCase):
+    def test_tab_indented_type_does_not_override(self):
+        text = '---\ntype: entity\n\ttype: concept\n---\n\nBody.\n'
+        self.assertEqual(concept_scan.fields_of(text)["type"], "entity")
+
+    def test_symlinked_concepts_dir_is_not_scanned(self):
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            for i in range(10):
+                summary = ("quintessential zephyr" if i < 2
+                           else f"unique filler{i}")
+                (root / f"p{i}.md").write_text(
+                    f'---\ntype: entity\ntitle: "P"\n'
+                    f'summary: "{summary}"\n---\n\nBody.\n',
+                    encoding="utf-8",
+                )
+            outside = root.parent / f"outside-{root.name}"
+            outside.mkdir()
+            self.addCleanup(
+                lambda: __import__("shutil").rmtree(outside, ignore_errors=True))
+            (outside / "quintessential-zephyr.md").write_text(
+                '---\ntitle: "Outside"\n---\n', encoding="utf-8")
+            (root / "concepts").symlink_to(outside, target_is_directory=True)
+            out = run_scan(root)
+            # The outside file's stem must not be treated as an existing
+            # concept and suppress the real corpus candidate.
+            self.assertIn("quintessential zephyr", out)
+
+
 if __name__ == "__main__":
     unittest.main()

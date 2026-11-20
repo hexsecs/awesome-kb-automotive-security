@@ -105,7 +105,10 @@ def split_page(text: str) -> tuple[dict, list[str], str]:
     fm_lines = text[4:end].splitlines()
     fields: dict = {}
     for line in fm_lines:
-        if ": " in line and not line.startswith((" ", "-")):
+        # Match the ingester/backfill rule: a tab-indented line is nested
+        # YAML, not a top-level field. Without ``\t`` a stray ``\ttype:
+        # concept`` overrode the real ``type: entity`` here only.
+        if ": " in line and not line.startswith((" ", "-", "\t")):
             key, raw = line.split(": ", 1)
             fields[key.strip()] = scalar(raw)
     return fields, fm_lines, text[body_start:]
@@ -292,9 +295,9 @@ def main() -> int:
     # entity should be linked back from that entity (house practice).
     concept_links: dict[str, list[str]] = {}
     cdir = WIKI / "concepts"
-    if cdir.is_dir():
+    if cdir.is_dir() and not cdir.is_symlink() and within_root(cdir):
         for path in sorted(cdir.glob("*.md")):
-            if path.is_symlink() or not within_root(path):
+            if not path.is_file() or path.is_symlink() or not within_root(path):
                 continue
             text = read_page(path)
             if text is None:

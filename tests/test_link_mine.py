@@ -252,5 +252,11 @@ class MainTests(unittest.TestCase):
         self.assertEqual(caught.exception.code, 2)
 
 
+class FieldPrefixTests(unittest.TestCase):
+    def test_tab_indented_type_does_not_override(self):
+        text = '---\ntitle: "X"\ntype: entity\n\ttype: concept\n---\n\nBody.\n'
+        self.assertEqual(link_mine.split_page(text)[0]["type"], "entity")
+
+
 if __name__ == "__main__":
     unittest.main()

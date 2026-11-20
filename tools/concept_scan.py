@@ -119,7 +119,9 @@ def fields_of(text: str) -> dict:
         return {}
     fields = {}
     for line in text[4:end].splitlines():
-        if ": " in line and not line.startswith((" ", "-")):
+        # A tab-indented line is nested YAML, not a top-level field — same
+        # rule as ingest/backfill/link_mine.
+        if ": " in line and not line.startswith((" ", "-", "\t")):
             key, raw = line.split(": ", 1)
             fields[key.strip()] = scalar(raw)
     return fields
@@ -173,8 +175,10 @@ def main() -> int:
 
     existing_concepts: set[str] = set()
     cdir = WIKI / "concepts"
-    if cdir.is_dir():
+    if cdir.is_dir() and not cdir.is_symlink() and within_root(cdir):
         for path in sorted(cdir.glob("*.md")):
+            if not path.is_file() or path.is_symlink() or not within_root(path):
+                continue
             existing_concepts.add(path.stem.replace("-", " "))
 
     # Acronyms: tokens the corpus itself capitalises (BLE, JTAG, TPM…).

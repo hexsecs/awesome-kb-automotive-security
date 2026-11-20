@@ -104,10 +104,13 @@ def backfill(path: Path, check: bool) -> bool:
     if "title" not in fields:
         return False
 
-    summary = fields.get("summary", "").strip('"')
-    category = fields.get("category", "").strip('"')
+    # ``page_fields`` already runs each scalar through ``scalar()``, which
+    # unwraps quotes. Stripping them again corrupts a title/summary that
+    # legitimately begins or ends with a quote character.
+    summary = fields.get("summary", "")
+    category = fields.get("category", "")
     lead = rest.split("\n## ", 1)[0][:1500]
-    facets = assign_facets(f" {fields['title'].strip(chr(34))} {summary} {lead}", category)
+    facets = assign_facets(f" {fields['title']} {summary} {lead}", category)
 
     is_concept = fields.get("type", "") == "concept"
     lines = fm.splitlines()
@@ -168,9 +171,12 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--check", action="store_true", help="report changes without writing")
     args = parser.parse_args()
+    # Generated indexes have no frontmatter and are skipped by ``backfill``;
+    # filtering on the ``index-`` NAME used to hide authored entities whose
+    # slug legitimately starts with that prefix. ``is_file`` also skips a
+    # directory named ``*.md``, which ``rglob`` otherwise feeds to read_text.
     pages = sorted(p for p in (ROOT / "wiki").rglob("*.md")
-                   if not p.name.startswith("index-") and not p.is_symlink()
-                   and within_root(p))
+                   if p.is_file() and not p.is_symlink() and within_root(p))
     changed = [p for p in pages if backfill(p, args.check)]
     verb = "would change" if args.check else "updated"
     print(f"backfill_navigation: {verb} {len(changed)} of {len(pages)} pages")
