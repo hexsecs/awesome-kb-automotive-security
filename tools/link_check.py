@@ -25,11 +25,15 @@ from urllib.parse import unquote
 
 ROOT = Path(__file__).resolve().parent.parent
 
-LINK_RE = re.compile(r"\[[^\]]*\]\(\s*<?([^)\s>]+)>?(?:\s+\"[^\"]*\")?\s*\)")
-FRONTMATTER_RE = re.compile(r"\A---\n(.*?)\n---\n", re.DOTALL)
-RELATED_INLINE_RE = re.compile(r"^related:\s*\[(.*)\]\s*$")
+LINK_RE = re.compile(
+    r"\[(?:[^\[\]]|\[[^\[\]]*\])*\]\(\s*"
+    r"(<[^>]+>|[^()\s]+(?:\([^()]*\)[^()\s]*)*|[^)\s]+)"
+    r"(?:\s+(?:\"[^\"]*\"|'[^']*'))?\s*\)"
+)
+FRONTMATTER_RE = re.compile(r"\A\ufeff?---\n(.*?)\n---\n", re.DOTALL)
+RELATED_INLINE_RE = re.compile(r"^related:\s*\[(.*)\]\s*(?:#.*)?$")
 RELATED_BLOCK_RE = re.compile(r"^related:\s*$")
-LIST_ITEM_RE = re.compile(r"^\s+-\s+(\S+)\s*$")
+LIST_ITEM_RE = re.compile(r"^\s*-\s+(\S+)\s*$")
 
 
 def iter_pages(root: Path):
@@ -89,6 +93,8 @@ def is_ignored(target: str) -> bool:
 
 def resolve_link(source: Path, target: str, root: Path) -> Path | None:
     t = target.split("#", 1)[0].split("?", 1)[0].strip()
+    if t.startswith("<") and t.endswith(">"):
+        t = t[1:-1].strip()
     if not t:
         return None
     t = unquote(t)
@@ -97,8 +103,16 @@ def resolve_link(source: Path, target: str, root: Path) -> Path | None:
     return (source.parent / t).resolve()
 
 
-def check(root: Path) -> dict:
+def require_kb_root(root: Path) -> Path:
+    """Fail loudly on a misconfigured root instead of passing an empty audit."""
     root = root.resolve()
+    if not root.is_dir() or not (root / "index.md").is_file():
+        raise ValueError(f"not a KB root (missing directory or index.md): {root}")
+    return root
+
+
+def check(root: Path) -> dict:
+    root = require_kb_root(root)
     pages = list(iter_pages(root))
     page_set = {p.resolve() for p in pages}
     stems = {p.stem for p in pages if p.is_relative_to(root / "wiki")}
@@ -126,6 +140,11 @@ def check(root: Path) -> dict:
                 continue
             resolved = resolve_link(page, raw, root)
             if resolved is None:
+                continue
+            if not resolved.is_relative_to(root):
+                broken_links.append(
+                    {"source": rel_page, "target": raw.split("#", 1)[0]}
+                )
                 continue
             targets.add(resolved)
             if not resolved.is_file():
@@ -192,7 +211,11 @@ def main(argv=None) -> int:
     parser.add_argument("--root", type=Path, default=ROOT, help="KB root (default: repo root)")
     args = parser.parse_args(argv)
 
-    report = check(args.root)
+    try:
+        report = check(args.root)
+    except ValueError as exc:
+        print(f"link_check: {exc}", file=sys.stderr)
+        return 2
     if args.json:
         print(json.dumps(report, indent=2, sort_keys=False))
     else:

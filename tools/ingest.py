@@ -65,6 +65,7 @@ from datetime import date, timedelta
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+from link_check import parse_related, split_frontmatter  # noqa: E402
 from taxonomy import (CONCEPT_CLUSTERS, FACET_BY_SLUG, FACETS,  # noqa: E402
                       GLOSSARY, READING_PATHS)
 
@@ -229,17 +230,7 @@ def parse_slugs(value: object) -> set[str]:
 
 def related_count(text: str) -> int:
     """Count `related` targets in either frontmatter list shape."""
-    if not text.startswith("---\n"):
-        return 0
-    end = text.find("\n---\n", 4)
-    if end == -1:
-        return 0
-    fm = text[4:end]
-    inline = re.search(r"^related:\s*\[(.*)\]\s*$", fm, re.M)
-    if inline:
-        return len([v for v in inline.group(1).split(",") if v.strip()])
-    block = re.search(r"^related:\s*\n((?:[ \t]+.*\n?)*)", fm, re.M)
-    return len(re.findall(r"^\s*-\s", block.group(1), re.M)) if block else 0
+    return len(parse_related(split_frontmatter(text)[0]))
 
 
 def all_pages() -> list[tuple[Path, dict, str]]:
