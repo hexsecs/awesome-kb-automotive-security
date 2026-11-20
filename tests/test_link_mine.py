@@ -3,6 +3,7 @@
 
 import importlib.util
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -541,6 +542,52 @@ class SweepEightRegressionTests(SweepSevenRegressionTests):
         self.assertIn("changed 0 pages", second.stdout)
         self.assertEqual((source.read_text(encoding="utf-8"),
                           target.read_text(encoding="utf-8")), before)
+
+
+class SweepNineRegressionTests(SweepEightRegressionTests):
+    """Regressions for the ninth sweep's writer key-detection bug."""
+
+    def test_space_before_colon_keys_are_rewritten_not_duplicated(self):
+        a = self.kb / "wiki" / "a.md"
+        a.write_text(
+            '---\ntitle: "Alpha"\ntype: entity\nsummary: "unique alpha"\n'
+            'related : [beta]\nupdated : 2020-01-01\n---\nBody.\n',
+            encoding="utf-8")
+        self.entity("c.md", "Charlie", "unique charlie", related=["a"])
+        first = self.run_tool("--reciprocate", "--threshold", "100",
+                              "--date", "2026-11-20")
+        self.assertEqual(first.returncode, 0, first.stderr)
+        _, fm_lines, _ = link_mine.split_page(a.read_text(encoding="utf-8"))
+        self.assertEqual(len([l for l in fm_lines
+                              if re.match(r"^related\s*:", l)]), 1)
+        self.assertIn("updated: 2026-11-20", fm_lines)
+        self.assertNotIn("updated :", fm_lines)
+        # The single block replaces the old key in place, not appended after
+        # it (the pre-scan that decides placement must see the spaced key too).
+        self.assertLess(fm_lines.index("related:"),
+                        fm_lines.index("updated: 2026-11-20"))
+        self.assertEqual(link_mine.parse_related(fm_lines), ["beta", "c"])
+        second = self.run_tool("--reciprocate", "--threshold", "100",
+                               "--date", "2026-11-21")
+        self.assertEqual(second.returncode, 0, second.stderr)
+        self.assertIn("changed 0 pages", second.stdout)
+
+    def test_spaced_related_key_is_replaced_before_list_summary(self):
+        a = self.kb / "wiki" / "a.md"
+        a.write_text(
+            '---\ntitle: "Alpha"\ntype: entity\nsummary: "s"\n'
+            'list_summary: "list text"\ntags: "between"\n'
+            'related : [beta]\n---\nBody.\n',
+            encoding="utf-8")
+        self.entity("c.md", "Charlie", "unique charlie", related=["a"])
+        result = self.run_tool("--reciprocate", "--threshold", "100",
+                               "--date", "2026-11-20")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        _, fm_lines, _ = link_mine.split_page(a.read_text(encoding="utf-8"))
+        # The block replaces the spaced key in place (after `tags`), not
+        # inserted right after list_summary as though no related key existed.
+        self.assertGreater(fm_lines.index("related:"),
+                           fm_lines.index('tags: "between"'))
 
 
 if __name__ == "__main__":

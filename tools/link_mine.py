@@ -173,11 +173,14 @@ def write_page(path: Path, fm_lines: list[str], body: str,
     ]
     # Pre-scan: if any related: block exists, the single replacement
     # block goes where the FIRST one was; never also after list_summary.
-    had_related = any(l.startswith("related:") for l in fm_lines)
+    had_related = any(re.match(r"^related\s*:", l) for l in fm_lines)
     placed = False
     while i < len(fm_lines):
         line = fm_lines[i]
-        if line.startswith("related:"):
+        # YAML allows whitespace before the colon; link_check and backfill
+        # already read `related :` as the same field. A startswith() check
+        # here left the old key in place and appended a second one forever.
+        if re.match(r"^related\s*:", line):
             if not placed:
                 out.extend(block)
                 placed = True
@@ -187,7 +190,7 @@ def write_page(path: Path, fm_lines: list[str], body: str,
             while i < len(fm_lines) and re.match(r"^\s*-\s+", fm_lines[i]):
                 i += 1
             continue
-        if line.startswith("updated:"):
+        if re.match(r"^updated\s*:", line):
             line = f"updated: {run_date}"
         out.append(line)
         if not placed and not had_related and line.startswith("list_summary:"):

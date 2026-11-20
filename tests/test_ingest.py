@@ -1110,5 +1110,63 @@ class SweepEightRegressionTests(SweepSevenRegressionTests):
         self.assertNotIn("Probe Deep", concept_map)
 
 
+class SweepNineRegressionTests(SweepEightRegressionTests):
+    """Regressions for the ninth sweep's archive and L1 dedupe bugs."""
+
+    def test_verified_archive_survives_moving_into_research_papers(self):
+        page = self.wiki / "paper.md"
+        page.write_text(
+            '---\nuid: "01aa0000-0000-7000-8000-000000000001"\n'
+            'title: "Paper"\ntype: entity\nsummary: "s"\n'
+            'category: "Tools"\nurl: "https://example.com/paper"\n'
+            'status: "archived"\nstatus_note: "verified dead"\n'
+            'created: "2026-01-01"\nlast_checked: "2026-01-01"\n'
+            '---\nbody\n', encoding="utf-8")
+        self.write_list('## Research Papers\n\n'
+                        '* [Paper](https://example.com/paper) - p\n')
+        text = page.read_text(encoding="utf-8")
+        self.assertIn('status: "archived"', text)
+        self.assertNotIn('status: "published"', text)
+
+    def test_l1_classifies_concepts_by_type_not_directory(self):
+        entity = self.wiki / "concepts" / "zephyr.md"
+        entity.parent.mkdir(exist_ok=True)
+        entity.write_text(
+            '---\ntitle: "Zephyr"\nsummary: "s"\ntype: entity\n---\nbody\n',
+            encoding="utf-8")
+        concept = self.wiki / "root-concept.md"
+        concept.write_text(
+            '---\ntitle: "Root Concept"\nsummary: "s"\n'
+            'type: concept\n---\nbody\n', encoding="utf-8")
+        self.write_list("## Tools\n\n* [A](https://example.com/a) - a\n")
+        l1 = (self.kb / "index.md").read_text(encoding="utf-8")
+        concept_map = (self.wiki / "index-concept-map.md").read_text(
+            encoding="utf-8")
+        for hub in (l1, concept_map):
+            self.assertIn("Root Concept", hub)
+            self.assertNotIn("Zephyr", hub)
+
+    def test_malformed_frontmatter_entry_is_refused_not_duplicated(self):
+        page = self.wiki / "cabana.md"
+        page.write_text('---\ntitle: "Cabana"\ntype: entity\n'
+                        'summary: "s"\nbody with no closing fence\n',
+                        encoding="utf-8")
+        with self.assertRaises(SystemExit):
+            self.write_list('## Tools\n\n'
+                            '* [Cabana](https://example.com/cabana) - s\n')
+        self.assertEqual(len(list(self.wiki.glob("cabana*.md"))), 1)
+
+    def test_l1_and_concept_map_agree_on_duplicate_stems(self):
+        self.concept("concepts/probe.md", "Probe Canonical")
+        self.concept("concepts/deep/probe.md", "Probe Deep")
+        self.write_list("## Tools\n\n* [A](https://example.com/a) - a\n")
+        l1 = (self.kb / "index.md").read_text(encoding="utf-8")
+        concept_map = (self.wiki / "index-concept-map.md").read_text(
+            encoding="utf-8")
+        for hub in (l1, concept_map):
+            self.assertIn("Probe Canonical", hub)
+            self.assertNotIn("Probe Deep", hub)
+
+
 if __name__ == "__main__":
     unittest.main()

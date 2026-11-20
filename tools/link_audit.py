@@ -83,7 +83,10 @@ def audit(root: Path) -> dict:
         frontmatter, body = split_frontmatter(text)
         rel = page.relative_to(root).as_posix()
         is_wiki = page.is_relative_to(wiki)
-        is_concept = is_wiki and page.parent.name == "concepts"
+        # A concept can live deeper than wiki/concepts/ (the other tools
+        # already recurse there). Matching only the immediate parent
+        # misclassified every nested concept as an orphan entity.
+        is_concept = is_wiki and page.is_relative_to(wiki / "concepts")
         is_index = page.stem.startswith("index-") or rel == "index.md"
         declared = declared_type(frontmatter)
         kind[page.resolve()] = (
