@@ -477,5 +477,71 @@ class SweepSevenRegressionTests(unittest.TestCase):
         self.assertIn("probe", self.related_of(cabana))
 
 
+class SweepEightRegressionTests(SweepSevenRegressionTests):
+    """Regressions for the eighth sweep's self-link and reciprocation bugs."""
+
+    def test_duplicate_stems_never_produce_a_self_link(self):
+        a = self.entity("alpha.md", "Alpha", "shared theme words")
+        nested = self.entity("sub/alpha.md", "Nested Alpha",
+                             "shared theme words")
+        self.entity("beta.md", "Beta", "shared theme words")
+        result = self.run_tool("--threshold", "0", "--date", "2026-11-20")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertNotIn("alpha", self.related_of(a))
+        self.assertNotIn("alpha", self.related_of(nested))
+        self.assertIn("beta", self.related_of(a))
+
+    def test_duplicate_stem_pair_does_not_crowd_out_real_links(self):
+        a = self.entity("alpha.md", "Alpha", "shared theme words")
+        self.entity("sub/alpha.md", "Nested Alpha", "shared theme words")
+        b = self.entity("beta.md", "Beta", "different topic here")
+        result = self.run_tool("--threshold", "0", "--max-related", "1",
+                               "--date", "2026-11-20")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        # The same-stem pair is skipped while scoring, so the one allowed
+        # link goes to the real mutual pair instead of a filtered self-link.
+        self.assertEqual(self.related_of(a), ["beta"])
+        self.assertEqual(self.related_of(b), ["alpha"])
+
+    def test_duplicate_concept_stems_all_contribute_backlinks(self):
+        cabana = self.entity("cabana.md", "Cabana", "unique cabana")
+        self.concept("concepts/shared-secrets.md", "Secrets",
+                     related=["cabana"])
+        self.concept("topics/shared-secrets.md", "Draft",
+                     related=["busmaster"])
+        result = self.run_tool("--fill-only", "--reciprocate",
+                               "--threshold", "100", "--date", "2026-11-20")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("shared-secrets", self.related_of(cabana))
+
+    def test_reciprocate_never_writes_a_self_link(self):
+        entity = self.entity("alpha.md", "Alpha", "unique alpha theme")
+        concept = self.kb / "wiki" / "concepts" / "alpha.md"
+        concept.parent.mkdir(parents=True, exist_ok=True)
+        concept.write_text(
+            '---\ntitle: "Alpha concept"\ntype: concept\n'
+            'related: [alpha]\n---\nbody\n', encoding="utf-8")
+        result = self.run_tool("--fill-only", "--reciprocate",
+                               "--threshold", "100", "--date", "2026-11-20")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertNotIn("alpha", self.related_of(entity))
+
+    def test_reciprocate_preserves_author_links_and_is_stable(self):
+        source = self.entity("source.md", "Source", "zzz unique alpha",
+                             related=["target"])
+        target = self.entity("target.md", "Target", "qqq unique beta")
+        first = self.run_tool("--reciprocate", "--date", "2026-11-20")
+        self.assertEqual(first.returncode, 0, first.stderr)
+        self.assertEqual(self.related_of(source), ["target"])
+        self.assertEqual(self.related_of(target), ["source"])
+        before = (source.read_text(encoding="utf-8"),
+                  target.read_text(encoding="utf-8"))
+        second = self.run_tool("--reciprocate", "--date", "2026-11-20")
+        self.assertEqual(second.returncode, 0, second.stderr)
+        self.assertIn("changed 0 pages", second.stdout)
+        self.assertEqual((source.read_text(encoding="utf-8"),
+                          target.read_text(encoding="utf-8")), before)
+
+
 if __name__ == "__main__":
     unittest.main()
