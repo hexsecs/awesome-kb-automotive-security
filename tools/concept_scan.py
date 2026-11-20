@@ -159,6 +159,8 @@ def main() -> int:
 
     pages: dict[str, dict] = {}
     categories: set[str] = set()
+    existing_concepts: set[str] = set()
+    concept_dir = WIKI / "concepts"
     for path in sorted(WIKI.rglob("*.md")):
         # Authored entities can be named `index-*` and live in subdirectories;
         # non-regular files (e.g. a FIFO named *.md) would block on read.
@@ -169,19 +171,18 @@ def main() -> int:
         if text is None:
             continue
         f = fields_of(text)
+        # A concept is any `type: concept` page, wherever it lives — the
+        # concepts/ directory is a convention, not the definition.
+        if path.is_relative_to(concept_dir) or f.get("type") == "concept":
+            existing_concepts.add(path.stem.replace("-", " "))
+            continue
         if f.get("type") != "entity" or "title" not in f:
             continue
-        pages[path.stem] = f
+        # Key by path: nested pages can share a stem with a root page, and
+        # dropping one silently skewed every theme count.
+        pages[path.relative_to(WIKI).with_suffix("").as_posix()] = f
         if f.get("category"):
             categories.add(str(f["category"]).lower())
-
-    existing_concepts: set[str] = set()
-    cdir = WIKI / "concepts"
-    if cdir.is_dir() and not cdir.is_symlink() and within_root(cdir):
-        for path in sorted(cdir.glob("*.md")):
-            if not path.is_file() or path.is_symlink() or not within_root(path):
-                continue
-            existing_concepts.add(path.stem.replace("-", " "))
 
     # Acronyms: tokens the corpus itself capitalises (BLE, JTAG, TPM…).
     acronyms: set[str] = set()

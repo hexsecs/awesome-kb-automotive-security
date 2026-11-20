@@ -37,6 +37,7 @@ from __future__ import annotations
 import argparse
 import json
 import math
+import os
 import re
 import sys
 from collections import Counter, defaultdict
@@ -139,6 +140,23 @@ def within_root(path: Path) -> bool:
         return False
 
 
+def preflight(targets: list[Path]) -> None:
+    """Reject every unsafe target before the first page is modified.
+
+    Refusing a bad page mid-loop left an earlier alphabetical prefix of the
+    KB mined and the rest untouched — a worse state than refusing up front.
+    """
+    for path in targets:
+        if path.is_symlink() or not within_root(path):
+            sys.exit(f"link_mine: refusing to write through symlink {path}")
+        if path.is_dir():
+            sys.exit(f"link_mine: refusing to write a directory at {path}")
+        if path.exists() and path.stat().st_nlink > 1:
+            sys.exit(f"link_mine: refusing to write hardlinked file {path}")
+        if path.exists() and not os.access(path, os.W_OK):
+            sys.exit(f"link_mine: cannot write {path}: permission denied")
+
+
 def write_page(path: Path, fm_lines: list[str], body: str,
                related: list[str], run_date: str) -> None:
     """Replace/insert the related block; bump `updated:`; write the file."""
@@ -219,9 +237,14 @@ def main() -> int:
             continue
         if str(fields.get("status")) == "archived":
             continue
-        pages[path.stem] = {
-            "path": path, "fields": fields, "fm_lines": fm_lines,
-            "body": body, "related": parse_related(fm_lines),
+        # Key by path, not stem: rglob admits nested pages, and two files
+        # may share a stem. The slug written into `related:` stays the stem
+        # (that is what link_check resolves against).
+        key = path.relative_to(WIKI).with_suffix("").as_posix()
+        pages[key] = {
+            "path": path, "slug": path.stem, "fields": fields,
+            "fm_lines": fm_lines, "body": body,
+            "related": parse_related(fm_lines),
         }
     if not pages:
         print("link_mine: no entity pages found")
@@ -258,6 +281,7 @@ def main() -> int:
                          for p in pages.values())
 
     slugs = sorted(pages)
+    stems = {key: p["slug"] for key, p in pages.items()}
     scores: dict[tuple[str, str], float] = {}
     for i, a in enumerate(slugs):
         ta = page_tokens[a]
@@ -306,7 +330,7 @@ def main() -> int:
     concept_links: dict[str, list[str]] = {}
     cdir = WIKI / "concepts"
     if cdir.is_dir() and not cdir.is_symlink() and within_root(cdir):
-        for path in sorted(cdir.glob("*.md")):
+        for path in sorted(cdir.rglob("*.md")):
             if not path.is_file() or path.is_symlink() or not within_root(path):
                 continue
             text = read_page(path)
@@ -319,13 +343,16 @@ def main() -> int:
     changed = filled = recip_added = 0
     written: dict[str, list[str]] = {}
     samples: list[str] = []
+    to_write: list[tuple[Path, list[str], str, list[str]]] = []
     for slug in slugs:
         p = pages[slug]
         old = p["related"]
+        own = stems[slug]
         # Who already links here, that this page does not link back to?
-        incoming = {o for o in slugs if slug in pages[o]["related"]}
+        # `related:` entries are stems, while `slugs` are path keys.
+        incoming = {o for o in slugs if own in pages[o]["related"]}
         incoming |= {c for c, rels in concept_links.items()
-                     if slug in rels}
+                     if own in rels}
         if args.fill_only and old:
             # Author-owned set: preserve it verbatim and in order;
             # only append missing reciprocal links.
@@ -344,15 +371,24 @@ def main() -> int:
                 new = new + adds
             new = sorted(set(new),
                          key=lambda b: (-scores.get((slug, b), 0.0), b))
-        written[slug] = new
-        if new != old:
+        # Path keys are internal; the written slugs stay stems, which is
+        # what link_check resolves. Two pages sharing a stem dedupe here.
+        new_slugs = list(dict.fromkeys(stems.get(x, x) for x in new))
+        written[slug] = new_slugs
+        if new_slugs != old:
             changed += 1
             if not old:
                 filled += 1
             if len(samples) < 5:
-                samples.append(f"  {slug}: {old} -> {new}")
+                samples.append(f"  {slug}: {old} -> {new_slugs}")
             if not args.dry_run:
-                write_page(p["path"], p["fm_lines"], p["body"], new, run_date)
+                to_write.append((p["path"], p["fm_lines"], p["body"],
+                                 new_slugs))
+
+    if to_write:
+        preflight([item[0] for item in to_write])
+        for path, fm, body, new_slugs in to_write:
+            write_page(path, fm, body, new_slugs, run_date)
 
     total_rel = sum(len(written[s]) for s in slugs)
     zero = sum(1 for s in slugs if not written[s])

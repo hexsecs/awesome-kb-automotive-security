@@ -131,6 +131,34 @@ class HardeningTests(unittest.TestCase):
 
 
 class FilesystemGuardTests(unittest.TestCase):
+    def test_duplicate_stems_are_both_counted(self):
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            for rel in ("normal.md", "sub/normal.md", "other.md"):
+                path = root / rel
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_text(
+                    '---\ntype: entity\ntitle: "Entity"\nsummary: "s"\n---\nbody\n',
+                    encoding="utf-8")
+            self.assertIn("3 entity pages", run_scan(root))
+
+    def test_concept_type_page_outside_concepts_dir_is_excluded(self):
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            for name in ("a", "b"):
+                (root / f"{name}.md").write_text(
+                    '---\ntype: entity\ntitle: "A deep theme"\n'
+                    'summary: "deep theme in the vehicle"\n---\nbody\n',
+                    encoding="utf-8")
+            deep = root / "topics" / "deep-theme.md"
+            deep.parent.mkdir()
+            deep.write_text(
+                '---\ntype: concept\ntitle: "Deep Theme"\n---\nbody\n',
+                encoding="utf-8")
+            out = run_scan(root)
+            self.assertIn("1 existing concepts", out)
+            self.assertNotIn("| deep theme ", out)
+
     def test_tab_indented_type_does_not_override(self):
         text = '---\ntype: entity\n\ttype: concept\n---\n\nBody.\n'
         self.assertEqual(concept_scan.fields_of(text)["type"], "entity")

@@ -135,6 +135,21 @@ class AuditRobustnessTests(unittest.TestCase):
     def test_bad_root_fails_instead_of_passing_empty(self):
         self.assertEqual(link_audit.main(["--root", str(self.root / "nope")]), 2)
 
+    def test_invalid_last_type_does_not_keep_a_stale_concept_classification(self):
+        # At root (not in concepts/), the only thing that could classify this
+        # page as a concept is a stale first `type: concept`. YAML's last key
+        # wins, and the last value here is invalid, so declared_type() must
+        # return None and the audit must fall back to `entity`.
+        frontmatter = "type: concept\ntype: not-a-type\n"
+        self.assertIsNone(link_audit.declared_type(frontmatter))
+        write(self.root, "wiki/can-injection.md",
+              "---\n" + frontmatter + "---\n\nBody.\n")
+        report = link_audit.audit(self.root)
+        # make_kb contributes exactly one real concept: concepts/theme.md.
+        self.assertEqual(report["concept_pages"], 1)
+        self.assertNotIn("wiki/can-injection.md",
+                         [e["page"] for e in report["concept_inbound"]])
+
     def test_nul_target_is_recorded_without_aborting_the_audit(self):
         write(self.root, "wiki/nul.md", "See [x](wiki/null%00.md).\n")
         write(self.root, "index.md",

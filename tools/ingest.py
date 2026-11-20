@@ -105,12 +105,17 @@ def normalise(url: str) -> str:
 MAX_SLUG = 200
 
 
+def raw_slug(name: str) -> str:
+    """Uncapped slug: older pages may still carry a NAME_MAX-avoiding stem."""
+    return re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-") or "entry"
+
+
 def slugify(name: str, taken: set[str], folder: Path | None = None) -> str:
     # ``taken`` must be case-folded: on a case-insensitive filesystem (APFS)
     # ``Alpha.md`` and ``alpha.md`` are the same inode, so a case-sensitive
     # reservation silently destroys an authored page. The filesystem check
     # catches collisions the caller did not put in ``taken`` at all.
-    slug = re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-") or "entry"
+    slug = raw_slug(name)
     if len(slug) > MAX_SLUG:
         slug = slug[:MAX_SLUG].rstrip("-") or "entry"
     base, n = slug, 2
@@ -307,15 +312,20 @@ def split_page(text: str) -> tuple[dict, str]:
         if ": " in line and not line.startswith((" ", "\t")):
             key, raw = line.split(": ", 1)
             fields[key.strip()] = scalar(raw)
-    # A bare `facets:` followed by an indented list is valid YAML and is
-    # preserved verbatim by extra_blocks(), but the scalar loop above cannot
-    # see it. Normalise it to the inline shape parse_slugs() reads.
+    # A bare `facets:` followed by a list is valid YAML (indented or not)
+    # and is preserved verbatim by extra_blocks(), but the scalar loop above
+    # cannot see it. Normalise it to the inline shape parse_slugs() reads.
+    # YAML's last key wins, so a block must not override a later inline one.
+    last_inline = max((i for i, line in enumerate(lines)
+                       if re.match(r"^facets:\s*\S", line)), default=-1)
     for i, line in enumerate(lines):
-        if line.strip() != "facets:" or line.startswith((" ", "\t")):
+        if line != "facets:" or i < last_inline:
             continue
         items = []
         for cont in lines[i + 1:]:
-            match = re.match(r"^\s+-\s+(.*)$", cont)
+            if not cont.strip() or cont.lstrip().startswith("#"):
+                continue  # comments and blank lines do not end a YAML list
+            match = re.match(r"^\s*-\s+(.*)$", cont)
             if not match:
                 break
             items.append(str(scalar(match.group(1))))
@@ -450,7 +460,7 @@ def write_facet_indexes(pages: list[tuple[Path, dict, str]],
                 f" — {fields.get('summary', '')}")
         for group in sorted(by_group, key=lambda g: (order.get(g, 999), g)):
             lines += [f"## {group}", ""] + sorted(by_group[group]) + [""]
-        write_page(WIKI / f"index-facet-{facet.slug}.md", "\n".join(lines))
+        write_index(WIKI / f"index-facet-{facet.slug}.md", "\n".join(lines))
 
     # Remove stale facet indexes when a facet drops below the threshold.
     # An authored page whose slug starts with ``index-facet-`` (e.g. the
@@ -527,7 +537,7 @@ def write_needs_attention(pages: list[tuple[Path, dict, str]],
         else:
             lines.append("_None._")
         lines.append("")
-    write_page(WIKI / "index-needs-attention.md", "\n".join(lines))
+    write_index(WIKI / "index-needs-attention.md", "\n".join(lines))
     actionable = sum(len(v) for k, v in buckets.items()
                      if k != "Brief by design (no action)")
     return actionable
@@ -547,7 +557,16 @@ def write_glossary(pages: list[tuple[Path, dict, str]]) -> None:
         lines.append(f"- **{entry.term}** — {entry.expansion}."
                      f" See [{fields['title']}]({target}) — {entry.note}")
     lines.append("")
-    write_page(WIKI / "index-glossary.md", "\n".join(lines))
+    write_index(WIKI / "index-glossary.md", "\n".join(lines))
+
+
+def write_index(path: Path, text: str) -> None:
+    """Write a generated index, never over a page a human authored there."""
+    if path.is_symlink():
+        sys.exit(f"ingest: refusing to write through symlink {path}")
+    if path.exists() and read_page(path).startswith("---\n"):
+        sys.exit(f"ingest: refusing to overwrite authored page at {path}")
+    write_page(path, text)
 
 
 def write_concept_map(pages: list[tuple[Path, dict, str]]) -> None:
@@ -592,7 +611,7 @@ def write_concept_map(pages: list[tuple[Path, dict, str]]) -> None:
                 page, fields = entry
                 lines.append(f"{i}. [{fields['title']}]({link_target(page)}.md)")
         lines.append("")
-    write_page(WIKI / "index-concept-map.md", "\n".join(lines))
+    write_index(WIKI / "index-concept-map.md", "\n".join(lines))
 
 
 def main(argv=None) -> int:
@@ -626,6 +645,19 @@ def main(argv=None) -> int:
         seen_urls.add(key)
     WIKI.mkdir(exist_ok=True)
 
+    # A symlinked page is invisible to safe_pages(), but slugify() still sees
+    # its filename and would pick a `-2` slug. The next ingest then finds two
+    # pages with one URL and fails permanently. Refuse when the symlink is
+    # exactly where an entry's page belongs; other symlinks are untouched.
+    entry_slugs = set()
+    for e in entries:
+        entry_slugs.add(raw_slug(e["title"]))
+        entry_slugs.add(slugify(e["title"], set()))
+    for path in sorted(WIKI.rglob("*.md")):
+        if path.is_symlink() and path.stem.lower() in entry_slugs:
+            sys.exit(f"ingest: symlinked page blocks an entry: {path}; "
+                     "replace it with the real page")
+
     existing: dict[str, Path] = {}
     by_stem: dict[str, Path] = {}
     page_category: dict[Path, str] = {}
@@ -656,9 +688,12 @@ def main(argv=None) -> int:
         [e["section"] for e in entries]
         + [page_category[p] for p in doomed if p in page_category]
     ))
+    # Lowercase like ``slugify`` does: on APFS ``index-Tools.md`` and
+    # ``index-tools.md`` are one inode, so an uppercase authored stem must
+    # still reserve the generated index's slug.
     authored_index_slugs = {
-        p.stem[len("index-"):] for p in existing.values()
-        if p.stem.startswith("index-")
+        p.stem[len("index-"):].lower() for p in existing.values()
+        if p.stem.lower().startswith("index-")
     }
     catslug = category_slugs(section_order, authored_index_slugs)
     reserved |= {f"index-{cs}" for cs in catslug.values()}
@@ -672,10 +707,15 @@ def main(argv=None) -> int:
         if page is None:
             # URL moved? An entry under a new URL keeps its page when the
             # name's slug matches a page whose URL is no longer listed.
-            base = slugify(e["title"], set())
+            # Match both today's capped slug and the uncapped one a page may
+            # have been created with before the cap existed; otherwise a URL
+            # move on a long title creates a duplicate and tombstones the
+            # original instead of updating it.
+            bases = {raw_slug(e["title"]), slugify(e["title"], set())}
             candidates = sorted(
                 (p for stem, p in by_stem.items()
-                 if stem == base or re.fullmatch(re.escape(base) + r"-\d+", stem)),
+                 if any(stem == base or re.fullmatch(re.escape(base) + r"-\d+",
+                                                     stem) for base in bases)),
                 key=lambda p: p.as_posix(),
             )
             for candidate in candidates:
@@ -759,9 +799,15 @@ def main(argv=None) -> int:
         head, tail = (text[:bounds[0]], text[bounds[0]:]) if bounds else ("", text)
         changed = False
         if fields.get("status") != "archived":
-            head = re.sub(r"^status: .*$", "status: archived", head,
-                          count=1, flags=re.M)
-            changed = True
+            new_head = re.sub(r"^status: .*$", "status: archived", head,
+                              count=1, flags=re.M)
+            if new_head == head and not re.search(r"^status:", head, re.M):
+                # A hand-authored page may have no status key at all: write
+                # one, or the next identical ingest "tombstones" it again.
+                new_head = head.rstrip("\n") + "\nstatus: archived\n"
+            if new_head != head:
+                head = new_head
+                changed = True
         # The note is the un-tombstone signal on re-list, independent of why
         # the page was archived. A project archived by a verification pass that
         # later leaves the list still needs to record the delisting.
@@ -771,6 +817,9 @@ def main(argv=None) -> int:
             changed = True
         if changed:
             write_page(page, head + tail)
+            # Only count a real change: a page with no `status:` key is
+            # already archived in effect, and counting it every run made
+            # identical ingests claim another tombstone forever.
             tombstoned += 1
         # Tombstoned pages stay listed in their sub-index (marked), so
         # every page in wiki/ remains reachable from the index.
@@ -817,7 +866,7 @@ def main(argv=None) -> int:
         for item in by_section[section]:
             lines.append(f"- [{item['title']}]({item['slug']}.md) — {item['summary']}")
         lines.append("")
-        write_page(WIKI / f"index-{cs}.md", "\n".join(lines))
+        write_index(WIKI / f"index-{cs}.md", "\n".join(lines))
 
     # Drop category indexes not actually written this run. Trusting
     # ``catslug.values()`` instead left a stale index behind whenever a page

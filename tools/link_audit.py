@@ -58,10 +58,10 @@ def declared_type(frontmatter: str) -> str | None:
         key, raw = line.split(": ", 1)
         if key.strip() != "type":
             continue
-        candidate = scalar(raw)
-        if candidate in ("concept", "entity"):
-            value = candidate
-    return value
+        # YAML's last key wins even when its value is not a known type.
+        # Skipping invalid values kept a stale concept classification alive.
+        value = scalar(raw)
+    return value if value in ("concept", "entity") else None
 
 
 def audit(root: Path) -> dict:

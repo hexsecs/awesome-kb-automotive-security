@@ -823,5 +823,141 @@ class SweepFiveRegressionTests(unittest.TestCase):
         self.assertIn("## Facets", (self.kb / "index.md").read_text(encoding="utf-8"))
 
 
+class SweepSixRegressionTests(unittest.TestCase):
+    """Regressions for the sixth sweep's verified state and index bugs."""
+
+    def setUp(self):
+        self._tmp = tempfile.TemporaryDirectory()
+        self.base = Path(self._tmp.name)
+        self.source = self.base / "source"
+        self.kb = self.base / "kb"
+        self.wiki = self.kb / "wiki"
+        (self.wiki / "concepts").mkdir(parents=True)
+        self.source.mkdir()
+        self._saved = ingest.ROOT, ingest.WIKI
+        ingest.ROOT, ingest.WIKI = self.kb, self.wiki
+        for cmd in (
+            ["git", "-C", str(self.source), "init", "-q"],
+            ["git", "-C", str(self.source), "config", "user.email", "clyde@example.com"],
+            ["git", "-C", str(self.source), "config", "user.name", "Clyde"],
+        ):
+            subprocess.run(cmd, check=True, capture_output=True)
+        self.addCleanup(self._cleanup)
+
+    def _cleanup(self):
+        ingest.ROOT, ingest.WIKI = self._saved
+        self._tmp.cleanup()
+
+    def write_list(self, body):
+        (self.source / "README.md").write_text(body, encoding="utf-8")
+        for cmd in (
+            ["git", "-C", str(self.source), "add", "README.md"],
+            ["git", "-C", str(self.source), "commit", "--allow-empty", "-qm", "list"],
+        ):
+            subprocess.run(cmd, check=True, capture_output=True)
+        return ingest.main(["--source", str(self.source)])
+
+    def output(self, body):
+        import contextlib
+        import io
+        buf = io.StringIO()
+        with contextlib.redirect_stdout(buf):
+            self.write_list(body)
+        return buf.getvalue()
+
+    @staticmethod
+    def authored(title, url=None, status=None, stem=None):
+        fields = (f'uid: "01aa0000-0000-7000-8000-000000000001"\n'
+                  f'title: "{title}"\ntype: entity\nsummary: "s"\n'
+                  'created: "2026-01-01"\nlast_checked: "2026-01-01"\n')
+        if url:
+            fields += f'url: "{url}"\n'
+        if status:
+            fields += f'status: "{status}"\n'
+        return "---\n" + fields + "---\nbody\n"
+
+    def test_uppercase_index_stem_is_reserved(self):
+        # A human-authored page parked at an UPPERCASE index-* stem must still
+        # reserve the generated index's lowercase slug. A case-sensitive
+        # reservation lets the "Tools" index take index-tools.md, which on
+        # APFS is the same inode as the authored index-Tools.md.
+        page = self.wiki / "index-Tools.md"
+        page.write_text(self.authored("Tools Hub", "https://example.com/hub"),
+                        encoding="utf-8")
+        self.write_list("## Tools\n\n* [A](https://example.com/a) - a\n")
+        self.assertTrue(page.is_file())
+        self.assertIn("Tools Hub", page.read_text(encoding="utf-8"))
+        generated = self.wiki / "index-tools-2.md"
+        self.assertTrue(generated.is_file())
+        self.assertIn("# Tools", generated.read_text(encoding="utf-8"))
+
+    def test_long_stem_url_move_preserves_identity(self):
+        stem = "a" * 250
+        page = self.wiki / f"{stem}.md"
+        page.write_text(self.authored("Long", "https://example.com/old"),
+                        encoding="utf-8")
+        self.write_list(
+            f"## Tools\n\n* [{stem}](https://example.com/new) - desc\n")
+        self.assertEqual(len(list(self.wiki.glob("a*.md"))), 1)
+        text = page.read_text(encoding="utf-8")
+        self.assertIn("https://example.com/new", text)
+        self.assertNotIn("archived", text)
+
+    def test_block_facet_variants_and_last_key_wins(self):
+        cases = {
+            "comment between items":
+                'facets:\n  - firmware\n  # note\n  - hardware\n',
+            "unindented items": 'facets:\n- firmware\n- hardware\n',
+            "block then inline": 'facets:\n  - hardware\nfacets: [firmware]\n',
+        }
+        expected = {
+            "comment between items": "firmware hardware",
+            "unindented items": "firmware hardware",
+            "block then inline": "[firmware]",
+        }
+        for label, block in cases.items():
+            with self.subTest(label):
+                text = "---\ntitle: \"x\"\n" + block + "---\nbody\n"
+                self.assertEqual(ingest.split_page(text)[0].get("facets"),
+                                 expected[label])
+
+    def test_tombstone_counter_is_idempotent_without_status(self):
+        page = self.wiki / "gone.md"
+        page.write_text(self.authored("Gone", "https://example.com/gone"),
+                        encoding="utf-8")
+        empty = "# Empty\n"
+        first = self.output(empty)
+        second = self.output(empty)
+        self.assertIn("1 tombstoned", first)
+        self.assertNotIn("tombstoned", second.replace("0 tombstoned", ""))
+        self.assertIn("status: archived", page.read_text(encoding="utf-8"))
+
+    def test_authored_page_at_generated_index_path_is_refused(self):
+        (self.wiki / "index-glossary.md").write_text(
+            self.authored("My Glossary"), encoding="utf-8")
+        with self.assertRaises(SystemExit) as caught:
+            self.write_list("## Tools\n\n* [A](https://example.com/a) - a\n")
+        self.assertIn("authored page", str(caught.exception))
+        self.assertIn("My Glossary",
+                      (self.wiki / "index-glossary.md").read_text())
+
+    def test_symlinked_entry_page_is_refused_then_recovers(self):
+        page = self.wiki / "cabana.md"
+        original = self.authored("Cabana", "https://example.com/cabana")
+        page.write_text(original, encoding="utf-8")
+        outside = self.base / "outside.md"
+        outside.write_text("outside\n", encoding="utf-8")
+        page.unlink()
+        page.symlink_to(outside)
+        body = "## Tools\n\n* [Cabana](https://example.com/cabana) - c\n"
+        with self.assertRaises(SystemExit) as caught:
+            self.write_list(body)
+        self.assertIn("symlinked page", str(caught.exception))
+        page.unlink()
+        page.write_text(original, encoding="utf-8")
+        self.write_list(body)
+        self.assertEqual(len(list(self.wiki.glob("cabana*.md"))), 1)
+
+
 if __name__ == "__main__":
     unittest.main()

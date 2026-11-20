@@ -331,5 +331,68 @@ class SweepFiveRegressionTests(unittest.TestCase):
         self.assertNotIn("Traceback", result.stderr)
 
 
+class SweepSixRegressionTests(unittest.TestCase):
+    """Regressions for the sixth sweep's enumeration and atomicity bugs."""
+
+    def setUp(self):
+        self._tmp = tempfile.TemporaryDirectory()
+        self.base = Path(self._tmp.name)
+        self.kb = self.base / "kb"
+        (self.kb / "tools").mkdir(parents=True)
+        for f in TOOLS_DIR.glob("*.py"):
+            shutil.copy2(f, self.kb / "tools" / f.name)
+        (self.kb / "wiki").mkdir()
+        (self.kb / "index.md").write_text("# KB\n", encoding="utf-8")
+        self.addCleanup(self._tmp.cleanup)
+
+    def entity(self, rel, title):
+        path = self.kb / "wiki" / rel
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(
+            f'---\ntitle: "{title}"\ntype: entity\n'
+            'summary: "CAN bus intrusion detection"\n---\nbody\n',
+            encoding="utf-8")
+        return path
+
+    def run_tool(self, *args):
+        return subprocess.run(
+            [sys.executable, "tools/link_mine.py", *args], cwd=self.kb,
+            capture_output=True, text=True, timeout=15)
+
+    def test_duplicate_stems_are_both_mined(self):
+        root = self.entity("alpha.md", "Alpha")
+        nested = self.entity("sub/alpha.md", "Nested Alpha")
+        self.entity("beta.md", "Beta")
+        result = self.run_tool("--threshold", "0", "--date", "2026-11-20")
+        self.assertIn("3 entity pages", result.stdout)
+        self.assertIn("related:", root.read_text(encoding="utf-8"))
+        self.assertIn("related:", nested.read_text(encoding="utf-8"))
+
+    def test_unsafe_target_refuses_before_any_page_is_written(self):
+        first = self.entity("aaa.md", "Aaa")
+        middle = self.entity("mmm.md", "Mmm")
+        last = self.entity("zzz.md", "Zzz")
+        victim = self.base / "outside-victim.md"
+        victim.write_text(last.read_text(encoding="utf-8"), encoding="utf-8")
+        last.unlink()
+        last.hardlink_to(victim)
+        result = self.run_tool("--threshold", "0", "--date", "2026-11-20")
+        self.assertNotEqual(result.returncode, 0)
+        self.assertNotIn("related:", first.read_text(encoding="utf-8"))
+        self.assertNotIn("related:", middle.read_text(encoding="utf-8"))
+        self.assertNotIn("related:", victim.read_text(encoding="utf-8"))
+
+    def test_nested_concepts_are_used_for_reciprocation(self):
+        alpha = self.entity("alpha.md", "Alpha")
+        deep = self.kb / "wiki" / "concepts" / "sub" / "deep.md"
+        deep.parent.mkdir(parents=True)
+        deep.write_text(
+            '---\ntitle: "Deep"\ntype: concept\nrelated: [alpha]\n---\nbody\n',
+            encoding="utf-8")
+        self.run_tool("--fill-only", "--reciprocate", "--threshold", "0",
+                      "--date", "2026-11-20")
+        self.assertIn('"deep"', alpha.read_text(encoding="utf-8"))
+
+
 if __name__ == "__main__":
     unittest.main()
