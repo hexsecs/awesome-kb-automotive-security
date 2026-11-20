@@ -159,8 +159,10 @@ def main() -> int:
 
     pages: dict[str, dict] = {}
     categories: set[str] = set()
-    for path in sorted(WIKI.glob("*.md")):
-        if (path.stem.startswith("index-") or path.is_symlink()
+    for path in sorted(WIKI.rglob("*.md")):
+        # Authored entities can be named `index-*` and live in subdirectories;
+        # non-regular files (e.g. a FIFO named *.md) would block on read.
+        if (not path.is_file() or path.is_symlink()
                 or not within_root(path)):
             continue
         text = read_page(path)

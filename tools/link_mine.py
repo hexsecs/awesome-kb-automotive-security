@@ -144,6 +144,10 @@ def write_page(path: Path, fm_lines: list[str], body: str,
     """Replace/insert the related block; bump `updated:`; write the file."""
     if path.is_symlink() or not within_root(path):
         return
+    if path.is_dir():
+        sys.exit(f"link_mine: refusing to write a directory at {path}")
+    if path.exists() and path.stat().st_nlink > 1:
+        sys.exit(f"link_mine: refusing to write hardlinked file {path}")
     out: list[str] = []
     i = 0
     block = ["related:"] + [
@@ -174,8 +178,11 @@ def write_page(path: Path, fm_lines: list[str], body: str,
         i += 1
     if not placed:
         out.extend(block)
-    path.write_text("---\n" + "\n".join(out) + "\n---\n" + body,
-                    encoding="utf-8")
+    try:
+        path.write_text("---\n" + "\n".join(out) + "\n---\n" + body,
+                        encoding="utf-8")
+    except OSError as exc:
+        sys.exit(f"link_mine: cannot write {path}: {exc}")
 
 
 def main() -> int:
@@ -197,8 +204,11 @@ def main() -> int:
         __import__("datetime").datetime.now(ZoneInfo("America/Detroit")).date())
 
     pages: dict[str, dict] = {}
-    for path in sorted(WIKI.glob("*.md")):
-        if (path.stem.startswith("index-") or path.is_symlink()
+    for path in sorted(WIKI.rglob("*.md")):
+        # Authored pages can legitimately be named `index-*` and can live in
+        # subdirectories; only real, in-root, non-symlink files are entities.
+        # A FIFO or a `*.md` directory would otherwise block on read_text().
+        if (not path.is_file() or path.is_symlink()
                 or not within_root(path)):
             continue
         text = read_page(path)

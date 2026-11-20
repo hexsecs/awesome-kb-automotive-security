@@ -350,23 +350,25 @@ class IngestMainTests(unittest.TestCase):
                       (self.wiki / "a-2.md").read_text(encoding="utf-8"))
 
     def test_tombstone_rewrite_is_scoped_to_frontmatter(self):
+        # No `status:` in frontmatter: a whole-file regex would rewrite the
+        # first one it finds — which lives in the body — instead of leaving
+        # prose alone. The page is still a real entry (it has a url).
         (self.wiki / "gone.md").write_text(
             '---\nuid: "01aa0000-0000-7000-8000-000000000001"\n'
             'title: "Gone"\nurl: "https://example.com/gone"\n'
-            'status: "active"\nsummary: "Delisted from the source list"\n'
+            'summary: "Delisted from the source list"\n'
             'created: "2026-01-01"\nlast_checked: "2026-01-01"\n'
-            '---\n\nBody says status: draft here.\n',
+            '---\n\nBody paragraph.\n\nstatus: draft here.\n',
             encoding="utf-8",
         )
         self.write_list("## CAN Bus Analysis\n\n* [A](https://example.com/a) - a\n")
         text = (self.wiki / "gone.md").read_text(encoding="utf-8")
-        head, body = text.split("\n---\n", 1)
-        self.assertTrue(any(
-            line.strip() in ("status: archived", 'status: "archived"')
-            for line in head.splitlines()
-        ))
+        _, body = text.split("\n---\n", 1)
         self.assertIn("> Delisted from the source list", body)
-        self.assertIn("Body says status: draft here.", body)
+        self.assertIn("status: draft here.", body)
+        self.assertEqual(body.count("status: draft"), 1,
+                         "a body line must not be rewritten like frontmatter")
+        self.assertNotIn("status: archived", body)
 
 
 class ListParsingTests(unittest.TestCase):
@@ -688,6 +690,137 @@ class SweepFourRegressionTests(unittest.TestCase):
         self.assertNotIn("Delisted from the source list", text)
         self.assertIn('depth: "full"', text)
         self.assertIn("# Real research.", text)
+
+
+class SweepFiveRegressionTests(unittest.TestCase):
+    """Regressions for the fifth sweep's verified runtime bugs."""
+
+    def setUp(self):
+        self._tmp = tempfile.TemporaryDirectory()
+        self.base = Path(self._tmp.name)
+        self.source = self.base / "source"
+        self.kb = self.base / "kb"
+        self.wiki = self.kb / "wiki"
+        (self.wiki / "concepts").mkdir(parents=True)
+        self.source.mkdir()
+        self._old_root, self._old_wiki = ingest.ROOT, ingest.WIKI
+        ingest.ROOT, ingest.WIKI = self.kb, self.wiki
+        for cmd in (
+            ["git", "-C", str(self.source), "init", "-q"],
+            ["git", "-C", str(self.source), "config", "user.email", "clyde@example.com"],
+            ["git", "-C", str(self.source), "config", "user.name", "Clyde"],
+        ):
+            subprocess.run(cmd, check=True, capture_output=True)
+        self.addCleanup(self._restore)
+
+    def _restore(self):
+        ingest.ROOT, ingest.WIKI = self._old_root, self._old_wiki
+        self._tmp.cleanup()
+
+    def write_list(self, body):
+        (self.source / "README.md").write_text(body, encoding="utf-8")
+        for cmd in (
+            ["git", "-C", str(self.source), "add", "README.md"],
+            ["git", "-C", str(self.source), "commit", "--allow-empty", "-qm", "list"],
+        ):
+            subprocess.run(cmd, check=True, capture_output=True)
+        return ingest.main(["--source", str(self.source)])
+
+    def test_new_section_preserves_earlier_index_named_entity(self):
+        first = "## Misc\n\n* [Index Tools](https://example.com/x) - x\n"
+        second = (first + "\n## Tools\n\n* [A](https://example.com/a) - a\n")
+        self.write_list(first)
+        page = self.wiki / "index-tools.md"
+        self.assertTrue(page.read_text(encoding="utf-8").startswith("---"))
+        self.write_list(second)
+        text = page.read_text(encoding="utf-8")
+        self.assertTrue(text.startswith("---"))
+        self.assertIn("uid:", text)
+        self.assertIn("example.com/x", text)
+        self.assertTrue((self.wiki / "index-tools-2.md").is_file())
+        self.assertIn("# Tools", (self.wiki / "index-tools-2.md").read_text())
+        before = {p.name: p.read_bytes() for p in self.kb.rglob("*.md")}
+        self.write_list(second)
+        after = {p.name: p.read_bytes() for p in self.kb.rglob("*.md")}
+        self.assertEqual(before, after, "no-op re-ingest must be byte-identical")
+
+    def test_delisted_index_named_entity_is_tombstoned(self):
+        self.write_list("## Misc\n\n* [Index Tools](https://example.com/x) - x\n")
+        self.write_list("# Empty\n\nNo entries.\n")
+        text = (self.wiki / "index-tools.md").read_text(encoding="utf-8")
+        self.assertIn("status: archived", text)
+        self.assertIn("Delisted from the source list", text)
+        index = (self.wiki / "index-misc.md").read_text(encoding="utf-8")
+        self.assertIn("(delisted)", index)
+
+    def test_verified_archived_page_is_tombstoned_then_relisted(self):
+        self.write_list("## Tools\n\n* [A](https://example.com/a) - old\n")
+        page = self.wiki / "a.md"
+        text = page.read_text(encoding="utf-8").replace(
+            'status: "unknown"', 'status: "archived"')
+        text = text.replace("---\n\n", 'status_note: "upstream dead"\n---\n\n', 1)
+        page.write_text(text, encoding="utf-8")
+        self.write_list("# Empty\n\nNo entries.\n")
+        delisted = page.read_text(encoding="utf-8")
+        self.assertIn('status: "archived"', delisted)
+        self.assertIn("Delisted from the source list", delisted)
+        self.write_list("## Tools\n\n* [A](https://example.com/a) - new desc.\n")
+        relisted = page.read_text(encoding="utf-8")
+        self.assertNotIn("Delisted from the source list", relisted)
+        self.assertIn('status: "unknown"', relisted)
+        self.assertIn("new desc.", relisted)
+
+    def test_directory_at_generated_index_path_is_named_not_misdiagnosed(self):
+        (self.wiki / "index-tools.md").mkdir()
+        with self.assertRaises(SystemExit) as caught:
+            self.write_list("## Tools\n\n* [A](https://example.com/a) - a\n")
+        self.assertIn("directory", str(caught.exception))
+        self.assertNotIn("hardlinked", str(caught.exception))
+
+    def test_overlong_title_and_section_do_not_crash(self):
+        self.write_list("## Tools\n\n* [" + "A" * 300 + "](https://x.example/a) - d\n")
+        slugs = [p.stem for p in self.wiki.glob("a*.md")]
+        self.assertEqual(len(slugs), 1)
+        self.assertLessEqual(len(slugs[0]), ingest.MAX_SLUG)
+        self.write_list("## " + "S" * 300 + "\n\n* [B](https://x.example/b) - d\n")
+        self.assertTrue(any(p.name.startswith("index-sss") for p in self.wiki.glob("index-*.md")))
+
+    def test_concept_map_links_nested_and_root_concepts(self):
+        nested = self.wiki / "concepts" / "deep" / "deepconcept.md"
+        nested.parent.mkdir(parents=True)
+        nested.write_text(
+            '---\ntitle: "Deep Concept"\nsummary: "a"\ntype: concept\n---\nbody\n',
+            encoding="utf-8",
+        )
+        root_concept = self.wiki / "rootconcept.md"
+        root_concept.write_text(
+            '---\ntitle: "Root Concept"\nsummary: "b"\ntype: concept\n---\nbody\n',
+            encoding="utf-8",
+        )
+        self.write_list("## Tools\n\n* [A](https://example.com/a) - a\n")
+        concept_map = (self.wiki / "index-concept-map.md").read_text(encoding="utf-8")
+        self.assertIn("(concepts/deep/deepconcept.md)", concept_map)
+        self.assertIn("(rootconcept.md)", concept_map)
+
+    def test_research_papers_create_sets_published(self):
+        self.write_list(
+            "## Research Papers\n\n* [Paper](https://example.com/paper) - p\n")
+        text = (self.wiki / "paper.md").read_text(encoding="utf-8")
+        self.assertIn('status: "published"', text)
+
+    def test_block_form_facets_are_indexed(self):
+        for name in ("a", "b"):
+            (self.wiki / f"{name}.md").write_text(
+                f'---\ntitle: "{name.upper()}"\nsummary: "s"\n'
+                "type: entity\nfacets:\n  - can\n  - diagnostics\n---\nbody\n",
+                encoding="utf-8",
+            )
+        self.write_list(
+            "## Tools\n\n* [A](https://example.com/a) - a\n"
+            "* [B](https://example.com/b) - b\n")
+        self.assertTrue((self.wiki / "index-facet-can.md").is_file())
+        self.assertTrue((self.wiki / "index-facet-diagnostics.md").is_file())
+        self.assertIn("## Facets", (self.kb / "index.md").read_text(encoding="utf-8"))
 
 
 if __name__ == "__main__":

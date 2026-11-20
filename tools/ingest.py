@@ -101,12 +101,18 @@ def normalise(url: str) -> str:
     return re.sub(r"^https?://", "", u)
 
 
+# Leaves room for a ``-N`` collision suffix and ``.md`` under NAME_MAX (255).
+MAX_SLUG = 200
+
+
 def slugify(name: str, taken: set[str], folder: Path | None = None) -> str:
     # ``taken`` must be case-folded: on a case-insensitive filesystem (APFS)
     # ``Alpha.md`` and ``alpha.md`` are the same inode, so a case-sensitive
     # reservation silently destroys an authored page. The filesystem check
     # catches collisions the caller did not put in ``taken`` at all.
     slug = re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-") or "entry"
+    if len(slug) > MAX_SLUG:
+        slug = slug[:MAX_SLUG].rstrip("-") or "entry"
     base, n = slug, 2
     while (slug in taken
            or (folder is not None and (folder / f"{slug}.md").exists())):
@@ -116,15 +122,21 @@ def slugify(name: str, taken: set[str], folder: Path | None = None) -> str:
     return slug
 
 
-def category_slugs(sections: list[str]) -> dict[str, str]:
+def category_slugs(sections: list[str],
+                   authored: set[str] | None = None) -> dict[str, str]:
     """Map each list section to its generated category-index slug.
 
     This is the single source of truth for category slugs: both the stem
     reservation for authored pages and the index writer call it, so an entity
     can never be created at a stem the generator will later overwrite.
+
+    ``authored`` carries the unprefixed stems of pages that already occupy an
+    ``index-*.md`` path from an earlier ingest. Reserving only this run's new
+    pages let a section added later clobber a page created before it existed.
     """
     taken: set[str] = {"concept-map", "glossary", "needs-attention"}
     taken |= {f"facet-{f.slug}" for f in FACETS}
+    taken |= set(authored or ())
     return {section: slugify(section, taken) for section in sections}
 
 
@@ -290,10 +302,25 @@ def split_page(text: str) -> tuple[dict, str]:
         return {}, text
     end, body_start = bounds
     fields = {}
-    for line in text[4:end].splitlines():
+    lines = text[4:end].splitlines()
+    for line in lines:
         if ": " in line and not line.startswith((" ", "\t")):
             key, raw = line.split(": ", 1)
             fields[key.strip()] = scalar(raw)
+    # A bare `facets:` followed by an indented list is valid YAML and is
+    # preserved verbatim by extra_blocks(), but the scalar loop above cannot
+    # see it. Normalise it to the inline shape parse_slugs() reads.
+    for i, line in enumerate(lines):
+        if line.strip() != "facets:" or line.startswith((" ", "\t")):
+            continue
+        items = []
+        for cont in lines[i + 1:]:
+            match = re.match(r"^\s+-\s+(.*)$", cont)
+            if not match:
+                break
+            items.append(str(scalar(match.group(1))))
+        if items:
+            fields["facets"] = " ".join(items)
     return fields, text[body_start:]
 
 
@@ -342,6 +369,10 @@ def checked(path: Path, action: str) -> None:
     """
     if path.is_symlink() or not within_root(path):
         sys.exit(f"ingest: refusing to {action} through symlink {path}")
+    # Directories always have st_nlink >= 2 on POSIX, so without this branch
+    # a directory at a generated-output path is misreported as a hardlink.
+    if path.is_dir():
+        sys.exit(f"ingest: refusing to {action} a directory at {path}")
     if path.exists() and path.stat().st_nlink > 1:
         sys.exit(f"ingest: refusing to {action} hardlinked file {path}")
 
@@ -520,7 +551,9 @@ def write_glossary(pages: list[tuple[Path, dict, str]]) -> None:
 
 
 def write_concept_map(pages: list[tuple[Path, dict, str]]) -> None:
-    concepts = {p.stem: f for p, f, _ in pages
+    # Keep the page alongside its fields: a concept need not be flat in
+    # wiki/concepts/, and every other generated index uses link_target().
+    concepts = {p.stem: (p, f) for p, f, _ in pages
                 if f.get("type") == "concept"}
     lines = ["# Concept map", "",
              "The concept layer organised by theme, with reading paths through"
@@ -531,11 +564,12 @@ def write_concept_map(pages: list[tuple[Path, dict, str]]) -> None:
     for cluster in CONCEPT_CLUSTERS:
         lines += [f"## {cluster.label}", "", cluster.description, ""]
         for slug in dict.fromkeys(cluster.concepts):
-            fields = concepts.get(slug)
-            if fields is None:
+            entry = concepts.get(slug)
+            if entry is None:
                 continue
+            page, fields = entry
             placed.add(slug)
-            lines.append(f"- [{fields['title']}](concepts/{slug}.md)"
+            lines.append(f"- [{fields['title']}]({link_target(page)}.md)"
                          f" — {fields.get('summary', '')}")
         lines.append("")
 
@@ -544,8 +578,8 @@ def write_concept_map(pages: list[tuple[Path, dict, str]]) -> None:
         lines += ["## Unclustered concepts", "",
                   "Concepts added since the taxonomy was last updated:", ""]
         for slug in orphans:
-            fields = concepts[slug]
-            lines.append(f"- [{fields['title']}](concepts/{slug}.md)"
+            page, fields = concepts[slug]
+            lines.append(f"- [{fields['title']}]({link_target(page)}.md)"
                          f" — {fields.get('summary', '')}")
         lines.append("")
 
@@ -553,9 +587,10 @@ def write_concept_map(pages: list[tuple[Path, dict, str]]) -> None:
     for path in READING_PATHS:
         lines += [f"### {path.title}", "", path.description, ""]
         for i, slug in enumerate(path.steps, 1):
-            fields = concepts.get(slug)
-            if fields is not None:
-                lines.append(f"{i}. [{fields['title']}](concepts/{slug}.md)")
+            entry = concepts.get(slug)
+            if entry is not None:
+                page, fields = entry
+                lines.append(f"{i}. [{fields['title']}]({link_target(page)}.md)")
         lines.append("")
     write_page(WIKI / "index-concept-map.md", "\n".join(lines))
 
@@ -621,7 +656,11 @@ def main(argv=None) -> int:
         [e["section"] for e in entries]
         + [page_category[p] for p in doomed if p in page_category]
     ))
-    catslug = category_slugs(section_order)
+    authored_index_slugs = {
+        p.stem[len("index-"):] for p in existing.values()
+        if p.stem.startswith("index-")
+    }
+    catslug = category_slugs(section_order, authored_index_slugs)
     reserved |= {f"index-{cs}" for cs in catslug.values()}
     taken = {p.stem.lower() for p in safe_pages(WIKI.rglob("*.md"))} | reserved
     matched: set[Path] = set()
@@ -711,20 +750,27 @@ def main(argv=None) -> int:
 
     tombstoned = 0
     for page in sorted(set(existing.values()) - matched):
-        if page.stem.startswith("index-"):
-            continue
+        # Generated indexes have no frontmatter and never enter ``existing``,
+        # so this loop only sees authored pages — including ones legitimately
+        # named ``index-*``. Skipping them by name lost their tombstone.
         text = read_page(page)
         fields, _ = split_page(text)
+        bounds = frontmatter_bounds(text)
+        head, tail = (text[:bounds[0]], text[bounds[0]:]) if bounds else ("", text)
+        changed = False
         if fields.get("status") != "archived":
-            bounds = frontmatter_bounds(text)
-            head, tail = (text[:bounds[0]], text[bounds[0]:]) if bounds else ("", text)
             head = re.sub(r"^status: .*$", "status: archived", head,
                           count=1, flags=re.M)
-            if "Delisted from the source list" not in tail:
-                tail += (f"\n> Delisted from the source list as of {commit}."
-                         f" Tombstoned, not deleted (see AGENTS.md).\n")
-            text = head + tail
-            write_page(page, text)
+            changed = True
+        # The note is the un-tombstone signal on re-list, independent of why
+        # the page was archived. A project archived by a verification pass that
+        # later leaves the list still needs to record the delisting.
+        if "Delisted from the source list" not in tail:
+            tail += (f"\n> Delisted from the source list as of {commit}."
+                     f" Tombstoned, not deleted (see AGENTS.md).\n")
+            changed = True
+        if changed:
+            write_page(page, head + tail)
             tombstoned += 1
         # Tombstoned pages stay listed in their sub-index (marked), so
         # every page in wiki/ remains reachable from the index.
