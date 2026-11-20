@@ -65,6 +65,15 @@ class LinkAuditTest(unittest.TestCase):
         self.assertIn("wiki/lonely.md", r["orphans"])
         self.assertIn("wiki/lonely.md", r["entities_without_concept_link"])
 
+    def test_concept_nested_below_concepts_dir_is_still_a_concept(self):
+        write(self.root, "wiki/concepts/deep/nested.md",
+              "---\nrelated: [alpha]\n---\n\nBody.\n")
+        r = self.report()
+        self.assertEqual(r["concept_pages"], 2)
+        self.assertIn("wiki/concepts/deep/nested.md",
+                      [e["page"] for e in r["concept_inbound"]])
+        self.assertNotIn("wiki/concepts/deep/nested.md", r["orphans"])
+
     def test_self_link_does_not_count_as_inbound(self):
         # Orphans are pages with no inbound link from ANOTHER article.
         write(self.root, "wiki/a.md", "# A\n\nSee [self](a.md).\n")

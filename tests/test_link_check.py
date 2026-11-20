@@ -231,6 +231,12 @@ class ParserAndBoundaryTests(unittest.TestCase):
         self.assertEqual(
             link_check.main(["--root", str(self.root / "not-a-dir")]), 2
         )
+        # A real directory with no index.md is just as invalid a root; pin
+        # that arm of the guard here too, not only in the sibling test.
+        empty = self.root / "empty-root"
+        empty.mkdir()
+        with self.assertRaises(ValueError):
+            link_check.check(empty)
 
     def test_directory_without_index_md_is_rejected(self):
         # A dir with wiki/*.md but no L1 index.md is not a valid KB root.

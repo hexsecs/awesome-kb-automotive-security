@@ -161,7 +161,6 @@ def main() -> int:
     categories: set[str] = set()
     existing_concepts: set[str] = set()  # normalised spellings for matching
     concept_count = 0                    # pages, for the status line
-    concept_dir = WIKI / "concepts"
     for path in sorted(WIKI.rglob("*.md")):
         # Authored entities can be named `index-*` and live in subdirectories;
         # non-regular files (e.g. a FIFO named *.md) would block on read.
@@ -174,7 +173,7 @@ def main() -> int:
         f = fields_of(text)
         # A concept is any `type: concept` page, wherever it lives — the
         # concepts/ directory is a convention, not the definition.
-        if path.is_relative_to(concept_dir) or f.get("type") == "concept":
+        if f.get("type") == "concept":
             # Candidate phrases are lowercased and keep internal hyphens
             # (TOKEN_RE treats `iso-tp` as one token). Store both spellings,
             # case-folded, so the concept suppresses its own theme.

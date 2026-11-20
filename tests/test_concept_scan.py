@@ -260,10 +260,28 @@ class ExistingConceptTests(unittest.TestCase):
             self.assertIn("1 existing concepts", after)
             self.assertNotIn("| iso-tp |", after)
 
+    def test_entity_in_concepts_dir_is_not_counted_as_a_concept(self):
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            self.corpus(root, "iso-tp")
+            concepts = root / "concepts"
+            concepts.mkdir()
+            (concepts / "stray.md").write_text(
+                '---\ntype: entity\ntitle: "Stray"\nsummary: "s"\n---\nbody\n',
+                encoding="utf-8")
+            out = self.scan(root, "--min-pages", "3")
+            self.assertIn("0 existing concepts", out)
+            # An entity's vocabulary must not be suppressed as if it were a
+            # concept's own theme.
+            self.assertIn("| iso-tp |", out)
+
     def test_case_variant_concept_suppresses_its_theme(self):
         with tempfile.TemporaryDirectory() as d:
             root = Path(d)
-            self.corpus(root, "tpm")
+            # Uppercase in the corpus makes `tpm` a real single-word theme
+            # (an acronym); a lowercase corpus would never propose it and
+            # the assertion would pass even with the guard removed.
+            self.corpus(root, "TPM")
             (root / "concepts").mkdir()
             (root / "concepts" / "TPM.md").write_text(
                 '---\ntype: concept\ntitle: "TPM"\n---\nbody\n',

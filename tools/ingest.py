@@ -752,6 +752,22 @@ def main(argv=None) -> int:
                     page = candidate
                     break
         if page is None:
+            # A file occupying the entry's natural slug with no parseable
+            # frontmatter (e.g. a lost closing fence) cannot carry list
+            # identity, so the URL-move fallback cannot find it. Without this
+            # check we mint a `-2` duplicate and strand the original page as
+            # permanently unreachable — silently, since link_check only finds
+            # it after the damage. Generated indexes have no frontmatter
+            # either, so leave their `index-*` stems alone.
+            natural = WIKI / f"{slugify(e['title'], set())}.md"
+            if natural.is_file() and not natural.is_symlink() \
+                    and not natural.stem.lower().startswith("index-"):
+                natural_fields, _ = split_page(read_page(natural))
+                if "title" not in natural_fields:
+                    sys.exit(
+                        f"ingest: {natural} has no parseable frontmatter; "
+                        "refusing to create a duplicate entry page"
+                    )
             slug = slugify(e["title"], taken, WIKI)
             page = WIKI / f"{slug}.md"
             # Finished works (the Research Papers category) are complete
@@ -797,9 +813,18 @@ def main(argv=None) -> int:
                 # the same rule). A re-listed resource returns to the default
                 # unverified status; any other section keeps its status —
                 # including a deliberately archived upstream project.
+                # `status: archived` alone is not enough to stop a relist —
+                # the delisting NOTE is that signal. But a page archived by a
+                # verification pass (still on the canon list) carries real
+                # evidence in status_note; moving it into Research Papers must
+                # not overwrite that with `published`.
+                verified_archived = (
+                    str(fields.get("status")) == "archived"
+                    and not was_tombstoned)
                 entering_rp = (e["section"] == "Research Papers"
                                and str(fields.get("category", ""))
-                               != e["section"])
+                               != e["section"]
+                               and not verified_archived)
                 status = ("published" if entering_rp
                           else "unknown" if was_tombstoned
                           else str(fields.get("status", "unknown")))
@@ -931,18 +956,25 @@ def main(argv=None) -> int:
                      f" — {n} entr{'y' if n == 1 else 'ies'}")
 
     # Concept pages (hand-written synthesis) are listed directly in the L1.
-    concepts_dir = WIKI / "concepts"
-    concepts = []
-    if concepts_dir.is_dir() and not concepts_dir.is_symlink() \
-            and within_root(concepts_dir):
-        for page in sorted(safe_pages(concepts_dir.rglob("*.md"))):
-            fields, _ = split_page(read_page(page))
-            if "title" in fields and "summary" in fields:
-                concepts.append((str(fields["title"]), link_target(page),
+    # Classification is by `type:` — the same rule the concept map, miner,
+    # scanner and auditor use. A directory scan disagreed with all of them:
+    # it listed entities filed under concepts/ and skipped root-level concepts.
+    canonical = WIKI / "concepts"
+    concepts: dict[str, tuple[str, str, str]] = {}
+    for page, fields, _ in sorted(
+            ((p, f, b) for p, f, b in pages
+             if str(f.get("type", "")) == "concept"),
+            key=lambda item: (not item[0].is_relative_to(canonical),
+                              item[0].parent != canonical)):
+        if "summary" in fields:
+            # Canonical-per-stem dedupe, identical to write_concept_map: a
+            # clone nested deeper under concepts/ gets no second L1 row.
+            concepts.setdefault(page.stem,
+                                (str(fields["title"]), link_target(page),
                                  str(fields["summary"])))
     if concepts:
         lines += ["", "## Concepts", ""]
-        for title, target, summary in concepts:
+        for title, target, summary in concepts.values():
             lines.append(f"- [{title}](wiki/{target}.md) — {summary}")
 
     if facet_counts:
