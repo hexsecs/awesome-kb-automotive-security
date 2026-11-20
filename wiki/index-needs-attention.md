@@ -2,13 +2,13 @@
 
 Generated from page frontmatter by tools/ingest.py. A page may appear in more than one queue. 'Brief by design' entries are triaged pointers needing no action. Do not edit by hand.
 
-## Unverified resources (0)
+## Unverified resources (1)
 
-_None._
+- [Cabana](cabana.md)
 
-## Graph orphans (0)
+## Graph orphans (1)
 
-_None._
+- [Cabana](cabana.md)
 
 ## Deepen candidates (3)
 

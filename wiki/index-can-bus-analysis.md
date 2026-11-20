@@ -3,6 +3,7 @@
 Browse by facet: [Tools & libraries](index-facet-tools.md) (31), [CAN](index-facet-can.md) (28), [Attack techniques](index-facet-attack.md) (11), [Diagnostics](index-facet-diagnostics.md) (10), [Simulation](index-facet-simulation.md) (6), [Firmware & updates](index-facet-firmware.md) (5).
 
 - [BUSMASTER](busmaster.md) — Open-source CAN simulation, analysis, and test tool from Bosch Engineering and ETAS, with a node simulator, DBC-driven signal interpretation, and scriptable…
+- [Cabana](cabana.md) — Standalone CAN and CAN FD analyzer split from openpilot, with live bit-level heatmaps, signal discovery, a DBC editor, and drive replay synchronized to video.
 - [CAN Commander](can-commander.md) — Flipper Zero application and companion ESP32 CAN board for reverse engineering vehicle networks, with sniffing, DBC decoding, replay, and injection profiles…
 - [CAN Playground](can-playground.md) — Local-first Tauri desktop app for viewing, decoding, and capturing CAN bus traffic, with DBC import, signal annotation, and bit-level change timelines.
 - [can-utils](can-utils.md) — Linux-CAN SocketCAN userspace utilities including cansniffer, candump, cansend, canplayer, and cangen for CAN bus analysis.
