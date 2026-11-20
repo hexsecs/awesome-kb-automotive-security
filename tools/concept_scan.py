@@ -30,6 +30,7 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import sys
 from collections import defaultdict
 from pathlib import Path
 
@@ -60,11 +61,20 @@ GENERIC = {
     "execution", "protocol", "images", "image", "linux", "radio",
     "toolkit", "collection", "set", "suite", "environment", "interface",
     "interfaces", "implementation", "implementations", "development",
-    "management", "generation", "discovery", " techniques", "techniques",
+    "management", "generation", "discovery", "techniques",
     "methods", "approach", "capabilities", "features", "real", "time",
-    "real-time", "high", "low", "level", "levels", "written", "written in",
+    "real-time", "high", "low", "level", "levels", "written",
 }
 TOKEN_RE = re.compile(r"[A-Za-z0-9]+(?:-[A-Za-z0-9]+)*")
+
+
+def read_page(path: Path) -> str | None:
+    try:
+        return path.read_text(encoding="utf-8")
+    except (OSError, UnicodeDecodeError) as exc:
+        print(f"concept_scan: skipping unreadable {path}: {exc}",
+              file=sys.stderr)
+        return None
 
 
 def fields_of(text: str) -> dict:
@@ -117,9 +127,12 @@ def main() -> int:
     pages: dict[str, dict] = {}
     categories: set[str] = set()
     for path in sorted(WIKI.glob("*.md")):
-        if path.stem.startswith("index-"):
+        if path.stem.startswith("index-") or path.is_symlink():
             continue
-        f = fields_of(path.read_text(encoding="utf-8"))
+        text = read_page(path)
+        if text is None:
+            continue
+        f = fields_of(text)
         if f.get("type") != "entity" or "title" not in f:
             continue
         pages[path.stem] = f

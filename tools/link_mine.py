@@ -92,24 +92,36 @@ def parse_related(fm_lines: list[str]) -> list[str]:
         if line.startswith("related:"):
             rest = line.split(":", 1)[1].strip()
             if rest.startswith("["):
-                rels = [x.strip() for x in rest.strip("[]").split(",")
-                        if x.strip()]
+                rels = [x.strip().strip("'\"")
+                        for x in rest.strip("[]").split(",") if x.strip()]
             else:
                 for nxt in fm_lines[i + 1:]:
                     if nxt.startswith(("  - ", "- ")):
-                        rels.append(nxt.split("- ", 1)[1].strip())
+                        rels.append(nxt.split("- ", 1)[1].strip().strip("'\""))
                     else:
                         break
             break
     return rels
 
 
+def read_page(path: Path) -> str | None:
+    try:
+        return path.read_text(encoding="utf-8")
+    except (OSError, UnicodeDecodeError) as exc:
+        print(f"link_mine: skipping unreadable {path}: {exc}", file=sys.stderr)
+        return None
+
+
 def write_page(path: Path, fm_lines: list[str], body: str,
                related: list[str], run_date: str) -> None:
     """Replace/insert the related block; bump `updated:`; write the file."""
+    if path.is_symlink():
+        return
     out: list[str] = []
     i = 0
-    block = ["related:"] + [f"  - {slug}" for slug in related]
+    block = ["related:"] + [
+        f"  - {json.dumps(slug, ensure_ascii=False)}" for slug in related
+    ]
     # Pre-scan: if any related: block exists, the single replacement
     # block goes where the FIRST one was; never also after list_summary.
     had_related = any(l.startswith("related:") for l in fm_lines)
@@ -150,15 +162,19 @@ def main() -> int:
     ap.add_argument("--max-related", type=int, default=6)
     ap.add_argument("--threshold", type=float, default=3.0)
     args = ap.parse_args()
+    if args.date and not re.fullmatch(r"\d{4}-\d{2}-\d{2}", args.date):
+        ap.error("--date must be YYYY-MM-DD")
     run_date = args.date or str(
         date_cls.today() if False else
         __import__("datetime").datetime.now(ZoneInfo("America/Detroit")).date())
 
     pages: dict[str, dict] = {}
     for path in sorted(WIKI.glob("*.md")):
-        if path.stem.startswith("index-"):
+        if path.stem.startswith("index-") or path.is_symlink():
             continue
-        text = path.read_text(encoding="utf-8")
+        text = read_page(path)
+        if text is None:
+            continue
         fields, fm_lines, body = split_page(text)
         if fields.get("type") != "entity" or "title" not in fields:
             continue
@@ -252,12 +268,15 @@ def main() -> int:
     cdir = WIKI / "concepts"
     if cdir.is_dir():
         for path in sorted(cdir.glob("*.md")):
-            fields, fm_lines, _ = split_page(
-                path.read_text(encoding="utf-8"))
+            text = read_page(path)
+            if text is None:
+                continue
+            fields, fm_lines, _ = split_page(text)
             if "title" in fields:
                 concept_links[path.stem] = parse_related(fm_lines)
 
     changed = filled = recip_added = 0
+    written: dict[str, list[str]] = {}
     samples: list[str] = []
     for slug in slugs:
         p = pages[slug]
@@ -284,6 +303,7 @@ def main() -> int:
                 new = new + adds
             new = sorted(set(new),
                          key=lambda b: (-scores.get((slug, b), 0.0), b))
+        written[slug] = new
         if new != old:
             changed += 1
             if not old:
@@ -293,8 +313,8 @@ def main() -> int:
             if not args.dry_run:
                 write_page(p["path"], p["fm_lines"], p["body"], new, run_date)
 
-    total_rel = sum(len(final[s]) for s in slugs)
-    zero = sum(1 for s in slugs if not final[s])
+    total_rel = sum(len(written[s]) for s in slugs)
+    zero = sum(1 for s in slugs if not written[s])
     print(f"link_mine: {n} entity pages | mined sets avg "
           f"{total_rel / n:.2f} related/page, {zero} pages with none | "
           f"{'would change' if args.dry_run else 'changed'} {changed} pages "

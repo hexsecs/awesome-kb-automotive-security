@@ -186,5 +186,42 @@ class NeedsAttentionTests(unittest.TestCase):
             self.assertIn("needs review — PDF but no method", text)
 
 
+class FrontmatterSafetyTests(unittest.TestCase):
+    def test_scalars_with_newlines_cannot_inject_yaml_keys(self):
+        hostile = 'abc\nstatus: archived'
+        text = ingest.frontmatter(
+            {"title": "X", "summary": "s", "section": "Papers",
+             "url": "https://example.com/x"},
+            "active", "stub", "2026-11-20", "abc1234",
+            uid=hostile, last_checked=hostile, created=hostile,
+        )
+        head = text.split("\n---\n", 1)[0]
+        # Every managed scalar is a quoted, single-line YAML value.
+        self.assertEqual(
+            [line for line in head.splitlines() if line.startswith("status:")],
+            ['status: "active"'],
+        )
+        self.assertEqual(
+            [line for line in head.splitlines()
+             if line.startswith(("uid:", "created:", "last_checked:"))],
+            [f"{k}: {ingest.q(hostile)}"
+             for k in ("uid", "last_checked", "created")],
+        )
+
+    def test_write_page_refuses_a_symlink(self):
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            outside = root / "outside.md"
+            outside.write_text("do not touch", encoding="utf-8")
+            link = root / "page.md"
+            link.symlink_to(outside)
+            with self.assertRaises(SystemExit) as caught:
+                ingest.write_page(link, "pwned")
+            self.assertIn("refusing to write through symlink",
+                          str(caught.exception))
+            self.assertEqual(outside.read_text(encoding="utf-8"),
+                             "do not touch")
+
+
 if __name__ == "__main__":
     unittest.main()

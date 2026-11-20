@@ -180,19 +180,19 @@ def frontmatter(e: dict, status: str, depth: str, date: str, commit: str,
                 updated: str | None = None,
                 uid: str | None = None) -> str:
     lines = ["---",
-             f"uid: {uid or mint_uid()}",
+             f"uid: {q(uid or mint_uid())}",
              f"title: {q(e['title'])}",
              f"summary: {q(short_summary(e['summary']))}",
              "type: entity",
              f"category: {q(e['section'])}",
              f"url: {q(e['url'])}",
-             f"status: {status}",
-             f"last_checked: {last_checked or date}",
-             f"created: {created or date}",
-             f"updated: {updated or date}",
-             f"depth: {depth}",
-             f"source_list: {SOURCE_ID}",
-             f"source_commit: {commit}",
+             f"status: {q(status)}",
+             f"last_checked: {q(last_checked or date)}",
+             f"created: {q(created or date)}",
+             f"updated: {q(updated or date)}",
+             f"depth: {q(depth)}",
+             f"source_list: {q(SOURCE_ID)}",
+             f"source_commit: {q(commit)}",
              f"list_summary: {q(e['summary'])}"]
     extras = extras or []
     for block in extras:
@@ -200,7 +200,7 @@ def frontmatter(e: dict, status: str, depth: str, date: str, commit: str,
     if not any(block and block[0].startswith("sources:") for block in extras):
         lines += ["sources:",
                   f"  - url: {q(SOURCE_URL)}",
-                  f"    retrieved: {date}"]
+                  f"    retrieved: {q(date)}"]
     lines.append("---")
     return "\n".join(lines) + "\n"
 
@@ -253,6 +253,13 @@ def read_page(path: Path) -> str:
         sys.exit(f"ingest: cannot read {path}: {exc}")
 
 
+def write_page(path: Path, text: str) -> None:
+    """Write a page, refusing to follow a symlink out of the KB."""
+    if path.is_symlink():
+        sys.exit(f"ingest: refusing to write through symlink {path}")
+    path.write_text(text, encoding="utf-8")
+
+
 def all_pages() -> list[tuple[Path, dict, str]]:
     """Every authored page (entities and concepts), in stable path order."""
     pages = []
@@ -294,8 +301,7 @@ def write_facet_indexes(pages: list[tuple[Path, dict, str]],
                 f"- [{fields['title']}]({target}.md) — {fields.get('summary', '')}")
         for group in sorted(by_group, key=lambda g: (order.get(g, 999), g)):
             lines += [f"## {group}", ""] + sorted(by_group[group]) + [""]
-        (WIKI / f"index-facet-{facet.slug}.md").write_text(
-            "\n".join(lines), encoding="utf-8")
+        write_page(WIKI / f"index-facet-{facet.slug}.md", "\n".join(lines))
 
     # Remove stale facet indexes when a facet drops below the threshold.
     for path in WIKI.glob("index-facet-*.md"):
@@ -367,8 +373,7 @@ def write_needs_attention(pages: list[tuple[Path, dict, str]],
         else:
             lines.append("_None._")
         lines.append("")
-    (WIKI / "index-needs-attention.md").write_text("\n".join(lines),
-                                                    encoding="utf-8")
+    write_page(WIKI / "index-needs-attention.md", "\n".join(lines))
     actionable = sum(len(v) for k, v in buckets.items()
                      if k != "Brief by design (no action)")
     return actionable
@@ -389,7 +394,7 @@ def write_glossary(pages: list[tuple[Path, dict, str]]) -> None:
         lines.append(f"- **{entry.term}** — {entry.expansion}."
                      f" See [{fields['title']}]({target}) — {entry.note}")
     lines.append("")
-    (WIKI / "index-glossary.md").write_text("\n".join(lines), encoding="utf-8")
+    write_page(WIKI / "index-glossary.md", "\n".join(lines))
 
 
 def write_concept_map(pages: list[tuple[Path, dict, str]]) -> None:
@@ -430,8 +435,7 @@ def write_concept_map(pages: list[tuple[Path, dict, str]]) -> None:
             if fields is not None:
                 lines.append(f"{i}. [{fields['title']}](concepts/{slug}.md)")
         lines.append("")
-    (WIKI / "index-concept-map.md").write_text("\n".join(lines),
-                                                encoding="utf-8")
+    write_page(WIKI / "index-concept-map.md", "\n".join(lines))
 
 
 def main(argv=None) -> int:
@@ -501,8 +505,8 @@ def main(argv=None) -> int:
             # SPEC §9.2), not the unverified default for living resources.
             new_status = ("published" if e["section"] == "Research Papers"
                           else "unknown")
-            page.write_text(frontmatter(e, new_status, "stub", date, commit)
-                            + stub_body(e), encoding="utf-8")
+            write_page(page, frontmatter(e, new_status, "stub", date, commit)
+                       + stub_body(e))
             created += 1
         else:
             old_text = read_page(page)
@@ -529,7 +533,7 @@ def main(argv=None) -> int:
                     updated=date,
                     uid=str(fields["uid"])) + (
                     body if depth != "stub" else stub_body(e))
-                page.write_text(new_text, encoding="utf-8")
+                write_page(page, new_text)
                 updated += 1
         matched.add(page)
         by_section.setdefault(e["section"], []).append(
@@ -551,7 +555,7 @@ def main(argv=None) -> int:
                 tail += (f"\n> Delisted from the source list as of {commit}."
                          f" Tombstoned, not deleted (see AGENTS.md).\n")
             text = head + tail
-            page.write_text(text, encoding="utf-8")
+            write_page(page, text)
             tombstoned += 1
         # Tombstoned pages stay listed in their sub-index (marked), so
         # every page in wiki/ remains reachable from the index.
@@ -597,7 +601,7 @@ def main(argv=None) -> int:
         for item in by_section[section]:
             lines.append(f"- [{item['title']}]({item['slug']}.md) — {item['summary']}")
         lines.append("")
-        (WIKI / f"index-{cs}.md").write_text("\n".join(lines), encoding="utf-8")
+        write_page(WIKI / f"index-{cs}.md", "\n".join(lines))
 
     # Drop category indexes for sections no longer in the list. Generated
     # sub-indexes have no frontmatter; an authored `index-*` page does.
@@ -652,7 +656,7 @@ def main(argv=None) -> int:
                          f" {facet_counts[slug]} pages (entities and concepts)."
                          f" {facet.description}")
     lines.append("")
-    (ROOT / "index.md").write_text("\n".join(lines), encoding="utf-8")
+    write_page(ROOT / "index.md", "\n".join(lines))
 
     print(f"ingest: {len(entries)} entries from {SOURCE_ID}@{commit} "
           f"— {created} created, {updated} updated, {tombstoned} tombstoned")

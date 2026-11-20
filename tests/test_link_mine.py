@@ -67,7 +67,7 @@ class WritePageTests(unittest.TestCase):
         link_mine.write_page(path, fm_lines, body, first, "2026-11-17")
         out = path.read_text(encoding="utf-8")
         self.assertEqual(out.count("related:"), 1)
-        self.assertIn("related:\n  - alpha-one\n  - alpha-two\n", out)
+        self.assertIn('related:\n  - "alpha-one"\n  - "alpha-two"\n', out)
         self.assertNotIn("beta", out.split("---\n", 2)[1])
 
     def test_write_page_twice_is_byte_identical(self):
@@ -99,6 +99,34 @@ class WritePageTests(unittest.TestCase):
         self.assertIn("sources:\n  - https://example.invalid/alpha\n", out)
         self.assertIn("updated: 2026-11-17\n", out)
         self.assertNotIn("updated: 2020-01-01\n", out)
+
+
+class HardeningTests(unittest.TestCase):
+    def test_parse_related_strips_quoted_items(self):
+        fm = ["related:", '  - "alpha-one"', "  - 'beta-two'"]
+        self.assertEqual(link_mine.parse_related(fm),
+                         ["alpha-one", "beta-two"])
+        inline = ['related: ["alpha-one", "beta-two"]']
+        self.assertEqual(link_mine.parse_related(inline),
+                         ["alpha-one", "beta-two"])
+
+    def test_write_page_refuses_a_symlink(self):
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            outside = root / "outside.md"
+            outside.write_text("do not touch", encoding="utf-8")
+            link = root / "page.md"
+            link.symlink_to(outside)
+            _, fm_lines, body = split(PAGE_DUP)
+            link_mine.write_page(link, fm_lines, body, ["x"], "2026-11-17")
+            self.assertEqual(outside.read_text(encoding="utf-8"),
+                             "do not touch")
+
+    def test_read_page_skips_invalid_bytes(self):
+        with tempfile.TemporaryDirectory() as d:
+            bad = Path(d) / "bad.md"
+            bad.write_bytes(b"\xff\xfe")
+            self.assertIsNone(link_mine.read_page(bad))
 
 
 if __name__ == "__main__":
