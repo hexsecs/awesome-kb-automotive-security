@@ -7,13 +7,13 @@ Kept by Clyde, the cowboy coding agent — whether the humans care or not.
 
 | # | Date found | Bug | Where | Status | How it died | PR | Clyde's note |
 |---|------------|-----|-------|--------|-------------|-----|--------------|
-| 1 | 2026-11-20 | Unindented YAML `related:` lists invisible | `tools/link_check.py:30`, `tools/ingest.py:related_count` | at large | — | — | YAML says list. Parser says no. |
-| 2 | 2026-11-20 | Inline `related:` with trailing comment invisible | `tools/link_check.py:30` | at large | — | — | Comments hide friends. |
-| 3 | 2026-11-20 | UTF-8 BOM defeats frontmatter detection | `tools/link_check.py:29` | at large | — | — | Three invisible bytes, one silent failure. |
-| 4 | 2026-11-20 | Bad `--root` reports a clean KB | `tools/link_check.py:100`, `tools/link_audit.py:43` | at large | — | — | Zero pages, all clear. Sure. |
-| 5 | 2026-11-20 | Link resolution escapes the KB root | `tools/link_check.py:90` | at large | — | — | `..` needs no invitation. |
-| 6 | 2026-11-20 | Audit stem resolution depends on set order | `tools/link_audit.py:73` | at large | — | — | Coin-flip metrics. |
-| 7 | 2026-11-20 | Entity named `index-*` misread as generated index | `tools/link_audit.py:63` | at large | — | — | Name tags lie. Frontmatter doesn't. |
+| 1 | 2026-11-20 | Unindented YAML `related:` lists invisible | `tools/link_check.py:30`, `tools/ingest.py:related_count` | dead | shared YAML parser + tests | [#103](https://github.com/hexsecs/awesome-kb-automotive-security/pull/103) | YAML says list. Parser says no. |
+| 2 | 2026-11-20 | Inline `related:` with trailing comment invisible | `tools/link_check.py:30` | dead | comment-tolerant regex + test | [#103](https://github.com/hexsecs/awesome-kb-automotive-security/pull/103) | Comments hide friends. |
+| 3 | 2026-11-20 | UTF-8 BOM defeats frontmatter detection | `tools/link_check.py:29` | dead | BOM-tolerant frontmatter regex + test | [#103](https://github.com/hexsecs/awesome-kb-automotive-security/pull/103) | Three invisible bytes, one silent failure. |
+| 4 | 2026-11-20 | Bad `--root` reports a clean KB | `tools/link_check.py:100`, `tools/link_audit.py:43` | dead | root validation, exit 2 + tests | [#103](https://github.com/hexsecs/awesome-kb-automotive-security/pull/103) | Zero pages, all clear. Sure. |
+| 5 | 2026-11-20 | Link resolution escapes the KB root | `tools/link_check.py:90` | dead | containment check + test | [#103](https://github.com/hexsecs/awesome-kb-automotive-security/pull/103) | `..` needs no invitation. |
+| 6 | 2026-11-20 | Audit stem resolution depends on set order | `tools/link_audit.py:73` | dead | sorted candidates + test | [#103](https://github.com/hexsecs/awesome-kb-automotive-security/pull/103) | Coin-flip metrics. |
+| 7 | 2026-11-20 | Entity named `index-*` misread as generated index | `tools/link_audit.py:63` | dead | frontmatter `type:` wins + test | [#103](https://github.com/hexsecs/awesome-kb-automotive-security/pull/103) | Name tags lie. Frontmatter doesn't. |
 | 8 | 2026-11-20 | List URLs with parentheses silently dropped | `tools/ingest.py:73` | at large | — | — | Wikipedia ate the entry. |
 | 9 | 2026-11-20 | Single-quoted YAML scalars mis-parsed | `tools/ingest.py:221` | at large | — | — | Only double quotes got the memo. |
 | 10 | 2026-11-20 | Tab-indented frontmatter lost on rewrite | `tools/ingest.py:216` vs `:153` | at large | — | — | Two parsers, one file, no truth. |
@@ -43,3 +43,4 @@ Kept by Clyde, the cowboy coding agent — whether the humans care or not.
 | 34 | 2026-11-20 | List text injected raw into generated Markdown | `tools/ingest.py:199`, `:282` | at large — human's call | — | — | Renderer policy is above Clyde's pay grade. |
 | 35 | 2026-11-20 | Authored body discarded when `depth:` says `stub` | `tools/ingest.py:494` | at large — human's call | — | — | Truth lives in the body, not the label. |
 | 36 | 2026-11-20 | Non-Latin titles collapse to `entry` slugs | `tools/ingest.py:99` | at large — human's call | — | — | Rename scheme is a town decision. |
+| 37 | 2026-11-20 | Markdown link forms skipped or mis-parsed | `tools/link_check.py:28` | dead | broader link regex + tests | [#103](https://github.com/hexsecs/awesome-kb-automotive-security/pull/103) | Angle brackets, parentheses, single quotes. All ignored. |
