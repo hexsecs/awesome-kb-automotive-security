@@ -5,7 +5,7 @@ summary: "OCPP links chargers to cloud backends; weak transport security, shared
 type: concept
 cluster: boundary
 created: 2026-10-31
-updated: 2026-10-31
+updated: 2026-11-17
 related:
   - checkocpp
   - emuocpp
@@ -14,6 +14,13 @@ related:
   - losing-the-car-keys-wireless-phy-layer-insecurity-in-ev-charging
   - race-to-charge-concurrency-bugs-and-state-integrity-violations-in-ev-charging-infrastructure
   - charging-trust-chain
+  - awesome-ev-charging
+  - brokenwire-wireless-disruption-of-ccs-electric-vehicle-charging
+  - charge-it-to-my-neighbor-a-relay-attack-on-iso-15118-plug-and-charge-payment
+  - current-affairs-a-security-measurement-study-of-ccs-ev-charging-deployments
+  - low-energy-to-high-energy-hacking-nearby-ev-chargers-over-bluetooth
+  - ocppuzz
+  - securing-electric-mobility
 sources:
   - url: "https://openchargealliance.org/ocpp-info-whitepapers/ocpp-1-6-security-whitepaper-4th-edition/"
     retrieved: 2026-10-31

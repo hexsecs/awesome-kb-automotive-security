@@ -15,6 +15,8 @@ related:
   - ics-cap
   - autofuze
   - automotive-ethernet
+  - automotive-networking-security
+  - what-is-automotive-macsec
 sources:
   - url: "https://github.com/jamores/eth-ws-someip/tree/master/specs"
     retrieved: 2026-11-01

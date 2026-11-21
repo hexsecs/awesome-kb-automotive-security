@@ -18,6 +18,11 @@ related:
   - bootloader-stages
   - awesome-connected-things-sec
   - awesome-embedded-security
+  - back-in-the-driver-s-seat-recovering-critical-data-from-tesla-autopilot-using-voltage-glitching
+  - bypassing-debug-password-protection-on-the-rh850-family
+  - ghidra-tc1797
+  - ghidra-v850
+  - pedal-to-the-bare-metal
 sources:
   - url: "https://github.com/bri3d/CCM19XX-CCP-Flashing"
     retrieved: 2026-11-01

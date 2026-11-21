@@ -5,7 +5,7 @@ summary: "UDS SecurityAccess (0x27) gates privileged diagnostics behind a seed/k
 type: concept
 cluster: access
 created: 2026-10-31
-updated: 2026-11-01
+updated: 2026-11-17
 related:
   - python-can-isotp
   - savvycan
@@ -17,6 +17,19 @@ related:
   - ford-ecu-bruteforcer
   - diagnostic-service-abuse
   - shared-and-default-secrets
+  - automotive-security-research
+  - candid-a-stealthy-stepping-stone-attack-to-bypass-authentication-on-ecus
+  - fast-and-compromised-automotive-security-on-a-timer
+  - gen5fw
+  - iso14229
+  - mmi3g-toolkit
+  - nullsec-carfuzz
+  - owasp-automotive-security-cheat-sheet
+  - pyxcp
+  - reversing-a-brake-ecu-firmware-update
+  - secoc-key-extractor
+  - simos18-sboot
+  - vw-flash
 sources:
   - url: "https://doi.org/10.29354/diag/192162"
     retrieved: 2026-10-31

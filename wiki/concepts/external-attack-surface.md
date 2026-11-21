@@ -17,6 +17,17 @@ related:
   - offensive-automotive-cybersecurity
   - passive-and-active-attacks-on-tpms-systems
   - awesome-vehicle-security
+  - a-survey-of-remote-automotive-attack-surfaces
+  - autopi
+  - donglescope
+  - drivethru-car-hacking-fast-food-faster-data-breach
+  - how-api-flaws-led-to-admin-access-to-over-1k-usa-dealers-and-control-over-your-car
+  - meet-salinas-the-first-ever-sms-commanded-car-infotainment-rat
+  - over-the-air-compromise-of-modern-volkswagen-group-vehicles
+  - pwn2own-automotive-2026-day-three-results-and-the-master-of-pwn
+  - pwnobd
+  - research-only-understanding-the-scope-of-automotive-cyberattacks-in-the-wild
+  - wir-wissen-wo-dein-auto-steht
 sources:
   - url: "https://www.usenix.org/legacy/events/sec11/tech/full_papers/Checkoway.pdf"
     retrieved: 2026-11-01

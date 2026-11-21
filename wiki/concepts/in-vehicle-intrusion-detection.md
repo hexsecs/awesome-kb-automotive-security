@@ -5,7 +5,7 @@ summary: "The bus's defence literature, organised by observable signal: timing, 
 type: concept
 cluster: bus
 created: 2026-11-01
-updated: 2026-11-01
+updated: 2026-11-17
 related:
   - fingerprinting-electronic-control-units-for-vehicle-intrusion-detection
   - viden-attacker-identification-on-in-vehicle-networks
@@ -14,6 +14,18 @@ related:
   - on-the-real-world-applicability-of-automotive-can-intrusion-detection-systems
   - canter
   - can-injection
+  - autohack
+  - can-mirgu
+  - can-train-and-test
+  - car-hacking-dataset
+  - cards
+  - cross-vehicle-generalisation-benchmark
+  - evading-voltage-based-intrusion-detection-on-automotive-can
+  - gem-can
+  - road
+  - survival-analysis-dataset
+  - syncan
+  - tow-ids-automotive-ethernet-intrusion-dataset
 sources:
   - url: "https://www.usenix.org/system/files/conference/usenixsecurity16/sec16_paper_cho.pdf"
     retrieved: 2026-11-01

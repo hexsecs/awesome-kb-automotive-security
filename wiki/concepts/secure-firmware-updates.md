@@ -5,7 +5,7 @@ summary: "How Uptane secures vehicle software updates: two repositories, per-veh
 type: concept
 cluster: access
 created: 2026-11-01
-updated: 2026-11-01
+updated: 2026-11-17
 related:
   - uptane
   - uptane-securing-software-updates-for-automobiles
@@ -17,6 +17,16 @@ related:
   - pq-flasher
   - vw-flash
   - ivi-update-trust
+  - back-connect-to-the-connected-car-search-for-vulnerabilities-in-the-vw-electric-car
+  - byd-dolphin-hacking
+  - chimaera
+  - gen5fw
+  - ic1101
+  - mmi3g-toolkit
+  - owasp-automotive-security-cheat-sheet
+  - q50-reverse-engineering
+  - reversing-a-brake-ecu-firmware-update
+  - secv-securing-connected-vehicles-with-hardware-trust-anchors
 sources:
   - url: "https://uptane.org/docs/latest/standard/uptane-standard"
     retrieved: 2026-11-01

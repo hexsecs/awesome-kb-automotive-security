@@ -5,7 +5,7 @@ summary: "Attacks that manufacture the measurement itself — in acoustics, opti
 type: concept
 cluster: boundary
 created: 2026-11-01
-updated: 2026-11-01
+updated: 2026-11-17
 related:
   - walnut-waging-doubt-on-the-integrity-of-mems-accelerometers-with-acoustic-injection-attacks
   - illusion-and-dazzle-adversarial-optical-channel-exploits-against-lidars-for-automotive-applications
@@ -14,6 +14,16 @@ related:
   - drift-with-devil-security-of-multi-sensor-fusion-based-localization-in-high-level-autonomous-driving-under-gps-spoofing
   - all-your-gps-are-belong-to-us-towards-stealthy-manipulation-of-road-navigation-systems
   - the-heat-is-on-understanding-and-mitigating-vulnerabilities-of-thermal-image-perception-in-autonomous-systems
+  - a-first-physical-world-trajectory-prediction-attack-via-lidar-induced-deceptions-in-autonomous-driving
+  - adversarial-sensor-attack-on-lidar-based-perception-in-autonomous-driving
+  - dirty-road-can-attack-security-of-deep-learning-based-automated-lane-centering-under-physical-world-attack
+  - does-physical-adversarial-example-really-matter-to-autonomous-driving-towards-system-level-effect-of-adversarial-object-evasion-attack
+  - invisible-for-both-camera-and-lidar-security-of-multi-sensor-fusion-based-perception-in-autonomous-driving
+  - perspective-shift-attacks-against-optical-perception-sensors-a-novel-attack-vector-on-lidar-and-camera
+  - robust-physical-world-attacks-on-deep-learning-visual-classification
+  - sok-how-sensor-attacks-disrupt-autonomous-vehicles-an-end-to-end-analysis-challenges-and-missed-threats
+  - sok-the-next-frontier-in-av-security-systematizing-perception-attacks-and-the-emerging-threat-of-multi-sensor-fusion
+  - too-good-to-be-safe-tricking-lane-detection-in-autonomous-driving-with-crafted-perturbations
 sources:
   - url: "https://doi.org/10.1109/EuroSP.2017.42"
     retrieved: 2026-11-01

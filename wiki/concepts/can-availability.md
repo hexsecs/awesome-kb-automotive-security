@@ -23,6 +23,8 @@ related:
   - car-toolkit
   - doggie
   - cantoolz
+  - abusing-can-bus-protocol-specification-for-denial-of-service-in-embedded-systems
+  - survey-on-security-threats-and-protection-mechanisms-in-embedded-automotive-networks
 sources:
   - url: "https://www.usenix.org/legacy/events/sec10/tech/full_papers/Koscher.pdf"
     retrieved: 2026-11-01

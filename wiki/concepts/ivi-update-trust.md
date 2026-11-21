@@ -5,7 +5,7 @@ summary: "How head-unit update trust anchors fail across six IVI platforms: abse
 type: concept
 cluster: access
 created: 2026-11-01
-updated: 2026-11-01
+updated: 2026-11-17
 related:
   - byd-dolphin-hacking
   - chimaera
@@ -17,6 +17,9 @@ related:
   - simos18-sboot
   - secv-securing-connected-vehicles-with-hardware-trust-anchors
   - ivi-runtime-privilege
+  - over-the-air-compromise-of-modern-volkswagen-group-vehicles
+  - remote-exploitation-of-an-unaltered-passenger-vehicle
+  - vw-flash
 sources:
   - url: "https://github.com/wheregoes/byd-dolphin-hacking/blob/master/README.md"
     retrieved: 2026-11-01

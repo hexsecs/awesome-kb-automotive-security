@@ -5,7 +5,7 @@ summary: "Why V2X needs a layer beyond signatures: detecting false content from 
 type: concept
 cluster: boundary
 created: 2026-11-01
-updated: 2026-11-01
+updated: 2026-11-17
 related:
   - f2md
   - vanetza
@@ -18,6 +18,8 @@ related:
   - secure-vehicular-communication-systems-design-and-architecture
   - pseudonym-schemes-in-vehicular-networks-a-survey
   - in-vehicle-intrusion-detection
+  - vasp
+  - veremi-extension
 sources:
   - url: "https://github.com/josephkamel/F2MD"
     retrieved: 2026-11-01

@@ -20,6 +20,9 @@ related:
   - calibration-plane
   - autopi
   - python-doipclient
+  - obdium
+  - odxtools
+  - pwnobd
 sources:
   - url: "https://www.usenix.org/legacy/events/sec10/tech/full_papers/Koscher.pdf"
     retrieved: 2026-11-01

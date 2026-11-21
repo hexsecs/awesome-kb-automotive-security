@@ -5,7 +5,7 @@ summary: "Two attackers relay a genuine key's radio exchange, so the car sees a 
 type: concept
 cluster: boundary
 created: 2026-10-31
-updated: 2026-10-31
+updated: 2026-11-17
 related:
   - relay-attacks-on-passive-keyless-entry-and-start-systems-in-modern-cars
   - fast-furious-and-insecure-passive-keyless-entry-and-start-systems-in-modern-supercars
@@ -13,6 +13,10 @@ related:
   - sok-stealing-cars-since-remote-keyless-entry-introduction-and-how-to-defend-from-it
   - rollback-a-new-time-agnostic-replay-attack-against-the-automotive-remote-keyless-entry-systems
   - rolling-code-failure-classes
+  - ble-theft-auto-evaluating-the-security-of-aftermarket-ble-based-automotive-remote-control-systems
+  - gone-in-360-seconds-hijacking-with-hitag2
+  - my-other-car-is-your-car-compromising-the-tesla-model-x-keyless-entry-system
+  - tesla-opener
 sources:
   - url: "https://www.ndss-symposium.org/ndss2011/relay-attacks-on-passive-keyless-entry-and-start-systems-in-modern-cars/"
     retrieved: 2026-10-31
