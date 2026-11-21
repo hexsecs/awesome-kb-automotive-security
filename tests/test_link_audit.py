@@ -262,5 +262,48 @@ class AuditRobustnessTests(unittest.TestCase):
         self.assertIn("wiki/tab-type.md", report["entities_without_concept_link"])
 
 
+class SweepElevenRegressionTests(unittest.TestCase):
+    """Regressions for the eleventh sweep's bare-slug tie-break bugs."""
+
+    def setUp(self):
+        self._tmp = tempfile.TemporaryDirectory()
+        self.root = Path(self._tmp.name)
+        make_kb(self.root)
+
+    def tearDown(self):
+        self._tmp.cleanup()
+
+    def test_concept_outside_concepts_tree_does_not_steal_entity_slug(self):
+        # Concept identity is `type: concept`, not a directory name. A
+        # concept filed under wiki/deep/ must not win the bare slug over the
+        # canonical entity at wiki/<slug>.md.
+        write(self.root, "wiki/deep/dup.md",
+              "---\ntype: concept\nrelated: []\n---\n\nConcept clone.\n")
+        write(self.root, "wiki/dup.md",
+              "---\ntype: entity\nrelated: []\n---\n\nEntity.\n")
+        write(self.root, "wiki/a-ref.md",
+              "---\nrelated: [dup]\n---\n\nBody.\n")
+        r = link_audit.audit(self.root)
+        self.assertNotIn("wiki/dup.md", r["orphans"])
+        self.assertEqual(
+            next(e["inbound"] for e in r["concept_inbound"]
+                 if e["page"] == "wiki/deep/dup.md"), 0)
+
+    def test_canonical_concept_wins_bare_slug_over_a_clone(self):
+        # Ingest's L1 and concept map name the flat wiki/concepts/ page for
+        # a duplicated stem; the auditor must credit that same page instead
+        # of a clone filed elsewhere.
+        write(self.root, "wiki/concepts/zzclone.md",
+              "---\ntype: concept\nrelated: []\n---\n\nCanonical.\n")
+        write(self.root, "wiki/topics/zzclone.md",
+              "---\ntype: concept\nsummary: \"clone\"\nrelated: []\n---\n\nClone.\n")
+        write(self.root, "wiki/zzlinker.md",
+              "---\ntype: entity\nrelated: [zzclone]\n---\n\nBody.\n")
+        r = link_audit.audit(self.root)
+        inbound = {e["page"]: e["inbound"] for e in r["concept_inbound"]}
+        self.assertEqual(inbound["wiki/concepts/zzclone.md"], 1)
+        self.assertEqual(inbound["wiki/topics/zzclone.md"], 0)
+
+
 if __name__ == "__main__":
     unittest.main()

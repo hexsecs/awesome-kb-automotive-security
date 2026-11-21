@@ -180,6 +180,20 @@ def write_page(path: Path, fm_lines: list[str], body: str,
         # YAML allows whitespace before the colon; link_check and backfill
         # already read `related :` as the same field. A startswith() check
         # here left the old key in place and appended a second one forever.
+        if re.match(r"^related\s*:\s*[|>]", line):
+            # `related: |` is a YAML scalar: parse_related reads no slugs
+            # from it, but the key regex still treats it as an existing
+            # block. Consume the whole scalar so its content is not left
+            # orphaned under the replacement list.
+            if not placed:
+                out.extend(block)
+                placed = True
+            i += 1
+            while i < len(fm_lines) and (
+                    fm_lines[i].startswith((" ", "\t"))
+                    or not fm_lines[i].strip()):
+                i += 1
+            continue
         if re.match(r"^related\s*:", line):
             if not placed:
                 out.extend(block)
@@ -187,18 +201,25 @@ def write_page(path: Path, fm_lines: list[str], body: str,
             i += 1
             # skip the old block's continuation lines (space- or tab-indented,
             # with or without trailing comments — whatever link_check reads)
+            pending: list[str] = []
             while i < len(fm_lines):
                 cont = fm_lines[i]
-                # Mirror parse_related: blank lines and standalone comments
-                # are part of the block, not the end of it. Leaving them
-                # behind would orphan the comment mid-list and preserve the
-                # old items next to the new block.
+                # Mirror parse_related: a blank line or standalone comment
+                # before another item belongs to this block. If the next
+                # line is a different key, it documents that key — deleting
+                # it here silently loses authored prose (row 161 fixed the
+                # reader without teaching the writer where the block ends).
                 if not cont.strip() or cont.lstrip().startswith("#"):
+                    pending.append(cont)
                     i += 1
                     continue
                 if not re.match(r"^\s*-\s+", cont):
+                    out.extend(pending)
                     break
+                pending.clear()
                 i += 1
+            else:
+                out.extend(pending)
             continue
         if re.match(r"^updated\s*:", line):
             line = f"updated: {run_date}"
@@ -432,6 +453,8 @@ def main() -> int:
                 for o in sorted(inbound,
                                 key=lambda b: (-scores.get((slug, b), 0.0), b)):
                     stem = stems.get(o, o)
+                    if stem == own:
+                        continue  # self-links are filtered at write time
                     if stem not in seen:
                         planned[slug].append(o)
                         seen.add(stem)

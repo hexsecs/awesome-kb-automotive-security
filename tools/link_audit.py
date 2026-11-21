@@ -75,6 +75,23 @@ def audit(root: Path) -> dict:
     inbound: dict[Path, set[Path]] = {}
     kind: dict[Path, str] = {}
 
+    # Bare-slug resolution below runs while `kind` is still being filled,
+    # so classify concepts up front. Concept identity is `type: concept`
+    # wherever the page lives; the canonical home is wiki/concepts/ (flat
+    # first), the same preference ingest uses for L1 and the concept map.
+    concept_pages: set[Path] = set()
+    for page in pages:
+        try:
+            fm, _ = split_frontmatter(page.read_text(encoding="utf-8"))
+        except (OSError, UnicodeDecodeError):
+            continue
+        declared = declared_type(fm)
+        if declared == "concept" or (
+                declared is None and page.is_relative_to(wiki / "concepts")
+                and not page.stem.startswith("index-")):
+            concept_pages.add(page.resolve())
+    canonical = wiki / "concepts"
+
     for page in pages:
         try:
             text = page.read_text(encoding="utf-8")
@@ -102,11 +119,18 @@ def audit(root: Path) -> dict:
                 matches = sorted(
                     (p for p in page_set
                      if p.stem == slug and p.is_relative_to(wiki)),
-                    # A bare slug names the ENTITY at wiki/<slug>.md; a
-                    # concept at wiki/concepts/<slug>.md is a different page.
-                    # Without this tie-break the concept won (it sorts first)
-                    # and the entity was reported as an orphan.
-                    key=lambda p: (p.is_relative_to(wiki / "concepts"), str(p)),
+                    # A bare slug names the ENTITY first, then the canonical
+                    # concept the KB's own hubs name: wiki/concepts/<slug>.md
+                    # flat before a clone or a page outside concepts/. The
+                    # old directory-only key let an out-of-subtree concept
+                    # steal an entity's link and credited a concept clone
+                    # instead of the page L1 actually lists.
+                    key=lambda p: (
+                        p.resolve() in concept_pages,
+                        not p.is_relative_to(canonical),
+                        p.parent != canonical,
+                        str(p),
+                    ),
                 )
                 if matches:
                     targets.add(matches[0])

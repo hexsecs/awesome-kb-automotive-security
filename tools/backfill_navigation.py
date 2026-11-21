@@ -20,6 +20,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 import sys
 from pathlib import Path
@@ -118,6 +119,19 @@ def within_root(path: Path) -> bool:
         return path.resolve().is_relative_to(ROOT.resolve())
     except OSError:
         return False
+
+
+def preflight(targets: list[Path]) -> None:
+    """Refuse every unsafe write target before the first page is modified."""
+    for path in targets:
+        if path.is_symlink() or not within_root(path):
+            sys.exit(f"backfill_navigation: refusing to write through symlink {path}")
+        if path.is_dir():
+            sys.exit(f"backfill_navigation: refusing to write a directory at {path}")
+        if path.exists() and path.stat().st_nlink > 1:
+            sys.exit(f"backfill_navigation: refusing to write hardlinked file {path}")
+        if path.exists() and not os.access(path, os.W_OK):
+            sys.exit(f"backfill_navigation: cannot write {path}: permission denied")
 
 
 def backfill(path: Path, check: bool) -> bool:
@@ -220,9 +234,17 @@ def main() -> int:
     # directory named ``*.md``, which ``rglob`` otherwise feeds to read_text.
     pages = sorted(p for p in (ROOT / "wiki").rglob("*.md")
                    if p.is_file() and not p.is_symlink() and within_root(p))
-    changed = [p for p in pages if backfill(p, args.check)]
+    # Determine the write set in --check mode first, then preflight all of
+    # it. Writing inline left an alphabetical prefix of the KB backfilled
+    # when a later page was unsafe — the defect link_mine fixed by refusing
+    # up front (row 110), never ported here.
+    changing = [p for p in pages if backfill(p, True)]
+    if not args.check:
+        preflight(changing)
+        for p in changing:
+            backfill(p, False)
     verb = "would change" if args.check else "updated"
-    print(f"backfill_navigation: {verb} {len(changed)} of {len(pages)} pages")
+    print(f"backfill_navigation: {verb} {len(changing)} of {len(pages)} pages")
     return 0
 
 

@@ -457,5 +457,37 @@ class BackfillSafetyTests(unittest.TestCase):
             self.assertEqual(fields["type"], "concept")
 
 
+class SweepElevenRegressionTests(BackfillSafetyTests):
+    """Regressions for the eleventh sweep's all-or-nothing write guard."""
+
+    def test_unsafe_later_page_leaves_earlier_pages_untouched(self):
+        # Writing inline backfilled every page before an unwritable one,
+        # leaving the KB half-updated. Preflight must refuse the whole set
+        # before the first page changes. A hardlink is the reliable trigger:
+        # it is a real file inside the root, so it enters the write set, but
+        # preflight refuses to write through it.
+        with tempfile.TemporaryDirectory() as tmp:
+            use_temp_root(self, tmp)
+            page = self._page(
+                tmp, "aaa.md",
+                '---\ntitle: "AAA"\nsummary: "CAN tool"\nrelated: []\n'
+                '---\n\nBody.\n')
+            zzz = self._page(
+                tmp, "zzz.md",
+                '---\ntitle: "ZZZ"\nsummary: "CAN tool"\nrelated: []\n'
+                '---\n\nBody.\n')
+            outside = Path(tmp) / "hardlink-target.md"
+            os.link(zzz, outside)
+            original = page.read_text(encoding="utf-8")
+            old_argv = sys.argv
+            sys.argv = ["backfill_navigation"]
+            self.addCleanup(setattr, sys, "argv", old_argv)
+            with contextlib.redirect_stdout(io.StringIO()):
+                with self.assertRaises(SystemExit):
+                    backfill_navigation.main()
+            self.assertEqual(page.read_text(encoding="utf-8"), original)
+            self.assertEqual(zzz.read_text(encoding="utf-8").count("facets:"), 0)
+
+
 if __name__ == "__main__":
     unittest.main()

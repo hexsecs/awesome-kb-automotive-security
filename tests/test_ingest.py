@@ -1249,5 +1249,54 @@ class SweepTenRegressionTests(SweepNineRegressionTests):
         self.assertTrue((self.wiki / "index-tools.md").exists())
 
 
+class SweepElevenRegressionTests(SweepTenRegressionTests):
+    """Regressions for the eleventh sweep's refusal and symlink bugs."""
+
+    def test_reserved_index_suffix_is_not_exempt_from_malformed_refusal(self):
+        # index-glossary-2 is an authored entity: the base stem is reserved
+        # only because the generated hub owns it. Stripping "-2" for the
+        # exemption let a malformed copy be duplicated and stranded.
+        listing = self._malformed_entry("index-glossary-2", "Index Glossary",
+                                        "https://example.com/iot")
+        with self.assertRaises(SystemExit):
+            self.write_list(listing)
+        self.assertEqual(
+            len(list(self.wiki.glob("index-glossary*.md"))), 2)  # hub + page
+
+    def test_uncapped_raw_slug_occupant_is_refused_not_duplicated(self):
+        title = "X" * 250  # longer than slugify's 200-char cap
+        url = "https://example.com/long"
+        page = self.wiki / ("x" * 250 + ".md")
+        page.write_text(
+            f'---\ntitle: "{title}"\ntype: entity\nsummary: "s"\n'
+            f'url: "{url}"\nbody with no closing fence\n', encoding="utf-8")
+        with self.assertRaises(SystemExit):
+            self.write_list(f"## Tools\n\n* [{title}]({url}) - s\n")
+        self.assertEqual(len(list(self.wiki.glob("x*.md"))), 1)
+
+    def test_stale_generated_index_does_not_block_an_entry(self):
+        self.write_list("## Tools\n\n* [A](https://example.com/a) - a\n")
+        self.assertTrue((self.wiki / "index-tools.md").exists())
+        listing = ("## Gadgets\n\n"
+                   "* [A](https://example.com/a) - a\n"
+                   "* [Index Tools](https://example.com/iot) - s\n")
+        # The section moved but A stayed listed, so no page is doomed: the
+        # stale generated index survives until the post-update sweep. It has
+        # no frontmatter and must not be read as a malformed authored page.
+        self.write_list(listing)
+        self.write_list(listing)  # idempotent
+        authored = list(self.wiki.glob("index-tools*.md"))
+        self.assertEqual(len(authored), 1)
+        self.assertTrue(authored[0].read_text().startswith("---\n"))
+
+    def test_nested_symlink_does_not_block_an_unrelated_entry(self):
+        (self.wiki / "topics").mkdir()
+        real = self.wiki / "topics" / "target.md"
+        real.write_text("not an entry\n", encoding="utf-8")
+        (self.wiki / "topics" / "foo.md").symlink_to(real)
+        self.write_list("## Tools\n\n* [Foo](https://example.com/foo) - f\n")
+        self.assertTrue((self.wiki / "foo.md").is_file())
+
+
 if __name__ == "__main__":
     unittest.main()

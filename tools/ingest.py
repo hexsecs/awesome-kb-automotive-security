@@ -668,7 +668,11 @@ def main(argv=None) -> int:
         entry_slugs.add(raw_slug(e["title"]))
         entry_slugs.add(slugify(e["title"], set()))
     for path in sorted(WIKI.rglob("*.md")):
-        if path.is_symlink() and path.stem.lower() in entry_slugs:
+        # slugify() only probes WIKI/<slug>.md, so a symlink nested below
+        # the wiki root cannot influence slug choice. Refusing one aborted
+        # an otherwise valid ingest for no protective reason.
+        if (path.is_symlink() and path.parent == WIKI
+                and path.stem.lower() in entry_slugs):
             sys.exit(f"ingest: symlinked page blocks an entry: {path}; "
                      "replace it with the real page")
 
@@ -762,19 +766,30 @@ def main(argv=None) -> int:
             # frontmatter either: exempt exactly the stems this run reserves
             # for them (plus suffixed variants whose base is reserved), not
             # every `index-*` name — authored entities own those stems too.
-            natural = WIKI / f"{slugify(e['title'], set())}.md"
-            occupants = [natural] + sorted(set(
-                p for p in WIKI.glob(f"{natural.stem}-[0-9]*.md")
-                if re.fullmatch(re.escape(natural.stem) + r"-\d+", p.stem)
-            ))
-            for occupant in occupants:
+            # Match both today's capped slug and the uncapped raw slug: a
+            # page written before the cap (or moved to a new URL) can occupy
+            # the long stem, and a malformed page there must be refused too.
+            # The URL-move fallback above already checks both bases.
+            bases = {raw_slug(e["title"]), slugify(e["title"], set())}
+            occupants: set[Path] = set()
+            for base in bases:
+                occupants.add(WIKI / f"{base}.md")
+                occupants.update(
+                    p for p in WIKI.glob(f"{base}-[0-9]*.md")
+                    if re.fullmatch(re.escape(base) + r"-\d+", p.stem)
+                )
+            for occupant in sorted(occupants):
                 if (not occupant.is_file() or occupant.is_symlink()
                         or not within_root(occupant)):
                     continue
                 stem = occupant.stem.lower()
+                # Generated indexes (including a stale one from a section
+                # that moved away) have no frontmatter and are never given a
+                # `-N` suffix. An authored `index-*` page keeps its opening
+                # fence even with a lost closing fence, so still refuse it.
                 if stem in reserved or (
                         stem.startswith("index-")
-                        and re.sub(r"-\d+$", "", stem) in reserved):
+                        and not read_page(occupant).startswith("---\n")):
                     continue
                 occ_fields, _ = split_page(read_page(occupant))
                 if "title" not in occ_fields:
