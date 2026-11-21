@@ -6,9 +6,10 @@ Generated from page frontmatter by tools/ingest.py. A page may appear in more th
 
 - [Cabana](cabana.md)
 
-## Graph orphans (1)
+## Graph orphans (2)
 
 - [Cabana](cabana.md)
+- [Hacking Two Automakers: ForgeRock Path Confusion, RCE, and Remote Vehicle Access](hacking-two-automakers-forgerock-path-confusion-rce-and-remote-vehicle-access.md)
 
 ## Deepen candidates (3)
 
