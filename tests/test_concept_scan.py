@@ -354,5 +354,41 @@ class SweepTwelveRegressionTests(unittest.TestCase):
             self.assertLessEqual(len(themes), 4, out)
 
 
+class SweepThirteenRegressionTests(SweepTwelveRegressionTests):
+    """Regressions for the thirteenth sweep's theme pruning."""
+
+    def test_generic_words_stay_filtered_even_when_uppercase(self):
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            for i in range(60):
+                self.page(root, f"f{i}", f"unique filler{i}")
+            for i in range(6):
+                self.page(root, f"u{i}", f"USENIX workshop proceedings {i}")
+            for i in range(6):
+                self.page(root, f"e{i}", f"ECU firmware note {i}")
+            out = self.scan(root, "--min-pages", "3", "--top", "10")
+            themes = set(self.themes(out))
+            # GENERIC is absolute; the sweep-12 acronym carve-out belongs
+            # to STOPWORDS (CAN), not to this filter.
+            self.assertNotIn("ecu", themes, out)
+            self.assertNotIn("usenix", themes, out)
+
+    def test_specific_theme_is_not_pruned_by_a_string_prefix(self):
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            for i in range(100):
+                self.page(root, f"f{i}", f"unique filler{i}")
+            for i in range(10):
+                self.page(root, f"g{i}", f"TPM module research {i}")
+            # The specific-theme pages must ALSO mention the broad theme,
+            # so its page set is a strict superset and the prefix rule fires.
+            for i in range(6):
+                self.page(root, f"t{i}",
+                          f"TPM module research and TPM2 attestation {i}")
+            out = self.scan(root, "--min-pages", "3", "--top", "25")
+            # `tpm2` starts with `tpm` as a string but is a distinct theme.
+            self.assertIn("tpm2", self.themes(out), out)
+
+
 if __name__ == "__main__":
     unittest.main()

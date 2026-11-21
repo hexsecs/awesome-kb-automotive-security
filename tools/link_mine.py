@@ -194,6 +194,21 @@ def write_page(path: Path, fm_lines: list[str], body: str,
                     or not fm_lines[i].strip()):
                 i += 1
             continue
+        if re.match(r"^related\s*:\s*\[", line):
+            # A YAML flow sequence may span lines. Consume through the
+            # closing `]` or its content is orphaned under the replacement
+            # block, leaving invalid YAML that every later ingest preserves
+            # byte-for-byte. Inline `[a, b]` ends on this line already.
+            if not placed:
+                out.extend(block)
+                placed = True
+            i += 1
+            if "]" not in line:
+                while i < len(fm_lines) and "]" not in fm_lines[i]:
+                    i += 1
+                if i < len(fm_lines):
+                    i += 1
+            continue
         if re.match(r"^related\s*:", line):
             if not placed:
                 out.extend(block)

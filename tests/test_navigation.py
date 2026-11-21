@@ -533,5 +533,33 @@ class SweepTwelveRegressionTests(BackfillSafetyTests):
             self.assertEqual(fm["related"], ["alpha, beta", "gamma"])
 
 
+class SweepThirteenRegressionTests(BackfillSafetyTests):
+    """Regressions for the thirteenth sweep's block-scalar/quote rewrites."""
+
+    def test_block_scalar_indent_before_chomp_is_replaced_wholly(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            use_temp_root(self, tmp)
+            page = self._page(
+                tmp, "doip.md",
+                '---\ntitle: "DoIP"\ntype: concept\n'
+                'cluster: |2-\n  boundary\n  old note\n---\n\nBody.\n')
+            backfill_navigation.backfill(page, False)
+            out = page.read_text(encoding="utf-8")
+            self.assertNotIn("old note", out)
+            fm = yaml.safe_load(out.split("---")[1])
+            self.assertEqual(fm["cluster"], "boundary")
+
+    def test_inline_edge_quote_and_escape_survive_normalisation(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            use_temp_root(self, tmp)
+            page = self._page(
+                tmp, "aaa.md",
+                '---\ntitle: "AAA"\ntype: entity\n'
+                'related: ["\'foo", "a\\"b"]\n---\n\nBody.\n')
+            backfill_navigation.backfill(page, False)
+            fm = yaml.safe_load(page.read_text(encoding="utf-8").split("---")[1])
+            self.assertEqual(fm["related"], ["'foo", 'a"b'])
+
+
 if __name__ == "__main__":
     unittest.main()

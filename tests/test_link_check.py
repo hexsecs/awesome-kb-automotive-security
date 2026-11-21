@@ -378,5 +378,31 @@ class SweepTwelveRegressionTests(LinkCheckTest):
             ["alpha, beta", "delta"])
 
 
+class SweepThirteenRegressionTests(LinkCheckTest):
+    """Regressions for the thirteenth sweep's related-list parsing."""
+
+    def test_quoted_block_item_with_space_keeps_the_whole_block(self):
+        self.assertEqual(
+            link_check.parse_related(
+                'related:\n  - "alpha, beta"\n  - gamma\n'),
+            ["alpha, beta", "gamma"])
+
+    def test_block_items_unescape_like_yaml(self):
+        self.assertEqual(
+            link_check.parse_related('related:\n  - "a\\"b"\n  - \'it\'\'s\'\n'),
+            ['a"b', "it's"])
+
+    def test_multiline_flow_sequence_is_parsed(self):
+        self.assertEqual(
+            link_check.parse_related(
+                "related: [\n  alpha,\n  beta,\n] # curated\n"),
+            ["alpha", "beta"])
+
+    def test_protocol_relative_url_is_external(self):
+        write(self.root, "wiki/gamma.md", "[x](//example.com/x.md)\n")
+        self.assertEqual(self.report()["broken_links"], [])
+        self.assertTrue(link_check.is_ignored("//example.com/x.md"))
+
+
 if __name__ == "__main__":
     unittest.main()

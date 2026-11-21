@@ -35,8 +35,9 @@ FRONTMATTER_RE = re.compile(r"\A\ufeff?---\n(.*?)\n---(?:\n|\Z)", re.DOTALL)
 # field as `related: [a]`; treating it as absent made the whole graph toolchain
 # (link_check, link_audit, link_mine, ingest) miss real links.
 RELATED_INLINE_RE = re.compile(r"^related\s*:\s*\[([^\]]*)\]\s*(?:#.*)?$")
+RELATED_FLOW_START_RE = re.compile(r"^related\s*:\s*\[([^\]]*)$")
 RELATED_BLOCK_RE = re.compile(r"^related\s*:\s*(?:#.*)?$")
-LIST_ITEM_RE = re.compile(r"^\s*-\s+(\S+)\s*(?:#.*)?$")
+LIST_ITEM_RE = re.compile(r"^\s*-\s+(.*?)\s*$")
 
 
 def iter_pages(root: Path):
@@ -98,6 +99,35 @@ def split_flow_items(body: str) -> list[str]:
     return items
 
 
+def related_scalar(raw: str) -> str:
+    """Read one YAML scalar from a related-list item.
+
+    Both the inline and block shapes may quote a slug that contains spaces
+    or a comma (row 190 made the inline comma form legal). Capturing only
+    ``\\S+`` silently dropped such a whole block, and a bare ``strip("'\\\"")``
+    left JSON escapes or doubled single quotes in the value that backfill
+    then wrote back permanently changed.
+    """
+    raw = raw.strip()
+    quote = None
+    for i, ch in enumerate(raw):
+        if quote:
+            if ch == quote and (i == 0 or raw[i - 1] != "\\"):
+                quote = None
+        elif ch in "\"'":
+            quote = ch
+        elif ch == "#" and (i == 0 or raw[i - 1].isspace()):
+            raw = raw[:i].rstrip()
+            break
+    try:
+        return str(json.loads(raw))
+    except (json.JSONDecodeError, ValueError):
+        if len(raw) >= 2 and raw[0] == raw[-1] and raw[0] in "\"'":
+            inner = raw[1:-1]
+            return inner.replace("''", "'") if raw[0] == "'" else inner
+        return raw
+
+
 def parse_related(frontmatter: str):
     """Collect slugs from every `related:` block (files may carry duplicates)."""
     slugs = []
@@ -108,11 +138,30 @@ def parse_related(frontmatter: str):
         inline = RELATED_INLINE_RE.match(line)
         if inline:
             for part in split_flow_items(inline.group(1)):
-                slug = part.strip().strip("'\"")
+                slug = related_scalar(part)
                 if slug:
                     slugs.append(slug)
             i += 1
             continue
+        # YAML flow sequences may span lines. Rejoin them before the
+        # one-line matcher so a hand-wrapped list is not silently empty.
+        flow = RELATED_FLOW_START_RE.match(line)
+        if flow:
+            collected = [flow.group(1)]
+            j = i + 1
+            while j < len(lines) and "]" not in lines[j]:
+                collected.append(lines[j])
+                j += 1
+            if j < len(lines):
+                tail = lines[j].split("]", 1)[1]
+                if re.match(r"^\s*(?:#.*)?$", tail):
+                    collected.append(lines[j].split("]", 1)[0])
+                    for part in split_flow_items(" ".join(collected)):
+                        slug = related_scalar(part)
+                        if slug:
+                            slugs.append(slug)
+                    i = j + 1
+                    continue
         if RELATED_BLOCK_RE.match(line):
             i += 1
             while i < len(lines):
@@ -127,7 +176,9 @@ def parse_related(frontmatter: str):
                 item = LIST_ITEM_RE.match(cont)
                 if not item:
                     break
-                slugs.append(item.group(1).strip().strip("'\""))
+                slug = related_scalar(item.group(1))
+                if slug:
+                    slugs.append(slug)
                 i += 1
             continue
         i += 1
@@ -145,6 +196,7 @@ def is_ignored(target: str) -> bool:
     return (
         t.startswith("http://")
         or t.startswith("https://")
+        or t.startswith("//")  # scheme-relative URL: always off-KB
         or t.startswith("kb://")
         or t.startswith("mailto:")
         or t.startswith("#")

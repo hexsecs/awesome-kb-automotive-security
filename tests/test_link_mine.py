@@ -776,5 +776,24 @@ class SweepTwelveRegressionTests(SweepElevenRegressionTests):
         self.assertIn("3 previously unlinked", out.stdout)
 
 
+class SweepThirteenRegressionTests(SweepTwelveRegressionTests):
+    """Regressions for the thirteenth sweep's writer."""
+
+    def test_multiline_flow_related_is_consumed_on_rewrite(self):
+        text = ('---\ntitle: "Alpha"\ntype: entity\nsummary: "alpha quartz"\n'
+                'related: [\n  alpha-one,\n  beta-two\n]\n'
+                'updated: 2020-01-01\n---\nBody.\n')
+        path = make_page(text)
+        _, fm, body = split(text)
+        link_mine.write_page(path, fm, body, ["gamma"], "2026-11-20")
+        out = path.read_text(encoding="utf-8")
+        self.assertIn('related:\n  - "gamma"', out)
+        # The old flow items and its closing bracket must not be orphaned
+        # under the new block key, which left the page as invalid YAML.
+        self.assertNotIn("alpha-one", out)
+        self.assertNotIn("beta-two", out)
+        self.assertNotIn("\n]\n", out)
+
+
 if __name__ == "__main__":
     unittest.main()
