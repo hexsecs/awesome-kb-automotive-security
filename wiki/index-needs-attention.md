@@ -2,9 +2,9 @@
 
 Generated from page frontmatter by tools/ingest.py. A page may appear in more than one queue. 'Brief by design' entries are triaged pointers needing no action. Do not edit by hand.
 
-## Unverified resources (1)
+## Unverified resources (0)
 
-- [Cabana](cabana.md)
+_None._
 
 ## Graph orphans (1)
 
@@ -24,9 +24,10 @@ _None._
 
 _None._
 
-## Tombstoned pages (5)
+## Tombstoned pages (6)
 
 - [CANalyse](canalyse.md)
+- [Cabana](cabana.md)
 - [Kayak](kayak.md)
 - [SynCAN](syncan.md)
 - [Universal Radio Hacker (URH)](universal-radio-hacker-urh.md)

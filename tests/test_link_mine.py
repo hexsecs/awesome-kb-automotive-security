@@ -705,5 +705,50 @@ class SweepTenRegressionTests(SweepNineRegressionTests):
         self.assertIn("changed 0 pages", second.stdout)
 
 
+class SweepElevenRegressionTests(SweepTenRegressionTests):
+    """Regressions for the eleventh sweep's writer and counter bugs."""
+
+    def test_comment_before_next_key_is_preserved_on_replace(self):
+        # A comment after the last item documents the NEXT key. Sweep 10's
+        # block skip swallowed and deleted it, losing authored prose.
+        text = ('---\ntitle: "Alpha"\ntype: entity\n'
+                'related:\n  - "beta"\n'
+                '# verified against the source on 2026-11-20\n'
+                'sources:\n  - https://example.invalid/a\n---\nBody.\n')
+        path = make_page(text)
+        _, fm, body = split(text)
+        link_mine.write_page(path, fm, body, ["gamma"], "2026-11-20")
+        out = path.read_text(encoding="utf-8")
+        self.assertIn("# verified against the source on 2026-11-20", out)
+        self.assertEqual(link_mine.parse_related(split(out)[1]), ["gamma"])
+
+    def test_block_scalar_related_is_replaced_wholly(self):
+        # `related: |` is a scalar the shared parser reads as no links, but
+        # the writer's key regex still matched it and left the scalar body
+        # orphaned under the replacement list — invalid YAML.
+        text = ('---\ntitle: "Alpha"\ntype: entity\n'
+                'related: |\n  cangaroo\n  cannelloni\n---\nBody.\n')
+        path = make_page(text)
+        _, fm, body = split(text)
+        link_mine.write_page(path, fm, body, ["beta"], "2026-11-20")
+        out = path.read_text(encoding="utf-8")
+        self.assertNotIn("cangaroo", out)
+        self.assertNotIn("cannelloni", out)
+        self.assertEqual(link_mine.parse_related(split(out)[1]), ["beta"])
+
+    def test_reciprocate_does_not_count_a_self_filtered_add(self):
+        self.entity("alpha.md", "Alpha")
+        concepts = self.kb / "wiki" / "concepts"
+        concepts.mkdir(exist_ok=True)
+        (concepts / "alpha.md").write_text(
+            '---\ntitle: "Alpha concept"\ntype: concept\n'
+            'related: [alpha]\n---\nbody\n', encoding="utf-8")
+        out = self.run_tool("--fill-only", "--reciprocate", "--threshold",
+                            "100", "--date", "2026-11-20")
+        self.assertEqual(out.returncode, 0, out.stderr)
+        self.assertIn("changed 0 pages (0 previously unlinked, 0 reciprocal adds)",
+                      out.stdout)
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -5,7 +5,7 @@ summary: "Standalone CAN and CAN FD analyzer split from openpilot, with live bit
 type: entity
 category: "CAN Bus Analysis"
 url: "https://github.com/deanlee/openpilot-cabana"
-status: unknown
+status: archived
 last_checked: 2026-11-20
 created: 2026-11-20
 updated: 2026-11-20
@@ -24,3 +24,5 @@ Standalone CAN and CAN FD analyzer split from openpilot, with live bit-level hea
 - **Resource:** https://github.com/deanlee/openpilot-cabana
 - **List section:** CAN Bus Analysis
 - **Source:** [awesome-automotive-security](https://github.com/hexsecs/awesome-automotive-security) — the list is canon; this page is a generated stub (`depth: stub`). Depth is added by PR (see AGENTS.md).
+
+> Delisted from the source list as of ed4fb66. Tombstoned, not deleted (see AGENTS.md).

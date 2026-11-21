@@ -7,6 +7,7 @@ import json
 import sys
 import tempfile
 import unittest
+import unittest.mock
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
@@ -285,8 +286,16 @@ class FilesystemGuardTests(unittest.TestCase):
         # check() rejects the root before it reaches the file iterator, so
         # pin the iterator's own symlink guard here too. The target is a
         # real file inside the root; without the guard it would be yielded.
-        self.assertNotIn(
-            self.root / "index.md", list(link_check.iter_pages(self.root)))
+        # iter_pages() resolves the ROOT (TMPDIR's /var is really
+        # /private/var on macOS), so join the literal name onto that resolved
+        # root. Resolving the full path would follow the symlink to its
+        # target and compare the wrong path — which is why the earlier fix
+        # (assertNotIn self.root / "index.md") was still vacuous.
+        yielded = list(link_check.iter_pages(self.root))
+        self.assertNotIn(self.root.resolve() / "index.md", yielded)
+        # Positive control: a genuine wiki page is still yielded, so the
+        # assertion above is a real distinction rather than a dead iterator.
+        self.assertIn(self.root.resolve() / "wiki" / "alpha.md", yielded)
 
     def test_directory_named_md_is_not_a_page(self):
         (self.root / "wiki" / "directory_page.md").mkdir()
@@ -313,6 +322,27 @@ class FilesystemGuardTests(unittest.TestCase):
                              for e in report["broken_links"]))
         self.assertNotIn("ghost", [e["slug"]
                                    for e in report["unresolved_related"]])
+
+    def test_unreadable_linked_page_is_not_reported_as_an_orphan(self):
+        # A valid index -> page link still makes the page reachable. A
+        # reader failure must not silently drop it from the link graph and
+        # turn a clean KB into an "unreachable page" error.
+        secret = self.root / "wiki" / "secret.md"
+        secret.write_text("---\nrelated: []\n---\n\nBody.\n", encoding="utf-8")
+        write(self.root, "index.md",
+              "# KB\n\n- [Alpha](wiki/alpha.md)\n"
+              "- [Secret](wiki/secret.md)\n")
+        real_read = Path.read_text
+
+        def deny(self, *args, **kwargs):
+            if self.resolve() == secret.resolve():
+                raise OSError("permission denied")
+            return real_read(self, *args, **kwargs)
+
+        with unittest.mock.patch.object(Path, "read_text", deny):
+            report = link_check.check(self.root)
+        self.assertEqual(report["counts"]["broken_links"], 0)
+        self.assertNotIn("wiki/secret.md", report["unreachable"])
 
     def test_nul_escape_is_a_broken_link_not_a_crash(self):
         write(self.root, "wiki/nul.md", "See [x](wiki/null%00.md).\n")

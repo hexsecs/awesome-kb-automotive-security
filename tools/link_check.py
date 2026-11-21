@@ -156,6 +156,10 @@ def check(root: Path) -> dict:
         try:
             text = page.read_text(encoding="utf-8")
         except (OSError, UnicodeDecodeError):
+            # Keep unreadable pages in the graph with no outgoing links. A
+            # valid inbound link still makes them reachable; dropping them
+            # here reported them as orphans even though Broken links was 0.
+            graph[page.resolve()] = set()
             continue
         frontmatter, body = split_frontmatter(text)
         rel_page = page.relative_to(root).as_posix()

@@ -3,7 +3,6 @@
 Browse by facet: [Tools & libraries](index-facet-tools.md) (32 here), [CAN](index-facet-can.md) (30 here), [Attack techniques](index-facet-attack.md) (11 here), [Diagnostics](index-facet-diagnostics.md) (10 here), [Simulation](index-facet-simulation.md) (7 here), [Firmware & updates](index-facet-firmware.md) (5 here).
 
 - [BUSMASTER](busmaster.md) — Open-source CAN simulation, analysis, and test tool from Bosch Engineering and ETAS, with a node simulator, DBC-driven signal interpretation, and scriptable…
-- [Cabana](cabana.md) — Standalone CAN and CAN FD analyzer split from openpilot, with live bit-level heatmaps, signal discovery, a DBC editor, and drive replay synchronized to video.
 - [CAN Commander](can-commander.md) — Flipper Zero application and companion ESP32 CAN board for reverse engineering vehicle networks, with sniffing, DBC decoding, replay, and injection profiles…
 - [CAN Playground](can-playground.md) — Local-first Tauri desktop app for viewing, decoding, and capturing CAN bus traffic, with DBC import, signal annotation, and bit-level change timelines.
 - [can-utils](can-utils.md) — Linux-CAN SocketCAN userspace utilities including cansniffer, candump, cansend, canplayer, and cangen for CAN bus analysis.
@@ -34,3 +33,4 @@ Browse by facet: [Tools & libraries](index-facet-tools.md) (32 here), [CAN](inde
 - [python-can](python-can.md) — Python library providing a common interface over many CAN hardware backends with CAN FD support and logging to ASC, BLF, MF4, TRC, CSV, and SQLite.
 - [python-can-isotp](python-can-isotp.md) — ISO-TP (ISO 15765) transport for Python on top of python-can or Linux SocketCAN, the segmentation layer that UDS and OBD-II diagnostics run over.
 - [SavvyCAN](savvycan.md) — Cross-platform Qt-based CAN bus reverse engineering and capture tool with DBC file loading, UDS scanning, and fuzzing support.
+- [Cabana (delisted)](cabana.md) — Standalone CAN and CAN FD analyzer split from openpilot, with live bit-level heatmaps, signal discovery, a DBC editor, and drive replay synchronized to video.
