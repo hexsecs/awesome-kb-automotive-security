@@ -74,6 +74,23 @@ class LinkAuditTest(unittest.TestCase):
                       [e["page"] for e in r["concept_inbound"]])
         self.assertNotIn("wiki/concepts/deep/nested.md", r["orphans"])
 
+    def test_nested_concept_does_not_steal_an_entity_bare_slug(self):
+        # A bare slug resolves to the ENTITY at wiki/<slug>.md. The tie-break
+        # must classify concepts by the whole subtree (as the page classifier
+        # does), not by the immediate parent; otherwise a concept nested at
+        # wiki/concepts/deep/<slug>.md sorts first and steals the link.
+        write(self.root, "wiki/ref.md",
+              "---\nrelated: [foo]\n---\n\nBody.\n")
+        write(self.root, "wiki/foo.md",
+              "---\ntype: entity\nrelated: []\n---\n\nEntity foo.\n")
+        write(self.root, "wiki/concepts/deep/foo.md",
+              "---\ntype: concept\nrelated: []\n---\n\nConcept foo.\n")
+        r = self.report()
+        self.assertNotIn("wiki/foo.md", r["orphans"])
+        nested = next(e for e in r["concept_inbound"]
+                      if e["page"] == "wiki/concepts/deep/foo.md")
+        self.assertEqual(nested["inbound"], 0)
+
     def test_self_link_does_not_count_as_inbound(self):
         # Orphans are pages with no inbound link from ANOTHER article.
         write(self.root, "wiki/a.md", "# A\n\nSee [self](a.md).\n")

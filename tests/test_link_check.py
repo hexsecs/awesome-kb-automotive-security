@@ -171,6 +171,18 @@ class ParserAndBoundaryTests(unittest.TestCase):
         self.assertTrue(link_check.is_ignored("<kb://other/p>"))
         self.assertTrue(link_check.is_ignored("<#section>"))
 
+    def test_blank_and_comment_lines_inside_related_block_are_skipped(self):
+        # YAML permits standalone comments and blank lines between the block
+        # key and its first item. Treating either as the end of the block
+        # made a hand-curated list look empty to link_check, link_audit and
+        # the miner alike.
+        fm = ('related:\n'
+              '  # hand-curated\n'
+              '\n'
+              '  - "ghost"\n'
+              '  - "alpha"\n')
+        self.assertEqual(link_check.parse_related(fm), ["ghost", "alpha"])
+
     def test_block_related_items_with_trailing_comments_are_parsed(self):
         self.assertEqual(
             link_check.parse_related(
@@ -262,7 +274,7 @@ class FilesystemGuardTests(unittest.TestCase):
         self._tmp.cleanup()
 
     def test_symlinked_root_index_is_rejected_not_scanned_as_empty(self):
-        real = self.root / "real-index.md"
+        real = self.root / "real-index.md"  # in-root: containment passes
         real.write_text((self.root / "index.md").read_text(encoding="utf-8"),
                         encoding="utf-8")
         (self.root / "index.md").unlink()
@@ -270,6 +282,11 @@ class FilesystemGuardTests(unittest.TestCase):
         with self.assertRaises(ValueError) as caught:
             link_check.check(self.root)
         self.assertIn("index.md", str(caught.exception))
+        # check() rejects the root before it reaches the file iterator, so
+        # pin the iterator's own symlink guard here too. The target is a
+        # real file inside the root; without the guard it would be yielded.
+        self.assertNotIn(
+            self.root / "index.md", list(link_check.iter_pages(self.root)))
 
     def test_directory_named_md_is_not_a_page(self):
         (self.root / "wiki" / "directory_page.md").mkdir()
@@ -281,11 +298,11 @@ class FilesystemGuardTests(unittest.TestCase):
         self.assertNotIn("wiki/directory_page.md", report["unreachable"])
 
     def test_symlinked_leaf_is_not_audited(self):
-        outside = self.root.parent / f"outside-{self.root.name}"
-        outside.mkdir()
-        self.addCleanup(
-            lambda: __import__("shutil").rmtree(outside, ignore_errors=True))
-        secret = outside / "outside.md"
+        # Target is inside the root but outside wiki/, so containment still
+        # passes and only the iterator's is_symlink() guard can skip it.
+        secret_dir = self.root / "secret"
+        secret_dir.mkdir()
+        secret = secret_dir / "outside.md"
         secret.write_text(
             "---\nrelated: [ghost]\n---\n\n[broken](missing.md)\n",
             encoding="utf-8",

@@ -89,14 +89,18 @@ class ScanningTests(unittest.TestCase):
     def test_symlinked_page_is_skipped(self):
         with tempfile.TemporaryDirectory() as d:
             root = Path(d)
-            outside = root.parent / "outside-concept.md"
-            outside.write_text(
-                '---\ntype: entity\ntitle: "Outside"\n---\n\nBody.\n',
+            # The target is INSIDE the root so the containment check passes:
+            # only the explicit is_symlink() guard can skip this page. An
+            # out-of-root target was skipped by containment anyway, making
+            # this test pass even with the symlink guard removed.
+            real = root / "real.md"
+            real.write_text(
+                '---\ntype: entity\ntitle: "Real"\nsummary: "real"\n---\n\nBody.\n',
                 encoding="utf-8",
             )
-            self.addCleanup(outside.unlink, missing_ok=True)
-            (root / "alpha.md").symlink_to(outside)
-            self.assertIn("0 entity pages", run_scan(root))
+            (root / "alpha.md").symlink_to(real)
+            out = run_scan(root)
+            self.assertIn("1 entity pages", out)
 
 
 class HardeningTests(unittest.TestCase):
