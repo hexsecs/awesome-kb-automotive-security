@@ -1313,6 +1313,11 @@ class SweepTwelveRegressionTests(SweepElevenRegressionTests):
         after = p.read_text()
         self.assertIn("https://authoritative.example/a", after)
         self.assertIn("see-also:", after)
+        # The preserved `sources :` is the same YAML key as a generated
+        # `sources:`; a second key would win and hide the authored URL.
+        keys = [ln.split(":", 1)[0].strip() for ln in after.split("---")[1]
+                .splitlines() if ln and not ln[0].isspace()]
+        self.assertEqual(keys.count("sources"), 1)
 
     def test_spaced_facets_block_reaches_facet_index(self):
         listing = ("## Tools\n\n"
@@ -1336,6 +1341,28 @@ class SweepTwelveRegressionTests(SweepElevenRegressionTests):
                      encoding="utf-8")
         self.write_list("## Other\n\n* [B](https://example.com/b) - b\n")
         self.assertIn("status: archived", p.read_text())
+
+
+class SweepThirteenRegressionTests(SweepTwelveRegressionTests):
+    """Regressions for the thirteenth sweep's ingest parsing."""
+
+    def test_commented_facets_key_block_reaches_facet_index(self):
+        listing = ("## Tools\n\n"
+                   "* [A](https://example.com/a) - a\n"
+                   "* [B](https://example.com/b) - b\n")
+        self.write_list(listing)
+        for name in ("a", "b"):
+            p = self.wiki / f"{name}.md"
+            p.write_text(p.read_text().replace(
+                f'list_summary: "{name}"\n',
+                f'list_summary: "{name}"\n'
+                f'facets: # curated\n  - can\n'),
+                encoding="utf-8")
+        self.write_list(listing)
+        fields, _ = ingest.split_page((self.wiki / "a.md").read_text())
+        self.assertEqual(fields["facets"], "can")
+        self.assertTrue((self.wiki / "index-facet-can.md").exists())
+        self.assertIn("## Facets", (self.kb / "index.md").read_text())
 
 
 if __name__ == "__main__":

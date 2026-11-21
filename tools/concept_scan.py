@@ -137,7 +137,11 @@ def grams(text: str, acronyms: set[str]) -> set[str]:
         return low in STOPWORDS and not (orig.isupper() and low in acronyms)
 
     def generic(orig: str, low: str) -> bool:
-        return low in GENERIC and not (orig.isupper() and low in acronyms)
+        # GENERIC is absolute: "never a theme, however often it recurs".
+        # The acronym carve-out belongs to STOPWORDS (CAN bus vs "can"),
+        # not here — copying it made ECU/USENIX noise top the candidate
+        # table simply because the corpus capitalises them.
+        return low in GENERIC
 
     kept = [(t, t.lower()) for t in raw
             if len(t) >= 3 and not t.isdigit()
@@ -238,7 +242,11 @@ def main() -> int:
     rows.sort(key=lambda r: (-r[2], r[0]))
     pruned: list[tuple[str, set[str], float]] = []
     for phrase, slugs, score in rows:
-        if any(len(phrase) > len(p) and slugs <= s and phrase.startswith(p)
+        # Whole words, not raw string prefixes: `tpm2` and `iso-tp` are
+        # distinct specific themes even when their pages are a subset of
+        # the broader `tpm` / `iso` ones (row 124 fixed the same class in
+        # link_mine). word_subphrase only matches complete words.
+        if any(len(phrase) > len(p) and slugs <= s and word_subphrase(p, phrase)
                for p, s, _ in pruned):
             continue
         pruned.append((phrase, slugs, score))

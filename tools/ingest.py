@@ -283,9 +283,23 @@ def frontmatter(e: dict, status: str, depth: str, date: str, commit: str,
              f"source_commit: {q(commit)}",
              f"list_summary: {q(e['summary'])}"]
     extras = extras or []
+    # `sources :` (space before the colon) is the same YAML key as
+    # `sources:`, and the sweep-12 key detector now preserves both verbatim.
+    # A generated stub already carries a `sources:` block, so an authored
+    # `sources :` leaves two keys: YAML last-key-wins then makes the
+    # generated default the effective one. Keep the first (authored) block
+    # and drop any later duplicate before adding a default.
+    deduped: list[list[str]] = []
+    sources_seen = False
     for block in extras:
+        if block and re.match(r"^sources\s*:", block[0]):
+            if sources_seen:
+                continue
+            sources_seen = True
+        deduped.append(block)
+    for block in deduped:
         lines.extend(block)
-    if not any(block and block[0].startswith("sources:") for block in extras):
+    if not sources_seen:
         lines += ["sources:",
                   f"  - url: {q(SOURCE_URL)}",
                   f"    retrieved: {q(date)}"]
@@ -320,10 +334,15 @@ def split_page(text: str) -> tuple[dict, str]:
     # and is preserved verbatim by extra_blocks(), but the scalar loop above
     # cannot see it. Normalise it to the inline shape parse_slugs() reads.
     # YAML's last key wins, so a block must not override a later inline one.
+    # A comment on the key line (`facets: # curated`) is still a bare key
+    # whose value is the following indented list. Treating it as an inline
+    # value hid every facet on the page from the generated indexes.
+    facet_inline = re.compile(r"^facets\s*:\s*[^\s#]")
+    facet_bare = re.compile(r"^facets\s*:\s*(?:#.*)?$")
     last_inline = max((i for i, line in enumerate(lines)
-                       if re.match(r"^facets\s*:\s*\S", line)), default=-1)
+                       if facet_inline.match(line)), default=-1)
     for i, line in enumerate(lines):
-        if i < last_inline or not re.match(r"^facets\s*:\s*$", line):
+        if i < last_inline or not facet_bare.match(line):
             continue
         items = []
         for cont in lines[i + 1:]:
