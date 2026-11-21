@@ -187,13 +187,38 @@ def write_page(path: Path, fm_lines: list[str], body: str,
             i += 1
             # skip the old block's continuation lines (space- or tab-indented,
             # with or without trailing comments — whatever link_check reads)
-            while i < len(fm_lines) and re.match(r"^\s*-\s+", fm_lines[i]):
+            while i < len(fm_lines):
+                cont = fm_lines[i]
+                # Mirror parse_related: blank lines and standalone comments
+                # are part of the block, not the end of it. Leaving them
+                # behind would orphan the comment mid-list and preserve the
+                # old items next to the new block.
+                if not cont.strip() or cont.lstrip().startswith("#"):
+                    i += 1
+                    continue
+                if not re.match(r"^\s*-\s+", cont):
+                    break
                 i += 1
             continue
         if re.match(r"^updated\s*:", line):
             line = f"updated: {run_date}"
         out.append(line)
         if not placed and not had_related and line.startswith("list_summary:"):
+            if re.search(r":\s*[|>]", line):
+                # A block scalar's value IS the following indented lines.
+                # Inserting here would put `related:` between the `key: |`
+                # header and its content, orphaning that content into the
+                # related block and producing invalid YAML. Consume the
+                # whole scalar first, then place the new block after it.
+                i += 1
+                while i < len(fm_lines) and (
+                        fm_lines[i].startswith((" ", "\t"))
+                        or not fm_lines[i].strip()):
+                    out.append(fm_lines[i])
+                    i += 1
+                out.extend(block)
+                placed = True
+                continue
             out.extend(block)
             placed = True
         i += 1
@@ -365,40 +390,63 @@ def main() -> int:
     written: dict[str, list[str]] = {}
     samples: list[str] = []
     to_write: list[tuple[Path, list[str], str, list[str]]] = []
+    # With --fill-only/--reciprocate an author-owned set is the base; in
+    # default mode it is discarded for the mined set (row 138). A set made
+    # only of self-links has no authored content once the write-time
+    # self-filter runs, so treat it as empty from the start — otherwise
+    # fill-only strips it on pass 1 and silently mines the page on pass 2.
+    authored: dict[str, bool] = {}
+    only_self: dict[str, bool] = {}
+    base: dict[str, list[str]] = {}
+    for slug in slugs:
+        old = pages[slug]["related"]
+        own = stems[slug]
+        authored[slug] = bool(old) and (args.fill_only or args.reciprocate)
+        only_self[slug] = bool(old) and all(
+            stems.get(x, x) == own for x in old)
+        base[slug] = (list(old) if authored[slug] and not only_self[slug]
+                      else list(final[slug]))
+
+    if args.reciprocate:
+        # Concept pages are never written here: their links are fixed
+        # inbound sources, not nodes in the planned graph.
+        concept_inbound: dict[str, set[str]] = defaultdict(set)
+        for concept, rels in concept_links.items():
+            for rel in rels:
+                concept_inbound[rel].add(concept)
+        # One pass over the ON-DISK sets was not a fixpoint: a link first
+        # planned in this run became an inbound trigger only on the next
+        # invocation, leaving a one-way pair behind. Work at stem level
+        # (`related:` stores stems, slugs are path keys) and iterate over
+        # the planned sets so a single --reciprocate run is stable.
+        planned = {slug: list(base[slug]) for slug in slugs}
+        for _ in range(len(slugs) + 1):
+            grew = False
+            for slug in slugs:
+                own = stems[slug]
+                seen = {stems.get(x, x) for x in planned[slug]}
+                inbound = {
+                    o for o in slugs
+                    if own in {stems.get(x, x) for x in planned[o]}
+                } | concept_inbound.get(own, set())
+                for o in sorted(inbound,
+                                key=lambda b: (-scores.get((slug, b), 0.0), b)):
+                    stem = stems.get(o, o)
+                    if stem not in seen:
+                        planned[slug].append(o)
+                        seen.add(stem)
+                        grew = True
+                        recip_added += 1
+            if not grew:
+                break
+        base = planned
+
     for slug in slugs:
         p = pages[slug]
         old = p["related"]
         own = stems[slug]
-        # Who already links here, that this page does not link back to?
-        # `related:` entries are stems, while `slugs` are path keys.
-        incoming = {o for o in slugs if own in pages[o]["related"]}
-        incoming |= {c for c, rels in concept_links.items()
-                     if own in rels}
-        # With --reciprocate, preserve an author-owned set as the base;
-        # otherwise default mode discarded it before adding the backlink and
-        # the pair flipped direction on every run forever.
-        fill_branch = bool(old) and (args.fill_only or args.reciprocate)
-        if fill_branch:
-            # Author-owned set: preserve it verbatim and in order;
-            # only append missing reciprocal links.
-            new = list(old)
-        else:
-            new = list(final[slug])
-        if args.reciprocate:
-            # `related:` holds stems, while `slugs` and `scores` use path
-            # keys. Work at stem level so a link already on disk, or a
-            # second path key sharing a stem, is not counted as a new add.
-            seen = {stems.get(x, x) for x in old + new}
-            adds = []
-            for o in sorted(incoming,
-                            key=lambda b: (-scores.get((slug, b), 0.0), b)):
-                stem = stems.get(o, o)
-                if stem not in seen:
-                    adds.append(o)
-                    seen.add(stem)
-            new = new + adds
-            recip_added += len(adds)
-        if not fill_branch:
+        new = list(base[slug])
+        if not authored[slug] or only_self[slug]:
             new = sorted(set(new),
                          key=lambda b: (-scores.get((slug, b), 0.0), b))
         # Path keys are internal; the written slugs stay stems, which is

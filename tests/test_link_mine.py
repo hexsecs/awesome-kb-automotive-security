@@ -204,9 +204,55 @@ class HardeningTests(_RootRestoringTest):
             outside.write_text("do not touch", encoding="utf-8")
             link = root / "page.md"
             link.symlink_to(outside)
+            # Target the temp dir so containment passes; an out-of-root
+            # fixture returned early on containment and pinned nothing.
+            link_mine.ROOT, link_mine.WIKI = root, root
             _, fm_lines, body = split(PAGE_DUP)
             link_mine.write_page(link, fm_lines, body, ["x"], "2026-11-17")
             self.assertEqual(outside.read_text(encoding="utf-8"),
+                             "do not touch")
+
+    def test_preflight_refuses_an_in_root_symlink(self):
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            real = root / "real.md"
+            real.write_text("do not touch", encoding="utf-8")
+            link = root / "page.md"
+            link.symlink_to(real)
+            link_mine.ROOT, link_mine.WIKI = root, root
+            with self.assertRaises(SystemExit) as caught:
+                link_mine.preflight([link])
+            self.assertIn("symlink", str(caught.exception))
+            self.assertEqual(real.read_text(encoding="utf-8"),
+                             "do not touch")
+
+    def test_preflight_refuses_an_in_root_hardlink(self):
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            victim = root / "victim.md"
+            victim.write_text("do not touch", encoding="utf-8")
+            page = root / "page.md"
+            page.hardlink_to(victim)
+            link_mine.ROOT, link_mine.WIKI = root, root
+            with self.assertRaises(SystemExit) as caught:
+                link_mine.preflight([page])
+            self.assertIn("hardlinked", str(caught.exception))
+            self.assertEqual(victim.read_text(encoding="utf-8"),
+                             "do not touch")
+
+    def test_write_page_refuses_an_in_root_hardlink(self):
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            victim = root / "victim.md"
+            victim.write_text("do not touch", encoding="utf-8")
+            page = root / "page.md"
+            page.hardlink_to(victim)
+            link_mine.ROOT, link_mine.WIKI = root, root
+            _, fm_lines, body = split(PAGE_DUP)
+            with self.assertRaises(SystemExit) as caught:
+                link_mine.write_page(page, fm_lines, body, ["x"], "2026-11-20")
+            self.assertIn("hardlinked", str(caught.exception))
+            self.assertEqual(victim.read_text(encoding="utf-8"),
                              "do not touch")
 
     def test_read_page_skips_invalid_bytes(self):
@@ -588,6 +634,75 @@ class SweepNineRegressionTests(SweepEightRegressionTests):
         # inserted right after list_summary as though no related key existed.
         self.assertGreater(fm_lines.index("related:"),
                            fm_lines.index('tags: "between"'))
+
+
+class SweepTenRegressionTests(SweepNineRegressionTests):
+    """Regressions for the tenth sweep's writer and fixpoint bugs."""
+
+    def test_comments_in_related_block_are_consumed_when_replaced(self):
+        saved = (link_mine.ROOT, link_mine.WIKI)
+        self.addCleanup(lambda: setattr(link_mine, "ROOT", saved[0]))
+        self.addCleanup(lambda: setattr(link_mine, "WIKI", saved[1]))
+        text = ('---\ntitle: "Alpha"\ntype: entity\n'
+                'related:\n  # hand-curated\n\n  - "ghost"\n'
+                'updated: 2020-01-01\n---\nBody.\n')
+        path = make_page(text)
+        _, fm, body = split(text)
+        link_mine.write_page(path, fm, body, ["beta"], "2026-11-20")
+        out = path.read_text(encoding="utf-8")
+        self.assertNotIn("hand-curated", out)
+        self.assertNotIn("ghost", out)
+        self.assertEqual(link_mine.parse_related(split(out)[1]), ["beta"])
+
+    def test_block_scalar_list_summary_is_not_split_by_related_block(self):
+        saved = (link_mine.ROOT, link_mine.WIKI)
+        self.addCleanup(lambda: setattr(link_mine, "ROOT", saved[0]))
+        self.addCleanup(lambda: setattr(link_mine, "WIKI", saved[1]))
+        text = ('---\ntitle: "Alpha"\ntype: entity\n'
+                'list_summary: |\n  line one\n  line two\n---\nBody.\n')
+        path = make_page(text)
+        _, fm, body = split(text)
+        link_mine.write_page(path, fm, body, ["beta"], "2026-11-20")
+        out = path.read_text(encoding="utf-8")
+        lines = out.split("---\n")[1].splitlines()
+        # Both scalar content lines must precede the new key, not be
+        # orphaned into the related block as invalid YAML.
+        self.assertLess(lines.index("  line two"), lines.index("related:"))
+        self.assertEqual(lines.index("list_summary: |") + 3,
+                         lines.index("related:"))
+        _, fm2, body2 = split(out)
+        link_mine.write_page(path, fm2, body2, ["beta"], "2026-11-21")
+        self.assertEqual(out, path.read_text(encoding="utf-8"))
+
+    def test_reciprocate_is_a_single_pass_fixpoint_with_authored_sets(self):
+        a = self.entity("a.md", "Alpha Zephyr", "alpha zephyr widget",
+                        related=["x"])
+        b = self.entity("b.md", "Beta Zephyr", "beta zephyr widget",
+                        related=[])
+        first = self.run_tool("--reciprocate", "--threshold", "0",
+                              "--date", "2026-11-20")
+        self.assertEqual(first.returncode, 0, first.stderr)
+        self.assertIn("b", self.related_of(a))
+        self.assertEqual(self.related_of(b), ["a"])
+        second = self.run_tool("--reciprocate", "--threshold", "0",
+                               "--date", "2026-11-21")
+        self.assertEqual(second.returncode, 0, second.stderr)
+        self.assertIn("changed 0 pages", second.stdout)
+
+    def test_fill_only_stays_stable_after_self_link_is_stripped(self):
+        a = self.entity("a.md", "Alpha Quartz", "alpha quartz widget",
+                        related=["a"])
+        b = self.entity("b.md", "Beta Quartz", "beta quartz widget",
+                        related=[])
+        first = self.run_tool("--fill-only", "--threshold", "0",
+                              "--date", "2026-11-20")
+        self.assertEqual(first.returncode, 0, first.stderr)
+        self.assertEqual(self.related_of(a), ["b"])
+        self.assertEqual(self.related_of(b), ["a"])
+        second = self.run_tool("--fill-only", "--threshold", "0",
+                               "--date", "2026-11-21")
+        self.assertEqual(second.returncode, 0, second.stderr)
+        self.assertIn("changed 0 pages", second.stdout)
 
 
 if __name__ == "__main__":

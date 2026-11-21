@@ -84,7 +84,15 @@ def parse_related(frontmatter: str):
         if RELATED_BLOCK_RE.match(line):
             i += 1
             while i < len(lines):
-                item = LIST_ITEM_RE.match(lines[i])
+                cont = lines[i]
+                # YAML allows blank lines and standalone comments between
+                # a block key and its items. Stopping at the first one made
+                # a hand-curated list look empty to every graph tool, so
+                # fill-only then mined over the authored links.
+                if not cont.strip() or cont.lstrip().startswith("#"):
+                    i += 1
+                    continue
+                item = LIST_ITEM_RE.match(cont)
                 if not item:
                     break
                 slugs.append(item.group(1).strip().strip("'\""))

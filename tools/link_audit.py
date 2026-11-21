@@ -106,7 +106,7 @@ def audit(root: Path) -> dict:
                     # concept at wiki/concepts/<slug>.md is a different page.
                     # Without this tie-break the concept won (it sorts first)
                     # and the entity was reported as an orphan.
-                    key=lambda p: (p.parent.name == "concepts", str(p)),
+                    key=lambda p: (p.is_relative_to(wiki / "concepts"), str(p)),
                 )
                 if matches:
                     targets.add(matches[0])

@@ -460,6 +460,13 @@ class FrontmatterSafetyTests(unittest.TestCase):
             outside.write_text("do not touch", encoding="utf-8")
             link = root / "page.md"
             link.symlink_to(outside)
+            # Target the temp root so containment passes: only the explicit
+            # symlink guard can reject the write. A temp dir outside ROOT
+            # raised via containment and made this test vacuous.
+            saved = ingest.ROOT, ingest.WIKI
+            self.addCleanup(lambda: (setattr(ingest, "ROOT", saved[0]),
+                                     setattr(ingest, "WIKI", saved[1])))
+            ingest.ROOT, ingest.WIKI = root, root
             with self.assertRaises(SystemExit) as caught:
                 ingest.write_page(link, "pwned")
             self.assertIn("refusing to write through symlink",
@@ -1166,6 +1173,80 @@ class SweepNineRegressionTests(SweepEightRegressionTests):
         for hub in (l1, concept_map):
             self.assertIn("Probe Canonical", hub)
             self.assertNotIn("Probe Deep", hub)
+
+
+class SweepTenRegressionTests(SweepNineRegressionTests):
+    """Regressions for the tenth sweep's hub and refusal edge cases."""
+
+    def test_in_root_symlinked_leaf_is_invisible_to_safe_pages(self):
+        # The symlink points INSIDE the wiki, so containment passes and only
+        # safe_pages' is_symlink() guard can hide it. Its stem is not an
+        # entry slug, so the row-50 symlink guard does not fire either.
+        real = self.wiki / "real.md"
+        real.write_text(
+            '---\nuid: "01aa0000-0000-7000-8000-000000000001"\n'
+            'title: "Real"\ntype: entity\nsummary: "s"\n'
+            'url: "https://example.com/real"\ncreated: "2026-01-01"\n'
+            'last_checked: "2026-01-01"\n---\nbody\n', encoding="utf-8")
+        (self.wiki / "link.md").symlink_to(real)
+        # Without the guard both files carry the URL and ingest aborts on a
+        # duplicate-URL error.
+        self.write_list("## Tools\n\n* [Real](https://example.com/real) - r\n")
+
+    def test_summary_less_canonical_concept_still_wins_l1_stem(self):
+        canonical = self.wiki / "concepts" / "probe.md"
+        canonical.write_text(
+            '---\ntitle: "Probe Canonical"\ntype: concept\n---\nbody\n',
+            encoding="utf-8")
+        self.concept("concepts/deep/probe.md", "Probe Deep")
+        self.write_list("## Tools\n\n* [A](https://example.com/a) - a\n")
+        l1 = (self.kb / "index.md").read_text(encoding="utf-8")
+        concept_map = (self.wiki / "index-concept-map.md").read_text(
+            encoding="utf-8")
+        for hub in (l1, concept_map):
+            self.assertIn("Probe Canonical", hub)
+            self.assertNotIn("Probe Deep", hub)
+
+    def _malformed_entry(self, stem, title, url):
+        page = self.wiki / f"{stem}.md"
+        page.write_text(
+            '---\n'
+            'uid: "01aa0000-0000-7000-8000-000000000001"\n'
+            f'title: "{title}"\ntype: entity\nsummary: "s"\n'
+            f'url: "{url}"\ncreated: "2026-01-01"\n'
+            'last_checked: "2026-01-01"\n'
+            '---\nbody\n', encoding="utf-8")
+        listing = f"## Tools\n\n* [{title}]({url}) - s\n"
+        self.write_list(listing)  # runs ingest once to stamp identity
+        # Lose only the closing fence; identity is now unparseable and the
+        # URL-keyed lookup cannot find the page any more.
+        page.write_text(
+            f'---\ntitle: "{title}"\ntype: entity\nsummary: "s"\n'
+            'body with no closing fence\n', encoding="utf-8")
+        return listing
+
+    def test_malformed_suffixed_landing_page_is_refused_not_duplicated(self):
+        listing = self._malformed_entry("cabana-2", "Cabana",
+                                        "https://example.com/cabana")
+        with self.assertRaises(SystemExit):
+            self.write_list(listing)
+        self.assertEqual(len(list(self.wiki.glob("cabana*.md"))), 1)
+
+    def test_authored_index_stem_is_not_exempt_from_malformed_refusal(self):
+        listing = self._malformed_entry("index-of-tools", "Index of Tools",
+                                        "https://example.com/iot")
+        with self.assertRaises(SystemExit):
+            self.write_list(listing)
+        self.assertEqual(len(list(self.wiki.glob("index-of-tools*.md"))), 1)
+
+    def test_generated_index_is_still_exempt_from_malformed_refusal(self):
+        # A generated index has no frontmatter at all; it must never trip
+        # the refusal when an entry happens to slugify to the same stem.
+        (self.wiki / "index-tools.md").write_text(
+            "# generated\n", encoding="utf-8")
+        self.write_list("## Tools\n\n"
+                        "* [Tools](https://example.com/tools) - s\n")
+        self.assertTrue((self.wiki / "index-tools.md").exists())
 
 
 if __name__ == "__main__":

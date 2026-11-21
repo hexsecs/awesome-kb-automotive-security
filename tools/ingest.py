@@ -752,20 +752,34 @@ def main(argv=None) -> int:
                     page = candidate
                     break
         if page is None:
-            # A file occupying the entry's natural slug with no parseable
-            # frontmatter (e.g. a lost closing fence) cannot carry list
-            # identity, so the URL-move fallback cannot find it. Without this
-            # check we mint a `-2` duplicate and strand the original page as
-            # permanently unreachable — silently, since link_check only finds
-            # it after the damage. Generated indexes have no frontmatter
-            # either, so leave their `index-*` stems alone.
+            # A file occupying the entry's natural slug — or a `-N` variant
+            # from a URL move (row 17) — with no parseable frontmatter (e.g.
+            # a lost closing fence) cannot carry list identity, so neither
+            # the URL lookup nor the move fallback above can find it. Without
+            # this check we mint a duplicate and strand the original as
+            # permanently unreachable — silently, since link_check only
+            # finds it after the damage. Generated indexes have no
+            # frontmatter either: exempt exactly the stems this run reserves
+            # for them (plus suffixed variants whose base is reserved), not
+            # every `index-*` name — authored entities own those stems too.
             natural = WIKI / f"{slugify(e['title'], set())}.md"
-            if natural.is_file() and not natural.is_symlink() \
-                    and not natural.stem.lower().startswith("index-"):
-                natural_fields, _ = split_page(read_page(natural))
-                if "title" not in natural_fields:
+            occupants = [natural] + sorted(set(
+                p for p in WIKI.glob(f"{natural.stem}-[0-9]*.md")
+                if re.fullmatch(re.escape(natural.stem) + r"-\d+", p.stem)
+            ))
+            for occupant in occupants:
+                if (not occupant.is_file() or occupant.is_symlink()
+                        or not within_root(occupant)):
+                    continue
+                stem = occupant.stem.lower()
+                if stem in reserved or (
+                        stem.startswith("index-")
+                        and re.sub(r"-\d+$", "", stem) in reserved):
+                    continue
+                occ_fields, _ = split_page(read_page(occupant))
+                if "title" not in occ_fields:
                     sys.exit(
-                        f"ingest: {natural} has no parseable frontmatter; "
+                        f"ingest: {occupant} has no parseable frontmatter; "
                         "refusing to create a duplicate entry page"
                     )
             slug = slugify(e["title"], taken, WIKI)
@@ -966,12 +980,13 @@ def main(argv=None) -> int:
              if str(f.get("type", "")) == "concept"),
             key=lambda item: (not item[0].is_relative_to(canonical),
                               item[0].parent != canonical)):
-        if "summary" in fields:
-            # Canonical-per-stem dedupe, identical to write_concept_map: a
-            # clone nested deeper under concepts/ gets no second L1 row.
-            concepts.setdefault(page.stem,
-                                (str(fields["title"]), link_target(page),
-                                 str(fields["summary"])))
+        # Canonical-per-stem dedupe, identical to write_concept_map: a clone
+        # nested deeper under concepts/ gets no second L1 row. The map also
+        # dedupes summary-less concepts, so L1 must not drop them here and let
+        # a nested clone win the stem by default.
+        concepts.setdefault(page.stem,
+                            (str(fields["title"]), link_target(page),
+                             str(fields.get("summary", ""))))
     if concepts:
         lines += ["", "## Concepts", ""]
         for title, target, summary in concepts.values():

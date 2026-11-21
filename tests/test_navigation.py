@@ -183,6 +183,33 @@ class BackfillTests(unittest.TestCase):
             self.assertFalse(backfill_navigation.backfill(link, check=False))
             self.assertEqual(outside.read_text(encoding="utf-8"), before)
 
+    def test_main_does_not_feed_symlinked_pages_to_backfill(self) -> None:
+        # The direct backfill() guard is pinned above; main()'s own filter
+        # had no witness. The symlink target is in-root, so containment
+        # passes and only `not p.is_symlink()` can exclude the link.
+        with tempfile.TemporaryDirectory() as tmp:
+            use_temp_root(self, tmp)
+            wiki = Path(tmp) / "wiki"
+            wiki.mkdir()
+            real = wiki / "real.md"
+            real.write_text('---\ntitle: "X"\nrelated: [a]\n---\n',
+                            encoding="utf-8")
+            link = wiki / "link.md"
+            link.symlink_to(real)
+
+            seen: list[Path] = []
+            original = backfill_navigation.backfill
+            saved_argv = sys.argv
+            self.addCleanup(setattr, backfill_navigation, "backfill", original)
+            self.addCleanup(lambda: setattr(sys, "argv", saved_argv))
+            backfill_navigation.backfill = lambda path, check: (
+                seen.append(path) or False)
+            sys.argv = ["backfill_navigation", "--check"]
+            with contextlib.redirect_stdout(io.StringIO()):
+                self.assertEqual(backfill_navigation.main(), 0)
+            self.assertIn(real, seen)
+            self.assertNotIn(link, seen)
+
     def test_unreadable_page_fails_loudly(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             use_temp_root(self, tmp)
