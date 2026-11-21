@@ -28,6 +28,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "tools"))
 
+from link_check import split_flow_items  # noqa: E402
 from taxonomy import CONCEPT_CLUSTERS, assign_facets  # noqa: E402
 
 CLUSTER_BY_CONCEPT = {
@@ -99,6 +100,23 @@ def managed_block_spans(lines: list[str], key: str
             if re.match(rf"^{re.escape(key)}\s*:", line)]
     continuations: set[int] = set()
     for i in keys:
+        key_line = lines[i]
+        # A block scalar (`facets: |`, `cluster: >-`) owns every more-indented
+        # line, not just `- item` lines. Rewriting only the key left the old
+        # prose behind: invalid YAML, or a silently concatenated value.
+        if re.match(rf"^{re.escape(key)}\s*:\s*[|>][+-]?\d*\s*(?:#.*)?$",
+                    key_line):
+            base_indent = len(key_line) - len(key_line.lstrip())
+            for j in range(i + 1, len(lines)):
+                line = lines[j]
+                if not line.strip():
+                    continuations.add(j)
+                    continue
+                if (len(line) - len(line.lstrip())) > base_indent:
+                    continuations.add(j)
+                else:
+                    break
+            continue
         pending: list[int] = []  # blank/comment lines awaiting a later item
         for j in range(i + 1, len(lines)):
             item = lines[j].lstrip()
@@ -167,7 +185,8 @@ def backfill(path: Path, check: bool) -> bool:
         # One related-list shape everywhere: block style.
         inline = re.match(r"^related\s*:\s*\[([^\]]*)\]\s*(?:#.*)?$", line)
         if inline:
-            values = [v.strip().strip("\"'") for v in inline.group(1).split(",") if v.strip()]
+            values = [v.strip().strip("\"'")
+                      for v in split_flow_items(inline.group(1)) if v.strip()]
             out.append("related:")
             out.extend(f"  - {json.dumps(v, ensure_ascii=False)}" for v in values)
             changed = True

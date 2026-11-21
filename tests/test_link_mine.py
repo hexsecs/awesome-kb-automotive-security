@@ -750,5 +750,31 @@ class SweepElevenRegressionTests(SweepTenRegressionTests):
                       out.stdout)
 
 
+class SweepTwelveRegressionTests(SweepElevenRegressionTests):
+    """Regressions for the twelfth sweep's writer and stat bugs."""
+
+    def test_updated_trailing_comment_survives_rewrite(self):
+        text = ('---\ntitle: "Alpha"\ntype: entity\n'
+                'updated: 2020-01-01 # reviewed by Alice\n'
+                'related: []\n---\nBody.\n')
+        path = make_page(text)
+        _, fm, body = split(text)
+        link_mine.write_page(path, fm, body, ["beta"], "2026-11-20")
+        out = path.read_text(encoding="utf-8")
+        self.assertIn("updated: 2026-11-20 # reviewed by Alice", out)
+        self.assertNotIn("2020-01-01", out)
+
+    def test_self_link_only_pages_count_as_previously_unlinked(self):
+        # A self-link is filtered at write time, so these pages have no
+        # authored links; the stat must count them as filled nonetheless.
+        self.entity("a.md", "Alpha", "alpha quartz", related=["a"])
+        self.entity("b.md", "Beta", "beta quartz", related=["b"])
+        self.entity("c.md", "Gamma", "gamma quartz", related=[])
+        out = self.run_tool("--fill-only", "--threshold", "0",
+                            "--date", "2026-11-20")
+        self.assertEqual(out.returncode, 0, out.stderr)
+        self.assertIn("3 previously unlinked", out.stdout)
+
+
 if __name__ == "__main__":
     unittest.main()

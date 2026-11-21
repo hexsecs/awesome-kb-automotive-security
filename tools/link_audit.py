@@ -64,6 +64,26 @@ def declared_type(frontmatter: str) -> str | None:
     return value if value in ("concept", "entity") else None
 
 
+def frontmatter_of(page: Path) -> str:
+    """Frontmatter for classification, even when the page is unreadable.
+
+    ``iter_pages`` deliberately keeps unreadable pages in ``page_set`` and
+    ``stems``; skipping them here let one lose its concept flag and win the
+    bare-slug tie-break over a real entity (rows 174/175 seam), and made it
+    vanish from every coverage metric. A lenient decode recovers ``type:``
+    for a bad byte; an unreadable file falls back to the path rules below.
+    """
+    try:
+        return split_frontmatter(page.read_text(encoding="utf-8"))[0]
+    except (OSError, UnicodeDecodeError):
+        pass
+    try:
+        text = page.read_bytes().decode("utf-8", errors="replace")
+    except OSError:
+        return ""
+    return split_frontmatter(text)[0]
+
+
 def audit(root: Path) -> dict:
     root = require_kb_root(root)
     pages = list(iter_pages(root))
@@ -81,11 +101,7 @@ def audit(root: Path) -> dict:
     # first), the same preference ingest uses for L1 and the concept map.
     concept_pages: set[Path] = set()
     for page in pages:
-        try:
-            fm, _ = split_frontmatter(page.read_text(encoding="utf-8"))
-        except (OSError, UnicodeDecodeError):
-            continue
-        declared = declared_type(fm)
+        declared = declared_type(frontmatter_of(page))
         if declared == "concept" or (
                 declared is None and page.is_relative_to(wiki / "concepts")
                 and not page.stem.startswith("index-")):
@@ -96,8 +112,14 @@ def audit(root: Path) -> dict:
         try:
             text = page.read_text(encoding="utf-8")
         except (OSError, UnicodeDecodeError):
-            continue
-        frontmatter, body = split_frontmatter(text)
+            # Keep the page classified and reachable; only its outgoing
+            # links are untrusted. Dropping it here stranded inbound links
+            # from readable pages and fabricated orphans (row 175 seam).
+            text = None
+        if text is None:
+            frontmatter, body = frontmatter_of(page), ""
+        else:
+            frontmatter, body = split_frontmatter(text)
         rel = page.relative_to(root).as_posix()
         is_wiki = page.is_relative_to(wiki)
         # A concept can live deeper than wiki/concepts/ (the other tools
@@ -178,8 +200,7 @@ def audit(root: Path) -> dict:
     one_way = []
     entity_stems = {p.stem for p in articles}
     for p in articles:
-        prelated = set(parse_related(split_frontmatter(
-            p.read_text(encoding="utf-8"))[0]))
+        prelated = set(parse_related(frontmatter_of(p)))
         for slug in prelated:
             if slug not in entity_stems or slug == p.stem:
                 continue
@@ -187,8 +208,7 @@ def audit(root: Path) -> dict:
             if not matches:
                 continue
             q = matches[0]
-            back = set(parse_related(split_frontmatter(
-                q.read_text(encoding="utf-8"))[0]))
+            back = set(parse_related(frontmatter_of(q)))
             if p.stem not in back:
                 one_way.append({"source": name(p), "target": name(q)})
     one_way.sort(key=lambda e: (e["source"], e["target"]))

@@ -1298,5 +1298,45 @@ class SweepElevenRegressionTests(SweepTenRegressionTests):
         self.assertTrue((self.wiki / "foo.md").is_file())
 
 
+class SweepTwelveRegressionTests(SweepElevenRegressionTests):
+    """Regressions for the twelfth sweep's frontmatter/tombstone bugs."""
+
+    def test_noncanonical_bare_key_blocks_are_preserved(self):
+        self.write_list("## Tools\n\n* [A](https://example.com/a) - first\n")
+        p = self.wiki / "a.md"
+        p.write_text(p.read_text().replace(
+            'list_summary: "first"\n',
+            'list_summary: "first"\n'
+            'sources :\n  - url: "https://authoritative.example/a"\n'
+            'see-also:\n  - other-page\n'), encoding="utf-8")
+        self.write_list("## Tools\n\n* [A](https://example.com/a) - second\n")
+        after = p.read_text()
+        self.assertIn("https://authoritative.example/a", after)
+        self.assertIn("see-also:", after)
+
+    def test_spaced_facets_block_reaches_facet_index(self):
+        listing = ("## Tools\n\n"
+                   "* [A](https://example.com/a) - a\n"
+                   "* [B](https://example.com/b) - b\n")
+        self.write_list(listing)
+        for name in ("a", "b"):
+            p = self.wiki / f"{name}.md"
+            p.write_text(p.read_text().replace(
+                f'list_summary: "{name}"\n',
+                f'list_summary: "{name}"\nfacets :\n  - can\n'),
+                encoding="utf-8")
+        self.write_list(listing)
+        self.assertTrue((self.wiki / "index-facet-can.md").exists())
+        self.assertIn("## Facets", (self.kb / "index.md").read_text())
+
+    def test_bare_empty_status_is_tombstoned_on_delist(self):
+        self.write_list("## Tools\n\n* [A](https://example.com/a) - a\n")
+        p = self.wiki / "a.md"
+        p.write_text(p.read_text().replace('status: "unknown"', 'status:'),
+                     encoding="utf-8")
+        self.write_list("## Other\n\n* [B](https://example.com/b) - b\n")
+        self.assertIn("status: archived", p.read_text())
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -354,5 +354,29 @@ class FilesystemGuardTests(unittest.TestCase):
         self.assertEqual(report["broken_links"][0]["source"], "wiki/nul.md")
 
 
+class SweepTwelveRegressionTests(LinkCheckTest):
+    """Regressions for the twelfth sweep's parsing and reporting bugs."""
+
+    def test_broken_angle_bracket_targets_are_unwrapped(self):
+        write(self.root, "wiki/gamma.md",
+              "See [x](<missing.md#sec>) and [y](<missing file.md>).\n")
+        r = self.report()
+        self.assertEqual(
+            sorted(e["target"] for e in r["broken_links"]),
+            ["missing file.md", "missing.md"])
+
+    def test_quoted_comma_in_inline_related_is_one_slug(self):
+        self.assertEqual(
+            link_check.parse_related('related: ["alpha, beta", delta]\n'),
+            ["alpha, beta", "delta"])
+        write(self.root, "wiki/gamma.md",
+              '---\nrelated: ["alpha, beta", delta]\n---\nBody.\n')
+        r = self.report()
+        self.assertEqual(
+            [e["slug"] for e in r["unresolved_related"]
+             if e["source"] == "wiki/gamma.md"],
+            ["alpha, beta", "delta"])
+
+
 if __name__ == "__main__":
     unittest.main()

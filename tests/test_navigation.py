@@ -11,6 +11,8 @@ import tempfile
 import unittest
 from pathlib import Path
 
+import yaml  # noqa: E402
+
 REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO / "tools"))
 
@@ -487,6 +489,48 @@ class SweepElevenRegressionTests(BackfillSafetyTests):
                     backfill_navigation.main()
             self.assertEqual(page.read_text(encoding="utf-8"), original)
             self.assertEqual(zzz.read_text(encoding="utf-8").count("facets:"), 0)
+
+
+class SweepTwelveRegressionTests(BackfillSafetyTests):
+    """Regressions for the twelfth sweep's frontmatter rewrite bugs."""
+
+    def test_block_scalar_facets_is_replaced_wholly(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            use_temp_root(self, tmp)
+            page = self._page(
+                tmp, "aaa.md",
+                '---\ntitle: "AAA"\ntype: entity\n'
+                'facets: |\n  curated list\n  of facets\n---\n\nBody.\n')
+            backfill_navigation.backfill(page, False)
+            out = page.read_text(encoding="utf-8")
+            self.assertNotIn("curated list", out)
+            self.assertNotIn("of facets", out)
+            fm = yaml.safe_load(out.split("---")[1])
+            self.assertEqual(fm["facets"], [])
+
+    def test_block_scalar_cluster_is_replaced_wholly(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            use_temp_root(self, tmp)
+            page = self._page(
+                tmp, "doip.md",
+                '---\ntitle: "DoIP"\ntype: concept\n'
+                'cluster: |\n  boundary\n  (old note)\n---\n\nBody.\n')
+            backfill_navigation.backfill(page, False)
+            out = page.read_text(encoding="utf-8")
+            self.assertNotIn("old note", out)
+            fm = yaml.safe_load(out.split("---")[1])
+            self.assertEqual(fm["cluster"], "boundary")
+
+    def test_quoted_comma_in_inline_related_stays_one_item(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            use_temp_root(self, tmp)
+            page = self._page(
+                tmp, "aaa.md",
+                '---\ntitle: "AAA"\ntype: entity\n'
+                'related: ["alpha, beta", gamma]\n---\n\nBody.\n')
+            backfill_navigation.backfill(page, False)
+            fm = yaml.safe_load(page.read_text(encoding="utf-8").split("---")[1])
+            self.assertEqual(fm["related"], ["alpha, beta", "gamma"])
 
 
 if __name__ == "__main__":

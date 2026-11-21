@@ -242,10 +242,14 @@ def frontmatter_blocks(text: str) -> list[tuple[str, list[str]]]:
     blocks: list[tuple[str, list[str]]] = []
     for line in text[4:end].splitlines():
         top_level = line and not line.startswith((" ", "-"))
-        if top_level and (": " in line or
-                          (line.strip().endswith(":")
-                           and line.strip()[:-1].isidentifier())):
-            blocks.append((line.strip().split(":", 1)[0].strip(), [line]))
+        # YAML allows whitespace before the colon and hyphens/dots in keys
+        # (`sources :`, `see-also:`). The old `": "`/`isidentifier()` test
+        # folded those whole blocks into the preceding managed key, so an
+        # authored `sources :` was discarded and a default one written over
+        # it (rows 107/122/136 fixed the same spelling in other tools).
+        key = re.match(r"^\t*([\w][\w.-]*)\s*:(?:\s+(.*)|$)", line) if top_level else None
+        if key:
+            blocks.append((key.group(1), [line]))
         elif blocks:
             blocks[-1][1].append(line)
     return blocks
@@ -317,9 +321,9 @@ def split_page(text: str) -> tuple[dict, str]:
     # cannot see it. Normalise it to the inline shape parse_slugs() reads.
     # YAML's last key wins, so a block must not override a later inline one.
     last_inline = max((i for i, line in enumerate(lines)
-                       if re.match(r"^facets:\s*\S", line)), default=-1)
+                       if re.match(r"^facets\s*:\s*\S", line)), default=-1)
     for i, line in enumerate(lines):
-        if line != "facets:" or i < last_inline:
+        if i < last_inline or not re.match(r"^facets\s*:\s*$", line):
             continue
         items = []
         for cont in lines[i + 1:]:
@@ -882,9 +886,12 @@ def main(argv=None) -> int:
         head, tail = (text[:bounds[0]], text[bounds[0]:]) if bounds else ("", text)
         changed = False
         if fields.get("status") != "archived":
-            new_head = re.sub(r"^status: .*$", "status: archived", head,
+            # A bare `status:` (no value) is present but empty: the old
+            # `^status: .*` missed it and the `^status:` guard suppressed
+            # the fallback, so a delisted page stayed untombstoned forever.
+            new_head = re.sub(r"^status\s*:.*$", "status: archived", head,
                               count=1, flags=re.M)
-            if new_head == head and not re.search(r"^status:", head, re.M):
+            if new_head == head and not re.search(r"^status\s*:", head, re.M):
                 # A hand-authored page may have no status key at all: write
                 # one, or the next identical ingest "tombstones" it again.
                 new_head = head.rstrip("\n") + "\nstatus: archived\n"

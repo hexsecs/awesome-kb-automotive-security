@@ -295,14 +295,72 @@ class SweepElevenRegressionTests(unittest.TestCase):
         # of a clone filed elsewhere.
         write(self.root, "wiki/concepts/zzclone.md",
               "---\ntype: concept\nrelated: []\n---\n\nCanonical.\n")
-        write(self.root, "wiki/topics/zzclone.md",
+        # Nest the clone so plain str ordering puts it BEFORE the flat
+        # canonical page (.../concepts/archive/... < .../concepts/zzclone).
+        # With the canonical-preference keys removed the clone would win,
+        # making this test actually pin row 180's guard.
+        write(self.root, "wiki/concepts/archive/zzclone.md",
               "---\ntype: concept\nsummary: \"clone\"\nrelated: []\n---\n\nClone.\n")
         write(self.root, "wiki/zzlinker.md",
               "---\ntype: entity\nrelated: [zzclone]\n---\n\nBody.\n")
         r = link_audit.audit(self.root)
         inbound = {e["page"]: e["inbound"] for e in r["concept_inbound"]}
         self.assertEqual(inbound["wiki/concepts/zzclone.md"], 1)
-        self.assertEqual(inbound["wiki/topics/zzclone.md"], 0)
+        self.assertEqual(inbound["wiki/concepts/archive/zzclone.md"], 0)
+
+
+class SweepTwelveRegressionTests(LinkAuditTest):
+    """Regressions for the twelfth sweep's unreadable-page handling."""
+
+    def test_unreadable_concept_does_not_steal_an_entity_bare_slug(self):
+        # A chmod-000 page has no recoverable content, so the path fallback
+        # must still classify it: at wiki/concepts/foo.md it would otherwise
+        # sort before the entity and steal its bare-slug link.
+        write(self.root, "wiki/concepts/foo.md",
+              "---\ntype: concept\nrelated: []\n---\n\nConcept foo.\n")
+        write(self.root, "wiki/foo.md",
+              "---\ntype: entity\nrelated: []\n---\n\nEntity foo.\n")
+        write(self.root, "wiki/linker.md",
+              "---\ntype: entity\nrelated: [foo]\n---\n\nBody.\n")
+        unreadable = self.root / "wiki" / "concepts" / "foo.md"
+        unreadable.chmod(0o000)
+        try:
+            r = self.report()
+        finally:
+            unreadable.chmod(0o644)  # before tearDown removes the temp tree
+        self.assertNotIn("wiki/foo.md", r["orphans"])
+        self.assertEqual(
+            next(e["inbound"] for e in r["concept_inbound"]
+                 if e["page"] == "wiki/concepts/foo.md"), 0)
+
+    def test_unreadable_concept_still_appears_in_coverage(self):
+        theme = self.root / "wiki" / "concepts" / "theme.md"
+        theme.chmod(0o000)
+        try:
+            r = self.report()
+        finally:
+            theme.chmod(0o644)
+        self.assertEqual(r["counts"]["entities_without_concept_link"], 0)
+        self.assertEqual(
+            next(e["inbound"] for e in r["concept_inbound"]
+                 if e["page"] == "wiki/concepts/theme.md"), 2)
+
+    def test_undecodable_concept_keeps_its_type_for_classification(self):
+        # A bad byte needs the lenient decode; the path fallback cannot help
+        # a concept filed outside concepts/.
+        write(self.root, "wiki/foo.md",
+              "---\ntype: entity\nrelated: []\n---\n\nEntity foo.\n")
+        write(self.root, "wiki/linker.md",
+              "---\ntype: entity\nrelated: [foo]\n---\n\nBody.\n")
+        d = self.root / "wiki" / "a"
+        d.mkdir(exist_ok=True)
+        (d / "foo.md").write_bytes(
+            b'---\ntype: concept\nrelated: []\n---\n\n\xff bad\n')
+        r = self.report()
+        self.assertNotIn("wiki/foo.md", r["orphans"])
+        self.assertEqual(
+            next(e["inbound"] for e in r["concept_inbound"]
+                 if e["page"] == "wiki/a/foo.md"), 0)
 
 
 if __name__ == "__main__":
