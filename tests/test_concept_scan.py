@@ -295,5 +295,64 @@ class ExistingConceptTests(unittest.TestCase):
             self.assertNotIn("| tpm |", out)
 
 
+class SweepTwelveRegressionTests(unittest.TestCase):
+    """Regressions for the twelfth sweep's acronym and pruning bugs."""
+
+    def scan(self, root, *args):
+        saved = (concept_scan.ROOT, concept_scan.WIKI, sys.argv)
+        concept_scan.ROOT, concept_scan.WIKI = root, root
+        sys.argv = ["concept_scan", *args]
+        buf = io.StringIO()
+        try:
+            with contextlib.redirect_stdout(buf):
+                concept_scan.main()
+        finally:
+            concept_scan.ROOT, concept_scan.WIKI, sys.argv = saved
+        return buf.getvalue()
+
+    def page(self, root, name, summary):
+        (root / f"{name}.md").write_text(
+            f'---\ntype: entity\ntitle: "{name}"\n'
+            f'summary: "{summary}"\n---\nbody\n', encoding="utf-8")
+
+    def themes(self, out):
+        return [ln.split("|")[1].strip() for ln in out.splitlines()
+                if ln.startswith("| ") and "Candidate" not in ln
+                and "---" not in ln]
+
+    def test_uppercase_acronym_that_is_also_a_stopword_survives(self):
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            for i in range(60):
+                self.page(root, f"f{i}", f"unique filler{i}")
+            for i in range(8):
+                self.page(root, f"p{i}", f"CAN bus intrusion dataset {i}")
+            out = self.scan(root, "--min-pages", "3", "--top", "10")
+            # Lowercasing before the stopword check erased CAN entirely;
+            # the corpus itself flags CAN as an acronym, so it must survive.
+            self.assertTrue(any(t.startswith("can") for t in self.themes(out)),
+                            out)
+
+    def test_subphrase_duplicate_is_collapsed(self):
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            for i in range(20):
+                self.page(root, f"f{i}", f"unique filler{i}")
+            for i in range(6):
+                self.page(root, f"h{i}", f"uses ISO-TP diagnostics {i}")
+            for i in range(6):
+                self.page(root, f"s{i}", f"uses ISO TP diagnostics {i}")
+            out = self.scan(root, "--min-pages", "3", "--top", "25")
+            themes = self.themes(out)
+            # Each spelling is one family; the base/subphrase duplicates
+            # ("iso diagnostics" inside "uses iso diagnostics") must not
+            # all be reported alongside it.
+            self.assertFalse({"iso", "iso diagnostics",
+                              "uses iso diagnostics"} <= set(themes), out)
+            self.assertFalse({"iso-tp", "iso-tp diagnostics",
+                              "uses iso-tp diagnostics"} <= set(themes), out)
+            self.assertLessEqual(len(themes), 4, out)
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -222,7 +222,10 @@ def write_page(path: Path, fm_lines: list[str], body: str,
                 out.extend(pending)
             continue
         if re.match(r"^updated\s*:", line):
-            line = f"updated: {run_date}"
+            # A trailing comment documents the stamp; keep it when the
+            # date itself is rewritten (row 177's authored-prose rule).
+            note = re.search(r"\s+#.*$", line)
+            line = f"updated: {run_date}{note.group(0) if note else ''}"
         out.append(line)
         if not placed and not had_related and line.startswith("list_summary:"):
             if re.search(r":\s*[|>]", line):
@@ -479,7 +482,9 @@ def main() -> int:
         written[slug] = new_slugs
         if new_slugs != old:
             changed += 1
-            if not old:
+            # A self-link-only set has no authored content (row 160), so it
+            # counts as previously unlinked just like an empty set does.
+            if not old or only_self[slug]:
                 filled += 1
             if len(samples) < 5:
                 samples.append(f"  {slug}: {old} -> {new_slugs}")

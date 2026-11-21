@@ -66,6 +66,38 @@ def split_frontmatter(text: str):
     return m.group(1), text[m.end():]
 
 
+def split_flow_items(body: str) -> list[str]:
+    """Split a YAML flow sequence on commas outside quotes.
+
+    ``"alpha, beta"`` is one slug containing a comma, not two. Splitting the
+    raw text fabricated a bogus slug and, in backfill, permanently rewrote a
+    two-item list into three (rows 2/43 fixed comments, not quoting).
+    """
+    items: list[str] = []
+    buf: list[str] = []
+    quote: str | None = None
+    escaped = False
+    for ch in body:
+        if quote:
+            buf.append(ch)
+            if quote == '"' and ch == "\\" and not escaped:
+                escaped = True
+                continue
+            if ch == quote and not escaped:
+                quote = None
+            escaped = False
+        elif ch in "\"'":
+            quote = ch
+            buf.append(ch)
+        elif ch == ",":
+            items.append("".join(buf))
+            buf = []
+        else:
+            buf.append(ch)
+    items.append("".join(buf))
+    return items
+
+
 def parse_related(frontmatter: str):
     """Collect slugs from every `related:` block (files may carry duplicates)."""
     slugs = []
@@ -75,7 +107,7 @@ def parse_related(frontmatter: str):
         line = lines[i]
         inline = RELATED_INLINE_RE.match(line)
         if inline:
-            for part in inline.group(1).split(","):
+            for part in split_flow_items(inline.group(1)):
                 slug = part.strip().strip("'\"")
                 if slug:
                     slugs.append(slug)
@@ -186,8 +218,12 @@ def check(root: Path) -> dict:
             if resolved is None and not broken:
                 continue
             if broken:
+                # `unwrap()` already decides resolution; the report must use
+                # the same string or `<missing.md#sec>` is truncated into a
+                # target that does not exist even as a literal path.
                 broken_links.append(
-                    {"source": rel_page, "target": raw.split("#", 1)[0]}
+                    {"source": rel_page,
+                     "target": unwrap(raw).split("#", 1)[0]}
                 )
                 continue
             targets.add(resolved)

@@ -129,15 +129,26 @@ def fields_of(text: str) -> dict:
 
 def grams(text: str, acronyms: set[str]) -> set[str]:
     raw = TOKEN_RE.findall(text)
-    toks = [t.lower() for t in raw
-            if len(t) >= 3 and t.lower() not in STOPWORDS
-            and not t.isdigit()]
+
+    def stop(orig: str, low: str) -> bool:
+        # Lowercasing first erased acronyms that double as filler words
+        # (CAN bus vs the modal "can"). The corpus itself flagged CAN as
+        # an acronym; keep that sense the way row 28 fixed taxonomy.py.
+        return low in STOPWORDS and not (orig.isupper() and low in acronyms)
+
+    def generic(orig: str, low: str) -> bool:
+        return low in GENERIC and not (orig.isupper() and low in acronyms)
+
+    kept = [(t, t.lower()) for t in raw
+            if len(t) >= 3 and not t.isdigit()
+            and not stop(t, t.lower())]
     out: set[str] = set()
     for size in (1, 2, 3):
-        for i in range(len(toks) - size + 1):
-            g = toks[i:i + size]
-            if any(t in STOPWORDS or t in GENERIC for t in g):
+        for i in range(len(kept) - size + 1):
+            group = kept[i:i + size]
+            if any(generic(orig, low) for orig, low in group):
                 continue
+            g = [low for _, low in group]
             phrase = " ".join(g)
             if size == 1:
                 t = g[0]
@@ -149,6 +160,13 @@ def grams(text: str, acronyms: set[str]) -> set[str]:
                     continue
             out.add(phrase)
     return out
+
+
+def word_subphrase(short: str, long: str) -> bool:
+    """True when ``short``'s words appear contiguously inside ``long``'s."""
+    sw, lw = short.split(), long.split()
+    return len(sw) <= len(lw) and any(
+        lw[i:i + len(sw)] == sw for i in range(len(lw) - len(sw) + 1))
 
 
 def main() -> int:
@@ -224,7 +242,20 @@ def main() -> int:
                for p, s, _ in pruned):
             continue
         pruned.append((phrase, slugs, score))
-    pruned = pruned[:args.top]
+    # The string-prefix rule cannot see a phrase embedded at the end or
+    # middle of a longer one covering the same pages ("iso diagnostics"
+    # inside "uses iso diagnostics"). Collapse those too, keeping the short
+    # core phrase: it is the spelling a concept page actually suppresses.
+    collapsed = [
+        (phrase, slugs, score)
+        for i, (phrase, slugs, score) in enumerate(pruned)
+        if not any(
+            j != i and slugs == other_slugs
+            and len(other_phrase) < len(phrase)
+            and word_subphrase(other_phrase, phrase)
+            for j, (other_phrase, other_slugs, _) in enumerate(pruned))
+    ]
+    pruned = collapsed[:args.top]
 
     print(f"concept_scan: {n} entity pages, {concept_count} "
           f"existing concepts, {len(pruned)} candidates with "
