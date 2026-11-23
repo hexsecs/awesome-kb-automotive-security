@@ -7,11 +7,11 @@ Generated from page frontmatter by tools/ingest.py; do not edit by hand.
 
 - [Concept map](wiki/index-concept-map.md) — the concept layer by theme, with reading paths through it.
 - [Glossary](wiki/index-glossary.md) — acronyms and standards, linked to the page that explains each one.
-- [Needs attention](wiki/index-needs-attention.md) — 11 maintenance-queue entries.
+- [Needs attention](wiki/index-needs-attention.md) — 13 maintenance-queue entries.
 
 ## Categories
 
-- [CAN Bus Analysis](wiki/index-can-bus-analysis.md) — 32 entries
+- [CAN Bus Analysis](wiki/index-can-bus-analysis.md) — 33 entries
 - [Diagnostic Tools](wiki/index-diagnostic-tools.md) — 20 entries
 - [Firmware and ECU Reverse Engineering](wiki/index-firmware-and-ecu-reverse-engineering.md) — 8 entries
 - [Automotive Ethernet](wiki/index-automotive-ethernet.md) — 6 entries

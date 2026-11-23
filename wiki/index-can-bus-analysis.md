@@ -34,3 +34,4 @@ Browse by facet: [Tools & libraries](index-facet-tools.md) (32 here), [CAN](inde
 - [python-can](python-can.md) — Python library providing a common interface over many CAN hardware backends with CAN FD support and logging to ASC, BLF, MF4, TRC, CSV, and SQLite.
 - [python-can-isotp](python-can-isotp.md) — ISO-TP (ISO 15765) transport for Python on top of python-can or Linux SocketCAN, the segmentation layer that UDS and OBD-II diagnostics run over.
 - [SavvyCAN](savvycan.md) — Cross-platform Qt-based CAN bus reverse engineering and capture tool with DBC file loading, UDS scanning, and fuzzing support.
+- [WebUSB CAN](webusb-can.md) — Browser-based CAN console that talks to gs_usb adapters over WebUSB without drivers or installs, with an in-browser simulator whose virtual ECU answers UDS…

@@ -2,14 +2,16 @@
 
 Generated from page frontmatter by tools/ingest.py. A page may appear in more than one queue. 'Brief by design' entries are triaged pointers needing no action. Do not edit by hand.
 
-## Unverified resources (1)
+## Unverified resources (2)
 
 - [Cabana](cabana.md)
+- [WebUSB CAN](webusb-can.md)
 
-## Graph orphans (2)
+## Graph orphans (3)
 
 - [Cabana](cabana.md)
 - [Hacking Two Automakers: ForgeRock Path Confusion, RCE, and Remote Vehicle Access](hacking-two-automakers-forgerock-path-confusion-rce-and-remote-vehicle-access.md)
+- [WebUSB CAN](webusb-can.md)
 
 ## Deepen candidates (3)
 
