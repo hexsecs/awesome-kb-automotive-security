@@ -9,16 +9,17 @@ status: maintenance
 last_checked: 2026-11-17
 status_note: "GitHub repo not archived; last push 2019-05-26."
 created: 2026-10-31
-updated: 2026-11-17
+updated: 2026-11-23
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Published reverse engineering results for two production vehicles including CAN matrices, extracted ECU security access keys, and UDS scanning proof-of-concepts."
 related:
-  - uds-seed-key
-  - simos18-sboot
-  - q50-reverse-engineering
-  - owasp-automotive-security-cheat-sheet
+  - "uds-seed-key"
+  - "simos18-sboot"
+  - "q50-reverse-engineering"
+  - "owasp-automotive-security-cheat-sheet"
+  - "hacking-two-automakers-forgerock-path-confusion-rce-and-remote-vehicle-access"
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

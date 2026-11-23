@@ -8,11 +8,16 @@ url: "https://samcurry.net/forgerock"
 status: "published"
 last_checked: "2026-11-21"
 created: "2026-11-21"
-updated: "2026-11-21"
+updated: 2026-11-23
 depth: "stub"
 source_list: "awesome-automotive-security"
 source_commit: "1b452a8"
 list_summary: "Shah and Curry, 2026. A WAF path-confusion bypass and the Felix console's default credentials gave remote code execution on two automakers' production ForgeRock identity servers, yielding a session for any customer account and the connected-car app's full remote control, including door unlock and engine start."
+related:
+  - "remote-exploitation-of-an-unaltered-passenger-vehicle"
+  - "automotive-security-research"
+  - "webusb-can"
+  - "cannelloni"
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: "2026-11-21"

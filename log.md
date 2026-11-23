@@ -995,3 +995,31 @@ one-way pairs (it was 112), alongside `link_audit`'s 0 orphans / 0 concept-less
 entities / 0 entity one-way pairs. Gates: ingest x2 idempotent, lint 0 errors /
 56 warnings (baseline), link checker 0/0/0 across 333 pages, 30 tests pass,
 `git diff --check` clean.
+
+## [2026-11-23] scan | Weekly concept scan: link pass + no new candidates
+
+Link pass (`tools/link_mine.py --fill-only --reciprocate`): 18 entity pages
+gained mined `related:` sets or reciprocal back-links; graph orphans 3 -> 0
+(cabana, hacking-two-automakers-forgerock-path-confusion-rce-and-remote-
+vehicle-access, webusb-can). Ingest x2 idempotent (0/0/0).
+
+Concept scan (`tools/concept_scan.py --min-pages 5 --top 25`): 258 entity
+pages / 30 existing concepts, 25 candidates, 0 filed, 25 declined:
+- iso (26), sae (10) — standards-org tokens, not syntheses.
+- uds (26), can bus (21), dbc (12), lin (8), some (8), v2x (10), ccs (11),
+  ids (7) — owned by existing concepts (diagnostic-service-abuse,
+  can-injection, dbc-semantic-layer, lin-bus, someip,
+  v2x-credential-management, charging-trust-chain,
+  in-vehicle-intrusion-detection).
+- car hacking (11), def con car (8), black hat (10), con (9), def (9),
+  ndss (8), vehiclesec (8), ieee (7) — venue tokens.
+- usa (9) — geographic token.
+- obd-ii (8) — overlap: external-attack-surface already owns the OBD-II
+  dongle class (Plug-N-Pwned, DongleScope, autopi, donglescope in its
+  related list); a separate concept would double-own the mechanism.
+  Revisit trigger: a synthesis the boundary page can't state (e.g. a
+  diagnostic-port trust model distinct from the entry classes).
+- socketcan (8), usb (8) — tool/library facets.
+- autonomous driving (7), lidar (7), road (7) — below the ~8 bar;
+  sensor-attack material already owned by physical-channel-sensor-attacks
+  / misbehavior-detection.

@@ -8,18 +8,19 @@ url: "https://github.com/rnd-ash/OpenVehicleDiag"
 status: maintenance
 last_checked: 2026-11-17
 created: 2026-11-15
-updated: 2026-11-17
+updated: 2026-11-23
 depth: full
 source_list: awesome-automotive-security
 source_commit: a570090
 list_summary: "Rust ECU diagnostics and reprogramming application over J2534 pass-through adapters and Linux SocketCAN, with UDS and KWP2000 sessions and a converter that turns Mercedes CBF diagnostic databases into its own JSON format."
 related:
-  - python-can-isotp
-  - automotive-flash-bootloaders-exposing-automotive-ecu-updates
-  - pq-flasher
-  - uds
-  - conescan
-  - zephyr-reference-ecu
+  - "python-can-isotp"
+  - "automotive-flash-bootloaders-exposing-automotive-ecu-updates"
+  - "pq-flasher"
+  - "uds"
+  - "conescan"
+  - "zephyr-reference-ecu"
+  - "webusb-can"
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-15

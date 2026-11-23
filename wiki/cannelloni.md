@@ -8,15 +8,16 @@ url: "https://github.com/mguentner/cannelloni"
 status: active
 last_checked: 2026-10-31
 created: 2026-10-31
-updated: 2026-11-17
+updated: 2026-11-23
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Tunnels SocketCAN interfaces over UDP, TCP, or SCTP, bridging a vehicle bus to a remote analysis machine and letting bench setups share one physical CAN adapter."
 related:
-  - candevstudio
-  - can-utils
-  - simulation-and-test-doubles
+  - "candevstudio"
+  - "can-utils"
+  - "simulation-and-test-doubles"
+  - "hacking-two-automakers-forgerock-path-confusion-rce-and-remote-vehicle-access"
 license: GPL-2.0
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"

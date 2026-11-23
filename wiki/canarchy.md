@@ -8,23 +8,24 @@ url: "https://github.com/hexsecs/canarchy"
 status: active
 last_checked: 2026-10-31
 created: 2026-10-31
-updated: 2026-11-17
+updated: 2026-11-23
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Stream-first CAN and J1939 toolkit that emits structured JSONL for automation, with live capture, DBC/ARXML/KCD decoding, J1939 PGN/SPN and DM1 fault parsing, UDS and DoIP support, constrained fuzzing, and an MCP server for agent-driven workflows."
 related:
-  - can-utils
-  - cantools
-  - python-can
-  - pretty-j1939
-  - truckdevil
-  - cancat
-  - can-playground
-  - pycangui
-  - dbc-semantic-layer
-  - j1939
-  - canalyse
+  - "can-utils"
+  - "cantools"
+  - "python-can"
+  - "pretty-j1939"
+  - "truckdevil"
+  - "cancat"
+  - "can-playground"
+  - "pycangui"
+  - "dbc-semantic-layer"
+  - "j1939"
+  - "canalyse"
+  - "cabana"
 license: GPL-3.0
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"

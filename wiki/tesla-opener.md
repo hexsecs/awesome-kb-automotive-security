@@ -9,14 +9,15 @@ status: maintenance
 last_checked: 2026-11-17
 status_note: "GitHub repo not archived; last push 2023-03-14."
 created: 2026-10-31
-updated: 2026-11-17
+updated: 2026-11-23
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Open-source tool to open Tesla charging port using HackRF and WebUSB with ASK/OOK RF transmission."
 related:
-  - key-fob-relay-attacks
-  - flipper-zero
+  - "key-fob-relay-attacks"
+  - "flipper-zero"
+  - "webusb-can"
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-10-31

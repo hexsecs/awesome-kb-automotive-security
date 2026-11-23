@@ -8,20 +8,21 @@ url: "https://illmatics.com/car_hacking.pdf"
 status: published
 last_checked: 2026-11-01
 created: 2026-10-31
-updated: 2026-11-16
+updated: 2026-11-23
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Miller and Valasek, 2013. The wired precursor to the Jeep work, documenting CAN injection against the Toyota Prius and Ford Escape and the methodology that followed."
 related:
-  - remote-exploitation-of-an-unaltered-passenger-vehicle
-  - can-injection
-  - experimental-security-analysis-of-a-modern-automobile
-  - comprehensive-experimental-analyses-of-automotive-attack-surfaces
-  - diagnostic-service-abuse
-  - can-availability
-  - a-survey-of-remote-automotive-attack-surfaces
-  - fast-and-vulnerable-a-story-of-telematic-failures
+  - "remote-exploitation-of-an-unaltered-passenger-vehicle"
+  - "can-injection"
+  - "experimental-security-analysis-of-a-modern-automobile"
+  - "comprehensive-experimental-analyses-of-automotive-attack-surfaces"
+  - "diagnostic-service-abuse"
+  - "can-availability"
+  - "a-survey-of-remote-automotive-attack-surfaces"
+  - "fast-and-vulnerable-a-story-of-telematic-failures"
+  - "shared-and-default-secrets"
 sources:
   - url: "https://illmatics.com/car_hacking.pdf"
     retrieved: 2026-11-01

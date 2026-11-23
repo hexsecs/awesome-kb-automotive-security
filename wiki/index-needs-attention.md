@@ -7,11 +7,9 @@ Generated from page frontmatter by tools/ingest.py. A page may appear in more th
 - [Cabana](cabana.md)
 - [WebUSB CAN](webusb-can.md)
 
-## Graph orphans (3)
+## Graph orphans (0)
 
-- [Cabana](cabana.md)
-- [Hacking Two Automakers: ForgeRock Path Confusion, RCE, and Remote Vehicle Access](hacking-two-automakers-forgerock-path-confusion-rce-and-remote-vehicle-access.md)
-- [WebUSB CAN](webusb-can.md)
+_None._
 
 ## Deepen candidates (3)
 

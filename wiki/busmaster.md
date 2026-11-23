@@ -8,18 +8,20 @@ url: "https://github.com/rbei-etas/busmaster"
 status: active
 last_checked: 2026-10-31
 created: 2026-10-31
-updated: 2026-11-17
+updated: 2026-11-23
 depth: full
 source_list: awesome-automotive-security
 source_commit: b7b92a7
 list_summary: "Open-source CAN simulation, analysis, and test tool from Bosch Engineering and ETAS, with a node simulator, DBC-driven signal interpretation, and scriptable test automation."
 related:
-  - candevstudio
-  - savvycan
-  - kayak
-  - simulation-and-test-doubles
-  - canmatrix
-  - dbc-semantic-layer
+  - "candevstudio"
+  - "savvycan"
+  - "kayak"
+  - "simulation-and-test-doubles"
+  - "canmatrix"
+  - "dbc-semantic-layer"
+  - "cabana"
+  - "webusb-can"
 license: GPL-3.0
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"

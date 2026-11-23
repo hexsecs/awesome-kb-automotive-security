@@ -8,11 +8,18 @@ url: "https://github.com/deanlee/openpilot-cabana"
 status: "unknown"
 last_checked: "2026-11-20"
 created: "2026-11-20"
-updated: "2026-11-21"
+updated: 2026-11-23
 depth: "stub"
 source_list: "awesome-automotive-security"
 source_commit: "d62c705"
 list_summary: "Standalone CAN and CAN FD analyzer split from openpilot, with live bit-level heatmaps, signal discovery, a DBC editor, and drive replay synchronized to video."
+related:
+  - "can-playground"
+  - "busmaster"
+  - "candevstudio"
+  - "canarchy"
+  - "canhack"
+  - "carpunk"
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-20

@@ -8,19 +8,20 @@ url: "https://github.com/numbpill3d/can-playground"
 status: active
 last_checked: 2026-11-17
 created: 2026-11-15
-updated: 2026-11-17
+updated: 2026-11-23
 depth: full
 source_list: awesome-automotive-security
 source_commit: 87fdec8
 list_summary: "Local-first Tauri desktop app for viewing, decoding, and capturing CAN bus traffic, with DBC import, signal annotation, and bit-level change timelines."
 related:
-  - canarchy
-  - security-in-automotive-bus-systems
-  - canlab
-  - cangaroo
-  - cantools
-  - obdium
-  - dbc-semantic-layer
+  - "canarchy"
+  - "security-in-automotive-bus-systems"
+  - "canlab"
+  - "cangaroo"
+  - "cantools"
+  - "obdium"
+  - "dbc-semantic-layer"
+  - "cabana"
 sources:
   - url: "https://github.com/hexsecs/awesome-automotive-security"
     retrieved: 2026-11-15
