@@ -7,7 +7,7 @@ Generated from page frontmatter by tools/ingest.py; do not edit by hand.
 
 - [Concept map](wiki/index-concept-map.md) — the concept layer by theme, with reading paths through it.
 - [Glossary](wiki/index-glossary.md) — acronyms and standards, linked to the page that explains each one.
-- [Needs attention](wiki/index-needs-attention.md) — 10 maintenance-queue entries.
+- [Needs attention](wiki/index-needs-attention.md) — 12 maintenance-queue entries.
 
 ## Categories
 
@@ -24,7 +24,7 @@ Generated from page frontmatter by tools/ingest.py; do not edit by hand.
 - [Penetration Testing](wiki/index-penetration-testing.md) — 11 entries
 - [Datasets](wiki/index-datasets.md) — 12 entries
 - [Research Papers](wiki/index-research-papers.md) — 70 entries
-- [Conference Presentations](wiki/index-conference-presentations.md) — 22 entries
+- [Conference Presentations](wiki/index-conference-presentations.md) — 23 entries
 - [Books](wiki/index-books.md) — 13 entries
 - [Learning Resources](wiki/index-learning-resources.md) — 9 entries
 - [Related Awesome Lists](wiki/index-related-awesome-lists.md) — 6 entries

@@ -2,14 +2,15 @@
 
 Generated from page frontmatter by tools/ingest.py. A page may appear in more than one queue. 'Brief by design' entries are triaged pointers needing no action. Do not edit by hand.
 
-## Unverified resources (2)
+## Unverified resources (3)
 
 - [Cabana](cabana.md)
+- [The hack, the crash and two smoking barrels. (And all the times I (almost) killed an engineer.)](the-hack-the-crash-and-two-smoking-barrels-and-all-the-times-i-almost-killed-an-engineer.md)
 - [WebUSB CAN](webusb-can.md)
 
-## Graph orphans (0)
+## Graph orphans (1)
 
-_None._
+- [The hack, the crash and two smoking barrels. (And all the times I (almost) killed an engineer.)](the-hack-the-crash-and-two-smoking-barrels-and-all-the-times-i-almost-killed-an-engineer.md)
 
 ## Deepen candidates (3)
 
