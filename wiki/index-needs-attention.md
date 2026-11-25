@@ -2,14 +2,18 @@
 
 Generated from page frontmatter by tools/ingest.py. A page may appear in more than one queue. 'Brief by design' entries are triaged pointers needing no action. Do not edit by hand.
 
-## Unverified resources (3)
+## Unverified resources (5)
 
 - [Cabana](cabana.md)
+- [Context Aware Anomaly Detection in Automotive CAN Without Decoding](context-aware-anomaly-detection-in-automotive-can-without-decoding.md)
+- [Hacking a head unit with malicious PNG](hacking-a-head-unit-with-malicious-png.md)
 - [The hack, the crash and two smoking barrels. (And all the times I (almost) killed an engineer.)](the-hack-the-crash-and-two-smoking-barrels-and-all-the-times-i-almost-killed-an-engineer.md)
 - [WebUSB CAN](webusb-can.md)
 
-## Graph orphans (1)
+## Graph orphans (3)
 
+- [Context Aware Anomaly Detection in Automotive CAN Without Decoding](context-aware-anomaly-detection-in-automotive-can-without-decoding.md)
+- [Hacking a head unit with malicious PNG](hacking-a-head-unit-with-malicious-png.md)
 - [The hack, the crash and two smoking barrels. (And all the times I (almost) killed an engineer.)](the-hack-the-crash-and-two-smoking-barrels-and-all-the-times-i-almost-killed-an-engineer.md)
 
 ## Deepen candidates (3)
