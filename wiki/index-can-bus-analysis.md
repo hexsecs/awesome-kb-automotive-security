@@ -2,6 +2,7 @@
 
 Browse by facet: [Tools & libraries](index-facet-tools.md) (32 here), [CAN](index-facet-can.md) (30 here), [Attack techniques](index-facet-attack.md) (11 here), [Diagnostics](index-facet-diagnostics.md) (10 here), [Simulation](index-facet-simulation.md) (7 here), [Firmware & updates](index-facet-firmware.md) (5 here).
 
+- [automotive](automotive.md) — Rust crate and Python library for CAN communication with ISO-TP and DoIP transports and UDS, XCP, and CCP clients.
 - [BUSMASTER](busmaster.md) — Open-source CAN simulation, analysis, and test tool from Bosch Engineering and ETAS, with a node simulator, DBC-driven signal interpretation, and scriptable…
 - [Cabana](cabana.md) — Standalone CAN and CAN FD analyzer split from openpilot, with live bit-level heatmaps, signal discovery, a DBC editor, and drive replay synchronized to video.
 - [CAN Commander](can-commander.md) — Flipper Zero application and companion ESP32 CAN board for reverse engineering vehicle networks, with sniffing, DBC decoding, replay, and injection profiles…

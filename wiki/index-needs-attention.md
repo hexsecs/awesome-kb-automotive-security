@@ -2,19 +2,25 @@
 
 Generated from page frontmatter by tools/ingest.py. A page may appear in more than one queue. 'Brief by design' entries are triaged pointers needing no action. Do not edit by hand.
 
-## Unverified resources (5)
+## Unverified resources (8)
 
+- [Blind Trailer Shouting](blind-trailer-shouting.md)
 - [Cabana](cabana.md)
 - [Context Aware Anomaly Detection in Automotive CAN Without Decoding](context-aware-anomaly-detection-in-automotive-can-without-decoding.md)
 - [Hacking a head unit with malicious PNG](hacking-a-head-unit-with-malicious-png.md)
+- [Smart Bus Smart Hacking: From Free WiFi to Total Control](smart-bus-smart-hacking-from-free-wifi-to-total-control.md)
 - [The hack, the crash and two smoking barrels. (And all the times I (almost) killed an engineer.)](the-hack-the-crash-and-two-smoking-barrels-and-all-the-times-i-almost-killed-an-engineer.md)
 - [WebUSB CAN](webusb-can.md)
+- [automotive](automotive.md)
 
-## Graph orphans (3)
+## Graph orphans (6)
 
+- [Blind Trailer Shouting](blind-trailer-shouting.md)
 - [Context Aware Anomaly Detection in Automotive CAN Without Decoding](context-aware-anomaly-detection-in-automotive-can-without-decoding.md)
 - [Hacking a head unit with malicious PNG](hacking-a-head-unit-with-malicious-png.md)
+- [Smart Bus Smart Hacking: From Free WiFi to Total Control](smart-bus-smart-hacking-from-free-wifi-to-total-control.md)
 - [The hack, the crash and two smoking barrels. (And all the times I (almost) killed an engineer.)](the-hack-the-crash-and-two-smoking-barrels-and-all-the-times-i-almost-killed-an-engineer.md)
+- [automotive](automotive.md)
 
 ## Deepen candidates (3)
 

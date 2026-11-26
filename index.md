@@ -7,11 +7,11 @@ Generated from page frontmatter by tools/ingest.py; do not edit by hand.
 
 - [Concept map](wiki/index-concept-map.md) — the concept layer by theme, with reading paths through it.
 - [Glossary](wiki/index-glossary.md) — acronyms and standards, linked to the page that explains each one.
-- [Needs attention](wiki/index-needs-attention.md) — 16 maintenance-queue entries.
+- [Needs attention](wiki/index-needs-attention.md) — 22 maintenance-queue entries.
 
 ## Categories
 
-- [CAN Bus Analysis](wiki/index-can-bus-analysis.md) — 33 entries
+- [CAN Bus Analysis](wiki/index-can-bus-analysis.md) — 34 entries
 - [Diagnostic Tools](wiki/index-diagnostic-tools.md) — 20 entries
 - [Firmware and ECU Reverse Engineering](wiki/index-firmware-and-ecu-reverse-engineering.md) — 8 entries
 - [Automotive Ethernet](wiki/index-automotive-ethernet.md) — 6 entries
@@ -24,7 +24,7 @@ Generated from page frontmatter by tools/ingest.py; do not edit by hand.
 - [Penetration Testing](wiki/index-penetration-testing.md) — 11 entries
 - [Datasets](wiki/index-datasets.md) — 12 entries
 - [Research Papers](wiki/index-research-papers.md) — 70 entries
-- [Conference Presentations](wiki/index-conference-presentations.md) — 25 entries
+- [Conference Presentations](wiki/index-conference-presentations.md) — 27 entries
 - [Books](wiki/index-books.md) — 13 entries
 - [Learning Resources](wiki/index-learning-resources.md) — 9 entries
 - [Related Awesome Lists](wiki/index-related-awesome-lists.md) — 6 entries
